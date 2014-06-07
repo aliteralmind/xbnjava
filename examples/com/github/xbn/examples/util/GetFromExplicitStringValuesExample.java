@@ -1,0 +1,44 @@
+/*license*\
+   XBN-Java Library
+
+   Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+
+   This software is dual-licensed under the:
+   - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
+   - Apache Software License (ASL) version 2.0.
+
+   Either license may be applied at your discretion. More information may be found at
+   - http://en.wikipedia.org/wiki/Multi-licensing.
+
+   The text of both licenses is available in the root directory of this project, under the names LICENSE_lgpl-3.0.txt and LICENSE_asl-2.0.txt. The latest copies may be downloaded at:
+   - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
+   - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
+\*license*/
+package  com.github.xbn.examples.util;
+   import  com.github.xbn.regexutil.IgnoreCase;
+   import  com.github.xbn.util.EnumUtil;
+/**
+   <P>Demonstration of <CODE>{@link com.github.xbn.util.EnumUtil}.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/util/EnumUtil.html#getFromExplicitStringValues(T, java.lang.String, java.lang.String, com.github.xbn.regexutil.IgnoreCase, java.lang.String...)">getFromExplicitStringValues</A></CODE></P>
+
+   <P>{@code java com.github.xbn.examples.util.GetFromExplicitStringValuesExample}</P>
+
+   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <CODE><A HREF="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</A></CODE>, <CODE><A HREF="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</A></CODE>
+ **/
+public class GetFromExplicitStringValuesExample  {
+
+   private enum Happy {
+      MANIC, ECSTATIC, VERY,
+      MODERATE, NOT_SO_MUCH,
+      CLINICALLY_DEPRESSED, CONSIDERING_MURDER_SUICIDE;};
+
+   public static final void main(String[] ignored)  {
+
+      String happinessStringValue = "moderatelyhappy";
+
+      Happy h = EnumUtil.getFromExplicitStringValues(Happy.VERY,
+         happinessStringValue, "happinessStringValue", IgnoreCase.YES,
+         new String[]{null, null, "veryhappy", "moderatelyhappy", "notsohappy", null, null});
+
+      System.out.println(h);
+   }
+}

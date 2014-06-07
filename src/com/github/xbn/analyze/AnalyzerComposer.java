@@ -1,0 +1,207 @@
+package  com.github.xbn.analyze;
+   import  com.github.xbn.lang.ExpirableComposer;
+   import  com.github.xbn.io.z.GetDebugApbl_Fieldable;
+   import  com.github.xbn.testdev.CompositionConstructor;
+   import  com.github.xbn.testdev.CompositionFunction;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.analyze.validate.ValueValidator;
+   import  com.github.xbn.io.SimpleDebuggable;
+   import  static com.github.xbn.lang.XbnConstants.*;
+   import  com.github.xbn.lang.ExtraErrInfoableComposer;
+
+/**
+   <P>For classes that need to implement {@code Analyzer}, that cannot extend {@code AbstractAnalyzer}.</P>
+ **/
+public class AnalyzerComposer extends SimpleDebuggable  {
+   private int     iNlzd = -1;
+   private boolean bWNlzd = false;
+   private final ExtraErrInfoableComposer cfxic;
+   private final ExpirableComposer ec;
+   private boolean bAutoResetState;
+   /**
+      <P>Create a new {@code AnalyzerComposer}.</P>
+
+      @see  #AnalyzerComposer(boolean, AnalyzerComposer) this(b,ac)
+      @see  #AnalyzerComposer(Analyzer) this(z)
+    **/
+   @CompositionConstructor
+   public AnalyzerComposer()  {
+      super();
+      //Never ever call interface functions, directly or indirectly, in a constructor.
+      zresetStateAB();
+      zresetCountsAB();
+      cfxic = new ExtraErrInfoableComposer();
+      ec = new ExpirableComposer();
+      bAutoResetState = true;
+   }
+   /**
+      <P>Create a new {@code AnalyzerComposer} as a duplicate of another.</P>
+
+      <P>This<OL>
+         <LI>Sets<OL>
+            <LI>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</LI>
+            <LI>{@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code to_copy.wasAnalyzed()}</LI>
+         </OL></LI>
+         <LI>Calls {@link #zresetStateAB() zresetStateAB}{@code ()} &nbsp; &nbsp; <I>(as specified by  <CODE><I>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</I>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</CODE>)</I></LI>
+      </OL></P>
+
+      @param  ignored  Required to prevent an ambigous-invocation error, when attempting to call this or the {@link #AnalyzerComposer(Analyzer) other} copy-constructor with a class such as {@link com.github.xbn.analyze.AbstractAnalyzer AbstractAnalyzer}, which both extends this {@code AnalyzerComposer} and is an {@link com.github.xbn.analyze.Analyzer Analyzer}.
+      @see  #AnalyzerComposer()
+    **/
+   @CompositionConstructor
+   protected AnalyzerComposer(boolean ignored, AnalyzerComposer to_copy)  {
+      super(to_copy);  //AnalyzerComposers ARE Debuggable. No need for ignored
+      iNlzd = to_copy.getAnalyzedCount();
+      bWNlzd = to_copy.wasAnalyzed();
+      cfxic = new ExtraErrInfoableComposer(ignored, to_copy.cfxic);
+      ec = new ExpirableComposer(ignored, to_copy.ec);
+      bAutoResetState = to_copy.doAutoResetState();
+
+      //Never ever call interface functions, directly or indirectly, in a constructor.
+      zresetStateAB();
+   }
+   /**
+      <P>Create a new {@code AnalyzerComposer} from an {@code Analyzer}.</P>
+
+      <P>This<OL>
+         <LI>Calls {@link com.github.xbn.io.SimpleDebuggable#SimpleDebuggable(Debuggable) super}{@code (to_copy)}</LI>
+         <LI>Sets<OL>
+            <LI>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</LI>
+         </OL></LI>
+         <LI>Calls {@link #zresetStateAB() zresetStateAB}{@code ()}</LI>
+      </OL></P>
+      @see  #AnalyzerComposer()
+    **/
+   @CompositionConstructor
+   public AnalyzerComposer(Analyzer to_copy)  {
+      super(to_copy);
+      iNlzd = to_copy.getAnalyzedCount();
+      cfxic = new ExtraErrInfoableComposer().extraErrInfo(to_copy.getExtraErrInfo());
+      ec = new ExpirableComposer(to_copy);
+      bAutoResetState = to_copy.doAutoResetState();
+
+      //Never ever call interface functions, directly or indirectly, in a constructor.
+      zresetStateAB();
+      zresetCountsAB();
+   }
+   @CompositionFunction
+   public void resetState()  {
+      zresetStateAB();
+   }
+   protected final void zresetStateAB()  {
+      bWNlzd = false;
+   }
+   @CompositionFunction
+   public void resetCounts()  {
+      zresetCountsAB();
+   }
+   @CompositionFunction
+   public boolean doAutoResetState()  {
+      return  bAutoResetState;
+   }
+   @CompositionFunction
+   public void setAutoResetState_4prot(boolean is_auto)  {
+      bAutoResetState = is_auto;
+   }
+   protected final void zresetCountsAB()  {
+      iNlzd = 0;
+   }
+   @CompositionFunction
+   public boolean doesExpire()  {
+      return  ec.doesExpire();
+   }
+   @CompositionFunction
+   public void declareExpirable_4prot()  {
+      ec.declareExpirable_4prot();
+   }
+   @CompositionFunction
+   public void declareExpired_4prot()  {
+      resetState();
+      ec.declareExpired_4prot();
+   }
+   @CompositionFunction
+   public boolean isExpired()  {
+      return  ec.isExpired();
+   }
+   /**
+      @return  The number of times {@link #declareAnalyzed_4prot() declareAnalyzed_4prot}{@code ()} was called since the most recent call to {@link #resetCounts() resetCounts}{@code ()}.
+    **/
+   @CompositionFunction
+   public int getAnalyzedCount()  {
+      return  iNlzd;
+   }
+   /**
+      <P>Declare that an analysis took place.</P>
+
+      <P>This<OL>
+         <LI>Increments {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} and sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code true}.</LI>
+      </OL></P>
+    **/
+   @CompositionFunction
+   public void declareAnalyzed_4prot()  {
+      iNlzd++;
+      bWNlzd = true;
+   }
+   /**
+      @return  {@code true} If {@link #declareAnalyzed_4prot() declareAnalyzed_4prot}{@code ()} was called more recently than {@link #resetState() resetState}{@code ()}
+    **/
+   @CompositionFunction
+   public boolean wasAnalyzed()  {
+      return  bWNlzd;
+   }
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      try  {
+         if(wasAnalyzed())  {
+            to_appendTo.append("analyzed ").append(getAnalyzedCount()).append(" times");
+         }  else  {
+            to_appendTo.append("not-analyzed");
+         }
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+      }
+      if(doAutoResetState())  {
+         to_appendTo.append(" (auto-reset)");
+      }
+      to_appendTo.append(", ");
+      return  ec.appendToString(to_appendTo);
+   }
+   @CompositionFunction
+   public Object getExtraErrInfo()  {
+      return  cfxic.getExtraErrInfo();
+   }
+   @CompositionFunction
+   public void setExtraErrInfo(Object xtra_errInfo)  {
+      cfxic.setExtraErrInfo(xtra_errInfo);
+   }
+//static...START
+   /**
+      <P>If this {@code Analyzer} needs its {@code stateReset()}, crash. This is useful as the first step of any analysis.</P>
+
+      @param  analyzer  May not be {@code null}.
+      @exception  IllegalStateException  If <CODE>analyzer.{@link com.github.xbn.analyze.Analyzer#wasAnalyzed() wasAnalyzed}()</CODE> is {@code true}.
+    **/
+   public static final void autoResetStateOrCINeedTo(Analyzer analyzer)  {
+      try  {
+         if(analyzer.doAutoResetState())  {
+            analyzer.resetState();
+            return;
+         }
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(analyzer, "analyzer", null, rx);
+      }
+      if(analyzer.wasAnalyzed())  {
+         throw  new IllegalStateException("Must resetState(). " + analyzer);
+      }
+   }
+   public static final Appendable getDebugApbl(GetDebugApbl_Fieldable fieldable, String fldbl_name)  {
+      try  {
+         return  fieldable.getDebugApbl();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(fieldable, fldbl_name, null, rx);
+      }
+   }
+//static...END
+}

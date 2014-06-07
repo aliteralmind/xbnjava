@@ -1,0 +1,52 @@
+<BODY>
+   <P>XBN-Java: A collection of generically-useful backend (non-GUI) programming utilities, featuring shareable self-returning method chains and regular expression convenience classes--XBN-Java is the foundation of <A HREF="https://github.com/aliteralmind/codelet">Codelet</A>.</P>
+
+   <P><OL>
+      <LI>XBN-Java is hosted by GitHub: <A HREF="https://github.com/aliteralmind/xbnjava">Project page</A>, <A HREF="https://github.com/aliteralmind/xbnjava/issues">issue tracker</A></LI>
+      <LI>JavaDoc: <A HREF="#navbar_top">This installation</A>, <A HREF="http://www.aliteralmind.com/docs/computer/programming/xbnjava/documentation/javadoc/overview-summary.html#description">latest version</A>, <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_documentation.zip">download zip</A>, <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/com/github/xbn/javadoc_output.txt">generation report</A></LI>
+      <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_source_code.zip">Download source</A>, including build files</LI>
+   </OL></P>
+
+   <a name="install"/><H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; Installation</U></H2>
+
+   <P>XBN-Java requires <A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java 1.7</A> (it may be compatible with earlier versions).</P>
+
+   <P>Adding the following elements to your <A HREF="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html">classpath</A> will install XBN-Java:</P>
+
+   <P><UL>
+      <LI>{@code INSTALLATION_DIR\codelet\z_build\jar_dependencies\guava-16.0.1.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\commons-collections4-4.0.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\commons-io-2.4.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\commons-lang3-3.3.2.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\java_stringtemplate-4.0.7.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\xbnjava_0p1p0_all.jar}</LI>
+   </UL></P>
+
+   <P>Details and alternatives:<OL>
+      <LI>XBN-Java: Choose exactly one of the following (the above classpath-string assumes you've chosen {@code xbnjava_0p1p0_all.jar}):<OL>
+         <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_all.jar">{@code xbnjava_0p1p0_all.jar}</A>: Core classes, example code, and unit tests</LI>
+         <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_core.jar">{@code xbnjava_0p1p0_core.jar}</A>: Core classes only</I></LI>
+      </OL></LI>
+      <LI>External libraries:<OL>
+         <LI>Apache <A HREF="http://commons.apache.org/proper/commons-io/">Commons IO</A> 2.4</LI>
+         <LI>Apache <A HREF="http://commons.apache.org/proper/commons-lang/">Commons Lang3</A> 3.3.2</LI>
+         <LI>Less critically: <A HREF="https://commons.apache.org/proper/commons-collections">Commons Collections</A> 4 (needed for {@code com.github.xbn.experimental.}<A HREF="{@docRoot}/com/github/xbn/experimental/listify/package-summary.html">{@code listify}</A>, and some {@code com.github.xbn.}<A HREF="{@docRoot}/com/github/xbn/array/package-summary.html">{@code array}</A>, mostly in {@code com.github.xbn.}<A HREF="{@docRoot}/com/github/xbn/array/helper/package-summary.html">{@code helper}</A>)</LI>
+      </OL></LI>
+      <LI><A HREF="https://code.google.com/p/guava-libraries/">Google Guava</A>, version 16.0.1</LI>
+   </OL></P>
+
+   <P><B>Building XBN-Java</B></P>
+
+   <P>In addition to the above, building XBN-Java requires the following:<OL>
+      <LI><A HREF="http://ant.apache.org/">Apache Ant</A> 1.9.3</LI>
+      <LI><A HREF="http://junit.org">JUnit</A> 4.8.2</LI>
+      <LI><A HREF="http://codelet.aliteralmind.com">Codelet</A> 0.1.0 (<A HREF="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/overview-summary.html#install">installation</A> instructions). Codelet is only necessary for displaying example code in the JavaDoc. JavaDoc will still work, but example code will be omitted, and one warning will be displayed for every non-working taglet. To install Codelet, add these additional elements to your classpath:<UL>
+         <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\templatefeather_0p1p0_all.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\guava-16.0.1.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\codelet_0p1p0_core.jar}</LI>
+      </UL>and <A HREF="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/overview-summary.html#install_taglets">install its taglets</A></LI>
+   </OL></P>
+
+   <P>Open a command prompt to the XBN-Java root installation directory, and call &quot;{@code ant help}&quot; for more information. The build process already has the Codelet taglets installed.</P>
+
+</BODY>

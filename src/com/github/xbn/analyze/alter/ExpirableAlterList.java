@@ -1,0 +1,352 @@
+/*license*\
+   XBN-Java Library
+
+   XBN-Java is a collection of generically-useful backend (non-GUI) programming utilities, featuring automated insertion of example code into JavaDoc, regular expression convenience classes, shareable self-returning method chains, and highly-configurable output for lists.
+
+   Copyright (C) 2014, Jeff Epstein
+
+   This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+
+   This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA*)
+\*license*/
+package  com.github.xbn.analyze.alter;
+   import  com.github.xbn.array.NullContainer;
+   import  com.github.xbn.array.CrashIfArray;
+   import  com.github.xbn.array.NullElement;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.text.padchop.EscapeAction;
+   import  com.github.xbn.text.padchop.NewVzblPadChopFor;
+   import  com.github.xbn.text.padchop.VzblPadChop;
+   import  java.lang.reflect.Array;
+   import  java.util.ArrayList;
+   import  java.util.List;
+   import  java.util.Objects;
+   import  static com.github.xbn.lang.XbnConstants.*;
+/**
+   <P>For a series of alterers that potentially expire--once an alter-element is expired, it is removed from the list. When all items are removed, the list itself is expired. This is intended for use in high-iteration loops, where one or more alterations are made once, or a limited number of times. An example is making replacements to each line in a large text file, where only the first match should be replaced.</P>
+
+   @see  com.github.xbn.lang.Expirable#isExpired()
+   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ **/
+public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
+//state
+   private final List<ValueAlterer<V,A>> alav;
+   private final boolean bShrtCrct;
+//internal
+   private static final VzblPadChop VPC_DBG = NewVzblPadChopFor.trimEscChopWithDDD(true, EscapeAction.ESCAPE, 50);
+
+   /*
+      <P>Create a new instance in which expirable elements are optional, and {@code null} elements are forbidden.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType) this}(xprbl_alterArray, {@link com.github.xbn.analyze.alter.ExpirableElements ExpirableElements}.{@link com.github.xbn.analyze.alter.ExpirableElements#OPTIONAL OPTIONAL}, multi_alterType)</CODE></P>
+   public ExpirableAlterList(ValueAlterer<V,A>[] xprbl_alterArray, MultiAlterType multi_alterType)  {
+      this(xprbl_alterArray, ExpirableElements.OPTIONAL, multi_alterType);
+   }
+    */
+   /**
+      <P>Create a new instance.</P>
+
+      @param  multi_alterType  May not be {@code null}. Get (the resulting boolean) with {@link com.github.xbn.analyze.alter.MultiAlterType#isShortCircuit() isShortCircuit}{@code ()}. If {@link com.github.xbn.analyze.alter.MultiAlterType#SHORT_CIRCUIT SHORT_CIRCUIT}, then only one element at a maximum may alter the value (the first element whose {@link com.github.xbn.analyze.alter.Alterer#wasAltered() wasAltered}{@code ()} is true, causes <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getAlteredPostResetCheck(V, A)">getAlteredPostResetCheck</A>(V,A)</CODE> to exit.) If {@link com.github.xbn.analyze.alter.MultiAlterType#CUMULATIVE CUMULATIVE}, then the value is altered by all elements in each call to {@code getAlteredPostResetCheck(V,A)}.
+      @param  xprbl_lmntsAre  If {@code ExpirableElements.}{@code com.github.xbn.analyze.alter.ExpirableElements#REQUIRED REQUIRED}, then no element in {@code xprbl_alterArray} may be {@link com.github.xbn.lang.Expirable#isExpired() expired}.
+      @param  xprbl_alterArray  May not be {@code null}, empty, or contain duplicates, and no element may be {@code null}. Each object in this array is {@link com.github.xbn.lang.Copyable#getObjectCopy() duplicated} internally.
+      @exception  IllegalArgumentException  If {@code xprbl_lmntsAre.}{@link com.github.xbn.analyze.alter.ExpirableElements#isRequired() isRequired}{@code ()} is {@code true} and any element's {@link com.github.xbn.lang.Expirable#doesExpire() doesExpire}{@code ()} is {@code false}.
+      @see  #ExpirableAlterList(ExpirableAlterList) this(xal)
+    **/
+   public ExpirableAlterList(ValueAlterer<V,A>[] xprbl_alterArray, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
+      super();
+      if(multi_alterType == null)  {
+         throw  new NullPointerException("multi_alterType");
+      }
+      bShrtCrct = multi_alterType.isShortCircuit();
+
+      CrashIfArray.nullEmpty(xprbl_alterArray, "xprbl_alterArray");
+
+      alav = new ArrayList<ValueAlterer<V,A>>(xprbl_alterArray.length);
+      for(int i = 0; i < xprbl_alterArray.length; i++)  {
+         ValueAlterer<V,A> avo = xprbl_alterArray[i];
+         try  {
+            if(xprbl_lmntsAre.isRequired()  &&  !avo.doesExpire())  {
+               throw  new IllegalArgumentException("xprbl_alterArray[" + i + "].doesExpire() is false, and xprbl_lmntsAre.isRequired() is true.");
+            }
+            if(avo.isExpired())  {
+               throw  new IllegalArgumentException("xprbl_alterArray[" + i + "].issExpired() is true.");
+            }
+         }  catch(RuntimeException rx)  {
+            Objects.requireNonNull(avo, "xprbl_alterArray[" + i + "]");
+            throw  CrashIfObject.nullOrReturnCause(xprbl_lmntsAre, "xprbl_lmntsAre", null, rx);
+         }
+         if(alav.contains(avo))  {
+            throw  new IllegalArgumentException("Duplicate: xprbl_alterArray[" + i + "]: " + avo);
+         }
+         alav.add(avo.getObjectCopy());  //Defensive copy
+      }
+
+      setDebug(debug_ifNonNull, (debug_ifNonNull != null));
+   }
+   /**
+      <P>Create a new instance as a duplicate of another.</P>
+
+      <P>This<OL>
+         <LI>Calls {@link com.github.xbn.analyze.alter.AbstractValueAlterer#AbstractValueAlterer(ValueAlterer) super}(to_copy)</LI>
+         <LI>Duplicates the internal list of alters (including state and counts)</LI>
+         <LI>Sets {@link #doShortCircuit() doShortCircuit}{@code ()} to {@code to_copy.doShortCircuit()}</LI>
+      </OL></P>
+
+      @param  to_copy  May not be {@code null}
+      @see  #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable)
+    **/
+   public ExpirableAlterList(ExpirableAlterList<V,A> to_copy)  {
+      super(to_copy);
+      alav = new ArrayList<ValueAlterer<V,A>>(to_copy.alav);
+      bShrtCrct = to_copy.doShortCircuit();
+   }
+   /**
+      <P>Should the object be altered, at most, by a single element, or should it be cumulatively altered by every element, every time?.</P>
+
+      @return  <UL>
+         <LI>{@code true}: At the most, only one element may alter the object in a single call to  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getAltered(V, A)">getAltered</A>(V,A)</CODE></LI>
+         <LI>{@code false}: All elements alter the object, cumulatively, in each call to {@code getAltered(V,A)}.</LI>
+      </UL>
+      @see  MultiAlterType
+    **/
+   public boolean doShortCircuit()  {
+      return  bShrtCrct;
+   }
+   /**
+      <P>The number of remaining--non-expired--alter-elements.</P>
+    **/
+   public int size()  {
+      return  alav.size();
+   }
+   /**
+      <P>Alter the object, and remove expired alter elements.</P>
+
+      <P>For every alter-element, this calls
+      <BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="AbstractValueAlterer.html#getAltered(V, A)">getAltered</A>(to_validate, to_alter)</CODE></P>
+
+      <P>When {@code to_alter} is altered by an element and {@link #doShortCircuit() doShortCircuit}{@code ()} is {@code true} (or that alteration is &quot;{@link com.github.xbn.analyze.alter.Alterer#needsToBeDeleted() needs to be deleted}&quot;), this function exits. Otherwise, the now-altered value of {@code to_alter} is passed to the next element to be further ({@link com.github.xbn.analyze.alter.MultiAlterType#CUMULATIVE cumulatively}) altered.</P>
+
+      @see  <CODE><A HREF="AbstractValueAlterer.html">AbstractValueAlterer</A>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="AbstractValueAlterer.html#getAltered(V, A)">getAltered</A>(V,A)</CODE>
+    **/
+   public A getAlteredPostResetCheck(V to_validate, A to_alter)  {
+//		if(isDebugOn()) {
+//			getDebugAptr().appentln("<XAL>    (" + size() + " elements, " +
+//				(isExpired() ? "" : "un") + "expired) to_alter=[" +
+//				VPC_DBG.get(to_alter) + "]");
+//		}
+
+      for(int i = 0; i < size(); i++)  {
+         ValueAlterer<V,A> avo = alav.get(i);
+         if(avo.isExpired())  {
+            alav.remove(i--);
+            continue;
+         }
+
+         try  {
+            to_alter = avo.getAltered(to_validate, to_alter);
+         }  catch(RuntimeException rx)  {
+            throw  new RuntimeException("Attempting [element " + i + "].getAltered(to_validate, to_alter)." + LINE_SEP +
+               " - Element " + i + "=" + avo + LINE_SEP +
+               " - to_validate=[" + to_validate + "]" + LINE_SEP +
+               " - to_alter=[" + to_alter + "]", rx);
+         }
+
+         if(avo.wasAltered())  {
+            if(isDebugOn()) { getDebugAptr().appentln("<XAL>    Altered by element " + i + ": to_alter=[" + VPC_DBG.get(to_alter) + "]"); }
+
+            declareAlteredNotDeleted();
+
+         }  else if(avo.needsToBeDeleted())  {
+            if(isDebugOn()) { getDebugAptr().appentln("<XAL>    Altered by element " + i + ": to_alter=[" + VPC_DBG.get(to_alter) + "]"); }
+
+            declareDeletedNotAltered();
+         }
+
+         if(avo.isExpired())  {
+            alav.remove(i--);
+            if(isDebugOn()) { getDebugAptr().appentln("<XAL>    Element " + (i + 1) + " expired. " + alav.size() + " remain"); }
+         }
+
+         if((wasAltered()  &&  doShortCircuit())  ||  needsToBeDeleted())  {
+//				if(isDebugOn()) { getDebugAptr().appentln("<XAL>    EXITING because either doShortCircuit() (currently " + doShortCircuit() + ") or needsToBeDeleted() (currently " + needsToBeDeleted() + ") is true."); }
+            break;
+         }
+      }
+
+      if(isExpired()  &&  isDebugOn()) { getDebugAptr().appentln("<XAL>    EXPIRED"); }
+
+      return  to_alter;
+   }
+   /**
+      <P>Did any alterer not make an alteration?. This is intended for use after all alterations are attempted.</P>
+
+      @return  {@code false} If at least one element's {@linkplain com.github.xbn.analyze.alter.Alterer#getAlteredCount() alteration count} is zero.
+    **/
+   public boolean isComplete()  {
+      for(ValueAlterer<V,A> alterer : alav)  {
+         if(alterer.getAlteredCount() == 0)  {
+            return  false;
+         }
+      }
+      return  true;
+   }
+   /**
+      <P>Append the {@code toString()}s of all elements that made no alteration.</P>
+    **/
+   public StringBuilder appendIncompleteInfo(StringBuilder to_appendTo)  {
+      if(isComplete())  {
+         throw  new IllegalStateException("isComplete() is true.");
+      }
+//System.out.println("appendIncompleteInfo.1");
+      for(ValueAlterer<V,A> alterer : alav)  {
+//System.out.println("appendIncompleteInfo.2, alterer.getAlteredCount()=" + alterer.getAlteredCount() + ", alterer=" + alterer + "");
+         if(alterer.getAlteredCount() == 0)  {
+//System.out.println("appendIncompleteInfo.3");
+            to_appendTo.append(" - ");
+            alterer.appendToString(to_appendTo);
+            to_appendTo.append(LINE_SEP);
+         }
+      }
+      to_appendTo.delete((to_appendTo.length() - LINE_SEP.length()),
+         to_appendTo.length());
+      return  to_appendTo;
+   }
+   /**
+      @return  {@code true}
+    **/
+   public boolean doesExpire()  {
+      return  true;
+   }
+   /**
+      @return  <CODE>({@link #size() size}() == 0)</CODE>
+    **/
+   public boolean isExpired()  {
+      return  (size() == 0);
+   }
+   /**
+      @return  <CODE>(new {@link #ExpirableAlterList(ExpirableAlterList) ExpirableAlterList}&lt;V,A&gt;(this))</CODE>
+    **/
+   public ExpirableAlterList<V,A> getObjectCopy()  {
+      return  (new ExpirableAlterList<V,A>(this));
+   }
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      super.appendToString(to_appendTo).append("Unexpired alterers:").append(LINE_SEP);
+      for(ValueAlterer<V,A> av : alav)  {
+         if(av.isExpired())  {
+            continue;
+         }
+         to_appendTo.append(av).append(LINE_SEP);
+      }
+      return  to_appendTo;
+   }
+   /**
+      <P>Reset state in preparation for the next alteration.</P>
+
+      <P>This calls<OL>
+         <LI><CODE>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetState() resetState}()</CODE></LI>
+         <LI>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetState() resetState}{@code ()}</LI>
+      </OL></P>
+    **/
+   public void resetState()  {
+      super.resetState();
+      for(ValueAlterer<V,A> av : alav)  {
+         av.resetState();
+      }
+   }
+   /**
+      <P>Reset alter counts to zero.</P>
+
+      <P>This calls<OL>
+         <LI><CODE>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetCounts() resetCounts}()</CODE></LI>
+         <LI>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetCounts() resetCounts}{@code ()}</LI>
+      </OL></P>
+    **/
+   public void resetCounts()  {
+      super.resetCounts();
+      for(ValueAlterer<V,A> av : alav)  {
+         av.resetCounts();
+      }
+   }
+   /**
+      <P>Reset state after a deletion is made.</P>
+
+      <P>This calls<OL>
+         <LI><CODE>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetForDeletion() resetForDeletion}()</CODE></LI>
+         <LI>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetForDeletion() resetForDeletion}{@code ()}</LI>
+      </OL></P>
+    **/
+   public void resetForDeletion()  {
+      super.resetForDeletion();
+      for(ValueAlterer<V,A> av : alav)  {
+         av.resetForDeletion();
+      }
+   }
+   /**
+      <P>Set overall debugging. This does not turn debugging on in any alter-element.</P>
+
+      <P>This calls<OL>
+         <LI>{@link com.github.xbn.io.SimpleDebuggable#setDebug(Appendable, boolean) setDebug}{@code (destination, is_on)}</LI>
+      </OL></P>
+    **/
+   public void setDebug(Appendable destination, boolean is_on)  {
+      super.setDebug(destination, is_on);
+   }
+   /**
+      <P>Set extra error information.</P>
+
+      <P>This calls<OL>
+         <LI>{@link com.github.xbn.analyze.alter.AbstractValueAlterer#setExtraErrInfo(Object) setExtraErrInfo}{@code (info)}</LI>
+         <LI>For every element: {@link com.github.xbn.lang.ExtraErrInfoable#setExtraErrInfo(Object) setExtraErrInfo}{@code (info)}</LI>
+      </OL></P>
+    **/
+   public void setExtraErrInfo(Object info)  {
+      super.setExtraErrInfo(info);
+      for(ValueAlterer<V,A> av : alav)  {
+         av.setExtraErrInfo(info);
+      }
+   }
+   /**
+      <P>Get a new alterer array from the provided <I>ordered</I> elements, optionally excluding {@code null} elements.</P>
+
+      @param  orderedAlterers_whichMayBeNull  May not be {@code null} and <I>should</I> not be empty or contain duplicates.
+      @param  null_element  May not be {@code null}. If {@link com.github.xbn.array.NullElement#OK OK}, {@code null} elements are excluded from the returned array. If {@link com.github.xbn.array.NullElement#BAD BAD}, all elements must be non-{@code null}.
+      @param  class_ofTypeL  May not be {@code null}.
+      @param  alterers_varName  Descriptive name of {@code orderedAlterers_whichMayBeNull}. <I>Should</I> not be {@code null} or empty.
+      @return  A new non-{@code null} array of line-alterers containing all non-{@code null} parameters, if any.
+      @exception  NullPointerException  If {@code null_element.isBad()} and an element is null.
+    **/
+   public static final <V,A,L extends ValueAlterer<V,A>> L[] getAltererArrayFromOrderedElementsIfNonNull(L[] orderedAlterers_whichMayBeNull, NullElement null_element, Class<L> class_ofTypeL, String alterers_varName)  {
+
+      List<L> alterList = null;
+      try  {
+         alterList = new ArrayList<L>(orderedAlterers_whichMayBeNull.length);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(orderedAlterers_whichMayBeNull, "orderedAlterers_whichMayBeNull", null, rx);
+      }
+
+      for(int i = 0; i < orderedAlterers_whichMayBeNull.length; i++)  {
+         L alterer = orderedAlterers_whichMayBeNull[i];
+         if(alterer != null)  {
+            alterList.add(alterer);
+         }  else  {
+            try  {
+               if(null_element.isBad())  {
+                  throw  new NullPointerException("Element " + i + " in " + alterers_varName + ".");
+               }
+            }  catch(RuntimeException rx)  {
+               throw  CrashIfObject.nullOrReturnCause(null_element, "null_element", null, rx);
+            }
+         }
+      }
+      try  {
+         @SuppressWarnings("unchecked")
+         L[] alterers = (L[])Array.newInstance(class_ofTypeL, alterList.size());
+         return  alterList.toArray(alterers);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(class_ofTypeL, "class_ofTypeL", null, rx);
+      }
+   }
+}
