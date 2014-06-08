@@ -1,7 +1,5 @@
 /*license*\
-   XBN-Java Library
-
-   Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
    This software is dual-licensed under the:
    - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
@@ -27,7 +25,8 @@ package  com.github.xbn.regexutil.z;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor}.</P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R extends Needer> extends AbstractNeedable<X,R> implements RegexGroupExtractor_Fieldable  {
    public Pattern      pWithGroups    ;

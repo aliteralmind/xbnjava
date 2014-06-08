@@ -87,20 +87,15 @@
          <replacevalue><![CDATA[<meta name="viewport" content="width=device-width" />
 </HEAD>]]></replacevalue>
       </replace>
+</target>
+<target name="doc2" description="Generates javadoc documentation.">
+      <java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true">
+         <arg value="${dir_build_docs_javadoc}"/>
+         <arg value="com.github.xbn."/>
+         <arg value="io,keyed,linefilter,neederneedable,number,util"/>
+         <arg value="debugminimal"/>
+      </java>
    </target>
-
-   <!--replaceregexp byline="true">
-      <regexp pattern="&lt;([A-Z](?:,[A-Z])?) extends <a href=\""/>
-         <substitution expression="<BR> &nbsp; &nbsp; &lt;\1 extends <a href=\""/>
-      <fileset dir="${dir_build_docs_javadoc}">
-         <include name="**/linefilter/package-summary.html"/>
-         <include name="**/neederneedable/package-summary.html"/>
-         <include name="**/number/package-summary.html"/>
-         <include name="**/util/package-summary.html"/>
-         <include name="**/io/package-summary.html"/>
-         <include name="**/keyed/package-summary.html"/>
-      </fileset>
-   </replaceregexp-->
 </project>
 
 

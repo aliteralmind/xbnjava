@@ -1,7 +1,5 @@
 /*license*\
-   Codelet
-
-   Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
    This software is dual-licensed under the:
    - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
@@ -62,7 +60,8 @@ package  com.github.xbn.linefilter;
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.z.LineFilter_CfgForNeeder#ifBlockOrLineOrNotActive(ActiveBlockLines, ActiveSingleLines, InactiveLines) ifBlockOrLineOrNotActive}{@code (iba,ila,iia)}, <CODE>{@link com.github.xbn.linefilter.z.LineFilter_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</CODE>, <CODE>{@link com.github.xbn.linefilter.z.LineFilter_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</CODE>, {@link com.github.xbn.linefilter.z.LineFilter_CfgForNeeder#blockMarksExclusive() blockMarksExclusive}{@code ()}, <CODE>{@link com.github.xbn.linefilter.z.LineFilter_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
    </UL></P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://codelet.aliteralmind.com">{@code http://codelet.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/codelet">{@code https://github.com/aliteralmind/codelet}</A>
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class LineFilter<O,L extends LineObject<O>> extends AbstractAnalyzer implements Named, Iterable<LineFilter<O,L>>  {
 //config: immutable

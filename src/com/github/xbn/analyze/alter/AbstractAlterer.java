@@ -1,7 +1,5 @@
 /*license*\
-   XBN-Java Library: http://xbnjava.aliteralmind.com
-
-   Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
    This software is dual-licensed under the:
    - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
@@ -21,7 +19,8 @@ package  com.github.xbn.analyze.alter;
 /**
    <P>Abstract implementation of {@code Alterer}. Classes needing to implement {@code Alterer}, that cannot extend this class, should use {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer}.</P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractAlterer implements Alterer  {
    private AltererComposer ac = null;

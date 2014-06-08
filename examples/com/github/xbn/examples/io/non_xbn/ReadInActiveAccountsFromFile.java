@@ -1,13 +1,16 @@
 /*license*\
-   XBN-Java is a collection of generically-useful backend (non-GUI) programming utilities, featuring automated insertion of example code into JavaDoc, regular expression convenience classes, shareable self-returning method chains, and highly-configurable output for lists.
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
-   Copyright (C) 2014, Jeff Epstein
+   This software is dual-licensed under the:
+   - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
+   - Apache Software License (ASL) version 2.0.
 
-   This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+   Either license may be applied at your discretion. More information may be found at
+   - http://en.wikipedia.org/wiki/Multi-licensing.
 
-   This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+   The text of both licenses is available in the root directory of this project, under the names "LICENSE_lgpl-3.0.txt" and "LICENSE_asl-2.0.txt". The latest copies may be downloaded at:
+   - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
+   - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.io.non_xbn;
    import  java.util.Iterator;
@@ -20,7 +23,8 @@ package  com.github.xbn.examples.io.non_xbn;
 
    <P>{@code java com.github.xbn.examples.io.non_xbn.ReadInActiveAccountsFromFile xbn\examples\io\non_xbn\\username_password_active.txt}</P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ReadInActiveAccountsFromFile  {
    public static final void main(String[] rqdInputPathInStrArray)  {

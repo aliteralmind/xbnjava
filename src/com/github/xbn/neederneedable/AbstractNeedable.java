@@ -13,7 +13,8 @@ package  com.github.xbn.neederneedable;
 /**
    <P>Abstract implementation of {@code Needable}. For classes needing to implement {@code Needable}, that cannot extend {@code AbstractNeedable}, see {@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}.</P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O,R>  {
    private NeedableComposer<O,R> nblc = null;

@@ -73,18 +73,11 @@ Installation of the XBN-Java build process is done in a single step: By changing
 --To do a full build of XBN-Java--
 
 The *documentation* for both XBN-Java and Template Feather use codelets. But Codelet is based on both XBN-Java and Template Feather. Hence, the rigamarole:
-  -1- Build XBN-Java proper (part 1 of 2):
-     -1.a- ant refresh
-     -1.b- ant pubprecodelet
-  -2- Build Template Feather (part 1 of 2):
-     -2.a- ant clean
-     -2.b- ant pubprecodelet
-  -3- Build Codelet:
-     - ant cleanpublish
-  -4- Finish building XBN-Java proper (part 2 of 2):
-     - ant pubpostcodelet
-  -5- Finish building Template Feather (part 2 of 2):
-     - ant pubpostcodelet
+  -1- Build XBN-Java proper (part 1 of 2): pubprecodelet
+  -2- Build Template Feather (part 1 of 2): pubprecodelet
+  -3- Build Codelet: cleanpublish
+  -4- Finish building XBN-Java proper (part 2 of 2): pubpostcodelet
+  -5- Finish building Template Feather (part 2 of 2): pubpostcodelet
 
 Documentation for both XBN-Java and Template Feather can be generated before Codelet is built. The example codes will be excluded.</echo>
    </target>
@@ -107,6 +100,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
    </target>
 
    <target name="pubprecodelet" description="compileproper, compileproper2, pubprecodelet2">
+      <antcall target="refresh"/>
       <record name="${dir_build}build_log_pre_codelet.txt" action="start"/>
       <antcall target="compileproper"/>
       <antcall target="compileproper2"/>
@@ -131,7 +125,9 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <antcall target="-autocopycodeletjar"/>
       <antcall target="compilepostcodelet"/>
       <antcall target="doc"/>
+      <antcall target="doc2"/>
       <antcall target="zip"/>
+      <antcall target="zip2"/>
       <record name="${dir_build}build_log_post_codelet.txt" action="stop"/>
    </target>
 
@@ -215,6 +211,8 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <zip destfile="${xbn_and_all_dependency_jars_zip}"
          whenempty="fail"
          basedir="${xbn_and_all_dependency_jars_working_dir}"/>
+</target>
+<target name="zip2" description="Generates javadoc documentation.">
    </target>
 
    <!-- See http://ant.apache.org/faq.html#propertyvalue-as-name-for-property -->

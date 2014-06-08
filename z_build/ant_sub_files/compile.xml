@@ -229,6 +229,8 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="util/DefaultValueFor.java"/>
 <!-- 5/8/2014: First class requiring com.google.common: -->
+      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
+         includes="lang/BadDuplicateException.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="util/EnumUtil.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" debug="true" debuglevel="lines,vars,source" listfiles="true"
@@ -386,8 +388,6 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
          includes="io/DebugLevel.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
          includes="lang/Expirable.java"/>
-      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
-         includes="lang/BadDuplicateException.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
          includes="lang/LengthLessThanRequiredException.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
@@ -592,6 +592,8 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
          includes="lang/RTInstantiationException.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
          includes="lang/reflect/RTNoSuchMethodException.java"/>
+      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
+         includes="lang/reflect/RTNoSuchFieldException.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
          includes="lang/reflect/ReflectRtxUtil.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="false" debuglevel="lines,vars,source" listfiles="true"
@@ -1063,8 +1065,6 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
          includes="analyze/alter/NewAlterValueWhenFor.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="util/PropertiesUtil.java"/>
-      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
-         includes="lang/reflect/RTNoSuchFieldException.java"/>
 </target>
 <target name="compileproper2" description="For starting compilation in the middle of the list, when needed.">
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"

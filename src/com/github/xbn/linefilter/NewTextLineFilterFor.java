@@ -1,7 +1,5 @@
 /*license*\
-   Codelet
-
-   Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
    This software is dual-licensed under the:
    - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
@@ -30,7 +28,8 @@ package  com.github.xbn.linefilter;
 /**
    <P>Convenience functions for creating text-line filters.</P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://codelet.aliteralmind.com">{@code http://codelet.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/codelet">{@code https://github.com/aliteralmind/codelet}</A>
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NewTextLineFilterFor  {
    /**
@@ -78,7 +77,7 @@ public class NewTextLineFilterFor  {
 
       <P><B>Input</B></P>
 
-{@.file.textlet com\\github\\aliteralmind\\codelet\\examples\\linefilter\\doc-files\\BetweenTwoLinesWithReplaceXmpl_input.txt}
+{@.file.textlet com\\github\\xbn\\examples\\linefilter\\doc-files\\BetweenTwoLinesWithReplaceXmpl_input.txt}
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.BetweenTwoLinesWithReplaceXmpl("examples\\com\\github\\xbn\\examples\\linefilter\\doc-files\\BetweenTwoLinesWithReplaceXmpl_input.txt"):eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
 

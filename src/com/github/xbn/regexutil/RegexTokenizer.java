@@ -1,7 +1,5 @@
 /*license*\
-   XBN-Java Library
-
-   Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
    This software is dual-licensed under the:
    - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
@@ -49,7 +47,8 @@ package  com.github.xbn.regexutil;
 <P>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
 <BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</A>}</P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RegexTokenizer extends SimpleDebuggable implements Iterator<TokenizerElement>, Copyable, PatternHaser  {
 //config: immutable
