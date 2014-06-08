@@ -103,15 +103,13 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <copy file="${codelet.jar.path.in.codelet.build.dir}" todir="${dir_sandbox_jar_dependencies}"/>
    </target>
    <target name="-autocopycodeletjar" if="do.auto.copy.codelet.jar">
-      <copy file="${codelet.jar.path.in.codelet.build.dir}" todir="${dir_sandbox_jar_dependencies}"/>
+      <antcall target="copycodeletjar"/>
    </target>
 
-   <target name="pubprecodelet" description="compiletabs, compiletabs2, compileposttabs, compileposttabs2, pubprecodelet2">
+   <target name="pubprecodelet" description="compileproper, compileproper2, pubprecodelet2">
       <record name="${dir_build}build_log_pre_codelet.txt" action="start"/>
-      <antcall target="compiletabs"/>
-      <antcall target="compiletabs2"/>
-      <antcall target="compileposttabs"/>
-      <antcall target="compileposttabs2"/>
+      <antcall target="compileproper"/>
+      <antcall target="compileproper2"/>
       <antcall target="pubprecodelet2"/>
       <record name="${dir_build}build_log_pre_codelet.txt" action="stop"/>
    </target>
@@ -138,7 +136,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
    </target>
 
    <target name="unit" description="Executes com.github.xbn.test.UnitTestRunner">
-      <java classname="com.github.xbn.test.UnitTestRunner"/>
+      <java classname="com.github.xbn.test.UnitTestRunner" failonerror="true"/>
    </target>
 
       <property name="download_zip_source_name" value="${project_name_for_dir}_source_code.zip"/>
@@ -151,7 +149,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       </copy>
 
       <echo>xbnjavabuild.CreateTempBuildAndCodeletPropsForPublish</echo>
-      <java classname="xbnjavabuild.CreateTempBuildAndCodeletPropsForPublish">
+      <java classname="xbnjavabuild.CreateTempBuildAndCodeletPropsForPublish" failonerror="true">
          <arg value="${dir_sandbox}"/>
          <arg value="${codelet.config.dir}${fs}"/>
          <arg value="subproject"/>
@@ -175,7 +173,6 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
             <exclude name=".git"/>
  -->
             <exclude name="**/offline_package_lists/*"/>
-            <exclude name="**/offline_package_lists/*"/>
             <exclude name="build.properties"/>
             <exclude name="**/codelet.properties"/>
          </fileset>
@@ -193,7 +190,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
             <include name="**/codelet.properties"/>
          </fileset>
          <fileset dir="${dir_sandbox}">
-            <include name="**/offline_package_lists/java.txt"/>
+            <include name="**/offline_package_lists/*"/>
          </fileset>
       </zip>
 
@@ -203,6 +200,21 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <zip destfile="${download_zip_docs}" whenempty="fail"
          basedir="${dir_build_parent}"
          includes="${project_name_for_dir}${fs}documentation/**/*"/>
+
+
+      <property name="xbn_and_all_dependency_jars_working_dir" value="${dir_working}${project_name_for_dir}_and_all_dependency_jars"/>
+
+      <copy todir="${xbn_and_all_dependency_jars_working_dir}">
+         <fileset dir="${dir_sandbox_jar_dependencies}"/>
+      </copy>
+      <copy todir="${xbn_and_all_dependency_jars_working_dir}">
+         <fileset dir="${dir_build_download}" includes="xbn*.jar"/>
+      </copy>
+
+      <property name="xbn_and_all_dependency_jars_zip" value="${dir_build_download}${project_name_for_dir}_and_all_dependency_jars.zip"/>
+      <zip destfile="${xbn_and_all_dependency_jars_zip}"
+         whenempty="fail"
+         basedir="${xbn_and_all_dependency_jars_working_dir}"/>
    </target>
 
    <!-- See http://ant.apache.org/faq.html#propertyvalue-as-name-for-property -->
@@ -214,10 +226,8 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       </sequential>
    </macrodef>
 
-   <target name="pubposttabs" description="Jeff Epstein-only replacement for pubprecodelet (part 2 of 2). DO NOT USE. See 'compilehelp'.">
+   <target name="pubposttabs" description="Jeff Epstein-only replacement for pubprecodelet2. DO NOT USE. See 'compilehelp'.">
       <record name="${dir_build}build_log_post_tabs_pre_codelet.txt" action="start"/>
-      <antcall target="compileposttabs"/>
-      <antcall target="compileposttabs2"/>
       <antcall target="pubprecodelet2"/>
       <record name="${dir_build}build_log_post_tabs_pre_codelet.txt" action="stop"/>
    </target>

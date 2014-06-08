@@ -28,6 +28,7 @@ package  com.github.xbn.analyze.alter;
    <P>For a series of alterers that potentially expire--once an alter-element is expired, it is removed from the list. When all items are removed, the list itself is expired. This is intended for use in high-iteration loops, where one or more alterations are made once, or a limited number of times. An example is making replacements to each line in a large text file, where only the first match should be replaced.</P>
 
    @see  com.github.xbn.lang.Expirable#isExpired()
+   @see  com.github.xbn.linefilter.ExpirableTextLineAlterList
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
@@ -180,6 +181,13 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
 
       return  to_alter;
    }
+   public void crashIfIncomplete(String msgPrefix_ifNonNull)  {
+      if(!isComplete())  {
+         throw  new AlterationNotMadeException(
+            ((msgPrefix_ifNonNull == null) ? "" : msgPrefix_ifNonNull) +
+            appendIncompleteInfo((new StringBuilder())).toString());
+      }
+   }
    /**
       <P>Did any alterer not make an alteration?. This is intended for use after all alterations are attempted.</P>
 
@@ -200,11 +208,10 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       if(isComplete())  {
          throw  new IllegalStateException("isComplete() is true.");
       }
-//System.out.println("appendIncompleteInfo.1");
+
+      to_appendTo.append("Alterations attempted but not made:").append(LINE_SEP);
       for(ValueAlterer<V,A> alterer : alav)  {
-//System.out.println("appendIncompleteInfo.2, alterer.getAlteredCount()=" + alterer.getAlteredCount() + ", alterer=" + alterer + "");
          if(alterer.getAlteredCount() == 0)  {
-//System.out.println("appendIncompleteInfo.3");
             to_appendTo.append(" - ");
             alterer.appendToString(to_appendTo);
             to_appendTo.append(LINE_SEP);

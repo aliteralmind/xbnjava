@@ -15,6 +15,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
  */
 package  com.github.xbn.io;
+   import  java.io.File;
    import  com.github.xbn.lang.CrashIfObject;
    import  java.io.FileWriter;
    import  java.io.BufferedWriter;
@@ -132,12 +133,24 @@ public class NewPrintWriterToFile  {
    /**
       <P>Create new {@code PrintWriter} that writes to a file as configured.</P>
 
-      @return  <CODE>NewPrintWriterToFile.{@link #build(boolean, boolean, String) build}({@link #doAppend() doAppend}(), {@link #doAutoFlush() doAutoFlush}(), path)</CODE>
+      @return  <CODE>{@link #build(File) build}(new {@link java.io.File#File(String) File}(path))</CODE>
+    **/
+   public PrintWriter build(String path)  {
+      try  {
+         return  build(new File(path));
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(path, "path", null, rx);
+      }
+   }
+   /**
+      <P>Create new {@code PrintWriter} that writes to a file as configured.</P>
+
+      @return  <CODE>NewPrintWriterToFile.{@link #build(File, boolean, boolean) build}(file, {@link #doAppend() doAppend}(), {@link #doAutoFlush() doAutoFlush}())</CODE>
       @see  #buildTA(String) buildTA(s)
       @see  #buildMuteableTA(String) buildMuteableTA(s)
     **/
-   public PrintWriter build(String path)  {
-      return  NewPrintWriterToFile.build(doAppend(), doAutoFlush(), path);
+   public PrintWriter build(File file)  {
+      return  NewPrintWriterToFile.build(file, doAppend(), doAutoFlush());
    }
    /**
       <P>Create new {@code PrintWriter}, wrapped in a {@code TextAppender}, that writes to a file as configured.</P>
@@ -155,33 +168,35 @@ public class NewPrintWriterToFile  {
    public TAAppendMutable<PrintWriter> buildMuteableTA(String path)  {
       return  (new TAAppendMutable<PrintWriter>(build(path)));
    }
+   public static final PrintWriter build(String path, boolean do_append, boolean do_autoFlush)  {
+      return  build(new File(path), do_append, do_autoFlush);
+   }
    /**
       <P>Create a new {@code PrintWriter} that writes to a file with specific configuration.</P>
 
+      @param  file  Must be non-{@code null} and writeable.
       @param  do_append  If {@code true}, the file is appended to. Existing text is left untouched. If {@code false}, existing text is erased.
       @param  do_autoFlush  If {@code true} output is automatically {@link java.io.PrintWriter#flush() flush}ed. If {@code false}, output must be manually flushed.
-      @param  path  The path to the file. Must be non-{@code null} and a write-<I>able</I> file path.
 
-      @return  <CODE>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(String, boolean) FileWriter}(path, do_append)), do_autoFlush))</CODE>
+      @return  <CODE>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(File, boolean) FileWriter}(file, do_append)), do_autoFlush))</CODE>
       @exception  RTFileNotFoundException  If a {@link java.io.FileNotFoundException FileNotFoundException} is thrown
       @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
       @exception  SecurityException  If the file is not writable.
       @see  #build(String)
     **/
-   public static final PrintWriter build(boolean do_append, boolean do_autoFlush, String path)  {
+   public static final PrintWriter build(File file, boolean do_append, boolean do_autoFlush)  {
       try  {
          //Create the object to actually write to the file.
-         return  (new PrintWriter(new BufferedWriter(new FileWriter(path, do_append)), do_autoFlush));
+         return  (new PrintWriter(new BufferedWriter(new FileWriter(file, do_append)), do_autoFlush));
 
          //The PrintWriter was successfully created.
 
       }  catch(FileNotFoundException fnfx)  {
-         throw  new RTFileNotFoundException(sIOXPRE + path + "\"", fnfx);
+         throw  new RTFileNotFoundException(sIOXPRE + file.getAbsolutePath(), fnfx);
       }  catch(IOException iox)  {
-         throw  new RTIOException(sIOXPRE + path + "\"", iox);
+         throw  new RTIOException(sIOXPRE + file.getAbsolutePath(), iox);
       }
    }
-
-      private static String sIOXPRE = "newPrintWriterForFile: path must point to a writeABLE file (the directory must exist, but the file need not exist). path=\"";
+      private static String sIOXPRE = "newPrintWriterForFile: path must point to a writeABLE file (the directory must exist, but the file need not exist). file: ";
 }
 

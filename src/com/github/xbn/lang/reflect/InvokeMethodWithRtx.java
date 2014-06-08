@@ -22,7 +22,9 @@ package  com.github.xbn.lang.reflect;
 /**
    <P>Builder for invoking an already obtained method, with runtime errors only (the original exception is accessible with {@link java.lang.Throwable#getCause() getCause}{@code ()}).</P>
 
-{@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokeMethodWithRtxXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokeMainWithRtxXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+
+{@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokePrivateStaticMethodWithRtxXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
 
    @see  <CODE>{@link com.github.xbn.array.ArrayUtil}.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/array/ArrayUtil.html#getStringArrayOrNull(E[], boolean, java.lang.String)">getStringArrayOrNull</A>(E[],b,s)</CODE>
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

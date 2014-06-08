@@ -33,17 +33,16 @@ public class RegexTokenizerXmpl  {
 
       System.out.println("Searching: \"" + sToSearch + "\"");
 
-      System.out.println("Numbers only:");
-         System.out.println("Capture numbers:");
-            RegexTokenizer rt = new RegexTokenizer_Cfg(sRENumCommaNum).
-               separators().toTokenize(sToSearch).
-               //debugTo(System.out).
-               build();
-            while(rt.hasNext())  {
-               System.out.println(rt.next().getText());
-            }
+      System.out.println("Numbers:");
+         RegexTokenizer rt = new RegexTokenizer_Cfg(sRENumCommaNum).
+            separators().toTokenize(sToSearch).
+            //debugTo(System.out).
+            build();
+         while(rt.hasNext())  {
+            System.out.println(rt.next().getText());
+         }
 
-      System.out.println("Betweens only:");
+      System.out.println("Betweens:");
          rt.setNewSearch(sREBetweens, sToSearch, -1);
          while(rt.hasNext())  {
             System.out.println(rt.next().getText());

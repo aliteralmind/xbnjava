@@ -30,8 +30,6 @@ package  com.github.xbn.regexutil;
 
    <P><I>Derived from {@code RETokenize}: <a href="http://www.exampledepot.com/egs/java.util.regex/Tokenize.html">{@code http://www.exampledepot.com/egs/java.util.regex/Tokenize.html}</a>, downloaded 8/13/2010.</I></P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
-
    <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexTokenizer_Cfg RegexTokenizer_Cfg}</H3>
 
    <P><UL>
@@ -43,23 +41,13 @@ package  com.github.xbn.regexutil;
       <LI><B>Other:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#toTokenize(Object) toTokenize}(o)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#lineNumber(int) lineNumber}(i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
    </UL></P>
 
-   <H3>Example 1/2</H3>
-
 {@.codelet.and.out com.github.xbn.examples.regexutil.TemplateTokenizer:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
 
-<PRE>{@literal YYY}</PRE>
 
-   <H4><U>Output</U></H4>
-
-<PRE>{@literal [C:\]java com.github.xbn.examples.regexutil.RegexTokenizerXmpls
-YYY}</PRE>
-
-<H3>Splitting comma-separated numbers in comma-separated parens</H3>
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
 
 <P>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
 <BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</A>}</P>
-
-<PRE>{@literal com.github.xbn.examples.regexutil.NumCommaNumSplitXMpl}</PRE>
 
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/

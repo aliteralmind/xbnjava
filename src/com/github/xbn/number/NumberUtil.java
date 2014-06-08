@@ -73,7 +73,7 @@ public class NumberUtil  {
       <BR>&quot;Generally, if you need to find the middle of items between index low (inclusive) and high (exclusive), it's mathematically
       <BR> &nbsp; &nbsp; {@code int mid = (low + high) / 2}
       <BR>But due to arithmetic overflow in limited-precision integer, the proper formula is
-      <BR> &nbsp; &nbsp; {@code int mid = (low + high) &gt;&gt;&gt; 1}&quot;</P>
+      <BR> &nbsp; &nbsp; {@code int mid = (low + high) >>> 1}&quot;</P>
 
       <P>{@code low} <I>should</I> be less-than-or-equal-to {@code high}.</P>
     **/
@@ -137,7 +137,7 @@ public class NumberUtil  {
 
       <PRE>((new Long(num)).toString()).length()</PRE>
 
-      <P><FONT SIZE="-1"><I>This was an intriguing thing for me to figure out. The answer to "how many digits does my number contain" is "how many times can you divide ten into it?..plus one". Take a look at the code.</I></FONT></P>
+      <P><FONT SIZE="-1"><I>The answer to &quot;how many digits does a number contain?&quot; is &quot;how many times can you divide ten into it?..plus one&quot;.</I></FONT></P>
 
       @param  num  The number you want to know the amount of digits in. Trailing zeros (zeros on the left side of the number) are ignored, however, the number zero is considered a one-digit number.
       @return  The number of digits in num. For example:<UL>

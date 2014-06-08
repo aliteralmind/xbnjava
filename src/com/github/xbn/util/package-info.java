@@ -1,4 +1,4 @@
 /**
-   <P>Utilites for Java code, reflection, bit flags, {@code null}-is-okay equality, and other functionality.</P>
+   <P>Utilites for Java code, bit flags, booleans, and properties.</P>
  **/
 package  com.github.xbn.util;

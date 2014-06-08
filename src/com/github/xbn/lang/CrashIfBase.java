@@ -20,7 +20,7 @@ package  com.github.xbn.lang;
    import  java.io.IOException;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
-   <P>Basic error message construction. It is encouraged that this class--but none of its sub-classes--be imported statically:
+   <P>Basic error message construction. It is encouraged that this class be <A HREF="http://docs.oracle.com/javase/8/docs/technotes/guides/language/static-import.html">statically imported</A> &quot;en masse&quot;:
    <BR> &nbsp; &nbsp; {@code import  static com.github.xbn.lang.CrashIfBase.*;}</P>
 
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

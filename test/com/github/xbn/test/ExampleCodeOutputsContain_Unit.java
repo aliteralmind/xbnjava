@@ -19,7 +19,8 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.lang_builder_blind_BlindBuilderXmpl();
    	test.lang_builder_bloch_BlochBuilderXmpl();
    	test.lang_builder_finalv_UCBlindBuilderTest();
-   	test.lang_reflect_InvokeMethodWithRtxXmpl();
+   	test.lang_reflect_InvokeMainWithRtxXmpl();
+   	test.lang_reflect_InvokePrivateStaticMethodWithRtxXmpl();
    	test.neederneedable_NeedableNeederXmpl();
    	test.number_FractionXmpl();
    	test.regexutil_RegexGroupExtractorXmpl();
@@ -241,10 +242,16 @@ public class ExampleCodeOutputsContain_Unit  {
          "[               Hi Ho! Kermi...]", "[he Frog here.  ]");
    }
    @Test
-   public void lang_reflect_InvokeMethodWithRtxXmpl()  {
+   public void lang_reflect_InvokeMainWithRtxXmpl()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
-         com.github.xbn.examples.lang.reflect.InvokeMethodWithRtxXmpl.class,
-         "Hello from ExecutePrivateStaticFuncReflectivelyXmpl$DemoToInvoke.main(s[])!", "Returned from getPrivateString: HEY!");
+         com.github.xbn.examples.lang.reflect.InvokeMainWithRtxXmpl.class,
+         "Hello from main!");
+   }
+   @Test
+   public void lang_reflect_InvokePrivateStaticMethodWithRtxXmpl()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.lang.reflect.InvokeMainWithRtxXmpl.class,
+         "Returned from getPrivateString: HEY!");
    }
    @Test
    public void util_JavaUtilInitializedValuesXmpl()  {

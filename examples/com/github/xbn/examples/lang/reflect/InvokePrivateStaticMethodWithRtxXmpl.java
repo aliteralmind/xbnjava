@@ -22,7 +22,7 @@ package  com.github.xbn.examples.lang.reflect;
 /**
    <P>Uses {@code com.github.xbn.util.}{@link com.github.xbn.lang.reflect.GetMethodWithRtx GetMethodWithRtx} and {@link com.github.xbn.lang.reflect.InvokeMethodWithRtx InvokeMethodWithRtx}, (both of which use {@link com.github.xbn.lang.reflect.ReflectRtxUtil ReflectRtxUtil}) to invoke a specific method, which may be non-public.</P>
 
-   <P><CODE>java com.github.xbn.examples.lang.reflect.InvokeMethodWithRtxXmpl</CODE></P>
+   <P><CODE>java com.github.xbn.examples.lang.reflect.InvokePrivateStaticMethodWithRtxXmpl</CODE></P>
 
    <P>See (viewed 1/23/2014)
    <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/4770425/how-do-i-invoke-a-private-static-method-using-reflection-java">http://stackoverflow.com/questions/4770425/how-do-i-invoke-a-private-static-method-using-reflection-java</A></CODE>
@@ -30,26 +30,12 @@ package  com.github.xbn.examples.lang.reflect;
 
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class InvokeMethodWithRtxXmpl  {
+public class InvokePrivateStaticMethodWithRtxXmpl  {
    public static final void main(String[] ignored)  {
-      System.out.println("Invoking a main method:");
-
-         Method m = new GetMethodWithRtx(Declared.NO).
-            containingClass(DemoToInvoke.class).
-            mainMethod().get();
-
-         m.setAccessible(true);  //DemoToInvoke is package-protected
-
-         new InvokeMethodWithRtx(m).
-            noCmdLineParams().	  //For main(s[]) method only
-            invokeVoid();
-
-         System.out.println();
-
       System.out.println("Invoking a private static method:");
 
-         m = new GetMethodWithRtx(Declared.YES).
-            containingClass(InvokeMethodWithRtxXmpl.class).
+         Method m = new GetMethodWithRtx(Declared.YES).
+            containingClass(InvokePrivateStaticMethodWithRtxXmpl.class).
             name("getPrivateString").noParams().
             get();
 
@@ -64,9 +50,4 @@ public class InvokeMethodWithRtxXmpl  {
       private static final String getPrivateString()  {
          return  "HEY!";
       }
-}
-class DemoToInvoke  {
-   public static final void main(String[] ignored)  {
-      System.out.println("Hello from ExecutePrivateStaticFuncReflectivelyXmpl$DemoToInvoke.main(s[])!");
-   }
 }

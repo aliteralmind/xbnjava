@@ -21,7 +21,7 @@ package  com.github.xbn.number;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.Null;
 /**
-   <P>YYY</P>
+   <P>Convenience functions for creating {@code IndexInRangeValidator}s.</P>
 
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/

@@ -113,16 +113,16 @@ public class ReflectRtxUtil   {
       return  getClassIfExistsOrNull(fully_qualifiedName, null);
    }
    /**
-      <P>If a fully qualified name represents an actually-existing Java class, get its class object and verify its assingable from a specific type. If the class doesn't exist, this returns {@code null}.</P>
+      <P>If a fully qualified name represents an actually-existing Java class, get its class object and optionally verify that it's assingable from a specific type. If the class doesn't exist, this returns {@code null}.</P>
 
       <P><I>This uses a {@code ClassNotFoundException} as its {@code false} logic. <A HREF="http://stackoverflow.com/questions/19809640/check-if-class-exists-without-running-into-classnotfoundexception">It seems not</A>.</I></P>
 
       @param  fully_qualifiedName  <I>Should</I> not be {@code null} or empty.
-      @param  required_type  If non-{@code null}, this is the type the class must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
+      @param  rqdType_ifNonNull  If non-{@code null}, this is the type the class must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
       @see  #getClassIfExistsOrNull(String)
-      @exception  ClassCastException  if {@code required_type} is non-{@code null} and the class is not assignable from it.
+      @exception  ClassCastException  if {@code rqdType_ifNonNull} is non-{@code null} and the class is not assignable from it.
     **/
-   public static final <O> Class<O> getClassIfExistsOrNull(String fully_qualifiedName, Class<O> required_type)  {
+   public static final <O> Class<O> getClassIfExistsOrNull(String fully_qualifiedName, Class<O> rqdType_ifNonNull)  {
       Class<O> cls = null;
 
       try  {
@@ -137,14 +137,14 @@ public class ReflectRtxUtil   {
          return  null;
       }
 
-      if(required_type != null)  {
-         crashIfNotAssignableFrom(required_type, cls);
+      if(rqdType_ifNonNull != null)  {
+         crashIfNotAssignableFrom(rqdType_ifNonNull, cls);
       }
 
       return  cls;
    }
    /**
-      <P>Call a void function and get the RuntimeException thrown from it <I>which is wrapped in another {@code RuntimeException}</I>.</P>
+      <P>Call a void function and get the exception thrown from it <I>which is wrapped in a {@code RuntimeException}</I>. If no exception is thrown, this returns {@code null}.</P>
 
       <P>This calls
       <BR> &nbsp; &nbsp; <CODE>method.{@link java.lang.reflect.Method#invoke(Object, Object...) invoke}(obj_methodInvokedFrom, dddo_params)</CODE></P>
@@ -191,18 +191,18 @@ public class ReflectRtxUtil   {
       <P>Get a new instance of a class from its no-parameter constructor, given its fully-qualified name.</P>
 
       @param  class_name  May not be {@code null}, and must represent an existing class, and one that has a publicly accessible zero-parameter constructor.
-      @param  required_type  If non-{@code null}, this is the type that {@code class_name} must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
+      @param  rqdType_ifNonNull  If non-{@code null}, this is the type that {@code class_name} must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
       @param  debugDest_ifNonNull  If non-{@code null}, debugging output is printed. Using this <I>should</I> not result in any errors.
       @exception  RTClassNotFoundException  If {@code class_name} is non-{@code null}, non-empty, but does not represent an actually-existing class.
-      @exception  ClassCastException  if {@code required_type} is non-{@code null} and the class is not assignable from it.
+      @exception  ClassCastException  if {@code rqdType_ifNonNull} is non-{@code null} and the class is not assignable from it.
     **/
-   public static final <O> O getNewInstanceFromNoParamCnstr(String class_name, Class<O> required_type, Appendable debugDest_ifNonNull)  {
+   public static final <O> O getNewInstanceFromNoParamCnstr(String class_name, Class<O> rqdType_ifNonNull, Appendable debugDest_ifNonNull)  {
       TextAppenter dbgAptr = NewTextAppenterFor.appendableUnusableIfNull(debugDest_ifNonNull);
       if(dbgAptr.isUseable())  {
-         dbgAptr.appentln("      Checking class (class_name=\"" + class_name + "\") exists and is of the required_type (" + required_type.getName() + ")...");
+         dbgAptr.appentln("      Checking class (class_name=\"" + class_name + "\") exists and is of the rqdType_ifNonNull (" + rqdType_ifNonNull.getName() + ")...");
       }
 
-      Class<O> oClass = ReflectRtxUtil.<O>getClassIfExistsOrNull(class_name, required_type);
+      Class<O> oClass = ReflectRtxUtil.<O>getClassIfExistsOrNull(class_name, rqdType_ifNonNull);
 
       if(oClass == null)  {
          throw  new RTClassNotFoundException("class_name=\"" + class_name + "\"");

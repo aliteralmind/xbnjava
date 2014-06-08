@@ -1,5 +1,5 @@
 /*license*\
-   XBN-Java Library
+   XBN-Java
 
    Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
@@ -14,52 +14,26 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.util;
+package  com.github.xbn.analyze.alter;
+   import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Is the final parameter in a method or constructor an array-ellipsis ({@code "..."})?.</P>
+   <P>Indicates an alteration was attempted, but was not made.</P>
 
+   @see  ExpirableAlterList#crashIfIncomplete(String)
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+
  **/
-public enum VarArgs  {
-   /**
-      <P>YYY.</P>
-
-      @see  #NO
-      @see  #isYes()
-    **/
-   YES,
-   /**
-      <P>YYY.</P>
-
-      @see  #YES
-      @see  #isNo()
-    **/
-   NO;
-   /**
-      <P>Is this {@code VarArgs} equal to {@code YES}?.</P>
-
-      @return  <CODE>this == {@link #YES}</CODE>
-
-      @see  #isNo()
-    **/
-   public final boolean isYes()  {
-      return  this == YES;
+public class AlterationNotMadeException extends IllegalArgumentException  {
+   public AlterationNotMadeException()  {
    }
-   /**
-      <P>Is this {@code VarArgs} equal to {@code NO}?.</P>
-
-      @return  <CODE>this == {@link #NO}</CODE>
-      @see  #isYes()
-    **/
-   public final boolean isNo()  {
-      return  this == NO;
+   public AlterationNotMadeException(String message)  {
+      super(message);
    }
-   /**
-      <P>Return {@code VarArgs.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</P>
-
-      @return  <CODE>(flag ? {@link #YES} : {@link #NO})</CODE>
-    **/
-   public static final VarArgs getForBoolean(boolean flag)  {
-      return  (flag ? YES : NO);
+   public AlterationNotMadeException(String message, Throwable cause)  {
+      super(message, cause);
    }
-};
+   public AlterationNotMadeException(Throwable cause)  {
+      super(cause);
+   }
+}
+

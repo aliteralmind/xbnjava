@@ -28,14 +28,12 @@ public class NewValidResultFilterFor  {
    private NewValidResultFilterFor()  {
       throw  new IllegalStateException("Do not instantiate");
    }
-   public static final FilterValidCounts ifEqualUnchangedOutFalse(int min_max, String minMax_name, Appendable dbgDest_ifNonNull)  {
+   public static final FilterValidCounts exactlyOne(Appendable dbgDest_ifNonNull)  {
+      return  exactly(1, null, dbgDest_ifNonNull);
+   }
+   public static final FilterValidCounts exactly(int min_max, String minMax_name, Appendable dbgDest_ifNonNull)  {
       return  inUnchangedOutFalse(min_max, min_max, minMax_name, minMax_name, dbgDest_ifNonNull);
    }
-   public static final FilterValidCounts ifEqualUnchangedOutFalse_nullIfNeg1(int min_max, String minMax_name, Appendable dbgDest_ifNonNull)  {
-      return  ((min_max == -1) ? null
-         :  ifEqualUnchangedOutFalse(min_max, minMax_name, dbgDest_ifNonNull));
-   }
-
    /**
       <P>A new filter that returns {@code false} when the number of <I>valid results</I> is outside of a specific (inclusive) range--it otherwise the leaves follows-the-rules finding unchanged.</P>
 

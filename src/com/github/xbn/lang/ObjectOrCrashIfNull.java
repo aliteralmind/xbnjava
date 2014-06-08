@@ -16,13 +16,13 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-   <P>Contains a single function that returns an object if it's non-{@code null}, and crashes if it is.</P>
+   <P>Safely get a potentially-{@code null} object, or a copy of a potentially-{@code null} {@code Copyable}.</P>
 
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ObjectOrCrashIfNull  {
    /**
-      <P>Safely get potentially-{@code null} objects in super or this constructor calls, where try-catch is not possible.</P>
+      <P>Safely get potentially-{@code null} objects in {@code super} or {@code this} constructor calls, where try-catch is not possible.</P>
 
       @param  obj  The object to get. May not be {@code null}.
       @param  obj_varName  Descriptive name of {@code obj}. <I>Should</I> not be {@code null} or empty.

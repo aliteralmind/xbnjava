@@ -15,9 +15,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.testdev;
-   import  com.github.xbn.util.tuple.FourTuple;
-   import  java.util.Objects;
-   import  com.github.xbn.util.tuple.ThreeTuple;
    import  com.github.xbn.io.NewPrintWriterToFile;
    import  com.github.xbn.io.NewTextAppenterFor;
    import  com.github.xbn.io.PlainTextFileUtil;
@@ -26,11 +23,14 @@ package  com.github.xbn.testdev;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.number.NumberUtil;
    import  com.github.xbn.text.StringUtil;
+   import  com.github.xbn.util.tuple.FourTuple;
+   import  com.github.xbn.util.tuple.ThreeTuple;
    import  java.io.File;
    import  java.io.IOException;
    import  java.io.PrintWriter;
    import  java.text.DecimalFormat;
    import  java.util.Iterator;
+   import  java.util.Objects;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Change tab-indentation in a file or directory of files, to spaces.</P>

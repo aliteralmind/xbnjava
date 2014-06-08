@@ -70,7 +70,7 @@ public enum IgnoreCase  {
       }
    }
    /**
-      <P>Get a {@code IgnoreCase} from an actual boolean.</P>
+      <P>Return {@code IgnoreCase.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</P>
 
       @return  <CODE>(b ? {@link #YES} : {@link #NO})</CODE>
     **/

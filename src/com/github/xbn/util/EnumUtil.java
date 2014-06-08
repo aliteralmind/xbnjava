@@ -123,8 +123,8 @@ public class EnumUtil  {
       @param  ignore_case  If {@link com.github.xbn.regexutil.IgnoreCase#YES YES}, the case of {@code value} is changed to lowercase. If {@link com.github.xbn.regexutil.IgnoreCase#NO NO}, its case is <I>expected</I> to be exactly as in {@code one_perEnumValueInOrder}.
       @param  one_perEnumValueInOrder  The string values that each reperesent a single value in {@code enumInstance_anyNonNullValue}. Its length must equal
       <BR> &nbsp; &nbsp; <CODE>enumInstance_anyNonNullValue.{@link java.lang.Object#getClass() getClass}().{@link java.lang.Class#getEnumConstants() getEnumConstants}().length</CODE>
-      <BR>At least one element must be non-{@code null}, and all non-null elements must be contiguous, non-empty, and unique. Use this to accept a sub-set of values from the enum.
-      @return  The value in {@code enumInstance_anyNonNullValue} that has the same element index as the one in {@code one_perEnumValueInOrder}, that {@code value} is equal to.
+      <BR>At least one element must be non-{@code null}, and all non-null elements must be contiguous, non-empty, and unique. Use this to accept a sub-set of values.
+      @return  The enum value in {@code enumInstance_anyNonNullValue} that has the same element index as the one in {@code one_perEnumValueInOrder}, that {@code value} is equal to.
     **/
    public static final <T extends Enum<T>> T getFromExplicitStringValues(T enumInstance_anyNonNullValue, String value, String value_varName, IgnoreCase ignore_case, String... one_perEnumValueInOrder)  {
       T[] allEnumValues = null;

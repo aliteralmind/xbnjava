@@ -15,6 +15,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang;
+   import  static com.github.xbn.lang.CrashIfBase.*;
 /**
    <P>If an object is {@code null}, crash. Otherwise, do nothing.</P>
 
@@ -24,7 +25,7 @@ package  com.github.xbn.lang;
    @see  com.github.xbn.text.CrashIfString
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class CrashIfObject extends CrashIfBase  {
+public class CrashIfObject  {
 //nnull*...START
    /**
       <P>If an object is {@code null}, crash--otherwise, <I>return</I> the causing error.</P>

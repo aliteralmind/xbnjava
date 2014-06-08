@@ -88,6 +88,19 @@
 </HEAD>]]></replacevalue>
       </replace>
    </target>
+
+   <!--replaceregexp byline="true">
+      <regexp pattern="&lt;([A-Z](?:,[A-Z])?) extends <a href=\""/>
+         <substitution expression="<BR> &nbsp; &nbsp; &lt;\1 extends <a href=\""/>
+      <fileset dir="${dir_build_docs_javadoc}">
+         <include name="**/linefilter/package-summary.html"/>
+         <include name="**/neederneedable/package-summary.html"/>
+         <include name="**/number/package-summary.html"/>
+         <include name="**/util/package-summary.html"/>
+         <include name="**/io/package-summary.html"/>
+         <include name="**/keyed/package-summary.html"/>
+      </fileset>
+   </replaceregexp-->
 </project>
 
 

@@ -17,7 +17,7 @@
 package  com.github.xbn.regexutil;
    import  com.github.xbn.util.EnumUtil;
 /**
-   <P>Broadly defines which matches, within <I>each input string</I>, should be replaced by a {@code RegexReplacer}.</P>
+   <P>Broadly defines which matches, <I>within each input string</I>, should be replaced by a {@code RegexReplacer}.</P>
 
    @see  RegexReplacer
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

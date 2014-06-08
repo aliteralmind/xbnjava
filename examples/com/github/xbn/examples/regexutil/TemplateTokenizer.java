@@ -29,9 +29,11 @@ package  com.github.xbn.examples.regexutil;
 public class TemplateTokenizer  {
    public static final void main(String[] ignored)  {
 
-      Pattern gapPtrn = Pattern.compile("\\Q%\\E\\w+\\Q%\\E");
-      RegexTokenizer tokenizer = new RegexTokenizer_Cfg().separators().allBetweens().separator(gapPtrn).build();
-      tokenizer.setNewSearch("Hello %name%! You are %years_old% years old.", 1);
+      Pattern gapPtrn = Pattern.compile("%\\w+%");
+      RegexTokenizer tokenizer = new RegexTokenizer_Cfg().
+         separators().allBetweens().separator(gapPtrn).build();
+      tokenizer.setNewSearch(
+         "Hello %name%! You are %years_old% years old.", 1);
 
       boolean isBetween = true;
       while(tokenizer.hasNext())  {
