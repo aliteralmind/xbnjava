@@ -53,7 +53,7 @@ public class StringWithNullDefault  {
       return  append(to_appendTo, null, stringThatMay_beNull, null, if_null);
    }
    /**
-      <P><I>[main]</I> -- Append a string, or a default value if {@code null}.</P>
+      <P>Append a string, or a default value if {@code null}.</P>
 
       @param  to_appendTo  To append to. May not be {@code null}.
       @param  prefix_ifNonNull  When the string is non-{@code null}, this will be displayed before it. <I>Should</I> not be empty. When {@code null}, there is no prefix.

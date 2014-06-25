@@ -193,7 +193,7 @@ public class StringValidatorReplacer extends ValueValidatorAdapter<String,RegexR
       return  super.appendToString(to_appendTo);
    }
    /**
-      <P>Get a duplicate of this <CODE>StringValidatorReplacer</CODE>.</P>
+      <P>Duplicate this <CODE>StringValidatorReplacer</CODE>.</P>
 
       @return  <CODE>(new <A HREF="#StringValidatorReplacer(StringValidatorReplacer)">StringValidatorReplacer</A>(this))</CODE>
     **/

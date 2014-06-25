@@ -31,7 +31,7 @@ public class SetToStaticValueDelIfNull<V,A> extends AbstractValueAlterer<V,A>  {
    }
    public A getAlteredPostResetCheck(V ignored, A to_alter)  {
       boolean wasDel = (to_alter == null);
-      declareWasAnalyzedWasDeleted(!wasDel, wasDel);
+      declareAltered(Altered.getForBoolean(!wasDel), NeedsToBeDeleted.getForBoolean(wasDel));
       return  getStaticValue();
    }
    public A getStaticValue()  {

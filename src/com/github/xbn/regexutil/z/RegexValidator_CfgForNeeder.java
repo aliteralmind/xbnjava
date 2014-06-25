@@ -219,6 +219,9 @@ public class RegexValidator_CfgForNeeder<V extends RegexValidator,R extends Need
    public String toString()  {
       return  super.toString() + ", getPattern()=[" + getPattern() + "], getMatcherUses()=" + getMatcherUses() + "";
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexValidator_CfgForNeeder<V,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")  //See xbn.neederneedable.Needer.startConfig(Class)
       Class<V> cpvo = (Class<V>)(Class)RegexValidator.class;
@@ -226,6 +229,9 @@ public class RegexValidator_CfgForNeeder<V extends RegexValidator,R extends Need
 
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexValidator_CfgForNeeder<V,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

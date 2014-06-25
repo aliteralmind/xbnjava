@@ -1,5 +1,5 @@
 <BODY>
-   <P>XBN-Java: A collection of generically-useful backend (non-GUI) programming utilities, featuring shareable self-returning method chains, line filters, and regular expression convenience classes--XBN-Java is the foundation of <A HREF="http://codelet.aliteralmind.com">Codelet</A>.</P>
+   <P>XBN-Java: A collection of generically-useful backend (non-GUI) programming utilities, featuring shareable self-returning method chains, {@code FilteredLineIterator}, and regular expression convenience classes--XBN-Java is the foundation of <A HREF="http://codelet.aliteralmind.com">Codelet</A>.</P>
 
    <P><OL>
       <LI>XBN-Java is hosted by GitHub: <A HREF="https://github.com/aliteralmind/xbnjava">Project page</A>, <A HREF="https://github.com/aliteralmind/xbnjava/issues">issue tracker</A></LI>
@@ -7,7 +7,7 @@
       <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_source_code.zip">Download source</A>, including build files</LI>
    </OL></P>
 
-   <a name="install"/><H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; Installation</U></H2>
+   <A NAME="install"><A/><H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; Installation</U></H2>
 
    <P>XBN-Java requires <A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java 1.7</A> (it may be compatible with earlier versions).</P>
 
@@ -15,13 +15,13 @@
 
    <P>Adding the following elements to your <A HREF="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html">classpath</A> will install XBN-Java:</P>
 
-   <P><UL>
+   <P><OL>
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\commons-collections4-4.0.jar}</LI>
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\commons-io-2.4.jar}</LI>
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\commons-lang3-3.3.2.jar}</LI>
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\guava-16.0.1.jar}</LI>
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\xbnjava_0p1p0_all.jar}</LI>
-   </UL></P>
+   </OL></P>
 
    <P>Details and alternatives:<OL>
       <LI>XBN-Java: Choose exactly one of the following (the above classpath-string assumes you've chosen {@code xbnjava_0p1p0_all.jar}):<OL>
@@ -41,10 +41,10 @@
    <P>In addition to the above, building XBN-Java requires the following:<OL>
       <LI><A HREF="http://ant.apache.org/">Apache Ant</A> 1.9.3</LI>
       <LI><A HREF="http://junit.org">JUnit</A> 4.8.2</LI>
-      <LI><A HREF="http://codelet.aliteralmind.com">Codelet</A> 0.1.0 (<A HREF="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/overview-summary.html#install">installation</A> instructions). Codelet is only necessary for displaying example code in the JavaDoc. JavaDoc will still work, but example code will be omitted, and one warning will be displayed for every non-working taglet. To install Codelet, add these additional elements to your classpath:<UL>
+      <LI><A HREF="http://codelet.aliteralmind.com">Codelet</A> 0.1.0 (<A HREF="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/overview-summary.html#install">installation</A> instructions). Codelet is only necessary for displaying example code in the JavaDoc. JavaDoc will still work, but example code will be omitted, and one warning will be displayed for every non-working taglet. To install Codelet, add these additional elements to your classpath:<OL>
          <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\templatefeather_0p1p0_all.jar}</LI>
          <LI>{@code INSTALLATION_DIR\xbnjava\z_build\jar_dependencies\codelet_0p1p0_core.jar}</LI>
-      </UL>and <A HREF="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/overview-summary.html#install_taglets">install its taglets</A></LI>
+      </OL>and <A HREF="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/overview-summary.html#install_taglets">install its taglets</A></LI>
    </OL></P>
 
    <P>Open a command prompt to the XBN-Java root installation directory, and call &quot;{@code ant help}&quot; for more information. The build process already has the Codelet taglets installed.</P>

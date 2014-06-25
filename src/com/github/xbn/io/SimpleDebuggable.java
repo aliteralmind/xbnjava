@@ -110,6 +110,12 @@ public class SimpleDebuggable implements Debuggable  {
    }
 //getters...END
 //other...START
+   public TextAppenter debug(Object message)  {
+      return  getDebugAptr().appent(message);
+   }
+   public void debugln(Object message)  {
+      getDebugAptr().appentln(message);
+   }
    public String toString()  {
       return  appendToString(new StringBuilder()).toString();
    }

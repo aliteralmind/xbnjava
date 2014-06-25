@@ -23,7 +23,7 @@ public interface ExceptionContext extends Copyable  {
    /**
       <P>Get a copy of this {@code ExceptionContext} in which all fields are duplicated, except {@code getExtraInfo()}, which is a reference to the original.</P>
 
-      @return  A copy of this {@code ExceptionContext} as specified above.
+      @return  A non-{@code null} duplicate of this {@code ExceptionContext}.
     **/
    @Override
    ExceptionContext getObjectCopy();

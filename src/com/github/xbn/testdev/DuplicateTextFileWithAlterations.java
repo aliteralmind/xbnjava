@@ -19,7 +19,7 @@ package  com.github.xbn.testdev;
    import  com.github.xbn.io.PlainTextFileUtil;
    import  com.github.xbn.io.RTIOException;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.linefilter.ExpirableTextLineAlterList;
+   import  com.github.xbn.linefilter.alter.ExpirableTextLineAlterList;
    import  com.github.xbn.text.StringUtil;
    import  java.io.File;
    import  java.io.IOException;
@@ -27,7 +27,7 @@ package  com.github.xbn.testdev;
    import  java.util.Iterator;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
-   <P>YYY</P>
+   <P>For duplicating a text file with alterations such as regular expression replacements--optionally overwrites the original file.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

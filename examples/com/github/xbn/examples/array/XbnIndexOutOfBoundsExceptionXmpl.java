@@ -29,9 +29,11 @@ public class XbnIndexOutOfBoundsExceptionXmpl  {
    public static final void main(String[] ignored)  {
 
       System.out.println("--Bad index, given a string's length:");
+
          XbnIndexOutOfBoundsException xibx = new XbnIndexOutOfBoundsException_Cfg().
             badIndex(-2, "index").absStringLength("Kermit T. Frog", "sName").
             build();
+
          System.out.println(xibx);
          XIbxBadIdx xdata = xibx.getBadIdxData();
          System.out.println("bad-index=" + xdata.getBadIndex() + " (name=" + xdata.getBadIndexName() + ")");
@@ -39,9 +41,11 @@ public class XbnIndexOutOfBoundsExceptionXmpl  {
          System.out.println();
 
       System.out.println("--Bad index-range, given an array's length:");
+
          xibx = new XbnIndexOutOfBoundsException_Cfg().
             badRange(-1, 2, "getMinBound()", "getMaxBound()").absMinAndPArrayLength(1, (new int[]{1, 2, 3, 4})).
             buildWithInfo("Try better indexes next time, please.");
+
          System.out.println(xibx);
    }
 }

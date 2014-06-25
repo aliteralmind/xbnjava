@@ -1,0 +1,48 @@
+/*license*\
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+
+   This software is dual-licensed under the:
+   - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
+   - Apache Software License (ASL) version 2.0.
+
+   Either license may be applied at your discretion. More information may be found at
+   - http://en.wikipedia.org/wiki/Multi-licensing.
+
+   The text of both licenses is available in the root directory of this project, under the names "LICENSE_lgpl-3.0.txt" and "LICENSE_asl-2.0.txt". The latest copies may be downloaded at:
+   - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
+   - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
+\*license*/
+package  com.github.xbn.linefilter;
+   import  com.github.xbn.linefilter.entity.KeepMatched;
+   import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.entity.KeepEndLine;
+   import  com.github.xbn.linefilter.entity.KeepMidLines;
+   import  com.github.xbn.linefilter.entity.KeepStartLine;
+   import  com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor;
+   import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.number.LengthInRangeValidator;
+   import  java.util.Iterator;
+/**
+   <P>Convenience functions for creating {@code FilteredIterator}s.</P>
+
+   @since 0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ **/
+public class NewFilteredIteratorFor  {
+   /**
+      <P>Create a new {@code FilteredIterator} that does nothing: All lines are kept and unaltered.</P>
+
+      @return
+<BLOCKQUOTE><PRE>new {@link FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRangeValidator, RawBlockEntity) FilteredLineIterator}(all_lineItr, {@link Returns}.{@link Returns#KEPT KEPT},
+   dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
+   {@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.&lt;O,L&gt;{@link com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor#keepAllUnchanged(String) keepAllUnchanged}(&quot;root&quot;, {@link com.github.xbn.linefilter.entity.KeepMatched}.{@link com.github.xbn.linefilter.entity.KeepMatched#YES YES}))</PRE></BLOCKQUOTE>
+    **/
+   public static final <O,L extends RawLine<O>> FilteredIterator<O,L> keepAllLinesUnchanged(Iterator<O> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRangeValidator rangeForEveryLineDebug_ifNonNull)  {
+      return  new FilteredIterator<O,L>(all_lineItr, Returns.KEPT,
+         dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
+         NewRawBlockEntityFor.<O,L>keepAllUnchanged("root"));
+   }
+   public NewFilteredIteratorFor()  {
+      throw  new IllegalStateException("Do not instantiate.");
+   }
+}

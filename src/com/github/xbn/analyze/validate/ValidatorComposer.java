@@ -350,6 +350,11 @@ enum VRFDoesNothing implements ValidResultFilter  {
    public final TextAppenter getDebugAptr()  {
       return  null;
    }
+   public final TextAppenter debug(Object ignored)  {
+      return  null;
+   }
+   public final void debugln(Object ignored)  {
+   }
    public final Appendable getDebugApbl()  {
       return  null;
    }

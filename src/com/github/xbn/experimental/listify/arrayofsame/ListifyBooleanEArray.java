@@ -109,7 +109,7 @@ public class ListifyBooleanEArray extends AbstractListifyPWrapperEArray<Boolean>
       return  ListifyPrimitiveableComposer.getElementCopyCINullAndHNVCrashOrDel(this, index).booleanValue();
    }
    /**
-      <P>Get a duplicate of this {@code ListifyBooleanEArray}.</P>
+      <P>Duplicate this {@code ListifyBooleanEArray}.</P>
 
       @return  <CODE>(new {@link #ListifyBooleanEArray(ListifyBooleanEArray) ListifyBooleanEArray}(this))</CODE>
     **/

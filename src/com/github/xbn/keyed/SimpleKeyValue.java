@@ -14,10 +14,7 @@
 \*license*/
 package  com.github.xbn.keyed;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
-   import  com.github.xbn.util.copyval.ValueNotCopyable;
-   import  static com.github.xbn.lang.XbnConstants.*;
-   import  com.github.xbn.util.copyval.ValueCopier;
-   import  com.github.xbn.util.copyval.ValueCopierComposer;
+//	import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Implementation of {@code KeyValue}.</P>
 
@@ -26,8 +23,7 @@ package  com.github.xbn.keyed;
  **/
 public class SimpleKeyValue<K,V> extends SimpleKeyed<K> implements KeyValue<K,V>  {
 //state
-   private V v = null;
-   private ValueCopier<V> gvcv = null;
+   private final V v;
 //constructors...START
 //	@SuppressWarnings("unchecked")
    public SimpleKeyValue(K key, V value)  {
@@ -79,7 +75,7 @@ public class SimpleKeyValue<K,V> extends SimpleKeyed<K> implements KeyValue<K,V>
       return  super.toString() + ", value=[" + getValue() + "]";
    }
    /**
-      <P>Get a duplicate of this {@code SimpleKeyValue}.</P>
+      <P>Duplicate this {@code SimpleKeyValue}.</P>
 
       @return  <CODE>(new {@link #SimpleKeyValue(KeyValue) SimpleKeyValue}&lt;K,V&gt;(this))</CODE>
    public SimpleKeyValue<K,V> getObjectCopy()  {

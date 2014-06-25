@@ -80,6 +80,9 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
    public ListLister_CfgForNeeder<E,L,R> newLineBetween()  {
       return  between(LINE_SEP);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ListLister_CfgForNeeder<E,L,R> between(String text)  {
       sBtw = text;
       return  this;
@@ -114,6 +117,9 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
    public ListLister_CfgForNeeder<E,L,R> keepIndexesBelow(int max_exclusive)  {
       return  indexFilter(new IndexInRangeValidator_Cfg().range(NewIndexInRangeFor.length(max_exclusive, "max_exclusive")).build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ListLister_CfgForNeeder<E,L,R> indexFilter(ValueValidator<Integer> validator)  {
       vvIdxFltr = validator;
       return  this;
@@ -126,6 +132,9 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 
       return  valueFilter(vve);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ListLister_CfgForNeeder<E,L,R> valueFilter(ValueValidator<E> validator)  {
       vValFltr = validator;
       return  this;
@@ -152,6 +161,9 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
       L l = (L)new ListLister<E>(this);
       return  l;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    @SuppressWarnings("unchecked")  //See LLCfgOverall.startConfigReturnNeedable(R)
    public ListLister_CfgForNeeder<E,L,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
@@ -194,6 +206,9 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
          throw  new IllegalStateException("getNeededType()=" + getNeededType() + ", fully_configured.getClass().getName()=" + fully_configured.getClass().getName());
       }
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ListLister_CfgForNeeder<E,L,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

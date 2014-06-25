@@ -12,7 +12,6 @@
    </target>
 
    <target name="doc" description="Generates javadoc documentation.">
-
       <!--
          Packages need to be delimited by both commas and colons.  In build.properties, it's only delimited by commas.  Commas (with or without spaces) are needed by the JavaDoc "packagenames" attribute, and colons (without spaces) are needed by the "group" sub-tags.
 
@@ -92,7 +91,7 @@
       <java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true">
          <arg value="${dir_build_docs_javadoc}"/>
          <arg value="com.github.xbn."/>
-         <arg value="io,keyed,linefilter,neederneedable,number,util"/>
+         <arg value="analyze.validate.z,io,keyed,linefilter.entity.raw,linefilter.entity.raw.z,linefilter.entity.z,list.lister.z,neederneedable,number,number.z,regexutil.z,text.padchop.z,util"/>
          <arg value="debugminimal"/>
       </java>
    </target>

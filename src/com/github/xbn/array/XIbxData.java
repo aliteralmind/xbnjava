@@ -32,7 +32,7 @@ public abstract class XIbxData  {
    private String    sAbsMinNm  = null;
    private String    sAbsMaxXNm = null;
 //public
-   public static final String sDEFAULT_ABS_MIN_NAME = "[absolute-min_inclusive]";
+   public static final String sDEFAULT_ABS_MIN_NAME = "[absolute-min]";
    public static final String sDEFAULT_ABS_MAXX_NAME = "[absolute-max-exclusive]";
    /**
       <P>Create a new instance with initialized values.</P>
@@ -54,21 +54,21 @@ public abstract class XIbxData  {
       <P>From a string's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndStringLength(int, Object, String, String) setAbsMinAndStringLength}(min_inclusive, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndStringLength(int, Object, String, String) setAbsMinAndStringLength}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
     **/
-   public void setAbsMinAndStringLength(int min_inclusive, Object obj_forStrLen)  {
-      setAbsMinAndStringLength(min_inclusive, obj_forStrLen, null, "[the-string]");
+   public void setAbsMinAndStringLength(int min, Object obj_forStrLen)  {
+      setAbsMinAndStringLength(min, obj_forStrLen, null, "[the-string]");
    }
    /**
       <P>From a string's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive, obj_forStrLen.toString().length(), min_name, str_name + &quot;.toString().length()&quot;)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, obj_forStrLen.toString().length(), min_name, str_name + &quot;.toString().length()&quot;)</CODE></P>
       @see  #setAbsMinAndStringLength(int, Object) setAbsMinAndStringLength(i,o)
     **/
-   public void setAbsMinAndStringLength(int min_inclusive, Object obj_forStrLen, String min_name, String str_name)  {
+   public void setAbsMinAndStringLength(int min, Object obj_forStrLen, String min_name, String str_name)  {
       try  {
-         setAbsoluteBounds(min_inclusive, obj_forStrLen.toString().length(), min_name, str_name + ".toString().length()");
+         setAbsoluteBounds(min, obj_forStrLen.toString().length(), min_name, str_name + ".toString().length()");
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(obj_forStrLen, "obj_forStrLen", null, rx);
       }
@@ -77,21 +77,21 @@ public abstract class XIbxData  {
       <P>From a non-primitive array's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndArrayLength(int, Object[], String, String) setAbsMinAndArrayLength}(min_inclusive, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndArrayLength(int, Object[], String, String) setAbsMinAndArrayLength}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
     **/
-   public <E> void setAbsMinAndArrayLength(int min_inclusive, E[] array)  {
-      setAbsMinAndArrayLength(min_inclusive, array, null, "[the-array]");
+   public <E> void setAbsMinAndArrayLength(int min, E[] array)  {
+      setAbsMinAndArrayLength(min, array, null, "[the-array]");
    }
    /**
       <P>From a non-primitive array's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive, array.length, min_name, array_name + &quot;.length&quot;)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, array.length, min_name, array_name + &quot;.length&quot;)</CODE></P>
       @see  #setAbsMinAndArrayLength(int, Object[]) setAbsMinAndArrayLength(i,E[])
     **/
-   public <E> void setAbsMinAndArrayLength(int min_inclusive, E[] array, String min_name, String array_name)  {
+   public <E> void setAbsMinAndArrayLength(int min, E[] array, String min_name, String array_name)  {
       try  {
-         setAbsoluteBounds(min_inclusive, array.length, min_name, array_name + ".length");
+         setAbsoluteBounds(min, array.length, min_name, array_name + ".length");
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(array, "array", null, rx);
       }
@@ -100,21 +100,21 @@ public abstract class XIbxData  {
       <P>From a collection's size, set the absolute bounds that the bad index or range is supposed to conform to.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndCollectionSize(int, Collection, String, String) setAbsMinAndCollectionSize}(min_inclusive, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndCollectionSize(int, Collection, String, String) setAbsMinAndCollectionSize}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
     **/
-   public void setAbsMinAndCollectionSize(int min_inclusive, Collection<?> cll_forSize)  {
-      setAbsMinAndCollectionSize(min_inclusive, cll_forSize, null, "[the-collection]");
+   public void setAbsMinAndCollectionSize(int min, Collection<?> cll_forSize)  {
+      setAbsMinAndCollectionSize(min, cll_forSize, null, "[the-collection]");
    }
    /**
       <P>From a collection's size, set the absolute bounds that the bad index or range is supposed to conform to.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive, cll_forSize.size(), min_name, selfCmprllName + &quot;.size()&quot;)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, cll_forSize.size(), min_name, selfCmprllName + &quot;.size()&quot;)</CODE></P>
       @see  #setAbsMinAndCollectionSize(int, Collection) setAbsMinAndCollectionSize(i,cll)
     **/
-   public void setAbsMinAndCollectionSize(int min_inclusive, Collection<?> cll_forSize, String min_name, String selfCmprllName)  {
+   public void setAbsMinAndCollectionSize(int min, Collection<?> cll_forSize, String min_name, String selfCmprllName)  {
       try  {
-         setAbsoluteBounds(min_inclusive, cll_forSize.size(), min_name, selfCmprllName + ".size()");
+         setAbsoluteBounds(min, cll_forSize.size(), min_name, selfCmprllName + ".size()");
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(cll_forSize, "cll_forSize", null, rx);
       }
@@ -123,17 +123,17 @@ public abstract class XIbxData  {
       <P>Set the absolute bounds, that the bad index or range is supposed to conform to.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; {@link #setAbsoluteBounds(int, int) setAbsoluteBounds(min_inclusive, max_exclusive, null, null)}</P>
+      <BR> &nbsp; &nbsp; {@link #setAbsoluteBounds(int, int) setAbsoluteBounds(min, max_exclusive, null, null)}</P>
     **/
-   public void setAbsoluteBounds(int min_inclusive, int max_exclusive)  {
-      setAbsoluteBounds(min_inclusive, max_exclusive, null, null);
+   public void setAbsoluteBounds(int min, int max_exclusive)  {
+      setAbsoluteBounds(min, max_exclusive, null, null);
    }
    /**
       <P>Set the absolute bounds, that the bad index or range is supposed to conform to.</P>
 
-      @param  min_inclusive  The minimum number, inclusive, that the indexes <I>should</I> conform to. May not be less than zero, or greater than {@code max_exclusive}. Get with {@link #getAbsMin() getAbsMin}{@code ()}.
+      @param  min  The minimum number, inclusive, that the indexes <I>should</I> conform to. May not be less than zero, or greater than {@code max_exclusive}. Get with {@link #getAbsMin() getAbsMin}{@code ()}.
       @param  max_exclusive  The maximum number, exclusive, that the indexes <I>should</I> conform to. This is usually the length of something. Get with {@link #getAbsMaxX() getAbsMaxX}{@code ()}.
-      @param  min_name  Descriptive name of {@code min_inclusive}. If {@code null}, {@link #sDEFAULT_ABS_MIN_NAME} is used. Get with {@link #getAbsMinName() getAbsMinName}{@code ()}.
+      @param  min_name  Descriptive name of {@code min}. If {@code null}, {@link #sDEFAULT_ABS_MIN_NAME} is used. Get with {@link #getAbsMinName() getAbsMinName}{@code ()}.
       @param  max_name  Descriptive name of {@code max_exclusive}. If {@code null}, {@link #sDEFAULT_ABS_MAXX_NAME} is used. Get with {@link #getAbsMinName() getAbsMinName}{@code ()}.
 
       @see  #setAbsoluteBounds(int, int) setAbsoluteBounds(i,i)
@@ -144,11 +144,11 @@ public abstract class XIbxData  {
       @see  #setAbsMinAndCollectionSize(int, Collection) setAbsMinAndCollectionSize(i,cll)
       @see  #setAbsMinAndCollectionSize(int, Collection, String, String) setAbsMinAndCollectionSize(i,cll,s,s)
     **/
-   public void setAbsoluteBounds(int min_inclusive, int max_exclusive, String min_name, String max_name)  {
-      if(min_inclusive < 0  ||  min_inclusive >= max_exclusive)  {
-         throw  new IllegalArgumentStateException("min_inclusive (" + min_inclusive + ") is less than zero, or greater-than-or-equal-to max_exclusive (" + max_exclusive + ").");
+   public void setAbsoluteBounds(int min, int max_exclusive, String min_name, String max_name)  {
+      if(min < 0  ||  min >= max_exclusive)  {
+         throw  new IllegalArgumentStateException("min (" + min + ") is less than zero, or greater-than-or-equal-to max_exclusive (" + max_exclusive + ").");
       }
-      iAbsMin = min_inclusive;
+      iAbsMin = min;
       iAbsMaxX = max_exclusive;
       sAbsMinNm = min_name;
       sAbsMaxXNm = max_name;
@@ -208,6 +208,7 @@ public abstract class XIbxData  {
    public StringBuilder appendToString(StringBuilder to_appendTo)  {
       StringWithNullDefault.append(to_appendTo, getAbsMinName(), sDEFAULT_ABS_MIN_NAME);
       to_appendTo.append("=").append(getAbsMin()).append(", ");
+System.out.println("getAbsMaxXName()=\"" + getAbsMaxXName() + "\"");
       StringWithNullDefault.append(to_appendTo, getAbsMaxXName(), sDEFAULT_ABS_MAXX_NAME);
       to_appendTo.append("=").append(getAbsMaxX());
       if(getCause() != null)  {

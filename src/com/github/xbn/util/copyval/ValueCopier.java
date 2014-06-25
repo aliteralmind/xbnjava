@@ -45,7 +45,7 @@ public interface ValueCopier<O> extends Copyable  {
     **/
    O getValueCopy(O original_value, String orig_name, NullHandler<O> null_handler);
    /**
-      <P>Get a duplicate of this {@code ValueCopier} which, by default, is a reference to the original--if any sub-classes contain state, this should be overridden.</P>
+      <P>Duplicate this {@code ValueCopier} which, by default, is a reference to the original--if any sub-classes contain state, this should be overridden.</P>
 
       @return  <I>{@code this}</I>
     **/

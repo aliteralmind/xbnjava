@@ -16,7 +16,7 @@ package  com.github.xbn.keyed;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
    import  com.github.xbn.lang.CrashIfObject;
 //	import  com.github.xbn.util.copyval.ValueNotCopyable;
-   import  static com.github.xbn.lang.XbnConstants.*;
+//	import  static com.github.xbn.lang.XbnConstants.*;
 //	import  com.github.xbn.util.copyval.ValueCopier;
 /**
    <P>Implementation of {@code Keyed}.</P>
@@ -26,7 +26,7 @@ package  com.github.xbn.keyed;
  **/
 public class SimpleKeyed<K> implements Keyed<K>  {
 //state
-   private K k = null;
+   private final K k;
 //	private ValueCopier<K> keyCopier = null;
 //constructors...START
    @SuppressWarnings("unchecked")
@@ -82,7 +82,7 @@ public class SimpleKeyed<K> implements Keyed<K>  {
       return  "key=[" + getKey() + "]";
    }
    /**
-      <P>Get a duplicate of this {@code SimpleKeyed}.</P>
+      <P>Duplicate this {@code SimpleKeyed}.</P>
 
       @return  <CODE>(new {@link #SimpleKeyed(Keyed) SimpleKeyed}&lt;K&gt;(this))</CODE>
    public SimpleKeyed<K> getObjectCopy()  {

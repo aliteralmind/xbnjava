@@ -26,7 +26,7 @@ public interface Needable<O,R extends Needer> extends Chainable  {
    /**
       <P>Must this {@code Needable} be used directly?.</P>
 
-      <a name="indirect"/><H3>Indirect use</H3>
+      <A NAME="indirect"><A/><H3>Indirect use</H3>
 
       <P>The primary use of {@code Needable}-s is to make their method-chains available to any <I>needing</I> class--a {@link com.github.xbn.neederneedable.Needer Needer}. For example:
 
@@ -47,7 +47,7 @@ public interface Needable<O,R extends Needer> extends Chainable  {
 
       <P><I>All {@code Needable}-s may be <U>indirectly</U> used.</I></P>
 
-      <a name="direct"/><H3>Direct use</H3>
+      <A NAME="direct"><A/><H3>Direct use</H3>
 
       <P>Some {@code Needable}-s may also allow direct use. That is, the {@code Needable} can be directly instantiated, which implies that the {@code Needer} is ignored. For example</P>
 

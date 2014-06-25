@@ -28,7 +28,7 @@ package  com.github.xbn.regexutil;
 
    <P><I>Derived from {@code RETokenize}: <a href="http://www.exampledepot.com/egs/java.util.regex/Tokenize.html">{@code http://www.exampledepot.com/egs/java.util.regex/Tokenize.html}</a>, downloaded 8/13/2010.</I></P>
 
-   <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexTokenizer_Cfg RegexTokenizer_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexTokenizer_Cfg RegexTokenizer_Cfg}</H3>
 
    <P><UL>
       <LI><B>Regex separator:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(Pattern) separator}(p)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String, int) separator}(s,i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String) separator}(s)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separatorLiteral(String) separatorLiteral}(s)</CODE></LI>
@@ -39,10 +39,10 @@ package  com.github.xbn.regexutil;
       <LI><B>Other:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#toTokenize(Object) toTokenize}(o)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#lineNumber(int) lineNumber}(i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
    </UL></P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.TemplateTokenizer:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.TemplateTokenizer:eliminateCommentBlocksAndPackageDecl()}
 
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl:eliminateCommentBlocksAndPackageDecl()}
 
 <P>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
 <BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</A>}</P>
@@ -324,7 +324,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
       throw  new UnsupportedOperationException("remove");
    }
    /**
-      <P>Get a duplicate of this <CODE>RegexTokenizer</CODE>.</P>
+      <P>Duplicate this <CODE>RegexTokenizer</CODE>.</P>
 
       @return  <CODE>(new <A HREF="#RegexTokenizer(RegexTokenizer)">RegexTokenizer</A>(this))</CODE>
     **/

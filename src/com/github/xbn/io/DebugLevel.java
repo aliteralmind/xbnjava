@@ -276,7 +276,6 @@ public enum DebugLevel  {
          if(min < 0  ||  min > 5)  {
             throw  new IllegalArgumentException("min=" + min);
          }
-System.out.println("isNumberAtLeast(actual=" + actual + ", min=" + min + ")=" + (min <= actual));
          return  (min <= actual);
       }
       private static final boolean isNumberOnAndAtLeast(int number, int min)  {

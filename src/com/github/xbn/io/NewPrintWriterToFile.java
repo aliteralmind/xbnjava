@@ -26,7 +26,7 @@ package  com.github.xbn.io;
 /**
    <P>Builder for creating a {@code PrintWriter} that writes text to a file. (This does not implement <CODE>xbn.neederneedable.Chainable</CODE>, because there are no self-returning functions that throw an exception.)</P>
 
-{@.codelet com.github.xbn.examples.io.NewPrintWriterToFileXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet com.github.xbn.examples.io.NewPrintWriterToFileXmpl:eliminateCommentBlocksAndPackageDecl()}
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

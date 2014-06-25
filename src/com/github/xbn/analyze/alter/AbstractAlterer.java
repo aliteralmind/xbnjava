@@ -84,14 +84,8 @@ public abstract class AbstractAlterer implements Alterer  {
    protected void setAutoResetState(boolean is_auto)  {
       ac.setAutoResetState_4prot(is_auto);
    }
-   protected void declareAlteredNotDeleted()  {
-      ac.declareAlteredNotDeleted_4prot();
-   }
-   protected void declareDeletedNotAltered()  {
-      ac.declareDeletedNotAltered_4prot();
-   }
-   protected void declareWasAnalyzedWasDeleted(boolean was_altered, boolean was_deleted)  {
-      ac.declareWasAnalyzedWasDeleted_4prot(was_altered, was_deleted);
+   protected void declareAltered(Altered altered, NeedsToBeDeleted deleted)  {
+      ac.declareAltered_4prot(altered, deleted);
    }
    public void resetForDeletion()  {
       ac.resetForDeletion();
@@ -125,6 +119,12 @@ public abstract class AbstractAlterer implements Alterer  {
    }
    public final TextAppenter getDebugAptr()  {
       return  ac.getDebugAptr();
+   }
+   public final TextAppenter debug(Object message)  {
+      return  ac.debug(message);
+   }
+   public final void debugln(Object message)  {
+      ac.debugln(message);
    }
    public Object getExtraErrInfo()  {
       return  ac.getExtraErrInfo();

@@ -132,6 +132,9 @@ public abstract class LLConfigBase_CfgForNeeder<O,L extends LLConfigBase<O>,R ex
       return  vpcFinal;
    }
 //getters...START
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLConfigBase_CfgForNeeder<O,L,R> startConfigReturnNeedable(R needer, Class<L> expected_type)  {
       startConfig(needer, expected_type);
       return  this;

@@ -116,6 +116,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
          <LI>If this is longer than the {@link ChopString_CfgForNeeder#getGoalLen() goal length}, then when attempting to chop the string, <I><B>an {@code IllegalArgumentException} will be thrown</B></I>.</LI>
          <LI>In all cases, the ellipsis is displayed in its entirety, even if it contains more characters than the goal length.</LI>
       </UL></I>
+      @return  <I>{@code this}</I>
     **/
    public ChopString_CfgForNeeder<C,R> ddd(String ellipsis)  {
       sEllipsis = ellipsis;
@@ -132,6 +133,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
       </UL></P>
 
       @param  char_len  If {@code -1} or less, or greater than {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}, then {@code getOverhangCount()} will return {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}. Get with {@link com.github.xbn.text.padchop.ChopString#getOverhangCount() getOverhangCount}{@code ()}*.
+      @return  <I>{@code this}</I>
       @see  #maxOverhang()
       @see  #noOverhang()
     **/
@@ -163,6 +165,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
       <P>Set debugging.</P>
 
       @param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
+      @return  <I>{@code this}</I>
     **/
    public ChopString_CfgForNeeder<C,R> debugTo(Appendable dest_ifNonNull)  {
       apblDebug = dest_ifNonNull;
@@ -183,6 +186,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
          <LI>{@link com.github.xbn.text.padchop.ChopString#iAT_END}:  or greater than {@code <I>[super]</I>.getGoalLen()}: {@code getCharsBeforeDDD()} is set to {@code getGoalLen()}.</LI>
          <LI>Between {@code 0} and {@code <I>[super]</I>.getGoalLen()} (inclusive): {@code getCharsBeforeDDD()} is set to that number.</LI>
       </UL>
+      @return  <I>{@code this}</I>
     **/
    public ChopString_CfgForNeeder<C,R> charsBefore(int len)  {
       iCharsBeforeDDD = len;
@@ -223,10 +227,16 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
       C c = (C)(new ChopString(this));
       return  c;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ChopString_CfgForNeeder<C,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ChopString_CfgForNeeder<C,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
       Class<C> clsc = (Class<C>)(Class)ChopString.class;

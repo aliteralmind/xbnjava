@@ -60,6 +60,8 @@ public class ReplaceAllIndentTabsWithSpacesXmpl  {
       Iterator<File> fileItr = FileUtils.iterateFiles(fileRootDir,
          allFileTypesKeepFilter, null);
 
-      new ReplaceAllIndentTabsWithSpaces(3, System.out, TabToSpaceDebugLevel.FILE_SUMMARIES).overwriteDirectory(fileItr);
+      new ReplaceAllIndentTabsWithSpaces(3, System.out,
+         TabToSpaceDebugLevel.FILE_SUMMARIES).
+         overwriteDirectory(fileItr);
    }
 }

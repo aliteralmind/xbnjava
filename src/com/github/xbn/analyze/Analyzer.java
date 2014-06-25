@@ -68,9 +68,9 @@ public interface Analyzer extends Copyable, Debuggable, ExtraErrInfoable, Expira
    boolean wasAnalyzed();
 
    /**
-      <P>Get a duplicate of this {@code Analyzer} that, by default, is a complete (full-and-deep) copy.</P>
+      <P>Duplicate this {@code Analyzer} that, by default, has the same configuration (state and counts are reset).</P>
 
-      @return  A duplicate of this {@code Analyzer} as specified above.
+      @return  A non-{@code null} duplicate of this {@code Analyzer}.
     **/
    @Override
    Analyzer getObjectCopy();

@@ -32,9 +32,9 @@ package  com.github.xbn.regexutil;
 /**
    <P>Iterates through a search string, placing all capture-groups for each match into a list. This is intended for capture groups that are mutually-exclusive (do not overlap).</P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl:eliminateCommentBlocksAndPackageDecl()}
 
-   <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg RegexGroupExtractor_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg RegexGroupExtractor_Cfg}</H3>
 
    <P><UL>
       <LI><B>Using:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useMatches() useMatches}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useFind() useFind}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useLookingAt() useLookingAt}()</CODE></LI>
@@ -277,7 +277,7 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
       return  lg2Ret;
    }
    /**
-      <P>Get a duplicate of this <CODE>RegexGroupExtractor</CODE>, where all internal fields are duplicateted, and the search is started anew.</P>
+      <P>Duplicate this <CODE>RegexGroupExtractor</CODE>, where all internal fields are duplicateted, and the search is started anew.</P>
 
       @return  <CODE>(new {@link #RegexGroupExtractor(RegexGroupExtractor) RegexGroupExtractor}(this))</CODE>
     **/

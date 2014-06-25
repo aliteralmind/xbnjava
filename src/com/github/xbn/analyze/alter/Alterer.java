@@ -86,11 +86,9 @@ public interface Alterer extends Analyzer  {
       <P>This is useful when the length of a container must be known before its elements are altered, such as when creating arrays. When there is a possibility of deletion, elements must be altered and held in a temporary container before the array can be created. When {@code true}, the need for a temporary container is avoided.</P>
 
       @return  <UL>
-         <LI>{@code true}  When {@link #isExpired() isExpired}{@code ()} is {@code true}, or the alteration will never be a deletion.</LI>
-         <LI>{@code false} The alteration may be a deletion.</LI>
+         <LI>{@code true}  It is possible for the alteration to be a {@link #needsToBeDeleted() deletion}.</LI>
+         <LI>{@code false} When {@link #isExpired() isExpired}{@code ()} is {@code true}, or the alteration will never be a deletion.</LI>
       </UL>
-      @see  #needsToBeDeleted()
-      @see  #resetState()
       @see  com.github.xbn.lang.Expirable#isExpired()
     **/
    boolean mayDelete();

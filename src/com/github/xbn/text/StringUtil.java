@@ -49,7 +49,7 @@ public class StringUtil extends StringUtilBase  {
       return  appendIfTrueFalse((new StringBuilder()), true_oString, condition, oString_ifFalse).toString();
    }
    /**
-      <P><I>[main]</I> -- Get one str_obj if a condition is met, another if it's not.</P>
+      <P>Get one str_obj if a condition is met, another if it's not.</P>
 
       @param  to_appendTo  May not be {@code null}.
       @param  true_oString  Returned if {@code condition} is {@code true}.
@@ -82,7 +82,7 @@ public class StringUtil extends StringUtilBase  {
       return  appendPreTruePostOrFalse((new StringBuilder()), prefix_ifTrue, true_oString, postfix_ifTrue, condition, oString_ifFalse).toString();
    }
    /**
-      <P><I>[main]</I> -- Append one str_obj (with a prefix and postfix) if a condition is met, or another if it's not.</P>
+      <P>Append one str_obj (with a prefix and postfix) if a condition is met, or another if it's not.</P>
 
       @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
     **/
@@ -172,7 +172,7 @@ public class StringUtil extends StringUtilBase  {
    /**
       <P>For visibly indicating the index or index-range of a str_obj on the immediately-above line.</P>
 
-{@.codelet.and.out com.github.xbn.examples.text.VisibleIndexMaskXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.text.VisibleIndexMaskXmpl:eliminateCommentBlocksAndPackageDecl()}
 
       @param  str_toPadForLen  The str_obj to mask.
       @param  idx_start  The mask-start index. <I>Should</I> be between 0 and
@@ -208,7 +208,7 @@ public class StringUtil extends StringUtilBase  {
       return  appendDuped((new StringBuilder()), str_toDup, dup_count).toString();
    }
    /**
-      <P><I>[main]</I> -- Append a str_obj, duplicated.</P>
+      <P>Append a str_obj, duplicated.</P>
 
       @param  to_appendTo  May not be {@code null}.
       @param  str_toDup  Descriptive name of {@code to_appendTo}. <I>Should</I> not be {@code null} or empty.

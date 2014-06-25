@@ -143,14 +143,23 @@ public class ValueValidator_CfgForNeeder<O,V extends ValueValidator<O>,R extends
    public V build()  {
       return  (V)(new NullnessValidator<O>(this));
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ValueValidator_CfgForNeeder<O,V,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ValueValidator_CfgForNeeder<O,V,R> startConfigReturnNeedable(R needer, Class<V> needed_class)  {
       startConfigReturnNeedable(needer, needed_class);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public ValueValidator_CfgForNeeder<O,V,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
       Class<V> clsv = (Class<V>)(Class)NullnessValidator.class;

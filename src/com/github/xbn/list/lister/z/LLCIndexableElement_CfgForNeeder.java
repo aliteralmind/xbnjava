@@ -45,18 +45,27 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
    public LLCIndexableElement_CfgForNeeder<E,C,R> noAltForElementLength()  {
    return  ifElementLength(NewLengthInRangeValidatorFor.impossible(null, null), null);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> ifElementLength(ValueValidator<Integer> len_validator, String display_ifValid)  {
       vvForElementLength = len_validator;
       sIfElementLength = display_ifValid;
       return  this;
    }
-   public LLCIndexableElement_CfgForNeeder<E,C,R> ifNoElements(String alt_display, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  ifElementLength(NewLengthInRangeValidatorFor.onlyZeroValid(Null.BAD, filter_ifNullOff, dbgDest_ifNonNull), alt_display);
+   public LLCIndexableElement_CfgForNeeder<E,C,R> ifNoElements(String alt_display, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  ifElementLength(NewLengthInRangeValidatorFor.onlyZeroValid(Null.BAD, filter_ifNonNull, dbgDest_ifNonNull), alt_display);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> finalOutputUnaltered()  {
       declareFinalOutputUnaltered();
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> reset()  {
       super.declareReset();
       resetLCXECFN();
@@ -65,14 +74,23 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
    protected final void resetLCXECFN()  {
       noAltForElementLength();
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> ifNull(String alt_display)  {
       super.setIfNull(alt_display);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> ifNonNull(String alt_display)  {
       super.setIfNonNull(alt_display);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> prePost(String prefixfix, String postfixfix)  {
       super.setPrePost(prefixfix, postfixfix);
       return  this;
@@ -106,6 +124,8 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 
       <P>Equal to
       <BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</A>(needer, (Class&lt;LLCIndexableElement&lt;E&gt;&gt;)((Class)LLCIndexableElement.class))</CODE></P>
+
+      @return  <I>{@code this}</I>
       @see  com.github.xbn.neederneedable.Needer#startConfig(Class) Needer#startConfig(cls)
     **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> startConfigReturnNeedable(R needer)  {
@@ -117,6 +137,9 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
       startConfigReturnNeedable(needer, clsc);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCIndexableElement_CfgForNeeder<E,C,R> chainID(boolean do_setStatic, Object id)  {
       super.chainID(do_setStatic, id);
       return  this;

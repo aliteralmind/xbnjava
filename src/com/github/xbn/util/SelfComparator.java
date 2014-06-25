@@ -123,7 +123,7 @@ public class SelfComparator<M extends Comparable<? super M>> implements Comparat
       return  bAsc;
    }
    /**
-      <P>Get a duplicate of this {@code SelfComparator}.</P>
+      <P>Duplicate this {@code SelfComparator}.</P>
 
       @return  <CODE>(new {@link #SelfComparator(SelfComparator) SelfComparator}&lt;M&gt;(this))</CODE>
     **/

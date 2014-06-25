@@ -96,6 +96,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
 
       <P>This sets {@link RegexReplacer#getReplacedInEachInput() getReplacedInEachInput}{@code ()}* to <CODE>{@link com.github.xbn.regexutil.ReplacedInEachInput ReplacedInEachInput}.{@link com.github.xbn.regexutil.ReplacedInEachInput#FIRST FIRST}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #all()
     **/
    public RegexReplacer_CfgForNeeder<P,R> first()  {
@@ -107,6 +108,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
 
       <P>This sets {@link RegexReplacer#getReplacedInEachInput() getReplacedInEachInput}{@code ()}* to <CODE>{@link com.github.xbn.regexutil.ReplacedInEachInput ReplacedInEachInput}.{@link com.github.xbn.regexutil.ReplacedInEachInput#LOOKING_AT LOOKING_AT}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #all()
     **/
    public RegexReplacer_CfgForNeeder<P,R> lookingAt()  {
@@ -118,6 +120,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
 
       <P>This sets {@link RegexReplacer#getReplacedInEachInput() getReplacedInEachInput}{@code ()}* to <CODE>{@link com.github.xbn.regexutil.ReplacedInEachInput ReplacedInEachInput}.{@link com.github.xbn.regexutil.ReplacedInEachInput#MATCHES MATCHES}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #all()
     **/
    public RegexReplacer_CfgForNeeder<P,R> matches()  {
@@ -128,6 +131,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <P>Set debugging.</P>
 
       @param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
+      @return  <I>{@code this}</I>
     **/
    public RegexReplacer_CfgForNeeder<P,R> debugTo(Appendable dest_ifNonNull)  {
       apblDebug = dest_ifNonNull;
@@ -141,6 +145,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       @param  match_numValidator  May not be <CODE>null</CODE>, and
       <BR> &nbsp; &nbsp; <CODE>match_numValidator.{@link com.github.xbn.analyze.validate.ValueValidator#getRuleType() getRuleType}().{@link com.github.xbn.lang.RuleType#isImpossible() isImpossible}()</CODE>
       <BR>must be {@code false}. Get with {@link RegexReplacer#getMatchNumValidator() getMatchNumValidator}{@code ()}
+      @return  <I>{@code this}</I>
       @see  #all()
       @see  #matchRange(LengthInRange) matchRange(iir)
       @see  #matchRange(int, int) matchRange(i,i)
@@ -171,6 +176,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
 
       <P>This sets {@link RegexReplacer#getReplacedInEachInput() getReplacedInEachInput}{@code ()}* to <CODE>{@link com.github.xbn.regexutil.ReplacedInEachInput ReplacedInEachInput}.{@link com.github.xbn.regexutil.ReplacedInEachInput#ALL ALL}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #first()
       @see  #lookingAt()
       @see  #matches()
@@ -207,6 +213,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
 
       <P>This sets {@link RegexReplacer#getReplacedInEachInput() getReplacedInEachInput}{@code ()}* to <CODE>{@link com.github.xbn.regexutil.ReplacedInEachInput ReplacedInEachInput}.{@link com.github.xbn.regexutil.ReplacedInEachInput#UNTIL UNTIL}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #first()
       @see  #until(int) until(i)
       @see  #until()
@@ -232,6 +239,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
    /**
       <P>Set the find-what search-term for <I>indirect</I> replacements only.</P>
 
+      @return  <I>{@code this}</I>
       @see  #findWhat(String) findWhat(s)
       @see  #findWhatLiteral(String) findWhatLiteral(s)
     **/
@@ -320,6 +328,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <P>Set the direct replace-with string.</P>
 
       @param  direct_rplcWithStr  If non-{@code null}, this is a <A HREF="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#direct">direct</A> replacement. If {@code null}, this is an <A HREF="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#indirect">indirect</A> replacement. Get with {@link com.github.xbn.regexutil.RegexReplacer#getDirectReplacement() getDirectReplacement}{@code ()}*.
+      @return  <I>{@code this}</I>
       @see  #direct(Pattern, Object) direct(p,O)
       @see  #direct(String, Object) direct(s,O)
       @see  #direct(String, int, Object) direct(s,i,O)
@@ -374,6 +383,9 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       P p = (P)(new RegexReplacer(this));
       return  p;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    @SuppressWarnings("unchecked")  //See LLCfgOverall.startConfigReturnNeedable(R)
    public RegexReplacer_CfgForNeeder<P,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
@@ -389,6 +401,9 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexReplacer_CfgForNeeder<P,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

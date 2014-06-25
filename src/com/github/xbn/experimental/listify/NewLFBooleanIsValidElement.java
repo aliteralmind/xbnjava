@@ -39,23 +39,23 @@ public class NewLFBooleanIsValidElement  {
       throw  new IllegalStateException("Do not instantiate");
    }
    @SuppressWarnings("unchecked")
-   public static final <R> ListifyBoolable nullIs(Null nnull, List<R> list, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullIs(nnull, filter_ifNullOff, dbgDest_ifNonNull)));
+   public static final <R> ListifyBoolable nullIs(Null nnull, List<R> list, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullIs(nnull, filter_ifNonNull, dbgDest_ifNonNull)));
    }
-   public static final <R> ListifyBoolable forOnlyNullValid(List<R> list, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>onlyNullGood(filter_ifNullOff, dbgDest_ifNonNull)));
+   public static final <R> ListifyBoolable forOnlyNullValid(List<R> list, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>onlyNullGood(filter_ifNonNull, dbgDest_ifNonNull)));
    }
-   public static final <R> ListifyBoolable forNullBad(List<R> list, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullBad(filter_ifNullOff, dbgDest_ifNonNull)));
+   public static final <R> ListifyBoolable forNullBad(List<R> list, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullBad(filter_ifNonNull, dbgDest_ifNonNull)));
    }
-   public static final <R> ListifyBoolable nullIs(Null nnull, List<R> list, NullHandlerForPrimitives<Boolean> null_handler, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullIs(nnull, filter_ifNullOff, dbgDest_ifNonNull), null_handler));
+   public static final <R> ListifyBoolable nullIs(Null nnull, List<R> list, NullHandlerForPrimitives<Boolean> null_handler, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullIs(nnull, filter_ifNonNull, dbgDest_ifNonNull), null_handler));
    }
-   public static final <R> ListifyBoolable forOnlyNullValid(List<R> list, NullHandlerForPrimitives<Boolean> null_handler, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>onlyNullGood(filter_ifNullOff, dbgDest_ifNonNull), null_handler));
+   public static final <R> ListifyBoolable forOnlyNullValid(List<R> list, NullHandlerForPrimitives<Boolean> null_handler, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>onlyNullGood(filter_ifNonNull, dbgDest_ifNonNull), null_handler));
    }
-   public static final <R> ListifyBoolable forNullBad(List<R> list, NullHandlerForPrimitives<Boolean> null_handler, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullBad(filter_ifNullOff, dbgDest_ifNonNull), null_handler));
+   public static final <R> ListifyBoolable forNullBad(List<R> list, NullHandlerForPrimitives<Boolean> null_handler, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  (new LFListElementsValidity<R>(list, NewValueValidatorFor.<R>nullBad(filter_ifNonNull, dbgDest_ifNonNull), null_handler));
    }
    public static final <R> ListifyBoolable forList(List<R> list, ValueValidator<R> raw_elementVldtr)  {
       return  (new LFListElementsValidity<R>(list, raw_elementVldtr));

@@ -28,7 +28,7 @@ public class NewAlterValueWhenFor  {
    private NewAlterValueWhenFor()  {
       throw  new IllegalStateException("Do not instantiate");
    }
-   public static final <V,A> AlterValueWhen<V,A> alwaysReturnSelf(ValueValidator<V> validator, AlwaysSetWasAlteredTo set_wasAlteredToForInvalid)  {
+   public static final <V,A> AlterValueWhen<V,A> alwaysReturnSelf(ValueValidator<V> validator, SetWasAlteredToWhenInRange set_wasAlteredToForInvalid)  {
       return  (new AlterValueWhen<V,A>(validator, (new ReturnValueUnchanged<V,A>()), (new ReturnValueUnchanged<V,A>(set_wasAlteredToForInvalid))));
    }
 }

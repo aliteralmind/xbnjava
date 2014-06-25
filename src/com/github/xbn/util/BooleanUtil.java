@@ -32,4 +32,7 @@ public class BooleanUtil  {
    public static final boolean getRandomBoolean()  {
       return  (NumberUtil.getRandomBetweenInclusive(0, 1) == 1);
    }
+   public static final String toUpperCase(boolean b)  {
+      return  new Boolean(b).toString().toUpperCase();
+   }
 }

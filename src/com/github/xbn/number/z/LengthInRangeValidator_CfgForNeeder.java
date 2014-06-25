@@ -105,6 +105,9 @@ public class LengthInRangeValidator_CfgForNeeder<G extends LengthInRange,V exten
       apblDebug = dest_ifNonNull;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LengthInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

@@ -84,11 +84,18 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
          throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
       }
 
-      to_appendTo.append(", null-" + (isNullOk() ? "ok" : "bad")).append(", ").
-         append(doInvertRules() ? "doInvertRules()=true, " : "").
-         append(", filter: ");
+      to_appendTo.append(", null-" + (isNullOk() ? "ok" : "bad"));
 
-      return  getFilter().appendToString(to_appendTo);
+      if(doInvertRules())  {
+         to_appendTo.append(", doInvertRules()=true");
+      }
+
+      if(!getFilter().doesNothing())  {
+         to_appendTo.append(", filter: ");
+         getFilter().appendToString(to_appendTo);
+      }
+
+      return  to_appendTo;
    }
 //getters...END
 //ValueValidator...START

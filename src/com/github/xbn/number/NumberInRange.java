@@ -32,7 +32,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 //state
    private final NumberBound<N> nbMin;
    private final NumberBound<N> nbMax;
-   private final RuleableComposer rc;
+   protected final RuleableComposer rc;
 //constructors...START
    /**
       <P>Create a new {@code NumberInRange}.</P>
@@ -56,7 +56,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
       rc = new RuleableComposer();
       nbMin = nb_min;
       nbMax = nb_max;
-      setERuleTypeFromBounds();
+      setRuleTypeFromBounds();
       crashIfBadBoundsForCnstr();
    }
    /**
@@ -70,10 +70,10 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
       rc = new RuleableComposer(to_copy);
       nbMin = to_copy.getMinBound();
       nbMax = to_copy.getMaxBound();
-      setERuleTypeFromBounds();
+      setRuleTypeFromBounds();
    }
 //setters...START
-   protected void setERuleTypeFromBounds()  {
+   protected void setRuleTypeFromBounds()  {
       rc.setERuleType_4prot((getMinBound() == null  &&  getMaxBound() == null)
          ?  RuleType.UNRESTRICTED
          :  RuleType.RESTRICTED);
@@ -207,7 +207,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
       NumberBound<?> min = getMinBound();
       try  {
          if(min == null)  {
-            to_appendTo.append("[-" + NumberUtil.INFINITY_CHAR);
+            to_appendTo.append("[-inf");
          }  else  {
             to_appendTo.append(min.isInclusive() ? "[" : "(").append(min.get());
          }
@@ -219,7 +219,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 
       NumberBound<?> max = getMaxBound();
       if(max == null)  {
-         to_appendTo.append("+" + NumberUtil.INFINITY_CHAR + ")");
+         to_appendTo.append("+inf)");
       }  else  {
          to_appendTo.append(max.get()).append(max.isInclusive() ? "]" : ")");
       }
@@ -274,7 +274,6 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 //	public abstract void crashIfBadBoundsForCnstr(NumberBound<N> nb_min, NumberBound<N> nb_max);
    public abstract void crashIfBadBoundsForCnstr();
 
-//	public abstract NumberInRange<N> getObjectCopy();
 //other...END
 
    public abstract boolean isGTOEMinGivenIncl(N num);
@@ -309,6 +308,37 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
       boolean bV4Max = (!hasMax()  ||  isLTOEMaxGivenIncl(num));
 
       return  (bV4Min  &&  bV4Max);
+   }
+   /**
+    	@return  <CODE>true</CODE> If {@code to_compareTo} is non-{@code null}, a {@code NumberInRange}, and all its fields {@linkplain #areFieldsEqual(NumberInRange) are equal}. This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).
+    **/
+   @Override
+   public boolean equals(Object to_compareTo)  {
+      //Check for object equality first, since it's faster than instanceof.
+      if(this == to_compareTo)  {
+         return  true;
+      }
+      if(!(to_compareTo instanceof NumberInRange))  {
+         //to_compareTo is either null or not an NumberInRange.
+         //java.lang.Object.object(o):
+         // "For any non-null reference value x, x.equals(null) should return false."
+         //See the bottom of this class for a counter-argument (which I'm not going with).
+         return  false;
+      }
+
+      //Safe to cast
+      NumberInRange o = (NumberInRange)to_compareTo;
+
+      //Finish with field-by-field comparison.
+      return  areFieldsEqual(o);
+   }
+   /**
+      <P>Are all relevant fields equal?.</P>
+
+      @param  to_compareTo  May not be {@code null}.
+    **/
+   public boolean areFieldsEqual(NumberInRange to_compareTo)  {
+      return  false;
    }
    public static final <N extends Number> String getValidityDebugging(NumberInRange<N> range, N to_validate, String to_vldtName)  {
       return  to_vldtName + "=" + to_validate + ", range=<" + range + ">, valid-for-min?=" +

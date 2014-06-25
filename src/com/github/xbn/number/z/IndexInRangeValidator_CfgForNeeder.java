@@ -111,6 +111,9 @@ public class IndexInRangeValidator_CfgForNeeder<G extends IndexInRange,V extends
       apblDebug = dest_ifNonNull;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public IndexInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

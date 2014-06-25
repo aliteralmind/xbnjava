@@ -6,8 +6,14 @@ package  com.github.xbn.test;
    <P>{@code java com.github.xbn.test.ExampleCodeOutputsContain_Unit}</P>
  **/
 public class ExampleCodeOutputsContain_Unit  {
+   private static final String JAVA_SOURCE_INPUT_FILE =
+      "examples\\com\\github\\xbn\\examples\\linefilter\\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt";
+   private static final String[] JAVA_SOURCE_INPUT_FILE_PARAMS = new String[] {
+      JAVA_SOURCE_INPUT_FILE};
+
    public static final void main(String[] ignored)  {
       ExampleCodeOutputsContain_Unit test = new ExampleCodeOutputsContain_Unit();
+
    	test.analyze_alter_ValueAltererXmpl();
    	test.analyze_validate_FirstCheckIsAlwaysValidThenExpireXmpl();
    	test.analyze_validate_ValidResultFilterXmpl();
@@ -21,8 +27,15 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.lang_builder_finalv_UCBlindBuilderTest();
    	test.lang_reflect_InvokeMainWithRtxXmpl();
    	test.lang_reflect_InvokePrivateStaticMethodWithRtxXmpl();
+   	test.linefilter_ModifyBlockLines();
+   	test.linefilter_MoreComplicatedModifyExample();
+   	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNums();
+   	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging();
+   	test.linefilter_PrintAllJavaDocBlockSubLinesBolded();
+   	test.linefilter_EliminateAllCommentBlocksAndPackageLine();
+   	test.linefilter_IterateActiveLines();
+   	test.linefilter_IterateKeptLines();
    	test.neederneedable_NeedableNeederXmpl();
-   	test.number_FractionXmpl();
    	test.regexutil_RegexGroupExtractorXmpl();
    	test.regexutil_RegexReplacerDirectXmpl();
    	test.regexutil_RegexReplacerIndirectXmpl1of2();
@@ -41,7 +54,8 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.util_tuple_PotentialStringConcatWithThreeObjs();
    	test.util_tuple_PotentialStringConcatWithThreeObjs();
    	test.util_tuple_PotentialStringConcatWithThreeObjs();
-//   	test.YYY_UnitTestAppOutputContainsXmpl();
+//   	test.number_FractionXmpl();
+//   	test.testdev_UnitTestAppOutputContainsXmpl();
    }
    @Test
    public void array_XbnIndexOutOfBoundsExceptionXmpl()  {
@@ -78,7 +92,66 @@ public class ExampleCodeOutputsContain_Unit  {
    public void lang_builder_blind_BlindBuilderXmpl()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.lang.builder.blind.BlindBuilderXmpl.class,
-         "name=Kermit, age=50, sFavColor=green");
+         "name=Kermit", "age=50", "sFavColor=green");
+   }
+   @Test
+   public void linefilter_ModifyBlockLines()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.linefilter.ModifyBlockLines.class,
+         "<B>mid1</B>", "<B>mid2</B>");
+   }
+   @Test
+   public void linefilter_MoreComplicatedModifyExample()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.linefilter.MoreComplicatedModifyExample.class,
+         "midONE", "midTWO");
+   }
+   @Test
+   public void linefilter_PrintAllJavaDocBlockStartAndEndLineNums()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"path:"},
+         com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums.class,
+         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         "9", "11", "13", "24", "28", "30");
+   }
+   @Test
+   public void linefilter_PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"path:"},
+         com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging.class,
+         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         "9", "11", "13", "24", "28", "30");
+   }
+   @Test
+   public void linefilter_PrintAllJavaDocBlockSubLinesBolded()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"path:"},
+         com.github.xbn.examples.linefilter.PrintAllJavaDocBlockSubLinesBolded.class,
+         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         "//sub-mode...START", "//sub-mode...END",
+         "<P>Another JavaDoc block</P>", "<B><P>info</P></B>", "<B></B>",
+         "<B><P>info</P></B>", "<B></B>", "<B><P>info</P></B>", "<P>info</P>",
+         "StayClassy()", "<P>Does stuff.</P>");
+   }
+   @Test
+   public void linefilter_EliminateAllCommentBlocksAndPackageLine()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"path:", "package", "sub-mode", "<P>", "*"},
+         com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine.class,
+         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         "class StayClassy", "StayClassy()", "doStuff()");
+   }
+   @Test
+   public void linefilter_IterateActiveLines()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.linefilter.IterateActiveLines.class,
+         "Block starts here", "mid1", "mid2", "Block ends here");
+   }
+   @Test
+   public void linefilter_IterateKeptLines()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.linefilter.IterateKeptLines.class,
+         "mid1", "mid2");
    }
    @Test
    public void analyze_alter_ValueAltererXmpl()  {
@@ -90,30 +163,31 @@ public class ExampleCodeOutputsContain_Unit  {
    public void analyze_validate_ValidResultFilterXmpl()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.analyze.validate.ValidResultFilterXmpl.class,
-         "xbn.analyze.validate.FilterValidCounts: <debug-off>",
-         "[PROCEED,FALSE], IN=[PROCEED,UNCHANGED], after=[RETURN_FALSE,FALSE], doesExpire()=true, isExpired()=false",
-         "Word 6 (5): here,",
-         "Word 7 (4): with",
-         "Word 9 (6): Sesame",
-         "Word 10 (6): Street",
-         "Word 11 (4): News");
+         "range=[3,7]", "FilterCountType.VALID",
+         "pre=PROCEED,post=FALSE", "in=[PROCEED,UNCHANGED]",
+         "after=[RETURN_FALSE,FALSE]", "expirable but not-expired",
+         "6 (5): here,",
+         "7 (4): with",
+         "9 (6): Sesame",
+         "10 (6): Street",
+         "11 (4): News");
    }
    @Test
    public void analyze_validate_ValueValidatorXmpl()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.analyze.validate.ValueValidatorXmpl.class,
-         "Rules: null bad",
-         "null...", "Valid?  No  (source=POST_FILTER)", "Crash if bad: java.lang.IllegalArgumentException",
-         "3...", "Valid?  Yes  (source=POST_FILTER)", "Crash if bad: (valid)",
-         "10...", "Valid?  Yes  (source=POST_FILTER)", "Crash if bad: (valid)",
-         "Rules: only null acceptable",
-         "null...", "Valid?  Yes  (source=POST_FILTER)", "Crash if bad: (valid)",
-         "3...", "Valid?  No  (source=POST_FILTER)", "Crash if bad: java.lang.IllegalArgumentException",
-         "10...", "Valid?  No  (source=POST_FILTER)", "Crash if bad: java.lang.IllegalArgumentException",
-         "Rules: null bad, only legal non-null value is 3.",
-         "null...", "Valid?  No  (source=POST_FILTER)", "Crash if bad: java.lang.IllegalArgumentException",
-         "3...", "Valid?  Yes  (source=POST_FILTER)", "Crash if bad: (valid)",
-         "10...", "Valid?  No  (source=POST_FILTER)", "Crash if bad: java.lang.IllegalArgumentException");
+         "Rules", "null bad",
+         "null...", "Valid?", "No", "source=RULES", "java.lang.IllegalArgumentException",
+         "3...", "Valid?", "Yes", "source=RULES", "valid",
+         "10...", "Valid?", "Yes", "source=RULES", "valid",
+         "Rules", "only null acceptable",
+         "null...", "Valid?", "Yes", "source=RULES", "valid",
+         "3...", "Valid?", "No", "source=RULES", "java.lang.IllegalArgumentException",
+         "10...", "Valid?", "No", "source=RULES", "java.lang.IllegalArgumentException",
+         "Rules", "null bad", "only legal value is 3",
+         "null...", "Valid?", "No", "source=RULES", "java.lang.IllegalArgumentException",
+         "3...", "Valid?", "Yes", "source=RULES", "valid",
+         "10...", "Valid?", "No", "source=RULES", "java.lang.IllegalArgumentException");
    }
    @Test
    public void number_FractionXmpl()  {
@@ -121,14 +195,6 @@ public class ExampleCodeOutputsContain_Unit  {
          com.github.xbn.examples.number.FractionXmpl.class,
          "Parse string 5/10: Reduced to 1/2",
          "Parse numerator 5, denominator 10: 1/2");
-   }
-   @Test
-   public void testdev_TimeIteratorVsIndexIntegerList()  {
-      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
-         com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList.class,
-         "Test \"index\" took ", " nanoseconds",
-         "Test \"iterator\" took ", " nanoseconds",
-         "FASTER: Test", ", by ", " nanoseconds (", "%)");
    }
    @Test
    public void array_BinarySearcherXmpl()  {
@@ -150,6 +216,15 @@ public class ExampleCodeOutputsContain_Unit  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.lang.builder.finalv.UCBlindBuilderTest.class,
          "getName()=Kermit, getAge()=50, getFavoriteColor()=green");
+   }
+   @Test
+   public void testdev_TimeIteratorVsIndexIntegerList()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList.class,
+         new String[]{"1000000"},
+         "Test \"index\" took ", " nanoseconds",
+         "Test \"iterator\" took ", " nanoseconds",
+         "FASTER: Test", ", by ", " nanoseconds (", "%)");
    }
    @Test(expected=AssertionError.class)
    public void testdev_UnitTestAppOutputContainsXmpl()  {
@@ -250,8 +325,8 @@ public class ExampleCodeOutputsContain_Unit  {
    @Test
    public void lang_reflect_InvokePrivateStaticMethodWithRtxXmpl()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
-         com.github.xbn.examples.lang.reflect.InvokeMainWithRtxXmpl.class,
-         "Returned from getPrivateString: HEY!");
+         com.github.xbn.examples.lang.reflect.InvokePrivateStaticMethodWithRtxXmpl.class,
+         "HEY!");
    }
    @Test
    public void util_JavaUtilInitializedValuesXmpl()  {

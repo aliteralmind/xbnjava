@@ -52,10 +52,12 @@ public class GetFromCommandLineAtIndex  {
       Iterator<String> itr = PlainTextFileUtil.getLineIterator(
          text(cmd_lineParams, index, "path", debugPath_ifNonNull), "cmd_lineParams[index]");
 
+/*
       TextAppenter aptr = NewTextAppenterFor.appendableUnusableIfNull(debugPath_ifNonNull);
       if(aptr.isUseable())  {
-         aptr.appentln(" -" + index + "- " + cmd_lineParams[index] + ": line iterator retrieved");
+         aptr.appentln(" -" + index + "- Line iterator retrieved: " + cmd_lineParams[index]);
       }
+ */
 
       return  itr;
    }
@@ -98,7 +100,7 @@ public class GetFromCommandLineAtIndex  {
       try  {
          s = cmd_lineParams[index];
       }  catch(ArrayIndexOutOfBoundsException ibx)  {
-         throw  new ArrayIndexOutOfBoundsException("Missing required text (description=" + description + ") in command line parameter, at index " + index + ". All parameters=" + Arrays.toString(cmd_lineParams));
+         throw  new ArrayIndexOutOfBoundsException("Missing required text (description: \"" + description + "\") in command line parameter, at index " + index + ". All parameters=" + Arrays.toString(cmd_lineParams));
       }
 
       TextAppenter aptr = NewTextAppenterFor.appendableUnusableIfNull(debug_ifNonNull);
@@ -133,7 +135,7 @@ public class GetFromCommandLineAtIndex  {
       try  {
          num = Integer.parseInt(cmd_lineParams[index]);
       }  catch(ArrayIndexOutOfBoundsException ibx)  {
-         throw  new ArrayIndexOutOfBoundsException("Missing required variable (description=" + description + ") in command line parameter index " + index + ". All parameters=" + Arrays.toString(cmd_lineParams));
+         throw  new ArrayIndexOutOfBoundsException("Missing required variable (description: \"" + description + "\") in command line parameter index " + index + ". All parameters=" + Arrays.toString(cmd_lineParams));
       }  catch(NumberFormatException nfx)  {
          throw  new NumberFormatException("cmd_lineParams[index] (\"" + cmd_lineParams[index] + "\") is not an integer. index=" + index + ")");
       }
@@ -159,7 +161,7 @@ public class GetFromCommandLineAtIndex  {
    /**
       <P>Get an enum value from a string, with arbitrary string-values assigned to each enum-value.</P>
 
-{@.codelet.and.out com.github.xbn.examples.util.GetFromExplicitStringValuesExample:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.util.GetFromExplicitStringValuesExample:eliminateCommentBlocksAndPackageDecl()}
     **/
    public static final <T extends Enum<T>> T enumValue(String[] cmd_lineParams, int index, T enumInstance_anyNonNullValue, IgnoreCase ignore_case, Appendable debug_ifNonNull, String... one_perEnumValueInOrder)  {
       String description = "[" + enumInstance_anyNonNullValue.getClass().getName() + ":" +

@@ -68,7 +68,7 @@ public class IOUtil  {
    /**
       <P>Creates a new {@code java.io.Writer} that wraps around a {@code java.lang.Appendable}. It properly {@link java.io.Writer#flush() flush}es and {@link java.io.Writer#close() close}s appendables that happened to also be {@link java.io.Flushable}s and/or {@link java.io.Closeable Closeable}s. This uses {@code instanceof} only in the constructor, and a (Java 1.5) delta in {@code flush()} and {@code close()}, which avoids having to use any logic or reflection after object construction.</P>
 
-{@.codelet.and.out com.github.xbn.examples.io.WriterForAppendableXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.io.WriterForAppendableXmpl:eliminateCommentBlocksAndPackageDecl()}
 
       <P>This function is also released as a <A HREF="https://gist.github.com/aliteralmind/8494917">gist</A>. It is an example of the <A HREF="http://en.wikipedia.org/wiki/Adapter_pattern#Object_Adapter_pattern">Object Adapter pattern</A>. Thanks to <A HREF="http://stackoverflow.com/users/1211906/marc-baumbach">Marc Baumbach</A> on <A HREF="http://stackoverflow.com">{@code stackoverflow}</A> for the assistance. See (viewed 1/18/2014)
       <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer">http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer</A></CODE></P>

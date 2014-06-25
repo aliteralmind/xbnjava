@@ -113,7 +113,7 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 //main functionality...END
 //other...START
    /**
-      <P>Get a duplicate of this {@code SimpleNullHandler}.</P>
+      <P>Duplicate this {@code SimpleNullHandler}.</P>
 
       @return  <CODE>(new {@link #SimpleNullHandler(SimpleNullHandler) SimpleNullHandler}&lt;O&gt;(this))</CODE>
     **/

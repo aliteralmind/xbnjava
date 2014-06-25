@@ -6,7 +6,7 @@ package  com.github.xbn.number;
 /**
   <P>Represents a fraction in reduced and mixed-number form, with some mathematical functionality.</P>
 
-{@.codelet.and.out com.github.xbn.examples.number.FractionXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{&#64;.codelet.and.out com.github.xbn.examples.number.FractionXmpl:eliminateCommentBlocksAndPackageDecl()}
 
   <P>Originally {@code EDU.oswego.cs.dl.util.concurrent.misc.Fraction.java}, with some minor edits, and the addition of mixed numbers, testing function, and string-constructor, by Jeff Epstein.</P>
 
@@ -24,6 +24,7 @@ package  com.github.xbn.number;
   201011     je               Added mixed-numbers and testing function</PRE>
 **/
 public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
+/*
    public static final void main(String[] ignored)  {
       System.out.println("Parse string 5/10:");
 
@@ -35,9 +36,9 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
          f = new Fraction(5, 10);
          System.out.println(f.toString());
    }
-   protected long numerator;
-   protected long denominator;
-
+ */
+   private long numerator;
+   private long denominator;
    /**
       <P>Create a Fraction in 'mixed number form' (such as {@code '3 1/2'}). See <a href="http://en.wikipedia.org/wiki/Fraction_%28mathematics%29#Mixed_numbers">Fractions:Mixed Numbers </a> on Wikipedia.</P>
 
@@ -128,11 +129,10 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
          setFraction(lWhole, 1);
       }
    }
-  /** Create a Fraction equal in value to num / den **/
-  public Fraction(long num, long den) {
-     setFraction(num, den);
-  }
-
+   /** Create a Fraction equal in value to num / den **/
+   public Fraction(long num, long den) {
+      setFraction(num, den);
+   }
    private void setFraction(long mixed_whole, long mixed_numerator, long mixed_denominator)  {
       setFraction(
          ((mixed_whole * mixed_denominator) + mixed_numerator),

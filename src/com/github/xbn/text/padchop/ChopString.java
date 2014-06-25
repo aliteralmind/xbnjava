@@ -25,12 +25,12 @@ package  com.github.xbn.text.padchop;
 /**
    <P>Chop a string at a particular location (left, middle, right), and with-or-without an ellipsis.</P>
 
-{@.codelet.and.out com.github.xbn.examples.text.padchop.ChopStringXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.text.padchop.ChopStringXmpl:eliminateCommentBlocksAndPackageDecl()}
 
 
-{@.codelet.and.out com.github.xbn.examples.text.padchop.CharsBeforeChopXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.text.padchop.CharsBeforeChopXmpl:eliminateCommentBlocksAndPackageDecl()}
 
-   <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.ChopString_Cfg ChopString_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.ChopString_Cfg ChopString_Cfg}</H3>
 
    <P><UL>
       <LI><B>Used by:</B> {@code <A HREF="VzblPadChop.html#cfg">VzblPadChop</A>}</LI>
@@ -160,7 +160,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 //getters...END
 //other...START
    /**
-      <P>Get a duplicate of this {@code ChopString}.</P>
+      <P>Duplicate this {@code ChopString}.</P>
 
       @return  <CODE>(new {@link #ChopString(ChopString) ChopString}(this))</CODE>
     **/
@@ -168,7 +168,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
       return  (new ChopString(this));
    }
    /**
-      <P>Get a duplicate of this {@code ChopString}, with a new goal-length.</P>
+      <P>Duplicate this {@code ChopString}, with a new goal-length.</P>
 
 
       @return  <CODE>(new {@link #ChopString(ChopString) ChopString}(this))</CODE>
@@ -247,6 +247,12 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
    }
    public Appendable getDebugApbl()  {
       return  sg.getDebugApbl();
+   }
+   public final TextAppenter debug(Object message)  {
+      return  sg.debug(message);
+   }
+   public final void debugln(Object message)  {
+      sg.debugln(message);
    }
    /**
       <P>Chop the string as configured, with a specific goal-length.</P>

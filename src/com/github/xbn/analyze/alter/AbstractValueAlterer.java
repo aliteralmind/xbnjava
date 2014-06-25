@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
+   import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.analyze.AnalyzerComposer;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.io.TextAppenter;
@@ -96,14 +97,8 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
    protected void setAutoResetState(boolean is_auto)  {
       avc.setAutoResetState_4prot(is_auto);
    }
-   protected void declareAlteredNotDeleted()  {
-      avc.declareAlteredNotDeleted_4prot();
-   }
-   protected void declareWasAnalyzedWasDeleted(boolean was_altered, boolean was_deleted)  {
-      avc.declareWasAnalyzedWasDeleted_4prot(was_altered, was_deleted);
-   }
-   protected void declareDeletedNotAltered()  {
-      avc.declareDeletedNotAltered_4prot();
+   protected void declareAltered(Altered altered, NeedsToBeDeleted deleted)  {
+      avc.declareAltered_4prot(altered, deleted);
    }
    public void resetForDeletion()  {
       avc.resetForDeletion();
@@ -132,6 +127,12 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
    public final TextAppenter getDebugAptr()  {
       return  avc.getDebugAptr();
    }
+   public final TextAppenter debug(Object message)  {
+      return  avc.debug(message);
+   }
+   public final void debugln(Object message)  {
+      avc.debugln(message);
+   }
    public String toString()  {
       return  appendToString(new StringBuilder()).toString();
    }
@@ -148,6 +149,27 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       AltererComposer.autoResetStateOrCINeedTo(this);
       return  getAlteredPostResetCheck(to_validate, to_alter);
    }
+   public RuleType getRuleType()  {
+      return  RuleType.UNRESTRICTED;
+   }
+   /**
+      @return  <CODE>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</CODE>
+    **/
+   public String getRules()  {
+      return  appendRules(new StringBuilder()).toString();
+   }
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #getRules()
+    **/
+   public StringBuilder appendRules(StringBuilder to_appendTo)  {
+      try  {
+         to_appendTo.append("unrestricted");
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+      }
+      return  to_appendTo;
+   }
    /**
     **/
    public boolean isComplete()  {
@@ -159,6 +181,14 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       return  avc.appendIncompleteInfo(to_appendTo);
    }
    protected abstract A getAlteredPostResetCheck(V to_validate, A to_alter);
+   public static final <V,A> A getAlteredDefensive(ValueAlterer<V,A> alterer, V to_validate, A to_alter, String alter_name, String toValidate_name, String toAlter_name)  {
+      try  {
+         return  alterer.getAltered(to_validate, to_alter);
+      }  catch(RuntimeException rx)  {
+         CrashIfObject.nnull(alterer, alter_name, null);
+         throw  new RuntimeException("Attempting " + alter_name + ".getAltered(" + toValidate_name + ", " + toAlter_name + "), " + toValidate_name + "=[" + to_validate + "], toAlter_name=[" + to_alter + "]");
+      }
+   }
 /*stub functions for non-abstract compile...START
  stub functions for non-abstract compile...END*/
 }

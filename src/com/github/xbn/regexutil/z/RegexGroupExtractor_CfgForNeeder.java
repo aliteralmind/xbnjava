@@ -50,6 +50,7 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 
       <P>This sets <CODE>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</CODE> to <CODE>{@link MatcherUses}.{@link MatcherUses#MATCHES MATCHES}</CODE>.</P>
 
+      @return  <I>{@code this}</I>
       @see  #useFind()
       @see  #useLookingAt()
     **/
@@ -62,6 +63,7 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 
       <P>This sets <CODE>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</CODE> to <CODE>{@link MatcherUses}.{@link MatcherUses#FIND FIND}</CODE>.</P>
 
+      @return  <I>{@code this}</I>
       @see  #useFind()
     **/
    public RegexGroupExtractor_CfgForNeeder<X,R> useFind()  {
@@ -73,6 +75,7 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 
       <P>This sets <CODE>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</CODE> to <CODE>{@link MatcherUses}.{@link MatcherUses#LOOKING_AT LOOKING_AT}</CODE>.</P>
 
+      @return  <I>{@code this}</I>
       @see  #useFind()
     **/
    public RegexGroupExtractor_CfgForNeeder<X,R> useLookingAt()  {
@@ -83,6 +86,7 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
       <P>Declare a specific number of groups is required in every iteration.</P>
 
       @param  num  If {@code -1}, at least one group is required. Otherwise, must be greater than zero, and represents the exact number of groups that must be found. Get with <CODE>[PRE_LINK-file-italic].{@link RegexGroupExtractor#getRequiredGroupCount() getRequiredGroupCount}()</CODE>
+      @return  <I>{@code this}</I>
     **/
    public RegexGroupExtractor_CfgForNeeder<X,R> requiredGroups(int num)  {
       iRequiredGroups = num;
@@ -94,6 +98,9 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
    public RegexGroupExtractor_CfgForNeeder<X,R> pattern(String regex_withGroups, int bit_flags)  {
       return  pattern(NewPatternFor.regex(regex_withGroups, bit_flags, "regex_withGroups"));
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexGroupExtractor_CfgForNeeder<X,R> pattern(Pattern pattern_toFind)  {
       pWithGroups = pattern_toFind;
       return  this;
@@ -127,10 +134,16 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexGroupExtractor_CfgForNeeder<X,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    @SuppressWarnings("unchecked")  //See LLCfgOverall.startConfigReturnNeedable(R)
    public RegexGroupExtractor_CfgForNeeder<X,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")

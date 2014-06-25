@@ -27,7 +27,7 @@ public class ValueDeleter<V,A> extends AbstractValueAlterer<V,A>  {
       super(to_copy);
    }
    public final A getAlteredPostResetCheck(V ignored1, A ignored2)  {
-      declareDeletedNotAltered();
+      declareAltered(Altered.NO, NeedsToBeDeleted.YES);
       return  null;
    }
    /**

@@ -91,6 +91,7 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
       <P>Define the character to pad with.</P>
 
       @param  pad_char  Get with {@link com.github.xbn.text.padchop.PadString#getPadChar() getPadChar}{@code ()}*
+      @return  <I>{@code this}</I>
       @see  #withSpace()
     **/
    public PadString_CfgForNeeder<P,R> with(char pad_char)  {
@@ -125,6 +126,9 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
       P p = (P)(new PadString(this));
       return  p;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public PadString_CfgForNeeder<P,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
       Class<P> clsp = (Class<P>)(Class)PadString.class;
@@ -139,6 +143,9 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public PadString_CfgForNeeder<P,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

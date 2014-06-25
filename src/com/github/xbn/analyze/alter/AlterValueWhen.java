@@ -39,7 +39,7 @@ package  com.github.xbn.analyze.alter;
  **/
 public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
 //config
-   private final ValueValidator<V> vv        ;
+   private final ValueValidator<V>  vv        ;
    private final ValueAlterer<V,A>  avValid   ;
    private final ValueAlterer<V,A>  avInvalid ;
 //internal
@@ -251,6 +251,27 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
    public boolean doAutoResetState()  {
       return  getCondition().doAutoResetState();
    }
+   public RuleType getRuleType()  {
+      return  getCondition().getRuleType();
+   }
+   /**
+      @return  <CODE>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</CODE>
+    **/
+   public String getRules()  {
+      return  appendRules(new StringBuilder()).toString();
+   }
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #getRules()
+    **/
+   public StringBuilder appendRules(StringBuilder to_appendTo)  {
+      try  {
+         getCondition().appendRules(to_appendTo);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+      }
+      return  to_appendTo;
+   }
 //getters...END
    /**
       <P>Get the altered value, based on the configuration throughout this class.</P>
@@ -274,7 +295,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       boolean bWsLtrd = getAlterValid().wasAltered();
       boolean bNtbDel = getAlterValid().needsToBeDeleted();
 
-      declareWasAnalyzedWasDeleted(bWsLtrd, bNtbDel);
+      declareAltered(Altered.getForBoolean(bWsLtrd), NeedsToBeDeleted.getForBoolean(bNtbDel));
 
       if(isDebugOn()) { getDebugAptr().appentln("<AVW> wasAltered()=" + wasAltered() + ", getCondition().isValid()=" + getCondition().isValid() + ". Returning [" + StringUtilBase.getChopped(Trim.YES, to_alter, 30, "...") + "], needsToBeDeleted()=" + needsToBeDeleted()); }
 
@@ -323,9 +344,6 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       return  to_appendTo.append(": ").append(LINE_SEP).append(" - getCondition()=").append(getCondition()).append(LINE_SEP).
          append(" - getAlterValid()=[").append(getAlterValid()).append("]").append(LINE_SEP).
          append(" - getAlterInvalid()=[").append(getAlterInvalid());
-   }
-   public StringBuilder appendRules(StringBuilder to_appendTo)  {
-      return  getCondition().appendRules(to_appendTo);
    }
    public Object getExtraErrInfo()  {
       return  getCondition().getExtraErrInfo();

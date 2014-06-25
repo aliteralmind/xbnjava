@@ -1,4 +1,5 @@
 package  com.github.xbn.number;
+   import  java.util.Objects;
    import  com.github.xbn.keyed.Named;
    import  com.github.xbn.lang.Null;
    import  com.github.xbn.text.CrashIfString;
@@ -9,15 +10,16 @@ package  com.github.xbn.number;
    <P>Minimum or maximum extreme of a range.</P>
  **/
 public abstract class NumberBound<N extends Number> implements Named  {
-   private N n = null;
-   private boolean isInclusive = false;
-   private String name = null;
+   private final N num;
+   private final boolean isInclusive;
+   private final String name;
    /**
       <P>Create a new {@code NumberBound}.</P>
     **/
    public NumberBound(N num, boolean is_inclusive, String name)  {
-      setNumber(num);
-      setInclusive(is_inclusive);
+      Objects.requireNonNull(num, "num");
+      this.num = num;
+      isInclusive = is_inclusive;
       CrashIfString.empty(Null.OK, name, "name", null);
       this.name = name;
    }
@@ -32,30 +34,21 @@ public abstract class NumberBound<N extends Number> implements Named  {
     **/
    public NumberBound(NumberBound<N> to_copy)  {
       try  {
-         setNumber(to_copy.get());
+         num = to_copy.get();
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
       }
-      setInclusive(to_copy.isInclusive());
+      isInclusive = to_copy.isInclusive();
       name = to_copy.getName();
    }
    public String getName()  {
       return  name;
    }
-   public void setNumber(N num)  {
-      if(num == null)  {
-         throw  new NullPointerException("num");
-      }
-      n = num;
-   }
-   public void setInclusive(boolean is_inclusive)  {
-      isInclusive = is_inclusive;
-   }
    /**
       <P>Get the bound number.</P>
     **/
    public final N get()  {
-      return  n;
+      return  num;
    }
    public abstract N getGivenIncl(BoundSide min_orMax);
    public abstract N getInclComparedTo(BoundSide min_orMax, N num);
@@ -74,13 +67,11 @@ public abstract class NumberBound<N extends Number> implements Named  {
       return  ((getName() == null) ? "" : getName() + "=") +
          get() + " (" + (isInclusive() ? "in" : "ex") + "clusive)";
    }
-   @Override public int hashCode()  {
-      return  super.hashCode() + get().intValue() * (isInclusive()?1:-1);
-   }
    /**
       @param  to_compareTo  May not be {@code null}.
     **/
-   @Override public boolean equals(Object to_compareTo)  {
+   @Override
+   public boolean equals(Object to_compareTo)  {
       if(to_compareTo == null)  {
          throw  new NullPointerException("to_compareTo");
       }
@@ -107,10 +98,24 @@ public abstract class NumberBound<N extends Number> implements Named  {
       }
 
       @SuppressWarnings("unchecked")
-      NumberBound bound = (NumberBound)to_compareTo;
+      NumberBound<?> o = (NumberBound<?>)to_compareTo;
 
-      return  (get().equals(bound.get())  &&
-            isInclusive() == bound.isInclusive());
+      //Finish with field-by-field comparison.
+      return  areFieldsEqual(o);
+   }
+   /**
+      <P>Are all relevant fields equal?.</P>
+
+      @param  to_compareTo  May not be {@code null}.
+    **/
+   public boolean areFieldsEqual(NumberBound<?> to_compareTo)  {
+      return  (get().equals(to_compareTo.get())  &&
+            isInclusive() == to_compareTo.isInclusive());
+   }
+   @Override
+   public int hashCode()  {
+      return  27 * get().hashCode() +
+         (isInclusive() ? 1 : 0);
    }
    public static final <N extends Number> StringBuilder appendExclusiveOrES(StringBuilder sd_toAppendTo, String prefixfixForEx, NumberBound<N> bound, String postfixfixForEx)  {
       try  {

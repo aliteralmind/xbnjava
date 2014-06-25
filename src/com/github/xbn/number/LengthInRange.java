@@ -82,31 +82,6 @@ public class LengthInRange extends IntInRange implements LengthRange  {
       super(min_bound, max_bound);
    }
    /**
-      <P>Create a new instance as a duplicate of another.</P>
-
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(IntInRange) super}{@code (to_copy)}</P>
-
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #LengthInRange(IntBoundInclusive, IntBoundInclusive) this(ibi,ibi)
-    **/
-   public LengthInRange(LengthInRange to_copy)  {
-      super(to_copy);
-   }
-/*
-   public LengthInRange extraErrInfo(Object info)  {
-      setExtraErrInfo(info);
-      return  this;
-   }
- */
-   /**
-      @return  <CODE>(new {@link #LengthInRange(LengthInRange) LengthInRange}(this))</CODE>
-    **/
-   public LengthInRange getObjectCopy()  {
-      return  (new LengthInRange(this));
-   }
-   /**
       <P>If the bounds of this {@code LengthInRange} are invalid, crash.</P>
 
       <P>Equal to
@@ -226,5 +201,8 @@ public class LengthInRange extends IntInRange implements LengthRange  {
     **/
    public void crashIfBadCollectionTIAElement(Collection<?> coll, String cntr_name, int idx_inCntr)  {
       crashIfBadElement(coll.size(), cntr_name, idx_inCntr);
+   }
+   protected void setRuleTypeFromBounds()  {
+      setRuleTypeFromBoundsForLenIdx();
    }
 }

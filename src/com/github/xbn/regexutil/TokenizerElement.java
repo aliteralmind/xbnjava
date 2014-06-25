@@ -125,7 +125,7 @@ public class TokenizerElement implements Copyable  {
       return  this.getClass().getName() + ": start-index=" + getIdxStart() + ", " + (isSeparator() ? "separator" : "between") + ", getText()=\"" + getText() + "\"";
    }
    /**
-      <P>Get a duplicate of this {@code TokenizerElement}.</P>
+      <P>Duplicate this {@code TokenizerElement}.</P>
 
       @return  <CODE>(new {@link #TokenizerElement(TokenizerElement) TokenizerElement}(this))</CODE>
     **/

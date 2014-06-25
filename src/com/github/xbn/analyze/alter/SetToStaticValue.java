@@ -31,7 +31,7 @@ public class SetToStaticValue<V,A> extends AbstractValueAlterer<V,A>  {
       toAltrTo = to_copy.getStaticValue();
    }
    public A getAlteredPostResetCheck(V ignored, A to_alter)  {
-      declareAlteredNotDeleted();
+      declareAltered(Altered.YES, NeedsToBeDeleted.NO);
       return  getStaticValue();
    }
    public A getStaticValue()  {

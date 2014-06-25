@@ -82,7 +82,7 @@ public class LFCharsInAString extends AbstractListifyPrimitiveable<Character> im
       return  getRawString().toString().toCharArray();
    }
    /**
-      <P>Get a duplicate of this {@code LFCharsInAString}.</P>
+      <P>Duplicate this {@code LFCharsInAString}.</P>
 
       @return  <CODE>(new {@link #LFCharsInAString(LFCharsInAString) LFCharsInAString}(this))</CODE>
     **/

@@ -50,6 +50,9 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
       debugTo(null);
       toTokenize("");
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexTokenizer_CfgForNeeder<T,R> lineNumber(int line_num)  {
       lineNum = line_num;
       return  this;
@@ -57,20 +60,32 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
    public RegexTokenizer_CfgForNeeder<T,R> separatorsOnly()  {
       return  setReturnSepsBtwns(true, false, false);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    protected RegexTokenizer_CfgForNeeder<T,R> setReturnSepsBtwns(boolean do_separators, boolean do_nonEmptyBtwns, boolean do_emptyBtwns)  {
       doReturnSeps = do_separators;
       doReturnBtwns = do_nonEmptyBtwns;
       doReturnEmptyBtwns = do_emptyBtwns;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexTokenizer_CfgForNeeder<T,R> separators()  {
       doReturnSeps = true;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexTokenizer_CfgForNeeder<T,R> nonEmptyBetweens()  {
       doReturnBtwns = true;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexTokenizer_CfgForNeeder<T,R> emptyBetweens()  {
       doReturnBtwns = true;
       return  this;
@@ -89,6 +104,7 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
       <P>Set debugging.</P>
 
       @param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
+      @return  <I>{@code this}</I>
     **/
    public RegexTokenizer_CfgForNeeder<T,R> debugTo(Appendable dest_ifNonNull)  {
       apblDebug = dest_ifNonNull;
@@ -124,10 +140,16 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
    public RegexTokenizer_CfgForNeeder<T,R> separator(String findWhat_regex, int bit_flags)  {
       return  separator(NewPatternFor.regex(findWhat_regex, bit_flags, "findWhat_regex"));
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexTokenizer_CfgForNeeder<T,R> separator(Pattern pattern_toFind)  {
       sepPtrn = pattern_toFind;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexTokenizer_CfgForNeeder<T,R> toTokenize(Object to_tokenize)  {
       try  {
          toTokenize = to_tokenize.toString();
@@ -149,10 +171,16 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public RegexTokenizer_CfgForNeeder<T,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    @SuppressWarnings("unchecked")  //See LLCfgOverall.startConfigReturnNeedable(R)
    public RegexTokenizer_CfgForNeeder<T,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")

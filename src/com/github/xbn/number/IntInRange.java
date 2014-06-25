@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.RuleType;
    import  java.util.Objects;
    import  com.github.xbn.lang.XInfoAccumulator;
    import  com.github.xbn.lang.CrashIfObject;
@@ -26,8 +27,6 @@ package  com.github.xbn.number;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class IntInRange extends NumberInRange<Integer> implements IntRange  {
-//internal
-//public
    /**
       <P>An instance no bounds--Equal to <CODE>new {@link #IntInRange() IntInRange}()</CODE></P>
     **/
@@ -74,20 +73,6 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     **/
    public IntInRange(IntBound min, IntBound max)  {
       super(min, max);
-   }
-   /**
-      <P>Create a new instance as a duplicate of another.</P>
-
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link NumberInRange#NumberInRange(NumberInRange) super}{@code (to_copy)}</LI>
-      </UL></P>
-
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #IntInRange(IntBound, IntBound) IntInRange(nb,nb)
-    **/
-   public IntInRange(IntInRange to_copy)  {
-      super(to_copy);
    }
 //constructors...END
 //setters...START
@@ -139,14 +124,6 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
    public int getMax()  {
       return  getMaxNumber().intValue();
    }
-//getters: atomic...END
-   /**
-      @return  <CODE>(new {@link #IntInRange(IntInRange) IntInRange}(this))</CODE>
-    **/
-   public IntInRange getObjectCopy()  {
-      return  (new IntInRange(this));
-   }
-//getters...END
 //other...START
    public boolean isValidInclusiveRange(Integer min, Integer max)  {
       try  {
@@ -217,6 +194,11 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     **/
    public void crashIfBadIntElement(Integer num, String cntr_name, int idx_inCntr)  {
       IntInRange.crashIfBadIntElement(this, num, cntr_name, idx_inCntr);
+   }
+   protected void setRuleTypeFromBoundsForLenIdx()  {
+      rc.setERuleType_4prot((getMinBound().get() == 0  &&  getMaxBound() == null)
+         ?  RuleType.UNRESTRICTED
+         :  RuleType.RESTRICTED);
    }
 //other...END
 

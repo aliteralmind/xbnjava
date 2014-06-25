@@ -49,5 +49,7 @@ public interface Debuggable extends GetDebugApbl_Fieldable  {
     **/
    TextAppenter getDebugAptr();
    Appendable getDebugApbl();
+   TextAppenter debug(Object message);
+   void debugln(Object message);
 //getters...END
 }

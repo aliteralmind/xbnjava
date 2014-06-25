@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
+   import  com.github.xbn.lang.CrashIfObject;
    import  static com.github.xbn.lang.CrashIfBase.*;
    import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.analyze.validate.Validator;
@@ -146,42 +147,38 @@ public class AltererComposer extends AnalyzerComposer  {
    public void declareMayDelete_4prot(boolean may_del)  {
       bDnDl = may_del;
    }
-   public void declareWasAnalyzedWasDeleted_4prot(boolean was_altered, boolean was_deleted)  {
-      if(was_altered  &&  was_deleted)  {
-         throw  new IllegalStateException(getXMsg("was_altered and was_deleted are both true.", getExtraErrInfo()));
-      }
-      if(was_altered)  {
-         declareAlteredNotDeleted_4prot();
-      }  else if(was_deleted)  {
-         declareDeletedNotAltered_4prot();
-      }  else  {
-         declareAnalyzed_4prot();
-      }
-   }
-   public void declareAlteredNotDeleted_4prot()  {
-      declareAnalyzed_4prot();
-      bWLtrd = true;
-      bNtbDel = false;
-      iLtrd++;
-   }
    /**
-      <P>Declare that an alteration or deletion occurred.</P>
-
+      <P>YYY</P>
       <P>This<OL>
          <LI>Calls  <CODE><I>[{@link com.github.xbn.analyze.AnalyzerComposer super}]</I>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</CODE></LI>
          <LI>Sets {@link #wasAltered() wasAltered}{@code ()} to {@code false}</LI>
          <LI>Sets {@link #needsToBeDeleted() needsToBeDeleted}{@code ()} to {@code true}</LI>
       </OL></P>
-
-      @see  #declareAlteredNotDeleted_4prot()
     **/
-   public void declareDeletedNotAltered_4prot()  {
-      if(mayDelete())  {
-         throw  new IllegalArgumentException("mayDelete() is true.");
+   public void declareAltered_4prot(Altered altered, NeedsToBeDeleted deleted)  {
+      try  {
+         if(altered.isYes())  {
+            if(deleted.isYes())  {
+               throw  new IllegalStateException(getXMsg("altered and deleted are both YES.", getExtraErrInfo()));
+            }
+
+            bWLtrd = true;
+            bNtbDel = false;
+            iLtrd++;
+
+         }  else if(deleted.isYes())  {
+            if(mayDelete())  {
+               throw  new IllegalArgumentException("deleted.YES, mayDelete()=true.");
+            }
+            bWLtrd = false;
+            bNtbDel = true;
+         }
+      }  catch(RuntimeException rx)  {
+         CrashIfObject.nnull(altered, "altered", null);
+         throw  CrashIfObject.nullOrReturnCause(deleted, "deleted", null, rx);
       }
+
       declareAnalyzed_4prot();
-      bWLtrd = false;
-      bNtbDel = true;
    }
 //setters...END
 //getters...START

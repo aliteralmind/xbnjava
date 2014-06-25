@@ -63,7 +63,7 @@ public class CrashIfArray  {
       @param  min_allowedLength  The minimum allowable length. <I>Should</I> not be less than zero.
       @param  min_varName  Descriptive name of {@code min_allowedLength}. <I>Should</I> not be {@code null} or empty.
       @param  null_element  If {@link NullElement#BAD BAD}, elements may not be {@code null}. This parameter may not be {@code null}.
-      @param  min_allowedElementLen  The minimum allowable length for each element's {@code toString()}. <I>Should</I> be zero or greater. Intended for collections of strings.
+      @param  min_allowedElementLen  The minimum allowable length for each element's {@code toString()}. <I>Should</I> be zero or greater. Intended for string arrays.
       @param  minElementLen_name  Descriptive name of {@code min_allowedElementLen}.
       @param  duplicates  If {@link Duplicates#BAD BAD}, elements must be unique. This parameter may not be {@code null}.
       @exception  NullPointerException  If the array is {@code null} and {@code null_array.BAD}, or an element is {@code null} and {@code null_element.BAD}.

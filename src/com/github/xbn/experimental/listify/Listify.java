@@ -161,9 +161,9 @@ public interface Listify<E> extends Collection<E>, Copyable  {
     **/
    boolean containsAll_nullOk(Collection<?> coll);
    /**
-      <P>Get a duplicate of this {@code Listify} that is a complete (full-and-deep) copy, with the exception of the {@code getRawObject()}, which is a reference to the original. See {@link #getRawObject() getRawObject}{@code ()}.</P>
+      <P>Duplicate this {@code Listify} that is a complete (full-and-deep) copy, with the exception of the {@code getRawObject()}, which is a reference to the original. See {@link #getRawObject() getRawObject}{@code ()}.</P>
 
-      @return  A duplicate of this {@code Listify} as specified above.
+      @return  A non-{@code null} duplicate of this {@code Listify}.
     **/
    Copyable getObjectCopy();
 }

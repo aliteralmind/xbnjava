@@ -65,7 +65,7 @@ public class ResettableNullHandler<O> implements NullHandler<O>  {
       return  e;
    }
    /**
-      <P>Get a duplicate of this {@code ResettableNullHandler}.</P>
+      <P>Duplicate this {@code ResettableNullHandler}.</P>
 
       @return  <CODE>(new {@link #ResettableNullHandler(ResettableNullHandler) ResettableNullHandler}&lt;O&gt;(this))</CODE>
     **/

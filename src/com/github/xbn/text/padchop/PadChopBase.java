@@ -103,7 +103,7 @@ public abstract class PadChopBase implements Copyable  {
       return  goal_len;
    }
    /**
-      <P>Get a duplicate of this {@code PadChopBase}, with a new goal-length.</P>
+      <P>Duplicate this {@code PadChopBase}, with a new goal-length.</P>
     **/
    public abstract PadChopBase getCopyNewGoalLen(int goal_len);
 }

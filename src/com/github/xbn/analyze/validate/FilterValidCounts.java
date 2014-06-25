@@ -24,7 +24,7 @@ package  com.github.xbn.analyze.validate;
 /**
    <P>A valid-result filter that changes the result based on the number of valid, invalid, or total analysis counts.</P>
 
-   <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg FilterValidCounts_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg FilterValidCounts_Cfg}</H3>
 
    <P><UL>
       <LI><B>Convenience builders:</B> {@link com.github.xbn.analyze.validate.NewValidResultFilterFor NewValidResultFilterFor}</LI>
@@ -42,17 +42,20 @@ package  com.github.xbn.analyze.validate;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class FilterValidCounts extends SimpleDebuggable implements ValidResultFilter, FilterValidCounts_Fieldable  {
-   private final ValidCounter validCounts;
-   private final LengthInRange lir;
-   private final FilterCountType vfc;
-   private final FilterAfterValue fPostBlw;
-   private final FilterAfterValue fPostIn;
-   private final FilterPreAction fPreIn;
-   private final FilterAfterValue fPostAftr;
-   private final FilterPreAction fPreAftr;
-   private final FilterPreAction fPreBlw;
-   private final CountGetter countGtr;
+   //configuration
+   private final LengthInRange     lir;
+   private final FilterCountType   vfc;
+   private final FilterAfterValue  fPostBlw;
+   private final FilterAfterValue  fPostIn;
+   private final FilterPreAction   fPreIn;
+   private final FilterAfterValue  fPostAftr;
+   private final FilterPreAction   fPreAftr;
+   private final FilterPreAction   fPreBlw;
    private final ExpirableComposer ec;
+
+   //counts
+   private final ValidCounter validCounts;
+   private final CountGetter countGtr;
    /**
       <P>Create a new instance.</P>
 
@@ -415,13 +418,68 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
       return  ec.appendToString(to_appendTo);
    }
    /**
-      <P>Get a duplicate of this <CODE>FilterValidCounts</CODE>.</P>
+      <P>Duplicate this <CODE>FilterValidCounts</CODE>.</P>
 
       @return  <CODE>(new <A HREF="#FilterValidCounts(FilterValidCounts)">FilterValidCounts</A>(this))</CODE>
     **/
    public FilterValidCounts getObjectCopy()  {
       return  (new FilterValidCounts(this));
    }
+   /**
+    	@return  <CODE>true</CODE> If {@code to_compareTo} is non-{@code null}, a {@code FilterValidCounts}, and all its fields {@linkplain #areFieldsEqual(FilterValidCounts) are equal}. This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).
+    **/
+   @Override
+   public boolean equals(Object to_compareTo)  {
+      //Check for object equality first, since it's faster than instanceof.
+      if(this == to_compareTo)  {
+         return  true;
+      }
+      if(!(to_compareTo instanceof FilterValidCounts))  {
+         //to_compareTo is either null or not an FilterValidCounts.
+         //java.lang.Object.object(o):
+         // "For any non-null reference value x, x.equals(null) should return false."
+         //See the bottom of this class for a counter-argument (which I'm not going with).
+         return  false;
+      }
+
+      //Safe to cast
+      FilterValidCounts o = (FilterValidCounts)to_compareTo;
+
+      //Finish with field-by-field comparison.
+      return  areFieldsEqual(o);
+   }
+   /**
+      <P>Are all relevant fields equal?.</P>
+
+      @param  to_compareTo  May not be {@code null}.
+    **/
+   public boolean areFieldsEqual(FilterValidCounts to_compareTo)  {
+      try  {
+         return  (getRange().equals(to_compareTo.getRange())  &&
+            getFilterCountType() ==  to_compareTo.getFilterCountType()  &&
+            getBelowAfterValue() ==  to_compareTo.getBelowAfterValue()  &&
+            getInAfterValue() ==  to_compareTo.getInAfterValue()  &&
+            getInPreAction() ==  to_compareTo.getInPreAction()  &&
+            getAfterAfterValue() ==  to_compareTo.getAfterAfterValue()  &&
+            getAfterPreAction() ==  to_compareTo.getAfterPreAction()  &&
+            doesExpire() ==  to_compareTo.doesExpire()  &&
+            isExpired() ==  to_compareTo.isExpired());
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_compareTo, "to_compareTo", null, rx);
+      }
+   }
+   public int hashCode()  {
+      return  27 * getRange().hashCode() +
+         getFilterCountType().ordinal() +
+         getBelowAfterValue().ordinal() +
+         getInAfterValue().ordinal() +
+         getInPreAction().ordinal() +
+         getAfterAfterValue().ordinal() +
+         getAfterPreAction().ordinal() +
+         (doesExpire() ? 1 : 0) +
+         (isExpired() ? 1 : 0);
+   }
+
 }
 abstract class CountGetter  {
    protected final ValidCounter validCounts;

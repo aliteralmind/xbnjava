@@ -13,6 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.analyze.alter;
+   import  com.github.xbn.analyze.alter.Altered;
+   import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
 /**
    <P>Simple custom <CODE>xbn.analyze.alter.{@link com.github.xbn.analyze.alter.ValueAlterer ValueAlterer}&lt;String&gt;</CODE> that converts the string to uppercase.</P>
@@ -37,7 +39,7 @@ class AVUpperCase extends AbstractValueAlterer<String,String>  {
       super(to_copy);
    }
    public final String getAlteredPostResetCheck(String ignored, String to_alter)  {
-      declareAlteredNotDeleted();
+      declareAltered(Altered.YES, NeedsToBeDeleted.NO);
       try  {
          return  to_alter.toUpperCase();
       }  catch(NullPointerException npx)  {

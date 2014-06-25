@@ -32,7 +32,7 @@ package  com.github.xbn.analyze.validate;
 
    <P>Depending on the needs of sub-classes, it may also be necessary to override {@link #adjustForPostFilterReturnValue(boolean) adjustForPostFilterReturnValue}{@code (b)}.</P>
 
-   <a name="cfg"/><H3>Builder configuration: {@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder configuration: {@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg}</H3>
 
    <P><UL>
       <LI><B>Convenience builders:</B> {@link com.github.xbn.analyze.validate.NewValueValidatorFor}</LI>
@@ -277,11 +277,19 @@ is_nullOk  do_invert  Returns       Description
          :  RuleType.RESTRICTED);
    }
    /**
-      <P>Get a duplicate of this <CODE>NullnessValidator</CODE>.</P>
+      <P>Duplicate this <CODE>NullnessValidator</CODE>.</P>
 
       @return  <CODE>(new <A HREF="#NullnessValidator(NullnessValidator)">NullnessValidator</A>&lt;O&gt;(this))</CODE>
     **/
    public NullnessValidator<O> getObjectCopy()  {
       return  (new NullnessValidator<O>(this));
+   }
+   public static final <O> boolean isValidDefensive(ValueValidator<O> validator, O to_validate, String validator_name, String to_validateName)  {
+      try  {
+         return validator.isValid(to_validate);
+      }  catch(RuntimeException rx)  {
+         CrashIfObject.nnull(validator, validator_name, null);
+         throw  new RuntimeException("Attempting " + validator_name + ".isValid(" + to_validateName + ")", rx);
+      }
    }
 }

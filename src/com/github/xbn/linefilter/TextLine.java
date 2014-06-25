@@ -15,34 +15,18 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.lang.Copyable;
+   import  com.github.xbn.linefilter.entity.raw.RawLine;
 /**
    <P>One in a series of text lines, most commonly derived from a file.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class TextLine extends SimpleLineObject<String> implements Copyable  {
+public class TextLine extends RawLine<String>  {
    /**
       <P>Create a new instance.</P>
     **/
    public TextLine(int line_num, String text)  {
       super(line_num, text);
-   }
-   /**
-      <P>Create a new instance as a duplicate of another.</P>
-    **/
-   public TextLine(TextLine to_copy)  {
-      super(
-         SimpleLineObject.getNumberCINull(to_copy, "to_copy"),
-         to_copy.getBody());
-   }
-   /**
-      <P>Get a duplicate of this <CODE>TextLine</CODE>.</P>
-
-      @return  <CODE>(new {@link #TextLine(TextLine) TextLine}(this))</CODE>
-    **/
-   public TextLine getObjectCopy()  {
-      return  (new TextLine(this));
    }
 }

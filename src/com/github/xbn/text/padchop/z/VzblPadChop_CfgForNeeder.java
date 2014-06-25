@@ -113,6 +113,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
          <LI>{@link #padFirst() padFirst}{@code ()}</LI>
       </OL></P>
 
+      @return  <I>{@code this}</I>
       @see  #reset()
       @see  #goalLen(int) goalLen(i)
     **/
@@ -138,6 +139,8 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
          <LI>The internal {@link PadString} to <CODE><I>[the internal PadString]</I>.{@link com.github.xbn.text.padchop.PadChopBase#getCopyNewGoalLen(int) getCopyNewGoalLen}(length)</CODE></LI>
          <LI>The internal {@link ChopString} to <CODE><I>[the internal ChopString]</I>.getCopyNewGoalLen(length)</CODE></LI>
       </OL></P>
+
+      @return  <I>{@code this}</I>
       @see  #reset(int) reset(i)
     **/
    public VzblPadChop_CfgForNeeder<V,R> goalLen(int length)  {
@@ -182,6 +185,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 
       @param  do_left  If {@code true}, the left side of the string is trimmed. Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doTrimLeft() doTrimLeft}()</CODE>.
       @param  do_right  If {@code true}, the right side of the string is trimmed. Get with  <CODE><I>[VzblPadChop]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doTrimRight() doTrimRight}()</CODE>.
+      @return  <I>{@code this}</I>
     **/
    public VzblPadChop_CfgForNeeder<V,R> trim(boolean do_left, boolean do_right)  {
       bTrimLeft = do_left;
@@ -193,6 +197,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 
       <P>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <CODE>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#NOTHING NOTHING}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #unescape()
     **/
    public VzblPadChop_CfgForNeeder<V,R> noEscape()  {
@@ -204,6 +209,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 
       <P>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <CODE>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#UNESCAPE UNESCAPE}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #noEscape()
       @see  #escape()
     **/
@@ -216,12 +222,16 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 
       <P>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <CODE>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#ESCAPE ESCAPE}</CODE></P>
 
+      @return  <I>{@code this}</I>
       @see  #unescape()
     **/
    public VzblPadChop_CfgForNeeder<V,R> escape()  {
       esc = EscapeAction.ESCAPE;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public VzblPadChop_CfgForNeeder<V,R> escapeNothingIfNull(EscapeAction action)  {
       esc = ((action == null) ? EscapeAction.NOTHING : action);
       return  this;
@@ -230,6 +240,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
    /**
       <P>Turn padding on or off.</P>
 
+      @return  <I>{@code this}</I>
     **/
    public VzblPadChop_CfgForNeeder<V,R> pad(boolean is_on)  {
       bPad = is_on;
@@ -237,6 +248,8 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
    }
    /**
       <P>Turn chopping on or off.</P>
+
+      @return  <I>{@code this}</I>
     **/
    public VzblPadChop_CfgForNeeder<V,R> chop(boolean is_on)  {
       bChop = is_on;
@@ -305,7 +318,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
          <LI><I>{@link #chopFirst() chopFirst}{@code ()}</I></LI>
          </UL></P>
 Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doPadFirst() doPadFirst}()</CODE>. This is ignored when either padding or chopping is off.
-      @return  .........
+      @return  <I>{@code this}</I>
     **/
    public VzblPadChop_CfgForNeeder<V,R> padFirst()  {
       bPadFirst = true;
@@ -316,6 +329,7 @@ Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]
 
       <P>Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doPadFirst() doPadFirst}()</CODE>. This is ignored when either padding or chopping is off.</P>
 
+      @return  <I>{@code this}</I>
       @see  #padFirst()
     **/
    public VzblPadChop_CfgForNeeder<V,R> chopFirst()  {
@@ -326,6 +340,7 @@ Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]
       <P>Set debugging.</P>
 
       @param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
+      @return  <I>{@code this}</I>
     **/
    public VzblPadChop_CfgForNeeder<V,R> debugTo(Appendable dest_ifNonNull)  {
       apblDebug = dest_ifNonNull;
@@ -351,10 +366,16 @@ Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]
       V v = (V)new VzblPadChop(id_gl, this);
       return  v;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public VzblPadChop_CfgForNeeder<V,R> startConfigReturnNeedable(R needer)  {
       startConfig(needer, VzblPadChop.class);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public VzblPadChop_CfgForNeeder<V,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

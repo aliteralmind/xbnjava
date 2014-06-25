@@ -114,6 +114,12 @@ public abstract class AbstractValidator implements Validator  {
    public TextAppenter getDebugAptr()  {
       return  vc.getDebugAptr();
    }
+   public TextAppenter debug(Object message)  {
+      return  vc.debug(message);
+   }
+   public void debugln(Object message)  {
+      vc.debugln(message);
+   }
    public Object getExtraErrInfo()  {
       return  vc.getExtraErrInfo();
    }

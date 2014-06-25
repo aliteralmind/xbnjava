@@ -64,7 +64,7 @@ public class SimpleNamed extends SimpleKeyed<String> implements Named  {
       return  getKey();
    }
    /*
-      <P>Get a duplicate of this {@code SimpleNamed}.</P>
+      <P>Duplicate this {@code SimpleNamed}.</P>
 
       @return  <CODE>(new {@link #SimpleNamed(Named) SimpleNamed}(this))</CODE>
    public SimpleNamed getObjectCopy()  {

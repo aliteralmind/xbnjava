@@ -75,31 +75,6 @@ public class IndexInRange extends IntInRange implements IndexRange  {
       super(min_bound, max_bound);
    }
    /**
-      <P>Create a new {@code IndexInRange} as a duplicate of another.</P>
-
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(IntInRange) super(to_copy)}</P>
-
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #IndexInRange(IntBoundInclusive, IntBoundExclusive) this(ibi,ibx)
-    **/
-   public IndexInRange(IndexInRange to_copy)  {
-      super(to_copy);
-   }
-/*
-   public IndexInRange extraErrInfo(Object info)  {
-      setExtraErrInfo(info);
-      return  this;
-   }
- */
-   /**
-      @return  <CODE>(new {@link #IndexInRange(IndexInRange) IndexInRange}(this))</CODE>
-    **/
-   public IndexInRange getObjectCopy()  {
-      return  (new IndexInRange(this));
-   }
-   /**
       <P>If the bounds of this {@code IndexInRange} are invalid, crash.</P>
 
       <P>Equal to
@@ -144,6 +119,9 @@ public class IndexInRange extends IntInRange implements IndexRange  {
    public void crashIfBadIndexRange(int min, int maxusive, String min_name, String max_name)  {
       crashIfBadIndex(min, min_name);
       crashIfBadIndex(maxusive, max_name);
+   }
+   protected void setRuleTypeFromBounds()  {
+      setRuleTypeFromBoundsForLenIdx();
    }
    public static final void crashIfBadIndexObject(IndexInRange range, Integer num, String idx_name, Object xtra_errInfo)  {
       boolean bValid = false;

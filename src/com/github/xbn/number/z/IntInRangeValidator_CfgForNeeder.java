@@ -108,6 +108,9 @@ public class IntInRangeValidator_CfgForNeeder<G extends IntInRange,V extends Int
       apblDebug = dest_ifNonNull;
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public IntInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

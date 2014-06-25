@@ -6,7 +6,7 @@ package  com.github.xbn.list.lister;
 /**
    <P>{@code LLCfgElement} for elements that are themselves indexable-containers (such as strings, lists, or arrays).</P>
 
-   <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCIndexableElement_Cfg LLCIndexableElement_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCIndexableElement_Cfg LLCIndexableElement_Cfg}</H3>
 
    <P><UL>
       <LI><B>Parent:</B> {@code <A HREF="ListLister.html#cfg">ListLister</A>}</LI>

@@ -13,6 +13,9 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  java.util.Objects;
+   import  com.github.xbn.number.LengthInRange;
 /**
    <P>A {@code ValueAlterer} that does nothing--the original and altered values are equal.</P>
 
@@ -20,25 +23,65 @@ package  com.github.xbn.analyze.alter;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ReturnValueUnchanged<V,A> extends AbstractValueAlterer<V,A>  {
-   private final boolean wasAlteredFlag;
+   private final boolean wasAlteredInRangeFlag;
+   private final LengthInRange analysisRange;
    public ReturnValueUnchanged()  {
-      this(AlwaysSetWasAlteredTo.TRUE);
+      this(SetWasAlteredToWhenInRange.TRUE);
    }
-   public ReturnValueUnchanged(AlwaysSetWasAlteredTo set_wasAlteredTo)  {
+   public ReturnValueUnchanged(SetWasAlteredToWhenInRange set_wasAlteredTo)  {
+      this(set_wasAlteredTo, new LengthInRange());
+   }
+   public ReturnValueUnchanged(SetWasAlteredToWhenInRange set_wasAlteredTo, LengthInRange analysis_range)  {
       super();
-      wasAlteredFlag = set_wasAlteredTo.isTrue();
-      if(isDebugOn()) { getDebugAptr().appentln("ReturnValueUnchanged.doSetWasAlteredFlagToOnEachCall()=" + doSetWasAlteredFlagToOnEachCall()); }
+      try  {
+         wasAlteredInRangeFlag = set_wasAlteredTo.isTrue();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(set_wasAlteredTo, "set_wasAlteredTo", null, rx);
+      }
+
+      Objects.requireNonNull(analysis_range, "analysis_range");
+      analysisRange = analysis_range;
+
+      if(isDebugOn()) { getDebugAptr().appentln("ReturnValueUnchanged.doSetWasAlteredFlagToOnEachAnalysisWhenInRange()=" + doSetWasAlteredFlagToOnEachAnalysisWhenInRange()); }
    }
    public ReturnValueUnchanged(ReturnValueUnchanged<V,A> to_copy)  {
       super(to_copy);
-      wasAlteredFlag = to_copy.doSetWasAlteredFlagToOnEachCall();
+      wasAlteredInRangeFlag = to_copy.doSetWasAlteredFlagToOnEachAnalysisWhenInRange();
+      analysisRange = to_copy.getAnalysisRange();
    }
-   public boolean doSetWasAlteredFlagToOnEachCall()  {
-      return  wasAlteredFlag;
+   public boolean doSetWasAlteredFlagToOnEachAnalysisWhenInRange()  {
+      return  wasAlteredInRangeFlag;
    }
+   public LengthInRange getAnalysisRange()  {
+      return  analysisRange;
+   }
+
    public final A getAlteredPostResetCheck(V ignored, A to_alter)  {
-      declareWasAnalyzedWasDeleted(doSetWasAlteredFlagToOnEachCall(), false);
+      boolean isAnalysisCountInRange = getAnalysisRange().
+         isValid(getAnalyzedCount() + 1);
+      boolean setWasAlteredTo = isAnalysisCountInRange  &&
+         doSetWasAlteredFlagToOnEachAnalysisWhenInRange();
+      declareAltered(Altered.getForBoolean(setWasAlteredTo),
+         NeedsToBeDeleted.NO);
       return  to_alter;
+   }
+   /**
+      @return  <CODE>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</CODE>
+    **/
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #toString()
+    **/
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      super.appendToString(to_appendTo).append(
+         ", doSetWasAlteredFlagToOnEachAnalysisWhenInRange()=" +
+         doSetWasAlteredFlagToOnEachAnalysisWhenInRange() +
+         (getAnalysisRange().getRuleType().isUnrestricted() ? ""
+            :  ", getAnalysisRange()=" + getAnalysisRange()));
+      return  to_appendTo;
    }
    /**
       @return  <CODE>(new {@link #ReturnValueUnchanged(ReturnValueUnchanged) ReturnValueUnchanged}&lt;A&gt;(this))</CODE>
@@ -47,6 +90,6 @@ public class ReturnValueUnchanged<V,A> extends AbstractValueAlterer<V,A>  {
       return  (new ReturnValueUnchanged<V,A>(this));
    }
    public static final <V,A> ReturnValueUnchanged<V,A> newForOnEachCallSetWasAlteredTo(boolean was_alteredFlag)  {
-      return  (new ReturnValueUnchanged<V,A>(was_alteredFlag ? AlwaysSetWasAlteredTo.TRUE : AlwaysSetWasAlteredTo.FALSE));
+      return  (new ReturnValueUnchanged<V,A>(was_alteredFlag ? SetWasAlteredToWhenInRange.TRUE : SetWasAlteredToWhenInRange.FALSE));
    }
 }

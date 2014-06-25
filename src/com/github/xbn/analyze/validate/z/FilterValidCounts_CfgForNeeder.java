@@ -82,6 +82,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       <P>Set debugging.</P>
 
       @param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
+      @return  <I>{@code this}</I>
     **/
    public FilterValidCounts_CfgForNeeder<F,R> debugTo(Appendable dest_ifNonNull)  {
       apblDebug = dest_ifNonNull;
@@ -91,6 +92,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       <P>Set the range that the count must conform to.</P>
 
       @param  range  May not be {@code null}, and its {@linkplain com.github.xbn.number.IntInRange#getMin() minimum} may not be zero. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}{@code ()}.
+      @return  <I>{@code this}</I>
     **/
    public FilterValidCounts_CfgForNeeder<F,R> range(LengthInRange range)  {
       liRange = range;
@@ -152,6 +154,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       @param  fpv_below  What to do when the {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() count} is below <CODE>{@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}()*.{@link com.github.xbn.number.NumberInRange#getMinNumber() getMinNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getBelowAfterValue() getBelowAfterValue}{@code ()}{@code ()}.
       @param  fpv_in  What to do when the count is <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/number/NumberInRange.html#isValid(N)">valid</A> according to the range?
       @param  fpv_after  What to do when the count is &quot;greater&quot; than <CODE>getRange()*.{@link com.github.xbn.number.NumberInRange#getMaxNumber() getMaxNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getAfterAfterValue() getAfterAfterValue}{@code ()}{@code ()}. <B><I>Note:</I></B> Since the filter is expired when the maximum is reached, it will never be exceeded. This is therefore, more accurately: &quot;What to do when the maximum has been reached, and this is the first (or subsequent) check <I><B>after</B></I> that?&quot;.
+      @return  <I>{@code this}</I>
       @see  #unfiltered()
       @see  #inUnchangedOutFalse()
       @see  #postValueAlwaysUnchanged()
@@ -178,6 +181,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       @param  fpa_below  What to do when the {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() count} is below <CODE>{@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}()*.{@link com.github.xbn.number.NumberInRange#getMinNumber() getMinNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getBelowAfterValue() getBelowAfterValue}{@code ()}{@code ()}.
       @param  fpa_in  What to do when the count is <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/number/NumberInRange.html#isValid(N)">valid</A> according to the range?
       @param  fpa_after  What to do when the count is &quot;greater&quot; than <CODE>getRange()*.{@link com.github.xbn.number.NumberInRange#getMaxNumber() getMaxNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getAfterAfterValue() getAfterAfterValue}{@code ()}{@code ()}. <B><I>Note:</I></B> Since the filter is expired when the maximum is reached, it will never be exceeded. This is therefore, more accurately: &quot;What to do when the maximum has been reached, and this is the first (or subsequent) check <I><B>after</B></I> that?&quot;.
+      @return  <I>{@code this}</I>
       @see  #preActionProceed_afterFalse()
       @see  #postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
       @see  #unfiltered()
@@ -270,6 +274,9 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       F f = (F)(new FilterValidCounts(this));
       return  f;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public FilterValidCounts_CfgForNeeder<F,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
@@ -282,6 +289,9 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public FilterValidCounts_CfgForNeeder<F,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
       Class<F> clsv = (Class<F>)(Class)FilterValidCounts.class;

@@ -36,7 +36,7 @@ package  com.github.xbn.regexutil;
 /**
    <P>For regular expression replacements where each match can be individually manipulated. The idea for this is based on in  <CODE>e.util.{@link com.github.xbn.regexutil.Rewriter Rewriter}</CODE>, with the additions of distinguishing between &quot;<A HREF="#indirect">indirect</A>&quot; and &quot;<A HREF="#direct">direct</A>&quot; replacements, and the ability to choose exactly which matches should be replaced (see &quot;Which terms&quot; in the below list).</P>
 
-   <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}</H3>
 
    <P><UL>
       <LI><B>Search terms:</B><UL>
@@ -53,16 +53,16 @@ package  com.github.xbn.regexutil;
 
    <H3>Example: Direct replacement: Regex</H3>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerDirectXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerDirectXmpl:eliminateCommentBlocksAndPackageDecl()}
 
    <H3>Example: Direct replacement: Literal</H3>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerLiteralXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerLiteralXmpl:eliminateCommentBlocksAndPackageDecl()}
 
 </LI>
    </UL></P>
 
-   <a name="indirect"/><H4><CODE>[<A HREF="#skip-navbar_top">top                                                                                              </A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Indirect</U></H4>
+   <A NAME="indirect"><A/><H4><CODE>[<A HREF="#skip-navbar_top">top                                                                                              </A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Indirect</U></H4>
 
    <P><I>Indirect replacements are made with {@link IndirectRegexReplacer}.</I></P>
 
@@ -70,7 +70,7 @@ package  com.github.xbn.regexutil;
 
    <P>The advantage of indirect replacements is that each capture-group can be manipulated (such as changed to upper-case in this example).</P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl1of2:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl1of2:eliminateCommentBlocksAndPackageDecl()}
 
    <P>Internally, for each match, indirect replacements are done in two steps:<OL>
       <LI>Everything up-to-but-not-including the next match is appended to the {@code StringBuffer}:
@@ -80,19 +80,19 @@ package  com.github.xbn.regexutil;
       <BR> &nbsp; &nbsp; {@code to_appendTo.append(getIndirectReplacement())}</LI>
    </OL></P>
 
-   <a name="direct"/><H4><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Direct</U></H4>
+   <A NAME="direct"><A/><H4><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Direct</U></H4>
 
    <P>When capture groups do not need to be manipulated, the {@code Matcher} can make the replacement itself--&quot;directly&quot;. Internally, this is equivalent to the above step one, changed to
    <BR> &nbsp; &nbsp; {@code <I>[Matcher]</I>.appendReplacement(to_appendTo, <I>[the-replacement-string]</I>)}.</P>
 
 
-   <a name="whichmatches"/><H3><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; Choosing which matches to replace</H3>
+   <A NAME="whichmatches"><A/><H3><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; Choosing which matches to replace</H3>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerSpcfcTermsXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerSpcfcTermsXmpl:eliminateCommentBlocksAndPackageDecl()}
 
    <P>Here is the example code from {@code Rewriter}, which runs against {@code RegexReplacer} after only changing function-names:</P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerXmplsFromRewriter:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerXmplsFromRewriter:eliminateCommentBlocksAndPackageDecl()}
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
@@ -337,7 +337,7 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <P>Determines the specific matches to be replaced, when {@code getReplacedInEachInput().isMatchNumbers()} is {@code true}. The matches-to-replaced is based on their <I>numeric location</I> in the search string.</P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerValidTermXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerValidTermXmpl:eliminateCommentBlocksAndPackageDecl()}
 
       @return  An int-validator, where a <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/validate/ValueValidator.html#isValid(O)">valid</A> int indicates the match should be replaced.
       @see  #getReplacedInEachInput()
@@ -411,7 +411,7 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
 
       <P>In contrast with <A HREF="#direct">direct</A> replacements, &quot;<A HREF="#indirect">indirect</A>&quot; replacements allow for each capture group to be individually manipulated:</P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl2of2:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl2of2:eliminateCommentBlocksAndPackageDecl()}
 
       @exception  IllegalStateException  This function must be overridden for indirect replacements.
       @see  #getDirectReplacement()
@@ -737,7 +737,7 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
       return  to_appendTo;
    }
    /**
-      <P>Get a duplicate of this {@code RegexReplacer}.</P>
+      <P>Duplicate this {@code RegexReplacer}.</P>
 
       @return  <CODE>(new {@link #RegexReplacer(RegexReplacer) RegexReplacer}(this))</CODE>
     **/

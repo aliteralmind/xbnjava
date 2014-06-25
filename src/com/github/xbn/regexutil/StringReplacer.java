@@ -13,6 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
+   import  com.github.xbn.analyze.alter.Altered;
+   import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
@@ -37,7 +39,7 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
       this(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull));
    }
    /**
-      <P><I>[main]</I> -- Create a new instance from a {@code StringValidatorReplacer}.</P>
+      <P>Create a new instance from a {@code StringValidatorReplacer}.</P>
 
       <P>This sets {@link com.github.xbn.analyze.alter.AbstractValueAlterer#doesExpire() doesExpire}{@code ()}* to  <CODE>sv_replacer.{@link com.github.xbn.analyze.validate.AbstractValidator#doesExpire() doesExpire}()</CODE>.
 
@@ -82,7 +84,7 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
       }
 
       if(bVld)  {
-         declareAlteredNotDeleted();
+         declareAltered(Altered.YES, NeedsToBeDeleted.NO);
          return  svr.getMostRecent();
       }
 
@@ -108,7 +110,7 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
       return  sa.getAdapted();
    }
    /**
-      <P>Get a duplicate of this <CODE>StringReplacer</CODE>.</P>
+      <P>Duplicate this <CODE>StringReplacer</CODE>.</P>
 
       @return  <CODE>(new <A HREF="#StringReplacer(StringReplacer)">StringReplacer</A>(this))</CODE>
     **/

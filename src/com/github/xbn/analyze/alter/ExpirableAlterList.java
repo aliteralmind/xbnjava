@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
+   import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.array.NullContainer;
    import  com.github.xbn.array.CrashIfArray;
    import  com.github.xbn.array.NullElement;
@@ -28,15 +29,17 @@ package  com.github.xbn.analyze.alter;
 /**
    <P>For a series of alterers that potentially expire--once an alter-element is expired, it is removed from the list. When all items are removed, the list itself is expired. This is intended for use in high-iteration loops, where one or more alterations are made once, or a limited number of times. An example is making replacements to each line in a large text file, where only the first match should be replaced.</P>
 
+{@.codelet.and.out com.github.xbn.examples.linefilter.alter.ExpirableTextLineAlterListXmpl:eliminateCommentBlocksAndPackageDecl()}
+
    @see  com.github.xbn.lang.Expirable#isExpired()
-   @see  com.github.xbn.linefilter.ExpirableTextLineAlterList
+   @see  com.github.xbn.linefilter.alter.ExpirableTextLineAlterList
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
 //state
-   private final List<ValueAlterer<V,A>> alav;
+   private final List<ValueAlterer<V,A>> alterList;
    private final boolean bShrtCrct;
 //internal
    private static final VzblPadChop VPC_DBG = NewVzblPadChopFor.trimEscChopWithDDD(true, EscapeAction.ESCAPE, 50);
@@ -68,7 +71,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
 
       CrashIfArray.nullEmpty(xprbl_alterArray, "xprbl_alterArray");
 
-      alav = new ArrayList<ValueAlterer<V,A>>(xprbl_alterArray.length);
+      alterList = new ArrayList<ValueAlterer<V,A>>(xprbl_alterArray.length);
       for(int i = 0; i < xprbl_alterArray.length; i++)  {
          ValueAlterer<V,A> avo = xprbl_alterArray[i];
          try  {
@@ -82,10 +85,10 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
             Objects.requireNonNull(avo, "xprbl_alterArray[" + i + "]");
             throw  CrashIfObject.nullOrReturnCause(xprbl_lmntsAre, "xprbl_lmntsAre", null, rx);
          }
-         if(alav.contains(avo))  {
+         if(alterList.contains(avo))  {
             throw  new IllegalArgumentException("Duplicate: xprbl_alterArray[" + i + "]: " + avo);
          }
-         alav.add(avo.getObjectCopy());  //Defensive copy
+         alterList.add(avo.getObjectCopy());  //Defensive copy
       }
 
       setDebug(debug_ifNonNull, (debug_ifNonNull != null));
@@ -104,7 +107,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
     **/
    public ExpirableAlterList(ExpirableAlterList<V,A> to_copy)  {
       super(to_copy);
-      alav = new ArrayList<ValueAlterer<V,A>>(to_copy.alav);
+      alterList = new ArrayList<ValueAlterer<V,A>>(to_copy.alterList);
       bShrtCrct = to_copy.doShortCircuit();
    }
    /**
@@ -123,7 +126,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <P>The number of remaining--non-expired--alter-elements.</P>
     **/
    public int size()  {
-      return  alav.size();
+      return  alterList.size();
    }
    /**
       <P>Alter the object, and remove expired alter elements.</P>
@@ -143,9 +146,9 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
 //		}
 
       for(int i = 0; i < size(); i++)  {
-         ValueAlterer<V,A> avo = alav.get(i);
+         ValueAlterer<V,A> avo = alterList.get(i);
          if(avo.isExpired())  {
-            alav.remove(i--);
+            alterList.remove(i--);
             continue;
          }
 
@@ -161,17 +164,17 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          if(avo.wasAltered())  {
             if(isDebugOn()) { getDebugAptr().appentln("<XAL>    Altered by element " + i + ": to_alter=[" + VPC_DBG.get(to_alter) + "]"); }
 
-            declareAlteredNotDeleted();
+            declareAltered(Altered.YES, NeedsToBeDeleted.NO);
 
          }  else if(avo.needsToBeDeleted())  {
             if(isDebugOn()) { getDebugAptr().appentln("<XAL>    Altered by element " + i + ": to_alter=[" + VPC_DBG.get(to_alter) + "]"); }
 
-            declareDeletedNotAltered();
+            declareAltered(Altered.NO, NeedsToBeDeleted.YES);
          }
 
          if(avo.isExpired())  {
-            alav.remove(i--);
-            if(isDebugOn()) { getDebugAptr().appentln("<XAL>    Element " + (i + 1) + " expired. " + alav.size() + " remain"); }
+            alterList.remove(i--);
+            if(isDebugOn()) { getDebugAptr().appentln("<XAL>    Element " + (i + 1) + " expired. " + alterList.size() + " remain"); }
          }
 
          if((wasAltered()  &&  doShortCircuit())  ||  needsToBeDeleted())  {
@@ -187,7 +190,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    public void crashIfIncomplete(String msgPrefix_ifNonNull)  {
       if(!isComplete())  {
          throw  new AlterationNotMadeException(
-            ((msgPrefix_ifNonNull == null) ? "" : msgPrefix_ifNonNull) +
+            ((msgPrefix_ifNonNull == null) ? "" : msgPrefix_ifNonNull + ": ") +
             appendIncompleteInfo((new StringBuilder())).toString());
       }
    }
@@ -197,7 +200,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       @return  {@code false} If at least one element's {@linkplain com.github.xbn.analyze.alter.Alterer#getAlteredCount() alteration count} is zero.
     **/
    public boolean isComplete()  {
-      for(ValueAlterer<V,A> alterer : alav)  {
+      for(ValueAlterer<V,A> alterer : alterList)  {
          if(alterer.getAlteredCount() == 0)  {
             return  false;
          }
@@ -213,7 +216,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       }
 
       to_appendTo.append("Alterations attempted but not made:").append(LINE_SEP);
-      for(ValueAlterer<V,A> alterer : alav)  {
+      for(ValueAlterer<V,A> alterer : alterList)  {
          if(alterer.getAlteredCount() == 0)  {
             to_appendTo.append(" - ");
             alterer.appendToString(to_appendTo);
@@ -244,7 +247,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    }
    public StringBuilder appendToString(StringBuilder to_appendTo)  {
       super.appendToString(to_appendTo).append("Unexpired alterers:").append(LINE_SEP);
-      for(ValueAlterer<V,A> av : alav)  {
+      for(ValueAlterer<V,A> av : alterList)  {
          if(av.isExpired())  {
             continue;
          }
@@ -262,7 +265,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
     **/
    public void resetState()  {
       super.resetState();
-      for(ValueAlterer<V,A> av : alav)  {
+      for(ValueAlterer<V,A> av : alterList)  {
          av.resetState();
       }
    }
@@ -276,7 +279,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
     **/
    public void resetCounts()  {
       super.resetCounts();
-      for(ValueAlterer<V,A> av : alav)  {
+      for(ValueAlterer<V,A> av : alterList)  {
          av.resetCounts();
       }
    }
@@ -290,7 +293,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
     **/
    public void resetForDeletion()  {
       super.resetForDeletion();
-      for(ValueAlterer<V,A> av : alav)  {
+      for(ValueAlterer<V,A> av : alterList)  {
          av.resetForDeletion();
       }
    }
@@ -314,7 +317,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
     **/
    public void setExtraErrInfo(Object info)  {
       super.setExtraErrInfo(info);
-      for(ValueAlterer<V,A> av : alav)  {
+      for(ValueAlterer<V,A> av : alterList)  {
          av.setExtraErrInfo(info);
       }
    }
@@ -358,5 +361,57 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(class_ofTypeL, "class_ofTypeL", null, rx);
       }
+   }
+   public RuleType getRuleType()  {
+      if(isExpired())  {
+         return  RuleType.UNRESTRICTED;
+      }
+
+      int impossibleCount = 0;
+      boolean atLeast1IsRestricted = false;
+      for(ValueAlterer<V,A> alterer : alterList)  {
+         RuleType type = alterer.getRuleType();
+         if(type.isRestricted())  {
+            atLeast1IsRestricted = true;
+
+         }  else if(type.isImpossible())  {
+            impossibleCount++;
+         }
+      }
+
+      if(impossibleCount == alterList.size())  {
+         return  RuleType.IMPOSSIBLE;
+      }
+
+      return  (atLeast1IsRestricted
+         ?  RuleType.RESTRICTED
+         :  RuleType.UNRESTRICTED);
+   }
+   /**
+      @return  <CODE>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</CODE>
+    **/
+   public String getRules()  {
+      return  appendRules(new StringBuilder()).toString();
+   }
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #getRules()
+    **/
+   public StringBuilder appendRules(StringBuilder to_appendTo)  {
+      try  {
+         to_appendTo.append(LINE_SEP);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+      }
+
+      int sizeMinus1 = alterList.size() - 1;
+      for(int i = 0; i < alterList.size(); i++)  {
+         to_appendTo.append(" -" + i + "- ");
+         alterList.get(i).appendRules(to_appendTo);
+         if(i < sizeMinus1)  {
+            to_appendTo.append(LINE_SEP);
+         }
+      }
+      return  to_appendTo;
    }
 }

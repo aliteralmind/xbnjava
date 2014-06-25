@@ -79,6 +79,8 @@ public interface Validator extends Analyzer, Ruleable, ExtraErrInfoable, ValidRe
    /**
       <P>If, according to this validator's rules, the value is valid, should that be changed to invalid?. Inversion only affects the validator's <I>rules</I>. The value potentially returned by {@link ValidResultFilterable#getFilter() filters} (which ignore or suppress the &quot;does-follow-the-rules&quot; finding) are never inverted.</P>
 
+      <P>This is intended only for use with only basic validation rules. It is recommended to prevent this from being {@code true} in situations where the potential for rule-inversion confuses matters.</P>
+
       @return  {@code true} If what is normally considered valid, should now be considered invalid. This value should never change.
       @see  #isValid()
       @see  #getValidResultSource()

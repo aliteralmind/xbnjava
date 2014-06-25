@@ -74,7 +74,7 @@ public class ListifyListOfToStringLengths<R> extends AbstractListifyIntable  {
       return  getRawList().size();
    }
    /**
-      <P>Get a duplicate of this {@code ListifyListOfToStringLengths}.</P>
+      <P>Duplicate this {@code ListifyListOfToStringLengths}.</P>
 
       @return  <CODE>(new {@link #ListifyListOfToStringLengths(ListifyListOfToStringLengths) ListifyListOfToStringLengths}&lt;R&gt;(this))</CODE>
     **/

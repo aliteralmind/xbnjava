@@ -51,7 +51,7 @@ public class SimpleNullHandlerForPrimitives<O> extends SimpleNullHandler<O> impl
 //constructors...END
 //other...START
    /**
-      <P>Get a duplicate of this {@code SimpleNullHandlerForPrimitives}.</P>
+      <P>Duplicate this {@code SimpleNullHandlerForPrimitives}.</P>
 
       @return  <CODE>(new {@link #SimpleNullHandlerForPrimitives(SimpleNullHandlerForPrimitives) SimpleNullHandlerForPrimitives}&lt;O&gt;(this))</CODE>
     **/

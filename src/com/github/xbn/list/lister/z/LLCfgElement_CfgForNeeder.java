@@ -50,6 +50,9 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
    public LLCfgElement_CfgForNeeder<E,C,R> indexUnaltered()  {
       return  alterIndex(new ReturnValueUnchanged<Integer,Integer>());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgElement_CfgForNeeder<E,C,R> alterIndex(ValueAlterer<Integer,Integer> alterer)  {
       CrashIfObject.nnull(alterer, "alterer", getChainIDForXMsg(null));
       avIndex = alterer;
@@ -58,6 +61,9 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
    public LLCfgElement_CfgForNeeder<E,C,R> valueUnaltered()  {
       return  alterIndex(new ReturnValueUnchanged<Integer,Integer>());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgElement_CfgForNeeder<E,C,R> alterValue(ValueAlterer<E,E> alterer)  {
       CrashIfObject.nnull(alterer, "alterer", getChainIDForXMsg(null));
       aValue = alterer;
@@ -89,6 +95,7 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 
       <P>Equal to
       <BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</A>(needer, (Class&lt;LLCfgElement&lt;E&gt;&gt;)((Class)LLCfgElement.class))</CODE></P>
+      @return  <I>{@code this}</I>
       @see  com.github.xbn.neederneedable.Needer#startConfig(Class)
     **/
    @SuppressWarnings("unchecked")  //See above
@@ -104,6 +111,9 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgElement_CfgForNeeder<E,C,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

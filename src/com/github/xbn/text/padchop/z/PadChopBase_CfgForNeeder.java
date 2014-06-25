@@ -54,6 +54,7 @@ public abstract class PadChopBase_CfgForNeeder<P extends PadChopBase,R extends N
    /**
       <P>Declare which side of the string should be padded or chopped.</P>
 
+      @return  <I>{@code this}</I>
       @see <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#PadChopBase_CfgForNeeder(int, R)">this</A>(-1, needer)</CODE>
     **/
    public PadChopBase_CfgForNeeder<P,R> startConfigReturnNeedable(R needer, Class<P> expected_type)  {

@@ -134,7 +134,7 @@ public class ArrayUtil  {
       @param  cntrName_forNullBad  Descriptive name for {@code array}. When {@code null_ok} is {@code true}, this is ignored.
       @return  If {@code array} is<UL>
          <LI>{@code null}: {@code null}</LI>
-         <LI>Non-{@code null}: <CODE>({@link java.util.Arrays Arrays}.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#asList(T...)">asList</A>(array).<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="http://docs.oracle.com/javase/7/docs/api/java/util/List.html#toArray(T[])">toArray</A>(new String[array.length]))</CODE></LI>
+         <LI>Non-{@code null}: A new string array containing each element's {@code toString()}, in the same order. If an element is {@code null}, it's corresponding element in the returned array is also {@code null}.</LI>
       </UL>
     **/
    public static final <E> String[] getStringArrayOrNull(E[] array, NullContainer nnull, String cntrName_forNullBad)  {
@@ -142,7 +142,12 @@ public class ArrayUtil  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
          return  null;
       }
-      return  (Arrays.asList(array).toArray(new String[array.length]));
+      String[] as = new String[array.length];
+      for(int i = 0; i < array.length; i++)  {
+         E e = array[i];
+         as[i] = ((e == null) ? null : e.toString());
+      }
+      return  as;
    }
    /**
       <P>Get the middle index of a non-primitive array.</P>

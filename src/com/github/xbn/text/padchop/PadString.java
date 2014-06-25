@@ -22,9 +22,9 @@ package  com.github.xbn.text.padchop;
 /**
    <P>Pad a string on a either side with a specific pad-character.</P>
 
-{@.codelet.and.out com.github.xbn.examples.text.padchop.PadStringXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.text.padchop.PadStringXmpl:eliminateCommentBlocksAndPackageDecl()}
 
-   <a name="cfg"/><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.PadString_Cfg PadString_Cfg}</H3>
+   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.PadString_Cfg PadString_Cfg}</H3>
 
    <P><UL>
       <LI><B>Used by:</B> {@code <A HREF="VzblPadChop.html#cfg">VzblPadChop</A>}</LI>
@@ -213,7 +213,7 @@ public class PadString extends PadChopBase  {
       return  (new PadString(this));
    }
    /**
-      <P>Get a duplicate of this {@code PadString}, with a new goal-length.</P>
+      <P>Duplicate this {@code PadString}, with a new goal-length.</P>
 
       @return  <CODE>(new {@link #PadString(PadString) PadString}(this))</CODE>
     **/

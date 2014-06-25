@@ -72,12 +72,13 @@ public class XbnIbxBase_Cfg extends SimpleChainable  {
       <BR> &nbsp; &nbsp;  &nbsp; &nbsp; {@code "setAbsMinAndPArrayLength", cntr_name), min_name, cntr_name + ".length"})</CODE></P>
 
       @param  objThatIs_primArrayForLen  May not be {@code null}.
+      @param  cntr_name  The array name. If {@code null}, defaults to {@code "[the-primitive-array]"}.
       @see  #setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength(i,o,s,s)
     **/
    public void setAbsMinAndPArrayLength(int min_inclusive, Object objThatIs_primArrayForLen, String min_name, String cntr_name)  {
       setAbsoluteBounds(min_inclusive,
          getLengthFromUnknownAsObject(objThatIs_primArrayForLen, cntr_name, null),
-         min_name, cntr_name + ".length");
+         min_name, ((cntr_name == null) ? "[the-primitive-array]" : cntr_name) + ".length");
    }
    public void setAbsoluteBounds(int min_inclusive, int max_exclusive)  {
       getDataCrashIfNull().setAbsoluteBounds(min_inclusive, max_exclusive);

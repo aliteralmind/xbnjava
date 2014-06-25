@@ -13,17 +13,18 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
+   import  com.github.xbn.lang.Ruleable;
 /**
    <P>An {@code Alterer} that changes a single object.</P>
 
-{@.codelet.and.out com.github.xbn.examples.analyze.alter.ValueAltererXmpl:eliminateCmtBlocksPkgLineAndPkgReferences(true, true, false)}
+{@.codelet.and.out com.github.xbn.examples.analyze.alter.ValueAltererXmpl:eliminateCommentBlocksAndPackageDecl()}
 
    @param  <V>  The type of object to validate (optional--usually the same as {@code A})
    @param  <A>  The type of object to alter (optionally, only when {@code V} is valid)
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public interface ValueAlterer<V,A> extends Alterer  {
+public interface ValueAlterer<V,A> extends Alterer, Ruleable  {
    /**
       <P>Get the altered value. Each call to this function must be preceded by a call to {@link #resetState() resetState}{@code ()}.</P>
 

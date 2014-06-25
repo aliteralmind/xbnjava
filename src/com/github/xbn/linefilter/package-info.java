@@ -1,4 +1,4 @@
 /**
-   <P>Generically-useful utilities for eliminating or keeping specific lines in a text file, based on the blocks in which they exist, or if they are &quot;single-line entities&quot;.</P>
+   <P>Featuring {@code FilteredLineIterator}, which iterates through the lines in a plain-text file, keeping or discarding those that meet certain conditions, and optionally modifying kept lines.</P>
  **/
 package  com.github.xbn.linefilter;

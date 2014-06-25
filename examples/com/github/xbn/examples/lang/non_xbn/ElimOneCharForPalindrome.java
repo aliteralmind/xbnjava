@@ -1,8 +1,6 @@
 /*license*\
    XBN-Java Library
 
-   XBN-Java is a collection of generically-useful non-GUI programming utilities, featuring shareable self-returning method chains, regular expression convenience classes, TextLineFilter, highly-configurable output for lists, and automated insertion of example code into documentation.
-
    Copyright (C) 2014, Jeff Epstein
 
    This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.

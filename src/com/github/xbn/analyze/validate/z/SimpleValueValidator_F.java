@@ -22,7 +22,7 @@ package  com.github.xbn.analyze.validate.z;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class SimpleValueValidator_F extends SimpleValidator_F implements ValueValidator_Fieldable  {
-   public boolean           bNullOk;
+   public boolean bNullOk;
    public SimpleValueValidator_F(boolean is_nullOk, boolean do_invert, ValidResultFilter filter, Appendable dbgDest_ifNonNull, Object xtra_errInfo)  {
       super(do_invert, filter, dbgDest_ifNonNull, xtra_errInfo);
       bNullOk = is_nullOk;

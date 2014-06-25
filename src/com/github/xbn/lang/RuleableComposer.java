@@ -83,7 +83,7 @@ public class RuleableComposer  {//, Ruleable  {
       return  to_appendTo.append("RuleType.").append(getRuleType());
    }
    /**
-      <P>Get a duplicate of this {@code RuleableComposer}.</P>
+      <P>Duplicate this {@code RuleableComposer}.</P>
 
       @return  <CODE>(new {@link #RuleableComposer(boolean, RuleableComposer) RuleableComposer}(false, this))</CODE>
     **/

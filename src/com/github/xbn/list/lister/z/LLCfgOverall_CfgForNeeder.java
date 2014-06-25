@@ -44,21 +44,30 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
    }
 //constructors...END
 //setters...START
-   public LLCfgOverall_CfgForNeeder<E,C,R> noAltForElementLength(ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  ifElementLength(NewLengthInRangeValidatorFor.impossible(filter_ifNullOff, dbgDest_ifNonNull), null);
+   public LLCfgOverall_CfgForNeeder<E,C,R> noAltForElementLength(ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  ifElementLength(NewLengthInRangeValidatorFor.impossible(filter_ifNonNull, dbgDest_ifNonNull), null);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgOverall_CfgForNeeder<E,C,R> ifElementLength(ValueValidator<Integer> len_validator, String display_ifValid)  {
       vvForElementLength = len_validator;
       sIfElementLength = display_ifValid;
       return  this;
    }
-   public LLCfgOverall_CfgForNeeder<E,C,R> ifNoElements(String alt_display, ValidResultFilter filter_ifNullOff, Appendable dbgDest_ifNonNull)  {
-      return  ifElementLength(NewLengthInRangeValidatorFor.onlyZeroValid(Null.BAD, filter_ifNullOff, dbgDest_ifNonNull), alt_display);
+   public LLCfgOverall_CfgForNeeder<E,C,R> ifNoElements(String alt_display, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  ifElementLength(NewLengthInRangeValidatorFor.onlyZeroValid(Null.BAD, filter_ifNonNull, dbgDest_ifNonNull), alt_display);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgOverall_CfgForNeeder<E,C,R> finalOutputUnaltered()  {
       declareFinalOutputUnaltered();
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgOverall_CfgForNeeder<E,C,R> reset()  {
       super.declareReset();
       resetLCOCFN();
@@ -67,14 +76,23 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
    protected void resetLCOCFN()  {
       noAltForElementLength(null, null);
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgOverall_CfgForNeeder<E,C,R> ifNull(String alt_display)  {
       setIfNull(alt_display);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgOverall_CfgForNeeder<E,C,R> ifNonNull(String alt_display)  {
       setIfNonNull(alt_display);
       return  this;
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgOverall_CfgForNeeder<E,C,R> prePost(String prefixfix, String postfixfix)  {
       setPrePost(prefixfix, postfixfix);
       return  this;
@@ -104,6 +122,7 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
       <P>Equal to
       <BR> &nbsp; &nbsp; {@code startConfigReturnNeedable(needer, (Class&lt;LLCfgOverall&lt;E&gt;&gt;)((Class)LLCfgOverall.class))}</P>
 
+      @return  <I>{@code this}</I>
       @see  com.github.xbn.neederneedable.Needer#startConfig(Class) Needer#startConfig(cls)
     **/
    public LLCfgOverall_CfgForNeeder<E,C,R> startConfigReturnNeedable(R needer)  {
@@ -120,6 +139,9 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
+   /**
+      @return  <I>{@code this}</I>
+    **/
    public LLCfgOverall_CfgForNeeder<E,C,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

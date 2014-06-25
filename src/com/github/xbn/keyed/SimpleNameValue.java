@@ -60,7 +60,7 @@ public class SimpleNameValue<V> extends SimpleKeyValue<String,V> implements Name
       return  getKey();
    }
    /*
-      <P>Get a duplicate of this {@code SimpleNameValue}.</P>
+      <P>Duplicate this {@code SimpleNameValue}.</P>
 
       @return  <CODE>(new {@link #SimpleNameValue(NameValue) SimpleNameValue}&lt;String,V&gt;(this))</CODE>
    public SimpleNameValue<V> getObjectCopy()  {

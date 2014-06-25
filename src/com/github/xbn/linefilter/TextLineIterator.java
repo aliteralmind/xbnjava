@@ -15,11 +15,13 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
+   import  java.util.Iterator;
+   import  com.github.xbn.linefilter.entity.raw.RawLine;
 /**
-   <P>A {@code ValueAlterer} for textual lines.</P>
+   <P>A iterator for textual lines.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public interface TextLineIterator extends LineObjectIterator<String,LineObject<String>>  {
+public interface TextLineIterator extends Iterator<RawLine<String>>  {
 }

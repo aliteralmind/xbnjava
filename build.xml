@@ -124,11 +124,17 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <record name="${dir_build}build_log_post_codelet.txt" action="start"/>
       <antcall target="-autocopycodeletjar"/>
       <antcall target="compilepostcodelet"/>
+      <antcall target="doczip"/>
+      <record name="${dir_build}build_log_post_codelet.txt" action="stop"/>
+   </target>
+
+   <target name="doczip" description="doc, doc2, zip, zip2">
+      <record name="${dir_build}javadoc_and_zip_log.txt" action="start"/>
       <antcall target="doc"/>
       <antcall target="doc2"/>
       <antcall target="zip"/>
       <antcall target="zip2"/>
-      <record name="${dir_build}build_log_post_codelet.txt" action="stop"/>
+      <record name="${dir_build}javadoc_and_zip_log.txt" action="stop"/>
    </target>
 
    <target name="unit" description="Executes com.github.xbn.test.UnitTestRunner">
@@ -212,7 +218,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
          whenempty="fail"
          basedir="${xbn_and_all_dependency_jars_working_dir}"/>
 </target>
-<target name="zip2" description="Generates javadoc documentation.">
+<target name="zip2" description="For starting execution somewhere in the middle of the 'zip' task.">
    </target>
 
    <!-- See http://ant.apache.org/faq.html#propertyvalue-as-name-for-property -->
