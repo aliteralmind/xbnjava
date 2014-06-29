@@ -13,7 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw.z;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffListener;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.analyze.alter.ValueAlterer;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
@@ -95,13 +95,13 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
       return  this;
    }
    /**
-      <P>Set the on-off listener.</P>
+      <P>Set the on-off filter.</P>
 
-      @param  listener  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getListener() getListener}{@code ()}*.
+      @param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> listener(RawEntityOnOffListener<O,L> listener)  {
-      this.listener = listener;
+   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> filter(RawEntityOnOffFilter<O,L> filter)  {
+      filterIfNonNull = filter;
       return  this;
    }
    /**

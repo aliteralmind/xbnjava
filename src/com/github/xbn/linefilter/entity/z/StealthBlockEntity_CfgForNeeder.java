@@ -13,7 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.z;
-   import  com.github.xbn.linefilter.entity.EntityOnOffListener;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
@@ -83,13 +83,13 @@ public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEnti
       return  this;
    }
    /**
-      <P>Set the on-off listener.</P>
+      <P>Set the on-off filter.</P>
 
-      @param  listener  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getListener() getListener}{@code ()}*.
+      @param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public StealthBlockEntity_CfgForNeeder<M,R> listener(EntityOnOffListener listener)  {
-      super.listener(listener);
+   public StealthBlockEntity_CfgForNeeder<M,R> filter(RawEntityOnOffFilter<String,RawLine<String>> filter)  {
+      super.filter(filter);
       return  this;
    }
    /**

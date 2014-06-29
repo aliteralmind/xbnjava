@@ -58,22 +58,13 @@ public class IterateKeptLinesBlockAsChild  {
 
       BlockEntity block = new BlockEntity_Cfg("block").
          startAlter(startIdOnly).endAlter(EndRequired.YES, endIdOnly).
-         keepMidOnly().build();
+         keepMidsOnly().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          StringUtil.getLineIterator(input), Returns.KEPT,
          KeepUnmatched.NO,
          null, null,    //dbgEveryLine and its line-range
          block);
-
-/*
-      FilteredLineIterator filteredItr = new FilteredLineIterator(
-         StringUtil.getLineIterator(input), Returns.KEPT,
-//			KeepStartLine.NO, KeepMidLines.NO, KeepEndLine.NO,
-         KeepStartLine.NO, KeepMidLines.NO, KeepEndLine.NO,
-         null, null,    //dbgEveryLine and its line-range
-         new TextChildEntity[]{block});
- */
 
       while(filteredItr.hasNext())  {
          System.out.println(filteredItr.nextLine());

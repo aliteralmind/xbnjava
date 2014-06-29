@@ -13,16 +13,16 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.linefilter.alter.TextLineAlterer;
-   import  java.util.regex.Pattern;
    import  com.github.xbn.linefilter.FilteredLineIterator;
-   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
    import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
+   import  com.github.xbn.linefilter.alter.TextLineAlterer;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.linefilter.entity.EndRequired;
    import  com.github.xbn.linefilter.entity.z.BlockEntity_Cfg;
    import  com.github.xbn.regexutil.ReplacedInEachInput;
    import  com.github.xbn.text.StringUtil;
+   import  java.util.regex.Pattern;
 /**
    <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to make basic modifications on kept lines.</P>
 
@@ -62,7 +62,7 @@ public class ModifyBlockLines  {
       BlockEntity block = new BlockEntity_Cfg("block").
          startAlter(startIdOnly).midAlter(midAlterer).
          endAlter(EndRequired.YES, endIdOnly).
-         keepMidOnly().build();
+         keepMidsOnly().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          StringUtil.getLineIterator(input),
@@ -72,6 +72,6 @@ public class ModifyBlockLines  {
 
       while(filteredItr.hasNext())  {
          System.out.println(filteredItr.nextLine());
-      }
+      }  //End snippet
    }
-}  //End snippet
+}

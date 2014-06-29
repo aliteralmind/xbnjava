@@ -15,8 +15,8 @@
 package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
    import  com.github.xbn.linefilter.FilteredLineIterator;
-   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
    import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
    import  com.github.xbn.linefilter.alter.TextLineAlterer;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.linefilter.entity.EndRequired;
@@ -68,11 +68,12 @@ public class MoreComplicatedModifyExample  {
             }
       };
 
+      TextLineAlterer midAlterer = AdaptRegexReplacerTo.
+         lineReplacer(replaceNumWithStrNum, null);
+
       TextLineAlterer startIdOnly = NewTextLineAltererFor.
          textValidateOnly("start", null,
          null);            //debug (on:System.out, off:null)
-      TextLineAlterer midAlterer = AdaptRegexReplacerTo.
-         lineReplacer(replaceNumWithStrNum, null);
       TextLineAlterer endIdOnly = NewTextLineAltererFor.
          textValidateOnly("end", null,
          null);            //debug
@@ -80,7 +81,7 @@ public class MoreComplicatedModifyExample  {
       BlockEntity block = new BlockEntity_Cfg("block").
          startAlter(startIdOnly).midAlter(midAlterer).
          endAlter(EndRequired.YES, endIdOnly).
-         keepAll().build();
+         keepMidsOnly().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          StringUtil.getLineIterator(input),

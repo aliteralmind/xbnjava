@@ -109,7 +109,7 @@ public class CrashIfList  {
             for(int i = 0; i < size; i++)  {
                Object elementi = list.get(i);
                if(elementi != null  &&  elementi.toString().length() < min_allowedElementLen)  {
-                  throw  new LengthLessThanRequiredException("list.get(" + i + ")", elementi.toString().length(), min_allowedElementLen, minElementLen_name);
+                  throw  new LengthLessThanRequiredException("list.get(" + i + ")", elementi.toString().length(), min_allowedElementLen, minElementLen_name, null);
                }
                for(int j = (i + 1); j < size; j++)  {
                   if(Objects.equals(elementi, list.get(j)))  {
@@ -119,7 +119,7 @@ public class CrashIfList  {
             }
             Object lastElement = list.get(size - 1);
             if(lastElement != null  &&  lastElement.toString().length() < min_allowedElementLen)  {
-               throw  new LengthLessThanRequiredException("list.get(" + (size - 1) + ")", lastElement.toString().length(), min_allowedElementLen, minElementLen_name);
+               throw  new LengthLessThanRequiredException("list.get(" + (size - 1) + ")", lastElement.toString().length(), min_allowedElementLen, minElementLen_name, null);
             }
             return;
          }
@@ -164,7 +164,7 @@ public class CrashIfList  {
       if(duplicates.isOk())  {
          for(int i = 0; i < size; i++)  {
             if(list.get(i).toString().length() < min_allowedElementLen)  {
-               throw  new LengthLessThanRequiredException("list.get(" + i + ")", list.get(i).toString().length(), min_allowedElementLen, minElementLen_name);
+               throw  new LengthLessThanRequiredException("list.get(" + i + ")", list.get(i).toString().length(), min_allowedElementLen, minElementLen_name, null);
             }
          }
          return;
@@ -187,7 +187,7 @@ public class CrashIfList  {
       Object lastElement = list.get(size - 1);
       try  {
          if(lastElement.toString().length() < min_allowedElementLen)  {
-            throw  new LengthLessThanRequiredException("list.get(" + (size - 1) + ")", lastElement.toString().length(), min_allowedElementLen, minElementLen_name);
+            throw  new LengthLessThanRequiredException("list.get(" + (size - 1) + ")", lastElement.toString().length(), min_allowedElementLen, minElementLen_name, null);
          }
       }  catch(NullPointerException npx)  {
          throw  CrashIfObject.nullOrReturnCause(lastElement, "list.get(" + (size - 1) + ")", null, npx);

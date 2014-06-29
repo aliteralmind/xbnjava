@@ -13,14 +13,13 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list.lister.z;
-   import  com.github.xbn.number.NewLengthInRangeValidatorFor;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
-   import  com.github.xbn.list.lister.LLCfgOverall;
-   import  com.github.xbn.lang.Null;
-   import  com.github.xbn.number.NewLengthInRangeValidatorFor;
    import  com.github.xbn.analyze.validate.ValueValidator;
-   import  java.util.List;
+   import  com.github.xbn.lang.Null;
+   import  com.github.xbn.list.lister.LLCfgOverall;
    import  com.github.xbn.neederneedable.Needer;
+   import  com.github.xbn.number.NewLengthInRangeValidatorFor;
+   import  java.util.List;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring an {@link com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</P>
 
@@ -45,7 +44,7 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 //constructors...END
 //setters...START
    public LLCfgOverall_CfgForNeeder<E,C,R> noAltForElementLength(ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
-      return  ifElementLength(NewLengthInRangeValidatorFor.impossible(filter_ifNonNull, dbgDest_ifNonNull), null);
+      return  ifElementLength(NewLengthInRangeValidatorFor.impossible(Null.BAD, filter_ifNonNull, dbgDest_ifNonNull), null);
    }
    /**
       @return  <I>{@code this}</I>

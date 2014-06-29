@@ -13,6 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.RuleType;
+   import  com.github.xbn.lang.Invert;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.array.ArrayUtil;
    import  static com.github.xbn.lang.XbnConstants.*;
@@ -29,9 +31,19 @@ package  com.github.xbn.number;
 public class IndexInRange extends IntInRange implements IndexRange  {
 //public
    /**
-      <P>An instance no bounds--Equal to <CODE>new {@link #IndexInRange() IndexInRange}()</CODE></P>
+      <P>An {@code IndexInRange} with no bounds.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>new {@link #IndexInRange() IndexInRange}()</CODE></P>
     **/
    public static final IndexInRange UNRESTRICTED = new IndexInRange();
+   /**
+      <P>An {@code IndexInRange} with no members.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>new {@link #IndexInRange(Invert, IntBoundInclusive, IntBoundExclusive) IndexInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null</CODE></P>
+    **/
+   public static final IndexInRange IMPOSSIBLE = new IndexInRange(Invert.YES, new IntBoundInclusive(0, null), null);
    /**
       <P>Create a new instance with no bounds.</P>
 
@@ -62,17 +74,46 @@ public class IndexInRange extends IntInRange implements IndexRange  {
       super(min, max, min_name, max_name);
    }
    /**
-      <P>Create a new {@code IndexInRange}.</P>
+      <P>Create a new instance.</P>
 
       <P>Equal to
       <BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(IntBound, IntBound) super}{@code (min_bound, max_bound)}</P>
-
-      @see  #IndexInRange()
-      @see  #IndexInRange(int, int) IndexInRange(i,i)
-      @see  #IndexInRange(IndexInRange) IndexInRange(xir)
     **/
    public IndexInRange(IntBoundInclusive min_bound, IntBoundExclusive max_bound)  {
       super(min_bound, max_bound);
+   }
+   /**
+      <P>Create a new instance with bounds.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(Invert, int, int) super}(invert, min, max)</CODE></P>
+    **/
+   public IndexInRange(Invert invert, int min, int max)  {
+      super(invert, min, max);
+   }
+   /**
+      <P>Create a new instance with bounds.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(Invert, int, int, String, String) super}(invert, min, max, min_name, max_name)</CODE></P>
+    **/
+   public IndexInRange(Invert invert, int min, int max, String min_name, String max_name)  {
+      super(invert, min, max, min_name, max_name);
+   }
+   /**
+      <P>Create a new instance.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</P>
+
+      @see  #IndexInRange()
+      @see  #IndexInRange(int, int) IndexInRange(i,i)
+      @see  #IndexInRange(Invert, int, int) IndexInRange(inv,i,i)
+      @see  #IndexInRange(int, int) IndexInRange(i,i,s,s)
+      @see  #IndexInRange(Invert, int, int) IndexInRange(inv,i,i,s,s)
+    **/
+   public IndexInRange(Invert invert, IntBoundInclusive min_bound, IntBoundExclusive max_bound)  {
+      super(invert, min_bound, max_bound);
    }
    /**
       <P>If the bounds of this {@code IndexInRange} are invalid, crash.</P>
@@ -120,29 +161,32 @@ public class IndexInRange extends IntInRange implements IndexRange  {
       crashIfBadIndex(min, min_name);
       crashIfBadIndex(maxusive, max_name);
    }
-   protected void setRuleTypeFromBounds()  {
-      setRuleTypeFromBoundsForLenIdx();
+   protected RuleType getRuleTypeFromBounds()  {
+      return  getRuleTypeFromBoundsForLenIdx();
+   }
+   public IndexInRange getInvertedCopy()  {
+      return  new IndexInRange(Invert.getForBoolean(!isInverted()), getMinBound(), getMaxBound());
    }
    public static final void crashIfBadIndexObject(IndexInRange range, Integer num, String idx_name, Object xtra_errInfo)  {
-      boolean bValid = false;
+      boolean isIn = false;
       try  {
-         bValid = range.isValid(num);
+         isIn = range.isIn(num);
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(range, "range", null, rx);
       }
-      if(!bValid)  {
+      if(!isIn)  {
          throw  new IllegalArgumentException(
             getXMsg(idx_name + " (" + num + ") is invalid. rules=[" + range.getRules() + "]", xtra_errInfo));
       }
    }
    public static final void crashIfBadIndexElement(IndexInRange range, Integer num, String cntr_name, int idx_inCntr, Object xtra_errInfo)  {
-      boolean bValid = false;
+      boolean isIn = false;
       try  {
-         bValid = range.isValid(num);
+         isIn = range.isIn(num);
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(range, "range", null, rx);
       }
-      if(!bValid)  {
+      if(!isIn)  {
          throw  new IllegalArgumentException(
             getXMsg("Element " + idx_inCntr + " in " + cntr_name +
                " (" + num + ") is invalid. rules=[" + range.getRules() + "]. NOTE: If the maximum bound is the length of an object (string, array, collection, etc.), then, for example, \"sMyName=3\" means that the *length* of sMyName is 3.", xtra_errInfo));

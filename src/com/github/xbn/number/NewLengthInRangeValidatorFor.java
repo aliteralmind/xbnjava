@@ -16,6 +16,7 @@
 \*license*/
 
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.Invert;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.Null;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
@@ -31,136 +32,99 @@ public class NewLengthInRangeValidatorFor  {
    private NewLengthInRangeValidatorFor()  {
       throw  new IllegalStateException("Do not instantiate");
    }
-   public static final LengthInRangeValidator unrestricted(ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      return  new LengthInRangeValidator_Cfg().nullOk(true).invert(false).range(NewLengthInRangeFor.UNRESTRICTED).filter(filter).debugTo(dbgDest_ifNonNull).build();
+   public static final LengthInRangeValidator unrestricted(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.UNRESTRICTED,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator exactly(int both_minAndLength, String minLen_varName, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      return  new LengthInRangeValidator_Cfg().nullOk(true).invert(false).
-         range(NewLengthInRangeFor.exactly(both_minAndLength, minLen_varName)).
-         filter(filter).debugTo(dbgDest_ifNonNull).build();
+   public static final LengthInRangeValidator exactly(Invert invertRange_dontIfNull, int both_minAndLength, String minLen_varName, Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.exactly(
+            invertRange_dontIfNull, both_minAndLength, minLen_varName),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator notZero(Null nnull, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
+   public static final LengthInRangeValidator notZero(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.GREATER_THAN_ZERO,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
+   }
+   public static final LengthInRangeValidator onlyZeroValid(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.ZERO_ONLY,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
+   }
+   public static final LengthInRangeValidator impossible(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.IMPOSSIBLE,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
+   }
+/*
+   public static final LengthInRangeValidator nullBad(LengthInRange range, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
       try  {
-         return  new LengthInRangeValidator_Cfg().nullOk(nnull.isOk()).invert(false).range(NewLengthInRangeFor.GREATER_THAN_ZERO).filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
-   }
-   public static final LengthInRangeValidator onlyZeroValid(Null nnull, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().nullOk(nnull.isOk()).invert(false).range(NewLengthInRangeFor.ZERO_ONLY).filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
-   }
-   public static final LengthInRangeValidator impossible(ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      return  new LengthInRangeValidator_Cfg().nullOk(true).invert(true).range(NewLengthInRangeFor.UNRESTRICTED).filter(filter).debugTo(dbgDest_ifNonNull).build();
-   }
-   public static final LengthInRangeValidator nullBad(LengthInRange range, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().nullOk(false).invert(false).range(range).filter(filter).debugTo(dbgDest_ifNonNull).build();
+         return  new LengthInRangeValidator_Cfg().nullOk(false).range(range).filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).build();
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(range, "range", null, rx);
       }
    }
-   public static final LengthInRangeValidator min(Null nnull, int min, String min_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.min(min, min_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+ */
+   public static final LengthInRangeValidator min(Null nnull, Invert invertRange_dontIfNull, int min, String min_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.min(
+            invertRange_dontIfNull, min, min_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator length(Null nnull, int length, String length_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.length(length, length_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator length(Null nnull, Invert invertRange_dontIfNull, int length, String length_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.length(
+            invertRange_dontIfNull, length, length_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator exactly(Null nnull, int both_minAndLen, String minLen_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.exactly(both_minAndLen, minLen_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator exactly(Null nnull, Invert invertRange_dontIfNull, int both_minAndLen, String minLen_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.exactly(
+            invertRange_dontIfNull, both_minAndLen, minLen_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator minAndLength(Null nnull, int min, int length, String min_name, String length_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.minAndLength(min, length, min_name, length_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator minAndLength(Null nnull, Invert invertRange_dontIfNull, int min, int length, String min_name, String length_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.minAndLength(
+            invertRange_dontIfNull, min, length, min_name, length_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator stringLength(Null nnull, Object string_forLen, String string_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.stringLength(string_forLen, string_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator max(Null nnull, Invert invertRange_dontIfNull, int length, String length_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  length(nnull, invertRange_dontIfNull, length, length_name, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator stringLengthExactly(Null nnull, Object str_forMinAndLen, String string_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.stringLengthExactly(str_forMinAndLen, string_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator minMax(Null nnull, Invert invertRange_dontIfNull, int min, int length, String min_name, String length_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  minAndLength(nnull, invertRange_dontIfNull, min, length, min_name, length_name, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator minAndStringLength(Null nnull, int min, Object str_forMinAndLen, String min_name, String string_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.minAndStringLength(min, str_forMinAndLen, min_name, string_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator stringLength(Null nnull, Invert invertRange_dontIfNull, Object string_forLen, String string_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.stringLength(
+            invertRange_dontIfNull, string_forLen, string_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator primitiveArrayLength(Null nnull, Object primitiveArray_forLen, String array_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.primitiveArrayLength(primitiveArray_forLen, array_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator stringLengthExactly(Null nnull, Invert invertRange_dontIfNull, Object str_forMinAndLen, String string_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.stringLengthExactly(
+            invertRange_dontIfNull, str_forMinAndLen, string_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator primitiveArrayLengthExactly(Null nnull, Object primitiveArray_forLen, String array_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.primitiveArrayLengthExactly(primitiveArray_forLen, array_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator minAndStringLength(Null nnull, Invert invertRange_dontIfNull, int min, Object str_forMinAndLen, String min_name, String string_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.minAndStringLength(
+            invertRange_dontIfNull, min, str_forMinAndLen, min_name, string_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final LengthInRangeValidator minAndPArrayLength(Null nnull, int min, Object primitiveArray_forLen, String min_name, String array_name, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      try  {
-         return  new LengthInRangeValidator_Cfg().
-            nullOk(nnull.isOk()).invert(false).
-            range(NewLengthInRangeFor.minAndPArrayLength(min, primitiveArray_forLen, min_name, array_name)).
-            filter(filter).debugTo(dbgDest_ifNonNull).build();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
-      }
+   public static final LengthInRangeValidator primitiveArrayLength(Null nnull, Invert invertRange_dontIfNull, Object primitiveArray_forLen, String array_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.primitiveArrayLength(
+            invertRange_dontIfNull, primitiveArray_forLen, array_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
+   public static final LengthInRangeValidator primitiveArrayLengthExactly(Null nnull, Invert invertRange_dontIfNull, Object primitiveArray_forLen, String array_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.primitiveArrayLengthExactly(
+            invertRange_dontIfNull, primitiveArray_forLen, array_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
+   }
+   public static final LengthInRangeValidator minAndPArrayLength(Null nnull, Invert invertRange_dontIfNull, int min, Object primitiveArray_forLen, String min_name, String array_name, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewLengthInRangeFor.minAndPArrayLength(
+            invertRange_dontIfNull, min, primitiveArray_forLen, min_name, array_name),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
+   }
+      private static final LengthInRangeValidator range(LengthInRange range, Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+         try  {
+            return  new LengthInRangeValidator_Cfg().nullOk(nnull.isOk()).
+            filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).
+            range(range).build();
+         }  catch(RuntimeException rx)  {
+            throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
+         }
+      }
 }

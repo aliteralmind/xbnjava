@@ -14,7 +14,7 @@
 \*license*/
 
 package  com.github.xbn.linefilter.entity;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.raw.RawSingleLineEntity;
    import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
@@ -36,7 +36,7 @@ package  com.github.xbn.linefilter.entity;
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#alterer(ValueAlterer) alterer}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#keepMatchedLines(boolean) keepMatchedLines}(b)</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#listener(RawEntityOnOffListener) listener} </LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter} </LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#reset() reset}{@code ()}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 
@@ -61,13 +61,13 @@ public class SingleLineEntity extends RawSingleLineEntity<String,RawLine<String>
    public SingleLineEntity(RawSingleLineEntity_Fieldable<String,RawLine<String>> fieldable)  {
       super(fieldable);
    }
-   protected SingleLineEntity(SingleLineEntity to_copy, int levels_belowRoot, RawParentEntity<String,RawLine<String>> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug)  {
+   protected SingleLineEntity(SingleLineEntity to_copy, int levels_belowRoot, RawParentEntity<String,RawLine<String>> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    public TextParentEntity getParent()  {
-      return  (TextParentEntity)getParent();
+      return  (TextParentEntity)super.getParent();
    }
    public TextParentEntity getTopParent()  {
-      return  (TextParentEntity)getTopParent();
+      return  (TextParentEntity)super.getTopParent();
    }
 }

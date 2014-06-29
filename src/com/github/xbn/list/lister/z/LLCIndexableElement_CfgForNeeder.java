@@ -43,7 +43,7 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 //constructors...END
 //setters...START
    public LLCIndexableElement_CfgForNeeder<E,C,R> noAltForElementLength()  {
-   return  ifElementLength(NewLengthInRangeValidatorFor.impossible(null, null), null);
+   return  ifElementLength(NewLengthInRangeValidatorFor.impossible(Null.BAD, null, null), null);
    }
    /**
       @return  <I>{@code this}</I>

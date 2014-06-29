@@ -40,16 +40,16 @@ public class NewValidResultFilterFor  {
       <P>A new filter that returns {@code false} when the number of <I>valid results</I> is outside of a specific (inclusive) range--it otherwise the leaves follows-the-rules finding unchanged.</P>
 
       @param  maxIncl_neg1IfNoMax  If {@code -1}, there is no maximum bound.
-      @return  <CODE>FilterValidCounts_Cfg().{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#range(LengthInRange) range}(lir).{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#inUnchangedOutFalse() inUnchangedOutFalse}().
+      @return  <CODE>FilterValidCounts_Cfg().{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#range(LengthInRange) range}(lengthRange).{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#inUnchangedOutFalse() inUnchangedOutFalse}().
       <BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#countValid() countValid}().{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#build() build}()</CODE>
-      <BR>Where {@code lir} is equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.number.NewLengthInRangeFor NewLengthInRangeFor}.{@link com.github.xbn.number.NewLengthInRangeFor#minAndLength(int, int, String, String) minAndLength}(inclusive_min, maxIncl_neg1IfNoMax, min_name, max_name)</CODE>
+      <BR>Where {@code lengthRange} is equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.number.NewLengthInRangeFor NewLengthInRangeFor}.{@link com.github.xbn.number.NewLengthInRangeFor#minMaxInclusive(Invert, int, int, String, String) minMaxInclusive}(null, inclusive_min, maxIncl_neg1IfNoMax, min_name, max_name)</CODE>
       @see  #unfiltered()
     **/
    public static final FilterValidCounts inUnchangedOutFalse(int inclusive_min, int maxIncl_neg1IfNoMax, String min_name, String max_name, Appendable dbgDest_ifNonNull)  {
       LengthInRange range = ((maxIncl_neg1IfNoMax == -1)
-         ?  NewLengthInRangeFor.min(inclusive_min, min_name)
-         :  NewLengthInRangeFor.minAndLength(inclusive_min, maxIncl_neg1IfNoMax, min_name, max_name));
+         ?  NewLengthInRangeFor.min(null, inclusive_min, min_name)
+         :  NewLengthInRangeFor.minMaxInclusive(null, inclusive_min, maxIncl_neg1IfNoMax, min_name, max_name));
       return  new FilterValidCounts_Cfg().range(range).inUnchangedOutFalse().
          countValid().debugTo(dbgDest_ifNonNull).build();
    }

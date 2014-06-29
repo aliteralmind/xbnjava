@@ -14,7 +14,7 @@
 \*license*/
 
 package  com.github.xbn.linefilter.entity;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
@@ -35,7 +35,7 @@ package  com.github.xbn.linefilter.entity;
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#listener(EntityOnOffListener) listener}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter}</LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 
@@ -54,13 +54,13 @@ public class StealthBlockEntity extends RawStealthBlockEntity<String,RawLine<Str
    public StealthBlockEntity(RawStealthBlockEntity_Fieldable<String,RawLine<String>> fieldable)  {
       super(fieldable);
    }
-   protected StealthBlockEntity(StealthBlockEntity to_copy, int levels_belowRoot, RawParentEntity<String,RawLine<String>> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug)  {
+   protected StealthBlockEntity(StealthBlockEntity to_copy, int levels_belowRoot, RawParentEntity<String,RawLine<String>> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    public TextParentEntity getParent()  {
-      return  (TextParentEntity)getParent();
+      return  (TextParentEntity)super.getParent();
    }
    public TextParentEntity getTopParent()  {
-      return  (TextParentEntity)getTopParent();
+      return  (TextParentEntity)super.getTopParent();
    }
 }

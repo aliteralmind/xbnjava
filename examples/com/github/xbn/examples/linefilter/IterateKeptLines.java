@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.lang.Null;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
@@ -58,21 +59,13 @@ public class IterateKeptLines  {
 
       BlockEntity block = new BlockEntity_Cfg("block").
          startAlter(startIdOnly).endAlter(EndRequired.YES, endIdOnly).
-         keepMidOnly().build();
+         keepMidsOnly().build();
 
-      FilteredLineIterator filteredItr = new FilteredLineIterator(
-         StringUtil.getLineIterator(input),
-         Returns.KEPT, com.github.xbn.linefilter.entity.KeepStartLine.NO, com.github.xbn.linefilter.entity.KeepMidLines.NO, com.github.xbn.linefilter.entity.KeepEndLine.NO,
-         null, null,    //dbgEveryLine and its line-range
-         new com.github.xbn.linefilter.entity.TextChildEntity[]{block});
-
-/*
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          StringUtil.getLineIterator(input),
          Returns.KEPT,
          null, null,    //dbgEveryLine and its line-range
          block);
- */
 
       while(filteredItr.hasNext())  {
          System.out.println(filteredItr.nextLine());

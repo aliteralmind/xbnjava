@@ -12,40 +12,24 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.lang.CrashIfObject;
+package  com.github.xbn.linefilter.entity;
+   import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
+   import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.linefilter.entity.raw.RawPostFilterSelfActiveInOutRange;
+   import  com.github.xbn.linefilter.entity.OnOffAbort;
+   import  com.github.xbn.number.LengthInRange;
 /**
-   <P>Convenience functions for creating {@code RawEntityOnOffListener}s.</P>
+   <P>A {@code RawEntityOnOffFilter} that is dependant on the <I>being filtered</I> entity's {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#getFullyActiveCount() fully-active count} being in a range.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class NewRawEntityOnOffListenerFor  {
-   public static final <O,L extends RawLine<O>> RawEntityOnOffListener<O,L> alwaysOn()  {
-      return  new ListenerAlways<O,L>(true);
-   }
-   private NewRawEntityOnOffListenerFor()  {
-      throw  new IllegalStateException("Do not instantiate.");
-   }
-}
-class ListenerAlways<O,L extends RawLine<O>> implements RawEntityOnOffListener<O,L>  {
-   private final boolean isOn;
-   public ListenerAlways(boolean is_on)  {
-      isOn = is_on;
-   }
-   public ListenerAlways(ListenerAlways to_copy)  {
-      try  {
-         isOn = to_copy.isOn;
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-      }
-   }
-   public boolean isOn(RawEntity<O,L> ignored, RawLine<O> ignored2)  {
-      return  isOn;
-   }
-   public RawEntityOnOffListener<O,L> getObjectCopy()  {
-      return  new ListenerAlways<O,L>(this);
-   }
-   public void resetState()  {
+public class PostFilterSelfActiveInOutRange extends RawPostFilterSelfActiveInOutRange<String,RawLine<String>>  {
+   /**
+      <P>Create a new instance from a range and when-in setting.</P>
+
+    **/
+   public PostFilterSelfActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
+      super(range, when_inRange, when_outOfRange, response, debug_ifNonNull);
    }
 }

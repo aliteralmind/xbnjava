@@ -13,13 +13,14 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
+   import  com.github.xbn.linefilter.entity.raw.RawEntity;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
    import  com.github.xbn.linefilter.entity.raw.RawSingleLineEntity;
    import  com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity;
    import  com.github.xbn.lang.Null;
-   import  com.github.xbn.number.NewLengthInRangeValidatorFor;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.number.NewLengthInRangeFor;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.NewTextAppenterFor;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.CrashIfObject;
@@ -39,13 +40,14 @@ package  com.github.xbn.linefilter;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L>  {
-   private final RawBlockEntity<O,L> rootBlock       ;
-   private final Returns              returnWhat      ;
-   private final TextAppenter        dbgAptrEveryLine;
-   private final LengthInRangeValidator rangeForEveryLineDebug;
-   private Iterator<O> allLineItr      ;
-   protected L         nextLine        ;
-   private int         lineNum         ;
+   private final RawBlockEntity<O,L> rootBlock             ;
+   private final Returns             returnWhat            ;
+   private final TextAppenter        dbgAptrEveryLine      ;
+   private final LengthInRange       rangeForEveryLineDebug;
+   private Iterator<O>    allLineItr     ;
+   protected L            nextLine       ;
+   private int            lineNum        ;
+   private RawEntity<O,L> entityThatAbrtd;
    private static final VzblPadChop VPC_DBG = new VzblPadChop_Cfg(70).
       trim().unescape().cfgChop().ddd().inMiddle().endCfg().build();
    /**
@@ -61,22 +63,26 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
       @param  rangeForEveryLineDebug_ifNonNull  If non-{@code null}, this is the line range to debug with {@code dbgAptrEveryLine_ifUseable}. If {@code null}, all lines are debugged. Get with {@link #getEveryLineDebugRange() getEveryLineDebugRange}{@code ()}
       @param  root_block  Represents the text-document itself, or the largest block within the document that is recognized. May not be {@code null}. Get with {@link #getRootBlock() getRootBlock}{@code ()}.
     **/
-   public FilteredIterator(Iterator<O> all_lineItr, Returns return_what, Appendable dbgEveryLine_ifNonNull, LengthInRangeValidator rangeForEveryLineDebug_ifNonNull, RawBlockEntity<O,L> root_block)  {
+   public FilteredIterator(Iterator<O> all_lineItr, Returns return_what, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawBlockEntity<O,L> root_block)  {
       Objects.requireNonNull(return_what, "return_what");
       returnWhat = return_what;
 
       dbgAptrEveryLine = NewTextAppenterFor.appendableUnusableIfNull(
          dbgEveryLine_ifNonNull);
       rangeForEveryLineDebug = ((rangeForEveryLineDebug_ifNonNull == null)
-         ?  NewLengthInRangeValidatorFor.notZero(Null.BAD, null, null)
+         ?  NewLengthInRangeFor.UNRESTRICTED
          :  rangeForEveryLineDebug_ifNonNull);
 
       rootBlock = new RawBlockEntity<O,L>(root_block, 0, null, dbgAptrEveryLine, rangeForEveryLineDebug);
       nextLine = null;
       lineNum = 0;
+      entityThatAbrtd = null;
       setAllIterator(all_lineItr);
    }
    public boolean wasAllIteratorSet()  {
+      if(wasAborted())  {
+         return  true;
+      }
       return  (allLineItr != null);
    }
    public void setAllIterator(Iterator<O> all_lineItr)  {
@@ -92,20 +98,26 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
    /**
       <P>What lines are retured by this iterator?.</P>
 
-      @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRangeValidator, RawBlockEntity)
+      @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
     **/
    public Returns getReturnsWhat()  {
       return  returnWhat;
    }
+   public boolean wasAborted()  {
+      return  (getEntityThatAborted() != null);
+   }
+   public RawEntity<O,L> getEntityThatAborted()  {
+      return  entityThatAbrtd;
+   }
    /**
       <P>The outputter for diagnostics on every analyzed line.</P>
 
-      @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRangeValidator, RawBlockEntity)
+      @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
     **/
    public TextAppenter getDebugAptrEveryLine()  {
       return  dbgAptrEveryLine;
    }
-   public LengthInRangeValidator getEveryLineDebugRange()  {
+   public LengthInRange getEveryLineDebugRange()  {
       return  rangeForEveryLineDebug;
    }
    /**
@@ -120,6 +132,9 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
       if(nextLine != null)  {
          return  true;
       }
+      if(wasAborted())  {
+         return  false;
+      }
       L nextLineFromAllItr = null;
       try  {
          while(allLineItr.hasNext())  {
@@ -129,18 +144,27 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
             nextLineFromAllItr = nextLineFromAllItr2;
 
             if(isEveryLineAptrUseableAndInRange(lineNum))  {
-               getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + "all_lineItr.next(): " + VPC_DBG.get(nextLineFromAllItr));
+               getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + " all_lineItr.next() (pre-filtered): " + VPC_DBG.get(nextLineFromAllItr));
             }
 
-            O alteredBody = rootBlock.getAltered(nextLineFromAllItr, nextLineFromAllItr.getBody());
+            O alteredBody = getRootBlock().getAltered(nextLineFromAllItr, nextLineFromAllItr.getBody());
+            if(getRootBlock().doAbortIterator())  {
+               allLineItr = null;
+               entityThatAbrtd = getRootBlock().getEntityThatAborted();
+               if(isEveryLineAptrUseableAndInRange(lineNum))  {
+                  getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + " *ABORTED* by entity: " + getEntityThatAborted());
+               }
+
+               return  false;
+            }
 
             if(getReturnsWhat().isKept())  {
-               if(rootBlock.doKeepJustAnalyzed())  {
+               if(getRootBlock().doKeepJustAnalyzed())  {
                   return  setNextLineReturnTrue(lineNum, alteredBody);
                }
 
             }  else if(getReturnsWhat().isActive())  {
-               if(rootBlock.isActive())  {
+               if(getRootBlock().isActive())  {
                   return  setNextLineReturnTrue(lineNum, alteredBody);
                }
 
@@ -158,6 +182,9 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
          CrashIfObject.nnull(nextLineFromAllItr, "all_lineItr.next()", null);
          throw  CrashIfObject.nullOrReturnCause(allLineItr, "all_lineItr", null, rx);
       }
+
+      getRootBlock().declareEndOfInput();
+
       return  false;
    }
    /**
@@ -168,7 +195,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
 
       @param  line_num  YYY
       @param  altered_body  <I>Should</I> not be {@code null}.
-      @see  FilteredLineIterator#setNextLineReturnTrue(RawLine, String)
+      @see  FilteredLineIterator#setNextLineReturnTrue(int, String)
     **/
    protected boolean setNextLineReturnTrue(int line_num, O altered_body)  {
       @SuppressWarnings("unchecked")
@@ -191,11 +218,11 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
          throw  CrashIfObject.nullOrReturnCause(altered_line, "altered_line", null, rx);
       }
       if(isEveryLineAptrUseableAndInRange(lineNum))  {
-         getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + "getReturnsWhat()." + getReturnsWhat() + ". Setting next() to: " + altered_line + "");
+         getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + " getReturnsWhat()." + getReturnsWhat() + ". Setting next() to: " + altered_line + "");
       }
    }
    protected boolean isEveryLineAptrUseableAndInRange(int line_num)  {
-      return  getDebugAptrEveryLine().isUseable()  &&  getEveryLineDebugRange().isValid(line_num);
+      return  getDebugAptrEveryLine().isUseable()  &&  getEveryLineDebugRange().isIn(line_num);
    }
    /**
       <P>Returns the next filtered line.</P>
@@ -211,7 +238,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
    /**
       <P>The top-most block entity, representing the document itself.</P>
 
-      @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRangeValidator, RawBlockEntity)
+      @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
     **/
    public RawBlockEntity<O,L> getRootBlock()  {
       return  rootBlock;

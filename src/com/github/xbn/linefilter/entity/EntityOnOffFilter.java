@@ -12,17 +12,15 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.lang.Copyable;
+package  com.github.xbn.linefilter.entity;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawLine;
 /**
-   <P>Determines when an entity is on, based on some stateful conditions. When off, lines are never analyzed, meaning it is not possible for it to be {@linkplain RawEntity#isActive() active}.</P>
+   <P>Dynamically turns an entity on or off, based on conditions. An example may be a block entity that should not be {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active} (should not analyze or alter any lines) until another entity has {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFullyActiveCount() been active} at least three times.</P>
 
-   @see  com.github.xbn.linefilter.entity.raw.RawChildEntity#getListener()
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public interface RawEntityOnOffListener<O,L extends RawLine<O>> extends Copyable  {
-   boolean isOn(RawEntity<O,L> the_listeningEntity, RawLine<O> line_aboutToBeAnalyzed);
-   RawEntityOnOffListener<O,L> getObjectCopy();
-   void resetState();
+public interface EntityOnOffFilter extends RawEntityOnOffFilter<String,RawLine<String>>  {
+   EntityOnOffFilter getObjectCopy();
 }

@@ -40,7 +40,7 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
       <P>Create a new instance.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.array.ExpirableRawLineAlterList#ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable) super}(text_lineAlterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link ExpirableRawLineAlterList#ExpirableRawLineAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable) super}(text_lineAlterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull)</CODE></P>
     **/
    public ExpirableTextLineAlterList(ValueAlterer<RawLine<String>,String>[] text_lineAlterers, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
       super(text_lineAlterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull);

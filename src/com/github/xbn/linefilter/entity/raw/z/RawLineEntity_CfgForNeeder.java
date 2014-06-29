@@ -13,8 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw.z;
-   import  com.github.xbn.linefilter.entity.raw.NewRawEntityOnOffListenerFor;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffListener;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.neederneedable.AbstractNeedable;
@@ -30,7 +29,7 @@ public abstract class RawLineEntity_CfgForNeeder<O,L extends RawLine<O>,M extend
    public String       name           ;
    public Appendable   dbgApblLineNums;
    public EntityType   type           ;
-   public RawEntityOnOffListener<O,L> listener;
+   public RawEntityOnOffFilter<O,L> filterIfNonNull;
 //constructors...START
    /**
       <P>Create a new instance, for the root entity only.</P>
@@ -79,7 +78,7 @@ public abstract class RawLineEntity_CfgForNeeder<O,L extends RawLine<O>,M extend
    protected final void resetRLECFN()  {
       //Do not reset the name.
       dbgApblLineNums = null;
-      listener = NewRawEntityOnOffListenerFor.<O,L>alwaysOn();
+      filterIfNonNull = null;
    }
    public String toString()  {
       return  super.toString() + ", getName()=" + getName() + ", getDebugApblLineNumbers()=" + getDebugApblLineNumbers();
@@ -94,8 +93,8 @@ public abstract class RawLineEntity_CfgForNeeder<O,L extends RawLine<O>,M extend
    public EntityType getType()  {
       return  type;
    }
-   public RawEntityOnOffListener<O,L> getListener()  {
-      return  listener;
+   public RawEntityOnOffFilter<O,L> getFilterIfNonNull()  {
+      return  filterIfNonNull;
    }
 //getters...END
 }

@@ -56,9 +56,9 @@ public class ValidatorComposer extends AnalyzerComposer  {
       @see  #ValidatorComposer(boolean, ValidatorComposer) this(b,vc)
       @see  #ValidatorComposer(Validator) this(v)
     **/
-   public ValidatorComposer(RuleType rt_i, Validator_Fieldable fieldable)  {
+   public ValidatorComposer(RuleType rule_type, Validator_Fieldable fieldable)  {
       super();
-      ruleCmpsr = new RuleableComposer(rt_i, "rt_i");
+      ruleCmpsr = new RuleableComposer(rule_type, "rule_type");
       doInvert = fieldable.doInvertRules();
       vrFilter = ((fieldable.getFilter() != null) ? fieldable.getFilter()
                :  ValidatorComposer.unfiltered());
@@ -203,10 +203,12 @@ public class ValidatorComposer extends AnalyzerComposer  {
    @CompositionFunction
    public void setERuleType_4prot(RuleType type)  {
    }
+/*
    @CompositionFunction
    public void setERuleType_4prot(RuleType type, String type_name)  {
       ruleCmpsr.setERuleType_4prot(type, type_name);
    }
+ */
 //getters...END
 //other...START
    @CompositionFunction

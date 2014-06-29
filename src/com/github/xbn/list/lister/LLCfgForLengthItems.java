@@ -37,7 +37,7 @@ class LLCfgForLengthItems   {
       }
    }
    public static final LengthInRangeValidator getLengthInRangeValidatorForZeroLength()  {
-      return  new LengthInRangeValidator_Cfg().range(NewLengthInRangeFor.exactly(0, null)).build();
+      return  new LengthInRangeValidator_Cfg().range(NewLengthInRangeFor.exactly(null, 0, null)).build();
    }
    public static final StringBuilder appendToTS(StringBuilder to_appendTo, ValueValidator<Integer> int_validator, String ifElementLen_alt)  {
       try  {

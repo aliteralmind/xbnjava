@@ -13,14 +13,25 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffListener;
+   import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
+   import  com.github.xbn.linefilter.entity.raw.RawEntity;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.linefilter.entity.raw.RawPostFilterActiveInOutRange;
+   import  com.github.xbn.linefilter.entity.OnOffAbort;
+   import  com.github.xbn.number.LengthInRange;
 /**
-   <P>Dynamically turns an entity on or off, based on conditions. An example may be a block entity that should not be {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active} (should not analyze or alter any lines) until another entity has {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFullyActiveCount() been active} at least three times. This is intended to &quot;{@linkplain com.github.xbn.linefilter.entity.raw.RawChildEntity#getListener() listen}&quot; to other entities.</P>
+   <P>A {@code RawEntityOnOffFilter} that is dependant on a specific entity's fully-active count being in a range.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public interface EntityOnOffListener extends RawEntityOnOffListener<String,RawLine<String>>  {
-   EntityOnOffListener getObjectCopy();
+public class PostFilterActiveInOutRange extends RawPostFilterActiveInOutRange<String,RawLine<String>>  {
+   /**
+      <P>Create a new instance from an entity, range, and when-in setting.</P>
+
+      @param  entity_toTrack  The entity whose {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#getFullyActiveCount() active count} should be monitored. Get with {@link #getEntityToTrack() getEntityToTrack}{@code ()}.
+    **/
+   public PostFilterActiveInOutRange(RawEntity<String,RawLine<String>> entity_toTrack, LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
+      super(entity_toTrack, range, when_inRange, when_outOfRange, response, debug_ifNonNull);
+   }
 }

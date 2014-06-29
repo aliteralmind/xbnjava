@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.util.IncludeJavaDoc;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
    import  java.util.Iterator;
@@ -42,16 +43,17 @@ public class PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging  {
       //Example proper:
 
       StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.javaComment(
-         "comment", null,
-         null,          //dbgStart (on:System.out, off:null)
-         null,          //dbgEnd
-         null);         //dbgLineNums
+         "comment", IncludeJavaDoc.NO,
+         null,         //dbgStart (on:System.out, off:null)
+         null,         //dbgEnd
+         null,         //on-off filter
+         null);        //dbgLineNums
 
-      BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg_startEndDebug(
+      BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg_startEndFilterDebug(
          "doccomment", null,
          null,          //dbgStart
          null,          //dbgEnd
-         System.out).   //dbgLineNums
+         System.out).   //<--Automated line-number debugging
          keepAll().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
@@ -59,9 +61,9 @@ public class PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging  {
 //Debug every line OFF:
          null, null,    //dbgEveryLine and its line-range
 //Debug every line ON (all lines):
-//			System.out, null,
+//       System.out, null,
 //Debug every line ON (lines 3-6 only):
-//			System.out, com.github.xbn.number.NewLengthInRangeValidatorFor.minAndLength(com.github.xbn.lang.Null.OK, 3, 6, null, null, null, null),
+//       System.out, com.github.xbn.number.NewLengthInRangeFor.minMaxInclusive(null, 3, 6, null, null),
          javaMlcStealth, javaDocBlock);
 
       while(filteredItr.hasNext())  {

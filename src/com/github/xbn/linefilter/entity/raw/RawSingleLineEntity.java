@@ -13,7 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.linefilter.entity.OnOffAbort;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
@@ -38,7 +39,7 @@ package  com.github.xbn.linefilter.entity.raw;
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#alterer(ValueAlterer) alterer}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#keepMatchedLines(boolean) keepMatchedLines}(b)</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#listener(RawEntityOnOffListener) listener} </LI>
+      <LI>{@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter} </LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#reset() reset}{@code ()}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 
@@ -66,7 +67,7 @@ public class RawSingleLineEntity<O,L extends RawLine<O>> extends RawLineEntity<O
       alterer = fieldable.getAlterer();
       doKeepMatched = fieldable.doKeepMatched();
    }
-   protected RawSingleLineEntity(RawSingleLineEntity<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug)  {
+   protected RawSingleLineEntity(RawSingleLineEntity<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
       alterer = RawLineEntity.getAltererCopyCrashIfMayDelete(
          to_copy.getAlterer(), "to_copy.getAlterer()");
@@ -98,28 +99,54 @@ public class RawSingleLineEntity<O,L extends RawLine<O>> extends RawLineEntity<O
       return  wasAltered();
    }
    public boolean doKeepJustAnalyzed()  {
-//System.out.println(getName() + ".doKeepJustAnalyzed: wasAltered()=" + wasAltered() + ", doKeepMatched()=" + doKeepMatched() + "");
       return  (!wasAltered() ? false : doKeepMatched());
    }
-   public RawSingleLineEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug)  {
+   public RawSingleLineEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       return  new RawSingleLineEntity<O,L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    public StringBuilder appendRules(StringBuilder to_appendTo)  {
       return  getAlterer().appendRules(to_appendTo);
    }
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #toString()
+    **/
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      to_appendTo.append("getAlterer()=").append(getAlterer()).append(", ");
+
+      super.appendToString(to_appendTo);
+
+      return  to_appendTo;
+   }
    public O getAlteredPostResetCheck(L line_object, O line_body)  {
       incrementFullyActiveCountIfWas();
 
-      if(!getListener().isOn(this, line_object))  {
-         try  {
-            declareAltered(line_object.getNumber(), Altered.NO, NeedsToBeDeleted.NO);
-         }  catch(RuntimeException rx)  {
-            throw  CrashIfObject.nullOrReturnCause(line_object, "line_object", null, rx);
+      if(doAbortIterator())  {
+         throw  new IllegalStateException("Already aborted (doAbortIterator()=true). Cannot alter. this=" + this);
+      }
+
+      OnOffAbort state = getFilter().getPreState(this, line_object, line_body);
+
+      if(state.doAbortIterator())  {
+
+         abortIteratorDeclareNotAltered("this entity: \"" + getName() + "\"", line_object);
+         return  line_body;
+
+      }
+
+      //Do not abort
+
+      if(!state.isOn())  {
+         if(isEveryLineAptrUseableAndInRange(line_object))  {
+            getDebugAptrEveryLine().appentln(getDebuggingPrefix(line_object) + " Entity inactive and, according to the filter, off. Returning line unchanged.");
          }
+         declareAltered(line_object, Altered.NO, NeedsToBeDeleted.NO);
          return  line_body;
       }
 
-      O o = AbstractValueAlterer.getAlteredDefensive(
+      //state.ON
+
+      O alteredBody = AbstractValueAlterer.getAlteredDefensive(
          getAlterer(), line_object, line_body,
          "getAlterer()", "line_object", "line_body");
 
@@ -132,7 +159,9 @@ public class RawSingleLineEntity<O,L extends RawLine<O>> extends RawLineEntity<O
          Altered.getForBoolean(wasAltered),
          NeedsToBeDeleted.getForBoolean(getAlterer().needsToBeDeleted()));
 
-      return  o;
+      postFilter(line_object, line_body);
+
+      return  alteredBody;
    }
       private void incrementFullyActiveCountIfWas()  {
          if(isActive())  {

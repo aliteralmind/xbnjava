@@ -13,7 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
 /**
@@ -34,21 +34,21 @@ public interface RawChildEntity<O,L extends RawLine<O>> extends RawEntity<O,L>  
       </UL>
       @see  #getParent()
       @see  #getTopParent()
-      @see  #getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRangeValidator) getCopyWithParentAssigned
+      @see  #getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRange) getCopyWithParentAssigned
     **/
    int getParentCount();
    /**
       <P>The entity this is contained in.</P>
 
       @see  #getParentCount()
-      @see  #getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRangeValidator) getCopyWithParentAssigned
+      @see  #getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRange) getCopyWithParentAssigned
     **/
    RawParentEntity<O,L> getParent();
    /**
       <P>The root entity this is contained in.</P>
 
       @see  #getParentCount()
-      @see  #getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRangeValidator) getCopyWithParentAssigned
+      @see  #getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRange) getCopyWithParentAssigned
     **/
    RawParentEntity<O,L> getTopParent();
    /**
@@ -59,11 +59,5 @@ public interface RawChildEntity<O,L extends RawLine<O>> extends RawEntity<O,L>  
       @param  dbgAptrEveryLine_ifUseable  If {@linkplain com.github.xbn.io.TextAppenter#isUseable() useable}, information on each line is output by this. Get with {@link #getDebugAptrEveryLine() getDebugAptrEveryLine}{@code ()}. May not be {@code null}.
       @param  range_forEveryLineDebug  The range of lines to debug with {@code dbgAptrEveryLine_ifUseable}. May not be {@code null}. Get with {@link com.github.xbn.linefilter.FilteredIterator#getEveryLineDebugRange() getEveryLineDebugRange}{@code ()}.
     **/
-   RawChildEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug);
-   /**
-      <P>The on-off listener.</P>
-
-      @return  A non-{@code null} listener.
-    **/
-   RawEntityOnOffListener<O,L> getListener();
+   RawChildEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug);
 }

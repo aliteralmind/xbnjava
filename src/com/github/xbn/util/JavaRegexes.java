@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util;
+   import  com.github.xbn.lang.CrashIfObject;
 /**
    <P>Regular expressions related to Java code.</P>
 
@@ -35,13 +36,30 @@ public class JavaRegexes  {
     **/
    public static final String IDENTIFIER = "[\\p{L}_\\p{Sc}][\\p{L}\\p{N}_\\p{Sc}]*";
    /**
-      <P>A package name.</P>
+      <P>A package name with no capturing groups.</P>
 
       <P>Equal to</P>
 
-<BLOCKQUOTE><PRE>&quot;(?:&quot; + {@link #IDENTIFIER} + &quot;)(?:\\.&quot; + IDENTIFIER + &quot;)*&quot;</PRE></BLOCKQUOTE>
+<BLOCKQUOTE><PRE>&quot;(?:&quot; + {@link #IDENTIFIER} + &quot;\\.)*&quot; + IDENTIFIER + &quot;&quot;</PRE></BLOCKQUOTE>
     **/
-   public static final String PACKAGE_NAME = "(?:" + IDENTIFIER + ")(?:\\." + IDENTIFIER + ")*";
+   public static final String PACKAGE_NAME = "(?:" + IDENTIFIER + "\\.)*" + IDENTIFIER + "";
+   /**
+      <P>A package name, with a capturing group for the classes simple name (the final identifier).</P>
+
+      <P>Equal to</P>
+
+<BLOCKQUOTE><PRE>&quot;(?:&quot; + {@link #IDENTIFIER} + &quot;\\.)*(&quot; + IDENTIFIER + &quot;)&quot;</PRE></BLOCKQUOTE>
+    **/
+   public static final String PACKAGE_CAPTURE_SIMPLE_NAME = "(?:" + IDENTIFIER + "\\.)*(" + IDENTIFIER + ")";
+   /**
+      <P>Captures an import statement on a single line, with a capturing group for the classes simple name--the import may or may not be static.</P>
+
+      <P>Equal to</P>
+
+<BLOCKQUOTE><PRE>&quot;[ \\t]*import[ \\t]+(?:static[ \\t]+)?(?:&quot; + {@link #PACKAGE_CAPTURE_SIMPLE_NAME} + &quot;(\\.\\*)&quot;</PRE></BLOCKQUOTE>
+    **/
+   public static final String IMPORT_LINE_CAPTURE_SIMPLE_NAME = "[ \\t]*import[ \\t]+(?:static[ \\t]+)?" + PACKAGE_CAPTURE_SIMPLE_NAME + "(?:\\.\\*)?[ \t]*;[ \t]*(?://.*)?$";
+
    /**
       <P>A package declaration that exist in a single line, and contains no comments.</P>
 
@@ -77,4 +95,24 @@ public class JavaRegexes  {
       <P>Equal to {@link #LN_STRT_WS_2SLASHES LN_STRT_WS_2SLASHES}{@code + "(.*)$"}</P>
     **/
    public static final String LN_STRT_WS_2SLASHES_DOT_STAR = LN_STRT_WS_2SLASHES + "(.*)$";
+   /**
+      <P>The open marker in a Java multi-line comment ({@code "/}{@code *"}) which optionally recognizes JavaDoc blocks ({@code "/}{@code **"}).</P>
+
+      @param  java_doc  If {@link IncludeJavaDoc#YES YES}, then JavaDoc blocks (those that start with two asterisks following the slash) are also matched. If {@link IncludeJavaDoc#NO NO}, then JavaDoc blocks are ignored. May not be {@code null}.
+      @return  If<UL>
+         <LI>{@code java_doc.YES}: {@code "(?:/"+"\\*)"}</LI>
+         <LI>{@code java_doc.NO}: {@code "(?:/"+"\\*(?!\\*))"} (a <A HREF="http://www.regular-expressions.info/lookaround.html">negative lookahead</A> for the second asterisk)</LI>
+      </UL>
+    **/
+   public static final String getMultiLineCommentOpenMarkerRegex(IncludeJavaDoc java_doc)  {
+      String s = "(?:/"+"\\*";
+      try  {
+         if(java_doc.isNo())  {
+            s += "(?!\\*)";
+         }
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(java_doc, "java_doc", null, rx);
+      }
+      return  s + ")";
+   }
 }

@@ -13,6 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.RuleType;
+   import  com.github.xbn.lang.Invert;
    import  com.github.xbn.list.CollectionUtil;
    import  com.github.xbn.text.StringUtilBase;
    import  static com.github.xbn.lang.XbnConstants.*;
@@ -28,58 +30,115 @@ package  com.github.xbn.number;
 public class LengthInRange extends IntInRange implements LengthRange  {
 //public
    /**
-      <P>An instance no bounds--Equal to <CODE>new {@link #LengthInRange() LengthInRange}()</CODE></P>
+      <P>An {@code LengthInRange} with no bounds.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>new {@link #LengthInRange() LengthInRange}()</CODE></P>
     **/
    public static final LengthInRange UNRESTRICTED = new LengthInRange();
    /**
-      <P>An instance in which only zero is bad--Equal to <CODE>new #LengthInRange(IntBoundInclusive, IntBoundInclusive)((new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(1, null)), null)</CODE></P>
+      <P>An {@code LengthInRange} with no members.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>new {@link #LengthInRange(Invert, int, String, IntBound) LengthInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, 0, null, null)</CODE></P>
     **/
-   public static final LengthInRange GREATER_THAN_ZERO = new LengthInRange((new IntBoundInclusive(1, null)), null);
+   public static final LengthInRange IMPOSSIBLE = new LengthInRange(Invert.YES, 0, null, null);
    /**
-      <P>An instance in which only zero is good--Equal to <CODE>new #LengthInRange(int, int)(0, 0)</CODE></P>
+      <P>An instance in which only zero is bad--Equal to <CODE>new #LengthInRange(int, String, IntBoundInclusive)(1, null, null)</CODE></P>
     **/
-   public static final LengthInRange ZERO_ONLY = new LengthInRange(0, 0);
+   public static final LengthInRange GREATER_THAN_ZERO = new LengthInRange(1, null, null);
+   /**
+      <P>An instance in which only zero is good--Equal to <CODE>new #LengthInRange(int, String, IntBound)(0, null, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null))</CODE></P>
+    **/
+   public static final LengthInRange ZERO_ONLY = new LengthInRange(0, null, new IntBoundInclusive(0, null));
    /**
       <P>Create an instance with no maximum bound.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #LengthInRange(IntBoundInclusive, IntBoundInclusive) this}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #LengthInRange(int, String, IntBound) this}(0, null, null)</CODE></P>
 
       @see  #UNRESTRICTED
     **/
    public LengthInRange()  {
-      this(new IntBoundInclusive(0, null), null);
+      this(0, null, null);
    }
    /**
       <P>Create a new instance with bounds.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(int, int) super}(min, max)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(int, int, String, String) this}(min, max_exclusive, null, null)</CODE></P>
     **/
-   public LengthInRange(int min, int max)  {
-      super(min, max);
+   public LengthInRange(int min, int max_exclusive)  {
+      this(min, max_exclusive, null, null);
    }
    /**
       <P>Create a new instance with bounds.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(int, int, String, String) super}(min, max, min_name, max_name)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min, max_exclusive, min_name, max_name)</CODE></P>
     **/
-   public LengthInRange(int min, int max, String min_name, String max_name)  {
-      super(min, max, min_name, max_name);
+   public LengthInRange(int min, int max_exclusive, String min_name, String max_name)  {
+      this(Invert.NO, min, max_exclusive, min_name, max_name);
    }
    /**
-      <P>Create a new instance.</P>
+      <P>Create a new instance with bounds.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(IntBound, IntBound) super}{@code (min_bound, max_bound)}</P>
-
-      @see  #LengthInRange()
-      @see  #LengthInRange(int, int) LengthInRange(i,i)
-      @see  #LengthInRange(LengthInRange) LengthInRange(lir)
+      <BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min, min_name, max_bound)</CODE></P>
     **/
-   public LengthInRange(IntBoundInclusive min_bound, IntBoundInclusive max_bound)  {
-      super(min_bound, max_bound);
+   public LengthInRange(int min, String min_name, IntBound max_bound)  {
+      this(Invert.NO, min, min_name, max_bound);
+   }
+   /**
+      <P>Create a new instance with bounds.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; {@link LengthInRange#LengthInRange(Invert, IntBoundInclusive, IntBound) this}{@code ({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min_bound, max_bound)}</P>
+    **/
+   public LengthInRange(IntBoundInclusive min_bound, IntBound max_bound)  {
+      this(Invert.NO, min_bound, max_bound);
+   }
+   /**
+      <P>Create a new instance with bounds and invert-setting.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}(invert, min, max_exclusive, null, null)</CODE></P>
+    **/
+   public LengthInRange(Invert invert, int min, int max_exclusive)  {
+      this(invert, min, max_exclusive, null, null);
+   }
+   /**
+      <P>Create a new instance with bounds and invert setting.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, String, IntBound) this}(invert, min, min_name, new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max_exclusive, max_name))</CODE></P>
+    **/
+   public LengthInRange(Invert invert, int min, int max_exclusive, String min_name, String max_name)  {
+      this(invert, min, min_name, new IntBoundExclusive(max_exclusive, max_name));
+   }
+   /**
+      <P>Create a new instance with bounds and invert-setting.</P>
+    **/
+   public LengthInRange(Invert invert, int min, String min_name, IntBound max_bound)  {
+      this(invert, new IntBoundInclusive(min, min_name), max_bound);
+   }
+   /**
+      <P>Create a new instance with bounds and invert-setting.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</P>
+
+      @see  #LengthInRange() this()
+      @see  #LengthInRange(int, int) this(i,i)
+      @see  #LengthInRange(int, int, String, String) this(i,i,s,s)
+      @see  #LengthInRange(int, String, IntBound) this(i,s,ib)
+      @see  #LengthInRange(IntBoundInclusive, IntBound) this(ibi,ib)
+      @see  #LengthInRange(Invert, int, int) this(inv,i,i)
+      @see  #LengthInRange(Invert, int, int, String, String) this(inv,i,i,s,s)
+      @see  #LengthInRange(Invert, int, String, IntBound) this(inv,i,s,ib)
+    **/
+   public LengthInRange(Invert invert, IntBoundInclusive min_bound, IntBound max_bound)  {
+      super(invert, min_bound, max_bound);
    }
    /**
       <P>If the bounds of this {@code LengthInRange} are invalid, crash.</P>
@@ -93,11 +152,14 @@ public class LengthInRange extends IntInRange implements LengthRange  {
    public IntBoundInclusive getMinBound()  {
       return  (IntBoundInclusive)super.getMinBound();
    }
-   public IntBoundInclusive getMaxBound()  {
-      return  (IntBoundInclusive)super.getMaxBound();
+   public IntBound getMaxBound()  {
+      return  (IntBound)super.getMaxBound();
    }
    public void crashIfBadValue(int index, String idx_name)  {
       crashIfBadContainer(index, idx_name);
+   }
+   public LengthInRange getInvertedCopy()  {
+      return  new LengthInRange(Invert.getForBoolean(!isInverted()), getMinBound(), getMaxBound());
    }
    /**
       <P>If a container's length is invalid, crash.</P>
@@ -202,7 +264,7 @@ public class LengthInRange extends IntInRange implements LengthRange  {
    public void crashIfBadCollectionTIAElement(Collection<?> coll, String cntr_name, int idx_inCntr)  {
       crashIfBadElement(coll.size(), cntr_name, idx_inCntr);
    }
-   protected void setRuleTypeFromBounds()  {
-      setRuleTypeFromBoundsForLenIdx();
+   protected RuleType getRuleTypeFromBounds()  {
+      return  getRuleTypeFromBoundsForLenIdx();
    }
 }

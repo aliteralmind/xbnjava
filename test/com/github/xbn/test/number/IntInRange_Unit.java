@@ -18,10 +18,18 @@ public class IntInRange_Unit  {
    @Test
    public void test_1()  {
       IntInRange iir = new IntInRange(1, 2);
-      assertEquals(false, iir.isValid(0));
-      assertEquals(true, iir.isValid(1));
-      assertEquals(true, iir.isValid(2));
-      assertEquals(false, iir.isValid(3));
+      assertEquals(false, iir.isIn(0));
+      assertEquals(true, iir.isIn(1));
+      assertEquals(true, iir.isIn(2));
+      assertEquals(false, iir.isIn(3));
+
+      IntInRange iir2 = iir.getInvertedCopy();
+System.out.println(iir);
+System.out.println(iir2);
+      assertEquals(true, iir2.isIn(0));
+      assertEquals(false, iir2.isIn(1));
+      assertEquals(false, iir2.isIn(2));
+      assertEquals(true, iir2.isIn(3));
 
       assertEquals(1, (int)iir.getInclMinComparedTo(0));
       assertEquals(0, (int)iir.getInclMinComparedTo(1));

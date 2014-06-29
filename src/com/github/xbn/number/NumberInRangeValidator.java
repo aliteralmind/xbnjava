@@ -115,7 +115,7 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
       }
 
       if(isDebugOn()) { getDebugAptr().appentln("<VNIR>   doesFollowRulesPreInvert(to_validate): super is true and to_validate is non-null. Returning validity: <<<" + NumberInRange.getValidityDebugging(getRange(), to_validate, "to_validate") + ">>>"); }
-      return  getRange().isValid(to_validate);
+      return  getRange().isIn(to_validate);
    }
 //ValueValidator...END
    public static final <N extends Number> RuleType getRuleTypeFromFieldsVNIR(NumberInRangeValidator_Fieldable<N,? extends NumberInRange<N>> filter)  {

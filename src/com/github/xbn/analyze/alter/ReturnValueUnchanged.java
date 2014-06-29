@@ -58,7 +58,7 @@ public class ReturnValueUnchanged<V,A> extends AbstractValueAlterer<V,A>  {
 
    public final A getAlteredPostResetCheck(V ignored, A to_alter)  {
       boolean isAnalysisCountInRange = getAnalysisRange().
-         isValid(getAnalyzedCount() + 1);
+         isIn(getAnalyzedCount() + 1);
       boolean setWasAlteredTo = isAnalysisCountInRange  &&
          doSetWasAlteredFlagToOnEachAnalysisWhenInRange();
       declareAltered(Altered.getForBoolean(setWasAlteredTo),

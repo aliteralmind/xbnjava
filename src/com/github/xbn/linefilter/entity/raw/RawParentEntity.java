@@ -42,4 +42,5 @@ public interface RawParentEntity<O,L extends RawLine<O>> extends RawBlockChildEn
    boolean areStartEndInclusive();
    boolean isStartLineInclusive();
    boolean isEndLineInclusive();
+   RawEntity<O,L> getEntityThatAborted();
 }

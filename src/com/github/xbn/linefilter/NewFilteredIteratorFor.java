@@ -20,7 +20,7 @@ package  com.github.xbn.linefilter;
    import  com.github.xbn.linefilter.entity.KeepStartLine;
    import  com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.number.LengthInRange;
    import  java.util.Iterator;
 /**
    <P>Convenience functions for creating {@code FilteredIterator}s.</P>
@@ -33,11 +33,11 @@ public class NewFilteredIteratorFor  {
       <P>Create a new {@code FilteredIterator} that does nothing: All lines are kept and unaltered.</P>
 
       @return
-<BLOCKQUOTE><PRE>new {@link FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRangeValidator, RawBlockEntity) FilteredLineIterator}(all_lineItr, {@link Returns}.{@link Returns#KEPT KEPT},
+<BLOCKQUOTE><PRE>new {@link FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) FilteredLineIterator}(all_lineItr, {@link Returns}.{@link Returns#KEPT KEPT},
    dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
    {@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.&lt;O,L&gt;{@link com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor#keepAllUnchanged(String) keepAllUnchanged}(&quot;root&quot;, {@link com.github.xbn.linefilter.entity.KeepMatched}.{@link com.github.xbn.linefilter.entity.KeepMatched#YES YES}))</PRE></BLOCKQUOTE>
     **/
-   public static final <O,L extends RawLine<O>> FilteredIterator<O,L> keepAllLinesUnchanged(Iterator<O> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRangeValidator rangeForEveryLineDebug_ifNonNull)  {
+   public static final <O,L extends RawLine<O>> FilteredIterator<O,L> keepAllLinesUnchanged(Iterator<O> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
       return  new FilteredIterator<O,L>(all_lineItr, Returns.KEPT,
          dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
          NewRawBlockEntityFor.<O,L>keepAllUnchanged("root"));

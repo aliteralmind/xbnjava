@@ -112,10 +112,10 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
       return  indexFilter(vvi);
    }
    public ListLister_CfgForNeeder<E,L,R> keepIndexesBetween(int min_inclusive, int max_exclusive)  {
-      return  indexFilter(new IndexInRangeValidator_Cfg().range(NewIndexInRangeFor.minAndLength(min_inclusive, max_exclusive, "min_inclusive", "max_exclusive")).build());
+      return  indexFilter(new IndexInRangeValidator_Cfg().range(NewIndexInRangeFor.minAndLength(null, min_inclusive, max_exclusive, "min_inclusive", "max_exclusive")).build());
    }
    public ListLister_CfgForNeeder<E,L,R> keepIndexesBelow(int max_exclusive)  {
-      return  indexFilter(new IndexInRangeValidator_Cfg().range(NewIndexInRangeFor.length(max_exclusive, "max_exclusive")).build());
+      return  indexFilter(new IndexInRangeValidator_Cfg().range(NewIndexInRangeFor.length(null, max_exclusive, "max_exclusive")).build());
    }
    /**
       @return  <I>{@code this}</I>

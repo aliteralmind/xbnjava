@@ -13,14 +13,14 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.linefilter.Returns;
-   import  java.util.Iterator;
-   import  com.github.xbn.text.StringUtil;
    import  com.github.xbn.linefilter.FilteredLineIterator;
-   import  com.github.xbn.linefilter.entity.EndRequired;
+   import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
    import  com.github.xbn.linefilter.entity.BlockEntity;
+   import  com.github.xbn.linefilter.entity.EndRequired;
    import  com.github.xbn.linefilter.entity.z.BlockEntity_Cfg;
+   import  com.github.xbn.text.StringUtil;
+   import  java.util.Iterator;
 /**
    <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to iterate altered lines instead of kept lines.</P>
 
@@ -52,7 +52,7 @@ public class IterateActiveLines  {
             textValidateOnly("start", null, null)).
          endAlter(EndRequired.YES, NewTextLineAltererFor.
             textValidateOnly("end", null, null)).
-         keepMidOnly().build();
+         keepMidsOnly().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          lineItr, Returns.ACTIVE,

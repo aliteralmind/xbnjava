@@ -40,7 +40,7 @@ public class NewTextLineAltererFor  {
    /**
       <P>Does nothing. The input is returned without change.</P>
 
-      @return  <CODE>(new {@link com.github.xbn.linefilter.AlterTextLineWhen#AlterTextLineWhen() AlterTextLineWhen}()</CODE>
+      @return  <CODE>(new {@link com.github.xbn.linefilter.alter.AlterTextLineWhen#AlterTextLineWhen() AlterTextLineWhen}()</CODE>
     **/
    public static final AlterTextLineWhen alwaysReturnUnchanged()  {
       return  (new AlterTextLineWhen());
@@ -79,7 +79,7 @@ public class NewTextLineAltererFor  {
    /**
       <P><I><B>Deprecated</B> for {@code textValidateOnly}</I>--Identifies the line's text based on a regular expression--the line is not altered.</P>
 
-      @return  <CODE>{@link com.github.xbn.linefilter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(Pattern, ValidResultFilter, Appendable) text}(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull))</CODE>
+      @return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(Pattern, ValidResultFilter, Appendable) text}(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull))</CODE>
     **/
    public static final AlterTextLineWhen textValidateOnly(Pattern pattern_toFind, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.text(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull));
@@ -87,7 +87,7 @@ public class NewTextLineAltererFor  {
    /**
       <P><I><B>Deprecated</B> for {@code textValidateOnly}</I>--Identifies the line's text based on a regular expression--the line is not altered.</P>
 
-      @return  <CODE>{@link com.github.xbn.linefilter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(String, ValidResultFilter, Appendable) text}(literal_textToMatch, filter_ifNonNull, dbgDest_ifNonNull))</CODE>
+      @return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(String, ValidResultFilter, Appendable) text}(literal_textToMatch, filter_ifNonNull, dbgDest_ifNonNull))</CODE>
     **/
    public static final AlterTextLineWhen textValidateOnly(String literal_textToMatch, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.text(literal_textToMatch, filter_ifNonNull, dbgDest_ifNonNull));
@@ -95,7 +95,7 @@ public class NewTextLineAltererFor  {
    /**
       <P>Identifies the line's text based on some condition--the line is not altered.</P>
 
-      @return  <CODE>{@link com.github.xbn.linefilter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(ValueValidator) text}(string_validator))</CODE>
+      @return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(ValueValidator) text}(string_validator))</CODE>
     **/
    public static final AlterTextLineWhen textValidateOnly(ValueValidator<String> string_validator)  {
       return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.text(string_validator));
@@ -103,7 +103,7 @@ public class NewTextLineAltererFor  {
    /**
       <P>Identifies the line's number based on some condition--the line's text is not altered.</P>
 
-      @return  <CODE>{@link com.github.xbn.linefilter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#number(ValueValidator) number}(int_validator))</CODE>
+      @return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#number(ValueValidator) number}(int_validator))</CODE>
     **/
    public static final AlterTextLineWhen number(ValueValidator<Integer> int_validator)  {
       return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.number(int_validator));

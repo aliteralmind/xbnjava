@@ -31,17 +31,32 @@ public class NewIndexInRangeValidatorFor  {
    private NewIndexInRangeValidatorFor()  {
       throw  new IllegalStateException("Do not instantiate");
    }
-   public static final IndexInRangeValidator unrestricted(ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
-      return  new IndexInRangeValidator_Cfg().nullOk(true).invert(false).range(IndexInRange.UNRESTRICTED).filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).build();
+   public static final IndexInRangeValidator unrestricted(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(IndexInRange.UNRESTRICTED,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final IndexInRangeValidator impossible(ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
-      return  new IndexInRangeValidator_Cfg().nullOk(true).invert(true).range(IndexInRange.UNRESTRICTED).filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).build();
+   public static final IndexInRangeValidator impossible(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(IndexInRange.IMPOSSIBLE,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final IndexInRangeValidator nullBad(IndexInRange range, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+/*
+   public static final IndexInRangeValidator nullBad(Null nnull, IndexInRange range, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
       try  {
-         return  new IndexInRangeValidator_Cfg().nullOk(false).invert(false).range(range).filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).build();
+         return  new IndexInRangeValidator_Cfg().nullOk(nnull.isOk()).
+         filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).
+         range(range).build();
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(range, "range", null, rx);
       }
    }
+ */
+      private static final IndexInRangeValidator range(IndexInRange range, Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+         try  {
+            return  new IndexInRangeValidator_Cfg().nullOk(nnull.isOk()).
+            filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).
+            range(range).build();
+         }  catch(RuntimeException rx)  {
+            throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
+         }
+      }
 }

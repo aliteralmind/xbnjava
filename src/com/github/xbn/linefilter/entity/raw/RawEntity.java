@@ -13,7 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.analyze.alter.ValueAlterer;
@@ -39,7 +39,7 @@ public interface RawEntity<O,L extends RawLine<O>> extends ValueAlterer<L,O>, Na
 {@.codelet.and.out com.github.xbn.examples.linefilter.IterateActiveLines:lineRange(1, false, "filteredItr = new FilteredLineIterator", 1, false, "block);", "^      ")}
 
       @return  If<UL>
-         <LI>{@code true}: The line is returned by <CODE><I>{@link com.github.xbn.linefilter.FilteredLineIterator}</I>.{@link com.github.xbn.linefilter.FilteredLineIterator#nextLine() nextLine}()</CODE> (when <CODE><I>{@link com.github.xbn.linefilter.FilteredIterator}</I>.{@link com.github.xbn.linefilter.FilteredIterator#getReturnWhat() getReturnWhat}()</CODE> is {@link com.github.xbn.linefilter.Returns#KEPT KEPT})</LI>
+         <LI>{@code true}: The line is returned by <CODE><I>{@link com.github.xbn.linefilter.FilteredLineIterator}</I>.{@link com.github.xbn.linefilter.FilteredLineIterator#nextLine() nextLine}()</CODE> (when <CODE><I>{@link com.github.xbn.linefilter.FilteredIterator}</I>.{@link com.github.xbn.linefilter.FilteredIterator#getReturnsWhat() getReturnsWhat}()</CODE> is {@link com.github.xbn.linefilter.Returns#KEPT KEPT})</LI>
          <LI>{@code false}: The line is discarded.</LI>
       </UL>
       @see  RawBlockEntity#doKeepJustAnalyzed()
@@ -86,13 +86,25 @@ public interface RawEntity<O,L extends RawLine<O>> extends ValueAlterer<L,O>, Na
    /**
       <P>The outputter for diagnostics on every analyzed line.</P>
 
-      @see  RawChildEntity#getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRangeValidator)
+      @see  RawChildEntity#getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRange)
     **/
    public TextAppenter getDebugAptrEveryLine();
    /**
       <P>YYY</P>
 
-      @see  RawChildEntity#getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRangeValidator)
+      @see  RawChildEntity#getCopyWithParentAssigned(int, RawParentEntity, TextAppenter, LengthInRange)
     **/
-   public LengthInRangeValidator getEveryLineDebugRange();
+   public LengthInRange getEveryLineDebugRange();
+   /**
+      <P>The on-off filter.</P>
+
+      @return  A non-{@code null} filter.
+      @see  #doAbortIterator()
+    **/
+   RawEntityOnOffFilter<O,L> getFilter();
+   /**
+      <P>Should all remaining lines in the containing {@code FilteredIterator} be discarded?. This is a special potential state returned by the {@link #getFilter() filter}.</P>
+    **/
+   boolean doAbortIterator();
+   String getDebuggingPrefix();
 }

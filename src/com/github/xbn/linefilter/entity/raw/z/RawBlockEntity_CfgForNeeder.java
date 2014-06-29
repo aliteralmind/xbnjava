@@ -13,19 +13,19 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw.z;
+   import  com.github.xbn.analyze.alter.ReturnValueUnchanged;
    import  com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange;
-   import  java.util.regex.Pattern;
-   import  com.github.xbn.number.NewLengthInRangeFor;
+   import  com.github.xbn.analyze.alter.ValueAlterer;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffListener;
    import  com.github.xbn.linefilter.entity.EndRequired;
    import  com.github.xbn.linefilter.entity.EntityType;
-   import  com.github.xbn.analyze.alter.ReturnValueUnchanged;
-   import  com.github.xbn.analyze.alter.ValueAlterer;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
-   import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.neederneedable.Needer;
+   import  com.github.xbn.number.NewLengthInRangeFor;
+   import  java.util.regex.Pattern;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity RawBlockEntity}.</P>
 
@@ -38,7 +38,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
    public ValueAlterer<L,O>         endAlter   ;
    public RawChildEntity<O,L>[]     children   ;
    public boolean                   doKeepStart;
-   public boolean                   doKeepMid  ;
+   public boolean                   doKeepMids  ;
    public boolean                   doKeepEnd  ;
    public boolean                   isEndRqd   ;
    public boolean                   isStartIncl;
@@ -75,7 +75,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
          <LI><CODE>{@link #startAlter(ValueAlterer) startAlter}(matchAnythingOnlyOnce)</CODE>
          <BR>Where {@code matchAnythingOnlyOnce} is a
          <BR> &nbsp; &nbsp; <CODE>new {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#ReturnValueUnchanged(SetWasAlteredToWhenInRange, LengthInRange) ReturnValueUnchanged}&lt;L,O&gt;(
-         {@link com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange}.{@link com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange#TRUE TRUE}, {@link com.github.xbn.number.NewLengthInRangeFor}.{@link com.github.xbn.number.NewLengthInRangeFor#exactly(int, String) exactly}(1, null))</CODE></LI>
+         {@link com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange}.{@link com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange#TRUE TRUE}, {@link com.github.xbn.number.NewLengthInRangeFor}.{@link com.github.xbn.number.NewLengthInRangeFor#exactly(Invert, int, String) exactly}(1, null))</CODE></LI>
          <LI><CODE>{@link #midAlter(ValueAlterer) midAlter}({@link com.github.xbn.analyze.alter.ReturnValueUnchanged}.
          <BR> &nbsp; &nbsp; &lt;L,O&gt;{@link com.github.xbn.analyze.alter.ReturnValueUnchanged#newForOnEachCallSetWasAlteredTo(boolean) newForOnEachCallSetWasAlteredTo}(true))</CODE></LI>
          <LI><CODE>{@link #endAlter(EndRequired, ValueAlterer) endAlter}({@link com.github.xbn.linefilter.entity.EndRequired}.{@link com.github.xbn.linefilter.entity.EndRequired#NO NO}, ReturnValueUnchanged.
@@ -89,7 +89,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
     **/
    protected final void resetRBECFN()  {
       ValueAlterer<L,O> matchAnythingOnlyOnce = new ReturnValueUnchanged<L,O>(
-         SetWasAlteredToWhenInRange.TRUE, NewLengthInRangeFor.exactly(1, null));
+         SetWasAlteredToWhenInRange.TRUE, NewLengthInRangeFor.exactly(null, 1, null));
       startAlter(matchAnythingOnlyOnce);
 
       midAlter(ReturnValueUnchanged.
@@ -209,7 +209,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
 
       @return  <CODE>{@link #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(true, true, true)</CODE>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> keepMidOnly()  {
+   public RawBlockEntity_CfgForNeeder<O,L,M,R> keepMidsOnly()  {
       return  keepStartMidEnd(false, true, false);
    }
    /**
@@ -233,18 +233,18 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
     **/
    public RawBlockEntity_CfgForNeeder<O,L,M,R> keepStartMidEnd(boolean do_keepStart, boolean do_keepMids, boolean do_keepEnd)  {
       doKeepStart = do_keepStart;
-      doKeepMid = do_keepMids;
-      isEndRqd = do_keepEnd;
+      doKeepMids = do_keepMids;
+      doKeepEnd = do_keepEnd;
       return  this;
    }
    /**
-      <P>Set the on-off listener.</P>
+      <P>Set the on-off filter.</P>
 
-      @param  listener  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getListener() getListener}{@code ()}*.
+      @param  filter_ifNonNull  Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> listener(RawEntityOnOffListener<O,L> listener)  {
-      this.listener = listener;
+   public RawBlockEntity_CfgForNeeder<O,L,M,R> filter(RawEntityOnOffFilter<O,L> filter_ifNonNull)  {
+      filterIfNonNull = filter_ifNonNull;
       return  this;
    }
    /**
@@ -312,10 +312,10 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       return  doKeepStart;
    }
    public boolean doKeepMidLines()  {
-      return  doKeepMid;
+      return  doKeepMids;
    }
    public boolean doKeepEndLine()  {
-      return  isEndRqd;
+      return  doKeepEnd;
    }
    public boolean isStartLineInclusive()  {
       return  isStartIncl;

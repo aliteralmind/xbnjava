@@ -13,13 +13,15 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.linefilter.entity.OnOffAbort;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.alter.Altered;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.linefilter.entity.raw.z.RawLineEntity_Fieldable;
+   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Base class for blocks and stealth blocks.</P>
 
@@ -35,7 +37,7 @@ public abstract class RawBlockEntityBase<O,L extends RawLine<O>> extends RawLine
       super(fieldable);
       resetLineStateRBEB();
    }
-   protected RawBlockEntityBase(RawBlockEntityBase<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug)  {
+   protected RawBlockEntityBase(RawBlockEntityBase<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
       resetLineStateRBEB();
    }
@@ -78,30 +80,53 @@ public abstract class RawBlockEntityBase<O,L extends RawLine<O>> extends RawLine
       if(b)  {
          if(getDebugAptrLineNumbers().isUseable())  {
             getDebugAptrLineNumbers().appentln(getDebuggingPrefix(line_num) +
-               "block-start");
+               " block-start");
          }
 
          startLineNum = line_num;
          isStartLine = b;
       }
    }
-   protected boolean resetStartEnd_isInactiveAndOff(L line_object)  {
+   protected boolean resetStartEndPreFilter_isActiveOrOn(L line_object, O line_body)  {
+      if(doAbortIterator())  {
+         throw  new IllegalStateException("Already aborted (doAbortIterator()=true). Cannot execute pre-filter. this=" + this);
+      }
+      int lineNum = RawLine.getNumberCrashIfNull(line_object, "line_object");
       //If the previous line was the first or last, it's not any more.
-      declareStartLine(false, -1);
-      declareEndLine(false, -1);
+      declareStartLine(false, lineNum);
+      declareEndLine(false, lineNum);
 
-      if(!isActive()  &&  !getListener().isOn(this, line_object))  {
-         int lineNum = RawLine.getNumberCrashIfNull(line_object, "line_object");
-         if(isEveryLineAptrUseableAndInRange(lineNum))  {
-            getDebugAptrEveryLine().appentln(getDebuggingPrefix(lineNum) + " entity inactive and, according to listener, off. Returning line unchanged.");
-         }
-         declareAltered(lineNum, Altered.NO, NeedsToBeDeleted.NO);
+      OnOffAbort state = getFilter().getPreState(this, line_object, line_body);
+      if(state.doAbortIterator())  {
+         abortIteratorDeclareNotAltered("this entity (\"" + getName() + "\")", line_object);
+         return  false;
+      }
+
+      //Do not abort
+
+      if(state.isOn())  {
          return  true;
       }
+
+      //state.OFF
+
+      if(isActive())  {
+         throw  new IllegalStateException(getDebuggingPrefix(lineNum) + " getPreState(this, line_object) is OFF, but this " + getType() + " entity is active--meaning open but not yet closed. OnOffAbort." + OnOffAbort.ABORT_ITERATOR + " can occur at any time. OnOffAbort.OFF is only legal when the entity is inactive--the *previous* line was inactive, given this pre-filter occurs before the current line is analyzed by the entity." + LINE_SEP + " - getFilter()=" + getFilter() + LINE_SEP + " - this=" + this);
+      }
+
+      //state.OFF and entity inactive
+
+      if(isEveryLineAptrUseableAndInRange(lineNum))  {
+         getDebugAptrEveryLine().appentln(getDebuggingPrefix(lineNum) + " getPreState(this, line_object) is OFF. Declaring not altered, returning line unchanged.");
+      }
+      declareAltered(lineNum, Altered.NO, NeedsToBeDeleted.NO);
       return  false;
    }
    protected void declareEndLine(boolean b, int line_num)  {
       if(isEndLine())  {
+
+         //The *previous* line was the end line.
+
          if(b)  {
             throw  new IllegalStateException("The previous and current line are both the end line (isEndLine()=true, b=true)");
          }
@@ -109,7 +134,7 @@ public abstract class RawBlockEntityBase<O,L extends RawLine<O>> extends RawLine
          startLineNum = -1;
          incrementFullyActiveCount();
          if(isEveryLineAptrUseableAndInRange(line_num))  {
-            getDebugAptrEveryLine().appentln(getDebuggingPrefix(line_num) + " previous line end of block");
+            getDebugAptrEveryLine().appentln(getDebuggingPrefix(line_num) + " previous line end of block. fully-active count incremented to " + getFullyActiveCount());
          }
       }
 
@@ -117,7 +142,7 @@ public abstract class RawBlockEntityBase<O,L extends RawLine<O>> extends RawLine
 
       if(b)  {
          if(getDebugAptrLineNumbers().isUseable())  {
-            getDebugAptrLineNumbers().appentln(getDebuggingPrefix(line_num) + "block end");
+            getDebugAptrLineNumbers().appentln(getDebuggingPrefix(line_num) + " block end");
          }
          declareMidLine(false);
       }

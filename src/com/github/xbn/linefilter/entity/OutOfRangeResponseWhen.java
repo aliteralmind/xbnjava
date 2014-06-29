@@ -12,31 +12,45 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.array.helper;
-   import  com.github.xbn.number.CrashIfIntIs;
-   import  com.github.xbn.array.ArrayUtil;
+package  com.github.xbn.linefilter.entity;
 /**
-   <P>{@code ArrayHelper} for string builders.</P>
+   <P>When the fully-active count is out of range, when should the out-of-range state (on/off/abort) be returned: immediately, or only when the <I>next</I> active line is found?.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-@SuppressWarnings("unchecked")
-public class StringBuilderArrayHelper extends AbstractArrayHelper<StringBuilder>  {
-   public StringBuilderArrayHelper()  {
-      super(StringBuilder[].class);
+public enum OutOfRangeResponseWhen  {
+   /**
+      <P>YYY.</P>
+
+      @see  #NEXT_ACTIVE_LINE
+      @see  #isImmediate()
+    **/
+   IMMEDIATE,
+   /**
+      <P>YYY.</P>
+
+      @see  #IMMEDIATE
+      @see  #isNextActiveLine()
+    **/
+   NEXT_ACTIVE_LINE;
+   /**
+      <P>Is this {@code OutOfRangeResponseWhen} equal to {@code IMMEDIATE}?.</P>
+
+      @return  <CODE>this == {@link #IMMEDIATE}</CODE>
+
+      @see  #isNextActiveLine()
+    **/
+   public final boolean isImmediate()  {
+      return  this == IMMEDIATE;
    }
-   public StringBuilder[] getInitialized(int length)  {
-      if(length == 0)  {
-         return  getEmpty();
-      }
-      try  {
-         return  (new StringBuilder[length]);
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfIntIs.lessThanZeroOrReturnCause(length, "length", null, rx);
-      }
+   /**
+      <P>Is this {@code OutOfRangeResponseWhen} equal to {@code NEXT_ACTIVE_LINE}?.</P>
+
+      @return  <CODE>this == {@link #NEXT_ACTIVE_LINE}</CODE>
+      @see  #isImmediate()
+    **/
+   public final boolean isNextActiveLine()  {
+      return  this == NEXT_ACTIVE_LINE;
    }
-   public StringBuilder[] getEmpty()  {
-      return  ArrayUtil.asdEMPTY;
-   }
-}
+};

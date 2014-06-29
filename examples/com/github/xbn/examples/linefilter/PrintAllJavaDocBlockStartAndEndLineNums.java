@@ -13,18 +13,19 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
-   import  java.util.Iterator;
    import  com.github.xbn.linefilter.FilteredLineIterator;
-   import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.KeepUnmatched;
+   import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.TextLine;
+   import  com.github.xbn.linefilter.entity.BlockEntity;
+   import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
    import  com.github.xbn.linefilter.entity.NewStealthBlockEntityFor;
-   import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.entity.StealthBlockEntity;
-   import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.linefilter.entity.TextChildEntity;
-   import  com.github.xbn.linefilter.TextLine;
+   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
+   import  com.github.xbn.util.IncludeJavaDoc;
+   import  java.util.Iterator;
    import  java.util.regex.Pattern;
 /**
    <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to manually print the start and end line numbers of all JavaDoc blocks in a source code.</P>
@@ -40,15 +41,18 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
       //Example setup
          Iterator<String> itr = GetFromCommandLineAtIndex.fileLineIterator(
             cmd_lineParams, 0,
-            null);  //debugPath
+            null);     //debugPath
+
+      //Example proper:
 
       StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.javaComment(
-         "comment", null,
+         "comment", IncludeJavaDoc.NO,
          null,         //dbgStart (on:System.out, off:null)
          null,         //dbgEnd
+         null,         //on-off filter
          null);        //dbgLineNums
 
-      BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg_startEndDebug(
+      BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg_startEndFilterDebug(
          "doccomment", null,
          null,         //dbgStart
          null,         //dbgEnd
@@ -65,11 +69,11 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
 
          if(filteredItr.getActiveChildType().isBlock()  &&
                filteredItr.getActiveChildBlock().isStartLine())  {
-            System.out.println(tline.getNumber() + "  Block start");
+            System.out.print("Block: " + tline.getNumber() + "..");
 
          }  else if(filteredItr.getActiveChildType().isBlock()  &&
                filteredItr.getActiveChildBlock().isEndLine())  {
-            System.out.println(tline.getNumber() + "  Block end");
+            System.out.println(tline.getNumber());
          }
       }
    }

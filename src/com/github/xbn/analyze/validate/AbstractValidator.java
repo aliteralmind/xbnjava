@@ -161,22 +161,22 @@ public abstract class AbstractValidator implements Validator  {
    public boolean areFieldsEqual(Validator to_compareTo)  {
       return  ValidatorComposer.areValidatorFieldsEqual(this, to_compareTo);
    }
-   /**
+   /*
       <P>FUNC_JD_INTRO</P>
       <P>Equal to
       <BR> &nbsp; &nbsp;{@code <A HREF="YYY/ValidatorComposer.html"><I>[ValidatorComposer]</I></A>.<A HREF="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType)">setERuleType_4prot</A>(type)}</P>
-    **/
    protected void setERuleType(RuleType type)  {
       vc.setERuleType_4prot(type);
    }
-   /**
+    */
+   /*
       <P>FUNC_JD_INTRO</P>
       <P>Equal to
       <BR> &nbsp; &nbsp;{@code <A HREF="YYY/ValidatorComposer.html"><I>[ValidatorComposer]</I></A>.<A HREF="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType, String)">setERuleType_4prot</A>(type, type_name)}</P>
-    **/
    protected void setERuleType(RuleType type, String type_name)  {
       vc.setERuleType_4prot(type, type_name);
    }
+    */
    protected void autoResetStateOrCINeedTo()  {
       AnalyzerComposer.autoResetStateOrCINeedTo(this);
    }

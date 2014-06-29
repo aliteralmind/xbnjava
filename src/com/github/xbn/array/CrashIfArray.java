@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array;
+   import  java.util.Arrays;
    import  com.github.xbn.lang.BadDuplicateException;
    import  com.github.xbn.array.Duplicates;
    import  com.github.xbn.array.NullElement;
@@ -87,7 +88,7 @@ public class CrashIfArray  {
             throw  CrashIfObject.nullOrReturnCause(array, array_name, null, rx);
          }
          if(length < min_allowedLength)  {
-            throw  new LengthLessThanRequiredException(array_name, length, min_allowedLength, min_varName);
+            throw  new LengthLessThanRequiredException(array_name, length, min_allowedLength, min_varName, null);
          }
          if(length == 0)  {
             return;
@@ -100,7 +101,7 @@ public class CrashIfArray  {
             if(min_allowedElementLen == 0)  {
                for(int i = 0; i < length; i++)  {
                   if(array[i] == null)  {
-                     throw  new NullPointerException(array_name + "[" + i + "]");
+                     throw  new NullPointerException(array_name + "[" + i + "]. Entire array: " + Arrays.toString(array));
                   }
                }
                return;
@@ -113,10 +114,10 @@ public class CrashIfArray  {
                   if(array[i].toString().length() < min_allowedElementLen)  {
                      throw  new LengthLessThanRequiredException(array_name + "[" + i + "]",
                         array[i].toString().length(),
-                        min_allowedElementLen, minElementLen_name);
+                        min_allowedElementLen, minElementLen_name, null);
                   }
                }  catch(NullPointerException npx)  {
-                  throw  CrashIfObject.nullOrReturnCause(array[i], "array[" + i + "]", null, npx);
+                  throw  CrashIfObject.nullOrReturnCause(array[i], "array[" + i + "]", "Entire array: " + Arrays.toString(array), npx);
                }
             }
             return;
@@ -135,7 +136,7 @@ public class CrashIfArray  {
                         throw  new BadDuplicateException(array_name + "[" + i + "]", array_name + "[" + j + "]", o);
                         }
                      }  catch(NullPointerException npx)  {
-                        throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", null, npx);
+                        throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", "Entire array: " + Arrays.toString(array), npx);
                      }
                   }
                }
@@ -149,7 +150,7 @@ public class CrashIfArray  {
             for(int i = 0; i < length; i++)  {
                Object o = array[i];
                if(o != null  && o.toString().length() < min_allowedElementLen)  {
-                  throw  new LengthLessThanRequiredException(array_name + "[" + i + "]", o.toString().length(), min_allowedElementLen, minElementLen_name);
+                  throw  new LengthLessThanRequiredException(array_name + "[" + i + "]", o.toString().length(), min_allowedElementLen, minElementLen_name, null);
                }
                for(int j = (i + 1); j < length; j++)  {
                   Object o2 = array[j];
@@ -158,7 +159,7 @@ public class CrashIfArray  {
                      throw  new BadDuplicateException(array_name + "[" + i + "]", array_name + "[" + j + "]", o);
                      }
                   }  catch(NullPointerException npx)  {
-                     throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", null, npx);
+                     throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", "Entire array: " + Arrays.toString(array), npx);
                   }
                }
             }
@@ -166,7 +167,7 @@ public class CrashIfArray  {
             if(last != null  &&
                   last.toString().length() < min_allowedElementLen)  {
                throw  new LengthLessThanRequiredException(array_name + "[" + (length - 1) + "]", last.toString().length(),
-                  min_allowedElementLen, minElementLen_name);
+                  min_allowedElementLen, minElementLen_name, null);
             }
             return;
          }
@@ -184,12 +185,12 @@ public class CrashIfArray  {
                         throw  new BadDuplicateException(array_name + "[" + i + "]", array_name + "[" + j + "]", o);
                      }
                   }  catch(NullPointerException npx)  {
-                     throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", null, npx);
+                     throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", "Entire array: " + Arrays.toString(array), npx);
                   }
                }
             }
             if(array[length - 1] == null)  {
-               throw  new NullPointerException(array_name + "[" + (length - 1) + "]");
+               throw  new NullPointerException(array_name + "[" + (length - 1) + "]. Entire array: " + Arrays.toString(array));
             }
             return;
          }
@@ -202,10 +203,10 @@ public class CrashIfArray  {
             Object o = array[i];
             try  {
                if(o.toString().length() < min_allowedElementLen)  {
-                  throw  new LengthLessThanRequiredException(array_name + "[" + i + "]", array[i].toString().length(), min_allowedElementLen, minElementLen_name);
+                  throw  new LengthLessThanRequiredException(array_name + "[" + i + "]", array[i].toString().length(), min_allowedElementLen, minElementLen_name, null);
                }
             }  catch(NullPointerException npx)  {
-               throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", null, npx);
+               throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", "Entire array: " + Arrays.toString(array), npx);
             }
             for(int j = (i + 1); j < length; j++)  {
                Object o2 = array[j];
@@ -215,7 +216,7 @@ public class CrashIfArray  {
                         array_name + "[" + j + "]", o);
                   }
                }  catch(NullPointerException npx)  {
-                  throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", null, npx);
+                  throw  CrashIfObject.nullOrReturnCause(o, array_name + "[" + i + "]", "Entire array: " + Arrays.toString(array), npx);
                }
             }
          }
@@ -223,11 +224,11 @@ public class CrashIfArray  {
             if(array[length - 1].toString().length() < min_allowedElementLen)  {
                throw  new LengthLessThanRequiredException(array_name + "[" + (length - 1) + "]",
                   array[length - 1].toString().length(),
-                  min_allowedElementLen, minElementLen_name);
+                  min_allowedElementLen, minElementLen_name, null);
             }
          }  catch(NullPointerException npx)  {
             throw  CrashIfObject.nullOrReturnCause(array_name + "[" + (length - 1) + "]",
-               array_name + "[" + (length - 1) + "]", null, npx);
+               array_name + "[" + (length - 1) + "]", "Entire array: " + Arrays.toString(array), npx);
          }
       }  catch(RuntimeException rx)  {
          CrashIfObject.nnull(null_array, "null_array", null);

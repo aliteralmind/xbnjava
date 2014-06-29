@@ -383,9 +383,9 @@ public class TimedTest  {
    /**
       <P>Get the number of test iterations as provided in the command line.</P>
 
-      @return  <CODE>{@link com.github.xbn.testdev.GetFromCommandLineAtIndex GetFromCommandLineAtIndex}.{@link com.github.xbn.testdev.GetFromCommandLineAtIndex#number(String[], int, IntInRange, String, Appendable) number}(cmd_lineParams, test_countIdx, {@link com.github.xbn.number.NewIntInRangeFor NewIntInRangeFor}.{@link com.github.xbn.number.NewIntInRangeFor#min(int, String) min}(1, null))</CODE>
+      @return  <CODE>{@link com.github.xbn.testdev.GetFromCommandLineAtIndex GetFromCommandLineAtIndex}.{@link com.github.xbn.testdev.GetFromCommandLineAtIndex#number(String[], int, IntInRange, String, Appendable) number}(cmd_lineParams, test_countIdx, {@link com.github.xbn.number.NewIntInRangeFor NewIntInRangeFor}.{@link com.github.xbn.number.NewIntInRangeFor#min(Invert, int, String) min}(1, null))</CODE>
     **/
    public static final int getTestCountFromCmdLine(String[] cmd_lineParams, int test_countIdx)  {
-      return  GetFromCommandLineAtIndex.number(cmd_lineParams, test_countIdx, NewIntInRangeFor.min(1, null), "[test count]", null);
+      return  GetFromCommandLineAtIndex.number(cmd_lineParams, test_countIdx, NewIntInRangeFor.min(null, 1, null), "[test count]", null);
    }
 }

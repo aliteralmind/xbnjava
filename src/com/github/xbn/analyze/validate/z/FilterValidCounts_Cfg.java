@@ -17,8 +17,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate.z;
-   import  com.github.xbn.number.NewLengthInRangeFor;
-   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
    import  com.github.xbn.analyze.validate.FilterValidCounts;
 /**

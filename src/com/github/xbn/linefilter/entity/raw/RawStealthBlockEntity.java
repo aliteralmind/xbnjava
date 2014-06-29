@@ -14,7 +14,7 @@
 \*license*/
 
 package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.number.LengthInRangeValidator;
+   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.LineEntityException;
    import  com.github.xbn.analyze.validate.NullnessValidator;
@@ -40,7 +40,7 @@ package  com.github.xbn.linefilter.entity.raw;
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#listener(EntityOnOffListener) listener}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter}</LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 
@@ -68,7 +68,7 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
       startVldtr = fieldable.getStartValidator();
       endVldtr   = fieldable.getEndValidator();
    }
-   protected RawStealthBlockEntity(RawStealthBlockEntity<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug)  {
+   protected RawStealthBlockEntity(RawStealthBlockEntity<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
 
       startVldtr = RawStealthBlockEntity.getVldtrCopyCINotRestricted(
@@ -113,9 +113,9 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
       return  endVldtr;
    }
    public boolean doKeepJustAnalyzed()  {
-      return  true;
+      return  false;
    }
-   public RawStealthBlockEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRangeValidator range_forEveryLineDebug)  {
+   public RawStealthBlockEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       return  new RawStealthBlockEntity<O,L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    public StringBuilder appendRules(StringBuilder to_appendTo)  {
@@ -130,8 +130,7 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
       return  to_appendTo.append("]");
    }
    public O getAlteredPostResetCheck(L line_object, O line_body)  {
-
-      if(resetStartEnd_isInactiveAndOff(line_object))  {
+      if(!resetStartEndPreFilter_isActiveOrOn(line_object, line_body))  {
          return  line_body;
       }
 
@@ -169,6 +168,7 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
 
          declareAltered(line_object.getNumber(),
             Altered.NO, NeedsToBeDeleted.NO);
+         postFilter(line_object, line_body);
          return  line_body;
 
       }
@@ -200,8 +200,9 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
          declareAltered(line_object.getNumber(),
             Altered.YES, NeedsToBeDeleted.NO);
          if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-            getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + start_midEnd + " line");
+            getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " " + start_midEnd + " line");
          }
+         postFilter(line_object, line_body);
          return  line_body;
       }
    public void declareEndOfInput()  {
@@ -209,7 +210,23 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
          throw  new LineEntityException(null, this, "End of output reached, but block not closed");
       }
    }
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #toString()
+    **/
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      try  {
+         to_appendTo.append("getStartValidator()=[").append(getStartValidator()).
+            append("], getEndValidator()=[").append(getEndValidator()).append("], ");
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+      }
+
+      super.appendToString(to_appendTo);
+
+      return  to_appendTo;
+   }
    protected String getDebuggingPrefix(int line_num)  {
-      return  getDebuggingPrefixPrefixBldr(line_num).append("] ").toString();
+      return  getDebuggingPrefixPrefixBldr(line_num).append("]").toString();
    }
 }

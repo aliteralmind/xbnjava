@@ -16,7 +16,7 @@ package  com.github.xbn.linefilter.entity.z;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
    import  com.github.xbn.linefilter.entity.TextChildEntity;
    import  com.github.xbn.linefilter.entity.EndRequired;
-   import  com.github.xbn.linefilter.entity.EntityOnOffListener;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
    import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.analyze.alter.ValueAlterer;
@@ -195,7 +195,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
 
       @return  <CODE>{@link #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(true, true, true)</CODE>
     **/
-   public BlockEntity_CfgForNeeder<M,R> keepMidOnly()  {
+   public BlockEntity_CfgForNeeder<M,R> keepMidsOnly()  {
       return  keepStartMidEnd(false, true, false);
    }
    /**
@@ -210,7 +210,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       @param  do_keepEnd  If {@code true}, and the current line is the block's end line, it is returned by the iterator. Get with {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity#doKeepEndLine() doKeepEndLine}{@code ()}*.
       @return  <I>{@code this}</I>
       @see  #keepAll()
-      @see  #keepMidOnly()
+      @see  #keepMidsOnly()
       @see  #startAlter(ValueAlterer) startAlter
       @see  #midAlter(ValueAlterer) midAlter
       @see  #endAlter(EndRequired, ValueAlterer) endAlter
@@ -220,13 +220,13 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       return  this;
    }
    /**
-      <P>Set the on-off listener.</P>
+      <P>Set the on-off filter.</P>
 
-      @param  listener  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getListener() getListener}{@code ()}*.
+      @param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public BlockEntity_CfgForNeeder<M,R> listener(EntityOnOffListener listener)  {
-      super.listener(listener);
+   public BlockEntity_CfgForNeeder<M,R> filter(RawEntityOnOffFilter<String,RawLine<String>> filter)  {
+      super.filter(filter);
       return  this;
    }
    /**

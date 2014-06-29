@@ -27,14 +27,15 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.lang_builder_finalv_UCBlindBuilderTest();
    	test.lang_reflect_InvokeMainWithRtxXmpl();
    	test.lang_reflect_InvokePrivateStaticMethodWithRtxXmpl();
+   	test.linefilter_EliminateAllCommentBlocksAndPackageLine();
+   	test.linefilter_GetAllClassSimpleNamesFromImports();
+   	test.linefilter_IterateActiveLines();
+   	test.linefilter_IterateKeptLines();
    	test.linefilter_ModifyBlockLines();
    	test.linefilter_MoreComplicatedModifyExample();
    	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNums();
    	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging();
-   	test.linefilter_PrintAllJavaDocBlockSubLinesBolded();
-   	test.linefilter_EliminateAllCommentBlocksAndPackageLine();
-   	test.linefilter_IterateActiveLines();
-   	test.linefilter_IterateKeptLines();
+   	test.linefilter_PrintJavaDocBlockSubLinesBolded();
    	test.neederneedable_NeedableNeederXmpl();
    	test.regexutil_RegexGroupExtractorXmpl();
    	test.regexutil_RegexReplacerDirectXmpl();
@@ -123,12 +124,11 @@ public class ExampleCodeOutputsContain_Unit  {
          "9", "11", "13", "24", "28", "30");
    }
    @Test
-   public void linefilter_PrintAllJavaDocBlockSubLinesBolded()  {
+   public void linefilter_PrintJavaDocBlockSubLinesBolded()  {
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
-         new String[] {"path:"},
-         com.github.xbn.examples.linefilter.PrintAllJavaDocBlockSubLinesBolded.class,
+         new String[] {"path:", "//sub-mode...START", "//sub-mode...END"},
+         com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded.class,
          JAVA_SOURCE_INPUT_FILE_PARAMS,
-         "//sub-mode...START", "//sub-mode...END",
          "<P>Another JavaDoc block</P>", "<B><P>info</P></B>", "<B></B>",
          "<B><P>info</P></B>", "<B></B>", "<B><P>info</P></B>", "<P>info</P>",
          "StayClassy()", "<P>Does stuff.</P>");
@@ -142,10 +142,16 @@ public class ExampleCodeOutputsContain_Unit  {
          "class StayClassy", "StayClassy()", "doStuff()");
    }
    @Test
+   public void linefilter_GetAllClassSimpleNamesFromImports()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports.class,
+         "List", "StringUtils", "Object", "XbnConstants");
+   }
+   @Test
    public void linefilter_IterateActiveLines()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.linefilter.IterateActiveLines.class,
-         "Block starts here", "mid1", "mid2", "Block ends here");
+         "mid1", "mid2");
    }
    @Test
    public void linefilter_IterateKeptLines()  {
@@ -219,6 +225,7 @@ public class ExampleCodeOutputsContain_Unit  {
    }
    @Test
    public void testdev_TimeIteratorVsIndexIntegerList()  {
+      System.out.println("Testing com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList...");
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList.class,
          new String[]{"1000000"},

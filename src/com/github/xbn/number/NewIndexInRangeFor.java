@@ -16,6 +16,7 @@
 \*license*/
 
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.Invert;
    import  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil;
    import  com.github.xbn.list.CollectionUtil;
    import  com.github.xbn.array.ArrayUtil;
@@ -29,112 +30,119 @@ package  com.github.xbn.number;
 
  **/
 public class NewIndexInRangeFor  {
-   private NewIndexInRangeFor()  {
-      throw  new IllegalStateException("Do not instantiate");
-   }
    /**
-      <P>An instance with no maximum--Equal to <CODE>{@link IndexInRange}.{@link IndexInRange#UNRESTRICTED UNRESTRICTED}</CODE></P>
+      <P>An {@code IndexInRange} with no bounds.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link IndexInRange}.{@link IndexInRange#UNRESTRICTED UNRESTRICTED}</CODE></P>
     **/
    public static final IndexInRange UNRESTRICTED = IndexInRange.UNRESTRICTED;
+   /**
+      <P>An {@code IndexInRange} with no members.</P>
 
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link IndexInRange}.{@link IndexInRange#IMPOSSIBLE IMPOSSIBLE}</CODE></P>
+    **/
+   public static final IndexInRange IMPOSSIBLE = IndexInRange.IMPOSSIBLE;
    /**
       <P>Create a new instance with a minimum.</P>
 
       @return  <CODE>(new {@link IndexInRange#IndexInRange(IntBoundInclusive, IntBoundExclusive) IndexInRange}((new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name)), min_name))</CODE>
     **/
-   public static final IndexInRange min(int min, String min_name)  {
-      return  new IndexInRange((new IntBoundInclusive(min, min_name)), null);
-//		xir.setBoundNames(min_name, null);
-//		return  xir;
+   public static final IndexInRange min(Invert invert_dontIfNull, int min, String min_name)  {
+      return  new IndexInRange(getInvNoIfNull(invert_dontIfNull),
+         (new IntBoundInclusive(min, min_name)), null);
    }
    /**
       <P>Create a new instance with bounds.</P>
 
       @return  <CODE>new IndexInRange(min, length)</CODE></P>
     **/
-   public static final IndexInRange minAndLength(int min, int length, String min_name, String length_name)  {
-      return  new IndexInRange(
+   public static final IndexInRange minAndLength(Invert invert_dontIfNull, int min, int length, String min_name, String length_name)  {
+      return  new IndexInRange(getInvNoIfNull(invert_dontIfNull),
          new IntBoundInclusive(min, min_name),
          new IntBoundExclusive(length, length_name));
-//		xir.setBoundNames(min_name, length_name);
-//		return  xir;
    }
    /**
       <P>Create a new instance with a maximum.</P>
 
       @return  <CODE>(new {@link IndexInRange#IndexInRange(IntBoundInclusive, IntBoundExclusive) IndexInRange}(0, length))</CODE>
     **/
-   public static final IndexInRange length(int length, String length_name)  {
-      return  new IndexInRange(
+   public static final IndexInRange length(Invert invert_dontIfNull, int length, String length_name)  {
+      return  new IndexInRange(getInvNoIfNull(invert_dontIfNull),
          new IntBoundInclusive(0, null),
          new IntBoundExclusive(length, length_name));
-//		xir.setBoundNames(null, length_name);
-//		return  xir;
    }
    /**
       <P>Create a new instance with the maximum set to a string's length.</P>
 
       @param  string_forLen  May not be {@code null}.
-      @return  <CODE>{@link #length(int, String) length}(string_forLen.toString().length()))</CODE>
+      @return  <CODE>{@link #length(Invert, int, String) length}(string_forLen.toString().length()))</CODE>
     **/
-   public static final IndexInRange stringLength(Object string_forLen, String string_name)  {
-      return  length(StringUtilBase.getLengthCrashIfNull(string_forLen, string_name), string_name);
+   public static final IndexInRange stringLength(Invert invert_dontIfNull, Object string_forLen, String string_name)  {
+      return  length(getInvNoIfNull(invert_dontIfNull),
+         StringUtilBase.getLengthCrashIfNull(string_forLen, string_name), string_name);
    }
    /**
       <P>Create a new instance with the maximum set to a string's length.</P>
 
       @param  string_forLen  May not be {@code null}.
-      @return  <CODE>{@link #minAndLength(int, int, String, String) minAndLength}(min, string_forLen.toString().length(), min_name, string_name)</CODE></P>
+      @return  <CODE>{@link #minAndLength(Invert, int, int, String, String) minAndLength}(min, string_forLen.toString().length(), min_name, string_name)</CODE></P>
     **/
-   public static final IndexInRange minAndStringLength(int min, Object string_forLen, String min_name, String string_name)  {
-      return  minAndLength(min, StringUtilBase.getLengthCrashIfNull(string_forLen, string_name), min_name, string_name);
+   public static final IndexInRange minAndStringLength(Invert invert_dontIfNull, int min, Object string_forLen, String min_name, String string_name)  {
+      return  minAndLength(getInvNoIfNull(invert_dontIfNull),
+         min, StringUtilBase.getLengthCrashIfNull(string_forLen, string_name), min_name, string_name);
    }
    /**
       <P>Create a new instance with the maximum set to a array's length.</P>
 
       @param  array_forLen  May not be {@code null}.
-      @return  <CODE>{@link #length(int, String) length}(array_forLen.length, array_name)</CODE>
+      @return  <CODE>{@link #length(Invert, int, String) length}(array_forLen.length, array_name)</CODE>
     **/
-   public static final <E> IndexInRange length(E[] array_forLen, String array_name)  {
-      return  length(ArrayUtil.getLengthCrashIfNull(array_forLen, array_name), array_name);
+   public static final <E> IndexInRange length(Invert invert_dontIfNull, E[] array_forLen, String array_name)  {
+      return  length(getInvNoIfNull(invert_dontIfNull),
+         ArrayUtil.getLengthCrashIfNull(array_forLen, array_name), array_name);
    }
    /**
       <P>Create a new instance with the maximum set to a array's length.</P>
 
       @param  array_forLen  May not be {@code null}.
-      @return  <CODE>{@link #minAndLength(int, int, String, String) minAndLength}(min, array_forLen.length, min_name, array_name)</CODE></P>
+      @return  <CODE>{@link #minAndLength(Invert, int, int, String, String) minAndLength}(min, array_forLen.length, min_name, array_name)</CODE></P>
     **/
-   public static final <E> IndexInRange minAndLength(int min, E[] array_forLen, String min_name, String array_name)  {
-      return  minAndLength(min, ArrayUtil.getLengthCrashIfNull(array_forLen, array_name), min_name, array_name);
+   public static final <E> IndexInRange minAndLength(Invert invert_dontIfNull, int min, E[] array_forLen, String min_name, String array_name)  {
+      return  minAndLength(getInvNoIfNull(invert_dontIfNull),
+         min, ArrayUtil.getLengthCrashIfNull(array_forLen, array_name), min_name, array_name);
    }
    /**
       <P>Create a new instance with the maximum set to a collection's size.</P>
 
       @param  coll_forSize  May not be {@code null}.
-      @return  <CODE>{@link #length(int, String) length}(coll_forSize.size()), coll_size)</CODE>
+      @return  <CODE>{@link #length(Invert, int, String) length}(coll_forSize.size()), coll_size)</CODE>
     **/
-   public static final IndexInRange length(Collection<? extends Object> coll_forSize, String coll_name)  {
-      return  length(CollectionUtil.getSizeCrashIfNull(coll_forSize, coll_name), coll_name);
+   public static final IndexInRange length(Invert invert_dontIfNull, Collection<? extends Object> coll_forSize, String coll_name)  {
+      return  length(getInvNoIfNull(invert_dontIfNull),
+         CollectionUtil.getSizeCrashIfNull(coll_forSize, coll_name), coll_name);
    }
    /**
       <P>Create a new instance with the maximum set to a collection's size.</P>
 
       @param  coll_forSize  May not be {@code null}.
-      @return  <CODE>{@link #minAndLength(int, int, String, String) minAndLength}(min, coll_forSize.size(), min_name, coll_name)</CODE></P>
+      @return  <CODE>{@link #minAndLength(Invert, int, int, String, String) minAndLength}(min, coll_forSize.size(), min_name, coll_name)</CODE></P>
     **/
-   public static final IndexInRange minAndLength(int min, Collection<? extends Object> coll_forSize, String min_name, String coll_name)  {
-      return  minAndLength(min, CollectionUtil.getSizeCrashIfNull(coll_forSize, coll_name), min_name, coll_name);
+   public static final IndexInRange minAndLength(Invert invert_dontIfNull, int min, Collection<? extends Object> coll_forSize, String min_name, String coll_name)  {
+      return  minAndLength(getInvNoIfNull(invert_dontIfNull),
+         min, CollectionUtil.getSizeCrashIfNull(coll_forSize, coll_name), min_name, coll_name);
    }
    /**
       <P>Create a new instance with the maximum set to a primitive array's length.</P>
 
       @param  primitiveArray_forLen  May not be {@code null}, and must be a primitive array.
-      @return  <CODE>{@link #length(int, String) length}(
+      @return  <CODE>{@link #length(Invert, int, String) length}(
          <BR> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen, array_name, null),
          <BR> &nbsp; &nbsp; array_name)))</CODE>
     **/
-   public static final IndexInRange primitiveArrayLength(Object primitiveArray_forLen, String array_name)  {
-      return  length(
+   public static final IndexInRange primitiveArrayLength(Invert invert_dontIfNull, Object primitiveArray_forLen, String array_name)  {
+      return  length(getInvNoIfNull(invert_dontIfNull),
          ObjThatIsPrimitiveArrayUtil.getLengthFromUnknownAsObject(primitiveArray_forLen, array_name, null),
          array_name);
    }
@@ -142,13 +150,19 @@ public class NewIndexInRangeFor  {
       <P>Create a new instance with the maximum set to a primitive array's length.</P>
 
       @param  primitiveArray_forLen  May not be {@code null}, and must be a primitive array.
-      @return  <CODE>{@link #minAndLength(int, int, String, String) minAndLength}(min,
+      @return  <CODE>{@link #minAndLength(Invert, int, int, String, String) minAndLength}(min,
       <BR> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
       <BR> &nbsp; &nbsp; min_name, array_name)</CODE>
     **/
-   public static final IndexInRange minAndPArrayLength(int min, Object primitiveArray_forLen, String min_name, String array_name)  {
-      return  minAndLength(min,
+   public static final IndexInRange minAndPArrayLength(Invert invert_dontIfNull, int min, Object primitiveArray_forLen, String min_name, String array_name)  {
+      return  minAndLength(getInvNoIfNull(invert_dontIfNull), min,
          ObjThatIsPrimitiveArrayUtil.getLengthFromUnknownAsObject(primitiveArray_forLen, array_name, null),
          min_name, array_name);
+   }
+      private static final Invert getInvNoIfNull(Invert invert_dontIfNull)  {
+         return  ((invert_dontIfNull != null) ? invert_dontIfNull : Invert.NO);
+      }
+   private NewIndexInRangeFor()  {
+      throw  new IllegalStateException("Do not instantiate");
    }
 }

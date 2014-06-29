@@ -13,8 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.analyze.validate;
+   import  com.github.xbn.lang.Null;
    import  com.github.xbn.analyze.validate.FilterValidCounts;
-   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.number.LengthInRangeValidator;
    import  com.github.xbn.number.NewLengthInRangeValidatorFor;
    import  com.github.xbn.number.NewLengthInRangeFor;
@@ -33,23 +33,22 @@ public class ValidResultFilterXmpl  {
 
       System.out.println("Sentence: " + sSentence);
 
-      //No filter
-         LengthInRangeValidator vlirUnfiltered = NewLengthInRangeValidatorFor.nullBad(
-            NewLengthInRangeFor.min(4, null),  //Words with 4-or-more chars
-               null,    //Unfiltered
-               null);   //Debug: System.out. No debug: null
+      //Words with 4-or-more chars
+      LengthInRangeValidator unfilteredVltdr = NewLengthInRangeValidatorFor.min(
+         Null.BAD, null, 4, null,
+         null,    //Unfiltered
+         null);   //Debug (on:System.out, off=null)
 
-         printWordsW4OrMoreChars(vlirUnfiltered, sSentence);
+      printWordsW4OrMoreChars(unfilteredVltdr, sSentence);
 
-      //Filter results 3-7 (suppress below 3 and above 7)
-         FilterValidCounts fvc3to7 = NewValidResultFilterFor.inUnchangedOutFalse(3, 7, null, null,
-            null);      //Debug
+      FilterValidCounts filterKeep3to7 = NewValidResultFilterFor.inUnchangedOutFalse(3, 7, null, null,
+         null);   //Debug
 
-         LengthInRangeValidator vlirFiltered = NewLengthInRangeValidatorFor.nullBad(
-            NewLengthInRangeFor.min(4, null), fvc3to7,
-            null);      //Debug
+      LengthInRangeValidator filteredVldtr = NewLengthInRangeValidatorFor.min(
+         Null.BAD, null, 4, null, filterKeep3to7,
+         null);   //Debug
 
-         printWordsW4OrMoreChars(vlirFiltered, sSentence);
+      printWordsW4OrMoreChars(filteredVldtr, sSentence);
    }
    private static final void printWordsW4OrMoreChars(LengthInRangeValidator range_vldtr, String sentence)  {
       System.out.println("Print all words with 4+ characters.");

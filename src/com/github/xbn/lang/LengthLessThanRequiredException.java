@@ -25,17 +25,18 @@ public class LengthLessThanRequiredException extends IllegalArgumentException  {
    private final int    actualLen ;
    private final int    rqdMin    ;
    private final String rqdMinName;
-   public LengthLessThanRequiredException(String container_name, int actual_length, int rqd_min, String min_name)  {
-      this(container_name, actual_length, rqd_min, min_name, null);
+   public LengthLessThanRequiredException(String container_name, int actual_length, int rqd_min, String min_name, String message)  {
+      this(container_name, actual_length, rqd_min, min_name, message, null);
    }
-      private static final String getMsg(String container_name, int actual_length, int rqd_min, String min_name)  {
+      private static final String getMsg(String container_name, int actual_length, int rqd_min, String min_name, String message)  {
          return  ((rqd_min == 1)
             ?  container_name + " has no elements"
             :  "Length of " + container_name + " (" + actual_length + "), is less than " +
-            ((min_name == null) ? rqd_min : min_name + " (" + rqd_min + ")."));
+            ((min_name == null) ? rqd_min : min_name + " (" + rqd_min + ")." +
+            ((message != null) ? " message=\"" + message + "\"" : "")));
       }
-   public LengthLessThanRequiredException(String container_name, int actual_length, int rqd_min, String min_name, Throwable cause)  {
-      super(LengthLessThanRequiredException.getMsg(container_name, actual_length, rqd_min, min_name), cause);
+   public LengthLessThanRequiredException(String container_name, int actual_length, int rqd_min, String min_name, String message, Throwable cause)  {
+      super(LengthLessThanRequiredException.getMsg(container_name, actual_length, rqd_min, min_name, message), cause);
       cntrName   = container_name;
       actualLen  = actual_length;
       rqdMin     = rqd_min;

@@ -16,6 +16,8 @@
 \*license*/
 
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.Invert;
+   import  com.github.xbn.lang.Null;
    import  com.github.xbn.number.z.IntInRangeValidator_Cfg;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.lang.CrashIfObject;
@@ -30,23 +32,34 @@ public class NewIntInRangeValidatorFor  {
    private NewIntInRangeValidatorFor()  {
       throw  new IllegalStateException("Do not instantiate");
    }
-   public static final IntInRangeValidator unrestricted(ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      return  new IntInRangeValidator_Cfg().nullOk(true).invert(false).range(NewIntInRangeFor.UNRESTRICTED).filter(filter).debugTo(dbgDest_ifNonNull).build();
+   public static final IntInRangeValidator unrestricted(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewIntInRangeFor.UNRESTRICTED,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final IntInRangeValidator exactly(int min_andMax, String minMax_varName, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      return  new IntInRangeValidator_Cfg().nullOk(true).invert(false).
-         range(NewIntInRangeFor.minMax(min_andMax, minMax_varName)).
-         filter(filter).debugTo(dbgDest_ifNonNull).build();
+      private static final IntInRangeValidator range(IntInRange range, Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+         try  {
+            return  new IntInRangeValidator_Cfg().nullOk(nnull.isOk()).
+            filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).
+            range(range).build();
+         }  catch(RuntimeException rx)  {
+            throw  CrashIfObject.nullOrReturnCause(nnull, "nnull", null, rx);
+         }
+      }
+   public static final IntInRangeValidator exactly(Null nnull, Invert invert_dontIfNull, int min_andMax, String minMax_varName, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewIntInRangeFor.exactly(invert_dontIfNull, min_andMax, minMax_varName),
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final IntInRangeValidator impossible(ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
-      return  new IntInRangeValidator_Cfg().nullOk(true).invert(true).range(NewIntInRangeFor.UNRESTRICTED).build();
+   public static final IntInRangeValidator impossible(Null nnull, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
+      return  range(NewIntInRangeFor.IMPOSSIBLE,
+         nnull, filter_offIfNull, dbgDest_ifNonNull);
    }
-   public static final IntInRangeValidator nullBad(IntInRange range, ValidResultFilter filter, Appendable dbgDest_ifNonNull)  {
+/*
+   public static final IntInRangeValidator nullBad(IntInRange range, ValidResultFilter filter_offIfNull, Appendable dbgDest_ifNonNull)  {
       try  {
-         return  new IntInRangeValidator_Cfg().nullOk(false).invert(false).range(range).filter(filter).debugTo(dbgDest_ifNonNull).build();
+         return  new IntInRangeValidator_Cfg().nullOk(false).range(range).filter(filter_offIfNull).debugTo(dbgDest_ifNonNull).build();
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(range, "range", null, rx);
       }
    }
-
+ */
 }

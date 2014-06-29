@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.Invert;
    import  com.github.xbn.lang.Null;
    import  java.util.Objects;
    import  com.github.xbn.text.StringWithNullDefault;
@@ -30,58 +31,61 @@ package  com.github.xbn.number;
  **/
 public abstract class NumberInRange<N extends Number> extends AbstractExtraErrInfoable implements NumberRange<N>, Ruleable  {
 //state
-   private final NumberBound<N> nbMin;
-   private final NumberBound<N> nbMax;
-   protected final RuleableComposer rc;
+   private final NumberBound<N> nbMin     ;
+   private final NumberBound<N> nbMax     ;
+   private final boolean        isInverted;
+   protected final RuleableComposer ruleCmpsr;
 //constructors...START
    /**
       <P>Create a new {@code NumberInRange}.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; {@link #NumberInRange(NumberBound, NumberBound) this}{@code (null, null)}</P>
+      <BR> &nbsp; &nbsp; <CODE>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, null, null)</CODE></P>
     **/
    public NumberInRange()  {
-      this(null, null);
+      this(Invert.NO, null, null);
+   }
+   /**
+      <P>Create a new {@code NumberInRange}.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, nb_min, nb_max)</CODE></P>
+    **/
+   public NumberInRange(NumberBound<N> nb_min, NumberBound<N> nb_max)  {
+      this(Invert.NO, nb_min, nb_max);
    }
    /**
       <P>Create a new {@code NumberInRange}.</P>
 
       @param  nb_min  Get with {@link #getMinBound() getMinBound}{@code (null, null)}
       @param  nb_max  Get with {@link #getMaxBound() getMaxBound}{@code ()}
+      @param  invert  If {@link com.github.xbn.lang.Invert#YES YES}, then the range is made opposite--If the bounds are one and three, then <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#isIn(N)">isIn</A>(2)</CODE> will return {@code false}. If {@link com.github.xbn.lang.Invert#NO NO}, the range is treated normally ({@code isIn(2)} returns {@code true}). May not be {@code null}. Get with {@link #isInverted() isInverted}{@code ()}.
       @see  #NumberInRange()
-      @see  #NumberInRange(NumberInRange)
-    **/
-   public NumberInRange(NumberBound<N> nb_min, NumberBound<N> nb_max)  {
-      super();
-      rc = new RuleableComposer();
-      nbMin = nb_min;
-      nbMax = nb_max;
-      setRuleTypeFromBounds();
-      crashIfBadBoundsForCnstr();
-   }
-   /**
-      <P>Create a new {@code NumberInRange} as a duplicate of another.</P>
-
-      @param  to_copy  May not be {@code null}.
       @see  #NumberInRange(NumberBound, NumberBound)
     **/
-   public NumberInRange(NumberInRange<N> to_copy)  {
-      super(to_copy);
-      rc = new RuleableComposer(to_copy);
-      nbMin = to_copy.getMinBound();
-      nbMax = to_copy.getMaxBound();
-      setRuleTypeFromBounds();
+   public NumberInRange(Invert invert, NumberBound<N> nb_min, NumberBound<N> nb_max)  {
+      super();
+      nbMin = nb_min;
+      nbMax = nb_max;
+      try  {
+         isInverted = invert.isYes();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(invert, "invert", null, rx);
+      }
+
+      crashIfBadBoundsForCnstr();
+      ruleCmpsr = new RuleableComposer(getRuleTypeFromBounds());
    }
 //setters...START
-   protected void setRuleTypeFromBounds()  {
-      rc.setERuleType_4prot((getMinBound() == null  &&  getMaxBound() == null)
-         ?  RuleType.UNRESTRICTED
+   protected RuleType getRuleTypeFromBounds()  {
+      return  ((getMinBound() == null  &&  getMaxBound() == null)
+         ?  (isInverted() ? RuleType.IMPOSSIBLE : RuleType.UNRESTRICTED)
          :  RuleType.RESTRICTED);
    }
 //setters...END
 //getters...START
    public final RuleType getRuleType()  {
-      return  rc.getRuleType();
+      return  ruleCmpsr.getRuleType();
    }
    /**
       <P>Is there a minimum bound?.</P>
@@ -104,14 +108,11 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
    /**
       <P>The minimum bound.</P>
 
-      @return  {@code nb_min} as provided to ...................
-
-      @see
-         <LI>{@link #getMinBound() getMinBound}{@code ()}</LI>
-         <LI>{@link #hasMin() hasMin}{@code ()}, {@link #hasMax() hasMax}{@code ()}</LI>
-         <LI>{@link #getMinNumber() getMinNumber}{@code ()}, {@link #getMaxNumber() getMaxNumber}{@code ()}</LI>
-         <LI>{@link #isMinInclusive() isMinInclusive}{@code ()}, {@link #isMaxInclusive() isMaxInclusive}{@code ()}</LI>
-      </UL>
+      @see  #getMaxBound()
+      @see  #hasMin()
+      @see  #getMinNumber()
+      @see  #isMinInclusive()
+      @see  #NumberInRange(Invert, NumberBound, NumberBound) constructor
     **/
    public NumberBound<N> getMinBound()  {
       return nbMin;
@@ -119,11 +120,26 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
    /**
       <P>The maximum bound.</P>
 
-      @return  {@code nb_max} as provided to ...........................................
       @see  #getMinBound()
+      @see  #hasMax()
+      @see  #getMaxNumber()
+      @see  #isMaxInclusive()
+      @see  #NumberInRange(Invert, NumberBound, NumberBound) constructor
     **/
    public NumberBound<N> getMaxBound()  {
       return nbMax;
+   }
+   /**
+      <P>Is the range inverted?.</P>
+
+      @return  <UL>
+         <LI>{@code true}: The range is made opposite--If the bounds are one and three, then <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#isIn(N)">isIn</A>(2)</CODE> will return {@code false}</LI>
+         <LI>{@code false}: The range is treated normally ({@code isIn(2)} returns {@code true})</LI>
+      </UL>
+      @see  #NumberInRange(Invert, NumberBound, NumberBound) constructor
+    **/
+   public boolean isInverted()  {
+      return  isInverted;
    }
    /**
       <P>Get the minimum bound number.</P>
@@ -206,6 +222,10 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
    public StringBuilder appendRules(StringBuilder to_appendTo)  {
       NumberBound<?> min = getMinBound();
       try  {
+         if(isInverted())  {
+            to_appendTo.append("inverted:");
+         }
+
          if(min == null)  {
             to_appendTo.append("[-inf");
          }  else  {
@@ -298,7 +318,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
    public abstract N getInclMinComparedToOrIfNoMin(N to_compareTo, N if_noMin);
    public abstract N getInclMaxComparedToOrIfNoMax(N to_compareTo, N if_noMax);
 
-   public final boolean isValid(N num)  {
+   public final boolean isIn(N num)  {
       boolean bV4Min = false;
       try  {
          bV4Min = (!hasMin()  ||  isGTOEMinGivenIncl(num));
@@ -307,7 +327,9 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
       }
       boolean bV4Max = (!hasMax()  ||  isLTOEMaxGivenIncl(num));
 
-      return  (bV4Min  &&  bV4Max);
+      boolean isValidUninv = (bV4Min  &&  bV4Max);
+
+      return  (!isInverted() ? isValidUninv : !isValidUninv);
    }
    /**
     	@return  <CODE>true</CODE> If {@code to_compareTo} is non-{@code null}, a {@code NumberInRange}, and all its fields {@linkplain #areFieldsEqual(NumberInRange) are equal}. This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).
@@ -327,19 +349,19 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
       }
 
       //Safe to cast
-      NumberInRange o = (NumberInRange)to_compareTo;
+      @SuppressWarnings("unchecked")
+      NumberInRange<N> o = (NumberInRange<N>)to_compareTo;
 
       //Finish with field-by-field comparison.
       return  areFieldsEqual(o);
    }
+   public abstract NumberInRange<N> getInvertedCopy();
    /**
       <P>Are all relevant fields equal?.</P>
 
       @param  to_compareTo  May not be {@code null}.
     **/
-   public boolean areFieldsEqual(NumberInRange to_compareTo)  {
-      return  false;
-   }
+   public abstract boolean areFieldsEqual(NumberInRange<N> to_compareTo);
    public static final <N extends Number> String getValidityDebugging(NumberInRange<N> range, N to_validate, String to_vldtName)  {
       return  to_vldtName + "=" + to_validate + ", range=<" + range + ">, valid-for-min?=" +
          (!range.hasMin()
@@ -353,9 +375,14 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
             :  (!range.isLTOEMaxGivenIncl(to_validate)
                ?  "no (greater than max, given its inclusive-ness)"
                :  "yes (greater-than-or-equal-to max)")) +
-      ", valid entirely? " + ((
+      ", valid entirely, NOT considering invertedness? " + ((
          (!range.hasMin()  ||  range.isGTOEMinGivenIncl(to_validate))  &&
          (!range.hasMax()  ||  range.isLTOEMaxGivenIncl(to_validate)))
+            ? "yes" : "no") +
+      ", valid entirely, considering invertedness? " + ((
+         (!range.hasMin()  ||  range.isGTOEMinGivenIncl(to_validate))  &&
+         (!range.hasMax()  ||  range.isLTOEMaxGivenIncl(to_validate))  &&
+         range.isInverted())
             ? "yes" : "no");
    }
 }

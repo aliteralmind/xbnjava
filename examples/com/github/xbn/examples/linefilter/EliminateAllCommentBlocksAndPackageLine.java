@@ -13,17 +13,21 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.linefilter.entity.IncludeJavaDoc;
-   import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.entity.BlockEntity;
+   import  com.github.xbn.linefilter.entity.PostFilterSelfActiveInOutRange;
    import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
    import  com.github.xbn.linefilter.entity.NewSingleLineEntityFor;
+   import  com.github.xbn.linefilter.entity.OnOffAbort;
+   import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
    import  com.github.xbn.linefilter.entity.SingleLineEntity;
+   import  com.github.xbn.number.LengthInRange;
+   import  com.github.xbn.number.NewLengthInRangeFor;
    import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
+   import  com.github.xbn.util.IncludeJavaDoc;
    import  com.github.xbn.util.JavaRegexes;
    import  java.util.Iterator;
    import  java.util.regex.Pattern;
@@ -48,17 +52,21 @@ public class EliminateAllCommentBlocksAndPackageLine  {
       SingleLineEntity pkgDeclLineEntity = NewSingleLineEntityFor.match(
          "pkgdecl", KeepMatched.NO,
          Pattern.compile(JavaRegexes.PACKAGE_DECL_ONE_LINE_NO_CMTS),
-         NewValidResultFilterFor.exactlyOne(
-            null),  //debug (on:System.out, off:null)
-         null,      //dbgAlter
+         null,      //dbgAlter (on:System.out, off:null)
+         new PostFilterSelfActiveInOutRange(
+            NewLengthInRangeFor.maxExclusive(null, 1, null),
+            OnOffAbort.ON, OnOffAbort.OFF,
+            OutOfRangeResponseWhen.IMMEDIATE,
+            null),        //debug
          null);     //dbgLineNums
 
       BlockEntity javaMlcBlock = NewBlockEntityFor.javaComment_Cfg_startEndDebug(
-         "comment", IncludeJavaDoc.YES, null,
+         "comment", IncludeJavaDoc.YES,
          null,      //dbgStart
          null,      //dbgEnd
-         null).  //dbgLineNums
-            keepNone().build();
+         null,      //on-off filter
+         null).     //dbgLineNums
+         keepNone().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          itr, Returns.KEPT, KeepUnmatched.YES,

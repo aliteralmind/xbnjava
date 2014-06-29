@@ -114,7 +114,7 @@ public class CrashIfCollection  {
                if(o != null  &&  o.toString().length() < min_allowedElementLen)  {
                   throw  new LengthLessThanRequiredException(
                      getXthElementName(err_msgTmpl, coll_name, idx),
-                     o.toString().length(), min_allowedElementLen, minElementLen_name);
+                     o.toString().length(), min_allowedElementLen, minElementLen_name, null);
                }
                idx++;
             }
@@ -145,7 +145,7 @@ public class CrashIfCollection  {
             if(o.toString().length() < min_allowedElementLen)  {
                throw  new LengthLessThanRequiredException(
                   getXthElementName(err_msgTmpl, coll_name, idx),
-                  o.toString().length(), min_allowedElementLen, minElementLen_name);
+                  o.toString().length(), min_allowedElementLen, minElementLen_name, null);
             }
          }  catch(NullPointerException npx)  {
             CrashIfObject.nnull(o, getXthElementName(err_msgTmpl, coll_name, idx), null);
@@ -170,7 +170,7 @@ public class CrashIfCollection  {
       }
 
       if(size < min_allowedLength)  {
-         throw  new LengthLessThanRequiredException(coll_name, size, min_allowedLength, min_varName);
+         throw  new LengthLessThanRequiredException(coll_name, size, min_allowedLength, min_varName, null);
       }
       if(size == 0)  {
          return;

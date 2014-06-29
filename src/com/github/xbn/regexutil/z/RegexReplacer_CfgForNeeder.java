@@ -13,6 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil.z;
+   import  com.github.xbn.number.IntBoundInclusive;
+   import  com.github.xbn.lang.Null;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.lang.CrashIfObject;
@@ -76,7 +78,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
             <LI>{@link #all() all}{@code ()}</LI>
          </OL></LI>
          <LI>Sets<OL>
-            <LI>{@link com.github.xbn.regexutil.RegexReplacer#getMatchNumValidator() getMatchNumValidator}{@code ()}* to be {@link com.github.xbn.number.NewLengthInRangeValidatorFor#unrestricted(ValidResultFilter, Appendable) unrestricted}</LI>
+            <LI>{@link com.github.xbn.regexutil.RegexReplacer#getMatchNumValidator() getMatchNumValidator}{@code ()}* to be {@link com.github.xbn.number.NewLengthInRangeValidatorFor#unrestricted(Null, ValidResultFilter, Appendable) unrestricted}</LI>
             <LI>{@link com.github.xbn.regexutil.RegexReplacer#getMaxUntilLoops() getMaxUntilLoops}{@code ()}* to its {@link com.github.xbn.regexutil.RegexReplacer#DEFAULT_MAX_UNTIL_LOOPS default}</LI>
             <LI>{@link com.github.xbn.regexutil.RegexReplacer#doCrashIfMaxUntilExceeded() doCrashIfMaxUntilExceeded}{@code ()}* to {@code true}.</LI>
          </OL></LI>
@@ -87,7 +89,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
    protected final void resetRRCFN()  {
       direct((Pattern)null, null);
       all();
-      vvMatchNum = NewLengthInRangeValidatorFor.unrestricted(null, null);
+      vvMatchNum = NewLengthInRangeValidatorFor.unrestricted(Null.BAD, null, null);
       iMaxUntilLoops = RegexReplacer.DEFAULT_MAX_UNTIL_LOOPS;
       doCrashIfMaxUntilExceeded = false;
    }
@@ -166,10 +168,10 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
    /**
       <P>Replace only the matches found within a specific numeric range, such as the second-through-fourth.</P>
 
-      @return  <CODE>{@link #matchRange(LengthInRange) matchRange}(new {@link com.github.xbn.number.LengthInRange#LengthInRange(int, int) LengthInRange}(min, max))</CODE>
+      @return  <CODE>{@link #matchRange(LengthInRange) matchRange}(new {@link com.github.xbn.number.LengthInRange#LengthInRange(int, String, IntBound) LengthInRange}(min, null, new new com.github.xbn.number.IntBoundInclusive#IntBoundInclusive(Integer, String)(max_inclusive, null)))</CODE>
     **/
-   public RegexReplacer_CfgForNeeder<P,R> matchRange(int min, int max)  {
-      return  matchRange(new LengthInRange(min, max));
+   public RegexReplacer_CfgForNeeder<P,R> matchRange(int min, int max_inclusive)  {
+      return  matchRange(new LengthInRange(min, null, new IntBoundInclusive(max_inclusive, null)));
    }
    /**
       <P>Replace all matches.</P>

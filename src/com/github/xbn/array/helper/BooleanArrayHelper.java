@@ -20,7 +20,6 @@ package  com.github.xbn.array.helper;
    import  com.github.xbn.array.primitive.ObjectArrayFromPrimitive;
    import  com.github.xbn.array.primitive.StringArrayFromPrimitive;
    import  com.github.xbn.array.primitive.WrapperArrayFromPrimitive;
-   import  com.github.xbn.number.LengthInRangeValidator;
    import  org.apache.commons.lang3.ArrayUtils;
 /**
    <P>{@code PrimitiveArrayHelper} for booleans. {@code PrimitiveArrayHelper}-s for all other types are internal to {@link com.github.xbn.array.helper.NewPrimitiveArrayHelper NewPrimitiveArrayHelper}, and are all derived from this class.</P>

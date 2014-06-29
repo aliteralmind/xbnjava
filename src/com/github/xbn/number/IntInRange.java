@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
+   import  com.github.xbn.lang.Invert;
    import  com.github.xbn.lang.RuleType;
    import  java.util.Objects;
    import  com.github.xbn.lang.XInfoAccumulator;
@@ -28,9 +29,19 @@ package  com.github.xbn.number;
  **/
 public class IntInRange extends NumberInRange<Integer> implements IntRange  {
    /**
-      <P>An instance no bounds--Equal to <CODE>new {@link #IntInRange() IntInRange}()</CODE></P>
+      <P>An {@code LengthInRange} with no bounds.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>new {@link #IntInRange() IntInRange}()</CODE></P>
     **/
    public static final IntInRange UNRESTRICTED = new IntInRange();
+   /**
+      <P>An {@code LengthInRange} with no members.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>new {@link #IntInRange(Invert, IntBound, IntBound) IntInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, null, null</CODE></P>
+    **/
+   public static final IntInRange IMPOSSIBLE = new IntInRange(Invert.YES, null, null);
 //constructors...START
    /**
       <P>Create a new unrestricted instance.</P>
@@ -65,14 +76,42 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 
       <P>Equal to
       <BR> &nbsp; &nbsp; {@link NumberInRange#NumberInRange(NumberBound, NumberBound) super}{@code (min, max)}</P>
-
-      @see  #IntInRange()
-      @see  #IntInRange(int, int) IntInRange(i,i)
-      @see  #IntInRange(int, int, String, String) IntInRange(i,i,s,s)
-      @see  #IntInRange(IntInRange) IntInRange(iir)
     **/
    public IntInRange(IntBound min, IntBound max)  {
       super(min, max);
+   }
+   /**
+      <P>Create a new instance with bounds and invert setting.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link #IntInRange(Invert, int, int, String, String) this}(invert, min, max, null, null)</CODE></P>
+    **/
+   public IntInRange(Invert invert, int min, int max)  {
+      this(invert, min, max, null, null);
+   }
+   /**
+      <P>Create a new instance with bounds and invert setting.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>{@link #IntInRange(Invert, IntBound, IntBound) this}(invert, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name), new IntBoundInclusive(max, max_name))</CODE></P>
+    **/
+   public IntInRange(Invert invert, int min, int max, String min_name, String max_name)  {
+      this(invert, new IntBoundInclusive(min, min_name), new IntBoundInclusive(max, max_name));
+   }
+   /**
+      <P>Create a new instance with bounds and invert setting.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; {@link NumberInRange#NumberInRange(Invert, NumberBound, NumberBound) super}{@code (invert, min, max)}</P>
+
+      @see  #IntInRange()
+      @see  #IntInRange(int, int) IntInRange(i,i)
+      @see  #IntInRange(Invert, int, int) IntInRange(inv,i,i)
+      @see  #IntInRange(int, int, String, String) IntInRange(i,i,s,s)
+      @see  #IntInRange(Invert, int, int, String, String) IntInRange(inv,i,i,s,s)
+    **/
+   public IntInRange(Invert invert, IntBound min, IntBound max)  {
+      super(invert, min, max);
    }
 //constructors...END
 //setters...START
@@ -124,11 +163,14 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
    public int getMax()  {
       return  getMaxNumber().intValue();
    }
+   public IntInRange getInvertedCopy()  {
+      return  new IntInRange(Invert.getForBoolean(!isInverted()), getMinBound(), getMaxBound());
+   }
 //other...START
    public boolean isValidInclusiveRange(Integer min, Integer max)  {
       try  {
          return  ((min.compareTo(max) <= 0)  &&     //min <= max
-            isValid(min)  &&  isValid(max));
+            isIn(min)  &&  isIn(max));
       }  catch(RuntimeException rx)  {
          Objects.requireNonNull(min, "min");
          throw  CrashIfObject.nullOrReturnCause(max, "max", null, rx);
@@ -195,13 +237,24 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
    public void crashIfBadIntElement(Integer num, String cntr_name, int idx_inCntr)  {
       IntInRange.crashIfBadIntElement(this, num, cntr_name, idx_inCntr);
    }
-   protected void setRuleTypeFromBoundsForLenIdx()  {
-      rc.setERuleType_4prot((getMinBound().get() == 0  &&  getMaxBound() == null)
-         ?  RuleType.UNRESTRICTED
+   protected RuleType getRuleTypeFromBoundsForLenIdx()  {
+      return  ((getMinBound().get() == 0  &&  getMaxBound() == null)
+         ?  (isInverted() ? RuleType.IMPOSSIBLE : RuleType.UNRESTRICTED)
          :  RuleType.RESTRICTED);
    }
+   public boolean areFieldsEqual(NumberInRange<Integer> to_compareTo)  {
+      try  {
+         return  (Objects.equals(to_compareTo.getMinBound(), getMinBound())  &&
+            Objects.equals(to_compareTo.getMaxBound(), getMaxBound())  &&
+            to_compareTo.isInverted() == isInverted());
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_compareTo, "to_compareTo", null, rx);
+      }
+   }
+   public boolean areFieldsEqual(IntInRange to_compareTo)  {
+      return  areFieldsEqual((NumberInRange<Integer>)to_compareTo);
+   }
 //other...END
-
 //static...START
    /**
       <P>If the bounds are not valid, crash.</P>
@@ -216,7 +269,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
       @exception  IllegalArgumentStateException  If both bounds are non-{@code null}, and violated the above rules are violated.
 
       @see  #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength(ibi,nb,s,s,o)
-      @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRange#isValid(N)">isValid</A>(N)*</CODE>
+      @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRange#isIn(N)">isIn</A>(N)*</CODE>
     **/
    public static final void crashIfBadBounds(IntBound min, IntBound max, String min_name, String max_name, Object xtra_errInfo)  {
       if(min == null  ||  max == null)  {
@@ -255,7 +308,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 
       @param  int_objName  For example, &quot;{@code aString.length}&quot; or &quot;{@code coll.size()}&quot;. <I>Should</I> not be {@code null} or empty.
       @exception  IllegalArgumentException  If
-      <BR> &nbsp; &nbsp; <CODE>range.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRange.html#isValid(N)">isValid</A>(num)*</CODE>
+      <BR> &nbsp; &nbsp; <CODE>range.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRange.html#isIn(N)">isIn</A>(num)*</CODE>
       <BR>is {@code false}.
 
       @see  #crashIfBadIntObject(Integer, String) crashIfBadIntObject(I,s)
@@ -263,7 +316,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
    public static final void crashIfBadIntObject(IntInRange range, Integer num, String int_objName)  {
       boolean bValid = false;
       try  {
-         bValid = range.isValid(num);
+         bValid = range.isIn(num);
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(range, "range", range.getExtraErrInfo(), rx);
       }
@@ -277,14 +330,14 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 
       @param  cntr_name  The name of the container (string, array, collection, etc.) in which the int is an element.
       @param  idx_inCntr  The element index at which the int resides.
-      @exception  IllegalArgumentException  If <CODE>range.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRange.html#isValid(N)">isValid</A>(num)</CODE> is {@code false}.
+      @exception  IllegalArgumentException  If <CODE>range.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRange.html#isIn(N)">isIn</A>(num)</CODE> is {@code false}.
 
       @see  #crashIfBadIntElement(Integer, String, int) crashIfBadIntElement(I,s,i)
     **/
    public static final void crashIfBadIntElement(IntInRange range, Integer num, String cntr_name, int idx_inCntr)  {
       boolean bValid = false;
       try  {
-         bValid = range.isValid(num);
+         bValid = range.isIn(num);
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(range, "range", range.getExtraErrInfo(), rx);
       }

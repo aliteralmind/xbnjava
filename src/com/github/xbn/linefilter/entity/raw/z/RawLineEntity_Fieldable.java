@@ -14,9 +14,9 @@
 \*license*/
 
 package  com.github.xbn.linefilter.entity.raw.z;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffListener;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
    import  com.github.xbn.linefilter.entity.raw.RawLine;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffListener;
+   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
    import  com.github.xbn.linefilter.entity.EntityType;
 /**
    <P>YYY</P>
@@ -29,5 +29,5 @@ public interface RawLineEntity_Fieldable<O,L extends RawLine<O>>  {
 //	int getParentCount();
    Appendable getDebugApblLineNumbers();
    EntityType getType();
-   RawEntityOnOffListener<O,L> getListener();
+   RawEntityOnOffFilter<O,L> getFilterIfNonNull();
 }
