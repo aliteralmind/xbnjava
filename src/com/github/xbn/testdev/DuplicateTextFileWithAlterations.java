@@ -71,14 +71,11 @@ public class DuplicateTextFileWithAlterations  {
                " - input: " + input.getAbsolutePath() + LINE_SEP +
                " - output: " + output.getAbsolutePath());
 
-         int lineNum = 0;
          while(lineItr.hasNext())  {
             String line = lineItr.next();
-            lineNum++;
-
             try  {
                if(!all_alterer.isExpired())  {
-                  line = all_alterer.getAltered(lineNum, line);
+                  line = all_alterer.getAltered(line);
                }
             }  catch(RuntimeException rx)  {
                throw  CrashIfObject.nullOrReturnCause(all_alterer, "all_alterer", null, rx);

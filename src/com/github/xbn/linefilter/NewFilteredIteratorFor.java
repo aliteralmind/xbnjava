@@ -19,7 +19,6 @@ package  com.github.xbn.linefilter;
    import  com.github.xbn.linefilter.entity.KeepMidLines;
    import  com.github.xbn.linefilter.entity.KeepStartLine;
    import  com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.number.LengthInRange;
    import  java.util.Iterator;
 /**
@@ -37,10 +36,10 @@ public class NewFilteredIteratorFor  {
    dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
    {@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.&lt;O,L&gt;{@link com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor#keepAllUnchanged(String) keepAllUnchanged}(&quot;root&quot;, {@link com.github.xbn.linefilter.entity.KeepMatched}.{@link com.github.xbn.linefilter.entity.KeepMatched#YES YES}))</PRE></BLOCKQUOTE>
     **/
-   public static final <O,L extends RawLine<O>> FilteredIterator<O,L> keepAllLinesUnchanged(Iterator<O> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
-      return  new FilteredIterator<O,L>(all_lineItr, Returns.KEPT,
+   public static final <L> FilteredIterator<L> keepAllLinesUnchanged(Iterator<L> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
+      return  new FilteredIterator<L>(all_lineItr, Returns.KEPT,
          dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-         NewRawBlockEntityFor.<O,L>keepAllUnchanged("root"));
+         NewRawBlockEntityFor.<L>keepAllUnchanged("root"));
    }
    public NewFilteredIteratorFor()  {
       throw  new IllegalStateException("Do not instantiate.");

@@ -14,7 +14,6 @@
 package  com.github.xbn.examples.linefilter.alter;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
    import  com.github.xbn.linefilter.alter.ExpirableTextLineAlterList;
-   import  com.github.xbn.linefilter.TextLine;
    import  com.github.xbn.linefilter.alter.TextLineAlterer;
    import  com.github.xbn.linefilter.alter.TextLineAlterAdapter;
    import  com.github.xbn.analyze.alter.ExpirableElements;
@@ -112,8 +111,7 @@ public class ExpirableTextLineAlterListXmpl  {
 
          for(int i = 0; i < input.length; i++)  {
             String s = input[i];
-//				System.out.println(avxl.getAltered((new TextLine(i, s)), s) +
-            System.out.println(avxl.getAltered(i, s) +
+            System.out.println(avxl.getAltered(s) +
                "  (Alters=" + avxl.size() +
                (avxl.isExpired() ? ", expired" : "") + ")");
          }

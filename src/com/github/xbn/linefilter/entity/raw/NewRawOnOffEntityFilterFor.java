@@ -17,20 +17,20 @@ package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.linefilter.entity.OnOffAbort;
    import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Convenience functions for creating {@code RawEntityOnOffFilter}s.</P>
+   <P>Convenience functions for creating {@code RawOnOffEntityFilter}s.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class NewRawEntityOnOffFilterFor  {
-   public static final <O,L extends RawLine<O>> RawEntityOnOffFilter<O,L> alwaysForPrePost(OnOffAbort pre_state, OnOffAbort post_state)  {
-      return  new FilterAlways<O,L>(pre_state, post_state);
+public class NewRawOnOffEntityFilterFor  {
+   public static final <L> RawOnOffEntityFilter<L> alwaysForPrePost(OnOffAbort pre_state, OnOffAbort post_state)  {
+      return  new FilterAlways<L>(pre_state, post_state);
    }
-   private NewRawEntityOnOffFilterFor()  {
+   private NewRawOnOffEntityFilterFor()  {
       throw  new IllegalStateException("Do not instantiate.");
    }
 }
-class FilterAlways<O,L extends RawLine<O>> implements RawEntityOnOffFilter<O,L>  {
+class FilterAlways<L> implements RawOnOffEntityFilter<L>  {
    private final OnOffAbort pre;
    private final OnOffAbort post;
    public FilterAlways(OnOffAbort pre_state, OnOffAbort post_state)  {
@@ -47,14 +47,14 @@ class FilterAlways<O,L extends RawLine<O>> implements RawEntityOnOffFilter<O,L> 
       }
       post = to_copy.post;
    }
-   public OnOffAbort getPreState(RawEntity<O,L> ignored, RawLine<O> ignored2, O ignored3)  {
+   public OnOffAbort getPreState(RawEntity<L> ignored, int ignored2, L ignored3)  {
       return  getPreState();
    }
-   public OnOffAbort getPostState(RawEntity<O,L> ignored, RawLine<O> ignored2, O ignored3)  {
+   public OnOffAbort getPostState(RawEntity<L> ignored, int ignored2, L ignored3)  {
       return  getPostState();
    }
-   public RawEntityOnOffFilter<O,L> getObjectCopy()  {
-      return  new FilterAlways<O,L>(this);
+   public RawOnOffEntityFilter<L> getObjectCopy()  {
+      return  new FilterAlways<L>(this);
    }
    public OnOffAbort getPreState()  {
       return  pre;
@@ -63,7 +63,7 @@ class FilterAlways<O,L extends RawLine<O>> implements RawEntityOnOffFilter<O,L> 
       return  pre;
    }
    public String toString()  {
-      return  "NewRawEntityOnOffFilterFor.alwaysPrePost(OnOffAbort." + getPreState() + ", OnOffAbort." + getPostState() + ")";
+      return  "NewRawOnOffEntityFilterFor.alwaysPrePost(OnOffAbort." + getPreState() + ", OnOffAbort." + getPostState() + ")";
    }
    public void resetState()  {
    }

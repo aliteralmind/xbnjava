@@ -16,17 +16,13 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.TextLine;
    import  com.github.xbn.linefilter.entity.BlockEntity;
-   import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
    import  com.github.xbn.linefilter.entity.NewStealthBlockEntityFor;
    import  com.github.xbn.linefilter.entity.StealthBlockEntity;
-   import  com.github.xbn.linefilter.entity.TextChildEntity;
    import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
    import  com.github.xbn.util.IncludeJavaDoc;
    import  java.util.Iterator;
-   import  java.util.regex.Pattern;
 /**
    <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to manually print the start and end line numbers of all JavaDoc blocks in a source code.</P>
 
@@ -53,10 +49,11 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
          null);        //dbgLineNums
 
       BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg_startEndFilterDebug(
-         "doccomment", null,
-         null,         //dbgStart
-         null,         //dbgEnd
-         null).        //dbgLineNums
+         "doccomment",
+         null,       //dbgStart
+         null,       //dbgEnd
+         null,       //on-off filter
+         null).      //dbgLineNums
          keepAll().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
@@ -65,15 +62,15 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
          javaMlcStealth, javaDocBlock);
 
       while(filteredItr.hasNext())  {
-         TextLine tline = filteredItr.nextTextLine();
+         filteredItr.next();
 
          if(filteredItr.getActiveChildType().isBlock()  &&
                filteredItr.getActiveChildBlock().isStartLine())  {
-            System.out.print("Block: " + tline.getNumber() + "..");
+            System.out.print("Block: " + filteredItr.getNextLineNum() + "..");
 
          }  else if(filteredItr.getActiveChildType().isBlock()  &&
                filteredItr.getActiveChildBlock().isEndLine())  {
-            System.out.println(tline.getNumber());
+            System.out.println(filteredItr.getNextLineNum());
          }
       }
    }

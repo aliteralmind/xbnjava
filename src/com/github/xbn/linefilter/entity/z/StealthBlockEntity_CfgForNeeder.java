@@ -13,10 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.z;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.entity.StealthBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder;
@@ -26,7 +24,7 @@ package  com.github.xbn.linefilter.entity.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEntity,R extends Needer> extends RawStealthBlockEntity_CfgForNeeder<String,RawLine<String>,M,R>  {
+public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEntity,R extends Needer> extends RawStealthBlockEntity_CfgForNeeder<String,M,R>  {
 //constructors...START
    /**
       <P>Create a new instance.</P>
@@ -67,7 +65,7 @@ public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEnti
       @return  <I>{@code this}</I>
       @see  #endValidator(ValueValidator) endValidator
     **/
-   public StealthBlockEntity_CfgForNeeder<M,R> startValidator(ValueValidator<RawLine<String>> start_validator)  {
+   public StealthBlockEntity_CfgForNeeder<M,R> startValidator(ValueValidator<String> start_validator)  {
       super.startValidator(start_validator);
       return  this;
    }
@@ -78,7 +76,7 @@ public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEnti
       @return  <I>{@code this}</I>
       @see  #endValidator(ValueValidator) endValidator
     **/
-   public StealthBlockEntity_CfgForNeeder<M,R> endValidator(ValueValidator<RawLine<String>> end_validator)  {
+   public StealthBlockEntity_CfgForNeeder<M,R> endValidator(ValueValidator<String> end_validator)  {
       super.endValidator(end_validator);
       return  this;
    }
@@ -88,7 +86,7 @@ public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEnti
       @param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public StealthBlockEntity_CfgForNeeder<M,R> filter(RawEntityOnOffFilter<String,RawLine<String>> filter)  {
+   public StealthBlockEntity_CfgForNeeder<M,R> filter(RawOnOffEntityFilter<String> filter)  {
       super.filter(filter);
       return  this;
    }
@@ -103,7 +101,7 @@ public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEnti
    /**
       <P>Create a new {@code RawStealthBlockEntity} as configured.</P>
 
-      @return  <CODE>(M)(new xbn.text.line.RawStealthBlockEntity#RawStealthBlockEntity(RawStealthBlockEntity_Fieldable)&lt;O,RawLine<String>&gt;(this))</CODE>
+      @return  <CODE>(M)(new xbn.text.line.RawStealthBlockEntity#RawStealthBlockEntity(RawStealthBlockEntity_Fieldable)&lt;O,String&gt;(this))</CODE>
     **/
    public M build()  {
       @SuppressWarnings("unchecked")
@@ -135,10 +133,10 @@ public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEnti
       return  endCfgWithNeededReturnNeeder(build());
    }
 //getters...START
-   public ValueValidator<RawLine<String>> getStartValidator()  {
+   public ValueValidator<String> getStartValidator()  {
       return  startValidator;
    }
-   public ValueValidator<RawLine<String>> getEndValidator()  {
+   public ValueValidator<String> getEndValidator()  {
       return  endValidator;
    }
 //getters...END

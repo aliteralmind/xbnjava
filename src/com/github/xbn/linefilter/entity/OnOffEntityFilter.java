@@ -1,7 +1,5 @@
 /*license*\
-   Codelet: http://codelet.aliteralmind.com
-
-   Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
    This software is dual-licensed under the:
    - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
@@ -14,19 +12,14 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.linefilter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
+package  com.github.xbn.linefilter.entity;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
 /**
-   <P>One in a series of text lines, most commonly derived from a file.</P>
+   <P>Dynamically turns an entity on or off, based on conditions. An example may be a block entity that should not be {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active} (should not analyze or alter any lines) until another entity has {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFullyActiveCount() been active} at least three times.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class TextLine extends RawLine<String>  {
-   /**
-      <P>Create a new instance.</P>
-    **/
-   public TextLine(int line_num, String text)  {
-      super(line_num, text);
-   }
+public interface OnOffEntityFilter extends RawOnOffEntityFilter<String>  {
+   OnOffEntityFilter getObjectCopy();
 }

@@ -23,7 +23,6 @@ package  com.github.xbn.linefilter.entity;
    import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_Fieldable;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
 /**
    <P>Represents a series of lines in a text file, with a distinct start and end line, zero-or-more lines in between, and optional child entities. The start, mid, and end lines may all be optionally kept or discarded--when kept, they may be optionally modified.</P>
 
@@ -50,7 +49,7 @@ and this
       <LI><B>Inclusivity:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive() startEndLinesInclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesExclusive() startEndLinesExclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive(boolean, boolean) startEndLinesInclusive}{@code (b,b)}</LI>
       <LI><B>Keep:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepAll() keepAll}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepMidsOnly() keepMidsOnly}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepNone() keepNone}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}{@code (b,b,b)}</LI>
       <LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}{@code (rce[])}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(TextChildEntity...) children}{@code (tce...)}</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#reset() reset}{@code ()}</LI>
    </UL></P>
 
@@ -65,17 +64,17 @@ and this
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class BlockEntity extends RawBlockEntity<String,RawLine<String>> implements TextParentEntity  {
+public class BlockEntity extends RawBlockEntity<String> implements TextParentEntity  {
    private List<TextChildEntity> childList;
    /**
       <P>Create a new and <I>temporarily unusable</I> instance from a fieldable.</P>
 
       @param  fieldable  May not be {@code null}, and all its fields must conform to the restrictions as documented in the <A HREF="#cfg">setters</A>.
     **/
-   public BlockEntity(RawBlockEntity_Fieldable<String,RawLine<String>> fieldable)  {
+   public BlockEntity(RawBlockEntity_Fieldable<String> fieldable)  {
       super(fieldable);
    }
-   protected BlockEntity(BlockEntity to_copy, int levels_belowRoot, RawParentEntity<String,RawLine<String>> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+   protected BlockEntity(BlockEntity to_copy, int levels_belowRoot, RawParentEntity<String> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
 /*
@@ -88,7 +87,7 @@ public class BlockEntity extends RawBlockEntity<String,RawLine<String>> implemen
          synchronized(children)  {
             if(childList == null)  {
                childList = new ArrayList<TextChildEntity>(children.length);
-               for(RawChildEntity<String,RawLine<String>> child : children)  {
+               for(RawChildEntity<String> child : children)  {
                   childList.add((TextChildEntity)child);
                }
                childList = Collections.<TextChildEntity>unmodifiableList(childList);

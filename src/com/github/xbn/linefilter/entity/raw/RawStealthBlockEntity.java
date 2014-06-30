@@ -12,7 +12,6 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-
 package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.TextAppenter;
@@ -20,7 +19,6 @@ package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.analyze.validate.NullnessValidator;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.alter.Altered;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_Fieldable;
    import  java.util.Objects;
@@ -40,7 +38,7 @@ package  com.github.xbn.linefilter.entity.raw;
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 
@@ -55,7 +53,7 @@ package  com.github.xbn.linefilter.entity.raw;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O,L>  {
+public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
    public final ValueValidator<L> startVldtr;
    public final ValueValidator<L> endVldtr  ;
    /**
@@ -63,12 +61,12 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
 
       @param  fieldable  May not be {@code null}.
     **/
-   public RawStealthBlockEntity(RawStealthBlockEntity_Fieldable<O,L> fieldable)  {
+   public RawStealthBlockEntity(RawStealthBlockEntity_Fieldable<L> fieldable)  {
       super(fieldable);
       startVldtr = fieldable.getStartValidator();
       endVldtr   = fieldable.getEndValidator();
    }
-   protected RawStealthBlockEntity(RawStealthBlockEntity<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+   protected RawStealthBlockEntity(RawStealthBlockEntity<L> to_copy, int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
 
       startVldtr = RawStealthBlockEntity.getVldtrCopyCINotRestricted(
@@ -79,7 +77,7 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
       resetStateBSE();
       resetCountsBSE();
    }
-      private static final <O,L extends RawLine<O>> ValueValidator<L> getVldtrCopyCINotRestricted(ValueValidator<L> validator, String start_orEnd)  {
+      private static final <L> ValueValidator<L> getVldtrCopyCINotRestricted(ValueValidator<L> validator, String start_orEnd)  {
          try  {
             if(!validator.getRuleType().isRestricted())  {
                throw  new IllegalArgumentException("to_copy.get" + start_orEnd + "Validator().getRuleType() (" + validator.getRuleType() + ") is not RESTRICTED.");
@@ -115,8 +113,8 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
    public boolean doKeepJustAnalyzed()  {
       return  false;
    }
-   public RawStealthBlockEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
-      return  new RawStealthBlockEntity<O,L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
+   public RawStealthBlockEntity<L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+      return  new RawStealthBlockEntity<L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    public StringBuilder appendRules(StringBuilder to_appendTo)  {
       try  {
@@ -129,54 +127,51 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
       getEndValidator().appendRules(to_appendTo);
       return  to_appendTo.append("]");
    }
-   public O getAlteredPostResetCheck(L line_object, O line_body)  {
-      if(!resetStartEndPreFilter_isActiveOrOn(line_object, line_body))  {
-         return  line_body;
+   public L getAlteredPostResetCheck(L line_toValidate, L line_toAlter)  {
+      if(!resetStartEndPreFilter_isActiveOrOn(line_toValidate))  {
+         return  line_toAlter;
       }
 
       boolean isStart2 = NullnessValidator.isValidDefensive(
-         getStartValidator(), line_object,
-         "getStartValidator()", "line_object");
+         getStartValidator(), line_toValidate,
+         "getStartValidator()", "line_toValidate");
       boolean isEnd2 = NullnessValidator.isValidDefensive(
-         getEndValidator(), line_object,
-         "getEndValidator()", "line_object");
+         getEndValidator(), line_toValidate,
+         "getEndValidator()", "line_toValidate");
 
       if(isStart2  &&  isEnd2)  {
-         throw  new LineEntityException(line_object, this, "Start and end lines found on the same line");
+         throw  new LineEntityException(getMostRecentLineNum(), line_toValidate, this, "Start and end lines found on the same line");
       }
 
       //Not both
 
-      int lineNum = line_object.getNumber();
-
       if(!isActive())  {
          if(isStart2)  {
-            declareStartLine(true, lineNum);
-            return  declareAlteredReturnLineBodyUnchanged(line_object, line_body, "start");
+            declareStartLine(true);
+            return  declareAlteredReturnLineBodyUnchanged(line_toValidate, line_toAlter, "start");
          }
 
             //Not active
          //Not start line
 
          if(isEnd2)  {
-            throw  new LineEntityException(line_object, this, "End-line found before stealth block started");
+            throw  new LineEntityException(getMostRecentLineNum(), line_toValidate, this, "End-line found before stealth block started");
          }
 
             //Not active
             //Not start line
          //Not end line
 
-         declareAltered(line_object.getNumber(),
-            Altered.NO, NeedsToBeDeleted.NO);
-         postFilter(line_object, line_body);
-         return  line_body;
+         declareAltered(Altered.NO, NeedsToBeDeleted.NO);
+         postFilter(line_toAlter);
+         return  line_toAlter;
 
       }
 
       //Active
 
       if(isStart2)  {
-         throw  new LineEntityException(line_object, this, "Start-line found before previous block closed");
+         throw  new LineEntityException(getMostRecentLineNum(), line_toValidate, this, "Start-line found before previous block closed");
       }
 
          //Active
@@ -184,8 +179,8 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
 
       if(isEnd2)  {
          //isActive set to false on next iteratation.
-         declareEndLine(true, lineNum);
-         return  declareAlteredReturnLineBodyUnchanged(line_object, line_body, "end");
+         declareEndLine(true);
+         return  declareAlteredReturnLineBodyUnchanged(line_toValidate, line_toAlter, "end");
       }
 
          //isActive()=true
@@ -194,20 +189,19 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
       //isMidLine()=true
 
       declareMidLine(true);
-      return  declareAlteredReturnLineBodyUnchanged(line_object, line_body, "mid");
+      return  declareAlteredReturnLineBodyUnchanged(line_toValidate, line_toAlter, "mid");
    }
-      private O declareAlteredReturnLineBodyUnchanged(L line_object, O line_body, String start_midEnd)  {
-         declareAltered(line_object.getNumber(),
-            Altered.YES, NeedsToBeDeleted.NO);
-         if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-            getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " " + start_midEnd + " line");
+      private L declareAlteredReturnLineBodyUnchanged(L line_toValidate, L line_toAlter, String start_midEnd)  {
+         declareAltered(Altered.YES, NeedsToBeDeleted.NO);
+         if(isEveryLineAptrUseableAndInRange())  {
+            getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " " + start_midEnd + " line");
          }
-         postFilter(line_object, line_body);
-         return  line_body;
+         postFilter(line_toAlter);
+         return  line_toAlter;
       }
    public void declareEndOfInput()  {
       if(isMidLine())  {
-         throw  new LineEntityException(null, this, "End of output reached, but block not closed");
+         throw  new LineEntityException(-1, null, this, "End of output reached, but block not closed");
       }
    }
    /**
@@ -226,7 +220,7 @@ public class RawStealthBlockEntity<O,L extends RawLine<O>> extends RawBlockEntit
 
       return  to_appendTo;
    }
-   protected String getDebuggingPrefix(int line_num)  {
-      return  getDebuggingPrefixPrefixBldr(line_num).append("]").toString();
+   public String getDebuggingPrefix()  {
+      return  getDebuggingPrefixPrefixBldr().append("]").toString();
    }
 }

@@ -18,7 +18,6 @@ package  com.github.xbn.linefilter.entity;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_Fieldable;
 /**
    <P>A specialized and simplified block-entity used only to prevent {@code BlockEntity}s from incorrectly matching start or end-lines (preventing false-positives). Lines in a block stealth entity, even though the entity's {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#isActive() active flag} is {@code true}, are never {@linkplain com.github.xbn.linefilter.FilteredLineIterator#getActiveChild() active} <I>according to {@link com.github.xbn.linefilter.FilteredLineIterator}</I>.</P>
@@ -35,7 +34,7 @@ package  com.github.xbn.linefilter.entity;
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 
@@ -50,11 +49,11 @@ package  com.github.xbn.linefilter.entity;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class StealthBlockEntity extends RawStealthBlockEntity<String,RawLine<String>> implements TextChildEntity  {
-   public StealthBlockEntity(RawStealthBlockEntity_Fieldable<String,RawLine<String>> fieldable)  {
+public class StealthBlockEntity extends RawStealthBlockEntity<String> implements TextChildEntity  {
+   public StealthBlockEntity(RawStealthBlockEntity_Fieldable<String> fieldable)  {
       super(fieldable);
    }
-   protected StealthBlockEntity(StealthBlockEntity to_copy, int levels_belowRoot, RawParentEntity<String,RawLine<String>> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+   protected StealthBlockEntity(StealthBlockEntity to_copy, int levels_belowRoot, RawParentEntity<String> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    public TextParentEntity getParent()  {

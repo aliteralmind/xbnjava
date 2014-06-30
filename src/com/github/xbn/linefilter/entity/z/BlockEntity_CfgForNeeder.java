@@ -16,11 +16,10 @@ package  com.github.xbn.linefilter.entity.z;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
    import  com.github.xbn.linefilter.entity.TextChildEntity;
    import  com.github.xbn.linefilter.entity.EndRequired;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.analyze.alter.ValueAlterer;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
 /**
@@ -29,7 +28,7 @@ package  com.github.xbn.linefilter.entity.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends Needer> extends RawBlockEntity_CfgForNeeder<String,RawLine<String>,M,R>  {
+public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends Needer> extends RawBlockEntity_CfgForNeeder<String,M,R>  {
 //constructors...START
    /**
       <P>Create a new instance.</P>
@@ -70,7 +69,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       @return  <I>{@code this}</I>
       @see  #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd
     **/
-   public BlockEntity_CfgForNeeder<M,R> startAlter(ValueAlterer<RawLine<String>,String> start_alterer)  {
+   public BlockEntity_CfgForNeeder<M,R> startAlter(ValueAlterer<String,String> start_alterer)  {
       super.startAlter(start_alterer);
       return  this;
    }
@@ -81,7 +80,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       @return  <I>{@code this}</I>
       @see  #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd
     **/
-   public BlockEntity_CfgForNeeder<M,R> midAlter(ValueAlterer<RawLine<String>,String> mid_alterer)  {
+   public BlockEntity_CfgForNeeder<M,R> midAlter(ValueAlterer<String,String> mid_alterer)  {
       super.midAlter(mid_alterer);
       return  this;
    }
@@ -93,7 +92,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       @return  <I>{@code this}</I>
       @see  #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd
     **/
-   public BlockEntity_CfgForNeeder<M,R> endAlter(EndRequired required, ValueAlterer<RawLine<String>,String> end_alterer)  {
+   public BlockEntity_CfgForNeeder<M,R> endAlter(EndRequired required, ValueAlterer<String,String> end_alterer)  {
       super.endAlter(required, end_alterer);
       return  this;
    }
@@ -136,7 +135,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       @return  <I>{@code this}</I>
       @see  #children(TextChildEntity...)
     **/
-   public BlockEntity_CfgForNeeder<M,R> children(RawChildEntity<String,RawLine<String>>[] children)  {
+   public BlockEntity_CfgForNeeder<M,R> children(RawChildEntity<String>[] children)  {
       super.children(children);
       return  this;
    }
@@ -225,7 +224,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       @param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public BlockEntity_CfgForNeeder<M,R> filter(RawEntityOnOffFilter<String,RawLine<String>> filter)  {
+   public BlockEntity_CfgForNeeder<M,R> filter(RawOnOffEntityFilter<String> filter)  {
       super.filter(filter);
       return  this;
    }

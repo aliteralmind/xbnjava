@@ -16,7 +16,6 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.TextLine;
    import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
    import  com.github.xbn.linefilter.alter.TextLineAlterer;
    import  com.github.xbn.linefilter.entity.BlockEntity;
@@ -77,9 +76,10 @@ public class PrintJavaDocBlockSubLinesBolded  {
 
 
          BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg_startEndFilterDebug(
-            "doccomment", null,
+            "doccomment",
             null,       //dbgStart
             null,       //dbgEnd
+            null,       //on-off filter
             null).      //dbgLineNums
             keepAll().children(subBlock).build();
 
@@ -89,7 +89,7 @@ public class PrintJavaDocBlockSubLinesBolded  {
          javaMlcBlock, javaDocBlock);
 
       while(filteredItr.hasNext())  {
-         System.out.println(filteredItr.next().getBody());
+         System.out.println(filteredItr.next());
       }     //End snippet
    }
 }

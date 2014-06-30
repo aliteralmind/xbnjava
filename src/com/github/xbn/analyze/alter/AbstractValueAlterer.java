@@ -145,7 +145,7 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
    public void setExtraErrInfo(Object info)  {
       avc.setExtraErrInfo(info);
    }
-   public final A getAltered(V to_validate, A to_alter)  {
+   public A getAltered(V to_validate, A to_alter)  {
       AltererComposer.autoResetStateOrCINeedTo(this);
       return  getAlteredPostResetCheck(to_validate, to_alter);
    }

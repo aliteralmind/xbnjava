@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.lang.CrashIfObject;
 /**
    <P>Indicates a problem with a line being filtered.</P>
@@ -23,31 +22,35 @@ package  com.github.xbn.linefilter;
 
  **/
 public class FilteredLineException extends IllegalArgumentException  {
-   private final RawLine<?> lineObj;
-   public FilteredLineException(RawLine<?> line_obj, String message)  {
-      super(FilteredLineException.getErrorMessage(line_obj, message));
-      lineObj = line_obj;
+   private final int lineNum;
+   private final Object line;
+   public FilteredLineException(int line_num, Object line, String message)  {
+      super(FilteredLineException.getErrorMessage(line_num, line, message));
+      lineNum = line_num;
+      this.line = line;
    }
-   public FilteredLineException(RawLine<?> line_obj)  {
-      super((line_obj == null) ? null : line_obj.toString());
-      lineObj = line_obj;
+   public FilteredLineException(int line_num, Object line)  {
+      super((line == null) ? null : line.toString());
+      lineNum = line_num;
+      this.line = line;
    }
-   public FilteredLineException(RawLine<?> line_obj, String message, Throwable cause)  {
-      super(FilteredLineException.getErrorMessage(line_obj, message), cause);
-      lineObj = line_obj;
+   public FilteredLineException(int line_num, Object line, String message, Throwable cause)  {
+      super(FilteredLineException.getErrorMessage(line_num, line, message), cause);
+      lineNum = line_num;
+      this.line = line;
    }
-   public FilteredLineException(RawLine<?> line_obj, Throwable cause)  {
-      super((line_obj == null) ? null : line_obj.toString(), cause);
-      lineObj = line_obj;
+   public FilteredLineException(int line_num, Object line, Throwable cause)  {
+      super((line == null) ? null : line.toString(), cause);
+      lineNum = line_num;
+      this.line = line;
    }
-   public RawLine<?> getLineObject()  {
-      return  lineObj;
+   public int getLineNumber()  {
+      return  lineNum;
    }
-   public static final String getErrorMessage(RawLine<?> line_obj, String message)  {
-      try  {
-         return  ((line_obj != null) ? line_obj + ", " : "") + message;
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(line_obj, "line_obj", null, rx);
-      }
+   public Object getLineObject()  {
+      return  line;
+   }
+   public static final String getErrorMessage(int line_num, Object line, String message)  {
+      return  "[line " + line_num + "] " + ((line != null) ? line + ", " : "") + message;
    }
 }

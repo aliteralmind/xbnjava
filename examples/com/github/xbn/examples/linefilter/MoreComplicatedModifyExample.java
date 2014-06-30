@@ -22,10 +22,8 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.entity.EndRequired;
    import  com.github.xbn.linefilter.entity.z.BlockEntity_Cfg;
    import  com.github.xbn.regexutil.IndirectRegexReplacer;
-   import  com.github.xbn.regexutil.ReplacedInEachInput;
    import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
    import  com.github.xbn.text.StringUtil;
-   import  java.util.regex.Pattern;
 /**
    <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to make arbitrary modifications to kept lines.</P>
 
@@ -90,7 +88,7 @@ public class MoreComplicatedModifyExample  {
          block);
 
       while(filteredItr.hasNext())  {
-         System.out.println(filteredItr.nextLine());
+         System.out.println(filteredItr.next());
       }
    }
 }

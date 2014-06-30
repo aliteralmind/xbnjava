@@ -1,5 +1,5 @@
 /*license*\
-   Codelet: http://codelet.aliteralmind.com
+   XBN-Java: http://xbnjava.aliteralmind.com
 
    Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
@@ -16,7 +16,6 @@
 \*license*/
 package  com.github.xbn.linefilter.entity.z;
    import  com.github.xbn.linefilter.entity.BlockEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.linefilter.entity.BlockEntity BlockEntity}.</P>

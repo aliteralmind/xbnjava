@@ -71,7 +71,7 @@ public class ModifyBlockLines  {
          block);
 
       while(filteredItr.hasNext())  {
-         System.out.println(filteredItr.nextLine());
+         System.out.println(filteredItr.next());
       }  //End snippet
    }
 }

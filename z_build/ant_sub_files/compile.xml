@@ -951,6 +951,8 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
          includes="keyed/SimpleKeyValue.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="keyed/SimpleNamed.java"/>
+</target>
+<target name="compileproper2" description="For starting compilation in the middle of the list, when needed.">
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="keyed/NameValue.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
@@ -1114,12 +1116,6 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
          includes="linefilter/LineActive.java"/>
  -->
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
-         includes="linefilter/entity/raw/RawLine.java"/>
-      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
-         includes="linefilter/TextLine.java"/>
-      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
-         includes="linefilter/TextLineIterator.java"/>
-      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="linefilter/TextLineValidatorAdapter.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="linefilter/alter/TextLineAlterer.java"/>
@@ -1188,9 +1184,9 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="linefilter/entity/OnOffAbort.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
-         includes="linefilter/entity/raw/RawEntityOnOffFilter.java"/>
+         includes="linefilter/entity/raw/RawOnOffEntityFilter.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
-         includes="linefilter/entity/EntityOnOffFilter.java"/>
+         includes="linefilter/entity/OnOffEntityFilter.java"/>
       <javac srcdir="${dir_src_xbn}linefilter/entity/raw/" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="RawParentEntity.java,RawChildEntity.java,RawBlockChildEntity.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
@@ -1209,8 +1205,6 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
          includes="linefilter/entity/raw/z/RawSingleLineEntity_Fieldable.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="linefilter/entity/raw/z/RawStealthBlockEntity_Fieldable.java"/>
-</target>
-<target name="compileproper2" description="For starting compilation in the middle of the list, when needed.">
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="linefilter/entity/OutOfRangeResponseWhen.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
@@ -1224,7 +1218,7 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="linefilter/entity/PostFilterActiveInOutRange.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
-         includes="linefilter/entity/raw/NewRawEntityOnOffFilterFor.java"/>
+         includes="linefilter/entity/raw/NewRawOnOffEntityFilterFor.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="linefilter/entity/raw/RawLineEntity.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"

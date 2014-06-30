@@ -1,5 +1,5 @@
 /*license*\
-   Codelet: http://codelet.aliteralmind.com
+   XBN-Java: http://xbnjava.aliteralmind.com
 
    Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
@@ -15,7 +15,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.alter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange;
    import  com.github.xbn.analyze.alter.ReturnValueUnchanged;
    import  com.github.xbn.analyze.alter.ValueAlterer;
@@ -27,24 +26,24 @@ package  com.github.xbn.linefilter.alter;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class AlterTextLineWhen extends AlterRawLineWhen<String,RawLine<String>> implements TextLineAlterer  {
+public class AlterTextLineWhen extends AlterRawLineWhen<String> implements TextLineAlterer  {
    public AlterTextLineWhen()  {
       super();
    }
-   public AlterTextLineWhen(ValueAlterer<RawLine<String>,String> alter_forValid)  {
+   public AlterTextLineWhen(ValueAlterer<String,String> alter_forValid)  {
       super(alter_forValid);
    }
-   public AlterTextLineWhen(ValueValidator<RawLine<String>> condition, ValueAlterer<RawLine<String>,String> alter_forValid)  {
+   public AlterTextLineWhen(ValueValidator<String> condition, ValueAlterer<String,String> alter_forValid)  {
       super(condition, alter_forValid);
    }
-   public AlterTextLineWhen(ValueValidator<RawLine<String>> condition, ValueAlterer<RawLine<String>,String> alter_forValid, ValueAlterer<RawLine<String>,String> alter_forInvalid)  {
+   public AlterTextLineWhen(ValueValidator<String> condition, ValueAlterer<String,String> alter_forValid, ValueAlterer<String,String> alter_forInvalid)  {
       super(condition, alter_forValid, alter_forInvalid);
    }
    public AlterTextLineWhen(AlterTextLineWhen to_copy)  {
       super(to_copy);
    }
-   public static final AlterTextLineWhen newATLWAlwaysReturnSelf(ValueValidator<RawLine<String>> validator)  {
-      AlterTextLineWhen atlw = new AlterTextLineWhen(validator, (new ReturnValueUnchanged<RawLine<String>,String>()), (new ReturnValueUnchanged<RawLine<String>,String>(SetWasAlteredToWhenInRange.FALSE)));
+   public static final AlterTextLineWhen newATLWAlwaysReturnSelf(ValueValidator<String> validator)  {
+      AlterTextLineWhen atlw = new AlterTextLineWhen(validator, (new ReturnValueUnchanged<String,String>()), (new ReturnValueUnchanged<String,String>(SetWasAlteredToWhenInRange.FALSE)));
       atlw.setDebug(validator.getDebugApbl(), validator.isDebugOn());
       return  atlw;
    }

@@ -13,16 +13,15 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.lang.Invert;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.entity.PostFilterSelfActiveInOutRange;
    import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.entity.NewSingleLineEntityFor;
    import  com.github.xbn.linefilter.entity.NewStealthBlockEntityFor;
    import  com.github.xbn.linefilter.entity.OnOffAbort;
    import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
+   import  com.github.xbn.linefilter.entity.PostFilterSelfActiveInOutRange;
    import  com.github.xbn.linefilter.entity.SingleLineEntity;
    import  com.github.xbn.linefilter.entity.StealthBlockEntity;
    import  com.github.xbn.number.NewLengthInRangeFor;
@@ -32,7 +31,7 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.util.JavaRegexes;
    import  java.util.regex.Pattern;
 /**
-   <P>Uses a {@link com.github.xbn.linefilter.FilteredLineIterator} to get the simple class names from all import statements in a Java source file--Also demonstrates aborting the iterator with an {@linkplain com.github.xbn.linefilter.entity.EntityOnOffFilter on-off filter}.</P>
+   <P>Uses a {@link com.github.xbn.linefilter.FilteredLineIterator} to get the simple class names from all import statements in a Java source file--Also demonstrates aborting the iterator with an {@linkplain com.github.xbn.linefilter.entity.OnOffEntityFilter on-off filter}.</P>
 
    <P>{@code java com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports}</P>
 
@@ -84,7 +83,7 @@ public class GetAllClassSimpleNamesFromImports  {
          javaMlcStealth, importLineEntity);
 
       while(filteredItr.hasNext())  {
-         System.out.println(filteredItr.nextLine());
+         System.out.println(filteredItr.next());
       }
    }
 }

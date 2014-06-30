@@ -1,5 +1,5 @@
 /*license*\
-   Codelet: http://codelet.aliteralmind.com
+   XBN-Java: http://xbnjava.aliteralmind.com
 
    Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
@@ -15,7 +15,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.alter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.analyze.alter.ValueAlterer;
    import  com.github.xbn.analyze.alter.AlterValueWhen;
    import  com.github.xbn.analyze.validate.ValueValidator;
@@ -25,20 +24,20 @@ package  com.github.xbn.linefilter.alter;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class AlterRawLineWhen<O,L extends RawLine<O>> extends AlterValueWhen<L,O>  {
+public class AlterRawLineWhen<L> extends AlterValueWhen<L,L>  {
    public AlterRawLineWhen()  {
       super();
    }
-   public AlterRawLineWhen(ValueAlterer<L,O> alter_forValid)  {
+   public AlterRawLineWhen(ValueAlterer<L,L> alter_forValid)  {
       super(alter_forValid);
    }
-   public AlterRawLineWhen(ValueValidator<L> condition, ValueAlterer<L,O> alter_forValid)  {
+   public AlterRawLineWhen(ValueValidator<L> condition, ValueAlterer<L,L> alter_forValid)  {
       super(condition, alter_forValid);
    }
-   public AlterRawLineWhen(ValueValidator<L> condition, ValueAlterer<L,O> alter_forValid, ValueAlterer<L,O> alter_forInvalid)  {
+   public AlterRawLineWhen(ValueValidator<L> condition, ValueAlterer<L,L> alter_forValid, ValueAlterer<L,L> alter_forInvalid)  {
       super(condition, alter_forValid, alter_forInvalid);
    }
-   public AlterRawLineWhen(AlterRawLineWhen<O,L> to_copy)  {
+   public AlterRawLineWhen(AlterRawLineWhen<L> to_copy)  {
       super(to_copy);
    }
 }

@@ -26,7 +26,7 @@ package  com.github.xbn.linefilter.entity.raw;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class AbstractRawPostFilterActiveInOutRange<O,L extends RawLine<O>> implements RawEntityOnOffFilter<O,L>  {
+public abstract class AbstractRawPostFilterActiveInOutRange<L> implements RawOnOffEntityFilter<L>  {
    private final LengthInRange range  ;
    private final OnOffAbort    ofaIn  ;
    private final OnOffAbort    ofaOut ;
@@ -72,7 +72,7 @@ public abstract class AbstractRawPostFilterActiveInOutRange<O,L extends RawLine<
    public TextAppenter getDebugAptr()  {
       return  dbgAptr;
    }
-   public final OnOffAbort getPreState(RawEntity<O,L> ignored, RawLine<O> ignored2, O ignored3)  {
+   public final OnOffAbort getPreState(RawEntity<L> ignored, int ignored2, L ignored3)  {
       return  OnOffAbort.ON;
    }
    /**
@@ -85,7 +85,7 @@ public abstract class AbstractRawPostFilterActiveInOutRange<O,L extends RawLine<
       </UL>
       @see  #getRange()
     **/
-   protected OnOffAbort getPostStateForCount(RawEntity<O,L> entity)  {
+   protected OnOffAbort getPostStateForCount(RawEntity<L> entity)  {
       boolean isIn = false;
       try  {
          isIn = getRange().isIn(entity.getFullyActiveCount());
@@ -107,7 +107,7 @@ public abstract class AbstractRawPostFilterActiveInOutRange<O,L extends RawLine<
 
       return  returnAndDebug(entity, getStateForInRange());
    }
-      private OnOffAbort returnAndDebug(RawEntity<O,L> entity, OnOffAbort return_value)  {
+      private OnOffAbort returnAndDebug(RawEntity<L> entity, OnOffAbort return_value)  {
          if(getDebugAptr().isUseable())  {
             getDebugAptr().appentln(getClass().getSimpleName() + ".getPostState: " + entity.getDebuggingPrefix() + " (is-" + (entity.isActive()?"":"not-") + "active, active-count=" + entity.getFullyActiveCount() + "), on-off-filter=<" + getClass().getName() + ": " + this + ">, returning " + return_value);
          }

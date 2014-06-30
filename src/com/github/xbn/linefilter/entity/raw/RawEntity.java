@@ -24,7 +24,7 @@ package  com.github.xbn.linefilter.entity.raw;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public interface RawEntity<O,L extends RawLine<O>> extends ValueAlterer<L,O>, Named  {
+public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
    /**
       <P>Communicates to an entity that the end of its parent block has reached or, in the case of the root entity, the end of the text file itself.</P>
     **/
@@ -96,15 +96,10 @@ public interface RawEntity<O,L extends RawLine<O>> extends ValueAlterer<L,O>, Na
     **/
    public LengthInRange getEveryLineDebugRange();
    /**
-      <P>The on-off filter.</P>
-
-      @return  A non-{@code null} filter.
-      @see  #doAbortIterator()
-    **/
-   RawEntityOnOffFilter<O,L> getFilter();
-   /**
       <P>Should all remaining lines in the containing {@code FilteredIterator} be discarded?. This is a special potential state returned by the {@link #getFilter() filter}.</P>
     **/
    boolean doAbortIterator();
    String getDebuggingPrefix();
+   int getMostRecentLineNum();
+   L getAltered(int line_num, L line_toAnalyze, L line_toAlter);
 }

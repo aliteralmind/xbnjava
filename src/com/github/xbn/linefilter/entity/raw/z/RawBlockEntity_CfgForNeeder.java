@@ -21,8 +21,7 @@ package  com.github.xbn.linefilter.entity.raw.z;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.number.NewLengthInRangeFor;
    import  java.util.regex.Pattern;
@@ -32,11 +31,11 @@ package  com.github.xbn.linefilter.entity.raw.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M extends RawBlockEntity<O,L>,R extends Needer> extends RawLineEntity_CfgForNeeder<O,L,M,R> implements RawBlockEntity_Fieldable<O,L>  {
-   public ValueAlterer<L,O>         startAlter ;
-   public ValueAlterer<L,O>         midAlter   ;
-   public ValueAlterer<L,O>         endAlter   ;
-   public RawChildEntity<O,L>[]     children   ;
+public abstract class RawBlockEntity_CfgForNeeder<L,M extends RawBlockEntity<L>,R extends Needer> extends RawLineEntity_CfgForNeeder<L,M,R> implements RawBlockEntity_Fieldable<L>  {
+   public ValueAlterer<L,L>         startAlter ;
+   public ValueAlterer<L,L>         midAlter   ;
+   public ValueAlterer<L,L>         endAlter   ;
+   public RawChildEntity<L>[]     children   ;
    public boolean                   doKeepStart;
    public boolean                   doKeepMids  ;
    public boolean                   doKeepEnd  ;
@@ -64,7 +63,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
 
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> reset()  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> reset()  {
       resetRBECFN();
       return  this;
    }
@@ -88,18 +87,18 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @see  #reset()
     **/
    protected final void resetRBECFN()  {
-      ValueAlterer<L,O> matchAnythingOnlyOnce = new ReturnValueUnchanged<L,O>(
+      ValueAlterer<L,L> matchAnythingOnlyOnce = new ReturnValueUnchanged<L,L>(
          SetWasAlteredToWhenInRange.TRUE, NewLengthInRangeFor.exactly(null, 1, null));
       startAlter(matchAnythingOnlyOnce);
 
       midAlter(ReturnValueUnchanged.
-         <L,O>newForOnEachCallSetWasAlteredTo(true));
+         <L,L>newForOnEachCallSetWasAlteredTo(true));
 
       endAlter(EndRequired.NO, ReturnValueUnchanged.
-         <L,O>newForOnEachCallSetWasAlteredTo(false));
+         <L,L>newForOnEachCallSetWasAlteredTo(false));
 
       @SuppressWarnings("unchecked")
-      RawChildEntity<O,L>[] emptyChildren = (RawChildEntity<O,L>[])EMPTY_RAW_CHILDREN_ARRAY;
+      RawChildEntity<L>[] emptyChildren = (RawChildEntity<L>[])EMPTY_RAW_CHILDREN_ARRAY;
       children(emptyChildren);
       keepStartMidEnd(true, true, true);
       startEndLinesInclusive();
@@ -111,7 +110,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @param  dest_ifNonNull  When non-{@code null}, this is used to write debugging output. Get with {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getDebugAptrLineNumbers() getDebugAptrLineNumbers}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> debugLineNumbers(Appendable dest_ifNonNull)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> debugLineNumbers(Appendable dest_ifNonNull)  {
       dbgApblLineNums = dest_ifNonNull;
       return  this;
    }
@@ -122,7 +121,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @return  <I>{@code this}</I>
       @see  #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> startAlter(ValueAlterer<L,O> start_alterer)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> startAlter(ValueAlterer<L,L> start_alterer)  {
       startAlter = start_alterer;
       return  this;
    }
@@ -133,7 +132,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @return  <I>{@code this}</I>
       @see  #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> midAlter(ValueAlterer<L,O> mid_alterer)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> midAlter(ValueAlterer<L,L> mid_alterer)  {
       midAlter = mid_alterer;
       return  this;
    }
@@ -145,7 +144,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @return  <I>{@code this}</I>
       @see  #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> endAlter(EndRequired required, ValueAlterer<L,O> end_alterer)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> endAlter(EndRequired required, ValueAlterer<L,L> end_alterer)  {
       endAlter = end_alterer;
       try  {
          isEndRqd = required.isYes();
@@ -159,7 +158,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
 
       @return  <CODE>{@link #startEndLinesInclusive(boolean, boolean) startEndLinesInclusive}(true, true)</CODE>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> startEndLinesInclusive()  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> startEndLinesInclusive()  {
       return  startEndLinesInclusive(true, true);
    }
    /**
@@ -167,7 +166,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
 
       @return  <CODE>{@link #startEndLinesInclusive(boolean, boolean) startEndLinesInclusive}(false, false)</CODE>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> startEndLinesExclusive()  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> startEndLinesExclusive()  {
       return  startEndLinesInclusive(false, false);
    }
    /**
@@ -181,7 +180,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @see  #startEndLinesInclusive()
       @see  #startEndLinesExclusive()
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> startEndLinesInclusive(boolean start, boolean end)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> startEndLinesInclusive(boolean start, boolean end)  {
       isStartIncl = start;
       isEndIncl = end;
       return  this;
@@ -192,7 +191,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @param  children  May not be {@code null}, and no element may be {@code null}. Get with {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity#getRawChildList() getRawChildList}{@code ()}* and {@link com.github.xbn.linefilter.entity.BlockEntity#getChildList() getChildList}{@code ()}*. It is assumed that children are valid (for example, that the parent entity is not an element in its own child array).
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> children(RawChildEntity<O,L>[] children)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> children(RawChildEntity<L>[] children)  {
       this.children = children;
       return  this;
    }
@@ -201,7 +200,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
 
       @return  <CODE>{@link #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(true, true, true)</CODE>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> keepAll()  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> keepAll()  {
       return  keepStartMidEnd(true, true, true);
    }
    /**
@@ -209,7 +208,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
 
       @return  <CODE>{@link #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(true, true, true)</CODE>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> keepMidsOnly()  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> keepMidsOnly()  {
       return  keepStartMidEnd(false, true, false);
    }
    /**
@@ -217,7 +216,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
 
       @return  <CODE>{@link #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(false, false, false)</CODE>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> keepNone()  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> keepNone()  {
       return  keepStartMidEnd(false, false, false);
    }
    /**
@@ -231,7 +230,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @see  #midAlter(ValueAlterer) midAlter
       @see  #endAlter(EndRequired, ValueAlterer) endAlter
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> keepStartMidEnd(boolean do_keepStart, boolean do_keepMids, boolean do_keepEnd)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> keepStartMidEnd(boolean do_keepStart, boolean do_keepMids, boolean do_keepEnd)  {
       doKeepStart = do_keepStart;
       doKeepMids = do_keepMids;
       doKeepEnd = do_keepEnd;
@@ -243,14 +242,14 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       @param  filter_ifNonNull  Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> filter(RawEntityOnOffFilter<O,L> filter_ifNonNull)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> filter(RawOnOffEntityFilter<L> filter_ifNonNull)  {
       filterIfNonNull = filter_ifNonNull;
       return  this;
    }
    /**
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> chainID(boolean do_setStatic, Object id)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
    }
@@ -265,13 +264,13 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
     **/
    public M build()  {
       @SuppressWarnings("unchecked")
-      M m = (M)(new RawBlockEntity<O,L>(this));
+      M m = (M)(new RawBlockEntity<L>(this));
       return  m;
    }
    /**
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> startConfigReturnNeedable(R needer)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")  //See xbn.neederneedable.Needer.startConfig(Class)
       Class<M> cblmo = (Class<M>)(Class)RawBlockEntity.class;
       startConfig(needer, cblmo);
@@ -280,7 +279,7 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
    /**
       @return  <I>{@code this}</I>
     **/
-   public RawBlockEntity_CfgForNeeder<O,L,M,R> startConfigReturnNeedable(R needer, Class<M> needed_class)  {
+   public RawBlockEntity_CfgForNeeder<L,M,R> startConfigReturnNeedable(R needer, Class<M> needed_class)  {
       startConfigReturnNeedable(needer, needed_class);
       return  this;
    }
@@ -293,19 +292,19 @@ public abstract class RawBlockEntity_CfgForNeeder<O,L extends RawLine<O>,M exten
       return  endCfgWithNeededReturnNeeder(build());
    }
 //getters...START
-   public ValueAlterer<L,O> getStartAlterer()  {
+   public ValueAlterer<L,L> getStartAlterer()  {
       return  startAlter;
    }
-   public ValueAlterer<L,O> getMidAlterer()  {
+   public ValueAlterer<L,L> getMidAlterer()  {
       return  midAlter;
    }
-   public ValueAlterer<L,O> getEndAlterer()  {
+   public ValueAlterer<L,L> getEndAlterer()  {
       return  endAlter;
    }
    public boolean isEndRequired()  {
       return  isEndRqd;
    }
-   public RawChildEntity<O,L>[] getChildren()  {
+   public RawChildEntity<L>[] getChildren()  {
       return  children;
    }
    public boolean doKeepStartLine()  {

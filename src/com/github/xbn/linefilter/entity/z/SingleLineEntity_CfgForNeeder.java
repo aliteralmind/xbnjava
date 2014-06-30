@@ -13,10 +13,9 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.z;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder;
    import  com.github.xbn.analyze.alter.ValueAlterer;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.entity.SingleLineEntity;
 /**
@@ -25,7 +24,7 @@ package  com.github.xbn.linefilter.entity.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class SingleLineEntity_CfgForNeeder<M extends SingleLineEntity,R extends Needer> extends RawSingleLineEntity_CfgForNeeder<String,RawLine<String>,M,R>  {
+public abstract class SingleLineEntity_CfgForNeeder<M extends SingleLineEntity,R extends Needer> extends RawSingleLineEntity_CfgForNeeder<String,M,R>  {
 //constructors...START
    /**
       <P>Create a new instance.</P>
@@ -65,7 +64,7 @@ public abstract class SingleLineEntity_CfgForNeeder<M extends SingleLineEntity,R
       @param  alterer  May not be {@code null} or {@linkplain com.github.xbn.analyze.alter.Alterer#mayDelete() delete}. Get with {@link com.github.xbn.linefilter.entity.raw.RawSingleLineEntity#getAlterer() getAlterer}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public SingleLineEntity_CfgForNeeder<M,R> alterer(ValueAlterer<RawLine<String>,String> alterer)  {
+   public SingleLineEntity_CfgForNeeder<M,R> alterer(ValueAlterer<String,String> alterer)  {
       super.alterer(alterer);
       return  this;
    }
@@ -85,7 +84,7 @@ public abstract class SingleLineEntity_CfgForNeeder<M extends SingleLineEntity,R
       @param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public SingleLineEntity_CfgForNeeder<M,R> filter(RawEntityOnOffFilter<String,RawLine<String>> filter)  {
+   public SingleLineEntity_CfgForNeeder<M,R> filter(RawOnOffEntityFilter<String> filter)  {
       super.filter(filter);
       return  this;
    }

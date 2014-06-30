@@ -13,10 +13,9 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw.z;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.analyze.alter.ValueAlterer;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.entity.raw.RawSingleLineEntity;
 /**
@@ -25,9 +24,9 @@ package  com.github.xbn.linefilter.entity.raw.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M extends RawSingleLineEntity<O,L>,R extends Needer> extends RawLineEntity_CfgForNeeder<O,L,M,R> implements RawSingleLineEntity_Fieldable<O,L>  {
+public abstract class RawSingleLineEntity_CfgForNeeder<L,M extends RawSingleLineEntity<L>,R extends Needer> extends RawLineEntity_CfgForNeeder<L,M,R> implements RawSingleLineEntity_Fieldable<L>  {
    public boolean           keepAltered;
-   public ValueAlterer<L,O> alterer    ;
+   public ValueAlterer<L,L> alterer    ;
 //constructors...START
    /**
       <P>Create a new instance.</P>
@@ -48,7 +47,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
 
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> reset()  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> reset()  {
       resetRSLECFN();
       return  this;
    }
@@ -70,7 +69,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
       @param  dest_ifNonNull  When non-{@code null}, this is used to write debugging output. Get with {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getDebugAptrLineNumbers() getDebugAptrLineNumbers}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> debugLineNumbers(Appendable dest_ifNonNull)  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> debugLineNumbers(Appendable dest_ifNonNull)  {
       dbgApblLineNums = dest_ifNonNull;
       return  this;
    }
@@ -80,7 +79,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
       @param  alterer  May not be {@code null} or {@linkplain com.github.xbn.analyze.alter.Alterer#mayDelete() delete}. Get with {@link com.github.xbn.linefilter.entity.raw.RawSingleLineEntity#getAlterer() getAlterer}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> alterer(ValueAlterer<L,O> alterer)  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> alterer(ValueAlterer<L,L> alterer)  {
       this.alterer = alterer;
       return  this;
    }
@@ -90,7 +89,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
       @param  do_keep  If {@code true}, any lines that are {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() matched}, are also {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#doKeepJustAnalyzed() kept}. Get with {@link com.github.xbn.linefilter.entity.raw.RawSingleLineEntity#doKeepMatched() doKeepMatched}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> keepMatchedLines(boolean do_keep)  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> keepMatchedLines(boolean do_keep)  {
       keepAltered = do_keep;
       return  this;
    }
@@ -100,14 +99,14 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
       @param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> filter(RawEntityOnOffFilter<O,L> filter)  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> filter(RawOnOffEntityFilter<L> filter)  {
       filterIfNonNull = filter;
       return  this;
    }
    /**
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> chainID(boolean do_setStatic, Object id)  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
    }
@@ -122,13 +121,13 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
     **/
    public M build()  {
       @SuppressWarnings("unchecked")
-      M m = (M)(new RawSingleLineEntity<O,L>(this));
+      M m = (M)(new RawSingleLineEntity<L>(this));
       return  m;
    }
    /**
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> startConfigReturnNeedable(R needer)  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")  //See xbn.neederneedable.Needer.startConfig(Class)
       Class<M> cblmo = (Class<M>)(Class)RawSingleLineEntity.class;
       startConfig(needer, cblmo);
@@ -137,7 +136,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
    /**
       @return  <I>{@code this}</I>
     **/
-   public RawSingleLineEntity_CfgForNeeder<O,L,M,R> startConfigReturnNeedable(R needer, Class<M> needed_class)  {
+   public RawSingleLineEntity_CfgForNeeder<L,M,R> startConfigReturnNeedable(R needer, Class<M> needed_class)  {
       startConfigReturnNeedable(needer, needed_class);
       return  this;
    }
@@ -150,7 +149,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<O,L extends RawLine<O>,M 
       return  endCfgWithNeededReturnNeeder(build());
    }
 //getters...START
-   public ValueAlterer<L,O> getAlterer()  {
+   public ValueAlterer<L,L> getAlterer()  {
       return  alterer;
    }
    public boolean doKeepMatched()  {

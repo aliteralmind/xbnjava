@@ -12,8 +12,6 @@
    You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA*)
 \*license*/
 package  com.github.xbn.linefilter.alter;
-   import  com.github.xbn.linefilter.TextLine;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.array.NullElement;
    import  com.github.xbn.analyze.alter.ExpirableElements;
    import  com.github.xbn.analyze.alter.MultiAlterType;
@@ -32,7 +30,7 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
 
       <P>Equal to
       <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.array.ExpirableAlterList#ExpirableAlterList(MultiAlterType, MultiAlterType) this}(text_lineAlterers, multi_alterType)</CODE></P>
-   public ExpirableTextLineAlterList(ValueAlterer<RawLine<String>,String>[] text_lineAlterers, MultiAlterType multi_alterType)  {
+   public ExpirableTextLineAlterList(ValueAlterer<String,String>[] text_lineAlterers, MultiAlterType multi_alterType)  {
       super(text_lineAlterers, multi_alterType);
    }
     */
@@ -42,14 +40,14 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
       <P>Equal to
       <BR> &nbsp; &nbsp; <CODE>{@link ExpirableRawLineAlterList#ExpirableRawLineAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable) super}(text_lineAlterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull)</CODE></P>
     **/
-   public ExpirableTextLineAlterList(ValueAlterer<RawLine<String>,String>[] text_lineAlterers, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
+   public ExpirableTextLineAlterList(ValueAlterer<String,String>[] text_lineAlterers, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
       super(text_lineAlterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull);
    }
    public ExpirableTextLineAlterList(ExpirableTextLineAlterList to_copy)  {
       super(to_copy);
    }
-   public String getAltered(int line_num, String line_text)  {
-      return  getAltered(new TextLine(line_num, line_text), line_text);
+   public String getAltered(String line)  {
+      return  getAltered(line, line);
    }
    /**
       <P>Duplicate this <CODE>ExpirableTextLineAlterList</CODE>.</P>
@@ -79,9 +77,9 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
       <BR>Where {@code valosCls} is
       <BR> &nbsp; &nbsp; <CODE>(Class&lt;ValueAlterer&lt;RawLine&lt;String&gt;,String&gt;+&gt;)(Class)RawLine.class</CODE>
    @SuppressWarnings({"unchecked", "varargs"})
-   public static final <O> ValueAlterer<RawLine<String>,String>[] getTextLineAltererArrayFromOrderedElementsIfNonNull(NullElement null_element, String alterers_varName, ValueAlterer<RawLine<String>,String>... orderedAlterers_whichMayBeNull)  {
+   public static final <O> ValueAlterer<String,String>[] getTextLineAltererArrayFromOrderedElementsIfNonNull(NullElement null_element, String alterers_varName, ValueAlterer<String,String>... orderedAlterers_whichMayBeNull)  {
       @SuppressWarnings("unchecked")
-      Class<ValueAlterer<RawLine<String>,String>> valosCls = (Class<ValueAlterer<RawLine<String>,String>>)(Class)ValueAlterer.class;
+      Class<ValueAlterer<String,String>> valosCls = (Class<ValueAlterer<String,String>>)(Class)ValueAlterer.class;
       return  getAltererArrayFromOrderedElementsIfNonNull(orderedAlterers_whichMayBeNull, null_element, valosCls, alterers_varName);
    }
     **/

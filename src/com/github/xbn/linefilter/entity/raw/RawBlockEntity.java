@@ -61,7 +61,7 @@ and this
       <LI><B>Inclusivity:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive() startEndLinesInclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesExclusive() startEndLinesExclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive(boolean, boolean) startEndLinesInclusive}{@code (b,b)}</LI>
       <LI><B>Keep:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepAll() keepAll}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepMidsOnly() keepMidsOnly}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepNone() keepNone}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}{@code (b,b,b)}</LI>
       <LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}{@code (rce[])}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(TextChildEntity...) children}{@code (tce...)}</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#filter(RawEntityOnOffFilter) filter}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#reset() reset}{@code ()}</LI>
    </UL></P>
 
@@ -76,31 +76,31 @@ and this
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O,L> implements RawParentEntity<O,L>  {
-   private final ValueAlterer<L,O>         startAlter  ;
-   private final ValueAlterer<L,O>         midAlter    ;
-   private final ValueAlterer<L,O>         endAlter    ;
-   protected final RawChildEntity<O,L>[]   children    ;
-   protected RawChildEntity<O,L> entityThatAbrtd;
-   private final boolean         doKeepStart    ;
-   private final boolean         doKeepMid      ;
-   private final boolean         doKeepEnd      ;
-   private final boolean         isEndRqd       ;
-   private final boolean         isStartIncl    ;
-   private final boolean         isEndIncl      ;
-   private List<RawChildEntity<O,L>> childList;
+public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParentEntity<L>  {
+   private final ValueAlterer<L,L>         startAlter  ;
+   private final ValueAlterer<L,L>         midAlter    ;
+   private final ValueAlterer<L,L>         endAlter    ;
+   protected final RawChildEntity<L>[]   children    ;
+   protected RawChildEntity<L> entityThatAbrtd;
+   private final boolean           doKeepStart;
+   private final boolean           doKeepMid  ;
+   private final boolean           doKeepEnd  ;
+   private final boolean           isEndRqd   ;
+   private final boolean           isStartIncl;
+   private final boolean           isEndIncl  ;
+   private List<RawChildEntity<L>> childList  ;
 /*
    public boolean     isStartLine;
    public boolean     isActive   ;
    public boolean     isEndLine  ;
  */
-   public RawChildEntity<O,L> activeChild;
+   public RawChildEntity<L> activeChild;
    /**
       <P>YYY</P>
 
       @param  fieldable  May not be {@code null}.
     **/
-   public RawBlockEntity(RawBlockEntity_Fieldable<O,L> fieldable)  {
+   public RawBlockEntity(RawBlockEntity_Fieldable<L> fieldable)  {
       super(fieldable);
       startAlter = fieldable.getStartAlterer();
       midAlter = fieldable.getMidAlterer();
@@ -114,7 +114,7 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
       isEndIncl = fieldable.isEndLineInclusive();
       childList = null;
    }
-   public RawBlockEntity(RawBlockEntity<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+   public RawBlockEntity(RawBlockEntity<L> to_copy, int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
 
       startAlter = RawLineEntity.getAltererCopyCrashIfMayDelete(
@@ -136,9 +136,9 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
       int levelsBelowRootPlus1 = getParentCount() + 1;
       @SuppressWarnings("unchecked")
-      RawChildEntity<O,L>[] children2 = (RawChildEntity<O,L>[])new RawChildEntity[to_copy.children.length];
+      RawChildEntity<L>[] children2 = (RawChildEntity<L>[])new RawChildEntity[to_copy.children.length];
       for(int i = 0; i < to_copy.children.length; i++)  {
-         RawChildEntity<O,L> child = to_copy.children[i];
+         RawChildEntity<L> child = to_copy.children[i];
          try  {
             children2[i] = child.getCopyWithParentAssigned(levelsBelowRootPlus1, this, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
          }  catch(RuntimeException rx)  {
@@ -161,8 +161,8 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
    }
    public boolean doKeepJustAnalyzed()  {
       if(!isActive())  {
-         if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-            getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " doKeepJustAnalyzed()=FALSE: Inactive");
+         if(isEveryLineAptrUseableAndInRange())  {
+            getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " doKeepJustAnalyzed()=FALSE: Inactive");
          }
 
          return  false;
@@ -186,16 +186,16 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
       if(getActiveChild() != null)  {
          boolean doKeepChild = getActiveChild().doKeepJustAnalyzed();
-         if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-            getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " doKeepJustAnalyzed()=" +
+         if(isEveryLineAptrUseableAndInRange())  {
+            getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
                BooleanUtil.toUpperCase(doKeepChild) +
                   ": getActiveChild().doKeepJustAnalyzed()=" + doKeepChild);
          }
          return  doKeepChild;
       }
 
-      if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-         getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " doKeepJustAnalyzed()=" +
+      if(isEveryLineAptrUseableAndInRange())  {
+         getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
             BooleanUtil.toUpperCase(doKeepMidLines()));
       }
 
@@ -204,8 +204,8 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
    }
       private boolean doKeepStartOrEndLine(boolean is_inclusive, boolean do_keep, String start_end)  {
          if(!is_inclusive)  {
-            if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-               getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " doKeepJustAnalyzed()=" +
+            if(isEveryLineAptrUseableAndInRange())  {
+               getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
                   BooleanUtil.toUpperCase(do_keep));
             }
             return  do_keep;
@@ -215,8 +215,8 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
          //is_inclusive=true
 
          if(getActiveChild() == null)  {
-            if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-               getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " doKeepJustAnalyzed()=" +
+            if(isEveryLineAptrUseableAndInRange())  {
+               getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
                   BooleanUtil.toUpperCase(do_keep) + ": No active child");
             }
             return  do_keep;
@@ -226,9 +226,9 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
          //getActiveChild() is non-null
 
          boolean doKeepChild = getActiveChild().doKeepJustAnalyzed();
-         if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
+         if(isEveryLineAptrUseableAndInRange())  {
             getDebugAptrEveryLine().appentln(
-               getDebuggingPrefix(getMostRecentLineNum()) + " doKeepJustAnalyzed()=" +
+               getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
                BooleanUtil.toUpperCase(doKeepChild) +
                ": getActiveChild().doKeepJustAnalyzed()=" + doKeepChild);
          }
@@ -288,7 +288,7 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
       @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#startAlter(ValueAlterer) RawBlockEntity_CfgForNeeder#startAlter
     **/
-   protected ValueAlterer<L,O> getStartAlterer()  {
+   protected ValueAlterer<L,L> getStartAlterer()  {
       return  startAlter;
    }
    /**
@@ -296,7 +296,7 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
       @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#midAlter(ValueAlterer) RawBlockEntity_CfgForNeeder#midAlter
     **/
-   protected ValueAlterer<L,O> getMidAlterer()  {
+   protected ValueAlterer<L,L> getMidAlterer()  {
       return  midAlter;
    }
    /**
@@ -304,7 +304,7 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
       @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) RawBlockEntity_CfgForNeeder#endAlter
     **/
-   protected ValueAlterer<L,O> getEndAlterer()  {
+   protected ValueAlterer<L,L> getEndAlterer()  {
       return  endAlter;
    }
 /*
@@ -318,7 +318,7 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
       return  isEndLine;
    }
  */
-   protected RawChildEntity<O,L> getChild(int index)  {
+   protected RawChildEntity<L> getChild(int index)  {
       try  {
          return  children[index];
       }  catch(ArrayIndexOutOfBoundsException abx)  {
@@ -330,13 +330,13 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
    /**
       <P>The currently active child, if any.</P>
     **/
-   public RawChildEntity<O,L> getActiveChild()  {
+   public RawChildEntity<L> getActiveChild()  {
       return  activeChild;
    }
    /**
       <P>An immutable list of all children.</P>
     **/
-   public List<RawChildEntity<O,L>> getRawChildList()  {
+   public List<RawChildEntity<L>> getRawChildList()  {
       if(childList == null)  {
          synchronized(children)  {
             if(childList == null)  {
@@ -346,16 +346,16 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
       }
       return  childList;
    }
-   public boolean doesFollowRulesPreInvert(L line_object)  {
+   public boolean doesFollowRulesPreInvert(L line_toAnalyze)  {
       return  false;
    }
    /**
       <P>Duplicate this <CODE>RawBlockEntity</CODE>.</P>
 
-      @return  <CODE>(new <A HREF="#RawBlockEntity(RawBlockEntity)">RawBlockEntity</A>&lt;O,L&gt;(this, parent))</CODE>
+      @return  <CODE>(new <A HREF="#RawBlockEntity(RawBlockEntity)">RawBlockEntity</A>&lt;L,L&gt;(this, parent))</CODE>
     **/
-   public RawBlockEntity<O,L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
-      return  (new RawBlockEntity<O,L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug));
+   public RawBlockEntity<L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+      return  (new RawBlockEntity<L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug));
    }
    /**
       @param  to_appendTo May not be {@code null}.
@@ -423,7 +423,7 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
          to_appendTo.append(": ");
          int lenMinus1 = children.length - 1;
          for(int i = 0; i < children.length; i++)  {
-            RawChildEntity<O,L> sub = children[i];
+            RawChildEntity<L> sub = children[i];
             to_appendTo.append(sub.getName());
 
             if(i < lenMinus1)  {
@@ -434,76 +434,74 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
       return  to_appendTo;
    }
-      private void abortDeclareAbortingChild(RawChildEntity<O,L> child)  {
+      private void abortDeclareAbortingChild(RawChildEntity<L> child)  {
          entityThatAbrtd = child;
          abortIterator("child entity: \"" + child.getName() + "\"");
       }
-   public RawEntity<O,L> getEntityThatAborted()  {
+   public RawEntity<L> getEntityThatAborted()  {
       return  entityThatAbrtd;
    }
-   public O getAlteredPostResetCheck(L line_object, O line_body)  {
-      if(!resetStartEndPreFilter_isActiveOrOn(line_object, line_body))  {
+   public L getAlteredPostResetCheck(L line_toAnalyze, L line_toAlter)  {
+      if(!resetStartEndPreFilter_isActiveOrOn(line_toAnalyze))  {
          if(doAbortIterator())  {
             entityThatAbrtd = this;
          }
-         return  line_body;
+         return  line_toAlter;
       }
 
       //Entity is active, or inactive but getPreFilter(...).ON
 
-      O startAltered = AbstractValueAlterer.getAlteredDefensive(
-         getStartAlterer(), line_object, line_body,
-         "getStartAlterer()", "line_object", "line_body");
-      O endAltered = AbstractValueAlterer.getAlteredDefensive(
-         getEndAlterer(), line_object, line_body,
-         "getEndAlterer()", "line_object", "line_body");
+      L startAltered = AbstractValueAlterer.getAlteredDefensive(
+         getStartAlterer(), line_toAnalyze, line_toAlter,
+         "getStartAlterer()", "line_toAnalyze", "line_toAlter");
+      L endAltered = AbstractValueAlterer.getAlteredDefensive(
+         getEndAlterer(), line_toAnalyze, line_toAlter,
+         "getEndAlterer()", "line_toAnalyze", "line_toAlter");
 
       boolean isStart2 = getStartAlterer().wasAltered();
       boolean isEnd2 = getEndAlterer().wasAltered();
 
 
       if(isStart2  &&  isEnd2)  {
-         throw  new LineEntityException(line_object, this, "Block start and end found on the same line");
+         throw  new LineEntityException(getMostRecentLineNum(), line_toAnalyze, this, "Block start and end found on the same line");
       }
 
       //Not both
-
-      int lineNum = line_object.getNumber();
 
       if(!isActive())  {
          if(isStart2)  {
 
             assert  (getActiveChild() == null)  :  "isStartLine()=true (actually " + isStartLine() + ") and the active child has not been determined yet. So getActiveChild() should be null, but isn't: " + getActiveChild();
 
-            O alteredBody = getAlteredForStartLineMaybeInclusiveChild(line_object, startAltered);
-            return  postFilter_getAlteredLine(line_object, alteredBody);
+            L alteredBody = getAlteredForStartLineMaybeInclusiveChild(line_toAnalyze, startAltered);
+            return  postFilter_getAlteredLine(alteredBody);
 
          }  else if(isEnd2)  {
-            throw  new LineEntityException(line_object, this, "End-line found before block started");
+            throw  new LineEntityException(getMostRecentLineNum(), line_toAnalyze, this, "End-line found before block started");
          }
 
-         declareAltered(lineNum, Altered.NO, NeedsToBeDeleted.NO);
+         declareAltered(Altered.NO, NeedsToBeDeleted.NO);
 
          //Still not active. Return body unchanged.
-         return  postFilter_getAlteredLine(line_object, line_body);
+         return  postFilter_getAlteredLine(line_toAlter);
       }
 
       //isActive()=true
 
       if(isStart2)  {
          if(isEndRequired())  {
-            throw  new LineEntityException(line_object, this, "Start-line found before block closed (and end is required).");
+            throw  new LineEntityException(getMostRecentLineNum(), line_toAnalyze, this, "Start-line found before block closed (and end is required).");
          }
 
          //Close the previous block
-         declareEndLine(true, lineNum);
+         declareEndLine(true);
          if(getActiveChild() != null)  {
             getActiveChild().declareEndOfInput();
             activeChild = null;
          }
 
-         O alteredBody = getAlteredForStartLineMaybeInclusiveChild(line_object, startAltered);
-         return  postFilter_getAlteredLine(line_object, alteredBody);
+         L alteredBody = getAlteredForStartLineMaybeInclusiveChild(line_toAnalyze, startAltered);
+         return  postFilter_getAlteredLine(alteredBody);
 
       }
 
@@ -511,9 +509,8 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
       //isStartLine()=false
 
       if(isEnd2)  {
-         declareEndLine(true, lineNum);
-         declareAltered(lineNum, Altered.YES,
-            NeedsToBeDeleted.getForBoolean(
+         declareEndLine(true);
+         declareAltered(Altered.YES, NeedsToBeDeleted.getForBoolean(
                getEndAlterer().needsToBeDeleted()));
 
          if(!isEndLineInclusive())  {
@@ -521,21 +518,21 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
                getActiveChild().declareEndOfInput();
                activeChild = null;
             }
-            return  postFilter_getAlteredLine(line_object, endAltered);
+            return  postFilter_getAlteredLine(endAltered);
          }
 
          //isEndLineInclusive()=true
 
          if(getActiveChild() != null)  {
 
-            O childAlteredLine = getAlteredLineFromActiveChildOrNull(line_object, line_body, "inclusive end line (start line=" + getStartLineNum() + ")");
+            L childAlteredLine = getAlteredLineFromActiveChildOrNull(line_toAnalyze, line_toAlter, "inclusive end line (start line=" + getStartLineNum() + ")");
 
             if(getActiveChild() != null)  {
-               return  postFilter_getAlteredLine(line_object, childAlteredLine);
+               return  postFilter_getAlteredLine(childAlteredLine);
             }
          }
 
-         return  postFilter_getAlteredLine(line_object, endAltered);
+         return  postFilter_getAlteredLine(endAltered);
       }
 
          //isActive()=true
@@ -544,27 +541,26 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
       //isMidLine()=true
 
       declareMidLine(true);
-      declareAltered(lineNum, Altered.YES,
-         NeedsToBeDeleted.getForBoolean(
+      declareAltered(Altered.YES, NeedsToBeDeleted.getForBoolean(
             getMidAlterer().needsToBeDeleted()));
-      O childAlteredLine = getAlteredLineFromActiveChildOrNull(line_object, line_body, "mid line (start line=" + getStartLineNum() + ")");
+      L childAlteredLine = getAlteredLineFromActiveChildOrNull(line_toAnalyze, line_toAlter, "mid line (start line=" + getStartLineNum() + ")");
 
       if(getActiveChild() != null)  {
-         return  postFilter_getAlteredLine(line_object, childAlteredLine);
+         return  postFilter_getAlteredLine(childAlteredLine);
       }
 
-      O midAltered = AbstractValueAlterer.getAlteredDefensive(
-         getMidAlterer(), line_object, line_body,
-         "getMidAlterer()", "line_object", "line_body");
+      L midAltered = AbstractValueAlterer.getAlteredDefensive(
+         getMidAlterer(), line_toAnalyze, line_toAlter,
+         "getMidAlterer()", "line_toAnalyze", "line_toAlter");
       boolean midLine2 = getMidAlterer().wasAltered();
 
       if(!midLine2)  {
-         throw  new LineEntityException(line_object, this, "This is a mid-line, but the mid-alterer made no alteration (it doesn't actually have to modify the line, but getMidAlterer().wasAltered() must return true).");
+         throw  new LineEntityException(getMostRecentLineNum(), line_toAnalyze, this, "This is a mid-line, but the mid-alterer made no alteration (it doesn't actually have to modify the line, but getMidAlterer().wasAltered() must return true).");
       }
 
-      return  postFilter_getAlteredLine(line_object, midAltered);
+      return  postFilter_getAlteredLine(midAltered);
    }
-      private O postFilter_getAlteredLine(L line_object, O altered_body)  {
+      private L postFilter_getAlteredLine(L altered_body)  {
          if(doAbortIterator())  {
             //Already aborted by a child.
             entityThatAbrtd = this;
@@ -573,24 +569,21 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
          //Not yet aborted.
 
-         postFilter(line_object, altered_body);
+         postFilter(altered_body);
 
          //OnOffAbort.OFF or OnOffAbort.ABORT_ITERATOR
 
 
          return  altered_body;
       }
-      private O getAlteredLineFromActiveChildOrNull(L line_object, O line_body, String midOr_startEndWIncl)  {
-         int lineNum = line_object.getNumber();
-
-         RawChildEntity<O,L> previouslyActive = null;
+      private L getAlteredLineFromActiveChildOrNull(L line_toAnalyze, L line_toAlter, String midOr_startEndWIncl)  {
+         RawChildEntity<L> previouslyActive = null;
 
          if(getActiveChild() != null)  {
             previouslyActive = getActiveChild();
 
             //A child was active on the last line.
-
-            O alteredFromChild = getActiveChild().getAltered(line_object, line_body);
+            L alteredFromChild = getActiveChild().getAltered(getMostRecentLineNum(), line_toAnalyze, line_toAlter);
 
             if(getActiveChild().wasAltered())  {
 
@@ -617,11 +610,11 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
          //No child is active
 
          for(int i = 0; i < children.length; i++)  {
-            RawChildEntity<O,L> child = children[i];
+            RawChildEntity<L> child = children[i];
             if(child == previouslyActive)  {
                continue;
             }
-            O alteredLine = child.getAltered(line_object, line_body);
+            L alteredLine = child.getAltered(getMostRecentLineNum(), line_toAnalyze, line_toAlter);
 
             if(child.doAbortIterator())  {
                abortDeclareAbortingChild(child);
@@ -631,25 +624,24 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
             if(child.wasAltered())  {
                activeChild = child;
 
-               if(isEveryLineAptrUseableAndInRange(lineNum))  {
-                  getDebugAptrEveryLine().appentln(getDebuggingPrefix(lineNum) + " Newly-active child: \"" + child.getName() + "\"");
+               if(isEveryLineAptrUseableAndInRange())  {
+                  getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " Newly-active child: \"" + child.getName() + "\"");
                }
 
                return  alteredLine;
             }
          }
 
-         if(isEveryLineAptrUseableAndInRange(lineNum))  {
-            getDebugAptrEveryLine().appentln(getDebuggingPrefix(lineNum) + " No active child");
+         if(isEveryLineAptrUseableAndInRange())  {
+            getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " No active child");
          }
 
          return  null;
       }
-      private O getAlteredForStartLineMaybeInclusiveChild(L line_object, O lineBody_startAltered)  {
-         declareStartLine(true, line_object.getNumber());
+      private L getAlteredForStartLineMaybeInclusiveChild(L line_toAnalyze, L lineBody_startAltered)  {
+         declareStartLine(true);
 
-         declareAltered(line_object.getNumber(), Altered.YES,
-            NeedsToBeDeleted.getForBoolean(
+         declareAltered(Altered.YES, NeedsToBeDeleted.getForBoolean(
                getStartAlterer().needsToBeDeleted()));
 
          if(!isStartLineInclusive())  {
@@ -658,7 +650,7 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
 
          //isStartLineInclusive()=true
 
-         O childAlteredLine = getAlteredLineFromActiveChildOrNull(line_object, lineBody_startAltered, "start line (inclusive)");
+         L childAlteredLine = getAlteredLineFromActiveChildOrNull(line_toAnalyze, lineBody_startAltered, "start line (inclusive)");
 
          if(getActiveChild() != null)  {
             return  childAlteredLine;
@@ -668,17 +660,17 @@ public class RawBlockEntity<O,L extends RawLine<O>> extends RawBlockEntityBase<O
       }
    public void declareEndOfInput()  {
       if(isMidLine()  &&  isEndRequired())  {
-         throw  new LineEntityException(null, this, "End of output reached, but block not closed");
+         throw  new LineEntityException(-1, null, this, "End of output reached, but block not closed");
       }
       if(getActiveChild() != null)  {
          getActiveChild().declareEndOfInput();
       }
-      declareStartLine(false, -1);
+      declareStartLine(false);
       declareMidLine(false);
-      declareEndLine(false, -1);
+      declareEndLine(false);
    }
    public String getDebuggingPrefix(int line_num)  {
-      StringBuilder bldr = getDebuggingPrefixPrefixBldr(line_num);
+      StringBuilder bldr = getDebuggingPrefixPrefixBldr();
 
       if(isStartLine()  ||  isEndLine())  {
          bldr.append("-").append(isStartLineInclusive() ? "in" : "ex").append("cl");

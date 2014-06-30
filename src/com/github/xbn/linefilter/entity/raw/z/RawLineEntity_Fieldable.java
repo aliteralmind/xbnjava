@@ -14,9 +14,8 @@
 \*license*/
 
 package  com.github.xbn.linefilter.entity.raw.z;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.linefilter.entity.EntityType;
 /**
    <P>YYY</P>
@@ -24,10 +23,10 @@ package  com.github.xbn.linefilter.entity.raw.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public interface RawLineEntity_Fieldable<O,L extends RawLine<O>>  {
+public interface RawLineEntity_Fieldable<L>  {
    String getName();
 //	int getParentCount();
    Appendable getDebugApblLineNumbers();
    EntityType getType();
-   RawEntityOnOffFilter<O,L> getFilterIfNonNull();
+   RawOnOffEntityFilter<L> getFilterIfNonNull();
 }

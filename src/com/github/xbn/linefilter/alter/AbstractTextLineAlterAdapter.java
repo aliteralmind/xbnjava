@@ -1,5 +1,5 @@
 /*license*\
-   Codelet: http://codelet.aliteralmind.com
+   XBN-Java: http://xbnjava.aliteralmind.com
 
    Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 

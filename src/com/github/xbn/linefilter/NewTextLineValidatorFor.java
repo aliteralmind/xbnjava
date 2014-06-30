@@ -29,7 +29,6 @@ package  com.github.xbn.linefilter;
    import  com.github.xbn.lang.SimpleAdapter;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.regexutil.RegexReplacer;
    import  com.github.xbn.regexutil.RegexValidator;
    import  com.github.xbn.regexutil.ReplacedInEachInput;
@@ -192,11 +191,11 @@ class TLVForSVR extends SimpleAdapter<StringValidatorReplacer> implements TextLi
    public TLVForSVR getObjectCopy()  {
       return  (new TLVForSVR(this));
    }
-   public boolean isValid(RawLine<String> line)  {
-      return  getAdapted().isValid(TextLine.getBodyCINull(line, "line"));
+   public boolean isValid(String line)  {
+      return  getAdapted().isValid(line);
    }
-   public void crashIfBadValue(RawLine<String> line, String line_name)  {
-      getAdapted().crashIfBadValue(TextLine.getBodyCINull(line, "line"), line_name);
+   public void crashIfBadValue(String line, String line_name)  {
+      getAdapted().crashIfBadValue(line, line_name);
    }
 }
 abstract class TLVForVV<O> extends SimpleAdapter<ValueValidator<O>> implements TextLineValidatorAdapter<ValueValidator<O>>  {
@@ -300,15 +299,18 @@ abstract class TLVForVV<O> extends SimpleAdapter<ValueValidator<O>> implements T
    }
 }
 class TLVForIntV extends TLVForVV<Integer>  {
+   private int lineNum;
    public TLVForIntV(ValueValidator<Integer> int_validator, String iv_name)  {
       super(int_validator);
+      lineNum = 0;
    }
    public TLVForIntV(TLVForIntV to_copy)  {
       super(to_copy);
-
+      lineNum = 0;
    }
-   public boolean isValid(RawLine<String> line)  {
-      return  getAdapted().isValid(TextLine.getNumberCrashIfNull(line, "line"));
+   public boolean isValid(String ignored)  {
+      lineNum++;
+      return  getAdapted().isValid(lineNum);
    }
    public TLVForIntV getObjectCopy()  {
       return  (new TLVForIntV(this));
@@ -319,8 +321,9 @@ class TLVForIntV extends TLVForVV<Integer>  {
       return  this;
    }
  */
-   public void crashIfBadValue(RawLine<String> line, String line_name)  {
-      getAdapted().crashIfBadValue(TextLine.getNumberCrashIfNull(line, "line"), line_name);
+   public void crashIfBadValue(String ignored, String line_name)  {
+      lineNum++;
+      getAdapted().crashIfBadValue(lineNum, line_name);
    }
 }
 class TLVForStringV extends TLVForVV<String>  {
@@ -330,8 +333,8 @@ class TLVForStringV extends TLVForVV<String>  {
    public TLVForStringV(TLVForStringV to_copy)  {
       super(to_copy);
    }
-   public boolean isValid(RawLine<String> line)  {
-      return  getAdapted().isValid(TextLine.getBodyCINull(line, "line"));
+   public boolean isValid(String line)  {
+      return  getAdapted().isValid(line);
    }
    public TLVForStringV getObjectCopy()  {
       return  (new TLVForStringV(this));
@@ -342,8 +345,8 @@ class TLVForStringV extends TLVForVV<String>  {
       return  this;
    }
  */
-   public void crashIfBadValue(RawLine<String> line, String line_name)  {
-      getAdapted().crashIfBadValue(TextLine.getBodyCINull(line, "line"), line_name);
+   public void crashIfBadValue(String line, String line_name)  {
+      getAdapted().crashIfBadValue(line, line_name);
    }
 }
 class TLVForVUtil  {

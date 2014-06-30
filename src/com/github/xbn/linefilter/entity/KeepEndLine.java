@@ -12,33 +12,61 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
-   import  com.github.xbn.linefilter.entity.OnOffAbort;
-   import  java.util.Objects;
+package  com.github.xbn.linefilter.entity;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.number.LengthInRange;
 /**
-   <P>A {@code RawOnOffEntityFilter} that is dependant on the <I>being filtered</I> entity's {@linkplain RawEntity#getFullyActiveCount() fully-active count} being in a range.</P>
+   <P>Should the end line in a block entity be kept?.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class RawPostFilterSelfActiveInOutRange<L> extends AbstractRawPostFilterActiveInOutRange<L>  {
+public enum KeepEndLine  {
    /**
-      <P>Create a new instance from a range and when-in setting.</P>
+      <P>YYY.</P>
 
+      @see  #NO
+      @see  #isYes()
     **/
-   public RawPostFilterSelfActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
-      super(range, when_inRange, when_outOfRange, response, debug_ifNonNull);
+   YES,
+   /**
+      <P>YYY.</P>
+
+      @see  #YES
+      @see  #isNo()
+    **/
+   NO;
+   /**
+      <P>Is this {@code KeepEndLine} equal to {@code YES}?.</P>
+
+      @return  <CODE>this == {@link #YES}</CODE>
+
+      @see  #isNo()
+    **/
+   public final boolean isYes()  {
+      return  this == YES;
    }
    /**
-      @return  <CODE>{@link AbstractRawPostFilterActiveInOutRange#getPostStateForCount(RawEntity) getStateForCount}(entity_beingFiltered))</CODE>
+      <P>Is this {@code KeepEndLine} equal to {@code NO}?.</P>
+
+      @return  <CODE>this == {@link #NO}</CODE>
+      @see  #isYes()
     **/
-   public OnOffAbort getPostState(RawEntity<L> entity_beingFiltered, int ignored, L ignored3)  {
-      return  getPostStateForCount(entity_beingFiltered);
+   public final boolean isNo()  {
+      return  this == NO;
    }
-   public RawPostFilterSelfActiveInOutRange<L> getObjectCopy()  {
-      return  this;
+   /**
+      <P>Return {@code KeepEndLine.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</P>
+
+      @return  <CODE>(flag ? {@link #YES} : {@link #NO})</CODE>
+    **/
+   public static final KeepEndLine getForBoolean(boolean flag)  {
+      return  (flag ? YES : NO);
    }
-}
+   public static final KeepEndLine getForKeepMatched(KeepMatched matched, String kam_varName)  {
+      try  {
+         return  (matched.isYes() ? YES : NO);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(matched, kam_varName, null, rx);
+      }
+   }
+};

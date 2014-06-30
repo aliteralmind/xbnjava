@@ -13,17 +13,16 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  java.util.regex.Pattern;
-   import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
+   import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
    import  com.github.xbn.regexutil.ReplacedInEachInput;
    import  com.github.xbn.regexutil.StringValidatorReplacer;
-   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
+   import  java.util.regex.Pattern;
 /**
    <P>Uses a {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.StringValidatorReplacer StringValidatorReplacer} and {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.FilterValidCounts FilterValidCounts} to replace the second-through-fourth occurances of a string.</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.StringValidatorReplacerXmpl}</P>
+   <P>{@code java com.github.xbn.examples.linefilter.StringValidatorReplacerXmpl}</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

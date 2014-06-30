@@ -16,7 +16,6 @@ package  com.github.xbn.linefilter.alter;
    import  com.github.xbn.linefilter.NewTextLineValidatorFor;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.alter.Altered;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
    import  com.github.xbn.analyze.alter.ValueAlterer;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
@@ -152,7 +151,7 @@ public class NewTextLineAltererFor  {
    }
 
 }
-class PrependLineNumToText extends AbstractValueAlterer<RawLine<String>,String> implements TextLineAlterer  {
+class PrependLineNumToText extends AbstractValueAlterer<String,String> implements TextLineAlterer  {
    private final String btwNumAndTxt;
    private int lineNum;
    public PrependLineNumToText(int first_lineNum)  {
@@ -174,7 +173,7 @@ class PrependLineNumToText extends AbstractValueAlterer<RawLine<String>,String> 
    public String getBetweenNumAndText()  {
       return  btwNumAndTxt;
    }
-   public String getAlteredPostResetCheck(RawLine<String> ignored, String to_alter)  {
+   public String getAlteredPostResetCheck(String ignored, String to_alter)  {
       declareAltered(Altered.YES, NeedsToBeDeleted.NO);
       return  (lineNum++) + getBetweenNumAndText() + to_alter;
    }
@@ -185,13 +184,13 @@ class PrependLineNumToText extends AbstractValueAlterer<RawLine<String>,String> 
       return  to_appendTo.append(this.getClass().getName()).append(": getLineNum()=" + getLineNum() + " getBetweenNumAndText()=\"" + getBetweenNumAndText() + "\"");
    }
 }
-class EscapeLineTextForHtmlDisplay extends AbstractValueAlterer<RawLine<String>,String> implements TextLineAlterer  {
+class EscapeLineTextForHtmlDisplay extends AbstractValueAlterer<String,String> implements TextLineAlterer  {
    public EscapeLineTextForHtmlDisplay()  {
    }
    public EscapeLineTextForHtmlDisplay(EscapeLineTextForHtmlDisplay to_copy)  {
       super(to_copy);
    }
-   public String getAlteredPostResetCheck(RawLine<String> ignored, String to_alter)  {
+   public String getAlteredPostResetCheck(String ignored, String to_alter)  {
       declareAltered(Altered.YES, NeedsToBeDeleted.NO);
       return  StringEscapeUtils.escapeHtml4(to_alter);
    }

@@ -13,11 +13,9 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.linefilter.KeepUnmatched;
-   import  com.github.xbn.lang.Null;
    import  com.github.xbn.linefilter.FilteredLineIterator;
-   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
    import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
    import  com.github.xbn.linefilter.alter.TextLineAlterer;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.linefilter.entity.EndRequired;
@@ -68,7 +66,7 @@ public class IterateKeptLines  {
          block);
 
       while(filteredItr.hasNext())  {
-         System.out.println(filteredItr.nextLine());
+         System.out.println(filteredItr.next());
       }
    }
 }

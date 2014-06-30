@@ -17,14 +17,13 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.entity.BlockEntity;
-   import  com.github.xbn.linefilter.entity.PostFilterSelfActiveInOutRange;
    import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
    import  com.github.xbn.linefilter.entity.NewSingleLineEntityFor;
    import  com.github.xbn.linefilter.entity.OnOffAbort;
    import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
+   import  com.github.xbn.linefilter.entity.PostFilterSelfActiveInOutRange;
    import  com.github.xbn.linefilter.entity.SingleLineEntity;
-   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.number.NewLengthInRangeFor;
    import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
    import  com.github.xbn.util.IncludeJavaDoc;
@@ -74,7 +73,7 @@ public class EliminateAllCommentBlocksAndPackageLine  {
          pkgDeclLineEntity, javaMlcBlock);
 
       while(filteredItr.hasNext())  {
-         System.out.println(filteredItr.next().getBody());
+         System.out.println(filteredItr.next());
       }
    }
 }

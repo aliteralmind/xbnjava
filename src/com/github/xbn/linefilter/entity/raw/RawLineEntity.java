@@ -25,8 +25,7 @@ package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.linefilter.entity.OnOffAbort;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.linefilter.entity.raw.z.RawLineEntity_Fieldable;
    import  com.github.xbn.number.CrashIfIntIs;
    import  com.github.xbn.number.LengthInRange;
@@ -47,25 +46,26 @@ package  com.github.xbn.linefilter.entity.raw;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValueAlterer<L,O> implements RawChildEntity<O,L>   {
-   private final RawParentEntity<O,L> parent         ;
-   private final RawParentEntity<O,L> topParent      ;
+public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> implements RawChildEntity<L>   {
+   private final RawParentEntity<L> parent         ;
+   private final RawParentEntity<L> topParent      ;
    private final int                  levelsBelowRoot;
    private final SimpleNamed          smplNamed      ;
    private final TextAppenter         dbgAptrLineNums;
    private final EntityType           type           ;
-   private final RawEntityOnOffFilter<O,L> filter;
+   private final RawOnOffEntityFilter<L> filter;
    private final TextAppenter        dbgAptrEveryLine;
    private final LengthInRange rangeForEveryLineDebug;
-   private int fullyActiveCount ;
-   private int mostRecentLineNum;
-   private boolean doAbortItr;
+   private int     fullyActiveCount ;
+   private int     mostRecentLineNum;
+//	private int     lineNumAnalyzed  ;
+   private boolean doAbortItr       ;
    /**
       <P>Create a new and <I>temporarily unusable</I> instance from a fieldable.</P>
 
       @param  fieldable  May not be {@code null}, and all its fields must conform to the restrictions as documented in the setters of all sub-classes (<CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/entity/SingleLineEntity.html#cfg">SingleLineEntity</A></CODE>, <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/entity/BlockEntity.html#cfg">BlockEntity</A></CODE>, <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/entity/StealthBlockEntity.html#cfg">StealthBlockEntity</A></CODE>).
     **/
-   public RawLineEntity(RawLineEntity_Fieldable<O,L> fieldable)  {
+   public RawLineEntity(RawLineEntity_Fieldable<L> fieldable)  {
       super();
 
       declareMayDelete(false);
@@ -88,7 +88,7 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
       resetCountsLET();
 
       filter = ((fieldable.getFilterIfNonNull() == null)
-         ?  NewRawEntityOnOffFilterFor.<O,L>alwaysForPrePost(OnOffAbort.ON, OnOffAbort.ON)
+         ?  NewRawOnOffEntityFilterFor.<L>alwaysForPrePost(OnOffAbort.ON, OnOffAbort.ON)
          :  fieldable.getFilterIfNonNull());
       Objects.requireNonNull(filter, "fieldable.getFilterIfNonNull()");
 
@@ -103,7 +103,7 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
       resetLineStateRLE();
       resetStateLET();
    }
-   protected RawLineEntity(RawLineEntity<O,L> to_copy, int levels_belowRoot, RawParentEntity<O,L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+   protected RawLineEntity(RawLineEntity<L> to_copy, int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy);
 
       type = to_copy.getType();
@@ -117,10 +117,10 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
          this.parent = null;
          try  {
             @SuppressWarnings("unchecked")
-            RawParentEntity<O,L> top2 = (RawParentEntity<O,L>)to_copy;
+            RawParentEntity<L> top2 = (RawParentEntity<L>)to_copy;
             topParent = top2;
          }  catch(ClassCastException ccx)  {
-            throw  new ClassCastException("parent is null, but to_copy (" + to_copy.getClass().getName() + ") is not a RawParentEntity<O,L>: " + ccx);
+            throw  new ClassCastException("parent is null, but to_copy (" + to_copy.getClass().getName() + ") is not a RawParentEntity<L>: " + ccx);
          }
          smplNamed = new SimpleNamed(to_copy.smplNamed.getName());
          levelsBelowRoot = 0;
@@ -130,7 +130,7 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
          }
 
 //			StringBuilder nameBldr = new StringBuilder(to_copy.smplNamed.getName());
-         RawParentEntity<O,L> top2 = parent;
+         RawParentEntity<L> top2 = parent;
          try  {
             while(top2 != null)  {
 //					nameBldr.insert(0, '_').insert(0, top2.getName());
@@ -175,10 +175,10 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
    public LengthInRange getEveryLineDebugRange()  {
       return  rangeForEveryLineDebug;
    }
-   public RawParentEntity<O,L> getParent()  {
+   public RawParentEntity<L> getParent()  {
       return  parent;
    }
-   public RawParentEntity<O,L> getTopParent()  {
+   public RawParentEntity<L> getTopParent()  {
       return  topParent;
    }
    public String getName()  {
@@ -196,7 +196,7 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
    public TextAppenter getDebugAptrLineNumbers()  {
       return  dbgAptrLineNums;
    }
-   public RawEntityOnOffFilter<O,L> getFilter()  {
+   public RawOnOffEntityFilter<L> getFilter()  {
       return  filter;
    }
    public int getFullyActiveCount()  {
@@ -230,24 +230,36 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
    public boolean doAbortIterator()  {
       return  doAbortItr;
    }
-   protected void abortIteratorDeclareNotAltered(String abort_source, L line_object)  {
-      declareAltered(line_object, Altered.NO, NeedsToBeDeleted.NO);
+   protected void abortIteratorDeclareNotAltered(String abort_source, L line)  {
+      declareAltered(Altered.NO, NeedsToBeDeleted.NO);
       abortIterator(abort_source);
    }
    protected void abortIterator(String abort_source)  {
-      if(isEveryLineAptrUseableAndInRange(getMostRecentLineNum()))  {
-         getDebugAptrEveryLine().appentln(getDebuggingPrefix(getMostRecentLineNum()) + " ABORT_ENTITY (aborted by " + abort_source + "): Setting doAbortIterator() to true");
+      if(isEveryLineAptrUseableAndInRange())  {
+         getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " ABORT_ENTITY (aborted by " + abort_source + "): Setting doAbortIterator() to true");
       }
       doAbortItr = true;
    }
-   protected void declareAltered(L line_object, Altered altered, NeedsToBeDeleted deleted)  {
+/*
+   protected void declareAltered(L line, Altered altered, NeedsToBeDeleted deleted)  {
       try  {
-         declareAltered(line_object.getNumber(), Altered.NO, NeedsToBeDeleted.NO);
+         declareAltered(line.getNumber(), Altered.NO, NeedsToBeDeleted.NO);
       }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(line_object, "line_object", null, rx);
+         throw  CrashIfObject.nullOrReturnCause(line, "line", null, rx);
       }
    }
-   protected void declareAltered(int num, Altered altered, NeedsToBeDeleted deleted)  {
+   public int getMostRecentLineNum()  {
+      return  lineNumAnalyzed;
+   }
+ */
+   public L getAltered(L line_toAnalyze, L line_toAlter)  {
+      throw  new UnsupportedOperationException("Use getAltered(int, L, L)");
+   }
+   public L getAltered(int line_num, L line_toAnalyze, L line_toAlter)  {
+      mostRecentLineNum = line_num;
+      return  super.getAltered(line_toAnalyze, line_toAlter);
+   }
+   protected void declareAltered(Altered altered, NeedsToBeDeleted deleted)  {
       if(!isInitialized())  {
          throw  new IllegalStateException("isInitialized()=false");
       }
@@ -255,17 +267,17 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
          throw  new IllegalStateException("Already aborted (doAbortIterator()=true). Cannot declare anything altered. this=" + this);
       }
 
-      declareAltered(altered, deleted);
+      super.declareAltered(altered, deleted);
 
-      CrashIfIntIs.lessThan(num, (getMostRecentLineNum() + 1), "num", "(getMostRecentLineNum() + 1)", null);
-      mostRecentLineNum = num;
+//		CrashIfIntIs.lessThan(num, (getMostRecentLineNum() + 1), "num", "(getMostRecentLineNum() + 1)", null);
+//		mostRecentLineNum = lineNumAnalyzed;
    }
-   protected void postFilter(L line_thatWasAnalyzed, O potentially_alteredBody)  {
+   protected void postFilter(L potentially_alteredLine)  {
       if(doAbortIterator())  {
          throw  new IllegalStateException("Already aborted (doAbortIterator()=true). Cannot execute post-filter. this=" + this);
       }
 
-      OnOffAbort state = getFilter().getPostState(this, line_thatWasAnalyzed, potentially_alteredBody);
+      OnOffAbort state = getFilter().getPostState(this, getMostRecentLineNum(), potentially_alteredLine);
       if(state.doAbortIterator())  {
          abortIterator("post-filter");
          return;
@@ -273,17 +285,19 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
 
       //Do not abort
 
-      int lineNum = RawLine.getNumberCrashIfNull(line_thatWasAnalyzed, "line_thatWasAnalyzed");
+//		int lineNumAnalyzed = RawLine.getNumberCrashIfNull(original_line, "original_line");
 
-      if(state.isOff()  &&  isEveryLineAptrUseableAndInRange(lineNum))  {
-         getDebugAptrEveryLine().appentln(getDebuggingPrefix(lineNum) + " getPostState(this, line_thatWasAnalyzed, potentially_alteredBody) is OFF.");
+      if(state.isOff()  &&  isEveryLineAptrUseableAndInRange())  {
+         getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " getPostState(this, original_line, potentially_alteredLine) is OFF.");
       }
    }
-   protected boolean isEveryLineAptrUseableAndInRange(L line_object)  {
-      return  isEveryLineAptrUseableAndInRange(line_object.getNumber());
+/*
+   protected boolean isEveryLineAptrUseableAndInRange(L line)  {
+      return  isEveryLineAptrUseableAndInRange(line.getNumber());
    }
-   protected boolean isEveryLineAptrUseableAndInRange(int line_num)  {
-      return  getDebugAptrEveryLine().isUseable()  &&  getEveryLineDebugRange().isIn(line_num);
+ */
+   protected boolean isEveryLineAptrUseableAndInRange()  {
+      return  getDebugAptrEveryLine().isUseable()  &&  getEveryLineDebugRange().isIn(getMostRecentLineNum());
    }
    public StringBuilder appendParentChainName(StringBuilder to_appendTo, String separator)  {
       try  {
@@ -291,7 +305,7 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
       }
-      RawParentEntity<O,L> parent = getParent();
+      RawParentEntity<L> parent = getParent();
       while(parent != null)  {
          to_appendTo.insert(0, separator).insert(0, parent.getName());
          parent = parent.getParent();
@@ -326,7 +340,7 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
 //		return  appendRules(to_appendTo).append("}}");
       return  to_appendTo;
    }
-   protected static final <L,O> ValueAlterer<L,O> getAltererCopyCrashIfMayDelete(ValueAlterer<L,O> alterer, String alterer_varName)  {
+   protected static final <L> ValueAlterer<L,L> getAltererCopyCrashIfMayDelete(ValueAlterer<L,L> alterer, String alterer_varName)  {
       if(alterer.mayDelete())  {
          throw  new IllegalArgumentException(alterer_varName + ".mayDelete() is true.");
       }
@@ -341,20 +355,14 @@ public abstract class RawLineEntity<O,L extends RawLine<O>> extends AbstractValu
 
       @exception  UnsupportedOperationException
     **/
-   public final RawLineEntity<O,L> getObjectCopy()  {
+   public final RawLineEntity<L> getObjectCopy()  {
       throw  new UnsupportedOperationException("Use getAlteredPostResetCheck");
    }
    public String getDebuggingPrefix()  {
-      return  getDebuggingPrefix(getMostRecentLineNum());
+      return  getDebuggingPrefixPrefix() + "]";
    }
-   protected String getDebuggingPrefix(L line_object)  {
-      return  getDebuggingPrefix(line_object.getNumber());
-   }
-   protected String getDebuggingPrefix(int line_num)  {
-      return  getDebuggingPrefixPrefix(line_num) + "]";
-   }
-   protected String getDebuggingPrefixPrefix(int line_num)  {
-      return  "[" + line_num + ":" + getType() +
+   protected String getDebuggingPrefixPrefix()  {
+      return  "[" + getMostRecentLineNum() + ":" + getType() +
          ":\"" + getName() + "\"" +
          (doAbortIterator() ? ":ABORT_ITERATOR" : "");
    }

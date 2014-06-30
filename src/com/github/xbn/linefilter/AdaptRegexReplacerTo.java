@@ -25,7 +25,6 @@ package  com.github.xbn.linefilter;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
    import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
    import  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  java.util.regex.Pattern;
 /**
    <P>Create a new string-validator, string-alterer, or text-line alterer from a {@code RegexReplacer}.</P>
@@ -117,10 +116,10 @@ final class ATLForSVR extends AbstractTextLineAlterAdapter<StringReplacer>  {
    public ATLForSVR getObjectCopy()  {
       return  (new ATLForSVR(this));
    }
-   public String getAltered(RawLine<String> ignored, String to_alter)  {
+   public String getAltered(String ignored, String to_alter)  {
       return  getAdapted().getAltered(to_alter);
    }
-   public String getAlteredString(RawLine<String> ignored, String to_alter)  {
+   public String getAlteredString(String ignored, String to_alter)  {
       return  getAdapted().getAlteredString(null, to_alter);
    }
    public void resetState()  {

@@ -13,9 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw.z;
-   import  com.github.xbn.linefilter.entity.raw.RawEntityOnOffFilter;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.linefilter.entity.EntityType;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.neederneedable.AbstractNeedable;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.entity.raw.RawLineEntity;
@@ -25,11 +24,11 @@ package  com.github.xbn.linefilter.entity.raw.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public abstract class RawLineEntity_CfgForNeeder<O,L extends RawLine<O>,M extends RawLineEntity<O,L>,R extends Needer> extends AbstractNeedable<M,R> implements RawLineEntity_Fieldable<O,L>   {
+public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R extends Needer> extends AbstractNeedable<M,R> implements RawLineEntity_Fieldable<L>   {
    public String       name           ;
    public Appendable   dbgApblLineNums;
    public EntityType   type           ;
-   public RawEntityOnOffFilter<O,L> filterIfNonNull;
+   public RawOnOffEntityFilter<L> filterIfNonNull;
 //constructors...START
    /**
       <P>Create a new instance, for the root entity only.</P>
@@ -64,7 +63,7 @@ public abstract class RawLineEntity_CfgForNeeder<O,L extends RawLine<O>,M extend
 
       @return  <I>{@code this}</I>
     **/
-   public RawLineEntity_CfgForNeeder<O,L,M,R> reset()  {
+   public RawLineEntity_CfgForNeeder<L,M,R> reset()  {
       resetRLECFN();
       return  this;
    }
@@ -93,7 +92,7 @@ public abstract class RawLineEntity_CfgForNeeder<O,L extends RawLine<O>,M extend
    public EntityType getType()  {
       return  type;
    }
-   public RawEntityOnOffFilter<O,L> getFilterIfNonNull()  {
+   public RawOnOffEntityFilter<L> getFilterIfNonNull()  {
       return  filterIfNonNull;
    }
 //getters...END

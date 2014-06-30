@@ -13,20 +13,19 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.linefilter.entity.raw.RawEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawSingleLineEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity;
-   import  com.github.xbn.lang.Null;
-   import  com.github.xbn.number.NewLengthInRangeFor;
-   import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.io.NewTextAppenterFor;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.linefilter.entity.EntityType;
+   import  com.github.xbn.lang.Null;
    import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
+   import  com.github.xbn.linefilter.entity.EntityType;
+   import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
+   import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
+   import  com.github.xbn.linefilter.entity.raw.RawEntity;
+   import  com.github.xbn.linefilter.entity.raw.RawSingleLineEntity;
+   import  com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity;
+   import  com.github.xbn.number.LengthInRange;
+   import  com.github.xbn.number.NewLengthInRangeFor;
    import  com.github.xbn.text.padchop.VzblPadChop;
    import  com.github.xbn.text.padchop.z.VzblPadChop_Cfg;
    import  com.github.xbn.util.itr.AbstractIterator;
@@ -34,20 +33,21 @@ package  com.github.xbn.linefilter;
    import  java.util.List;
    import  java.util.Objects;
 /**
-   <P>Iterates through a series of <I>things</I>, keeping or discarding those that meet certain conditions, and optionally modifying kept items.</P>
+   <P>An iterator that filters the elements of another iterator--keeping or discarding those that meet certain conditions, and optionally modifying kept elements.</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L>  {
-   private final RawBlockEntity<O,L> rootBlock             ;
+public class FilteredIterator<L> extends AbstractIterator<L>  {
+   private final RawBlockEntity<L> rootBlock             ;
    private final Returns             returnWhat            ;
    private final TextAppenter        dbgAptrEveryLine      ;
    private final LengthInRange       rangeForEveryLineDebug;
-   private Iterator<O>    allLineItr     ;
+   private Iterator<L>    allLineItr     ;
+   protected int          nextLineNum    ;
    protected L            nextLine       ;
-   private int            lineNum        ;
-   private RawEntity<O,L> entityThatAbrtd;
+   private int            lineNumAnalyzed;
+   private RawEntity<L> entityThatAbrtd;
    private static final VzblPadChop VPC_DBG = new VzblPadChop_Cfg(70).
       trim().unescape().cfgChop().ddd().inMiddle().endCfg().build();
    /**
@@ -63,7 +63,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
       @param  rangeForEveryLineDebug_ifNonNull  If non-{@code null}, this is the line range to debug with {@code dbgAptrEveryLine_ifUseable}. If {@code null}, all lines are debugged. Get with {@link #getEveryLineDebugRange() getEveryLineDebugRange}{@code ()}
       @param  root_block  Represents the text-document itself, or the largest block within the document that is recognized. May not be {@code null}. Get with {@link #getRootBlock() getRootBlock}{@code ()}.
     **/
-   public FilteredIterator(Iterator<O> all_lineItr, Returns return_what, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawBlockEntity<O,L> root_block)  {
+   public FilteredIterator(Iterator<L> all_lineItr, Returns return_what, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawBlockEntity<L> root_block)  {
       Objects.requireNonNull(return_what, "return_what");
       returnWhat = return_what;
 
@@ -73,9 +73,10 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
          ?  NewLengthInRangeFor.UNRESTRICTED
          :  rangeForEveryLineDebug_ifNonNull);
 
-      rootBlock = new RawBlockEntity<O,L>(root_block, 0, null, dbgAptrEveryLine, rangeForEveryLineDebug);
+      rootBlock = new RawBlockEntity<L>(root_block, 0, null, dbgAptrEveryLine, rangeForEveryLineDebug);
+      nextLineNum = -1;
       nextLine = null;
-      lineNum = 0;
+      lineNumAnalyzed = 0;
       entityThatAbrtd = null;
       setAllIterator(all_lineItr);
    }
@@ -85,7 +86,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
       }
       return  (allLineItr != null);
    }
-   public void setAllIterator(Iterator<O> all_lineItr)  {
+   public void setAllIterator(Iterator<L> all_lineItr)  {
       if(wasAllIteratorSet())  {
          throw  new IllegalStateException("wasAllIteratorSet()=true");
       }
@@ -106,7 +107,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
    public boolean wasAborted()  {
       return  (getEntityThatAborted() != null);
    }
-   public RawEntity<O,L> getEntityThatAborted()  {
+   public RawEntity<L> getEntityThatAborted()  {
       return  entityThatAbrtd;
    }
    /**
@@ -138,21 +139,19 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
       L nextLineFromAllItr = null;
       try  {
          while(allLineItr.hasNext())  {
-            lineNum++;
-            @SuppressWarnings("unchecked")
-            L nextLineFromAllItr2 = (L)new RawLine<O>(lineNum, allLineItr.next());
-            nextLineFromAllItr = nextLineFromAllItr2;
+            lineNumAnalyzed++;
+            nextLineFromAllItr = allLineItr.next();
 
-            if(isEveryLineAptrUseableAndInRange(lineNum))  {
-               getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + " all_lineItr.next() (pre-filtered): " + VPC_DBG.get(nextLineFromAllItr));
+            if(isEveryLineAptrUseableAndInRange())  {
+               getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix() + " all_lineItr.next() (pre-filtered): " + VPC_DBG.get(nextLineFromAllItr));
             }
 
-            O alteredBody = getRootBlock().getAltered(nextLineFromAllItr, nextLineFromAllItr.getBody());
+            L alteredBody = getRootBlock().getAltered(getMostRecentLineNum(), nextLineFromAllItr, nextLineFromAllItr);
             if(getRootBlock().doAbortIterator())  {
                allLineItr = null;
                entityThatAbrtd = getRootBlock().getEntityThatAborted();
-               if(isEveryLineAptrUseableAndInRange(lineNum))  {
-                  getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + " *ABORTED* by entity: " + getEntityThatAborted());
+               if(isEveryLineAptrUseableAndInRange())  {
+                  getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix() + " *ABORTED* by entity: " + getEntityThatAborted());
                }
 
                return  false;
@@ -160,16 +159,16 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
 
             if(getReturnsWhat().isKept())  {
                if(getRootBlock().doKeepJustAnalyzed())  {
-                  return  setNextLineReturnTrue(lineNum, alteredBody);
+                  return  setNextLineReturnTrue(alteredBody);
                }
 
             }  else if(getReturnsWhat().isActive())  {
                if(getRootBlock().isActive())  {
-                  return  setNextLineReturnTrue(lineNum, alteredBody);
+                  return  setNextLineReturnTrue(alteredBody);
                }
 
             }  else if(getReturnsWhat().isAll())  {
-               return  setNextLineReturnTrue(lineNum, alteredBody);
+               return  setNextLineReturnTrue(alteredBody);
 
             }  else  {
                throw  new IllegalStateException("Unknown value for getReturnsWhat(): " + getReturnsWhat());
@@ -191,16 +190,14 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
       <P>. Set the next line to be returned by {@code next()}.</P>
 
       <P>This sets {@link #next() next}{@code ()} to a
-      <BR> &nbsp; &nbsp; <CODE>new <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RawLine.html#RawLine(int, O)">RawLine</A>&lt;O&gt;(next_lineFromAllItr.{@link RawLine#getNumber() getNumber}(), altered_body)</CODE></P>
+      <BR> &nbsp; &nbsp; <CODE>new <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RawLine.html#RawLine(int, L)">RawLine</A>&lt;L&gt;(next_lineFromAllItr.{@link RawLine#getNumber() getNumber}(), altered_body)</CODE></P>
 
-      @param  line_num  YYY
       @param  altered_body  <I>Should</I> not be {@code null}.
-      @see  FilteredLineIterator#setNextLineReturnTrue(int, String)
+      @see  FilteredLineIterator#setNextLineReturnTrue(String)
     **/
-   protected boolean setNextLineReturnTrue(int line_num, O altered_body)  {
-      @SuppressWarnings("unchecked")
-      L l = (L)new RawLine<O>(line_num, altered_body);
-      nextLine = l;
+   protected boolean setNextLineReturnTrue(L altered_body)  {
+      nextLineNum = getMostRecentLineNum();
+      nextLine = altered_body;
       debugNextLine(nextLine);
       return  true;
    }
@@ -211,23 +208,23 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
       @see  #getDebugAptrEveryLine()
     **/
    protected void debugNextLine(L altered_line)  {
-      int lineNum = -1;
-      try  {
-         lineNum = altered_line.getNumber();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(altered_line, "altered_line", null, rx);
-      }
-      if(isEveryLineAptrUseableAndInRange(lineNum))  {
-         getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix(lineNum) + " getReturnsWhat()." + getReturnsWhat() + ". Setting next() to: " + altered_line + "");
+      if(isEveryLineAptrUseableAndInRange())  {
+         getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix() + " getReturnsWhat()." + getReturnsWhat() + ". Setting next() to: " + altered_line + "");
       }
    }
-   protected boolean isEveryLineAptrUseableAndInRange(int line_num)  {
-      return  getDebugAptrEveryLine().isUseable()  &&  getEveryLineDebugRange().isIn(line_num);
+   public int getMostRecentLineNum()  {
+      return  lineNumAnalyzed;
+   }
+   public int getNextLineNum()  {
+      return  nextLineNum;
+   }
+   protected boolean isEveryLineAptrUseableAndInRange()  {
+      return  getDebugAptrEveryLine().isUseable()  &&  getEveryLineDebugRange().isIn(getMostRecentLineNum());
    }
    /**
       <P>Returns the next filtered line.</P>
 
-      @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#setNextLineReturnTrue(L, O)">setNextLineReturnTrue</A></CODE>
+      @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#setNextLineReturnTrue(L)">setNextLineReturnTrue</A></CODE>
     **/
    public L next()  {
       crashIfNoNext();
@@ -240,7 +237,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
 
       @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
     **/
-   public RawBlockEntity<O,L> getRootBlock()  {
+   public RawBlockEntity<L> getRootBlock()  {
       return  rootBlock;
    }
    /**
@@ -248,7 +245,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
 
       @return  <CODE>{@link #getRootBlock() getRootBlock}().{@link RawBlockEntity#getActiveChild() getActiveChild}()</CODE>
     **/
-   public RawChildEntity<O,L> getActiveChild()  {
+   public RawChildEntity<L> getActiveChild()  {
       return  getRootBlock().getActiveChild();
    }
    /**
@@ -266,16 +263,16 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
    /**
       <P>Get the active child, which <I>is</I> a block.</P>
 
-      @return  <CODE>(RawBlockEntity&lt;O,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
+      @return  <CODE>(RawBlockEntity&lt;L,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
       @exception  ClassCastException  If {@link #getActiveChildType() getActiveChildType}{@code ()} is not a {@link EntityType#BLOCK BLOCK}.
       @exception  IllegalStateException  If {@link #getActiveChild() getActiveChild}{@code ()} is {@code null}.
       @see  #getActiveChildStealthBlock()
       @see  #getActiveChildSingleLine()
     **/
-   public RawBlockEntity<O,L> getActiveChildBlock()  {
+   public RawBlockEntity<L> getActiveChildBlock()  {
       try  {
          @SuppressWarnings("unchecked")
-         RawBlockEntity<O,L> rbe = (RawBlockEntity<O,L>)getActiveChild();
+         RawBlockEntity<L> rbe = (RawBlockEntity<L>)getActiveChild();
          return  rbe;
       }  catch(ClassCastException ccx)  {
          ClassCastException ccx2 = new ClassCastException("getActiveChildType()=" + getActiveChildType() + ", getActiveChild().getClass().getName()=" + getActiveChild().getClass().getName());
@@ -286,15 +283,15 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
    /**
       <P>Get the active child, which <I>is</I> a stealth block.</P>
 
-      @return  <CODE>(RawStealthBlockEntity&lt;O,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
+      @return  <CODE>(RawStealthBlockEntity&lt;L,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
       @exception  IllegalStateException  If {@link #getActiveChild() getActiveChild}{@code ()} is {@code null}.
       @exception  ClassCastException  If {@link #getActiveChildType() getActiveChildType}{@code ()} is not a {@link EntityType#STEALTH_BLOCK STEALTH_BLOCK}.
       @see  #getActiveChildBlock()
     **/
-   public RawStealthBlockEntity<O,L> getActiveChildStealthBlock()  {
+   public RawStealthBlockEntity<L> getActiveChildStealthBlock()  {
       try  {
          @SuppressWarnings("unchecked")
-         RawStealthBlockEntity<O,L> rbe = (RawStealthBlockEntity<O,L>)getActiveChild();
+         RawStealthBlockEntity<L> rbe = (RawStealthBlockEntity<L>)getActiveChild();
          return  rbe;
       }  catch(ClassCastException ccx)  {
          ClassCastException ccx2 = new ClassCastException("getActiveChildType()=" + getActiveChildType() + ", getActiveChild().getClass().getName()=" + getActiveChild().getClass().getName());
@@ -305,15 +302,15 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
    /**
       <P>Get the active child, which <I>is</I> a single-line entity.</P>
 
-      @return  <CODE>(RawSingleLineEntity&lt;O,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
+      @return  <CODE>(RawSingleLineEntity&lt;L,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
       @exception  IllegalStateException  If {@link #getActiveChild() getActiveChild}{@code ()} is {@code null}.
       @exception  ClassCastException  If {@link #getActiveChildType() getActiveChildType}{@code ()} is not a {@link EntityType#SINGLE_LINE SINGLE_LINE}.
       @see  #getActiveChildBlock()
     **/
-   public RawSingleLineEntity<O,L> getActiveChildSingleLine()  {
+   public RawSingleLineEntity<L> getActiveChildSingleLine()  {
       try  {
          @SuppressWarnings("unchecked")
-         RawSingleLineEntity<O,L> rbe = (RawSingleLineEntity<O,L>)getActiveChild();
+         RawSingleLineEntity<L> rbe = (RawSingleLineEntity<L>)getActiveChild();
          return  rbe;
       }  catch(ClassCastException ccx)  {
          ClassCastException ccx2 = new ClassCastException("getActiveChildType()=" + getActiveChildType() + ", getActiveChild().getClass().getName()=" + getActiveChild().getClass().getName());
@@ -326,7 +323,7 @@ public class FilteredIterator<O,L extends RawLine<O>> extends AbstractIterator<L
 
       @return  <CODE>{@link #getRootBlock() getRootBlock}().{@link RawBlockEntity#getChildList() getChildList}()</CODE>
     **/
-   List<RawChildEntity<O,L>> getEntityList()  {
+   List<RawChildEntity<L>> getEntityList()  {
       return  getRootBlock().getRawChildList();
    }
 }

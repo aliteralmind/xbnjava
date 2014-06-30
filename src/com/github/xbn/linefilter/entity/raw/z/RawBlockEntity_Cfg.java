@@ -1,5 +1,5 @@
 /*license*\
-   Codelet: http://codelet.aliteralmind.com
+   XBN-Java: http://xbnjava.aliteralmind.com
 
    Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
@@ -15,7 +15,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw.z;
-   import  com.github.xbn.linefilter.entity.raw.RawLine;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
@@ -24,7 +23,7 @@ package  com.github.xbn.linefilter.entity.raw.z;
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class RawBlockEntity_Cfg<O,L extends RawLine<O>> extends RawBlockEntity_CfgForNeeder<O,L,RawBlockEntity<O,L>,DummyForNoNeeder>   {
+public class RawBlockEntity_Cfg<L> extends RawBlockEntity_CfgForNeeder<L,RawBlockEntity<L>,DummyForNoNeeder>   {
    /**
       <P>Create a new {@code RawBlockEntity_Cfg} with the default name.</P>
 
