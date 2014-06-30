@@ -11,7 +11,7 @@ package  com.github.xbn.list.lister;
 /**
    <P>Base class for {@code LLConfigBase} and {@code LLCfgElement}. See {@link com.github.xbn.list.lister.LLConfigBase LLConfigBase} and {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</P>
 
-   <A NAME="short_circuit"><A/><H3>Short circuits</H3>
+   <A NAME="short_circuit"></A><H3>Short circuits</H3>
 
    <P>Some settings are &quot;short circuits&quot;--if one is used, all subsequent settings are ignored. The order of settings is<OL>
       <LI>{@link #getIfNull() getIfNull}{@code ()} &nbsp; &nbsp; <I>(short circuit)</I></LI>

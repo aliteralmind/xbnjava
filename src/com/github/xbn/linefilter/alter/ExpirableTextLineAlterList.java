@@ -70,17 +70,4 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
    public static final <O> TextLineAlterer[] getTextLineAltererArrayFromOrderedElementsIfNonNull(NullElement null_element, String alterers_varName, TextLineAlterer... orderedAlterers_whichMayBeNull)  {
       return  getAltererArrayFromOrderedElementsIfNonNull(orderedAlterers_whichMayBeNull, null_element, TextLineAlterer.class, alterers_varName);
    }
-   /**
-      <P>Get a new text-line-alterer array from the provided <I>ordered</I> elements, optionally excluding {@code null} elements.</P>
-
-      @return  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/ExpirableAlterList.html#getAltererArrayFromOrderedElementsIfNonNull(L[], com.github.xbn.array.NullElement, java.lang.Class, java.lang.String)">getAltererArrayFromOrderedElementsIfNonNull</A>(orderedAlterers_whichMayBeNull, null_element, valosCls, alterers_varName)</CODE>
-      <BR>Where {@code valosCls} is
-      <BR> &nbsp; &nbsp; <CODE>(Class&lt;ValueAlterer&lt;RawLine&lt;String&gt;,String&gt;+&gt;)(Class)RawLine.class</CODE>
-   @SuppressWarnings({"unchecked", "varargs"})
-   public static final <O> ValueAlterer<String,String>[] getTextLineAltererArrayFromOrderedElementsIfNonNull(NullElement null_element, String alterers_varName, ValueAlterer<String,String>... orderedAlterers_whichMayBeNull)  {
-      @SuppressWarnings("unchecked")
-      Class<ValueAlterer<String,String>> valosCls = (Class<ValueAlterer<String,String>>)(Class)ValueAlterer.class;
-      return  getAltererArrayFromOrderedElementsIfNonNull(orderedAlterers_whichMayBeNull, null_element, valosCls, alterers_varName);
-   }
-    **/
 }

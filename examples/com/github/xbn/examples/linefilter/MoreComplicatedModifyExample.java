@@ -79,11 +79,10 @@ public class MoreComplicatedModifyExample  {
       BlockEntity block = new BlockEntity_Cfg("block").
          startAlter(startIdOnly).midAlter(midAlterer).
          endAlter(EndRequired.YES, endIdOnly).
-         keepMidsOnly().build();
+         keepMidsOnly().required(true).build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         StringUtil.getLineIterator(input),
-         Returns.KEPT,
+         StringUtil.getLineIterator(input), Returns.KEPT,
          null, null,    //dbgEveryLine and its line-range
          block);
 

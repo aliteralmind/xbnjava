@@ -189,8 +189,7 @@ public class FilteredIterator<L> extends AbstractIterator<L>  {
    /**
       <P>. Set the next line to be returned by {@code next()}.</P>
 
-      <P>This sets {@link #next() next}{@code ()} to a
-      <BR> &nbsp; &nbsp; <CODE>new <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RawLine.html#RawLine(int, L)">RawLine</A>&lt;L&gt;(next_lineFromAllItr.{@link RawLine#getNumber() getNumber}(), altered_body)</CODE></P>
+      <P>This sets {@link #next() next}{@code ()} to {@code altered_body}</P>
 
       @param  altered_body  <I>Should</I> not be {@code null}.
       @see  FilteredLineIterator#setNextLineReturnTrue(String)

@@ -13,19 +13,22 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.linefilter.entity.KeepStartLine;
-   import  com.github.xbn.linefilter.entity.KeepMidLines;
-   import  com.github.xbn.linefilter.entity.KeepEndLine;
-   import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
-   import  com.github.xbn.number.LengthInRange;
+   import  com.github.xbn.linefilter.entity.EntityRequired;
+   import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
+   import  com.github.xbn.linefilter.entity.KeepEndLine;
+   import  com.github.xbn.linefilter.entity.KeepMidLines;
+   import  com.github.xbn.linefilter.entity.KeepStartLine;
+   import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
    import  com.github.xbn.linefilter.entity.TextChildEntity;
    import  com.github.xbn.linefilter.entity.TextParentEntity;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
    import  com.github.xbn.linefilter.entity.z.BlockEntity_Cfg;
+   import  com.github.xbn.number.LengthInRange;
    import  java.util.Iterator;
    import  java.util.List;
+   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>A string iterator that filters another string iterator whose elements are the lines in a text file--keeping or discarding lines that meet certain conditions, and optionally modifying kept lines.</P>
 
@@ -38,19 +41,23 @@ package  com.github.xbn.linefilter;
       <LI>Altering the lines in a <A HREF="#xmpl_sub_block">sub-block</A></LI>
    </UL></P>
 
-<A NAME="xmpl_basic"><A/>
-   <H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: A basic use</H2>
+<A NAME="xmpl_basic"></A>
+   <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: A basic use</H2>
 
    <P>This iterates through all lines in a &quot;text file&quot;, discarding all except the block's (snippet or line-range) &quot;mid lines&quot;--meaning those between the &quot;start&quot; and &quot;end&quot; lines.</P>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.IterateKeptLines:eliminateCommentBlocksAndPackageDecl()}
 
-   <P>The block entity is also the {@linkplain TextChildEntity#getTopParent() root block entity}. An equivalent is to set the block as a child, and then to discard all unmatched lines (any lines not matched by a child entity):</P>
+   <P>An alternative way to create the same block entity:</P>
+
+{@.codelet com.github.xbn.examples.linefilter.IterateKeptLinesManualBlock:lineRange(1, false, "startIdOnly = NewTextLineAltererFor", 1, false, "keepMidsOnly().required", "^      ")}
+
+   <P>The block entity is also the filtered iterator's {@linkplain TextChildEntity#getTopParent() root entity}. An equivalent is to set the block as a child, and then declare that all unmatched lines (those not matched by any child entity) should be discarded:</P>
 
 {@.codelet com.github.xbn.examples.linefilter.IterateKeptLinesBlockAsChild:lineRange(1, false, "tor filteredItr = ne", 1, false, "block);", "^      ")}
 
-<A NAME="xmpl_modify"><A/>
-   <H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Modification of kept lines</H2>
+<A NAME="xmpl_modify"></A>
+   <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Modification of kept lines</H2>
 
    <P>Using the same input as above, this makes a simple replacement on each kept line:</P>
 
@@ -60,14 +67,14 @@ package  com.github.xbn.linefilter;
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.MoreComplicatedModifyExample:lineRange(1, false, "IndirectRegexReplacer replaceNumWithStrNum", 1, false, "lineReplacer(replaceNumWithStrNum", "^      ")}
 
-<A NAME="xmpl_jd_block_lines"><A/>
-   <H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Detecting the start and end lines of all JavaDoc blocks in source code</H2>
+<A NAME="xmpl_jd_block_lines"></A>
+   <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Detecting the start and end lines of all JavaDoc blocks in source code</H2>
 
    <P>Take <A HREF="#xmpl_java_class">this Java class</A>, which contains a single Java multiline comment (starting with {@code "/}{@code *"} and ending with {@code "*}{@code /"}), and three JavaDoc blocks (starting with {@code "/}{@code **"} and ending with {@code "*}{@code /"}):</P>
 
    <P>The following reads in the source code, and prints only the line numbers of each JavaDoc block's start and end line.</P>
 
-   <P>A {@linkplain com.github.xbn.linefilter.entity.StealthBlockEntity stealth block} is used in order to avoid an incorrect &quot;block ended before started&quot; error when the close line in the first Java comment block is encountered. This is because {@code "*}{@code /"} is a valid close line for <I>both Java multi-line comments and JavaDoc blocks</I>. Stealth blocks are not &quot;wanted&quot; or {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#doKeepJustAnalyzed() kept}--they are only to avoid false-positives in blocks that share the same parent.</P>
+   <P>A {@linkplain com.github.xbn.linefilter.entity.StealthBlockEntity stealth block} is used in order to avoid an incorrect &quot;block ended before started&quot; error when the close line in the first Java comment block is encountered. This is because {@code "*}{@code /"} is a valid close line for <I>both Java multi-line comments and JavaDoc blocks</I>. Stealth blocks are not &quot;wanted&quot; or {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#doKeepJustAnalyzed() kept}--they are only to avoid false-positives in another block that shares the same parent.</P>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt"):eliminateCommentBlocksAndPackageDecl()}
 
@@ -75,8 +82,8 @@ package  com.github.xbn.linefilter;
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt"):lineRangeWithReplace(1, true, "(javaDocBlock = NewBlockEntityFor)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
-<A NAME="xmpl_strip_cmts_pkgln"><A/>
-   <H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Strip all Java comment blocks and the package declaration line from a classes source code</H2>
+<A NAME="xmpl_strip_cmts_pkgln"></A>
+   <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Strip all Java comment blocks and the package declaration line from a classes source code</H2>
 
    <P>This is useful for eliminating unnecessary or distracting lines from an example code, which might be displayed in your JavaDoc (which is the concept of <A HREF="http://codelet.aliteralmind.com">Codelet</A>).</P>
 
@@ -84,21 +91,21 @@ package  com.github.xbn.linefilter;
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt"):eliminateCommentBlocksAndPackageDecl()}
 
-<A NAME="xmpl_import_simples"><A/>
-   <H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Extract all simple class names from the import lines in a Java source file</H2>
+<A NAME="xmpl_import_simples"></A>
+   <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Extract all simple class names from the import lines in a Java source file</H2>
 
    <P>This gets the {@linkplain java.lang.Class#getSimpleName() simple class name} from each import line from a <A HREF="#xmpl_java_class">Java source code file</A>.</P>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt"):eliminateCommentBlocksAndPackageDecl()}
 
-<A NAME="xmpl_sub_block"><A/>
-   <H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Altering the lines in a sub-block</H2>
+<A NAME="xmpl_sub_block"></A>
+   <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Altering the lines in a sub-block</H2>
 
    <P>This modifies the lines existing within a block that itself only exists within a JavaDoc block. Note the same sub-block as exists in the Java comment is not altered. <I>(<A HREF="#xmpl_java_class">View input file</A>.)</I></P>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt"):lineRangeWithReplace(1, true, "(String subModePre)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
-<A NAME="xmpl_java_class"><A/>
+<A NAME="xmpl_java_class"></A>
    <H2><A HREF="#xmpl_jd_block_lines"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example Java class used by above examples</H2>
 
 {@.file.textlet com/github/xbn/examples/linefilter/JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}
@@ -134,7 +141,7 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       <BR> &nbsp; &nbsp; <CODE>{@link #FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, RawChildEntity[]) this}(all_lineItr, return_what,
       <BR> &nbsp; &nbsp; keep_rootStart, keep_rootMids, keep_rootEnd
       <BR> &nbsp; &nbsp; dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-      <BR> &nbsp; &nbsp; ({@link com.github.xbn.linefilter.entity.raw.RawChildEntity}&lt;String,{@link com.github.xbn.linefilter.entity.raw.RawLine}&lt;String&gt;&gt;[])children)</CODE>
+      <BR> &nbsp; &nbsp; ({@link com.github.xbn.linefilter.entity.raw.RawChildEntity}&lt;String&gt;[])children)</CODE>
       <BR>Where {@code doKeepStartLine} is {@code true} if {@code start_mid_end} is {@link KeepStartLine#YES YES}</P>
 
       @param  keep_rootStart May not be {@code null}.
@@ -151,10 +158,10 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       <P>Create a new instance with a root block entity that matches all lines.</P>
 
       <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #FilteredLineIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) this}(all_lineItr, return_what, dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull
-      <BR> &nbsp; &nbsp; new {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg#BlockEntity_Cfg(String) BlockEntity_Cfg}(&quot;root&quot;).
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(keep_rootStart.{@link KeepStartLine#isYes() isYes}(), keep_rootMids.isYes(), keep_rootEnd.isYes()).
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}(children).{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#build() build}())</CODE></P>
+<BLOCKQUOTE><PRE>{@link #FilteredLineIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) this}(all_lineItr, return_what, dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull
+   {@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.{@link com.github.xbn.linefilter.entity.NewBlockEntityFor#returnKeptUnchanged_Cfg(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, RawOnOffEntityFilter, Appendable) returnKeptUnchanged_Cfg}(&quot;root&quot;,
+      keep_rootStart, keep_rootMids, keep_rootEnd, {@link com.github.xbn.linefilter.entity.EntityRequired}.{@link com.github.xbn.linefilter.entity.EntityRequired#YES YES}, null, null).
+   {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}(children).{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#build() build}())</PRE></BLOCKQUOTE></P>
 
       @param  keep_rootStart May not be {@code null}.
       @param  keep_rootMids May not be {@code null}.
@@ -163,8 +170,8 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    public FilteredLineIterator(Iterator<String> all_lineItr, Returns return_what, KeepStartLine keep_rootStart, KeepMidLines keep_rootMids, KeepEndLine keep_rootEnd, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawChildEntity<String>[] children)  {
       this(all_lineItr, return_what,
          dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-         NewBlockEntityFor.returnKeptUnchanged_Cfg_keepFilterDebug("root",
-               keep_rootStart, keep_rootMids, keep_rootEnd, null, null).
+         NewBlockEntityFor.returnKeptUnchanged_Cfg("root",
+               keep_rootStart, keep_rootMids, keep_rootEnd, EntityRequired.YES, null, null).
             children(children).build());
    }
    /**
@@ -179,30 +186,31 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    public FilteredLineIterator(Iterator<String> all_lineItr, Returns return_what, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawBlockEntity<String> root_block)  {
       super(all_lineItr, return_what, dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull, root_block);
    }
-   /*
-      <P>Returnss the next filtered line as a {@code TextLine}.</P>
-
-      @return  <CODE>(TextLine){@link FilteredIterator super}.{@link FilteredIterator#next() next}()</CODE>
-      @see  #nextLine()
-   public TextLine nextTextLine()  {
-      return  (TextLine)super.next();
+   /**
+      @return  <CODE>{@link #appendAllLines(StringBuilder) appendAllLines}(new StringBuilder()).toString()</CODE>
+    **/
+   public String getAllLines()  {
+      return  appendAllLines(new StringBuilder()).toString();
    }
-    */
-   /*
-      <P>Get the body-text of the next filtered line.</P>
-
-      @return  <CODE>{@link #nextTextLine() nextTextLine}().{@link TextLine#getBody() getBody}()</CODE>
-   public String nextLine()  {
-      return  nextTextLine().getBody();
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #getAllLines()
+    **/
+   public StringBuilder appendAllLines(StringBuilder to_appendTo)  {
+      try  {
+         while(hasNext())  {
+            to_appendTo.append(next()).append(LINE_SEP);
+         }
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+      }
+      return  to_appendTo;
    }
-    */
    /**
       <P>. Set the next line to be returned by {@code next()}.</P>
 
-      <P>This sets {@link #next() next}{@code ()} to a
-      <BR> &nbsp; &nbsp; <CODE>new {@link TextLine#TextLine(int, String) TextLine}(next_lineFromAllItr.{@link TextLine#getNumber() getNumber}(), altered_body)</CODE></P>
+      <P>This sets {@link #next() next}{@code ()} to {@code altered_body}</P>
 
-      @param  line_num  YYY
       @param  altered_body  <I>Should</I> not be {@code null}.
 
       @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="raw/FilteredIterator.html#setNextLineReturnTrue(int, O)">FilteredIterator.html#setNextLineReturnTrue</A></CODE>

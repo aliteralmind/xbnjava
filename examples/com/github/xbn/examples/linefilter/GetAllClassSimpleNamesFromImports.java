@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.linefilter.entity.EntityRequired;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
@@ -57,15 +58,17 @@ public class GetAllClassSimpleNamesFromImports  {
          append("}"                                                    ).append(LINE_SEP).
          toString();
 
+      PostFilterSelfActiveInOutRange onOffFilter = new PostFilterSelfActiveInOutRange(
+         NewLengthInRangeFor.maxExclusive(null, 1, null),
+         OnOffAbort.ON, OnOffAbort.ABORT_ITERATOR,
+         OutOfRangeResponseWhen.NEXT_ACTIVE_LINE,
+         null);        //debug (on:System.out, off:null)
+
       StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.
          javaComment(null, IncludeJavaDoc.YES,
-            null,      //dbgStart (on:System.out, off:null)
+            null,      //dbgStart
             null,      //dbgEnd
-            new PostFilterSelfActiveInOutRange(
-               NewLengthInRangeFor.maxExclusive(null, 1, null),
-               OnOffAbort.ON, OnOffAbort.ABORT_ITERATOR,
-               OutOfRangeResponseWhen.NEXT_ACTIVE_LINE,
-               null),  //debug
+            EntityRequired.YES, onOffFilter,
             null);     //dbgLineNums
 
       SingleLineEntity importLineEntity = NewSingleLineEntityFor.
@@ -73,7 +76,7 @@ public class GetAllClassSimpleNamesFromImports  {
          Pattern.compile(JavaRegexes.IMPORT_LINE_CAPTURE_SIMPLE_NAME), "$1",
          ReplacedInEachInput.FIRST,
          null,         //dbgAlter
-         null,         //on-off filter
+         EntityRequired.YES, null,
          null);        //dbgLineNums
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(

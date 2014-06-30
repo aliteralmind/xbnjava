@@ -31,6 +31,7 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.linefilter_GetAllClassSimpleNamesFromImports();
    	test.linefilter_IterateActiveLines();
    	test.linefilter_IterateKeptLines();
+   	test.linefilter_IterateKeptLinesManualBlock();
    	test.linefilter_ModifyBlockLines();
    	test.linefilter_MoreComplicatedModifyExample();
    	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNums();
@@ -157,6 +158,12 @@ public class ExampleCodeOutputsContain_Unit  {
    public void linefilter_IterateKeptLines()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.linefilter.IterateKeptLines.class,
+         "mid1", "mid2");
+   }
+   @Test
+   public void linefilter_IterateKeptLinesManualBlock()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.linefilter.IterateKeptLinesManualBlock.class,
          "mid1", "mid2");
    }
    @Test

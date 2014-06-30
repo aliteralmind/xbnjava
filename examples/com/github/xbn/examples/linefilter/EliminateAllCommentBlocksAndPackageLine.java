@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.linefilter.entity.EntityRequired;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
@@ -48,22 +49,24 @@ public class EliminateAllCommentBlocksAndPackageLine  {
 
       //Example proper:
 
+      PostFilterSelfActiveInOutRange onOffFilter = new PostFilterSelfActiveInOutRange(
+         NewLengthInRangeFor.maxExclusive(null, 1, null),
+         OnOffAbort.ON, OnOffAbort.OFF,
+         OutOfRangeResponseWhen.IMMEDIATE,
+         null);        //debug
+
       SingleLineEntity pkgDeclLineEntity = NewSingleLineEntityFor.match(
          "pkgdecl", KeepMatched.NO,
          Pattern.compile(JavaRegexes.PACKAGE_DECL_ONE_LINE_NO_CMTS),
          null,      //dbgAlter (on:System.out, off:null)
-         new PostFilterSelfActiveInOutRange(
-            NewLengthInRangeFor.maxExclusive(null, 1, null),
-            OnOffAbort.ON, OnOffAbort.OFF,
-            OutOfRangeResponseWhen.IMMEDIATE,
-            null),        //debug
+         EntityRequired.YES, onOffFilter,
          null);     //dbgLineNums
 
-      BlockEntity javaMlcBlock = NewBlockEntityFor.javaComment_Cfg_startEndDebug(
+      BlockEntity javaMlcBlock = NewBlockEntityFor.javaComment_Cfg(
          "comment", IncludeJavaDoc.YES,
          null,      //dbgStart
          null,      //dbgEnd
-         null,      //on-off filter
+         EntityRequired.YES, null,
          null).     //dbgLineNums
          keepNone().build();
 

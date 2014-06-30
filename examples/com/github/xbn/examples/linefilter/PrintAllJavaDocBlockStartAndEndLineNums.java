@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.linefilter.entity.EntityRequired;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
@@ -45,14 +46,14 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
          "comment", IncludeJavaDoc.NO,
          null,         //dbgStart (on:System.out, off:null)
          null,         //dbgEnd
-         null,         //on-off filter
+         EntityRequired.YES, null,
          null);        //dbgLineNums
 
-      BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg_startEndFilterDebug(
+      BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
          "doccomment",
          null,       //dbgStart
          null,       //dbgEnd
-         null,       //on-off filter
+         EntityRequired.YES, null,
          null).      //dbgLineNums
          keepAll().build();
 

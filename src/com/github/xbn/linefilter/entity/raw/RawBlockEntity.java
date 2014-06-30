@@ -54,7 +54,7 @@ package  com.github.xbn.linefilter.entity.raw;
 and this
 <!--->*<!--->/  and this</PRE></BLOCKQUOTE>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_Cfg RawBlockEntity_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_Cfg RawBlockEntity_Cfg}</H3>
 
    <P><UL>
       <LI><B>Start/mid/end:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startAlter(ValueAlterer) startAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#midAlter(ValueAlterer) midAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) endAlter}</LI>
@@ -668,6 +668,7 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
       declareStartLine(false);
       declareMidLine(false);
       declareEndLine(false);
+      crashIfRequiredAndNeverActive();
    }
    public String getDebuggingPrefix(int line_num)  {
       StringBuilder bldr = getDebuggingPrefixPrefixBldr();

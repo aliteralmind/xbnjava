@@ -29,6 +29,7 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
    public Appendable   dbgApblLineNums;
    public EntityType   type           ;
    public RawOnOffEntityFilter<L> filterIfNonNull;
+   public boolean      isRqd          ;
 //constructors...START
    /**
       <P>Create a new instance, for the root entity only.</P>
@@ -78,6 +79,7 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
       //Do not reset the name.
       dbgApblLineNums = null;
       filterIfNonNull = null;
+      isRqd = false;
    }
    public String toString()  {
       return  super.toString() + ", getName()=" + getName() + ", getDebugApblLineNumbers()=" + getDebugApblLineNumbers();
@@ -94,6 +96,9 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
    }
    public RawOnOffEntityFilter<L> getFilterIfNonNull()  {
       return  filterIfNonNull;
+   }
+   public boolean isRequired()  {
+      return  isRqd;
    }
 //getters...END
 }

@@ -16,13 +16,15 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
-   import  com.github.xbn.linefilter.alter.TextLineAlterer;
    import  com.github.xbn.linefilter.entity.BlockEntity;
-   import  com.github.xbn.linefilter.entity.EndRequired;
-   import  com.github.xbn.linefilter.entity.z.BlockEntity_Cfg;
+   import  com.github.xbn.linefilter.entity.EntityRequired;
+   import  com.github.xbn.linefilter.entity.KeepEndLine;
+   import  com.github.xbn.linefilter.entity.KeepMidLines;
+   import  com.github.xbn.linefilter.entity.KeepStartLine;
+   import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
    import  com.github.xbn.text.StringUtil;
    import  java.util.Iterator;
+   import  java.util.regex.Pattern;
 /**
    <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to return only the lines in a block.</P>
 
@@ -49,16 +51,14 @@ public class IterateKeptLinesBlockAsChild  {
 
       //Example proper:
 
-      TextLineAlterer startIdOnly = NewTextLineAltererFor.
-         textValidateOnly("start", null,
-         null);            //debug (on:System.out, off:null)
-      TextLineAlterer endIdOnly = NewTextLineAltererFor.
-         textValidateOnly("end", null,
-         null);            //debug
-
-      BlockEntity block = new BlockEntity_Cfg("block").
-         startAlter(startIdOnly).endAlter(EndRequired.YES, endIdOnly).
-         keepMidsOnly().build();
+      BlockEntity block = NewBlockEntityFor.lineRange(null,
+         KeepStartLine.NO, KeepMidLines.YES, KeepEndLine.NO,
+         Pattern.compile("start", Pattern.LITERAL), null,
+         null,          //dbgStart (on:System.out, off:null)
+         Pattern.compile("end", Pattern.LITERAL), null,
+         null,          //dbgEnd
+         EntityRequired.YES, null,
+         null);         //dbgLineNums
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          StringUtil.getLineIterator(input), Returns.KEPT,

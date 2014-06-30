@@ -16,7 +16,7 @@ package  com.github.xbn.array;
 /**
    <P>{@code IndexOutOfBoundsException} with accessors to relevant databuilder, and accessors.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg XbnStringIndexOutOfBoundsException_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg XbnStringIndexOutOfBoundsException_Cfg}</H3>
 
    <P><OL>
       <LI><B>Bad index/index-range:</B> <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badIndex(int) badIndex}(i)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badIndex(int, String) badIndex}(i,s)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badRange(int, int) badRange}(i,i)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badRange(int, int, String, String) badRange}(i,i,s,s)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#chainID(boolean, Object) chainID}(b,o)</CODE></LI>

@@ -6,7 +6,7 @@ package  com.github.xbn.list.lister;
 /**
    <P>{@code ListLister} configuration relating to the list as a whole--not its elements. Elements are configured by {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCfgOverall_Cfg LLCfgOverall_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCfgOverall_Cfg LLCfgOverall_Cfg}</H3>
 
    <P><UL>
       <LI><B>Parent:</B> {@code <A HREF="ListLister.html#cfg">ListLister</A>}</LI>

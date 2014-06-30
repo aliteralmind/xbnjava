@@ -18,7 +18,7 @@ package  com.github.xbn.linefilter.entity.raw;
 /**
    <P>Determines when an entity is on, based on some conditions--The three possible states are on, off, and <I>stop the {@code FilteredIterator} right now</I> (abort). When off, lines are never analyzed, meaning it is not possible for it to be {@linkplain RawEntity#isActive() active}.</P>
 
-   @see  com.github.xbn.linefilter.entity.raw.RawChildEntity#getFilter()
+   @see  RawChildEntity#getFilter()
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
@@ -26,15 +26,14 @@ public interface RawOnOffEntityFilter<L> extends Copyable  {
    /**
       <P>Determines the on-off state before the line is ever analyzed by the entity.</P>
 
-      @param  entity_beingFiltered  The entity whose {@linkplain RawEntity#getFilter() filter} is <I>this</I> object.
+      @param  entity_beingFiltered  The entity whose {@linkplain RawChildEntity#getFilter() filter} is <I>this</I> object.
       @param  line_num  The number of theh line that will be analyzed by the entity (assuming this function returns {@link OnOffAbort#ON ON}).
-      @param  body_toAlter  The line body that will potentially be altered. In most cases, this will be equal to <CODE>line_aboutToBeAnalyzed.{@link RawLine#getBody() getBody}()</CODE>.
+      @param  body_toAlter  The line body that will potentially be altered.
     **/
    OnOffAbort getPreState(RawEntity<L> entity_beingFiltered, int line_num, L body_toAlter);
    /**
       <P>Determines the on-off state after the line has been analyzed by the entity (whether it was determined to be {@linkplain RawEntity#isActive() active} or not).</P>
       @param  entity_beingFiltered  The entity whose {@linkplain RawEntity#getFilter() filter} is <I>this</I> object.
-      @param  line_thatWasAnalyzed  The line that was already analyzed by the entity. In most cases, this contains the unaltered (original) {@linkplain RawLine#getBody() body}
       @param  potentially_alteredBody  The line body that was potentially altered by the entity.
     **/
    OnOffAbort getPostState(RawEntity<L> entity_beingFiltered, int line_num, L potentially_alteredBody);

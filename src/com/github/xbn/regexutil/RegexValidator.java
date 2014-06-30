@@ -26,7 +26,7 @@ package  com.github.xbn.regexutil;
 /**
    <P>Validate a string against a regular expression.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexValidator_Cfg RegexValidator_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexValidator_Cfg RegexValidator_Cfg}</H3>
 
    <P><UL>
       <LI><B>Find what:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#literal(String) literal}(s)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#pattern(Pattern) pattern}(p)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#regex(String) regex}(s)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#regex(String, int) regex}(s,i)</CODE></LI>

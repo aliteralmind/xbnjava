@@ -27,6 +27,8 @@ package  com.github.xbn.linefilter.entity.raw;
 public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
    /**
       <P>Communicates to an entity that the end of its parent block has reached or, in the case of the root entity, the end of the text file itself.</P>
+
+      @exception  LineFilterException  If this entity is {@linkplain #isRequired() required} but was never found in the input.
     **/
    void declareEndOfInput();
    /**
@@ -39,7 +41,7 @@ public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
 {@.codelet.and.out com.github.xbn.examples.linefilter.IterateActiveLines:lineRange(1, false, "filteredItr = new FilteredLineIterator", 1, false, "block);", "^      ")}
 
       @return  If<UL>
-         <LI>{@code true}: The line is returned by <CODE><I>{@link com.github.xbn.linefilter.FilteredLineIterator}</I>.{@link com.github.xbn.linefilter.FilteredLineIterator#nextLine() nextLine}()</CODE> (when <CODE><I>{@link com.github.xbn.linefilter.FilteredIterator}</I>.{@link com.github.xbn.linefilter.FilteredIterator#getReturnsWhat() getReturnsWhat}()</CODE> is {@link com.github.xbn.linefilter.Returns#KEPT KEPT})</LI>
+         <LI>{@code true}: The line is returned by <CODE><I>{@link com.github.xbn.linefilter.FilteredLineIterator}</I>.{@link com.github.xbn.linefilter.FilteredLineIterator#next() next}()</CODE> (when <CODE><I>{@link com.github.xbn.linefilter.FilteredIterator}</I>.{@link com.github.xbn.linefilter.FilteredIterator#getReturnsWhat() getReturnsWhat}()</CODE> is {@link com.github.xbn.linefilter.Returns#KEPT KEPT})</LI>
          <LI>{@code false}: The line is discarded.</LI>
       </UL>
       @see  RawBlockEntity#doKeepJustAnalyzed()
@@ -68,7 +70,7 @@ public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
       <P>Was the just-analyzed line part of the entity?. An active line may or may not be {@linkplain #doKeepJustAnalyzed() kept}.</P>
 
       <P>For a single line entity, &quot;activeness&quot; is determined by whether the just-analyzed line (&quot;the line&quot;) was altered. <I>This does not necessarily mean that the line was <B><U>modified</U></B> in any way,</I> rather that when, after calling
-      <BR> &nbsp; &nbsp; <CODE><I>[the-raw-entity]</I>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</A>(<I>[the-{@linkplain RawLine raw-line}]</I>, <I>[the-line's-{@linkplain RawLine#getBody() body-text}]</I>)</CODE>
+      <BR> &nbsp; &nbsp; <CODE><I>[the-raw-entity]</I>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</A>(<I>[the-line]</I>, <I>[the-line]</I>)</CODE>
       <BR>this
       <BR> &nbsp; &nbsp; <CODE><I>{@link com.github.xbn.analyze.alter.ValueAlterer}</I>.{@link com.github.xbn.analyze.alter.ValueAlterer#wasAltered() wasAltered}()</CODE>
       <BR>returns {@code true}. (A line entity <I>is</I> a value alterer--a line-alterer.)</P>
@@ -96,10 +98,20 @@ public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
     **/
    public LengthInRange getEveryLineDebugRange();
    /**
-      <P>Should all remaining lines in the containing {@code FilteredIterator} be discarded?. This is a special potential state returned by the {@link #getFilter() filter}.</P>
+      <P>Should all remaining lines in the containing {@code FilteredIterator} be discarded?. This is a special potential state returned by the {@link RawChildEntity#getFilter() filter}.</P>
     **/
    boolean doAbortIterator();
    String getDebuggingPrefix();
    int getMostRecentLineNum();
    L getAltered(int line_num, L line_toAnalyze, L line_toAlter);
+   /**
+      <P>Is this entity required to be found somewhere in the input?.</P>
+
+      @return  <UL>
+         <LI>{@code true}: This entity must exist at least once in the input.</LI>
+         <LI>{@code false}: This entity is optional.</LI>
+      </UL>
+      @see  #declareEndOfInput()
+    **/
+   boolean isRequired();
 }

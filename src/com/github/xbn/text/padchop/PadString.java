@@ -24,7 +24,7 @@ package  com.github.xbn.text.padchop;
 
 {@.codelet.and.out com.github.xbn.examples.text.padchop.PadStringXmpl:eliminateCommentBlocksAndPackageDecl()}
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.PadString_Cfg PadString_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.PadString_Cfg PadString_Cfg}</H3>
 
    <P><UL>
       <LI><B>Used by:</B> {@code <A HREF="VzblPadChop.html#cfg">VzblPadChop</A>}</LI>

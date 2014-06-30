@@ -36,7 +36,7 @@ package  com.github.xbn.regexutil;
 /**
    <P>For regular expression replacements where each match can be individually manipulated. The idea for this is based on in  <CODE>e.util.{@link com.github.xbn.regexutil.Rewriter Rewriter}</CODE>, with the additions of distinguishing between &quot;<A HREF="#indirect">indirect</A>&quot; and &quot;<A HREF="#direct">direct</A>&quot; replacements, and the ability to choose exactly which matches should be replaced (see &quot;Which terms&quot; in the below list).</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}</H3>
 
    <P><UL>
       <LI><B>Search terms:</B><UL>
@@ -62,7 +62,7 @@ package  com.github.xbn.regexutil;
 </LI>
    </UL></P>
 
-   <A NAME="indirect"><A/><H4><CODE>[<A HREF="#skip-navbar_top">top                                                                                              </A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Indirect</U></H4>
+   <A NAME="indirect"></A><H4><CODE>[<A HREF="#skip-navbar_top">top                                                                                              </A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Indirect</U></H4>
 
    <P><I>Indirect replacements are made with {@link IndirectRegexReplacer}.</I></P>
 
@@ -80,13 +80,13 @@ package  com.github.xbn.regexutil;
       <BR> &nbsp; &nbsp; {@code to_appendTo.append(getIndirectReplacement())}</LI>
    </OL></P>
 
-   <A NAME="direct"><A/><H4><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Direct</U></H4>
+   <A NAME="direct"></A><H4><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; <U>RegexReplacer: Definition: Direct</U></H4>
 
    <P>When capture groups do not need to be manipulated, the {@code Matcher} can make the replacement itself--&quot;directly&quot;. Internally, this is equivalent to the above step one, changed to
    <BR> &nbsp; &nbsp; {@code <I>[Matcher]</I>.appendReplacement(to_appendTo, <I>[the-replacement-string]</I>)}.</P>
 
 
-   <A NAME="whichmatches"><A/><H3><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; Choosing which matches to replace</H3>
+   <A NAME="whichmatches"></A><H3><CODE>[<A HREF="#skip-navbar_top">top</A>]</CODE> &nbsp; Choosing which matches to replace</H3>
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerSpcfcTermsXmpl:eliminateCommentBlocksAndPackageDecl()}
 

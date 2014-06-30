@@ -22,7 +22,7 @@ package  com.github.xbn.number;
 /**
    <P>{@code ValueValidator} for testing an integer's {@code null}-ness and that it is in an {@code IntInRange}.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.number.z.IntInRangeValidator_Cfg IntInRangeValidator_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.number.z.IntInRangeValidator_Cfg IntInRangeValidator_Cfg}</H3>
 
    public IntInRangeValidator_CfgForNeeder<G,V,R> extraErrInfo(Object info)  {
    public IntInRangeValidator_CfgForNeeder<G,V,R> range(G range)  {

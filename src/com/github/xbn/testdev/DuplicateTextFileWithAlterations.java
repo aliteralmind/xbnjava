@@ -54,25 +54,29 @@ public class DuplicateTextFileWithAlterations  {
          CrashIfObject.nnull(output, "output", null);
          throw  CrashIfObject.nullOrReturnCause(overwrite, "overwrite", null, rx);
       }
+      Iterator<String> lineItr = null;
+      if(inAndOutAreEqual)  {
+         String text = PlainTextFileUtil.getText(input, "input");
+         lineItr = StringUtil.getLineIterator(text);
+      }  else  {
+         lineItr = PlainTextFileUtil.getLineIterator(input, "input");
+      }
+
+      PrintWriter fileWriter = new NewPrintWriterToFile().overwrite().
+         manualFlush().build(output);
+
+      NewTextAppenterFor.appendableSuppressIfNull(dbgInOut_ifNonNull).
+         appentln("DuplicateTextFileWithAlterations(overwrite." + overwrite + "):" + LINE_SEP +
+            " - input: " + input.getAbsolutePath() + LINE_SEP +
+            " - output: " + output.getAbsolutePath());
+
+      go(lineItr, fileWriter, all_alterer);
+   }
+
+   public static final void go(Iterator<String> input_lineItr, PrintWriter output, ExpirableTextLineAlterList all_alterer)  {
       try  {
-         Iterator<String> lineItr = null;
-         if(inAndOutAreEqual)  {
-            String text = PlainTextFileUtil.getText(input, "input");
-            lineItr = StringUtil.getLineIterator(text);
-         }  else  {
-            lineItr = PlainTextFileUtil.getLineIterator(input, "input");
-         }
-
-         PrintWriter fileWriter = new NewPrintWriterToFile().overwrite().
-            manualFlush().build(output);
-
-         NewTextAppenterFor.appendableSuppressIfNull(dbgInOut_ifNonNull).
-            appentln("DuplicateTextFileWithAlterations(overwrite." + overwrite + "):" + LINE_SEP +
-               " - input: " + input.getAbsolutePath() + LINE_SEP +
-               " - output: " + output.getAbsolutePath());
-
-         while(lineItr.hasNext())  {
-            String line = lineItr.next();
+         while(input_lineItr.hasNext())  {
+            String line = input_lineItr.next();
             try  {
                if(!all_alterer.isExpired())  {
                   line = all_alterer.getAltered(line);
@@ -81,17 +85,18 @@ public class DuplicateTextFileWithAlterations  {
                throw  CrashIfObject.nullOrReturnCause(all_alterer, "all_alterer", null, rx);
             }
 
-            fileWriter.write(line);
-            fileWriter.write(LINE_SEP);
+            output.write(line);
+            output.write(LINE_SEP);
          }
 
-         fileWriter.close();
+         output.flush();
+         output.close();
 
-         fileWriter.flush();
-         fileWriter.close();
       }  catch(RuntimeException rx)  {
-         CrashIfObject.nnull(overwrite, "overwrite", null);
-         throw  new RuntimeException("input: " + input.getAbsolutePath() + ", output: " + output.getAbsolutePath(), rx);
+         CrashIfObject.nnull(input_lineItr, "input_lineItr", null);
+         CrashIfObject.nnull(output, "output", null);
+         CrashIfObject.nnull(all_alterer, "all_alterer", null);
+         throw  new RuntimeException("input_lineItr: " + input_lineItr + ", output: " + output + ", all_alterer=" + all_alterer, rx);
       }
 
    }

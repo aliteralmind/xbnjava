@@ -13,7 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity;
-   import  com.github.xbn.linefilter.entity.raw.RawLineEntity;
+   import  com.github.xbn.linefilter.entity.raw.RawEntity;
    import  com.github.xbn.linefilter.FilteredLineException;
    import  com.github.xbn.lang.CrashIfObject;
 /**
@@ -24,27 +24,27 @@ package  com.github.xbn.linefilter.entity;
 
  **/
 public class LineEntityException extends FilteredLineException  {
-   private final RawLineEntity<?> entity;
-   public LineEntityException(int line_num, Object line, RawLineEntity<?> entity, String message)  {
+   private final RawEntity<?> entity;
+   public LineEntityException(int line_num, Object line, RawEntity<?> entity, String message)  {
       super(line_num, line, LineEntityException.getErrorMessage(entity, message));
       this.entity = entity;
    }
-   public LineEntityException(int line_num, Object line, RawLineEntity<?> entity)  {
+   public LineEntityException(int line_num, Object line, RawEntity<?> entity)  {
       super(line_num, line, (entity == null) ? null : entity.toString());
       this.entity = entity;
    }
-   public LineEntityException(int line_num, Object line, RawLineEntity<?> entity, String message, Throwable cause)  {
+   public LineEntityException(int line_num, Object line, RawEntity<?> entity, String message, Throwable cause)  {
       super(line_num, line, LineEntityException.getErrorMessage(entity, message), cause);
       this.entity = entity;
    }
-   public LineEntityException(int line_num, Object line, RawLineEntity<?> entity, Throwable cause)  {
+   public LineEntityException(int line_num, Object line, RawEntity<?> entity, Throwable cause)  {
       super(line_num, line, (entity == null) ? null : entity.toString(), cause);
       this.entity = entity;
    }
-   public RawLineEntity<?> getEntity()  {
+   public RawEntity<?> getEntity()  {
       return  entity;
    }
-   public static final String getErrorMessage(RawLineEntity<?> entity, String message)  {
+   public static final String getErrorMessage(RawEntity<?> entity, String message)  {
       try  {
          return  ((entity != null) ? "entity=<" + entity + ">, message: " : "") + message;
       }  catch(RuntimeException rx)  {

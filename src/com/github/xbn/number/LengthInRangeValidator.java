@@ -22,7 +22,7 @@ package  com.github.xbn.number;
 /**
    <P>{@code ValueValidator} for testing an length's {@code null}-ness (the integer-object that represents length) and that it is in a {@code LengthInRange}.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.number.z.LengthInRangeValidator_Cfg LengthInRangeValidator_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.number.z.LengthInRangeValidator_Cfg LengthInRangeValidator_Cfg}</H3>
 
    public LengthInRangeValidator_CfgForNeeder<G,V,R> extraErrInfo(Object info)  {
    public LengthInRangeValidator_CfgForNeeder<G,V,R> range(G line_itrr)  {

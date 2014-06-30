@@ -222,7 +222,7 @@ public abstract class RawBlockEntity_CfgForNeeder<L,M extends RawBlockEntity<L>,
    /**
       <P>Should the start, middle, or end lines be kept?. A {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#doKeepJustAnalyzed() kept} line may or may not be {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active}.</P>
 
-      @param  do_keepStart  If {@code true}, and the current line is the block's start line, it is returned by the {@linkplain com.github.xbn.linefilter.FilteredLineIterator#nextTextLine() filtered iterator}. If {@code false}, it is discarded. Get with {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity#doKeepStartLine() doKeepStartLine}{@code ()}*.
+      @param  do_keepStart  If {@code true}, and the current line is the block's start line, it is returned by the {@linkplain com.github.xbn.linefilter.FilteredIterator#next() filtered iterator}. If {@code false}, it is discarded. Get with {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity#doKeepStartLine() doKeepStartLine}{@code ()}*.
       @param  do_keepMids  If {@code true}, and the current line is between the start and end lines, it is returned by the iterator. Get with {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity#doKeepMidLines() doKeepMidLines}{@code ()}*.
       @param  do_keepEnd  If {@code true}, and the current line is the block's end line, it is returned by the iterator. Get with {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity#doKeepEndLine() doKeepEndLine}{@code ()}*.
       @return  <I>{@code this}</I>
@@ -244,6 +244,17 @@ public abstract class RawBlockEntity_CfgForNeeder<L,M extends RawBlockEntity<L>,
     **/
    public RawBlockEntity_CfgForNeeder<L,M,R> filter(RawOnOffEntityFilter<L> filter_ifNonNull)  {
       filterIfNonNull = filter_ifNonNull;
+      return  this;
+   }
+   /**
+      <P>Is it required that this entity be found somewhere in the input?.</P>
+
+      @param  b  If {@code true}, then this entity must exist at least once in the input. If {@code false}, it's optional. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isRequired() isRequired}{@code ()}*.
+      @return  <I>{@code this}</I>
+      @see  com.github.xbn.linefilter.entity.raw.RawEntity#declareEndOfInput()
+    **/
+   public RawBlockEntity_CfgForNeeder<L,M,R> required(boolean b)  {
+      isRqd = b;
       return  this;
    }
    /**

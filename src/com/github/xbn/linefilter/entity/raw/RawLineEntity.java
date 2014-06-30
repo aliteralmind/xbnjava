@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
+   import  com.github.xbn.linefilter.entity.LineEntityException;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
    import  com.github.xbn.analyze.alter.Altered;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
@@ -34,7 +35,7 @@ package  com.github.xbn.linefilter.entity.raw;
 /**
    <P>The base class for all entities.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder RawLineEntity_CfgForNeeder}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder RawLineEntity_CfgForNeeder}</H3>
 
    <P><UL>
       <LI>YYY</LI>
@@ -56,9 +57,9 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
    private final RawOnOffEntityFilter<L> filter;
    private final TextAppenter        dbgAptrEveryLine;
    private final LengthInRange rangeForEveryLineDebug;
-   private int     fullyActiveCount ;
+   private boolean isRqd            ;
    private int     mostRecentLineNum;
-//	private int     lineNumAnalyzed  ;
+   private int     fullyActiveCount ;
    private boolean doAbortItr       ;
    /**
       <P>Create a new and <I>temporarily unusable</I> instance from a fieldable.</P>
@@ -78,11 +79,7 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
       Objects.requireNonNull(type, "fieldable.getType()");
 
       smplNamed = new SimpleNamed(fieldable.getName());
-/*
-      if(smplNamed.getName().indexOf('_') != -1)  {
-         throw  new IllegalArgumentException("fieldable.getName() (\"" + fieldable.getName() + "\") contains an underscore. Underscores are used to separate parent names from their children names.");
-      }
- */
+      isRqd = fieldable.isRequired();
 
       levelsBelowRoot = -1;
       resetCountsLET();
@@ -129,11 +126,9 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
             throw  new IllegalArgumentStateException("parent=null, levels_belowRoot=" + levels_belowRoot + ". Non-root entity must have a levels-below greater than zero.");
          }
 
-//			StringBuilder nameBldr = new StringBuilder(to_copy.smplNamed.getName());
          RawParentEntity<L> top2 = parent;
          try  {
             while(top2 != null)  {
-//					nameBldr.insert(0, '_').insert(0, top2.getName());
                top2 = top2.getParent();
             }
          }  catch(RuntimeException rx)  {
@@ -141,8 +136,8 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
          }
          this.parent = parent;
          topParent = top2;
-//			smplNamed = new SimpleNamed(nameBldr.toString());
          smplNamed = new SimpleNamed(to_copy.smplNamed.getName());
+         isRqd = to_copy.isRequired();
          levelsBelowRoot = levels_belowRoot;
       }
 
@@ -189,6 +184,9 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
    }
    public EntityType getType()  {
       return  type;
+   }
+   public boolean isRequired()  {
+      return  isRqd;
    }
    public int getParentCount()  {
       return  levelsBelowRoot;
@@ -268,9 +266,6 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
       }
 
       super.declareAltered(altered, deleted);
-
-//		CrashIfIntIs.lessThan(num, (getMostRecentLineNum() + 1), "num", "(getMostRecentLineNum() + 1)", null);
-//		mostRecentLineNum = lineNumAnalyzed;
    }
    protected void postFilter(L potentially_alteredLine)  {
       if(doAbortIterator())  {
@@ -285,17 +280,10 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
 
       //Do not abort
 
-//		int lineNumAnalyzed = RawLine.getNumberCrashIfNull(original_line, "original_line");
-
       if(state.isOff()  &&  isEveryLineAptrUseableAndInRange())  {
          getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " getPostState(this, original_line, potentially_alteredLine) is OFF.");
       }
    }
-/*
-   protected boolean isEveryLineAptrUseableAndInRange(L line)  {
-      return  isEveryLineAptrUseableAndInRange(line.getNumber());
-   }
- */
    protected boolean isEveryLineAptrUseableAndInRange()  {
       return  getDebugAptrEveryLine().isUseable()  &&  getEveryLineDebugRange().isIn(getMostRecentLineNum());
    }
@@ -335,6 +323,10 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
          to_appendTo.append(", doAbortIterator()=true");
       }
 
+      if(isRequired())  {
+         to_appendTo.append(", isRequired()=true");
+      }
+
       to_appendTo.append(LINE_SEP).append(" >>> Alterer info: ");
       super.appendToString(to_appendTo);//.append("\", rules: {{");
 //		return  appendRules(to_appendTo).append("}}");
@@ -364,6 +356,16 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
    protected String getDebuggingPrefixPrefix()  {
       return  "[" + getMostRecentLineNum() + ":" + getType() +
          ":\"" + getName() + "\"" +
+         (isActive() ? ":active" : "") +
          (doAbortIterator() ? ":ABORT_ITERATOR" : "");
+   }
+   protected void crashIfRequiredAndNeverActive()  {
+      if(!isRequired())  {
+         return;
+      }
+
+      if(getFullyActiveCount() == 0)  {
+         throw  new LineEntityException(-1, null, this, "Entity is required, but was not found in the input.");
+      }
    }
 }

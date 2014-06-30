@@ -34,7 +34,7 @@ package  com.github.xbn.linefilter.entity.raw;
    ...START
   -->
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_Cfg RawSingleLineEntity_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_Cfg RawSingleLineEntity_Cfg}</H3>
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#alterer(ValueAlterer) alterer}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#keepMatchedLines(boolean) keepMatchedLines}(b)</LI>
@@ -173,5 +173,6 @@ public class RawSingleLineEntity<L> extends RawLineEntity<L> implements RawChild
     **/
    public void declareEndOfInput()  {
       incrementFullyActiveCountIfWas();
+      crashIfRequiredAndNeverActive();
    }
 }

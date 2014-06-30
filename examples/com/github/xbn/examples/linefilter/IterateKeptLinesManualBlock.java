@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  java.util.regex.Pattern;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
@@ -20,19 +21,18 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.linefilter.entity.EndRequired;
    import  com.github.xbn.linefilter.entity.z.BlockEntity_Cfg;
-   import  com.github.xbn.regexutil.ReplacedInEachInput;
    import  com.github.xbn.text.StringUtil;
-   import  java.util.regex.Pattern;
+   import  java.util.Iterator;
 /**
-   <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to make basic modifications on kept lines.</P>
+   <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to return only the lines in a block.</P>
 
-   <P>{@code java com.github.xbn.examples.linefilter.ModifyBlockLines}</P>
+   <P>{@code java com.github.xbn.examples.linefilter.IterateKeptLinesManualBlock}</P>
 
-   @see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_modify">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_modify</A></CODE>
+   @see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic</A></CODE>
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class ModifyBlockLines  {
+public class IterateKeptLinesManualBlock  {
    public static final void main(String[] ignored)  {
       //Example setup
          String LINE_SEP = System.getProperty("line.separator", "\r\n");
@@ -45,23 +45,19 @@ public class ModifyBlockLines  {
             append("Block ends here"  ).append(LINE_SEP).
             append("after1"           ).append(LINE_SEP).
             append("after2"           ).append(LINE_SEP);
+         Iterator<String> lineItr = StringUtil.getLineIterator(input);
 
       //Example proper:
 
       TextLineAlterer startIdOnly = NewTextLineAltererFor.
          textValidateOnly("start", null,
          null);            //debug (on:System.out, off:null)
-      TextLineAlterer midAlterer = NewTextLineAltererFor.replacement(
-         Pattern.compile("(.*)"), "<B>$1</B>",
-         ReplacedInEachInput.FIRST, null,
-         null);            //debug
       TextLineAlterer endIdOnly = NewTextLineAltererFor.
          textValidateOnly("end", null,
          null);            //debug
 
       BlockEntity block = new BlockEntity_Cfg("block").
-         startAlter(startIdOnly).midAlter(midAlterer).
-         endAlter(EndRequired.YES, endIdOnly).
+         startAlter(startIdOnly).endAlter(EndRequired.YES, endIdOnly).
          keepMidsOnly().required(true).build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
@@ -71,6 +67,6 @@ public class ModifyBlockLines  {
 
       while(filteredItr.hasNext())  {
          System.out.println(filteredItr.next());
-      }  //End snippet
+      }
    }
 }

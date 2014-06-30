@@ -34,7 +34,7 @@ package  com.github.xbn.regexutil;
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl:eliminateCommentBlocksAndPackageDecl()}
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg RegexGroupExtractor_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg RegexGroupExtractor_Cfg}</H3>
 
    <P><UL>
       <LI><B>Using:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useMatches() useMatches}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useFind() useFind}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useLookingAt() useLookingAt}()</CODE></LI>

@@ -24,7 +24,7 @@ package  com.github.xbn.analyze.validate;
 /**
    <P>A valid-result filter that changes the result based on the number of valid, invalid, or total analysis counts.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg FilterValidCounts_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg FilterValidCounts_Cfg}</H3>
 
    <P><UL>
       <LI><B>Convenience builders:</B> {@link com.github.xbn.analyze.validate.NewValidResultFilterFor NewValidResultFilterFor}</LI>

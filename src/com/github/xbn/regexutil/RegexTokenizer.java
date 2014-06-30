@@ -28,7 +28,7 @@ package  com.github.xbn.regexutil;
 
    <P><I>Derived from {@code RETokenize}: <a href="http://www.exampledepot.com/egs/java.util.regex/Tokenize.html">{@code http://www.exampledepot.com/egs/java.util.regex/Tokenize.html}</a>, downloaded 8/13/2010.</I></P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexTokenizer_Cfg RegexTokenizer_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexTokenizer_Cfg RegexTokenizer_Cfg}</H3>
 
    <P><UL>
       <LI><B>Regex separator:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(Pattern) separator}(p)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String, int) separator}(s,i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String) separator}(s)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separatorLiteral(String) separatorLiteral}(s)</CODE></LI>

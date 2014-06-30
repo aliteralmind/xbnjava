@@ -42,7 +42,7 @@ package  com.github.xbn.linefilter.entity;
 and this
 <!--->*<!--->/  and this</PRE></BLOCKQUOTE>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg BlockEntity_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg BlockEntity_Cfg}</H3>
 
    <P><UL>
       <LI><B>Start/mid/end:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startAlter(ValueAlterer) startAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#midAlter(ValueAlterer) midAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) endAlter}</LI>

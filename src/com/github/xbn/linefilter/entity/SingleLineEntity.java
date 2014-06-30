@@ -31,7 +31,7 @@ package  com.github.xbn.linefilter.entity;
    ...START
   -->
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_Cfg SingleLineEntity_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_Cfg SingleLineEntity_Cfg}</H3>
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#alterer(ValueAlterer) alterer}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#keepMatchedLines(boolean) keepMatchedLines}(b)</LI>

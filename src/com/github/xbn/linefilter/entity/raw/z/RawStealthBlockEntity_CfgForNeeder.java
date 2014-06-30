@@ -109,6 +109,17 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
       return  this;
    }
    /**
+      <P>Is it required that this entity be found somewhere in the input?.</P>
+
+      @param  b  If {@code true}, then this entity must exist at least once in the input. If {@code false}, it's optional. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isRequired() isRequired}{@code ()}*.
+      @return  <I>{@code this}</I>
+      @see  com.github.xbn.linefilter.entity.raw.RawEntity#declareEndOfInput()
+    **/
+   public RawStealthBlockEntity_CfgForNeeder<L,M,R> required(boolean b)  {
+      isRqd = b;
+      return  this;
+   }
+   /**
       @return  <I>{@code this}</I>
     **/
    public RawStealthBlockEntity_CfgForNeeder<L,M,R> chainID(boolean do_setStatic, Object id)  {

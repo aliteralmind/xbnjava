@@ -34,7 +34,7 @@ package  com.github.xbn.list.lister;
 /**
    <P>Highly-configurable printing of a {@code java.util.List}.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.ListLister_Cfg ListLister_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.ListLister_Cfg ListLister_Cfg}</H3>
 
    <P><UL>
       <LI><B>Sub configs:</B><UL>

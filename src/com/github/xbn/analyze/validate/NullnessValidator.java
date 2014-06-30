@@ -32,7 +32,7 @@ package  com.github.xbn.analyze.validate;
 
    <P>Depending on the needs of sub-classes, it may also be necessary to override {@link #adjustForPostFilterReturnValue(boolean) adjustForPostFilterReturnValue}{@code (b)}.</P>
 
-   <A NAME="cfg"><A/><H3>Builder configuration: {@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder configuration: {@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg}</H3>
 
    <P><UL>
       <LI><B>Convenience builders:</B> {@link com.github.xbn.analyze.validate.NewValueValidatorFor}</LI>

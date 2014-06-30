@@ -34,7 +34,7 @@ package  com.github.xbn.linefilter.entity.raw;
    ...START
   -->
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_Cfg RawStealthBlockEntity_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_Cfg RawStealthBlockEntity_Cfg}</H3>
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
@@ -203,6 +203,7 @@ public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
       if(isMidLine())  {
          throw  new LineEntityException(-1, null, this, "End of output reached, but block not closed");
       }
+      crashIfRequiredAndNeverActive();
    }
    /**
       @param  to_appendTo May not be {@code null}.

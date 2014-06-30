@@ -63,7 +63,7 @@ public interface RawChildEntity<L> extends RawEntity<L>  {
       <P>The on-off filter.</P>
 
       @return  A non-{@code null} filter.
-      @see  #doAbortIterator()
+      @see  RawEntity#doAbortIterator()
     **/
    RawOnOffEntityFilter<L> getFilter();
 }

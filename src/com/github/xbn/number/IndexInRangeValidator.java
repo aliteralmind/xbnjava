@@ -25,7 +25,7 @@ package  com.github.xbn.number;
 /**
    <P>{@code ValueValidator} for testing an indexes {@code null}-ness (an integer object that represents an index) and that it is in a {@code LengthInRange}. This also tests min-max index ranges.</P>
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.number.z.IndexInRangeValidator_Cfg IndexInRangeValidator_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.number.z.IndexInRangeValidator_Cfg IndexInRangeValidator_Cfg}</H3>
 
    public IndexInRangeValidator_CfgForNeeder<G,V,R> extraErrInfo(Object info)  {
    public IndexInRangeValidator_CfgForNeeder<G,V,R> range(G range)  {

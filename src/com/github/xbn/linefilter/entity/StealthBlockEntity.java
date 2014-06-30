@@ -30,7 +30,7 @@ package  com.github.xbn.linefilter.entity;
    ...START
   -->
 
-   <A NAME="cfg"><A/><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_Cfg StealthBlockEntity_Cfg}</H3>
+   <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_Cfg StealthBlockEntity_Cfg}</H3>
 
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
