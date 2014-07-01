@@ -172,7 +172,7 @@ public class StringUtil extends StringUtilBase  {
    /**
       <P>For visibly indicating the index or index-range of a str_obj on the immediately-above line.</P>
 
-{@.codelet.and.out com.github.xbn.examples.text.VisibleIndexMaskXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.text.VisibleIndexMaskXmpl%eliminateCommentBlocksAndPackageDecl()}
 
       @param  str_toPadForLen  The str_obj to mask.
       @param  idx_start  The mask-start index. <I>Should</I> be between 0 and

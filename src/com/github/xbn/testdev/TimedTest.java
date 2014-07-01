@@ -29,9 +29,9 @@ package  com.github.xbn.testdev;
 /**
    <P>For benchmarking the speed of a process to the nano-second, and comparing it against another.</P>
 
-{@.codelet.and.out com.github.xbn.examples.testdev.Time3StringConcatVsAppend(100000):eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.testdev.Time3StringConcatVsAppend(100000)%eliminateCommentBlocksAndPackageDecl()}
 
-{@.codelet.and.out com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList(1000000):eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList(1000000)%eliminateCommentBlocksAndPackageDecl()}
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

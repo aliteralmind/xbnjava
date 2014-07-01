@@ -155,7 +155,7 @@ public class TextAppenter  {
    /**
       <P>Creates a new and unusable appenter.</P>
 
-{@.codelet.and.out com.github.xbn.examples.io.UnusableAppenterExample:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.io.UnusableAppenterExample%eliminateCommentBlocksAndPackageDecl()}
 
     **/
    public static final TextAppenter newForUnusable()  {

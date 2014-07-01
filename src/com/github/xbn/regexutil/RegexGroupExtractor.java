@@ -32,7 +32,7 @@ package  com.github.xbn.regexutil;
 /**
    <P>Iterates through a search string, placing all capture-groups for each match into a list. This is intended for capture groups that are mutually-exclusive (do not overlap).</P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg RegexGroupExtractor_Cfg}</H3>
 

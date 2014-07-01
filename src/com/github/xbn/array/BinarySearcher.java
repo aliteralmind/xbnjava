@@ -24,7 +24,7 @@ package  com.github.xbn.array;
 /**
    <P>Manages a binary search. This only works with indexed and sorted containers, such as {@code List}-s and arrays (containing elements which are, ideally, unique).</P>
 
-{@.codelet.and.out com.github.xbn.examples.array.BinarySearcherXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.array.BinarySearcherXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    <P>Referring to the container-being-searched, the binary-search <I>data</I> is: <UL>
       <LI>The <B>{@link #getIndexLeft() minimum} and {@link #getIndexRightX() maximum} index bounds:</B> The element-range in which the desired element exists (or would exist given the current ordering). This range is progressively narrowed until the search is complete.</LI>

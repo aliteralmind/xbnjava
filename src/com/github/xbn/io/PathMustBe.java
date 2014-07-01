@@ -242,15 +242,6 @@ public class PathMustBe  {
       }
    }
    /**
-      <P>If a path is invalid, crash. Otherwise, do nothing.</P>
-
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</CODE></P>
-    **/
-   public void crashIfBadX(Path path, String path_varName) throws NoSuchFileException, AccessDeniedException  {
-      crashIfBadX(path, path_varName, getExistence(), getReadable(), getWritable(), getFileDirectory(), (LinkOption[])getLinkOptions());
-   }
-   /**
       <P>If a path is valid, get it. Otherwise, crash.</P>
 
       <P>This<OL>
@@ -278,6 +269,16 @@ public class PathMustBe  {
          throw  new RTAccessDeniedException(adx);
       }
    }
+//Originates with crashIfBadX, needed by isGood...START
+   /**
+      <P>If a path is invalid, crash. Otherwise, do nothing.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>PathMustBe.{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</CODE></P>
+    **/
+   public void crashIfBadX(Path path, String path_varName) throws NoSuchFileException, AccessDeniedException  {
+      PathMustBe.crashIfBadX(path, path_varName, getExistence(), getReadable(), getWritable(), getFileDirectory(), (LinkOption[])getLinkOptions());
+   }
    /**
       <P>If a path is invalid, crash. Otherwise, do nothing.</P>
 
@@ -288,11 +289,12 @@ public class PathMustBe  {
       @param  writable_is  May not be {@code null}
       @param  file_directory  May not be {@code null}.
       @param  link_opts  Options indicating how symbolic links are handled.
+      @see  #isGood(Path, Existence, Readable, Writable, FileDirectory, LinkOption...) isGood
       @see  #crashIfBad(Path, String) crashIfBad(p,s)
       @see  #getOrCrashIfBad(String, String) crashIfBad(s,s)
       @see  #crashIfBadX(Path, String) crashIfBad(p,s)
       @see  #getOrCrashIfBadX(String, String) crashIfBad(s,s)
-      @see  #crashIfBad(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBad(p,s,e,r,fd,lo...)
+      @see  #crashIfBad(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBad(Path, String, Existence, ...)
     **/
    public static final void crashIfBadX(Path path, String path_varName, Existence existing_is, Readable readable_is, Writable writable_is, FileDirectory file_directory, LinkOption... link_opts) throws NoSuchFileException, AccessDeniedException  {
       try  {
@@ -328,4 +330,65 @@ public class PathMustBe  {
          throw  CrashIfObject.nullOrReturnCause(file_directory, "file_directory", null, rx);
       }
    }
+//Originates with crashIfBadX, needed by isGood...END
+//Originates with crashIfBadX, needed by isGood...START
+   /**
+      <P>Does a path conform to all its restrictions?.</P>
+
+      <P>Equal to
+      <BR> &nbsp; &nbsp; <CODE>PathMustBe.{@link #isGood(Path, Existence, Readable, Writable, FileDirectory, LinkOption...) isGood}(path, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</CODE></P>
+    **/
+   public boolean isGood(Path path)  {
+      return  PathMustBe.isGood(path, getExistence(), getReadable(), getWritable(), getFileDirectory(), (LinkOption[])getLinkOptions());
+   }
+   /**
+      <P>Does a path conform to all its restrictions?.</P>
+
+      @param  path  May not be {@code null}.
+      @param  path_varName  Descriptive name for {@code path}. <I>Should</I> not be {@code null} or empty.
+      @param  existing_is  May not be {@code null}.
+      @param  readable_is  May not be {@code null}.
+      @param  writable_is  May not be {@code null}
+      @param  file_directory  May not be {@code null}.
+      @param  link_opts  Options indicating how symbolic links are handled.
+      @see  #isGood(Path)
+      @see  #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX
+    **/
+   public static final boolean isGood(Path path, Existence existing_is, Readable readable_is, Writable writable_is, FileDirectory file_directory, LinkOption... link_opts)  {
+      try  {
+         if(Files.exists(path, link_opts))  {
+            if(!Files.isWritable(path)  &&  writable_is.isRequired())  {
+               return  false;
+            }
+         }  else if(existing_is.isRequired())  {
+            return  false;
+         }  else  {
+            Path parent = path.getParent();
+            if(parent == null  ||  !Files.isWritable(parent)  &&  writable_is.isRequired())  {
+               return  false;
+            }
+         }
+
+         if(!Files.isReadable(path)  &&  readable_is.isRequired())  {
+            return  false;
+         }
+
+         if(file_directory.isDirectory())  {
+            if(!Files.isDirectory(path, link_opts))  {
+               return  false;
+            }
+         }  else if(file_directory.isRegularFile()  &&  !Files.isRegularFile(path, link_opts))  {
+            return  false;
+         }
+
+         return  true;
+      }  catch(RuntimeException rx)  {
+         CrashIfObject.nnull(path, "path", null);
+         CrashIfObject.nnull(existing_is, "existing_is", null);
+         CrashIfObject.nnull(writable_is, "writable_is", null);
+         CrashIfObject.nnull(readable_is, "readable_is", null);
+         throw  CrashIfObject.nullOrReturnCause(file_directory, "file_directory", null, rx);
+      }
+   }
+//Originates with crashIfBadX, needed by isGood...END
 }

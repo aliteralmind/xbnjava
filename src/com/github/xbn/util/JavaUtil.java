@@ -49,7 +49,7 @@ char                       '\u0000'
 String (or any object)     null
 boolean                    false}</PRE>
 
-{@.codelet.and.out com.github.xbn.examples.util.JavaUtilInitializedValuesXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.util.JavaUtilInitializedValuesXmpl%eliminateCommentBlocksAndPackageDecl()}
 
       @see  #getInitializedObjectForClassName(String) getInitializedObjectForClassName(s)
       @see  #DEFAULT_CHAR

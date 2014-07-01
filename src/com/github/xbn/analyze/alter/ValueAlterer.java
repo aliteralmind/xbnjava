@@ -17,7 +17,7 @@ package  com.github.xbn.analyze.alter;
 /**
    <P>An {@code Alterer} that changes a single object.</P>
 
-{@.codelet.and.out com.github.xbn.examples.analyze.alter.ValueAltererXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.analyze.alter.ValueAltererXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    @param  <V>  The type of object to validate (optional--usually the same as {@code A})
    @param  <A>  The type of object to alter (optionally, only when {@code V} is valid)

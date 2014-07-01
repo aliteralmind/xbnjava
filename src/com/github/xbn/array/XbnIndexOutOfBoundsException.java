@@ -16,7 +16,7 @@ package  com.github.xbn.array;
 /**
    <P>{@code IndexOutOfBoundsException} with accessors to relevant databuilder, and accessors.</P>
 
-{@.codelet.and.out com.github.xbn.examples.array.XbnIndexOutOfBoundsExceptionXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.array.XbnIndexOutOfBoundsExceptionXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg XbnIndexOutOfBoundsException_Cfg}</H3>
 

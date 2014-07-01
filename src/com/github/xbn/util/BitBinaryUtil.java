@@ -48,7 +48,7 @@ public class BitBinaryUtil  {
    /**
       <P>Gets the binary representation of a signed integer, with the &quot;sign bit&quot; removed (31 bits, with the most significant bit, the 32nd, removed).</P>
 
-{@.codelet.and.out com.github.xbn.examples.util.GetIntAsZeroPadded31BitStringNoSignDemo:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.util.GetIntAsZeroPadded31BitStringNoSignDemo%eliminateCommentBlocksAndPackageDecl()}
 
       @return  <CODE>{@link #getIntAsZeroPaddedBinaryStringToLength(int, int) getIntAsZeroPaddedBinaryStringToLength}(num, 32).substring(1, 32)</CODE>
     **/
@@ -68,7 +68,7 @@ public class BitBinaryUtil  {
    /**
       <P>Gets the binary representation of a long, as a string and with zero padding.</P>
 
-{@.codelet.and.out com.github.xbn.examples.util.GetZeroPaddedBinaryStringToLengthDemo:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.util.GetZeroPaddedBinaryStringToLengthDemo%eliminateCommentBlocksAndPackageDecl()}
 
       @return  <CODE>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Long#toBinaryString(long) toBinaryString}(num)).replace(' ', '0')</CODE>
       @see  #getIntAsZeroPaddedBinaryStringToLength(int, int)

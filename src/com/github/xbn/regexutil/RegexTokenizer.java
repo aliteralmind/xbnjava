@@ -39,10 +39,10 @@ package  com.github.xbn.regexutil;
       <LI><B>Other:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#toTokenize(Object) toTokenize}(o)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#lineNumber(int) lineNumber}(i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
    </UL></P>
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.TemplateTokenizer:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.regexutil.TemplateTokenizer%eliminateCommentBlocksAndPackageDecl()}
 
 
-{@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl%eliminateCommentBlocksAndPackageDecl()}
 
 <P>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
 <BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</A>}</P>

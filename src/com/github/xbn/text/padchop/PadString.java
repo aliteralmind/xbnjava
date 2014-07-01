@@ -22,7 +22,7 @@ package  com.github.xbn.text.padchop;
 /**
    <P>Pad a string on a either side with a specific pad-character.</P>
 
-{@.codelet.and.out com.github.xbn.examples.text.padchop.PadStringXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.text.padchop.PadStringXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.PadString_Cfg PadString_Cfg}</H3>
 

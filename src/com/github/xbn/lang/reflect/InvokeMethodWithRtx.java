@@ -20,9 +20,9 @@ package  com.github.xbn.lang.reflect;
 /**
    <P>Builder for invoking an already obtained method, with runtime errors only (the original exception is accessible with {@link java.lang.Throwable#getCause() getCause}{@code ()}).</P>
 
-{@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokeMainWithRtxXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokeMainWithRtxXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-{@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokePrivateStaticMethodWithRtxXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokePrivateStaticMethodWithRtxXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    @see  <CODE>{@link com.github.xbn.array.ArrayUtil}.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/array/ArrayUtil.html#getStringArrayOrNull(E[], boolean, java.lang.String)">getStringArrayOrNull</A>(E[],b,s)</CODE>
    @since 0.1.0

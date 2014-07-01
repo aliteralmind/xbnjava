@@ -6,7 +6,7 @@ package  com.github.xbn.number;
 /**
   <P>Represents a fraction in reduced and mixed-number form, with some mathematical functionality.</P>
 
-{&#64;.codelet.and.out com.github.xbn.examples.number.FractionXmpl:eliminateCommentBlocksAndPackageDecl()}
+{&#64;.codelet.and.out com.github.xbn.examples.number.FractionXmpl%eliminateCommentBlocksAndPackageDecl()}
 
   <P>Originally {@code EDU.oswego.cs.dl.util.concurrent.misc.Fraction.java}, with some minor edits, and the addition of mixed numbers, testing function, and string-constructor, by Jeff Epstein.</P>
 

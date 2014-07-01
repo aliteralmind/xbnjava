@@ -25,10 +25,10 @@ package  com.github.xbn.text.padchop;
 /**
    <P>Chop a string at a particular location (left, middle, right), and with-or-without an ellipsis.</P>
 
-{@.codelet.and.out com.github.xbn.examples.text.padchop.ChopStringXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.text.padchop.ChopStringXmpl%eliminateCommentBlocksAndPackageDecl()}
 
 
-{@.codelet.and.out com.github.xbn.examples.text.padchop.CharsBeforeChopXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.text.padchop.CharsBeforeChopXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.ChopString_Cfg ChopString_Cfg}</H3>
 

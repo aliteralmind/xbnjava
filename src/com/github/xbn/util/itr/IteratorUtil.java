@@ -40,7 +40,7 @@ public class IteratorUtil  {
    /**
       <P>Creates a new iterator, skipping over the first x elements. This can be used to simulate a(n albeit inefficient) double-for loop for comparing elements, such as for detecting duplicates.</P>
 
-{@.codelet.and.out com.github.xbn.examples.util.itr.DetectDupsWithIterators:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.util.itr.DetectDupsWithIterators%eliminateCommentBlocksAndPackageDecl()}
     **/
    public static final <E> Iterator<E> newIteratorStartingAtIndex(int first_wantedIdx, Iterable<E> iterable)  {
       Iterator<E> itr = iterable.iterator();

@@ -38,7 +38,7 @@ public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
 
       <P>Changing the return type to {@link com.github.xbn.linefilter.Returns#ACTIVE ACTIVE} prints only lines that match one of the block's alterers. Note only the mid-lines are kept. Changing {@code "ACTIVE"} to &quot;{@link com.github.xbn.linefilter.Returns#KEPT KEPT}&quot; results in the start and end lines being suppressed:</P>
 
-{@.codelet.and.out com.github.xbn.examples.linefilter.IterateActiveLines:lineRange(1, false, "filteredItr = new FilteredLineIterator", 1, false, "block);", "^      ")}
+{@.codelet.and.out com.github.xbn.examples.linefilter.IterateActiveLines%lineRange(1, false, "filteredItr = new FilteredLineIterator", 1, false, "block);", "^      ")}
 
       @return  If<UL>
          <LI>{@code true}: The line is returned by <CODE><I>{@link com.github.xbn.linefilter.FilteredLineIterator}</I>.{@link com.github.xbn.linefilter.FilteredLineIterator#next() next}()</CODE> (when <CODE><I>{@link com.github.xbn.linefilter.FilteredIterator}</I>.{@link com.github.xbn.linefilter.FilteredIterator#getReturnsWhat() getReturnsWhat}()</CODE> is {@link com.github.xbn.linefilter.Returns#KEPT KEPT})</LI>

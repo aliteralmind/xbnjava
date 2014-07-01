@@ -30,7 +30,7 @@ package  com.github.xbn.text.padchop;
 /**
    <P>Highly configurable trimming, unescaping, padding, and chopping of a string.</P>
 
-{@.codelet.and.out com.github.xbn.examples.text.padchop.VzblPadChopXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.text.padchop.VzblPadChopXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.VzblPadChop_Cfg VzblPadChop_Cfg}</H3>
 

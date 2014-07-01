@@ -161,7 +161,7 @@ public class GetFromCommandLineAtIndex  {
    /**
       <P>Get an enum value from a string, with arbitrary string-values assigned to each enum-value.</P>
 
-{@.codelet.and.out com.github.xbn.examples.util.GetFromExplicitStringValuesExample:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.util.GetFromExplicitStringValuesExample%eliminateCommentBlocksAndPackageDecl()}
     **/
    public static final <T extends Enum<T>> T enumValue(String[] cmd_lineParams, int index, T enumInstance_anyNonNullValue, IgnoreCase ignore_case, Appendable debug_ifNonNull, String... one_perEnumValueInOrder)  {
       String description = "[" + enumInstance_anyNonNullValue.getClass().getName() + ":" +

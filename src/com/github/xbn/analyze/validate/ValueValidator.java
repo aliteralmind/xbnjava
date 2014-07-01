@@ -16,7 +16,7 @@ package  com.github.xbn.analyze.validate;
 /**
    <P>A {@code Validator} for a single object. At its simplest, the object may or may not be {@code null}.</P>
 
-{@.codelet.and.out com.github.xbn.examples.analyze.validate.ValueValidatorXmpl:eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.analyze.validate.ValueValidatorXmpl%eliminateCommentBlocksAndPackageDecl()}
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
