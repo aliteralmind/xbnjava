@@ -16,60 +16,66 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
+   import  com.github.xbn.linefilter.alter.TextLineAlterer;
    import  com.github.xbn.linefilter.entity.BlockEntity;
    import  com.github.xbn.linefilter.entity.EntityRequired;
    import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
    import  com.github.xbn.linefilter.entity.NewStealthBlockEntityFor;
    import  com.github.xbn.linefilter.entity.StealthBlockEntity;
+   import  com.github.xbn.regexutil.ReplacedInEachInput;
    import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
    import  com.github.xbn.util.IncludeJavaDoc;
    import  java.util.Iterator;
+   import  java.util.regex.Pattern;
 /**
-   <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to print the start and end line numbers of all JavaDoc blocks in a source code, via automated debugging.</P>
+   <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to strip the optional asterisk prefix from every line in JavaDoc blocks.</P>
 
-   <P>{@code java com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</P>
+   <P>{@code java com.github.xbn.examples.linefilter.StripOptionalAsterisksFromJDLineStarts examples\com\github\xbn\examples\linefilter\JavaSnippetWithJDBlockAsterisksEachLine_input.txt}</P>
 
-   @see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_jd_block_lines">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_jd_block_lines</A></CODE>
+   @see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block</A></CODE>
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging  {
+public class StripOptionalAsterisksFromJDLineStarts  {
    public static final void main(String[] cmd_lineParams)  {
-      //Example setup
+      //Example setup:
          Iterator<String> itr = GetFromCommandLineAtIndex.fileLineIterator(
             cmd_lineParams, 0,
             null);   //debugPath
 
       //Example proper:
 
-      StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.javaComment(
+      StealthBlockEntity javaMlcBlock = NewStealthBlockEntityFor.javaComment(
          "comment", IncludeJavaDoc.NO,
-         null,         //dbgStart (on:System.out, off:null)
-         null,         //dbgEnd
+         null,       //dbgStart
+         null,       //dbgEnd
          KeepMatched.YES, EntityRequired.YES, null,
-         null);        //dbgLineNums
+         null);      //dbgLineNums
+
+      TextLineAlterer stripAsterisks = NewTextLineAltererFor.replacement(
+         Pattern.compile("[ \t]*\\*(.*)"), "$1",
+         ReplacedInEachInput.FIRST,
+         null,       //debug
+         null);
 
       BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
          "doccomment",
          null,       //dbgStart
          null,       //dbgEnd
          EntityRequired.YES, null,
-         System.out).   //<--Automated line-number debugging
+         null).      //dbgLineNums
+         midAlter(stripAsterisks).
          keepAll().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         itr, Returns.KEPT, KeepUnmatched.NO,
-      //Debug every line OFF:
+         itr, Returns.KEPT, KeepUnmatched.YES,
          null, null,    //dbgEveryLine and its line-range
-      //Debug every line ON (all lines):
-         //System.out, null,
-      //Debug every line ON (lines 3-6 only):
-         //System.out, com.github.xbn.number.NewLengthInRangeFor.minMaxInclusive(null, 3, 6, null, null),
-         javaMlcStealth, javaDocBlock);
+         javaMlcBlock, javaDocBlock);
 
       while(filteredItr.hasNext())  {
-         filteredItr.next();
-      }   //End snippet
+         System.out.println(filteredItr.next());
+      }
    }
 }

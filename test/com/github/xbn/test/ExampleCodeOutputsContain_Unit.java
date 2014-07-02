@@ -127,9 +127,10 @@ public class ExampleCodeOutputsContain_Unit  {
    @Test
    public void linefilter_PrintJavaDocBlockSubLinesBolded()  {
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
-         new String[] {"path:", "//sub-mode...START", "//sub-mode...END"},
+         new String[] {"path:"},
          com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded.class,
          JAVA_SOURCE_INPUT_FILE_PARAMS,
+         "//sub-mode...START", "//sub-mode...END",
          "<P>Another JavaDoc block</P>", "<B><P>info</P></B>", "<B></B>",
          "<B><P>info</P></B>", "<B></B>", "<B><P>info</P></B>", "<P>info</P>",
          "StayClassy()", "<P>Does stuff.</P>");

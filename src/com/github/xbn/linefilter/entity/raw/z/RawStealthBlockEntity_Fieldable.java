@@ -24,4 +24,5 @@ package  com.github.xbn.linefilter.entity.raw.z;
 public interface RawStealthBlockEntity_Fieldable<L> extends RawLineEntity_Fieldable<L>  {
    ValueValidator<L> getStartValidator();
    ValueValidator<L> getEndValidator();
+   boolean doKeepLines();
 }

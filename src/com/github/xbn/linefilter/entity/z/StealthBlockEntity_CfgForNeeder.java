@@ -102,6 +102,34 @@ public abstract class StealthBlockEntity_CfgForNeeder<M extends StealthBlockEnti
       return  this;
    }
    /**
+      <P>Keep all matched lines.</P>
+
+      @return  {@link #keepLines(boolean) keepLines}{@code (true)}
+    **/
+   public StealthBlockEntity_CfgForNeeder<M,R> keepLines()  {
+      return  keepLines(true);
+   }
+   /**
+      <P>Discard all matched lines.</P>
+
+      @return  {@link #keepLines(boolean) keepLines}{@code (false)}
+    **/
+   public StealthBlockEntity_CfgForNeeder<M,R> discardLines()  {
+      return  keepLines(false);
+   }
+   /**
+      <P>Should matched lines be kept or discarded.</P>
+
+      @param  b  If {@code true}, lines are kept. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#doKeepLines() doKeepLines}{@code ()}*.
+      @return  <I>{@code this}</I>
+      @see  keepLines()
+      @see  discardLines()
+    **/
+   public StealthBlockEntity_CfgForNeeder<M,R> keepLines(boolean b)  {
+      doKeep = b;
+      return  this;
+   }
+   /**
       @return  <I>{@code this}</I>
     **/
    public StealthBlockEntity_CfgForNeeder<M,R> chainID(boolean do_setStatic, Object id)  {

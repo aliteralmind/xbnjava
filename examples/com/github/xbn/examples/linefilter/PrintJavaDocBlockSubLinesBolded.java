@@ -72,7 +72,7 @@ public class PrintJavaDocBlockSubLinesBolded  {
             "comment", IncludeJavaDoc.NO,
             null,       //dbgStart
             null,       //dbgEnd
-            EntityRequired.YES, null,
+            KeepMatched.YES, EntityRequired.YES, null,
             null);      //dbgLineNums
 
 

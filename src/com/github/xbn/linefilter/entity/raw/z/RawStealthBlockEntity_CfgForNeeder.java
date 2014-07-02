@@ -27,6 +27,7 @@ package  com.github.xbn.linefilter.entity.raw.z;
 public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthBlockEntity<L>,R extends Needer> extends RawLineEntity_CfgForNeeder<L,M,R> implements RawStealthBlockEntity_Fieldable<L>  {
    public ValueValidator<L> startValidator;
    public ValueValidator<L> endValidator  ;
+   public boolean           doKeep        ;
 //constructors...START
    /**
       <P>Create a new instance.</P>
@@ -109,6 +110,34 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
       return  this;
    }
    /**
+      <P>Keep all matched lines.</P>
+
+      @return  {@link #keepLines(boolean) keepLines}{@code (true)}
+    **/
+   public RawStealthBlockEntity_CfgForNeeder<L,M,R> keepLines()  {
+      return  keepLines(true);
+   }
+   /**
+      <P>Discard all matched lines.</P>
+
+      @return  {@link #keepLines(boolean) keepLines}{@code (false)}
+    **/
+   public RawStealthBlockEntity_CfgForNeeder<L,M,R> discardLines()  {
+      return  keepLines(false);
+   }
+   /**
+      <P>Should matched lines be kept or discarded.</P>
+
+      @param  b  If {@code true}, lines are kept. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#doKeepLines() doKeepLines}{@code ()}*.
+      @return  <I>{@code this}</I>
+      @see  keepLines()
+      @see  discardLines()
+    **/
+   public RawStealthBlockEntity_CfgForNeeder<L,M,R> keepLines(boolean b)  {
+      doKeep = b;
+      return  this;
+   }
+   /**
       <P>Is it required that this entity be found somewhere in the input?.</P>
 
       @param  b  If {@code true}, then this entity must exist at least once in the input. If {@code false}, it's optional. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isRequired() isRequired}{@code ()}*.
@@ -170,6 +199,9 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
    }
    public ValueValidator<L> getEndValidator()  {
       return  endValidator;
+   }
+   public boolean doKeepLines()  {
+      return  doKeep;
    }
 //getters...END
 }

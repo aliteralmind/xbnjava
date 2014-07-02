@@ -56,6 +56,7 @@ package  com.github.xbn.linefilter.entity.raw;
 public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
    public final ValueValidator<L> startVldtr;
    public final ValueValidator<L> endVldtr  ;
+   public final boolean           doKeep    ;
    /**
       <P>YYY</P>
 
@@ -65,6 +66,7 @@ public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
       super(fieldable);
       startVldtr = fieldable.getStartValidator();
       endVldtr   = fieldable.getEndValidator();
+      doKeep     = fieldable.doKeepLines();
    }
    protected RawStealthBlockEntity(RawStealthBlockEntity<L> to_copy, int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       super(to_copy, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
@@ -73,6 +75,7 @@ public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
          to_copy.getStartValidator(), "Start");
       endVldtr = RawStealthBlockEntity.getVldtrCopyCINotRestricted(
          to_copy.getEndValidator(), "End");
+      doKeep     = to_copy.doKeepJustAnalyzed();
 
       resetStateBSE();
       resetCountsBSE();
@@ -111,7 +114,7 @@ public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
       return  endVldtr;
    }
    public boolean doKeepJustAnalyzed()  {
-      return  false;
+      return  doKeep;
    }
    public RawStealthBlockEntity<L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       return  new RawStealthBlockEntity<L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);

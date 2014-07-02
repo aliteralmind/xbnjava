@@ -68,7 +68,7 @@ public class GetAllClassSimpleNamesFromImports  {
          javaComment(null, IncludeJavaDoc.YES,
             null,      //dbgStart
             null,      //dbgEnd
-            EntityRequired.YES, onOffFilter,
+            KeepMatched.NO, EntityRequired.YES, onOffFilter,
             null);     //dbgLineNums
 
       SingleLineEntity importLineEntity = NewSingleLineEntityFor.

@@ -53,8 +53,9 @@ public class ModifyBlockLines  {
          null);            //debug (on:System.out, off:null)
       TextLineAlterer midAlterer = NewTextLineAltererFor.replacement(
          Pattern.compile("(.*)"), "<B>$1</B>",
-         ReplacedInEachInput.FIRST, null,
-         null);            //debug
+         ReplacedInEachInput.FIRST,
+         null,             //debug
+         null);
       TextLineAlterer endIdOnly = NewTextLineAltererFor.
          textValidateOnly("end", null,
          null);            //debug

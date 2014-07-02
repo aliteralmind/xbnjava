@@ -1,0 +1,22 @@
+/*
+   A non-JavaDoc multi-line comment
+*/
+/**
+* Comment section for Asset Record config OnStatusChange
+*
+* Updated for HT342408  Set Assetmeters to inactive when the asset they are
+* associated with is retired. This will also cause the condition monitoring
+* point associated with the meter to be displayed as inactive.
+*/
+
+
+if (ASSET.retired_date.isnull){
+  ASSET.retired_date = new Date();
+}
+
+var meterset = ASSET.ASSETMETER;
+for (var x = 0; x < meterset.length; x++){
+//println('*********meterset['+ x + '].assetmeterid' + meterset[x].assetmeterid);
+meterset[x].active = false;
+//println('*********meterset['+ x + '].active' + meterset[x].active);
+}
