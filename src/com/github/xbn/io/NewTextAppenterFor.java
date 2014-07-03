@@ -24,6 +24,7 @@ package  com.github.xbn.io;
 
  **/
 public class NewTextAppenterFor  {
+   public static final TextAppenter UNUSABLE = TextAppenter.UNUSABLE;
    public static final TextAppenter SUPPRESS = TextAppenter.SUPPRESS;
    public static final TextAppenter CONSOLE = TextAppenter.CONSOLE;
    private NewTextAppenterFor()  {
@@ -32,11 +33,11 @@ public class NewTextAppenterFor  {
    /**
       <P>Creates a new appenter with an appendable, or an unusable appenter if its {@code null}</P>
 
-      @return  <CODE>((toApndTo_ifNonNull == null) ? TextAppenter.{@link TextAppenter#newForUnusable() newForUnusable}()
+      @return  <CODE>((toApndTo_ifNonNull == null) ? TextAppenter.{@link TextAppenter#UNUSABLE UNUSABLE}
       <BR> &nbsp; &nbsp; : &nbsp;{@link #appendable(Appendable) appendable}(toApndTo_ifNonNull))</CODE>
     **/
    public static final TextAppenter appendableUnusableIfNull(Appendable toApndTo_ifNonNull)  {
-      return  ((toApndTo_ifNonNull == null) ? TextAppenter.newForUnusable()
+      return  ((toApndTo_ifNonNull == null) ? TextAppenter.UNUSABLE
          :  appendable(toApndTo_ifNonNull));
    }
    public static final TextAppenter textAppender(TextAppender to_adapt)  {

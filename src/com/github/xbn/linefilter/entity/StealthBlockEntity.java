@@ -20,7 +20,7 @@ package  com.github.xbn.linefilter.entity;
    import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
    import  com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_Fieldable;
 /**
-   <P>A specialized and simplified block-entity used only to prevent {@code BlockEntity}s from incorrectly matching start or end-lines (preventing false-positives). Lines in a block stealth entity, even though the entity's {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#isActive() active flag} is {@code true}, are never {@linkplain com.github.xbn.linefilter.FilteredLineIterator#getActiveChild() active} <I>according to {@link com.github.xbn.linefilter.FilteredLineIterator}</I>.</P>
+   <P>A specialized and simplified block-entity used only to prevent {@code BlockEntity}s from incorrectly matching start or end-lines (preventing false-positives). An <A HREF="package-summary.html#xmpl_jd_block_lines">example</A> is a stealth block entity for Java multi-line comments (starting with {@code "/}{@code *"} and ending with {@code "*}{@code /"}), for use along side a JavaDoc block entity (starting with {@code "/}{@code **"} and ending with {@code "*}{@code /"}). The stealth block prevents its end line from causing an &quot;end line found before block opened&quot; error.</P>
 
 <!--
    Originates in
@@ -35,6 +35,7 @@ package  com.github.xbn.linefilter.entity;
    <P><UL>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
       <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#keepLines(boolean) keepLines}(b), {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#keepLines() keepLines}(), {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#discardLines() discardLines}(), </LI>
       <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 

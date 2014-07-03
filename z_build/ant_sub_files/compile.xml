@@ -70,6 +70,10 @@
       <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="io/UnusableAppenterExample.java"/>
       <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
+         includes="io/TextAppenterObjectDebugging.java"/>
+      <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
+         includes="io/TextAppenterWithLevelsAppExample.java"/>
+      <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="io/WriterForAppendableXmpl.java"/>
       <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="lang/builder/blind/BlindBuilderXmpl.java"/>
@@ -287,6 +291,8 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
          includes="io/TAAppendMutable.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="io/TAAppendable.java"/>
+      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" debug="true" debuglevel="lines,vars,source" listfiles="true"
+         includes="io/UnusableAppenterException.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" debug="true" debuglevel="lines,vars,source" listfiles="true"
          includes="io/TextAppenter.java"/>
       <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" debug="true" debuglevel="lines,vars,source" listfiles="true"

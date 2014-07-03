@@ -24,8 +24,6 @@ public class IntInRange_Unit  {
       assertEquals(false, iir.isIn(3));
 
       IntInRange iir2 = iir.getInvertedCopy();
-System.out.println(iir);
-System.out.println(iir2);
       assertEquals(true, iir2.isIn(0));
       assertEquals(false, iir2.isIn(1));
       assertEquals(false, iir2.isIn(2));

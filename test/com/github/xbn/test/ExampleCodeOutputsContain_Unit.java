@@ -21,6 +21,10 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.array_BinarySearcherXmpl();
    	test.array_XbnIndexOutOfBoundsExceptionXmpl();
    	test.io_UnusableAppenterExample();
+   	test.io_TextAppenterObjectDebugging();
+   	test.io_TextAppenterWithLevelsAppExample_off();
+//   	test.io_TextAppenterWithLevelsAppExample_minimal();
+//   	test.io_TextAppenterWithLevelsAppExample_verbose();
    	test.io_WriterForAppendableXmpl();
    	test.lang_builder_blind_BlindBuilderXmpl();
    	test.lang_builder_bloch_BlochBuilderXmpl();
@@ -79,6 +83,36 @@ public class ExampleCodeOutputsContain_Unit  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.io.UnusableAppenterExample.class, "I'm worthy!");
    }
+   @Test
+   public void io_TextAppenterObjectDebugging()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.io.TextAppenterObjectDebugging.class, "complicated");
+   }
+   @Test
+   public void io_TextAppenterWithLevelsAppExample_off()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"information"},
+         com.github.xbn.examples.io.TextAppenterWithLevelsAppExample.class,
+         new String[] {"debugoff"});
+   }
+/*
+   @Test
+   public void io_TextAppenterWithLevelsAppExample_minimal()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"Very"},
+         com.github.xbn.examples.io.TextAppenterWithLevelsAppExample.class,
+         new String[] {"debugminimal"},
+         "information");
+   }
+   @Test
+   public void io_TextAppenterWithLevelsAppExample_verbose()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.io.TextAppenterWithLevelsAppExample.class,
+         new String[] {"debugverbose"},
+         "information", "Very");
+   }
+ */
+
    @Test
    public void io_WriterForAppendableXmpl()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,

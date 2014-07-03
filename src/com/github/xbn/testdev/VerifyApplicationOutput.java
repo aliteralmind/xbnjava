@@ -56,7 +56,7 @@ public class VerifyApplicationOutput  {
       </UL>
     **/
    public static final int getBadIndexWithParams(String[] forbiddenOutputs_ifNonNull, Class<?> class_containingMainFunction, String[] cmd_lineParams, String... xpctdOutputs_inOrder)  {
-      CrashIfArray.nullEmpty(xpctdOutputs_inOrder, "xpctdOutputs_inOrder");
+//		CrashIfArray.nullEmpty(xpctdOutputs_inOrder, "xpctdOutputs_inOrder");
 
       String output = InvokeMethodWithRtx.getApplicationOutput(class_containingMainFunction, cmd_lineParams, "Obtaining output for unit test");
 
@@ -117,7 +117,7 @@ public class VerifyApplicationOutput  {
 
       try  {
          if(out_toConsole.isYes())  {
-            System.out.println("Output(out_toConsole.isYes() is true): " + LINE_SEP + getOutputDisplay(class_containingMainFunction, cmd_lineParams));
+            System.out.println("Console output for class " + class_containingMainFunction.getName() + ": " + LINE_SEP + getOutputDisplay(class_containingMainFunction, cmd_lineParams));
          }
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(out_toConsole, "out_toConsole", null, rx);

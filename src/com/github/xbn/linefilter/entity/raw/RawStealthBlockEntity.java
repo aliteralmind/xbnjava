@@ -37,9 +37,10 @@ package  com.github.xbn.linefilter.entity.raw;
    <A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_Cfg RawStealthBlockEntity_Cfg}</H3>
 
    <P><UL>
-      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
-      <LI>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
-      <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#startValidator(ValueValidator) startValidator}, {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#endValidator(ValueValidator) endValidator}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
+      <LI>{@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#keepLines(boolean) keepLines}(b), {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#keepLines() keepLines}(), {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#discardLines() discardLines}(), </LI>
+      <LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</LI>
    </UL></P>
 
 <!--
@@ -54,9 +55,9 @@ package  com.github.xbn.linefilter.entity.raw;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
-   public final ValueValidator<L> startVldtr;
-   public final ValueValidator<L> endVldtr  ;
-   public final boolean           doKeep    ;
+   private final ValueValidator<L> startVldtr;
+   private final ValueValidator<L> endVldtr  ;
+   private final boolean           doKeep    ;
    /**
       <P>YYY</P>
 
