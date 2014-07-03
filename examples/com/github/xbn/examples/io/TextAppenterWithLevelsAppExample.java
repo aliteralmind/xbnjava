@@ -31,7 +31,8 @@ public class TextAppenterWithLevelsAppExample  {
    private static final int DEBUG_LEVEL_PARAM_IDX = 0;
    public static final void main(String[] params)  {
       DebugLevel dbgLvl = GetFromCommandLineAtIndex.
-         enumValue(params, DEBUG_LEVEL_PARAM_IDX, DebugLevel.OFF, IgnoreCase.YES, null,
+         enumValue(params, DEBUG_LEVEL_PARAM_IDX,
+            DebugLevel.OFF, IgnoreCase.YES, null,
             "debugoff", "debugminimal", "debugverbose", null, null, null);
 
       TextAppenter dbgAptrMin = (dbgLvl.isOff()
@@ -42,7 +43,8 @@ public class TextAppenterWithLevelsAppExample  {
          :  TextAppenter.UNUSABLE);
 
       if(dbgAptrMin.isUseable())  {
-         dbgAptrMin.appentln(params[DEBUG_LEVEL_PARAM_IDX] + " --> DebugLevel." + dbgLvl);
+         dbgAptrMin.appentln(params[DEBUG_LEVEL_PARAM_IDX] +
+            " --> DebugLevel." + dbgLvl);
          dbgAptrMin.appentln("Minimally-important debugging information goes here...");
       }
 
