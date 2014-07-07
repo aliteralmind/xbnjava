@@ -80,14 +80,18 @@
       </javadoc>
       <copy file="${dir_sandbox_needed_by_javadoc}up_arrow.gif" todir="${dir_build_docs_javadoc}resources${fs}"/>
       <record name="${dir_build}javadoc_output.txt" action="stop"/>
+</target>
+<target name="doc2" description="for intercepting the doc task.">
+
+      <copy todir="${dir_build_docs_javadoc}com/github/xbn/examples/linefilter/">
+         <fileset dir="${dir_sandbox_examples}com/github/xbn/examples/linefilter/" includes="*_input.txt"/>
+      </copy>
 
       <replace dir="${dir_build_docs_javadoc}" summary="yes">
          <replacetoken><![CDATA[</head>]]></replacetoken>
          <replacevalue><![CDATA[<meta name="viewport" content="width=device-width" />
 </HEAD>]]></replacevalue>
       </replace>
-</target>
-<target name="doc2" description="Generates javadoc documentation.">
       <java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true">
          <arg value="${dir_build_docs_javadoc}"/>
          <arg value="com.github.xbn."/>

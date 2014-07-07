@@ -44,71 +44,70 @@ package  com.github.xbn.linefilter;
 <A NAME="xmpl_basic"></A>
    <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: A basic use</H2>
 
-   <P>This iterates through all lines in a &quot;text file&quot;, discarding all except the block's (snippet or line-range) &quot;mid lines&quot;--meaning those between the &quot;start&quot; and &quot;end&quot; lines.</P>
+   <P>This iterates through all lines in a &quot;text file&quot;, keeping only those between a block's &quot;start&quot; and &quot;end&quot; lines. <I>(<A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/IterateKeptLines.html">full source</A>)</I></P>
 
-{@.codelet.and.out com.github.xbn.examples.linefilter.IterateKeptLines%eliminateCommentBlocksAndPackageDecl()}
+   <P><B>Input:</B></P>
 
-   <P>An alternative way to create the same block entity:</P>
+{@.codelet com.github.xbn.examples.linefilter.IterateKeptLines%lineRange(1, false, "LINE_SEP = System", 1, false, "inputLineItr = StringUtil", "^         ")}
+
+   <P><B>Code</B>:</P>
+
+{@.codelet.and.out com.github.xbn.examples.linefilter.IterateKeptLines%lineRangeWithReplace(1, true, "(block = NewBlockEntityFor)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
+
+   <P>An alternative way to create the same block entity: <I>(<A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/IterateKeptLinesManualBlock.html">full source</A>)</I></P>
 
 {@.codelet com.github.xbn.examples.linefilter.IterateKeptLinesManualBlock%lineRange(1, false, "startIdOnly = NewTextLineAltererFor", 1, false, "keepMidsOnly().required", "^      ")}
 
-   <P>The block entity is also the filtered iterator's {@linkplain TextChildEntity#getTopParent() root entity}. An equivalent is to set the block as a child, and then declare that all unmatched lines (those not matched by any child entity) should be discarded:</P>
+   <P>The block entity is also the filtered iterator's {@linkplain TextChildEntity#getTopParent() root entity}. An equivalent is to set the block as a child, and then declare that all unmatched lines (those not matched by any child entity) should be discarded: <I>(<A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/IterateKeptLinesBlockAsChild.html">full source</A>)</I></P>
 
 {@.codelet com.github.xbn.examples.linefilter.IterateKeptLinesBlockAsChild%lineRange(1, false, "tor filteredItr = ne", 1, false, "block);", "^      ")}
 
 <A NAME="xmpl_modify"></A>
    <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Modification of kept lines</H2>
 
-   <P>Using the same input as above, this makes a simple replacement on each kept line:</P>
+   <P>Using the same input as above, this makes a simple replacement on each kept line: <I>(<A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/ModifyBlockLines.html">full source</A>)</I></P>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.ModifyBlockLines%lineRangeWithReplace(1, true, "(startIdOnly = NewTextLineAltererFor)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
-   <P>Any arbitrary modification can be made on kept lines (actually, {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active} lines). A more complicated version of the mid-alterer:</P>
+   <P>Any arbitrary modification can be made on kept lines (actually, {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active} lines). A more complicated version of the mid-alterer: <I>(<A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/MoreComplicatedModifyExample.html">full source</A>)</I></P>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.MoreComplicatedModifyExample%lineRange(1, false, "IndirectRegexReplacer replaceNumWithStrNum", 1, false, "lineReplacer(replaceNumWithStrNum", "^      ")}
 
 <A NAME="xmpl_jd_block_lines"></A>
    <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Detecting the start and end lines of all JavaDoc blocks in source code</H2>
 
-   <P>Take <A HREF="#xmpl_java_class">this Java class</A>, which contains a single Java multiline comment (starting with {@code "/}{@code *"} and ending with {@code "*}{@code /"}), and three JavaDoc blocks (starting with {@code "/}{@code **"} and ending with {@code "*}{@code /"}):</P>
+   <P><A HREF="{@docRoot}/com/github/xbn/examples/linefilter/JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt">This Java class</A>, contains a single Java multiline comment (starting with {@code "/}{@code *"} and ending with {@code "*}{@code /"}), and three JavaDoc blocks (starting with {@code "/}{@code **"} and ending with {@code "*}{@code /"}):</P>
 
-   <P>The following reads in the source code, and prints only the line numbers of each JavaDoc block's start and end line.</P>
+   <P>The following reads in the source code, and prints only the line numbers of each JavaDoc block's start and end line. <I>(<A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/PrintAllJavaDocBlockStartAndEndLineNums.html">full source</A>)</I></P>
 
    <P>A {@linkplain com.github.xbn.linefilter.entity.StealthBlockEntity stealth block} is used in order to avoid an incorrect &quot;block ended before started&quot; error when the close line in the first Java comment block is encountered. This is because {@code "*}{@code /"} is a valid close line for <I>both Java multi-line comments and JavaDoc blocks</I>. Stealth blocks are not &quot;wanted&quot; or {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#doKeepJustAnalyzed() kept}--they are only to avoid false-positives in another block that shares the same parent.</P>
 
-{@.codelet.and.out com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%lineRangeWithReplace(1, true, "(Stealth = NewStealth)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
-   <P>An alternative way to display an entity's line numbers is to turn on its debugging. This example also contains information on how to print additional debugging information for all or specific lines:</P>
+   <P>An alternative way to display an entity's line numbers is to turn on its debugging. This example also contains information on how to print additional debugging information for all or specific lines: <I>(<A HREF="{@docRoot}/com/github/xbn/examples/linefilter/JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt">input</A>, <A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging.html">full source</A>)</I></P>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%lineRangeWithReplace(1, true, "(javaDocBlock = NewBlockEntityFor)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
 <A NAME="xmpl_strip_cmts_pkgln"></A>
    <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Strip all Java comment blocks and the package declaration line from a classes source code</H2>
 
-   <P>This is useful for eliminating unnecessary or distracting lines from an example code, which might be displayed in your JavaDoc (which is the concept of <A HREF="http://codelet.aliteralmind.com">Codelet</A>).</P>
+   <P>This is useful for eliminating unnecessary or distracting lines from an example code, which might be displayed in your JavaDoc (which is the concept of <A HREF="http://codelet.aliteralmind.com">Codelet</A>). <I>(<A HREF="{@docRoot}/com/github/xbn/examples/linefilter/JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt">input</A>, <A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/EliminateAllCommentBlocksAndPackageLine.html">full source</A>)</I></P>
 
-   <P><I>(<A HREF="#xmpl_java_class">View input file</A>.)</I></P>
-
-{@.codelet.and.out com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%lineRangeWithReplace(1, true, "(Filter = new Post)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
 <A NAME="xmpl_import_simples"></A>
    <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Extract all simple class names from the import lines in a Java source file</H2>
 
-   <P>This gets the {@linkplain java.lang.Class#getSimpleName() simple class name} from each import line from a <A HREF="#xmpl_java_class">Java source code file</A>.</P>
+   <P>This gets the {@linkplain java.lang.Class#getSimpleName() simple class name} from each import line from a <A HREF="{@docRoot}/com/github/xbn/examples/linefilter/JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt">Java source file</A>. <I>(<A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/GetAllClassSimpleNamesFromImports.html">full source</A>)</I></P>
 
-{@.codelet.and.out com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%eliminateCommentBlocksAndPackageDecl()}
+{@.codelet.and.out com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%lineRangeWithReplace(1, true, "(Filter = new Post)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
 <A NAME="xmpl_sub_block"></A>
    <H2><A HREF="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example: Altering the lines in a sub-block</H2>
 
-   <P>This modifies the lines existing within a block that itself only exists within a JavaDoc block. Note the same sub-block as exists in the Java comment is not altered. <I>(<A HREF="#xmpl_java_class">View input file</A>.)</I></P>
+   <P>This modifies the lines existing within a block that itself only exists within a JavaDoc block. Note the same sub-block as exists in the Java comment is not altered. <I>(<A HREF="{@docRoot}/com/github/xbn/examples/linefilter/JavaClassWithOneCommentAndTwoJavaDocBlocksWithSub_input.txt">input</A>, <A HREF="{@docRoot}/src-html/com/github/xbn/examples/linefilter/GetAllClassSimpleNamesFromImports.html">full source</A>)</I></P>
 
-{@.codelet.and.out com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt")%lineRangeWithReplace(1, true, "(String subModePre)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
-
-<A NAME="xmpl_java_class"></A>
-   <H2><A HREF="#xmpl_jd_block_lines"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; {@code FilteredLineIterator}: Example Java class used by above examples</H2>
-
-{@.file.textlet examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}
+{@.codelet.and.out com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocksWithSub_input.txt")%lineRangeWithReplace(1, true, "(String subModePre)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

@@ -22,15 +22,21 @@ package  com.github.xbn.util;
    @author  Copyright (C) 2013 Jeff Epstein, released under the LPGL 2.1. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class GetBooleanFromString  {
+   private String stringName;
    private String trueVal;
    private String falseVal;
    private Boolean ifNull;
    private Boolean ifEmpty;
    public GetBooleanFromString()  {
-      trueVal = null;
-      falseVal = null;
-      ifNull = null;
-      ifEmpty = null;
+      this(null);
+   }
+   /**
+   	@since  0.1.1
+    **/
+   public GetBooleanFromString(String string_varName)  {
+      stringName = ((string_varName != null) ? string_varName : "boolean_string");
+      trueFalse("true", "false");
+      nullEmptyDefaults_ifNullThenBad(null, null);
    }
    public GetBooleanFromString trueFalse(String true_value, String false_value)  {
       try  {
@@ -50,22 +56,22 @@ public class GetBooleanFromString  {
       ifEmpty = if_empty;
       return  this;
    }
-   public boolean get(String value)  {
-      if(value == null  &&  getIfNull() != null)  {
+   public boolean get(String boolean_string)  {
+      if(boolean_string == null  &&  getIfNull() != null)  {
          return  getIfNull().booleanValue();
       }
       try  {
-         if(value.length() == 0  &&  getIfEmpty() != null)  {
+         if(boolean_string.length() == 0  &&  getIfEmpty() != null)  {
             return  getIfEmpty().booleanValue();
          }
       }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(value, "value", null, rx);
+         throw  CrashIfObject.nullOrReturnCause(boolean_string, getStringName(), null, rx);
       }
 
       try  {
-         if(getTrue().equals(value))  {
+         if(getTrue().equals(boolean_string))  {
             return  true;
-         }  else if(getFalse().equals(value))  {
+         }  else if(getFalse().equals(boolean_string))  {
             return  false;
          }
       }  catch(NullPointerException npx)  {
@@ -74,7 +80,10 @@ public class GetBooleanFromString  {
          }
       }
 
-      throw  new IllegalArgumentException("value (\"" + value + "\") is not equal to getTrue() (\"" + getTrue() + "\") or getFalse() (\"" + getFalse() + "\") values.");
+      throw  new IllegalArgumentException(getStringName() + " (\"" + boolean_string + "\") is not equal to getTrue() (\"" + getTrue() + "\") or getFalse() (\"" + getFalse() + "\") values.");
+   }
+   public String getStringName()  {
+      return  stringName;
    }
    public String getTrue()  {
       return  trueVal;

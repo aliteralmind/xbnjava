@@ -3,15 +3,24 @@
 
    <P><OL>
       <LI>XBN-Java is hosted by GitHub: <A HREF="https://github.com/aliteralmind/xbnjava">Project page</A>, <A HREF="https://github.com/aliteralmind/xbnjava/issues">issue tracker</A></LI>
-      <LI>JavaDoc: <A HREF="#navbar_top">This installation</A>, <A HREF="http://www.aliteralmind.com/docs/computer/programming/xbnjava/documentation/javadoc/overview-summary.html#description">latest version</A>, <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_documentation.zip">download zip</A>, <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/com/github/xbn/javadoc_output.txt">generation report</A></LI>
-      <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_source_code.zip">Download source</A>, including build files</LI>
+      <LI>View the at <A HREF="http://www.aliteralmind.com/docs/computer/programming/xbnjava/documentation/javadoc/overview-summary.html#description">latest JavaDoc</A> at <A HREF="http://xbnjava.aliteralmind.com">{@code xbnjava.aliteralmind.com}</A>. (View the <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/com/github/xbn/javadoc_output.txt">generation report</A>)</LI>
    </OL></P>
 
    <A NAME="install"></A><H2><A HREF="#overview_description"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></A> &nbsp; Installation</U></H2>
 
-   <P>XBN-Java requires <A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java 1.7</A> (it may be compatible with earlier versions).</P>
+   <P>XBN-Java requires <A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java 1.7</A>.</P>
 
-   <P><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0__and_all_dependency_jars.zip">Download</A> the jar files for XBN-Java and all the jars it depends on.</P>
+   <H3>Downloads</H3>
+
+   <P><OL>
+      <LI>XBN-Java JAR (choose exactly one):<OL>
+         <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_all.jar">{@code xbnjava_0p1p0_all.jar}</A>: Core classes, example code, and unit tests, with no dependencies.</LI>
+         <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_core.jar">{@code xbnjava_0p1p0_core.jar}</A>: Core classes only, with no dependencies. Excludes unit tests and example code.</LI>
+      </OL></LI>
+      <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_and_all_dependency_jars.jar">{@code xbnjava_0p1p0_and_all_dependency_jars.jar}</A>: Includes both the &quot;core&quot; and &quot;all&quot; jars (only put one on your classpath), and all of the jars XBN-Java depends on. <I>The JUnit and Ant jars are needed only for building XBN-Java.</I></LI>
+      <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_source_code.jar">{@code xbnjava_0p1p0_source_code.jar}</A>: All source code, including proper, examples, unit tests, and all build files.</LI>
+      <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_documentation.jar">{@code xbnjava_0p1p0_documentation.jar}</A>: JavaDoc documentation for local installation.</LI>
+   </OL></P>
 
    <P>Adding the following elements to your <A HREF="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html">classpath</A> will install XBN-Java:</P>
 
@@ -20,14 +29,10 @@
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\commons-io-2.4.jar}</LI>
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\commons-lang3-3.3.2.jar}</LI>
       <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\guava-16.0.1.jar}</LI>
-      <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\xbnjava_0p1p0_all.jar}</LI>
+      <LI>{@code INSTALLATION_DIR\xbnjava_0p1p0_and_all_dependency_jars\xbnjava_0p1p0_all.jar} &nbsp; &nbsp; <I>(or &quot;core.zip&quot;)</I></LI>
    </OL></P>
 
    <P>Details and alternatives:<OL>
-      <LI>XBN-Java: Choose exactly one of the following (the above classpath-string assumes you've chosen {@code xbnjava_0p1p0_all.jar}):<OL>
-         <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_all.jar">{@code xbnjava_0p1p0_all.jar}</A>: Core classes, example code, and unit tests</LI>
-         <LI><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava_0p1p0_core.jar">{@code xbnjava_0p1p0_core.jar}</A>: Core classes only</I></LI>
-      </OL></LI>
       <LI>External libraries:<OL>
          <LI>Apache <A HREF="http://commons.apache.org/proper/commons-io/">Commons IO</A> 2.4</LI>
          <LI>Apache <A HREF="http://commons.apache.org/proper/commons-lang/">Commons Lang3</A> 3.3.2</LI>

@@ -20,13 +20,11 @@ package  com.github.xbn.io;
 /**
    <P><A HREF="http://en.wikipedia.org/wiki/Decorator_pattern">Decorator</A> for {@link java.lang.Appendable}-s, including conditional printing, with runtime-only exceptions. This is a companion to {@code TextAppender}.</P>
 
-   <P><I>(Scroll down for two examples.)</I></P>
+   <P><I>(Scroll down for examples.)</I></P>
 
-   <H3>From a blog-post written on 7/3/2014:</H3>
+   <H3>From a <A HREF="http://aliteralmind.wordpress.com/2014/06/30/appenter/">blog-post</A> written on 6/30/2014:</H3>
 
-   <P>I've never used a debugger in my life. I exclusively develop in <A HREF="http://textpad.com">TextPad</A>, and use <A HREF="http://phraseexpress.com">PhraseExpress</A> for auto-completes. I will likely start using an IDE, such as Eclipse or the free version of IntelliJ, only for the purpose of using a debugger.</P>
-
-   <P>Not using a debugger is not something I'm necessarily proud of (well...maybe a little), it's just something I've not gotten around to doing. Despite this, I've built some reasonably large projects. My primary form of debugging has always been <CODE>System.out.println()</CODE>-s and this utility: {@code TextAppenter}.</P>
+   <P>I've never used a debugger in my life. I exclusively develop in <A HREF="http://textpad.com">TextPad</A>, and use <A HREF="http://phraseexpress.com">PhraseExpress</A> for auto-completes. I will likely start using an IDE, such as Eclipse or the free version of IntelliJ, only for the purpose of using a debugger. Not using a debugger is not something I'm necessarily proud of (well...maybe a little), it's just something I've not gotten around to doing. Despite this, I've built some reasonably large projects. My primary form of debugging has always been <CODE>System.out.println()</CODE>-s and this utility: {@code TextAppenter}.</P>
 
    <P><CODE>TextAppenter</CODE> is a <A HREF="http://en.wikipedia.org/wiki/Decorator_pattern#Java">decorator</A> for <CODE>java.lang.<A HREF="http://docs.oracle.com/javase/7/docs/api/java/lang/Appendable.html">Appendables</A></CODE>. <CODE>Appendables</CODE>s only have the following three functions:<UL>
     	<LI><CODE>append(char)</CODE></LI>
@@ -34,18 +32,9 @@ package  com.github.xbn.io;
       <LI><CODE>append(CharSequence, int, int)</CODE></LI>
    </UL></P>
 
-   <P><CODE>TextAppenter</CODE> provides (&quot;decorates&quot; it with) some extra functionality:<UL>
-    	<LI><CODE>appent(Object)</CODE></LI>
-    	<LI><CODE>appentIfTrue(boolean, Object)</CODE></LI>
-    	<LI><CODE>appentln()</CODE></LI>
-    	<LI><CODE>appentln(Object)</CODE></LI>
-    	<LI><CODE>appentlnIfTrue(boolean, Object)</CODE></LI>
-    	<LI><CODE>appentlns(int)</CODE></LI>
-    </UL></P>
+   <P><CODE>TextAppenter</CODE> provides (&quot;decorates&quot; it with) additional functionality but, most importantly, it crash with only runtime errors. Hence the &quot;<CODE>appent</CODE>&quot;, with a <CODE>'t'</CODE>, prefix to all function names (such as {@link #appentln(Object) appentln}).</P>
 
-   <P>But most importantly, <CODE>TextAppenter</CODE>s crash with only runtime errors. Hence the &quot;<CODE>appent</CODE>&quot;, with a <CODE>'t'</CODE>, prefix.</P>
-
-   <P>In addition, <CODE>TextAppenter</CODE>s may be {@linkplain #isUseable() &quot;unusable&quot;}, which is a convenience when an object <I>optionally</I> outputs debugging information--when the debugging statements should remain in production code, but be off by default.</P>
+   <P>In addition, <CODE>TextAppenter</CODE>s may be &quot;{@linkplain #isUseable() unusable}&quot;, which is a convenience when an object <I>optionally</I> outputs debugging information--when the debugging statements should remain in production code, but be off by default.</P>
 
    <H3>Example 1 of 2: Optionally debugging an object</H3>
 

@@ -1,32 +1,27 @@
 /*
-   Not a JavaDoc block. The following sub-mode is ignored, because it's not in a JavaDoc block.
-
-      //sub-mode...START
-
-      //sub-mode...END
+   A Java comment block.
  */
 package  fully.qualified.package.name;
+   import  java.lang.Object;
+   import  java.util.List;
+   import  org.apache.commons.lang.StringUtils;
+   import  static com.github.xbn.lang.XbnConstants.*;
 /**
-   <P>A JavaDoc block</P>
+   <P>The main class JavaDoc block.</P>
  */
 public class StayClassy  {
    /**
-      <P>Another JavaDoc block</P>
-
-      <P>info</P>        //sub-mode...START
-
-      <P>info</P>
-
-      <P>info</P>        //sub-mode...END
-
-      <P>info</P>
-
+      <P>Constructor JavaDoc block</P>
     */
    public StayClassy()  {
       //Do stuff
    }
    /**
-   	<P>Does stuff.</P>
+      * <P>Function JavaDoc block.</P>
+
+      * <P>This function does some stuff.</P>
+
+      * <P>Lots and lots of stuff.</P>
     */
    public void doStuff()  {
    }

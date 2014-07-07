@@ -1,0 +1,33 @@
+/*
+   Not a JavaDoc block. The following sub-mode is ignored, because it's not in a JavaDoc block.
+
+      //sub-mode...START
+
+      //sub-mode...END
+ */
+package  fully.qualified.package.name;
+/**
+   <P>A JavaDoc block</P>
+ */
+public class StayClassy  {
+   /**
+      <P>Another JavaDoc block</P>
+
+      <P>info</P>        //sub-mode...START
+
+      <P>info</P>
+
+      <P>info</P>        //sub-mode...END
+
+      <P>info</P>
+
+    */
+   public StayClassy()  {
+      //Do stuff
+   }
+   /**
+   	<P>Does stuff.</P>
+    */
+   public void doStuff()  {
+   }
+}

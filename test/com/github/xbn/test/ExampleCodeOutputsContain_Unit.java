@@ -148,7 +148,7 @@ public class ExampleCodeOutputsContain_Unit  {
          new String[] {"path:"},
          com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums.class,
          JAVA_SOURCE_INPUT_FILE_PARAMS,
-         "9", "11", "13", "24", "28", "30");
+         "9", "11", "13", "15", "19", "25");
    }
    @Test
    public void linefilter_PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging()  {
@@ -156,7 +156,7 @@ public class ExampleCodeOutputsContain_Unit  {
          new String[] {"path:"},
          com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging.class,
          JAVA_SOURCE_INPUT_FILE_PARAMS,
-         "9", "11", "13", "24", "28", "30");
+         "9", "11", "13", "15", "19", "25");
    }
    @Test
    public void linefilter_PrintJavaDocBlockSubLinesBolded()  {
@@ -179,9 +179,10 @@ public class ExampleCodeOutputsContain_Unit  {
    }
    @Test
    public void linefilter_GetAllClassSimpleNamesFromImports()  {
-      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports.class,
-         "List", "StringUtils", "Object", "XbnConstants");
+         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         "Object", "List", "StringUtils", "XbnConstants");
    }
    @Test
    public void linefilter_IterateActiveLines()  {

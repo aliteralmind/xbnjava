@@ -41,9 +41,9 @@ package  com.github.xbn.examples.linefilter;
 public class StripOptionalAsterisksFromJDLineStarts  {
    public static final void main(String[] cmd_lineParams)  {
       //Example setup:
-         Iterator<String> itr = GetFromCommandLineAtIndex.fileLineIterator(
+         Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
             cmd_lineParams, 0,
-            null);   //debugPath
+            null);   //debugPath (on=System.out, off=null)
 
       //Example proper:
 
@@ -70,7 +70,7 @@ public class StripOptionalAsterisksFromJDLineStarts  {
          keepAll().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         itr, Returns.KEPT, KeepUnmatched.YES,
+         rawInputLineItr, Returns.KEPT, KeepUnmatched.YES,
          null, null,    //dbgEveryLine and its line-range
          javaMlcBlock, javaDocBlock);
 

@@ -46,7 +46,7 @@ public class IterateKeptLines  {
             append("Block ends here"  ).append(LINE_SEP).
             append("after1"           ).append(LINE_SEP).
             append("after2"           ).append(LINE_SEP);
-         Iterator<String> lineItr = StringUtil.getLineIterator(input);
+         Iterator<String> inputLineItr = StringUtil.getLineIterator(input);
 
       //Example proper:
 
@@ -60,12 +60,12 @@ public class IterateKeptLines  {
          null);         //dbgLineNums
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         StringUtil.getLineIterator(input), Returns.KEPT,
+         inputLineItr, Returns.KEPT,
          null, null,    //dbgEveryLine and its line-range
          block);
 
       while(filteredItr.hasNext())  {
          System.out.println(filteredItr.next());
-      }
+      }  //End snippet
    }
 }

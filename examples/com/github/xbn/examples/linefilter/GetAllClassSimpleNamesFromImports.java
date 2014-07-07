@@ -13,10 +13,10 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.linefilter.entity.EntityRequired;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.entity.EntityRequired;
    import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.entity.NewSingleLineEntityFor;
    import  com.github.xbn.linefilter.entity.NewStealthBlockEntityFor;
@@ -27,36 +27,27 @@ package  com.github.xbn.examples.linefilter;
    import  com.github.xbn.linefilter.entity.StealthBlockEntity;
    import  com.github.xbn.number.NewLengthInRangeFor;
    import  com.github.xbn.regexutil.ReplacedInEachInput;
-   import  com.github.xbn.text.StringUtil;
+   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
    import  com.github.xbn.util.IncludeJavaDoc;
    import  com.github.xbn.util.JavaRegexes;
+   import  java.util.Iterator;
    import  java.util.regex.Pattern;
 /**
    <P>Uses a {@link com.github.xbn.linefilter.FilteredLineIterator} to get the simple class names from all import statements in a Java source file--Also demonstrates aborting the iterator with an {@linkplain com.github.xbn.linefilter.entity.OnOffEntityFilter on-off filter}.</P>
 
-   <P>{@code java com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports}</P>
+   <P>{@code java com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class GetAllClassSimpleNamesFromImports  {
-   public static final void main(String[] ignored)  {
-      String LINE_SEP = System.getProperty("line.separator", "\r\n");
-      String javaSourceCode = new StringBuilder().
-         append("/"+"*"                                                ).append(LINE_SEP).
-         append("   license block here"                                ).append(LINE_SEP).
-         append("*"+"/"                                                ).append(LINE_SEP).
-         append("   import  java.util.List;"                           ).append(LINE_SEP).
-         append("   import  org.apache.commons.lang.StringUtils;"      ).append(LINE_SEP).
-         append("   import  java.lang.Object;"                         ).append(LINE_SEP).
-         append("   import  static com.github.xbn.lang.XbnConstants.*;").append(LINE_SEP).
-         append("/"+"**"                                               ).append(LINE_SEP).
-         append("   Class JavaDoc block here"                          ).append(LINE_SEP).
-         append("*"+"/"                                                ).append(LINE_SEP).
-         append("public class MyClass  {"                              ).append(LINE_SEP).
-         append("   Class body here"                                   ).append(LINE_SEP).
-         append("}"                                                    ).append(LINE_SEP).
-         toString();
+   public static final void main(String[] cmd_lineParams)  {
+      //Example setup
+         Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
+            cmd_lineParams, 0,
+            null);     //debugPath
+
+      //Example proper:
 
       PostFilterSelfActiveInOutRange onOffFilter = new PostFilterSelfActiveInOutRange(
          NewLengthInRangeFor.maxExclusive(null, 1, null),
@@ -80,13 +71,12 @@ public class GetAllClassSimpleNamesFromImports  {
          null);        //dbgLineNums
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         StringUtil.getLineIterator(javaSourceCode),
-         Returns.KEPT, KeepUnmatched.NO,
+         rawInputLineItr, Returns.KEPT, KeepUnmatched.NO,
          null, null,    //dbgEveryLine and its line-range
          javaMlcStealth, importLineEntity);
 
       while(filteredItr.hasNext())  {
          System.out.println(filteredItr.next());
-      }
+      }  //End snippet
    }
 }

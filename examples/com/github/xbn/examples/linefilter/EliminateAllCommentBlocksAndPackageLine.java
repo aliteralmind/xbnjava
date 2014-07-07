@@ -43,7 +43,7 @@ package  com.github.xbn.examples.linefilter;
 public class EliminateAllCommentBlocksAndPackageLine  {
    public static final void main(String[] cmd_lineParams)  {
       //Example setup
-         Iterator<String> itr = GetFromCommandLineAtIndex.fileLineIterator(
+         Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
             cmd_lineParams, 0,
             null);  //dbgPath
 
@@ -71,12 +71,12 @@ public class EliminateAllCommentBlocksAndPackageLine  {
          keepNone().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         itr, Returns.KEPT, KeepUnmatched.YES,
+         rawInputLineItr, Returns.KEPT, KeepUnmatched.YES,
          null, null,    //dbgEveryLine and its line-range
          pkgDeclLineEntity, javaMlcBlock);
 
       while(filteredItr.hasNext())  {
          System.out.println(filteredItr.next());
-      }
+      }  //End snippet
    }
 }

@@ -32,7 +32,7 @@ package  com.github.xbn.examples.linefilter;
 /**
    <P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to modify the lines in a sub-block: a block that is a child of another block.</P>
 
-   <P>{@code java com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</P>
+   <P>{@code java com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocksWithSub_input.txt}</P>
 
    @see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block</A></CODE>
    @since 0.1.0
@@ -41,7 +41,7 @@ package  com.github.xbn.examples.linefilter;
 public class PrintJavaDocBlockSubLinesBolded  {
    public static final void main(String[] cmd_lineParams)  {
       //Example setup:
-         Iterator<String> itr = GetFromCommandLineAtIndex.fileLineIterator(
+         Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
             cmd_lineParams, 0,
             null);   //debugPath
 
@@ -85,7 +85,7 @@ public class PrintJavaDocBlockSubLinesBolded  {
             keepAll().children(subBlock).build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         itr, Returns.KEPT, KeepUnmatched.YES,
+         rawInputLineItr, Returns.KEPT, KeepUnmatched.YES,
          null, null,    //dbgEveryLine and its line-range
          javaMlcBlock, javaDocBlock);
 

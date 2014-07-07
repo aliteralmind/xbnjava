@@ -37,7 +37,7 @@ package  com.github.xbn.examples.linefilter;
 public class PrintAllJavaDocBlockStartAndEndLineNums  {
    public static final void main(String[] cmd_lineParams)  {
       //Example setup
-         Iterator<String> itr = GetFromCommandLineAtIndex.fileLineIterator(
+         Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
             cmd_lineParams, 0,
             null);     //debugPath
 
@@ -59,7 +59,7 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
          keepAll().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         itr, Returns.KEPT, KeepUnmatched.NO,
+         rawInputLineItr, Returns.KEPT, KeepUnmatched.NO,
          null, null,    //dbgEveryLine and its line-range
          javaMlcStealth, javaDocBlock);
 
@@ -74,6 +74,6 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
                filteredItr.getActiveChildBlock().isEndLine())  {
             System.out.println(filteredItr.getNextLineNum());
          }
-      }
+      }  //End snippet
    }
 }
