@@ -310,7 +310,7 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    }
 
    /**
-      <P>Retrieves all lines in a newly active block.</P>
+      <P>Convenience function for retrieving all lines in a newly active block.</P>
 
       @since  0.1.2
       @return  <CODE>{@link #appendAllBlockLines(StringBuilder, String, StripFinalNewLine, ChildOnFirstLine) getAllBlockLines}(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull, childOn1stLine_noIfNull).toString()</CODE>
@@ -319,7 +319,7 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       return  appendAllBlockLines(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull, childOn1stLine_noIfNull).toString();
    }
    /**
-      <P>Retrieves all lines in a newly active block.</P>
+      <P>Convenience function for retrieving all lines in a newly active block.</P>
 
       @return  <CODE>{@link #appendAllBlockLinesX(StringBuilder, String, StripFinalNewLine, ChildOnFirstLine) appendAllBlockLinesX}(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull,
       @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
@@ -333,7 +333,7 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       }
    }
    /**
-      <P>Retrieves all lines in a newly active block. This must be called immediately after the start-line in a block or stealth block is detected--before the next call to {@link FilteredIterator#next() next}{@code ()}* is made. (<A HREF="#xmpl_extract_blocks">Example</A>)</P>
+      <P>Convenience function for retrieving all lines in a newly active block. This must be called immediately after the start-line in a block or stealth block is detected--before the next call to {@link FilteredIterator#next() next}{@code ()}* is made. (<A HREF="#xmpl_extract_blocks">Example</A>)</P>
 
       @param  to_appendTo May not be {@code null}.
       @param  block_startLine  The text of the just-retrieved block start-line. <I>Should</I> not be {@code null}.
