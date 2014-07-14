@@ -6,25 +6,24 @@ package  com.github.xbn.test;
    <P>{@code java com.github.xbn.test.ExampleCodeOutputsContain_Unit}</P>
  **/
 public class ExampleCodeOutputsContain_Unit  {
-   private static final String JAVA_SOURCE_INPUT_FILE =
-      "examples\\com\\github\\xbn\\examples\\linefilter\\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt";
-   private static final String[] JAVA_SOURCE_INPUT_FILE_PARAMS = new String[] {
-      JAVA_SOURCE_INPUT_FILE};
+   private static final String EXAMPLE_CODE_ROOT_DIR =
+      "examples\\com\\github\\xbn\\examples\\";
 
    public static final void main(String[] ignored)  {
       ExampleCodeOutputsContain_Unit test = new ExampleCodeOutputsContain_Unit();
 
+      test.linefilter_ExtractReferenceTypeBlocks();
+      test.linefilter_ExtractReferenceTypeBlocksWithChildRoot();
+      test.linefilter_ExtractReferenceTypeBlocksWithChildStealth();
    	test.analyze_alter_ValueAltererXmpl();
    	test.analyze_validate_FirstCheckIsAlwaysValidThenExpireXmpl();
    	test.analyze_validate_ValidResultFilterXmpl();
    	test.analyze_validate_ValueValidatorXmpl();
    	test.array_BinarySearcherXmpl();
    	test.array_XbnIndexOutOfBoundsExceptionXmpl();
-   	test.io_UnusableAppenterExample();
    	test.io_TextAppenterObjectDebugging();
    	test.io_TextAppenterWithLevelsAppExample_off();
-//   	test.io_TextAppenterWithLevelsAppExample_minimal();
-//   	test.io_TextAppenterWithLevelsAppExample_verbose();
+   	test.io_UnusableAppenterExample();
    	test.io_WriterForAppendableXmpl();
    	test.lang_builder_blind_BlindBuilderXmpl();
    	test.lang_builder_bloch_BlochBuilderXmpl();
@@ -32,6 +31,8 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.lang_reflect_InvokeMainWithRtxXmpl();
    	test.lang_reflect_InvokePrivateStaticMethodWithRtxXmpl();
    	test.linefilter_EliminateAllCommentBlocksAndPackageLine();
+   	test.linefilter_ExtractAllJavaDocBlockTextRaw();
+   	test.linefilter_ExtractAllJavaDocBlockTextStripLineAsterisks();
    	test.linefilter_GetAllClassSimpleNamesFromImports();
    	test.linefilter_IterateActiveLines();
    	test.linefilter_IterateKeptLines();
@@ -41,6 +42,9 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNums();
    	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging();
    	test.linefilter_PrintJavaDocBlockSubLinesBolded();
+   	test.linefilter_StringReplacerXmpl();
+   	test.linefilter_StringValidatorReplacerXmpl();
+   	test.linefilter_alter_ExpirableAlterListXmpl();
    	test.neederneedable_NeedableNeederXmpl();
    	test.regexutil_RegexGroupExtractorXmpl();
    	test.regexutil_RegexReplacerDirectXmpl();
@@ -58,8 +62,8 @@ public class ExampleCodeOutputsContain_Unit  {
    	test.text_padchop_VzblPadChopXmpl();
    	test.util_JavaUtilInitializedValuesXmpl();
    	test.util_tuple_PotentialStringConcatWithThreeObjs();
-   	test.util_tuple_PotentialStringConcatWithThreeObjs();
-   	test.util_tuple_PotentialStringConcatWithThreeObjs();
+//   	test.io_TextAppenterWithLevelsAppExample_minimal();
+//   	test.io_TextAppenterWithLevelsAppExample_verbose();
 //   	test.number_FractionXmpl();
 //   	test.testdev_UnitTestAppOutputContainsXmpl();
    }
@@ -111,6 +115,19 @@ public class ExampleCodeOutputsContain_Unit  {
          new String[] {"debugverbose"},
          "information", "Very");
    }
+   @Test
+   public void number_FractionXmpl()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.number.FractionXmpl.class,
+         "Parse string 5/10: Reduced to 1/2",
+         "Parse numerator 5, denominator 10: 1/2");
+   }
+   @Test(expected=AssertionError.class)
+   public void testdev_UnitTestAppOutputContainsXmpl()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.testdev.UnitTestAppOutputContainsXmpl.class,
+         "Hello world", "Failure test");
+   }
  */
 
    @Test
@@ -142,12 +159,16 @@ public class ExampleCodeOutputsContain_Unit  {
          com.github.xbn.examples.linefilter.MoreComplicatedModifyExample.class,
          "midONE", "midTWO");
    }
+      private static final String JAVA_CLASS_INPUT_PREFIX =
+         EXAMPLE_CODE_ROOT_DIR + "linefilter\\JavaClassWithOneCommentAndTwoJavaDocBlocks";
+      private static final String[] JAVA_CLASS_INPUT_FILE = new String[] {
+         JAVA_CLASS_INPUT_PREFIX + "_input.txt"};
    @Test
    public void linefilter_PrintAllJavaDocBlockStartAndEndLineNums()  {
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
          new String[] {"path:"},
          com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums.class,
-         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         JAVA_CLASS_INPUT_FILE,
          "9", "11", "13", "15", "19", "25");
    }
    @Test
@@ -155,7 +176,7 @@ public class ExampleCodeOutputsContain_Unit  {
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
          new String[] {"path:"},
          com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging.class,
-         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         JAVA_CLASS_INPUT_FILE,
          "9", "11", "13", "15", "19", "25");
    }
    @Test
@@ -163,7 +184,7 @@ public class ExampleCodeOutputsContain_Unit  {
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
          new String[] {"path:"},
          com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded.class,
-         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         new String[] {JAVA_CLASS_INPUT_PREFIX + "WithSub_input.txt"},
          "//sub-mode...START", "//sub-mode...END",
          "<P>Another JavaDoc block</P>", "<B><P>info</P></B>", "<B></B>",
          "<B><P>info</P></B>", "<B></B>", "<B><P>info</P></B>", "<P>info</P>",
@@ -172,16 +193,54 @@ public class ExampleCodeOutputsContain_Unit  {
    @Test
    public void linefilter_EliminateAllCommentBlocksAndPackageLine()  {
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
-         new String[] {"path:", "package", "sub-mode", "<P>", "*"},
+         new String[] {"path:", "package", "sub-mode", "<P>", "*"+"/"},
          com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine.class,
-         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         JAVA_CLASS_INPUT_FILE,
          "class StayClassy", "StayClassy()", "doStuff()");
    }
+   @Test
+   public void linefilter_ExtractAllJavaDocBlockTextStripLineAsterisks()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"path:"},
+         com.github.xbn.examples.linefilter.ExtractAllJavaDocBlockTextStripLineAsterisks.class,
+         JAVA_CLASS_INPUT_FILE,
+         "<P>The main", "<P>Constructor", "<P>Function", "<P>This function", "<P>Lots and");
+   }
+   @Test
+   public void linefilter_ExtractAllJavaDocBlockTextRaw()  {
+      VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
+         new String[] {"path:"},
+         com.github.xbn.examples.linefilter.ExtractAllJavaDocBlockTextRaw.class,
+         JAVA_CLASS_INPUT_FILE,
+         "<P>The main", "<P>Constructor", "* <P>Function", "* <P>This function", "* <P>Lots and");
+   }
+      private static final String[] REF_BLOCK_INPUT_FILE = new String[] {
+         EXAMPLE_CODE_ROOT_DIR + "linefilter\\reference_type_through_attachment_blocks_input.txt"};
+   @Test
+   public void linefilter_ExtractReferenceTypeBlocksWithChildRoot()  {
+      linefilter_ExtractReferenceTypeBlocks_STAR(DisplayOutputToConsole.NO, com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocksWithChildRoot.class);
+   }
+   @Test
+   public void linefilter_ExtractReferenceTypeBlocksWithChildStealth()  {
+      linefilter_ExtractReferenceTypeBlocks_STAR(DisplayOutputToConsole.NO, com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocksWithChildRoot.class);
+   }
+   @Test
+   public void linefilter_ExtractReferenceTypeBlocks()  {
+      linefilter_ExtractReferenceTypeBlocks_STAR(DisplayOutputToConsole.NO, com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocksWithChildRoot.class);
+   }
+      private void linefilter_ExtractReferenceTypeBlocks_STAR(DisplayOutputToConsole display_out, Class<?> example_class)  {
+         VerifyApplicationOutput.assertWithParameters(display_out, null,
+            example_class,
+            REF_BLOCK_INPUT_FILE,
+            "--BLOCK FOUND:", "Type:  Journal", "-pdf://0633242026/Acou",
+            "--BLOCK FOUND:", "Type:  Thesis", "-pdf://2172014641/Dayl",
+            "--BLOCK FOUND:", "Type:  Something", "-pdf://48327407/xyz.pdf");
+      }
    @Test
    public void linefilter_GetAllClassSimpleNamesFromImports()  {
       VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.linefilter.GetAllClassSimpleNamesFromImports.class,
-         JAVA_SOURCE_INPUT_FILE_PARAMS,
+         JAVA_CLASS_INPUT_FILE,
          "Object", "List", "StringUtils", "XbnConstants");
    }
    @Test
@@ -201,6 +260,31 @@ public class ExampleCodeOutputsContain_Unit  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.linefilter.IterateKeptLinesManualBlock.class,
          "mid1", "mid2");
+   }
+   @Test
+   public void linefilter_StringValidatorReplacerXmpl()  {
+      String sT = "Kermit T. Frog";
+      String sThe = "Kermit The Frog";
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, new String[]{"()="},
+         com.github.xbn.examples.linefilter.StringValidatorReplacerXmpl.class,
+         sT, sThe, sThe, sThe, sT, sT, sT, sT, sT, sT);
+   }
+   @Test
+   public void linefilter_StringReplacerXmpl()  {
+      String sT = "Kermit T. Frog";
+      String sThe = "Kermit The Frog";
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, new String[]{"()="},
+         com.github.xbn.examples.linefilter.StringReplacerXmpl.class,
+         sT, sThe, sThe, sThe, sT, sT, sT, sT, sT, sT);
+   }
+   @Test
+   public void linefilter_alter_ExpirableAlterListXmpl()  {
+      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+         com.github.xbn.examples.linefilter.alter.ExpirableTextLineAlterListXmpl.class,
+         "1st and 2nd \"Apple\"", "2nd-through-4th \"T.\"", "2nd \"Green\"",
+         "1 Johnny Pearseed  (Alters=3)", "3 Kermit The Frog  (Alters=3)",
+         "6 Kermit The Frog  (Alters=2)", "9 Johnny Appleseed  (Alters=0, expired)",
+         "13 The Green Giant  (Alters=0, expired)");
    }
    @Test
    public void analyze_alter_ValueAltererXmpl()  {
@@ -239,13 +323,6 @@ public class ExampleCodeOutputsContain_Unit  {
          "10...", "Valid?", "No", "source=RULES", "java.lang.IllegalArgumentException");
    }
    @Test
-   public void number_FractionXmpl()  {
-      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
-         com.github.xbn.examples.number.FractionXmpl.class,
-         "Parse string 5/10: Reduced to 1/2",
-         "Parse numerator 5, denominator 10: 1/2");
-   }
-   @Test
    public void array_BinarySearcherXmpl()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.array.BinarySearcherXmpl.class,
@@ -275,12 +352,6 @@ public class ExampleCodeOutputsContain_Unit  {
          "Test \"index\" took ", " nanoseconds",
          "Test \"iterator\" took ", " nanoseconds",
          "FASTER: Test", ", by ", " nanoseconds (", "%)");
-   }
-   @Test(expected=AssertionError.class)
-   public void testdev_UnitTestAppOutputContainsXmpl()  {
-      VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
-         com.github.xbn.examples.testdev.UnitTestAppOutputContainsXmpl.class,
-         "Hello world", "Failure test");
    }
    @Test
    public void regexutil_RegexGroupExtractorXmpl()  {
@@ -388,10 +459,10 @@ public class ExampleCodeOutputsContain_Unit  {
          "float", "\"0.0\"", "double", "\"0.0\"",
          "java.lang.AnythingAndEverythingElse", "\"null\"");
    }
-   @Test(expected=IllegalStateException.class)
+   @Test
    public void util_tuple_PotentialStringConcatWithThreeObjs()  {
       VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
          com.github.xbn.examples.util.tuple.PotentialStringConcatWithThreeObjs.class,
-         "");
+         "A good", "B bad");
    }
 }

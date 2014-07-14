@@ -12,6 +12,7 @@
    You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA*)
 \*license*/
 package  com.github.xbn.examples.linefilter.alter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
    import  com.github.xbn.linefilter.alter.ExpirableTextLineAlterList;
    import  com.github.xbn.linefilter.alter.TextLineAlterer;
@@ -32,7 +33,6 @@ package  com.github.xbn.examples.linefilter.alter;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ExpirableTextLineAlterListXmpl  {
-   private static final String LINE_SEP = System.getProperty("line.separator", "\n");
    public static final void main(String[] ignored)  {
       //Pre-setup
          String JA = "Johnny Appleseed";
@@ -69,7 +69,7 @@ public class ExpirableTextLineAlterListXmpl  {
                inUnchangedOutFalse(1, 2, null, null,
                null);    //<--Debugging: System.out. No debugging: null;
             TextLineAlterAdapter<StringReplacer> atlrAppleToPear12 = AdaptRegexReplacerTo.
-               lineReplacer(
+               lineReplacer(AlterationRequired.YES,
                   Pattern.compile("Apple", Pattern.LITERAL),
                   "Pear", ReplacedInEachInput.FIRST, vrf12,
                null);    //<--Debugging
@@ -81,7 +81,7 @@ public class ExpirableTextLineAlterListXmpl  {
                inUnchangedOutFalse(2, 4, null, null,
                null);    //<--Debugging
             TextLineAlterAdapter<StringReplacer> atlrTDotToThe234 = AdaptRegexReplacerTo.
-               lineReplacer(
+               lineReplacer(AlterationRequired.YES,
                   Pattern.compile("T.", Pattern.LITERAL),
                   "The", ReplacedInEachInput.FIRST, vrf234,
                null);    //<--Debugging
@@ -93,7 +93,7 @@ public class ExpirableTextLineAlterListXmpl  {
                inUnchangedOutFalse(2, 2, null, null,
                null);    //<--Debugging
             TextLineAlterAdapter<StringReplacer> atlrCapGreen2Only = AdaptRegexReplacerTo.
-               lineReplacer(
+               lineReplacer(AlterationRequired.YES,
                   Pattern.compile("Green", Pattern.LITERAL),
                   "GREEN", ReplacedInEachInput.FIRST, vrf2Only,
                null);    //<--Debugging

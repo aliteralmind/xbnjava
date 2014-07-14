@@ -13,10 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.copyval;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.util.copyval.NullHandler;
-   import  com.github.xbn.util.copyval.SimpleNullHandler;
 /**
    <P>Abstract implementation of {@code ValueCopier}. For classes needing to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}, see {@link com.github.xbn.util.copyval.ValueCopierComposer ValueCopierComposer}.</P>
 

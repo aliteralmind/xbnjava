@@ -17,7 +17,6 @@ package  com.github.xbn.examples.io.non_xbn;
    import  java.io.File;
    import  java.io.IOException;
    import  org.apache.commons.io.FileUtils;
-   import  org.apache.commons.lang3.StringUtils;
 /**
    <P>Read a text file where each line is a space-separated username, password, account-active boolean.</P>
 

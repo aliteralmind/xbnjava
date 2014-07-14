@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.experimental.listify.backend;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
-   import  static com.github.xbn.lang.CrashIfBase.*;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
    import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable;
@@ -72,10 +71,9 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
    public AbstractListifyBooleanValidity(AbstractListifyBooleanValidity<R> to_copy)  {
       super(to_copy);
 
-         @SuppressWarnings("unchecked")
-         ValueValidator<R> cpbl2 = (ValueValidator<R>)ObjectOrCrashIfNull.
-            <ValueValidator>getCopy(to_copy.getVVRawElement(), ValueValidator.class, "to_copy.getVVRawElement()");
-      ValueValidator<R> vvre = cpbl2;
+      ValueValidator<R> cpbl2 = (ValueValidator<R>)ObjectOrCrashIfNull.
+      <ValueValidator>getCopy(to_copy.getVVRawElement(), ValueValidator.class, "to_copy.getVVRawElement()");
+      vvre = cpbl2;
    }
 //constructors...END
    public ValueValidator<R> getVVRawElement()  {

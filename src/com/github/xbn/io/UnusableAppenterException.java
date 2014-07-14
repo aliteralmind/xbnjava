@@ -21,6 +21,10 @@ package  com.github.xbn.io;
  **/
 public class UnusableAppenterException extends RTIOException  {
    /**
+    * 
+    */
+   private static final long serialVersionUID = 3682322290098625894L;
+   /**
       <P>Create an UnusableAppenterException with no error message.</P>
     **/
    public UnusableAppenterException()  {

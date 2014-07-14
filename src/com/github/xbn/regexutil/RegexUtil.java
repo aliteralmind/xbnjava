@@ -13,12 +13,9 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg;
    import  com.github.xbn.lang.CrashIfObject;
-   import  static com.github.xbn.lang.CrashIfBase.*;
    import  java.util.regex.Matcher;
-   import  java.util.regex.PatternSyntaxException;
    import  com.github.xbn.util.BitBinaryUtil;
    import  java.util.regex.Pattern;
 

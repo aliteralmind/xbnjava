@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn;
     import java.util.Arrays;
-    import java.util.Scanner;
 /**
    <P>Find all words in a string that have a specific letter.</P>
 
@@ -26,7 +25,7 @@ package  com.github.xbn.examples.lang.non_xbn;
 public class AllWordsInLineThatHaveALetter {
    private String line;
    public AllWordsInLineThatHaveALetter(String line)  {
-      line = line;
+      this.line = line;
    }
    public static final void main(String[] ignored)  {
       testLine('b', "abc def ghi cba def ghi");

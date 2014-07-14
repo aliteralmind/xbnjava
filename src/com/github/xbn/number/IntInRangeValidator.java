@@ -14,9 +14,6 @@
 \*license*/
 package  com.github.xbn.number;
    import  com.github.xbn.number.z.IntInRangeValidator_Fieldable;
-   import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.number.IntBoundInclusive;
-   import  com.github.xbn.number.IntBoundExclusive;
    import  com.github.xbn.number.IntInRange;
    import  com.github.xbn.lang.RuleType;
 /**

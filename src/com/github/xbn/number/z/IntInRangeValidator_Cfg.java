@@ -16,7 +16,6 @@ package  com.github.xbn.number.z;
    import  com.github.xbn.number.IntInRange;
    import  com.github.xbn.number.IntInRangeValidator;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
-   import  com.github.xbn.neederneedable.Needer;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.number.IntInRangeValidator IntInRangeValidator}.</P>
 

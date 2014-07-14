@@ -1,10 +1,6 @@
 package  com.github.xbn.experimental.xcontext;
    import  java.util.Objects;
-   import  com.github.xbn.lang.Copyable;
    import  com.github.xbn.lang.ToStringDefensive;
-   import  com.github.xbn.text.StringUtilBase;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.experimental.BadInterfaceBehaviorException;
 
 /**

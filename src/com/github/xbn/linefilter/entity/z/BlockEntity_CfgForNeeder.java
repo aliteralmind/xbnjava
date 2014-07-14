@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.z;
-   import  com.github.xbn.lang.ObjectOrCrashIfNull;
    import  com.github.xbn.linefilter.entity.TextChildEntity;
    import  com.github.xbn.linefilter.entity.EndRequired;
    import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;

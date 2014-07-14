@@ -63,4 +63,10 @@ public class StealthBlockEntity extends RawStealthBlockEntity<String> implements
    public TextParentEntity getTopParent()  {
       return  (TextParentEntity)super.getTopParent();
    }
+   /**
+      @since 0.1.2
+    **/
+   public StealthBlockEntity getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<String> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+      return  new StealthBlockEntity(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
+   }
 }

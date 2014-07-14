@@ -14,10 +14,7 @@
 \*license*/
 package  com.github.xbn.array;
    import  com.github.xbn.lang.Null;
-   import  com.github.xbn.lang.ToStringDefensive;
-   import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.IllegalArgumentStateException;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Error checking related to indexes and indexed elements.</P>
 

@@ -19,7 +19,11 @@ package  com.github.xbn.experimental.listify;
    @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <CODE><A HREF="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</A></CODE>, <A HREF="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</A>}
  **/
 public class ListifiedNotAddRemovableException extends IllegalStateException  {
-//constructors...START
+/**
+    * 
+    */
+   private static final long serialVersionUID = -8886369161416866624L;
+   //constructors...START
    public ListifiedNotAddRemovableException()  {
       super();
    }

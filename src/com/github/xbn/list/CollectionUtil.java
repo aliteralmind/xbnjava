@@ -13,14 +13,12 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list;
-   import  com.github.xbn.array.IndexableUtil;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.number.NumberUtil;
    import  java.util.Collection;
    import  java.util.Iterator;
    import  java.util.Map;
    import  java.util.Objects;
-   import  static com.github.xbn.lang.CrashIfBase.*;
 /**
    <P>Find the middle index in a collection, and functions to assist in implementing {@code contains(...)} and {@code containsAll(...)}.</P>
 

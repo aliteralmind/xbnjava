@@ -15,12 +15,12 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 
-package  com.github.xbn.examples.lang;
+package  com.github.xbn.examples.lang.non_xbn;
    import  java.util.Arrays;
 /**
    <P>Duplicate an array, where the new array has an element inserted in it at an arbitrary index.</P>
 
-   <P>{@code java com.github.xbn.examples.lang.ManualArrayInsertWItrIntoNewArray}</P>
+   <P>{@code java com.github.xbn.examples.lang.non_xbn.ManualArrayInsertWItrIntoNewArray}</P>
 
    @see  com.github.xbn.examples.lang.ManualArrayInsertWItrDiscardLastElement
    @since 0.1.0

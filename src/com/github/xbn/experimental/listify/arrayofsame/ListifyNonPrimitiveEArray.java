@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.arrayofsame;
-   import  com.github.xbn.experimental.listify.Listify;
 
 /**
    <P>Listifier whose raw object is a non-primitive array, and whose virtual elements are of the same type.</P>

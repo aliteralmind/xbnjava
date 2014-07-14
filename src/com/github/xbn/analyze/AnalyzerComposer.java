@@ -18,9 +18,7 @@ package  com.github.xbn.analyze;
    import  com.github.xbn.testdev.CompositionConstructor;
    import  com.github.xbn.testdev.CompositionFunction;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.io.SimpleDebuggable;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.ExtraErrInfoableComposer;
 /**
    <P>For classes that need to implement {@code Analyzer}, that cannot extend {@code AbstractAnalyzer}.</P>

@@ -16,7 +16,6 @@ package  com.github.xbn.io;
    import  java.io.InputStream;
    import  java.util.Scanner;
    import  java.io.IOException;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P><A HREF="http://en.wikipedia.org/wiki/Decorator_pattern">Decorator</A> for {@link java.lang.Appendable}-s, including conditional printing, with runtime-only exceptions. This is a companion to {@code TextAppender}.</P>
 

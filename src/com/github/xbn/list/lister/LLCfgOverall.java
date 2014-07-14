@@ -1,7 +1,6 @@
 package  com.github.xbn.list.lister;
    import  com.github.xbn.list.lister.z.LLCfgOverall_Fieldable;
    import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.text.padchop.VzblPadChop;
    import  java.util.List;
 /**
    <P>{@code ListLister} configuration relating to the list as a whole--not its elements. Elements are configured by {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</P>

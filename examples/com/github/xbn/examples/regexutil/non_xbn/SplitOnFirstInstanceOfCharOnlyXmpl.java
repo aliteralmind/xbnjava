@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
    import  java.util.regex.Matcher;
-   import  java.util.Arrays;
    import  java.util.regex.Pattern;
 
 /**

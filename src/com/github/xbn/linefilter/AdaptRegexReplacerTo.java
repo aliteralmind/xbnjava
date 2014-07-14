@@ -13,6 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
+   import  com.github.xbn.lang.ObjectOrCrashIfNull;
    import  com.github.xbn.linefilter.alter.AbstractTextLineAlterAdapter;
    import  com.github.xbn.linefilter.alter.TextLineAlterAdapter;
    import  com.github.xbn.regexutil.RegexReplacer;
@@ -21,10 +23,7 @@ package  com.github.xbn.linefilter;
    import  com.github.xbn.regexutil.StringValidatorReplacer;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.io.TextAppenter;
-   import  com.github.xbn.lang.SimpleAdapter;
-   import  com.github.xbn.neederneedable.DummyForNoNeeder;
    import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
-   import  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder;
    import  java.util.regex.Pattern;
 /**
    <P>Create a new string-validator, string-alterer, or text-line alterer from a {@code RegexReplacer}.</P>
@@ -36,25 +35,24 @@ public class AdaptRegexReplacerTo  {
    /**
       <P>Create a text-line alterer makes a regular expression replacement.</P>
 
-      @return  {@link #lineReplacer(StringReplacer) lineReplacer}(new {@link com.github.xbn.regexutil.StringReplacer#StringReplacer(RegexReplacer, ValidResultFilter) StringReplacer}(rr, filter_ifNonNull))
+      @return  {@link #lineReplacer(StringReplacer) lineReplacer}(new {@link com.github.xbn.regexutil.StringReplacer#StringReplacer(RegexReplacer, AlterationRequired, ValidResultFilter) StringReplacer}(required, rr, filter_ifNonNull))
       <BR>Where {@code rr} is created with
       <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</CODE>
     **/
-   public static final TextLineAlterAdapter<StringReplacer> lineReplacer(Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+   public static final TextLineAlterAdapter<StringReplacer> lineReplacer(AlterationRequired required, Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       RegexReplacer rr = RegexReplacer_Cfg.buildDirect(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull);
-      return  lineReplacer(rr, filter_ifNonNull);
-//		return  lineReplacer(new StringReplacer(rr, filter_ifNonNull));
+      return  lineReplacer(required, rr, filter_ifNonNull);
    }
    /**
       <P>Create a string alterer from a {@code RegexReplacer}.</P>
 
-      @return  {@link #stringReplacer(RegexReplacer, ValidResultFilter) lineReplacer}(rr, filter_ifNonNull))
+      @return  {@link #stringReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer}(required, rr, filter_ifNonNull))
       <BR>Where {@code rr} is created with
       <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</CODE>
     **/
-   public static final StringReplacer stringReplacer(Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+   public static final StringReplacer stringReplacer(AlterationRequired required, Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       RegexReplacer rr = RegexReplacer_Cfg.buildDirect(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull);
-      return  stringReplacer(rr, filter_ifNonNull);
+      return  stringReplacer(required, rr, filter_ifNonNull);
    }
    /**
       <P>Create a string validator from a {@code RegexReplacer}--If the string is matched (is replaced), then it is valid.</P>
@@ -63,17 +61,17 @@ public class AdaptRegexReplacerTo  {
       <BR>Where {@code rr} is created with
       <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</CODE>
     **/
-   public static final StringValidatorReplacer stringValidator(Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+   public static final StringValidatorReplacer stringValidator(AlterationRequired required, Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       RegexReplacer rr = RegexReplacer_Cfg.buildDirect(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull);
       return  (new StringValidatorReplacer(rr, filter_ifNonNull));
    }
    /**
       <P>Create a string alterer from a {@code RegexReplacer} and filter.</P>
 
-      @return  <CODE>(new {@link com.github.xbn.regexutil.StringReplacer#StringReplacer(StringValidatorReplacer) StringReplacer}(new {@link com.github.xbn.regexutil.StringValidatorReplacer#StringValidatorReplacer(RegexReplacer, ValidResultFilter) StringValidatorReplacer}(replacer, filter_ifNonNull)))</CODE>
+      @return  <CODE>(new {@link com.github.xbn.regexutil.StringReplacer#StringReplacer(StringValidatorReplacer, AlterationRequired) StringReplacer}(new {@link com.github.xbn.regexutil.StringValidatorReplacer#StringValidatorReplacer(RegexReplacer, ValidResultFilter) StringValidatorReplacer}(replacer, filter_ifNonNull), required)</CODE>
     **/
-   public static final StringReplacer stringReplacer(RegexReplacer replacer, ValidResultFilter filter_ifNonNull)  {
-      return  (new StringReplacer(new StringValidatorReplacer(replacer, filter_ifNonNull)));
+   public static final StringReplacer stringReplacer(AlterationRequired required, RegexReplacer replacer, ValidResultFilter filter_ifNonNull)  {
+      return  new StringReplacer(new StringValidatorReplacer(replacer, filter_ifNonNull), required);
    }
    /**
       <P>Create a text-line alterer from a {@code RegexReplacer} (adapted into a string validator).</P>
@@ -90,9 +88,9 @@ public class AdaptRegexReplacerTo  {
       HREF="{@docRoot}/com/github/xbn/analyze/alter/ValueAlterer.html#getAltered(V, A)">getAltered</A>{@code (V,A)} function returns that {@link com.github.xbn.regexutil.RegexReplacer#getReplaced(Object) replacement}. When no match is found (or
       it is matched, but that match is suppressed or altered by the {@link com.github.xbn.analyze.validate.ValidResultFilterable#getFilter() filter}) the original text is returned
       unchanged.
-      @see  #lineReplacer(RegexReplacer, ValidResultFilter) lineReplacer(rr,vrf)
-      @see  #lineReplacer(Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable) lineReplacer(p,s,rw,vrf,apbl)
-      @see  #lineReplacer(RegexReplacer, ValidResultFilter) lineReplacer(rr,vrf)
+      @see  #lineReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer(rr,vrf)
+      @see  #lineReplacer(AlterationRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable) lineReplacer(p,s,rw,vrf,apbl)
+      @see  #lineReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer(rr,vrf)
     **/
    public static final TextLineAlterAdapter<StringReplacer> lineReplacer(StringReplacer sreplacer)  {
       return  new ATLForSVR(sreplacer);
@@ -100,10 +98,10 @@ public class AdaptRegexReplacerTo  {
    /**
       <P>Create a text-line alterer from a {@code RegexReplacer} and filter.</P>
 
-      @return  <CODE>{@link #lineReplacer(StringReplacer) lineReplacer}(new {@link com.github.xbn.regexutil.StringReplacer#StringReplacer(RegexReplacer, ValidResultFilter) StringReplacer}(replacer, filter_ifNonNull))</CODE>
+      @return  <CODE>{@link #lineReplacer(StringReplacer) lineReplacer}(replacer, new {@link com.github.xbn.regexutil.StringReplacer#StringReplacer(RegexReplacer, AlterationRequired, ValidResultFilter) StringReplacer}(replacer, required, filter_ifNonNull))</CODE>
     **/
-   public static final TextLineAlterAdapter<StringReplacer> lineReplacer(RegexReplacer replacer, ValidResultFilter filter_ifNonNull)  {
-      return  lineReplacer(new StringReplacer(replacer, filter_ifNonNull));
+   public static final TextLineAlterAdapter<StringReplacer> lineReplacer(AlterationRequired required, RegexReplacer replacer, ValidResultFilter filter_ifNonNull)  {
+      return  lineReplacer(new StringReplacer(replacer, required, filter_ifNonNull));
    }
 }
 final class ATLForSVR extends AbstractTextLineAlterAdapter<StringReplacer>  {
@@ -111,7 +109,7 @@ final class ATLForSVR extends AbstractTextLineAlterAdapter<StringReplacer>  {
       super(sv_r);
    }
    public ATLForSVR(ATLForSVR to_copy)  {
-      super((to_copy == null) ? null : to_copy.getAdapted().getObjectCopy());
+      super(ObjectOrCrashIfNull.get(to_copy, "to_copy").getAdapted().getObjectCopy());
    }
    public ATLForSVR getObjectCopy()  {
       return  (new ATLForSVR(this));
@@ -121,6 +119,9 @@ final class ATLForSVR extends AbstractTextLineAlterAdapter<StringReplacer>  {
    }
    public String getAlteredString(String ignored, String to_alter)  {
       return  getAdapted().getAlteredString(null, to_alter);
+   }
+   public boolean isRequired()  {
+      return  getAdapted().isRequired();
    }
    public void resetState()  {
       getAdapted().resetState();

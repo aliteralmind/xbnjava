@@ -17,10 +17,6 @@ package  com.github.xbn.number.z;
    import  com.github.xbn.number.IndexInRange;
    import  com.github.xbn.number.IndexInRangeValidator;
    import  com.github.xbn.neederneedable.Needer;
-   import  com.github.xbn.number.IntBoundInclusive;
-   import  com.github.xbn.number.IntBoundExclusive;
-   import  com.github.xbn.text.StringUtilBase;
-   import  java.util.Collection;
 /**
    <P>YYY</P>
 
@@ -120,7 +116,6 @@ public class IndexInRangeValidator_CfgForNeeder<G extends IndexInRange,V extends
    }
    @SuppressWarnings("unchecked")
    public V build()  {
-      @SuppressWarnings("unchecked")
       V v = (V)(new IndexInRangeValidator(this));
       return  v;
    }

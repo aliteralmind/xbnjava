@@ -1,3 +1,4 @@
+package  com.github.xbn.examples.lang.composition;
 /**
    <P>Analyzes something.</P>
    **/

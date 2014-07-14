@@ -15,7 +15,6 @@
 package  com.github.xbn.analyze.validate.z;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.analyze.validate.NullnessValidator;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
@@ -32,7 +31,7 @@ public class ValueValidator_Cfg<O> extends ValueValidator_CfgForNeeder<O,Nullnes
    @SuppressWarnings("unchecked")
    public static final <O> ValueValidator_CfgForNeeder<O,NullnessValidator<O>,DummyForNoNeeder> newSameFieldsAs(ValueValidator<O> validator)  {
       try  {
-         return  new ValueValidator_Cfg().nullOk(validator.isNullOk()).invert(validator.doInvertRules()).extraErrInfo(validator.getExtraErrInfo()).filter(validator.getFilter()).debugTo(validator.getDebugAptr().getAppendable());
+         return  new ValueValidator_Cfg<O>().nullOk(validator.isNullOk()).invert(validator.doInvertRules()).extraErrInfo(validator.getExtraErrInfo()).filter(validator.getFilter()).debugTo(validator.getDebugAptr().getAppendable());
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(validator, "validator", null, rx);
       }

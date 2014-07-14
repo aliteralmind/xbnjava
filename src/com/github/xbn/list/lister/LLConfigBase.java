@@ -2,7 +2,6 @@ package  com.github.xbn.list.lister;
    import  com.github.xbn.text.StringWithNullDefault;
    import  com.github.xbn.lang.Null;
    import  com.github.xbn.list.lister.z.LLConfigBase_Fieldable;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.ToStringAppendable;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.text.CrashIfString;

@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
-   import  com.github.xbn.util.EnumUtil;
 /**
    <P>Which bound side is it?--min or max?.</P>
 

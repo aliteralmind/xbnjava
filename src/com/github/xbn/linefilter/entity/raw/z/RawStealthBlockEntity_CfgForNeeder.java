@@ -130,8 +130,8 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 
       @param  b  If {@code true}, lines are kept. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#doKeepJustAnalyzed() doKeepJustAnalyzed}{@code ()}*.
       @return  <I>{@code this}</I>
-      @see  keepLines()
-      @see  discardLines()
+      @see  #keepLines()
+      @see  #discardLines()
     **/
    public RawStealthBlockEntity_CfgForNeeder<L,M,R> keepLines(boolean b)  {
       doKeep = b;

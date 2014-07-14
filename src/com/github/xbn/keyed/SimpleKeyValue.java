@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.keyed;
-   import  com.github.xbn.lang.ObjectOrCrashIfNull;
 //	import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Implementation of {@code KeyValue}.</P>

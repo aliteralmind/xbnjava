@@ -13,14 +13,17 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.io;
-   import  com.github.xbn.lang.Null;
    import  com.github.xbn.array.CrashIfIndex;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.IllegalArgumentStateException;
+   import  com.github.xbn.lang.Null;
    import  com.github.xbn.text.CrashIfString;
    import  java.io.BufferedInputStream;
+   import  java.io.BufferedWriter;
    import  java.io.Closeable;
    import  java.io.File;
+   import  java.io.FileNotFoundException;
+   import  java.io.FileWriter;
    import  java.io.Flushable;
    import  java.io.IOException;
    import  java.io.InputStream;
@@ -28,11 +31,6 @@ package  com.github.xbn.io;
    import  java.io.Writer;
    import  java.net.MalformedURLException;
    import  java.net.URL;
-   import  java.nio.file.AccessDeniedException;
-   import  java.nio.file.Files;
-   import  java.nio.file.LinkOption;
-   import  java.nio.file.NoSuchFileException;
-   import  java.nio.file.Path;
    import  java.util.Arrays;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
@@ -100,8 +98,8 @@ public class IOUtil  {
             }
          }
       }
-      for(String baseDir : allPossible_baseDirs)  {
-      }
+//		for(String baseDir : allPossible_baseDirs)  {
+//		}
       throw  new IllegalArgumentStateException(path_varName + " (\"" + path + "\") does not start with any of the base directories: " + baseDirs_varName + "=" + Arrays.toString(allPossible_baseDirs));
    }
    /**
@@ -260,6 +258,32 @@ public class IOUtil  {
       }
       return  to_appendTo;
    }
+   /**
+      <P>Create a new {@code PrintWriter} that writes to a file, with runtime errors only.</P>
+
+      @param  file  Must be non-{@code null} and writeable.
+      @param  do_append  If {@code true}, the file is appended to. Existing text is left untouched. If {@code false}, existing text is erased.
+      @param  do_autoFlush  If {@code true} output is automatically {@link java.io.PrintWriter#flush() flush}ed. If {@code false}, output must be manually flushed.
+      @return  <CODE>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(File, boolean) FileWriter}(file, do_append)), do_autoFlush))</CODE>
+      @exception  RTFileNotFoundException  If a {@link java.io.FileNotFoundException FileNotFoundException} is thrown
+      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+      @exception  SecurityException  If the file is not writable.
+      @see  NewPrintWriterToFile
+    **/
+   public static final PrintWriter getPrintWriterToFile(File file, boolean do_append, boolean do_autoFlush)  {
+      try  {
+         //Create the object to actually write to the file.
+         return  (new PrintWriter(new BufferedWriter(new FileWriter(file, do_append)), do_autoFlush));
+
+         //The PrintWriter was successfully created.
+
+      }  catch(FileNotFoundException fnfx)  {
+         throw  new RTFileNotFoundException(sIOXPRE + file.getAbsolutePath(), fnfx);
+      }  catch(IOException iox)  {
+         throw  new RTIOException(sIOXPRE + file.getAbsolutePath(), iox);
+      }
+   }
+      private static String sIOXPRE = "newPrintWriterForFile: path must point to a writeABLE file (the directory must exist, but the file need not exist). file: ";
 }
 class WFA extends Writer  {
    private final Appendable apbl;

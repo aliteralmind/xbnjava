@@ -15,7 +15,6 @@
 package  com.github.xbn.util;
    import  java.util.Objects;
    import  com.github.xbn.lang.Copyable;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.CrashIfObject;
    import  java.util.Comparator;
 /**
@@ -109,7 +108,7 @@ public class SelfComparator<M extends Comparable<? super M>> implements Comparat
 
       //Safe to cast
       @SuppressWarnings("unchecked")  //instanceof does not recognize generics
-      SelfComparator selfCmpr = (SelfComparator)to_compareTo;
+      SelfComparator<M> selfCmpr = (SelfComparator<M>)to_compareTo;
 
       //Field-by-field comparison
       return  isAscending() == selfCmpr.isAscending();

@@ -14,11 +14,9 @@
 \*license*/
 package  com.github.xbn.experimental.listify.arrayofsame;
    import  com.github.xbn.experimental.listify.AddRemovable;
-   import  java.util.Collection;
    import  com.github.xbn.experimental.listify.ListifyComposer;
    import  com.github.xbn.experimental.listify.Listify;
    import  com.github.xbn.util.copyval.ValueCopier;
-   import  java.util.List;
    import  java.util.Iterator;
    import  com.github.xbn.array.helper.ArrayHelperBase;
 /**

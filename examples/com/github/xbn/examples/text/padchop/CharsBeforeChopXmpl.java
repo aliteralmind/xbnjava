@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.examples.text.padchop;
    import  com.github.xbn.text.padchop.z.ChopString_Cfg;
-   import  com.github.xbn.text.padchop.ChopString;
 /**
    <P>Demonstrates chop position.</P>
 

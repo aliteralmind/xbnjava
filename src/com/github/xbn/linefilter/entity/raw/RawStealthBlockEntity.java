@@ -21,7 +21,6 @@ package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.analyze.alter.Altered;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_Fieldable;
-   import  java.util.Objects;
    import  com.github.xbn.analyze.validate.ValueValidator;
 /**
    <P>A specialized and simplified block-entity used only to prevent {@code RawBlockEntity}s from incorrectly matching start or end-lines (preventing false-positives). The lines matched by a stealth-block are never kept. More accurately, the lines in a stealth block are only kept if its parent block keeps its {@linkplain com.github.xbn.linefilter.entity.raw.RawBlockEntity#doKeepMidLines() mid-lines}.</P>

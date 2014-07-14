@@ -16,13 +16,11 @@ package  com.github.xbn.regexutil;
    import  com.github.xbn.regexutil.z.RegexGroupExtractor_Fieldable;
    import  java.io.IOException;
    import  java.util.ArrayList;
-   import  java.util.Iterator;
    import  java.util.List;
    import  java.util.NoSuchElementException;
    import  java.util.regex.Matcher;
    import  java.util.regex.Pattern;
    import  org.apache.commons.lang3.StringUtils;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.io.IOUtil;
    import  com.github.xbn.io.RTIOException;
    import  com.github.xbn.lang.CrashIfObject;
@@ -198,9 +196,6 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
       addGroupsToNewList();
       return  this;
    }
-      private String getMtchrPtrn()  {
-         return  "[matcher].pattern()=\"" + m.pattern() + "\"";
-      }
       private void addGroupsToNewList()  {
          if(alGroups != null)  {
             throw  new IllegalStateException("(alGroups != null)");

@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list.lister;
-   import  com.github.xbn.analyze.validate.NullnessValidator;
    import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.io.RTIOException;
@@ -178,7 +177,7 @@ getOverallConfig()
          return  StringWithNullDefault.append(to_appendTo, llco.getIfNull(), null);
       }
 
-      lister.lr4SZ_MRK.replaceWith(list.size());
+      ListLister.lr4SZ_MRK.replaceWith(list.size());
 
       StringWithNullDefault.append(to_appendTo, llco.getPrefix(), null);
 

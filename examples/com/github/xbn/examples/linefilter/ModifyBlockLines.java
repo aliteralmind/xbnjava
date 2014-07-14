@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
@@ -52,6 +53,7 @@ public class ModifyBlockLines  {
          textValidateOnly("start", null,
          null);            //debug (on:System.out, off:null)
       TextLineAlterer midAlterer = NewTextLineAltererFor.replacement(
+         AlterationRequired.YES,
          Pattern.compile("(.*)"), "<B>$1</B>",
          ReplacedInEachInput.FIRST,
          null,             //debug

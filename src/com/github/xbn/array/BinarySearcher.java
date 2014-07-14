@@ -13,10 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array;
-   import  java.util.Arrays;
-   import  java.util.Comparator;
-   import  java.util.List;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.ToStringAppendable;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.Copyable;

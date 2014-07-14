@@ -15,7 +15,6 @@
 package  com.github.xbn.examples.lang.non_xbn;
    import  java.util.regex.Matcher;
    import  java.util.regex.Pattern;
-   import  java.util.ArrayList;
    import  java.util.Arrays;
 /**
    <P>Translate an int array to a string array, and safely translate it back, by verifying each is indeed a number with a regular expression.</P>

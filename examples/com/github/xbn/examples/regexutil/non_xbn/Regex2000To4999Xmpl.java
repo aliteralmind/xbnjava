@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
    import  java.util.regex.Pattern;
-   import  java.util.regex.Matcher;
 /**
    <P>Regex demonstration: Match digits iterspersed throughout an input string that, when joined together, are between 2000 and 4999.</P>
 

@@ -22,7 +22,6 @@ package  com.github.xbn.regexutil;
    import  java.util.NoSuchElementException;
    import  java.util.regex.Matcher;
    import  java.util.regex.Pattern;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Splits a string based on a regular-expression separator, returning the matches, &quot;betweens&quot;, or both.</P>
 

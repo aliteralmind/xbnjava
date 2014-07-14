@@ -21,7 +21,11 @@ package  com.github.xbn.lang;
 
  **/
 public class ExpiredException extends IllegalArgumentException  {
-   public ExpiredException()  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = -2909315108071342617L;
+public ExpiredException()  {
    }
    public ExpiredException(String message)  {
       super(message);

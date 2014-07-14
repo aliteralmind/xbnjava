@@ -21,7 +21,6 @@ package  com.github.xbn.util;
    import  java.util.HashSet;
    import  java.util.Set;
    import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Get the title case of an enum's value, and crash if a specific enum is a forbidden or not a required value.</P>
 
@@ -140,7 +139,6 @@ public class EnumUtil  {
       }
 
       Set<String> set = new HashSet<String>(one_perEnumValueInOrder.length);
-      int idxFirstNonNull = -1;
       int idx = 0;
       for(; idx < one_perEnumValueInOrder.length; idx++)  {
          if(one_perEnumValueInOrder[idx] != null)  {

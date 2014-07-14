@@ -1,6 +1,4 @@
-
-
-
+package  com.github.xbn.examples.util.non_xbn;
    /**
       <P>{@code java DiagonalCharsPermutations}</P>
     **/
@@ -13,7 +11,5 @@
             "pqrst",
             "uvwxy",
             "zabcd"};
-
-
       }
    }

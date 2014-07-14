@@ -14,10 +14,8 @@
 \*license*/
 package  com.github.xbn.regexutil;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.testdev.CompositionConstructor;
    import  com.github.xbn.testdev.CompositionFunction;
    import  java.util.regex.Pattern;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Rudimentary implementation of {@code PatternHaser} with mutable fields.</P>
 

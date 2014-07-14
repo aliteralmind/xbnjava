@@ -18,9 +18,7 @@ package  com.github.xbn.analyze.validate.z;
    import  com.github.xbn.analyze.validate.FilterAfterValue;
    import  com.github.xbn.number.LengthInRange;
    import  com.github.xbn.neederneedable.AbstractNeedable;
-   import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.analyze.validate.FilterValidCounts;
-   import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.neederneedable.Needer;
 /**
    <P>For indirectly configuring a {@link FilterValidCounts}.</P>

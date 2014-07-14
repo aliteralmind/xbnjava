@@ -14,12 +14,8 @@
 \*license*/
 package  com.github.xbn.util.itr;
    import  com.github.xbn.lang.CrashIfObject;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.array.CrashIfIndex;
-   import  com.github.xbn.lang.XbnConstants;
-   import  static com.github.xbn.lang.CrashIfBase.*;
    import  java.util.Iterator;
-   import  java.util.NoSuchElementException;
 /**
    <P>Assists in building iterators over objects of a <I>known quantity</I> of indexable elements, such as arrays and collections--where the start and end indexes can be provided to the constructor, and do not change.</P>
 

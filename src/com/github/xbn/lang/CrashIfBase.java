@@ -13,10 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang;
-   import  java.util.Objects;
-   import  java.util.ArrayList;
-   import  java.io.IOException;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Basic error message construction. It is encouraged that this class be <A HREF="http://docs.oracle.com/javase/8/docs/technotes/guides/language/static-import.html">statically imported</A> &quot;en masse&quot;:
    <BR> &nbsp; &nbsp; {@code import  static com.github.xbn.lang.CrashIfBase.*;}</P>

@@ -3,7 +3,6 @@ package  com.github.xbn.number;
    import  com.github.xbn.keyed.Named;
    import  com.github.xbn.lang.Null;
    import  com.github.xbn.text.CrashIfString;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.CrashIfObject;
 
 /**

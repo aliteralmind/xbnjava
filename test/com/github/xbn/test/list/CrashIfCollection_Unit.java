@@ -1,7 +1,6 @@
 package  com.github.xbn.test.list;
    import  com.github.xbn.array.NullContainer;
    import  com.github.xbn.array.NullElement;
-   import  com.github.xbn.lang.BadDuplicateException;
    import  com.github.xbn.lang.LengthLessThanRequiredException;
    import  com.github.xbn.list.CrashIfCollection;
    import  java.util.Arrays;

@@ -56,17 +56,17 @@ public class EliminateAllCommentBlocksAndPackageLine  {
          null);        //debug
 
       SingleLineEntity pkgDeclLineEntity = NewSingleLineEntityFor.match(
-         "pkgdecl", KeepMatched.NO,
+         "pkgdecl", KeepMatched.NO, EntityRequired.YES,
          Pattern.compile(JavaRegexes.PACKAGE_DECL_ONE_LINE_NO_CMTS),
          null,      //dbgAlter (on:System.out, off:null)
-         EntityRequired.YES, onOffFilter,
+         onOffFilter,
          null);     //dbgLineNums
 
       BlockEntity javaMlcBlock = NewBlockEntityFor.javaComment_Cfg(
-         "comment", IncludeJavaDoc.YES,
+         "comment", EntityRequired.YES, IncludeJavaDoc.YES,
          null,      //dbgStart
          null,      //dbgEnd
-         EntityRequired.YES, null,
+         null,
          null).     //dbgLineNums
          keepNone().build();
 

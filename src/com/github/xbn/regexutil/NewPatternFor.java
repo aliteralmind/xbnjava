@@ -16,7 +16,6 @@ package  com.github.xbn.regexutil;
    import  com.github.xbn.text.CrashIfString;
    import  java.util.regex.PatternSyntaxException;
    import  java.util.regex.Pattern;
-   import  static com.github.xbn.lang.CrashIfBase.*;
 /**
    <P>Convenience functions for creating {@code java.util.regex.Pattern}-s from strings. {@code java.util.regex.}{@link java.util.regex.Pattern Pattern} allows the regex-strings to be empty. This class requires non-empty.</P>
 

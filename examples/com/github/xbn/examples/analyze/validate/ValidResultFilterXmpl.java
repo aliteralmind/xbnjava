@@ -17,7 +17,6 @@ package  com.github.xbn.examples.analyze.validate;
    import  com.github.xbn.analyze.validate.FilterValidCounts;
    import  com.github.xbn.number.LengthInRangeValidator;
    import  com.github.xbn.number.NewLengthInRangeValidatorFor;
-   import  com.github.xbn.number.NewLengthInRangeFor;
    import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
 /**
    <P>Uses {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.ValidResultFilter ValidResultFilter} to print all words in a sentence that contain four or more characters, but filters those results so only the third-through-seventh are presented.</P>

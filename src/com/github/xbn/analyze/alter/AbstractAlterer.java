@@ -13,9 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
-   import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.io.TextAppenter;
-   import  com.github.xbn.analyze.Analyzer;
 /**
    <P>Abstract implementation of {@code Alterer}. Classes needing to implement {@code Alterer}, that cannot extend this class, should use {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer}.</P>
 
@@ -25,22 +23,35 @@ package  com.github.xbn.analyze.alter;
 public abstract class AbstractAlterer implements Alterer  {
    private AltererComposer ac = null;
    /**
-      <P>Create a new {@code AbstractAlterer}.</P>
+      <P>Create a new instance with defaults.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer super}{@code ()}</P>
+      <P>Sets the internal composer to
+      <BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer() AltererComposer}{@code ()}</P>
 
-      @see  #AbstractAlterer(Alterer) AbstractAlterer(ltr)
+      @see  #AbstractAlterer(AlterationRequired)
     **/
    protected AbstractAlterer()  {
       ac = new AltererComposer();
+   }
+   /**
+      <P>Create a new {@code AbstractAlterer} with the required setting.</P>
+
+      <P>Sets the internal composer to
+      <BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(AlterationRequired) AltererComposer}{@code (required)}</P>
+
+      @see  #AbstractAlterer()
+      @see  #AbstractAlterer(Alterer)
+    **/
+   protected AbstractAlterer(AlterationRequired required)  {
+      ac = new AltererComposer(required);
    }
    /**
       <P>Create a new {@code AbstractAlterer}.</P>
 
       <P>Equal to
       <BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</P>
-      @see  #AbstractAlterer()
+
+      @see  #AbstractAlterer(AlterationRequired)
     **/
    public AbstractAlterer(Alterer to_copy)  {
       ac = new AltererComposer(to_copy);
@@ -56,6 +67,9 @@ public abstract class AbstractAlterer implements Alterer  {
    }
    public boolean mayDelete()  {
       return  ac.mayDelete();
+   }
+   public boolean isRequired()  {
+      return  ac.isRequired();
    }
    public boolean doesExpire()  {
       return  ac.doesExpire();

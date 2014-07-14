@@ -16,7 +16,6 @@ package  com.github.xbn.regexutil;
    import  com.github.xbn.text.padchop.NewVzblPadChopFor;
    import  com.github.xbn.text.padchop.VzblPadChop;
    import  com.github.xbn.lang.Copyable;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.io.TextAppenter;
 

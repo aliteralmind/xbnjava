@@ -18,7 +18,6 @@ package  com.github.xbn.linefilter.entity;
    import  java.util.ArrayList;
    import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
    import  java.util.Collections;
-   import  java.util.Arrays;
    import  java.util.List;
    import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
@@ -101,5 +100,11 @@ public class BlockEntity extends RawBlockEntity<String> implements TextParentEnt
    }
    public TextParentEntity getTopParent()  {
       return  (TextParentEntity)super.getTopParent();
+   }
+   /**
+      @since 0.1.2
+    **/
+   public BlockEntity getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<String> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+      return  new BlockEntity(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
 }

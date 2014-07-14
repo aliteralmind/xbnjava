@@ -23,7 +23,6 @@ package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.keyed.SimpleNamed;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.IllegalArgumentStateException;
-   import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.linefilter.entity.OnOffAbort;
    import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;

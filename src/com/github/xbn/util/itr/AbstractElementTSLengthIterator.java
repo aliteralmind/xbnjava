@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.util.itr;
    import  com.github.xbn.util.itr.IteratorDirection;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.array.CrashIfIndex;
 /**
    <P>For building iterators that return, for each element in an indexable container, the <I>length</I> of its {@code toString()}.</P>

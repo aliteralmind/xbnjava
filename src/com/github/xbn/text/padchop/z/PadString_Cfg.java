@@ -15,7 +15,6 @@
 package  com.github.xbn.text.padchop.z;
    import  com.github.xbn.text.padchop.PadString;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
-   import  com.github.xbn.neederneedable.Needer;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.text.padchop.PadString PadString}.</P>
 

@@ -27,27 +27,28 @@ package  com.github.xbn.linefilter.entity;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NewStealthBlockEntityFor  {
-   public static final StealthBlockEntity javaComment(String name_ifNonNull, IncludeJavaDoc java_doc, Appendable dbgStart_ifNonNull, Appendable dbgEnd_ifNonNull, KeepMatched keep, EntityRequired required, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
+   public static final StealthBlockEntity javaComment(String name_ifNonNull, KeepMatched keep, EntityRequired required, IncludeJavaDoc java_doc, Appendable dbgStart_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       try  {
          return  lineRange(
             ((name_ifNonNull != null) ? name_ifNonNull : "javaMlcStealth"),
+            keep, required,
             Pattern.compile(
                   JavaRegexes.getMultiLineCommentOpenMarkerRegex(java_doc)),
                dbgStart_ifNonNull,
-            Pattern.compile("*"+"/", Pattern.LITERAL), dbgEnd_ifNonNull,
-            keep, required, filter_ifNonNull, dbgLineNums_ifNonNull);
+            Pattern.compile("*"+"/", Pattern.LITERAL), dbgEnd_ifNonNull, filter_ifNonNull, dbgLineNums_ifNonNull);
       }  catch(RuntimeException rx)  {
          throw  CrashIfObject.nullOrReturnCause(required, "required", null, rx);
       }
    }
-   public static final StealthBlockEntity javaDocComment(String name_ifNonNull, Appendable dbgStart_ifNonNull, Appendable dbgEnd_ifNonNull, KeepMatched keep, EntityRequired required, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
+   public static final StealthBlockEntity javaDocComment(String name_ifNonNull, KeepMatched keep, EntityRequired required, Appendable dbgStart_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       return  lineRange(
          ((name_ifNonNull != null) ? name_ifNonNull : "javaDocBlockStealth"),
+         keep, required,
          Pattern.compile("/"+"**", Pattern.LITERAL), dbgStart_ifNonNull,
          Pattern.compile("*"+"/", Pattern.LITERAL), dbgEnd_ifNonNull,
-         keep, required, filter_ifNonNull, dbgLineNums_ifNonNull);
+         filter_ifNonNull, dbgLineNums_ifNonNull);
    }
-   public static final StealthBlockEntity lineRange(String name_ifNonNull, Pattern start_ptrn, Appendable dbgStart_ifNonNull, Pattern end_ptrn, Appendable dbgEnd_ifNonNull, KeepMatched keep, EntityRequired required, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
+   public static final StealthBlockEntity lineRange(String name_ifNonNull, KeepMatched keep, EntityRequired required, Pattern start_ptrn, Appendable dbgStart_ifNonNull, Pattern end_ptrn, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       try  {
          return  new StealthBlockEntity_Cfg(
             ((name_ifNonNull != null) ? name_ifNonNull : "lineRange")).

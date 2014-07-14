@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.array;
-   import  com.github.xbn.array.XIbxBadRange;
    import  com.github.xbn.array.XIbxBadIdx;
    import  com.github.xbn.array.XbnIndexOutOfBoundsException;
    import  com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg;

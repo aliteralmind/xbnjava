@@ -152,7 +152,7 @@ public class CrashIfList  {
                }
             }
          }
-         Object lastElement = list.get(size - 1);
+//			Object lastElement = list.get(size - 1);
          if(list.get(size - 1) == null)  {
             throw  new NullPointerException("list.get(" + (size - 1) + ")");
          }

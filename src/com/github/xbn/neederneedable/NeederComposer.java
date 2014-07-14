@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.neederneedable;
    import  com.github.xbn.lang.CrashIfObject;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.testdev.CompositionConstructor;
    import  com.github.xbn.testdev.CompositionFunction;
 /**

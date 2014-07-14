@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.examples.regexutil;
    import  com.github.xbn.regexutil.z.MaxUntilLoopsExceeded;
-   import  com.github.xbn.regexutil.RegexReplacer;
    import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
 /**
    <P>Uses a {@code com.github.xbn.regexutil.RegexReplacer}, to replace specific terms: all, first, &quot;match numbers&quot;, until, or via {@code java.util.regex.}{@code java.util.regex.Matcher#matches() Matcher#matches()} or {@code java.util.regex.}{@code java.util.regex.Matcher#lookingAt() Matcher#lookingAt()}.</P>

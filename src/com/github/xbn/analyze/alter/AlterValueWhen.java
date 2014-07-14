@@ -16,15 +16,10 @@ package  com.github.xbn.analyze.alter;
    import  java.util.Objects;
    import  com.github.xbn.text.Trim;
    import  static com.github.xbn.lang.XbnConstants.*;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.IllegalArgumentStateException;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.lang.XInfoAccumulator;
-   import  com.github.xbn.lang.ExpirableComposer;
-   import  com.github.xbn.analyze.validate.NullnessValidator;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.analyze.validate.NewValueValidatorFor;
@@ -53,13 +48,12 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <P>Equal to
       <BR> &nbsp; &nbsp; <CODE>{@link #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this}(
       <BR> &nbsp; &nbsp; (ValueValidator&lt;V&gt;)NewValueValidatorFor.unrestricted(null, null),
-      <BR> &nbsp; &nbsp; (new ReturnValueUnchanged()), (new ReturnValueUnchanged()))</CODE></P>
+      <BR> &nbsp; &nbsp; (new ReturnValueUnchanged&lt;V,A&gt;()), (new ReturnValueUnchanged&lt;V,A&gt;()))</CODE></P>
     **/
-   @SuppressWarnings("unchecked")
    public AlterValueWhen()  {
       this(
          NewValueValidatorFor.<V>unrestricted(null, null),
-         (new ReturnValueUnchanged()), (new ReturnValueUnchanged()));
+         (new ReturnValueUnchanged<V,A>()), (new ReturnValueUnchanged<V,A>()));
    }
    /**
       <P>Create a new {@code AlterValueWhen}.</P>
@@ -69,7 +63,6 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <BR> &nbsp; &nbsp; (ValueValidator&lt;V&gt;)new NewValueValidatorFor.unrestricted(null, null),
       <BR> &nbsp; &nbsp; alter_forValid, (new {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#ReturnValueUnchanged() ReturnValueUnchanged}&lt;A&gt;()))</CODE></P>
     **/
-   @SuppressWarnings("unchecked")
    public AlterValueWhen(ValueAlterer<V,A> alter_forValid)  {
       this(
          NewValueValidatorFor.<V>unrestricted(null, null),

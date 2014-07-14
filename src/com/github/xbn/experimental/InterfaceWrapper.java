@@ -1,9 +1,5 @@
 package  com.github.xbn.experimental;
-   import  com.github.xbn.lang.Null;
-   import  java.util.Objects;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.Copyable;
    import  com.github.xbn.experimental.BadInterfaceBehaviorException;
@@ -116,7 +112,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       ExceptionContext xc = getXContext();
       xc.setExtraInfo(o_iinstance);
       for(XContextable xcl : ddd_xcblOthers)  {
-         xc.setExtraInfo(o_iinstance);
+         xcl.getXContext().setExtraInfo(o_iinstance);
       }
    }
    /**

@@ -15,7 +15,6 @@
 
 package  com.github.xbn.linefilter.entity.raw.z;
    import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
-   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.linefilter.entity.EntityType;
 /**
    <P>YYY</P>

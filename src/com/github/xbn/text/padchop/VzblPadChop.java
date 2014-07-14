@@ -13,12 +13,10 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.text.padchop;
-   import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.io.SimpleDebuggable;
    import  com.github.xbn.io.Debuggable;
    import  java.io.IOException;
    import  org.apache.commons.lang3.StringEscapeUtils;
-   import  static com.github.xbn.lang.CrashIfBase.*;
    import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.io.IOUtil;
    import  com.github.xbn.lang.ToStringAppendable;

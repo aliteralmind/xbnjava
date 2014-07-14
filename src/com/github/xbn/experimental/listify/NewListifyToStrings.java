@@ -23,7 +23,6 @@ package  com.github.xbn.experimental.listify;
    import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
    import  com.github.xbn.array.helper.PrimitiveArrayHelper;
    import  com.github.xbn.list.ListUtil;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Convenience functions for creating listifiers whose raw object is a list or array (primitive or non-primitive), and whose virtual elements are the <I>{@code toString()}-s</I> of the raw elements.</P>
 

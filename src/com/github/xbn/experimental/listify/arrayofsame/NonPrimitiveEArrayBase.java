@@ -21,15 +21,9 @@ package  com.github.xbn.experimental.listify.arrayofsame;
    import  java.util.List;
    import  com.github.xbn.array.ArrayUtil;
    import  com.github.xbn.array.helper.ArrayHelper;
-   import  com.github.xbn.array.helper.ObjectArrayHelper;
-   import  com.github.xbn.array.helper.StringArrayHelper;
-   import  com.github.xbn.array.helper.StringBuilderArrayHelper;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.list.CollectionUtil;
-   import  com.github.xbn.experimental.listify.ListifiedElementsNotCopyableException;
    import  com.github.xbn.experimental.listify.ListifyComposer;
-   import  com.github.xbn.util.copyval.ValueNotCopyable;
-   import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
    import  com.github.xbn.util.copyval.ValueCopier;
 /**
    <P>Base class for a listifier whose raw object is a non-primitive array of any <I>non wrapper type</I>  (not {@code java.lang.Integer}s, for instance), and whose virtual elements are of the same type.</P>

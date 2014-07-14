@@ -1,0 +1,42 @@
+Reference Type:  Journal Article
+Record Number: 153
+Author: Yang, W. and Kang, J.
+Year: 2005
+Title: Acoustic comfort evaluation in urban open public spaces
+Journal: Applied Acoustics
+Volume: 66
+Issue: 2
+Pages: 211-229
+Short Title: Acoustic comfort evaluation in urban open public spaces
+ISSN: 0003682X
+DOI: 10.1016/j.apacoust.2004.07.011
+'File' Attachments: internal-pdf://0633242026/Acoustic comfort evaluation in urban open public spaces.pdf
+
+
+Reference Type:  Thesis
+Record Number: 3318
+Author: Wienold, Jan
+Year: 2009
+Title: Daylight glare in offices
+University: Fraunhofer Institute for Solar Energy Systems ISE
+Thesis Type: PhD Dissertation
+Short Title: Daylight glare in offices
+URL: http://publica.fraunhofer.de/eprints/urn:nbn:de:0011-n-1414579.pdf
+'File' Attachments: internal-pdf://2172014641/Daylight glare in offices.pdf
+
+Some
+other
+kind
+of
+block...
+
+Reference Type:  Something else
+Record Number: 384783
+Author: Wienold, Jan
+Year: 1904
+Title: Daylight glare in offices
+University: Of Uncommon Delights
+Thesis Type: PhD Dissertation
+Short Title: Daylight glare in offices
+URL: http://x.y.com/stuff.pdf
+'File' Attachments: internal-pdf://48327407/xyz.pdf

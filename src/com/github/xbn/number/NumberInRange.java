@@ -14,12 +14,8 @@
 \*license*/
 package  com.github.xbn.number;
    import  com.github.xbn.lang.Invert;
-   import  com.github.xbn.lang.Null;
-   import  java.util.Objects;
-   import  com.github.xbn.text.StringWithNullDefault;
    import  com.github.xbn.lang.AbstractExtraErrInfoable;
    import  com.github.xbn.lang.CrashIfObject;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.lang.RuleableComposer;
    import  com.github.xbn.lang.Ruleable;

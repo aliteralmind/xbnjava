@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.lang;
    import  java.util.Objects;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For classes that need to implement {@code Rulable}, that cannot extend abstract or concrete implementations.</P>
 

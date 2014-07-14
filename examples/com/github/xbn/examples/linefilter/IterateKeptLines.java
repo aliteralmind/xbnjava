@@ -52,16 +52,17 @@ public class IterateKeptLines  {
 
       BlockEntity block = NewBlockEntityFor.lineRange(null,
          KeepStartLine.NO, KeepMidLines.YES, KeepEndLine.NO,
+         EntityRequired.YES,
          Pattern.compile("start", Pattern.LITERAL), null,
-         null,          //dbgStart (on:System.out, off:null)
+            null,      //dbgStart (on:System.out, off:null)
          Pattern.compile("end", Pattern.LITERAL), null,
-         null,          //dbgEnd
-         EntityRequired.YES, null,
-         null);         //dbgLineNums
+            null,      //dbgEnd
+         null,         //on-off filter
+            null);     //dbgLineNums
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          inputLineItr, Returns.KEPT,
-         null, null,    //dbgEveryLine and its line-range
+            null, null,   //dbgEveryLine and its line-range
          block);
 
       while(filteredItr.hasNext())  {

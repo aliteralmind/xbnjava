@@ -15,11 +15,8 @@
 package  com.github.xbn.analyze.validate;
    import  com.github.xbn.analyze.AnalyzerComposer;
    import  com.github.xbn.analyze.validate.z.Validator_Fieldable;
-   import  com.github.xbn.neederneedable.Needer;
-   import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.RuleType;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Abstract implementation of {@code Validator}. For classes needing to implement {@code Validator}, that cannot extend this class, see {@code ValidatorComposer}.</P>
 

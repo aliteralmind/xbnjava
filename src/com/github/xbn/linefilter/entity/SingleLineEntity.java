@@ -18,7 +18,6 @@ package  com.github.xbn.linefilter.entity;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.linefilter.entity.raw.RawSingleLineEntity;
    import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
-   import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
    import  com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_Fieldable;
 /**
    <P>A single line of text that may be kept or discarded by a {@code FilteredLineIterator}--kept lines are optionally modified.</P>
@@ -68,5 +67,11 @@ public class SingleLineEntity extends RawSingleLineEntity<String> implements Tex
    }
    public TextParentEntity getTopParent()  {
       return  (TextParentEntity)super.getTopParent();
+   }
+   /**
+      @since 0.1.2
+    **/
+   public SingleLineEntity getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<String> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
+      return  new SingleLineEntity(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
 }

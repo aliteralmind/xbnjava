@@ -22,6 +22,10 @@ package  com.github.xbn.io;
 public class RTFileNotFoundException extends RTIOException  {
 
    /**
+    * 
+    */
+   private static final long serialVersionUID = 9178680229899979369L;
+   /**
       <P>Create an RTFileNotFoundException with no error message.</P>
     **/
    public RTFileNotFoundException()  {

@@ -20,13 +20,11 @@ package  com.github.xbn.linefilter.alter;
    import  com.github.xbn.analyze.alter.ValueAlterer;
    import  com.github.xbn.io.RTIOException;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.ExpiredException;
    import  com.github.xbn.text.padchop.EscapeAction;
    import  com.github.xbn.text.padchop.NewVzblPadChopFor;
    import  com.github.xbn.text.padchop.VzblPadChop;
    import  java.io.IOException;
    import  java.util.Iterator;
-   import  java.util.List;
 /**
    <P>Alters all the the lines returned by a string iterator with a single alterer.</P>
 

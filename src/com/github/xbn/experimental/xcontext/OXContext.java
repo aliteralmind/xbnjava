@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.experimental.xcontext;
    import  java.util.Objects;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Implementation of {@code ObjectExceptionContext}.</P>
  **/

@@ -17,7 +17,6 @@ package  com.github.xbn.keyed;
 //	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
    import  java.util.regex.Pattern;
    import  java.util.regex.Matcher;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Implementation of {@code Named}.</P>
 

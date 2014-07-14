@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.linefilter.entity.EntityRequired;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
@@ -51,37 +52,37 @@ public class PrintJavaDocBlockSubLinesBolded  {
 
       //Sub-entity
          TextLineAlterer midAlterer = NewTextLineAltererFor.replacement(
+            AlterationRequired.YES,
             Pattern.compile("^([ \\t]*)(.*)"), "$1<B>$2</B>", ReplacedInEachInput.FIRST,
             null,       //dbgDest (on:System.out, off:null)
             null);
 
          BlockEntity subBlock = NewBlockEntityFor.lineRangeWithReplace(
-            "jdsub", KeepMatched.YES,
+            "jdsub", KeepMatched.YES, EntityRequired.YES,
             Pattern.compile(subModePre + "START\\E$"), "<B>$1</B>",
                ReplacedInEachInput.FIRST, null,
-            null,       //dbgStart
+               null,    //dbgStart
             midAlterer,
             Pattern.compile(subModePre + "END\\E$"), "<B>$1</B>",
                ReplacedInEachInput.FIRST, null,
-            null,       //dbgEnd
-            EntityRequired.YES, null,
-            null);      //dbgLineNums
+               null,    //dbgEnd
+            null,       //on-off filter
+               null);   //dbgLineNums
 
       //Main-entities
          StealthBlockEntity javaMlcBlock = NewStealthBlockEntityFor.javaComment(
-            "comment", IncludeJavaDoc.NO,
-            null,       //dbgStart
-            null,       //dbgEnd
-            KeepMatched.YES, EntityRequired.YES, null,
-            null);      //dbgLineNums
-
+            "comment", KeepMatched.YES, EntityRequired.YES, IncludeJavaDoc.NO,
+               null,    //dbgStart
+               null,    //dbgEnd
+            null,       //on-off filter
+               null);   //dbgLineNums
 
          BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
-            "doccomment",
-            null,       //dbgStart
-            null,       //dbgEnd
-            EntityRequired.YES, null,
-            null).      //dbgLineNums
+            "doccomment", EntityRequired.YES,
+               null,    //dbgStart
+               null,    //dbgEnd
+            null,       //on-off filter
+               null).   //dbgLineNums
             keepAll().children(subBlock).build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(

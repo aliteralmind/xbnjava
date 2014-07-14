@@ -21,6 +21,10 @@ package  com.github.xbn.lang;
 
  **/
 public class LengthLessThanRequiredException extends IllegalArgumentException  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = -5699083111531196868L;
    private final String cntrName  ;
    private final int    actualLen ;
    private final int    rqdMin    ;

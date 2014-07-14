@@ -26,7 +26,7 @@ public interface RawParentEntity<L> extends RawBlockChildEntity<L>  {
 
       @return  The non-{@code null}, currently active child, or {@code null} if no child entity is active.
     **/
-   RawChildEntity<L> getActiveChild();
+   RawChildEntity<L> getRawActiveChild();
    /**
       <P>An immutable list of all child entities.</P>
 

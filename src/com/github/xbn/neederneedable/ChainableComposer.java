@@ -16,9 +16,6 @@ package  com.github.xbn.neederneedable;
    import  com.github.xbn.testdev.CompositionConstructor;
    import  com.github.xbn.testdev.CompositionFunction;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.text.StringUtilBase;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For classes that need to implement {@code Chainable}, that cannot extend {@code SimpleChainable}.</P>
 

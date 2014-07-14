@@ -19,7 +19,6 @@ package  com.github.xbn.number;
    import  com.github.xbn.lang.XInfoAccumulator;
    import  com.github.xbn.lang.CrashIfObject;
    import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
    <P>Determines if an int is within an {@code IntRange}.</P>

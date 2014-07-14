@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.experimental.listify;
    import  com.github.xbn.analyze.validate.NewValueValidatorFor;
-   import  com.github.xbn.analyze.validate.NullnessValidator;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.array.NewArrayIterator;

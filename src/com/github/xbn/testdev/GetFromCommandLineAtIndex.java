@@ -23,11 +23,8 @@ package  com.github.xbn.testdev;
    import  com.github.xbn.number.IntInRange;
    import  com.github.xbn.number.NewIntInRangeFor;
    import  com.github.xbn.util.GetBooleanFromString;
-   import  java.io.File;
-   import  java.io.IOException;
    import  java.util.Arrays;
    import  java.util.Iterator;
-   import  org.apache.commons.io.FileUtils;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Get an object at a specific index, from command line parameters.</P>

@@ -22,6 +22,10 @@ package  com.github.xbn.util.lock;
 public class LockException extends IllegalStateException  {
 
    /**
+    * 
+    */
+   private static final long serialVersionUID = 1807820843483586004L;
+   /**
       <P>Create a LockException with no error message.</P>
     **/
    public LockException()  {

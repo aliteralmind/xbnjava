@@ -15,10 +15,7 @@
 package  com.github.xbn.analyze.alter;
    import  com.github.xbn.lang.CrashIfObject;
    import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
-   import  com.github.xbn.analyze.validate.Validator;
    import  com.github.xbn.analyze.Analyzer;
-   import  com.github.xbn.lang.IllegalArgumentStateException;
    import  com.github.xbn.analyze.AnalyzerComposer;
 /**
    <P>For classes needing to implement {@code Alterer}, that cannot extend {@code AbstractAlterer}. See {@link com.github.xbn.analyze.alter.AbstractAlterer AbstractAlterer}.</P>
@@ -27,7 +24,7 @@ package  com.github.xbn.analyze.alter;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class AltererComposer extends AnalyzerComposer  {
-//state
+   private final boolean isRequired;
    private int     iLtrd  ;  //Altered count (includes deletions)
    private int     iDltd  ;  //Deleted count
    private boolean bNtbDel;
@@ -36,7 +33,13 @@ public class AltererComposer extends AnalyzerComposer  {
 //internal
 //constructor...START
    /**
-      <P>Create a new {@code AltererComposer}.</P>
+      <P>Create a new instance that is required to make an alteration.</P>
+    **/
+   public AltererComposer()  {
+      this(AlterationRequired.YES);
+   }
+   /**
+      <P>Create a new instance with the required setting.</P>
 
       <P>This calls<OL>
          <LI>{@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer() super}{@code ()}</LI>
@@ -47,9 +50,12 @@ public class AltererComposer extends AnalyzerComposer  {
       @see  #AltererComposer(boolean, AltererComposer) this(b,ab)
       @see  #AltererComposer(Alterer) this(ltr)
     **/
-   public AltererComposer()  {
-      super();
-
+   public AltererComposer(AlterationRequired required)  {
+      try  {
+         isRequired = required.isYes();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(required, "required", null, rx);
+      }
       //Never ever call interface functions, directly or indirectly, in a constructor.
       zresetStateAC();
       zresetCountsAC();
@@ -72,6 +78,7 @@ public class AltererComposer extends AnalyzerComposer  {
     **/
    public AltererComposer(boolean ignored, AltererComposer to_copy)  {
       super(ignored, to_copy);
+      isRequired = to_copy.isRequired();
       iLtrd = to_copy.getAlteredCount();
       iDltd = to_copy.getDeletedCount();
       zresetStateAC();
@@ -93,6 +100,7 @@ public class AltererComposer extends AnalyzerComposer  {
     **/
    public AltererComposer(Alterer to_copy)  {
       super(to_copy);
+      isRequired = to_copy.isRequired();
       iLtrd = to_copy.getAlteredCount();
       iDltd = to_copy.getDeletedCount();
       zresetStateAC();
@@ -143,6 +151,9 @@ public class AltererComposer extends AnalyzerComposer  {
    protected final void zresetCountsAC()  {
       iLtrd = 0;
       iDltd = 0;
+   }
+   public boolean isRequired()  {
+      return  isRequired;
    }
    public void declareMayDelete_4prot(boolean may_del)  {
       bDnDl = may_del;
@@ -245,6 +256,11 @@ public class AltererComposer extends AnalyzerComposer  {
             to_appendTo.append(" (needsToBeDeleted()=true)");
          }
       }
+
+      if(!isRequired())  {
+         to_appendTo.append("optional, ");
+      }
+
       to_appendTo.append(", totals:[altered=").append(getAlteredCount()).
          append(", deleted=").append(getDeletedCount()).append("]");
       return  to_appendTo;

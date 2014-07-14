@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.array;
    import  com.github.xbn.text.StringWithNullDefault;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.IllegalArgumentStateException;
    import  com.github.xbn.lang.CrashIfObject;
 /**

@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.copyval;
-   import  com.github.xbn.lang.Copyable;
 /**
    <P>{@code NullHandler} that forbids the duplicate from equalling {@code null}--useful when translating non-primitive arrays of wrapper-types to arrays of their primitive types.</P>
 

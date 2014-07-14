@@ -14,8 +14,6 @@
 \*license*/
 package  com.github.xbn.number.z;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
-   import  com.github.xbn.number.IntBoundExclusive;
-   import  com.github.xbn.number.IntBoundInclusive;
    import  com.github.xbn.number.IntInRange;
    import  com.github.xbn.number.IntInRangeValidator;
    import  com.github.xbn.neederneedable.Needer;

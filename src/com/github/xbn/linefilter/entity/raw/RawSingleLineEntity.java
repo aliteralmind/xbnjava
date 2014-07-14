@@ -19,9 +19,7 @@ package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.alter.Altered;
-   import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_Fieldable;
-   import  java.util.Objects;
    import  com.github.xbn.analyze.alter.ValueAlterer;
 /**
    <P>A single line that may be kept or discarded by a {@code FilteredIterator}--kept lines are optionally modified.</P>

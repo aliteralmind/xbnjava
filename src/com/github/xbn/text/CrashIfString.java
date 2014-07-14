@@ -16,7 +16,6 @@ package  com.github.xbn.text;
    import  com.github.xbn.array.CrashIfIndex;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.Null;
-   import  java.util.Objects;
    import  static com.github.xbn.lang.CrashIfBase.*;
 /**
    <P>Crash if a string is {@code null} or empty.</P>

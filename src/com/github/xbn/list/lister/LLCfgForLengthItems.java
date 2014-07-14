@@ -1,18 +1,12 @@
 package  com.github.xbn.list.lister;
    import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.analyze.validate.z.ValueValidator_Cfg;
-   import  com.github.xbn.neederneedable.Chainable;
-   import  com.github.xbn.neederneedable.ChainableComposer;
-   import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.number.LengthInRangeValidator;
    import  com.github.xbn.number.NewLengthInRangeFor;
    import  com.github.xbn.number.z.LengthInRangeValidator_Cfg;
    import  com.github.xbn.text.StringWithNullDefault;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Utility class for size-related configuration, as in the length of the overall list, and the length of each element (if lengthable).</P>
 

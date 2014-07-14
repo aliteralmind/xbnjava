@@ -13,10 +13,10 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
+   import  com.github.xbn.lang.ExceptionUtil;
    import  com.github.xbn.io.NewTextAppenterFor;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.Null;
    import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.entity.EntityType;
    import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
@@ -32,6 +32,7 @@ package  com.github.xbn.linefilter;
    import  java.util.Iterator;
    import  java.util.List;
    import  java.util.Objects;
+   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>An iterator that filters the elements of another iterator--keeping or discarding those that meet certain conditions, and optionally modifying kept elements.</P>
 
@@ -61,7 +62,7 @@ public class FilteredIterator<L> extends AbstractIterator<L>  {
       </UL>May not be {@code null}. Get with {@link #getReturnsWhat() getReturnsWhat}{@code ()}.
       @param  dbgEveryLine_ifNonNull  If non-{@code null}, information on each line is output by this. Get with {@link #getDebugAptrEveryLine() getDebugAptrEveryLine}{@code ()}.
       @param  rangeForEveryLineDebug_ifNonNull  If non-{@code null}, this is the line range to debug with {@code dbgAptrEveryLine_ifUseable}. If {@code null}, all lines are debugged. Get with {@link #getEveryLineDebugRange() getEveryLineDebugRange}{@code ()}
-      @param  root_block  Represents the text-document itself, or the largest block within the document that is recognized. May not be {@code null}. Get with {@link #getRootBlock() getRootBlock}{@code ()}.
+      @param  root_block  Represents the text-document itself, or the largest block within the document that is recognized. May not be {@code null}. Get with {@link #getRawRootBlock() getRawRootBlock}{@code ()}.
     **/
    public FilteredIterator(Iterator<L> all_lineItr, Returns return_what, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawBlockEntity<L> root_block)  {
       Objects.requireNonNull(return_what, "return_what");
@@ -73,7 +74,8 @@ public class FilteredIterator<L> extends AbstractIterator<L>  {
          ?  NewLengthInRangeFor.UNRESTRICTED
          :  rangeForEveryLineDebug_ifNonNull);
 
-      rootBlock = new RawBlockEntity<L>(root_block, 0, null, dbgAptrEveryLine, rangeForEveryLineDebug);
+      rootBlock = root_block.getCopyWithParentAssigned(0, null, dbgAptrEveryLine, rangeForEveryLineDebug);
+//		rootBlock = new RawBlockEntity<L>(root_block, 0, null, dbgAptrEveryLine, rangeForEveryLineDebug);
       nextLineNum = -1;
       nextLine = null;
       lineNumAnalyzed = 0;
@@ -143,27 +145,27 @@ public class FilteredIterator<L> extends AbstractIterator<L>  {
             nextLineFromAllItr = allLineItr.next();
 
             if(isEveryLineAptrUseableAndInRange())  {
-               getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix() + " all_lineItr.next() (pre-filtered): " + VPC_DBG.get(nextLineFromAllItr));
+               getDebugAptrEveryLine().appentln(getRawRootBlock().getDebuggingPrefix() + " all_lineItr.next() (pre-filtered): " + VPC_DBG.get(nextLineFromAllItr));
             }
 
-            L alteredBody = getRootBlock().getAltered(getMostRecentLineNum(), nextLineFromAllItr, nextLineFromAllItr);
-            if(getRootBlock().doAbortIterator())  {
+            L alteredBody = getRawRootBlock().getAltered(getMostRecentLineNum(), nextLineFromAllItr, nextLineFromAllItr);
+            if(getRawRootBlock().doAbortIterator())  {
                allLineItr = null;
-               entityThatAbrtd = getRootBlock().getEntityThatAborted();
+               entityThatAbrtd = getRawRootBlock().getEntityThatAborted();
                if(isEveryLineAptrUseableAndInRange())  {
-                  getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix() + " *ABORTED* by entity: " + getEntityThatAborted());
+                  getDebugAptrEveryLine().appentln(getRawRootBlock().getDebuggingPrefix() + " *ABORTED* by entity: " + getEntityThatAborted());
                }
 
                return  false;
             }
 
             if(getReturnsWhat().isKept())  {
-               if(getRootBlock().doKeepJustAnalyzed())  {
+               if(getRawRootBlock().doKeepJustAnalyzed())  {
                   return  setNextLineReturnTrue(alteredBody);
                }
 
             }  else if(getReturnsWhat().isActive())  {
-               if(getRootBlock().isActive())  {
+               if(getRawRootBlock().isActive())  {
                   return  setNextLineReturnTrue(alteredBody);
                }
 
@@ -182,7 +184,7 @@ public class FilteredIterator<L> extends AbstractIterator<L>  {
          throw  CrashIfObject.nullOrReturnCause(allLineItr, "all_lineItr", null, rx);
       }
 
-      getRootBlock().declareEndOfInput();
+      getRawRootBlock().declareEndOfInput();
 
       return  false;
    }
@@ -208,7 +210,7 @@ public class FilteredIterator<L> extends AbstractIterator<L>  {
     **/
    protected void debugNextLine(L altered_line)  {
       if(isEveryLineAptrUseableAndInRange())  {
-         getDebugAptrEveryLine().appentln(getRootBlock().getDebuggingPrefix() + " getReturnsWhat()." + getReturnsWhat() + ". Setting next() to: " + altered_line + "");
+         getDebugAptrEveryLine().appentln(getRawRootBlock().getDebuggingPrefix() + " getReturnsWhat()." + getReturnsWhat() + ". Setting next() to: " + altered_line + "");
       }
    }
    public int getMostRecentLineNum()  {
@@ -235,94 +237,124 @@ public class FilteredIterator<L> extends AbstractIterator<L>  {
       <P>The top-most block entity, representing the document itself.</P>
 
       @see  #FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
+      @since  0.1.2
     **/
-   public RawBlockEntity<L> getRootBlock()  {
+   public RawBlockEntity<L> getRawRootBlock()  {
       return  rootBlock;
    }
    /**
       <P>The currently-active child entity.</P>
 
-      @return  <CODE>{@link #getRootBlock() getRootBlock}().{@link RawBlockEntity#getActiveChild() getActiveChild}()</CODE>
+      @return  <CODE>({@link #getRawActiveChild() getRawActiveChild}() != null)</CODE>
+      @since  0.1.1
     **/
-   public RawChildEntity<L> getActiveChild()  {
-      return  getRootBlock().getActiveChild();
+   public boolean hasActiveChild()  {
+      return  (getRawActiveChild() != null);
+   }
+   /**
+      <P>The currently-active child entity.</P>
+
+      @return  <CODE>{@link #getRawRootBlock() getRawRootBlock}().{@link RawBlockEntity#getRawActiveChild() getRawActiveChild}()</CODE>
+      @since  0.1.2
+    **/
+   public RawChildEntity<L> getRawActiveChild()  {
+      return  getRawRootBlock().getRawActiveChild();
    }
    /**
       <P>The type of the currently-active child.</P>
 
-      @exception  IllegalStateException  If {@link #getActiveChild() getActiveChild}{@code ()} is {@code null}.
+      @exception  IllegalStateException  If {@link #hasActiveChild() hasActiveChild}{@code ()} is {@code false}.
     **/
    public EntityType getActiveChildType()  {
       try  {
-         return  getRootBlock().getActiveChild().getType();
+         return  getRawActiveChild().getType();
       }  catch(NullPointerException npx)  {
-         throw  new IllegalStateException("No active entity. getActiveChild() is null.");
+         throw  new IllegalStateException("hasActiveChild() is false.");
       }
    }
    /**
       <P>Get the active child, which <I>is</I> a block.</P>
 
-      @return  <CODE>(RawBlockEntity&lt;L,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
+      @return  <CODE>(RawBlockEntity&lt;L,L&gt;){@link #getRawActiveChild() getRawActiveChild}()</CODE>
       @exception  ClassCastException  If {@link #getActiveChildType() getActiveChildType}{@code ()} is not a {@link EntityType#BLOCK BLOCK}.
-      @exception  IllegalStateException  If {@link #getActiveChild() getActiveChild}{@code ()} is {@code null}.
-      @see  #getActiveChildStealthBlock()
-      @see  #getActiveChildSingleLine()
+      @exception  IllegalStateException  If {@link #hasActiveChild() hasActiveChild}{@code ()} is {@code false}.
+      @see  #getRawActiveChildStealthBlock()
+      @see  #getRawActiveChildSingleLine()
+      @since  0.1.2
     **/
-   public RawBlockEntity<L> getActiveChildBlock()  {
+   public RawBlockEntity<L> getRawActiveChildBlock()  {
       try  {
-         @SuppressWarnings("unchecked")
-         RawBlockEntity<L> rbe = (RawBlockEntity<L>)getActiveChild();
+         RawBlockEntity<L> rbe = (RawBlockEntity<L>)getRawActiveChild();
          return  rbe;
       }  catch(ClassCastException ccx)  {
-         ClassCastException ccx2 = new ClassCastException("getActiveChildType()=" + getActiveChildType() + ", getActiveChild().getClass().getName()=" + getActiveChild().getClass().getName());
-         ccx2.initCause(ccx);
-         throw  ccx2;
+         throw  newClassCastExceptionForUnexepectedActiveChildType(ccx);
       }
    }
    /**
       <P>Get the active child, which <I>is</I> a stealth block.</P>
 
-      @return  <CODE>(RawStealthBlockEntity&lt;L,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
-      @exception  IllegalStateException  If {@link #getActiveChild() getActiveChild}{@code ()} is {@code null}.
+      @return  <CODE>(RawStealthBlockEntity&lt;L,L&gt;){@link #getRawActiveChild() getRawActiveChild}()</CODE>
+      @exception  IllegalStateException  If {@link #hasActiveChild() hasActiveChild}{@code ()} is {@code false}.
       @exception  ClassCastException  If {@link #getActiveChildType() getActiveChildType}{@code ()} is not a {@link EntityType#STEALTH_BLOCK STEALTH_BLOCK}.
-      @see  #getActiveChildBlock()
+      @see  #getRawActiveChildBlock()
+      @since  0.1.2
     **/
-   public RawStealthBlockEntity<L> getActiveChildStealthBlock()  {
+   public RawStealthBlockEntity<L> getRawActiveChildStealthBlock()  {
       try  {
-         @SuppressWarnings("unchecked")
-         RawStealthBlockEntity<L> rbe = (RawStealthBlockEntity<L>)getActiveChild();
+         RawStealthBlockEntity<L> rbe = (RawStealthBlockEntity<L>)getRawActiveChild();
          return  rbe;
       }  catch(ClassCastException ccx)  {
-         ClassCastException ccx2 = new ClassCastException("getActiveChildType()=" + getActiveChildType() + ", getActiveChild().getClass().getName()=" + getActiveChild().getClass().getName());
-         ccx2.initCause(ccx);
-         throw  ccx2;
+         throw  newClassCastExceptionForUnexepectedActiveChildType(ccx);
       }
    }
    /**
       <P>Get the active child, which <I>is</I> a single-line entity.</P>
 
-      @return  <CODE>(RawSingleLineEntity&lt;L,L&gt;){@link #getActiveChild() getActiveChild}()</CODE>
-      @exception  IllegalStateException  If {@link #getActiveChild() getActiveChild}{@code ()} is {@code null}.
+      @return  <CODE>(RawSingleLineEntity&lt;L,L&gt;){@link #getRawActiveChild() getRawActiveChild}()</CODE>
+      @exception  IllegalStateException  If {@link #hasActiveChild() hasActiveChild}{@code ()} is {@code false}.
       @exception  ClassCastException  If {@link #getActiveChildType() getActiveChildType}{@code ()} is not a {@link EntityType#SINGLE_LINE SINGLE_LINE}.
-      @see  #getActiveChildBlock()
+      @see  #getRawActiveChildBlock()
+      @since  0.1.2
     **/
-   public RawSingleLineEntity<L> getActiveChildSingleLine()  {
+   public RawSingleLineEntity<L> getRawActiveChildSingleLine()  {
       try  {
-         @SuppressWarnings("unchecked")
-         RawSingleLineEntity<L> rbe = (RawSingleLineEntity<L>)getActiveChild();
+         RawSingleLineEntity<L> rbe = (RawSingleLineEntity<L>)getRawActiveChild();
          return  rbe;
       }  catch(ClassCastException ccx)  {
-         ClassCastException ccx2 = new ClassCastException("getActiveChildType()=" + getActiveChildType() + ", getActiveChild().getClass().getName()=" + getActiveChild().getClass().getName());
-         ccx2.initCause(ccx);
-         throw  ccx2;
+         throw  newClassCastExceptionForUnexepectedActiveChildType(ccx);
       }
    }
+      private ClassCastException newClassCastExceptionForUnexepectedActiveChildType(ClassCastException cause)  {
+         return  ExceptionUtil.returnCauseSetIntoThrowable(cause,
+            new ClassCastException("getActiveChildType()=" + getActiveChildType() + ", getRawActiveChild().getClass().getName()=" + getRawActiveChild().getClass().getName()));
+      }
    /**
       <P>Immutable list of all child entities.</P>
 
-      @return  <CODE>{@link #getRootBlock() getRootBlock}().{@link RawBlockEntity#getChildList() getChildList}()</CODE>
+      @return  <CODE>{@link #getRawRootBlock() getRawRootBlock}().{@link RawBlockEntity#getChildList() getChildList}()</CODE>
     **/
    List<RawChildEntity<L>> getEntityList()  {
-      return  getRootBlock().getRawChildList();
+      return  getRawRootBlock().getRawChildList();
+   }
+   /**
+      @return  <CODE>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</CODE>
+    **/
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   /**
+      @param  to_appendTo May not be {@code null}.
+      @see  #toString()
+    **/
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      try  {
+         to_appendTo.append("Returns.").append(getReturnsWhat()).append(", getNextLineNum()=").append(getNextLineNum()).append(", getMostRecentLineNum()=").append(getMostRecentLineNum()).append(", ").append((getEntityThatAborted() == null) ? ""
+               :  "getEntityThatAborted()=" + getEntityThatAborted() + ", ").
+         append("getRawRootBlock()={(<[").append(LINE_SEP).
+               append(getRawRootBlock()).append(LINE_SEP).append("]>)}");
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+      }
+      return  to_appendTo;
    }
 }

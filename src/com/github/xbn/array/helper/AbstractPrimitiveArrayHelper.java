@@ -15,12 +15,7 @@
 package  com.github.xbn.array.helper;
    import  com.github.xbn.array.NullContainer;
    import  java.util.Objects;
-   import  com.github.xbn.lang.ToStringDefensive;
-   import  com.github.xbn.text.StringUtilBase;
    import  com.github.xbn.array.CrashIfIndex;
-   import  static com.github.xbn.lang.XbnConstants.*;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  com.github.xbn.array.IndexableUtil;
    import  com.github.xbn.lang.reflect.ReflectRtxUtil;
    import  java.util.Iterator;
    import  org.apache.commons.collections4.iterators.ArrayIterator;

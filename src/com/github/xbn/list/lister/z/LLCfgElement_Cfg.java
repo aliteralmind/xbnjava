@@ -31,7 +31,7 @@ public class LLCfgElement_Cfg<E> extends LLCfgElement_CfgForNeeder<E,LLCfgElemen
    public LLCfgElement_Cfg()  {
       super(null);
    }
-   public LLCfgElement buildDoesNothing()  {
+   public LLCfgElement<E> buildDoesNothing()  {
       return  (new LLCfgElement_Cfg<E>().build());
    }
 }

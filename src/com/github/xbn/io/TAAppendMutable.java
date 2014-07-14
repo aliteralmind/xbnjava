@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.io;
    import  java.io.IOException;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  java.io.Closeable;
    import  java.io.Flushable;
 /**

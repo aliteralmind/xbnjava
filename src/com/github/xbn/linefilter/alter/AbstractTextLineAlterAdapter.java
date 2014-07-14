@@ -17,8 +17,6 @@
 package  com.github.xbn.linefilter.alter;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.SimpleAdapter;
-   import  com.github.xbn.lang.Adapter;
-   import  com.github.xbn.analyze.alter.ValueAlterer;
    import  com.github.xbn.lang.RuleType;
 /**
    <P>Makes anything behave like a text-line alterer.</P>
@@ -27,8 +25,24 @@ package  com.github.xbn.linefilter.alter;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractTextLineAlterAdapter<E> extends SimpleAdapter<E> implements TextLineAlterAdapter<E>  {
+//	private final boolean isRequired;
    public AbstractTextLineAlterAdapter(E to_adapt)  {
+/*
+      this(to_adapt, AlterationRequired.YES);
+   }
+   public AbstractTextLineAlterAdapter(E to_adapt, AlterationRequired required)  {
+ */
       super(to_adapt);
+/*
+      try  {
+         isRequired = required.isYes();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(required, "required", null, rx);
+      }
+   }
+   public boolean isRequired()  {
+      return  isRequired;
+ */
    }
    public RuleType getRuleType()  {
       return  RuleType.UNRESTRICTED;

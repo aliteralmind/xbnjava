@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  java.util.regex.Pattern;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.Returns;
    import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
@@ -61,7 +60,7 @@ public class IterateKeptLinesManualBlock  {
          keepMidsOnly().required(true).build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
-         StringUtil.getLineIterator(input), Returns.KEPT,
+            lineItr, Returns.KEPT,
          null, null,    //dbgEveryLine and its line-range
          block);
 

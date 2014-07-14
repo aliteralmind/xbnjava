@@ -14,8 +14,6 @@
 \*license*/
 package  com.github.xbn.util;
    import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
-   import  java.util.regex.Pattern;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.regexutil.RegexGroupExtractor;
    import  com.github.xbn.regexutil.RegexReplacer;
    import  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg;

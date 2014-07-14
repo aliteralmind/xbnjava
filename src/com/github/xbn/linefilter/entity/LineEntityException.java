@@ -24,6 +24,10 @@ package  com.github.xbn.linefilter.entity;
 
  **/
 public class LineEntityException extends FilteredLineException  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = 8648691397047864848L;
    private final RawEntity<?> entity;
    public LineEntityException(int line_num, Object line, RawEntity<?> entity, String message)  {
       super(line_num, line, LineEntityException.getErrorMessage(entity, message));

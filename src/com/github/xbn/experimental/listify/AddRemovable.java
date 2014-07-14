@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify;
-   import  com.github.xbn.util.EnumUtil;
 /**
    <P>Can the raw object's elements be added or removed?.</P>
 

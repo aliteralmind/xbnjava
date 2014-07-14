@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
@@ -35,7 +36,7 @@ public class StringValidatorReplacerXmpl  {
          null);     //<--Debug filter: System.out. No debug: null
 
       StringValidatorReplacer svrTDotToThe234 = AdaptRegexReplacerTo.stringValidator(
-         Pattern.compile("T.", Pattern.LITERAL),
+         AlterationRequired.YES, Pattern.compile("T.", Pattern.LITERAL),
          "The", ReplacedInEachInput.FIRST, vrf,
             null);  //<--Debug
 

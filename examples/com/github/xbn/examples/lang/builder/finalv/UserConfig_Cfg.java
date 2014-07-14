@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.lang.builder.finalv;
-   import  java.util.regex.Pattern;
 /**
    <P>Builder for {@link UserConfig}.</P>
 

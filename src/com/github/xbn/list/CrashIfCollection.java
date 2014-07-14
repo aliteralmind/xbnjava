@@ -13,14 +13,11 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list;
-   import  java.util.Iterator;
-   import  com.github.xbn.util.itr.IteratorUtil;
    import  com.github.xbn.array.NullContainer;
    import  com.github.xbn.array.NullElement;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.LengthLessThanRequiredException;
    import  java.util.Collection;
-   import  java.util.Objects;
 /**
    <P>If a collection is invalid, crash. Otherwise, do nothing. This is the same as {@link com.github.xbn.list.CrashIfList} except for the error messages.</P>
 

@@ -13,11 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.linefilter.entity.KeepMatched;
    import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.entity.KeepEndLine;
-   import  com.github.xbn.linefilter.entity.KeepMidLines;
-   import  com.github.xbn.linefilter.entity.KeepStartLine;
    import  com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor;
    import  com.github.xbn.number.LengthInRange;
    import  java.util.Iterator;

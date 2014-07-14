@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate;
-   import  com.github.xbn.lang.Null;
    import  java.util.Objects;
    import  com.github.xbn.analyze.AnalyzerComposer;
    import  com.github.xbn.analyze.validate.z.Validator_Fieldable;
@@ -26,7 +25,6 @@ package  com.github.xbn.analyze.validate;
    import  com.github.xbn.testdev.CompositionFunction;
    import  com.github.xbn.util.tuple.ThreeTSObjects;
    import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For classes that need to implement {@code Validator}, that cannot extend {@code AbstractValidator}. See {@link com.github.xbn.analyze.AbstractAnalyzer AbstractValidator}.</P>
 

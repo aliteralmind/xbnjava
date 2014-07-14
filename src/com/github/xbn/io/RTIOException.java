@@ -23,6 +23,10 @@ package  com.github.xbn.io;
 public class RTIOException extends RuntimeException  {
 
    /**
+    * 
+    */
+   private static final long serialVersionUID = 1563847492924544988L;
+   /**
       <P>Create an RTIOException with no error message.</P>
     **/
    public RTIOException()  {

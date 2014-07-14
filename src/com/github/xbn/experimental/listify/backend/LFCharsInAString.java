@@ -12,15 +12,15 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.experimental.listify;
+package  com.github.xbn.experimental.listify.backend;
    import  com.github.xbn.array.CrashIfIndex;
    import  com.github.xbn.array.IndexableUtil;
    import  com.github.xbn.array.NullContainer;
    import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
-   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
    import  com.github.xbn.experimental.listify.AddRemovable;
    import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyPrimitiveable;
    import  com.github.xbn.experimental.listify.primitiveable.ListifyCharable;
+   import  com.github.xbn.experimental.listify.CopyElements;
    import  com.github.xbn.text.StringUtil;
    import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
    import  com.github.xbn.util.copyval.ValueCopier;
@@ -28,7 +28,6 @@ package  com.github.xbn.experimental.listify;
    import  java.util.Iterator;
    import  java.util.Objects;
    import  org.apache.commons.lang3.ArrayUtils;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Listifier whose raw object is a string, and whose virtual elements are the characters in that string.</P>
 

@@ -15,9 +15,7 @@
 package  com.github.xbn.analyze.validate;
    import  com.github.xbn.lang.SimpleAdapter;
    import  com.github.xbn.lang.RuleType;
-   import  com.github.xbn.analyze.validate.z.SimpleValidator_F;
    import  com.github.xbn.analyze.validate.z.ValueValidator_Fieldable;
-   import  com.github.xbn.lang.SimpleAdapter;
    import  com.github.xbn.lang.Adapter;
 /**
    <P>Makes anything behave like a <CODE>ValueValidator</CODE>.</P>

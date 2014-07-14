@@ -15,7 +15,6 @@
 package  com.github.xbn.examples.regexutil;
    import  com.github.xbn.regexutil.IndirectRegexReplacer;
    import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Demonstrates an indirect replacement using {@code com.github.xbn.regexutil.RegexReplacer}.</P>
 

@@ -24,7 +24,6 @@ package  com.github.xbn.linefilter.entity.raw.z;
    import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
    import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.number.NewLengthInRangeFor;
-   import  java.util.regex.Pattern;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity RawBlockEntity}.</P>
 

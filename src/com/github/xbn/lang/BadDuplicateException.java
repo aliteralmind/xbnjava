@@ -21,6 +21,10 @@ package  com.github.xbn.lang;
 
  **/
 public class BadDuplicateException extends IllegalArgumentException  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = 1410377225966758555L;
    private final String obj1Name;
    private final String obj2Name;
    private final Object value   ;

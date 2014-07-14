@@ -15,7 +15,6 @@
 package  com.github.xbn.text.padchop;
    import  com.github.xbn.text.padchop.z.PadChopBase_Fieldable;
    import  com.github.xbn.lang.Copyable;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.CrashIfObject;
 /**
    <P>. The base class for {@code PadString} and {@code ChopString}. See {@link com.github.xbn.text.padchop.PadString PadString} and {@link com.github.xbn.text.padchop.ChopString ChopString}.</P>

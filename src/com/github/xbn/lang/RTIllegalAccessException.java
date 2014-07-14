@@ -20,6 +20,10 @@ package  com.github.xbn.lang;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RTIllegalAccessException extends IllegalStateException  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = 1526191826328673804L;
    public RTIllegalAccessException(String message)  {
       super(message);
    }

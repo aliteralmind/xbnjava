@@ -15,11 +15,11 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 
-package  com.github.xbn.examples.util;
+package  com.github.xbn.examples.util.non_xbn;
 /**
    <P>Function that returns true if a string has exactly four (or however many) unique characters--uniqueness is detected with a {@code Map<Character,Object>}, where the value is always {@code null}.</P>
 
-   <P>{@code java com.github.xbn.examples.util.FirstDifferentCharIndex}</P>
+   <P>{@code java com.github.xbn.examples.util.non_xbn.FirstDifferentCharIndex}</P>
 
    @since 0.1.0
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>

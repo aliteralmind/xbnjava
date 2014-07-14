@@ -32,7 +32,6 @@ package  com.github.xbn.regexutil;
    import  java.util.Objects;
    import  java.util.regex.Matcher;
    import  java.util.regex.Pattern;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For regular expression replacements where each match can be individually manipulated. The idea for this is based on in  <CODE>e.util.{@link com.github.xbn.regexutil.Rewriter Rewriter}</CODE>, with the additions of distinguishing between &quot;<A HREF="#indirect">indirect</A>&quot; and &quot;<A HREF="#direct">direct</A>&quot; replacements, and the ability to choose exactly which matches should be replaced (see &quot;Which terms&quot; in the below list).</P>
 

@@ -17,7 +17,6 @@ package  com.github.xbn.number;
    import  com.github.xbn.lang.Invert;
    import  com.github.xbn.list.CollectionUtil;
    import  com.github.xbn.text.StringUtilBase;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.array.ArrayUtil;
    import  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil;
    import  java.util.Collection;

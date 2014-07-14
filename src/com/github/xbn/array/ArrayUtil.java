@@ -19,8 +19,6 @@ package  com.github.xbn.array;
    import  java.util.ArrayList;
    import  java.util.Arrays;
    import  java.util.List;
-   import  java.util.Objects;
-   import  static com.github.xbn.lang.CrashIfBase.*;
 /**
    <P>Utilities related to non-primitive arrays, including error checking and conversion to other non-primitive containers.</P>
 
@@ -49,7 +47,7 @@ public class ArrayUtil  {
     **/
    public static final <E> StringBuilder appendToStringHighlightElement(StringBuilder to_appendTo, E[] array, String prefix, int index, String postfix)  {
       try  {
-         int lenMinus1 = array.length - 1;
+//			int lenMinus1 = array.length - 1;
          for(int i = 0; i < array.length; i++)  {
             if(i == index)  {
                to_appendTo.append(prefix);

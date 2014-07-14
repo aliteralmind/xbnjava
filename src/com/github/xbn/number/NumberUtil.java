@@ -15,7 +15,6 @@
 package  com.github.xbn.number;
    import  java.util.List;
    import  java.util.Collections;
-   import  com.github.xbn.lang.IllegalArgumentStateException;
    import  java.util.Arrays;
 /**
    <P>Get the median of two ints, determine a long's digit-length, retrieve random values, and other number-related utilites.</P>
@@ -204,7 +203,7 @@ public class NumberUtil  {
 
       Double DChopped = new Double(sDblChopped);
       String sdAfterConvert = DChopped.toString();
-      double dChopped = DChopped.doubleValue();
+//		double dChopped = DChopped.doubleValue();
 
       if(!do_rightZeroPad)  {
          return  sDblChopped;

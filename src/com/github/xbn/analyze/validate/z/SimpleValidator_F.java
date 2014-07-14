@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.analyze.validate.z;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
-   import  com.github.xbn.lang.z.GetExtraErrInfo_Fieldable;
    import  com.github.xbn.io.z.SimpleGetDebugApbl_F;
 /**
    <P>YYY</P>

@@ -16,7 +16,6 @@ package  com.github.xbn.array.primitive;
    import  com.github.xbn.array.IndexableUtil;
    import  com.github.xbn.array.NullContainer;
    import  org.apache.commons.lang3.ArrayUtils;
-   import  com.github.xbn.lang.CrashIfObject;
 /**
    <P>Translate a primitive array to an object array.</P>
 

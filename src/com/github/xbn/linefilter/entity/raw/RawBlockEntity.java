@@ -24,7 +24,6 @@ package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.IllegalArgumentStateException;
    import  com.github.xbn.linefilter.entity.LineEntityException;
    import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_Fieldable;
    import  com.github.xbn.number.LengthInRange;
@@ -33,7 +32,6 @@ package  com.github.xbn.linefilter.entity.raw;
    import  java.util.Arrays;
    import  java.util.Collections;
    import  java.util.List;
-   import  java.util.Objects;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Represents a series of <I>things</I>, with a distinct start and end item, zero-or-more items in between, and optional child entities. The start, mid, and end items may all be optionally kept or discarded--when kept, they may be optionally modified.</P>
@@ -184,12 +182,12 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
 
       assert  isMidLine()  :  "isActive()=" + isActive() + ", isStartLine()=" + isStartLine() + ", isEndLine()=" + isEndLine() + ", isMidLine()=" + isMidLine() + " (NOT mid line?)";
 
-      if(getActiveChild() != null)  {
-         boolean doKeepChild = getActiveChild().doKeepJustAnalyzed();
+      if(getRawActiveChild() != null)  {
+         boolean doKeepChild = getRawActiveChild().doKeepJustAnalyzed();
          if(isEveryLineAptrUseableAndInRange())  {
             getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
                BooleanUtil.toUpperCase(doKeepChild) +
-                  ": getActiveChild().doKeepJustAnalyzed()=" + doKeepChild);
+                  ": getRawActiveChild().doKeepJustAnalyzed()=" + doKeepChild);
          }
          return  doKeepChild;
       }
@@ -214,7 +212,7 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
 
          //is_inclusive=true
 
-         if(getActiveChild() == null)  {
+         if(getRawActiveChild() == null)  {
             if(isEveryLineAptrUseableAndInRange())  {
                getDebugAptrEveryLine().appentln(getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
                   BooleanUtil.toUpperCase(do_keep) + ": No active child");
@@ -223,14 +221,14 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
          }
 
             //is_inclusive=true
-         //getActiveChild() is non-null
+         //getRawActiveChild() is non-null
 
-         boolean doKeepChild = getActiveChild().doKeepJustAnalyzed();
+         boolean doKeepChild = getRawActiveChild().doKeepJustAnalyzed();
          if(isEveryLineAptrUseableAndInRange())  {
             getDebugAptrEveryLine().appentln(
                getDebuggingPrefix() + " doKeepJustAnalyzed()=" +
                BooleanUtil.toUpperCase(doKeepChild) +
-               ": getActiveChild().doKeepJustAnalyzed()=" + doKeepChild);
+               ": getRawActiveChild().doKeepJustAnalyzed()=" + doKeepChild);
          }
          return  doKeepChild;
       }
@@ -330,7 +328,7 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    /**
       <P>The currently active child, if any.</P>
     **/
-   public RawChildEntity<L> getActiveChild()  {
+   public RawChildEntity<L> getRawActiveChild()  {
       return  activeChild;
    }
    /**
@@ -349,13 +347,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    public boolean doesFollowRulesPreInvert(L line_toAnalyze)  {
       return  false;
    }
-   /**
-      <P>Duplicate this <CODE>RawBlockEntity</CODE>.</P>
-
-      @return  <CODE>(new <A HREF="#RawBlockEntity(RawBlockEntity)">RawBlockEntity</A>&lt;L,L&gt;(this, parent))</CODE>
-    **/
    public RawBlockEntity<L> getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<L> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
-      return  (new RawBlockEntity<L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug));
+      return  new RawBlockEntity<L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    /**
       @param  to_appendTo May not be {@code null}.
@@ -381,8 +374,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
          append(" >>> getEndAlterer()=" + getEndAlterer()).append(LINE_SEP).
          append(" >>> " + children.length + " children");
 
-      if(getActiveChild() != null)  {
-         to_appendTo.append(" (active=\"" + getActiveChild().getName() + "\")");
+      if(getRawActiveChild() != null)  {
+         to_appendTo.append(" (active=\"" + getRawActiveChild().getName() + "\")");
       }
 
       if(children.length > 0)  {
@@ -415,8 +408,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
 
       String prefix = StringUtil.getStringOfLengthAllCharsEqualTo(3, ' ', null);
 
-      if(getActiveChild() != null)  {
-         to_appendTo.append(" (active=" + getActiveChild() + ")");
+      if(getRawActiveChild() != null)  {
+         to_appendTo.append(" (active=" + getRawActiveChild() + ")");
       }
 
       if(children.length > 0)  {
@@ -471,7 +464,7 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
       if(!isActive())  {
          if(isStart2)  {
 
-            assert  (getActiveChild() == null)  :  "isStartLine()=true (actually " + isStartLine() + ") and the active child has not been determined yet. So getActiveChild() should be null, but isn't: " + getActiveChild();
+            assert  (getRawActiveChild() == null)  :  "isStartLine()=true (actually " + isStartLine() + ") and the active child has not been determined yet. So getRawActiveChild() should be null, but isn't: " + getRawActiveChild();
 
             L alteredBody = getAlteredForStartLineMaybeInclusiveChild(line_toAnalyze, startAltered);
             return  postFilter_getAlteredLine(alteredBody);
@@ -495,8 +488,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
 
          //Close the previous block
          declareEndLine(true);
-         if(getActiveChild() != null)  {
-            getActiveChild().declareEndOfInput();
+         if(getRawActiveChild() != null)  {
+            getRawActiveChild().declareEndOfInput();
             activeChild = null;
          }
 
@@ -514,8 +507,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
                getEndAlterer().needsToBeDeleted()));
 
          if(!isEndLineInclusive())  {
-            if(getActiveChild() != null)  {
-               getActiveChild().declareEndOfInput();
+            if(getRawActiveChild() != null)  {
+               getRawActiveChild().declareEndOfInput();
                activeChild = null;
             }
             return  postFilter_getAlteredLine(endAltered);
@@ -523,11 +516,11 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
 
          //isEndLineInclusive()=true
 
-         if(getActiveChild() != null)  {
+         if(getRawActiveChild() != null)  {
 
             L childAlteredLine = getAlteredLineFromActiveChildOrNull(line_toAnalyze, line_toAlter, "inclusive end line (start line=" + getStartLineNum() + ")");
 
-            if(getActiveChild() != null)  {
+            if(getRawActiveChild() != null)  {
                return  postFilter_getAlteredLine(childAlteredLine);
             }
          }
@@ -545,7 +538,7 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
             getMidAlterer().needsToBeDeleted()));
       L childAlteredLine = getAlteredLineFromActiveChildOrNull(line_toAnalyze, line_toAlter, "mid line (start line=" + getStartLineNum() + ")");
 
-      if(getActiveChild() != null)  {
+      if(getRawActiveChild() != null)  {
          return  postFilter_getAlteredLine(childAlteredLine);
       }
 
@@ -579,13 +572,13 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
       private L getAlteredLineFromActiveChildOrNull(L line_toAnalyze, L line_toAlter, String midOr_startEndWIncl)  {
          RawChildEntity<L> previouslyActive = null;
 
-         if(getActiveChild() != null)  {
-            previouslyActive = getActiveChild();
+         if(getRawActiveChild() != null)  {
+            previouslyActive = getRawActiveChild();
 
             //A child was active on the last line.
-            L alteredFromChild = getActiveChild().getAltered(getMostRecentLineNum(), line_toAnalyze, line_toAlter);
+            L alteredFromChild = getRawActiveChild().getAltered(getMostRecentLineNum(), line_toAnalyze, line_toAlter);
 
-            if(getActiveChild().wasAltered())  {
+            if(getRawActiveChild().wasAltered())  {
 
                //Still active.
                if(activeChild.doAbortIterator())  {
@@ -652,7 +645,7 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
 
          L childAlteredLine = getAlteredLineFromActiveChildOrNull(line_toAnalyze, lineBody_startAltered, "start line (inclusive)");
 
-         if(getActiveChild() != null)  {
+         if(getRawActiveChild() != null)  {
             return  childAlteredLine;
          }
 
@@ -662,8 +655,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
       if(isMidLine()  &&  isEndRequired())  {
          throw  new LineEntityException(-1, null, this, "End of output reached, but block not closed");
       }
-      if(getActiveChild() != null)  {
-         getActiveChild().declareEndOfInput();
+      if(getRawActiveChild() != null)  {
+         getRawActiveChild().declareEndOfInput();
       }
       declareStartLine(false);
       declareMidLine(false);
@@ -677,8 +670,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
          bldr.append("-").append(isStartLineInclusive() ? "in" : "ex").append("cl");
       }
 
-      if(getActiveChild() != null)  {
-         bldr.append(":active-child=\"").append(getActiveChild().getName()).append("\"");
+      if(getRawActiveChild() != null)  {
+         bldr.append(":active-child=\"").append(getRawActiveChild().getName()).append("\"");
       }
 
       return  bldr.append("] ").toString();

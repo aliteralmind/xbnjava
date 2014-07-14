@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.array.helper;
    import  com.github.xbn.number.CrashIfIntIs;
-   import  java.util.Iterator;
    import  org.apache.commons.lang3.ArrayUtils;
 /**
    <P>{@code ArrayHelper} for strings.</P>

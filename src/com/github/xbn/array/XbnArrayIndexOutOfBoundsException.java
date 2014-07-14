@@ -35,7 +35,11 @@ package  com.github.xbn.array;
    @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class XbnArrayIndexOutOfBoundsException extends XbnIbxBase  {
-//constructors...START
+/**
+    * 
+    */
+   private static final long serialVersionUID = 8566020162564497017L;
+   //constructors...START
    /**
       <P>Create a new {@code XbnArrayIndexOutOfBoundsException}.</P>
 

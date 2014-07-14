@@ -1,7 +1,5 @@
 package  com.github.xbn.list.lister;
    import  com.github.xbn.list.lister.z.LLCIndexableElement_Fieldable;
-   import  com.github.xbn.text.StringUtilBase;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.analyze.validate.ValueValidator;
 /**
    <P>{@code LLCfgElement} for elements that are themselves indexable-containers (such as strings, lists, or arrays).</P>

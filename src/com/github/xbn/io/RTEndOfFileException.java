@@ -22,6 +22,10 @@ package  com.github.xbn.io;
 public class RTEndOfFileException extends RuntimeException  {
 
    /**
+    * 
+    */
+   private static final long serialVersionUID = -6648949556447232954L;
+   /**
       <P>Create an RTEndOfFileException with no error message.</P>
     **/
    public RTEndOfFileException()  {

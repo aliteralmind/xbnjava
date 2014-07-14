@@ -13,11 +13,11 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.alter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.linefilter.NewTextLineValidatorFor;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.alter.Altered;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
-   import  com.github.xbn.analyze.alter.ValueAlterer;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
@@ -26,7 +26,6 @@ package  com.github.xbn.linefilter.alter;
    import  com.github.xbn.regexutil.ReplacedInEachInput;
    import  com.github.xbn.regexutil.StringReplacer;
    import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
-   import  com.github.xbn.text.StringUtil;
    import  java.util.regex.Pattern;
    import  org.apache.commons.lang3.StringEscapeUtils;
 /**
@@ -44,17 +43,6 @@ public class NewTextLineAltererFor  {
    public static final AlterTextLineWhen alwaysReturnUnchanged()  {
       return  (new AlterTextLineWhen());
    }
-   /**
-      <P>ReplacedInEachInput all tabs to spaces.</P>
-
-      @return  <CODE>{@link #literalReplacement(String, String, ReplacedInEachInput, Appendable, ValidResultFilter) literalReplacement}(&quot;\t&quot;, spaces, {@link com.github.xbn.regexutil.ReplacedInEachInput}.{@link com.github.xbn.regexutil.ReplacedInEachInput#ALL ALL}, dbgDest_ifNonNull, null)</CODE>
-      <BR>Where {@code spaces} is a {@linkplain com.github.xbn.text.StringUtil#getStringOfLengthAllCharsEqualTo(int, char, String) string of only} spaces, {@code space_count} characters in length.
-      @see  #literalReplacement(String, String, ReplacedInEachInput, Appendable, ValidResultFilter)
-   public static final TextLineAlterAdapter<StringReplacer> replaceTabToSpaces(int space_count, Appendable dbgDest_ifNonNull, String count_varName)  {
-      String spaces = StringUtil.getStringOfLengthAllCharsEqualTo(space_count, ' ', count_varName);
-      return  literalReplacement("\t", spaces, ReplacedInEachInput.ALL, dbgDest_ifNonNull, null);
-   }
-    **/
    /**
       <P><I><B>Deprecated</B> for {@code textValidateOnly}</I>--Identifies the line's text based on a regular expression--the line is not altered.</P>
 
@@ -125,26 +113,26 @@ public class NewTextLineAltererFor  {
    /**
       <P>Make a literal string replacement.</P>
 
-      @return  <CODE>{@link #replacement(Pattern, String, ReplacedInEachInput, Appendable, ValidResultFilter) replacement}({@link com.github.xbn.regexutil.NewPatternFor#literal(String) literal}(find_what), rplc_with, rplcs_what, dbgDest_ifNonNull, filter_ifNonNull)</CODE>
+      @return  <CODE>{@link #replacement(AlterationRequired, Pattern, String, ReplacedInEachInput, Appendable, ValidResultFilter) replacement}({@link com.github.xbn.regexutil.NewPatternFor#literal(String) literal}(find_what), rplc_with, rplcs_what, dbgDest_ifNonNull, filter_ifNonNull)</CODE>
     **/
-   public static final TextLineAlterAdapter<StringReplacer> literalReplacement(String find_what, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgDest_ifNonNull, ValidResultFilter filter_ifNonNull)  {
-      return  replacement(NewPatternFor.literal(find_what, "find_what"), rplc_with, rplcs_what, dbgDest_ifNonNull, filter_ifNonNull);
+   public static final TextLineAlterAdapter<StringReplacer> literalReplacement(AlterationRequired required, String find_what, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgDest_ifNonNull, ValidResultFilter filter_ifNonNull)  {
+      return  replacement(required, NewPatternFor.literal(find_what, "find_what"), rplc_with, rplcs_what, dbgDest_ifNonNull, filter_ifNonNull);
    }
    /**
       <P>Makes a regular expression replacement.</P>
 
-      @return  <CODE>{@link com.github.xbn.linefilter.AdaptRegexReplacerTo AdaptRegexReplacerTo}.{@link com.github.xbn.linefilter.AdaptRegexReplacerTo#lineReplacer(RegexReplacer, ValidResultFilter) lineReplacer}(rr, filter_ifNonNull)</CODE>
+      @return  <CODE>{@link com.github.xbn.linefilter.AdaptRegexReplacerTo AdaptRegexReplacerTo}.{@link com.github.xbn.linefilter.AdaptRegexReplacerTo#lineReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer}(required, rr, filter_ifNonNull)</CODE>
       <BR>Where {@code rr} is a
       <BR> &nbsp; &nbsp; <CODE>new {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().
          {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#direct(Pattern, Object) direct}(ptrn_findWhat, rplc_with).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rplcs_what).
          {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}();</CODE>
-      @see  #literalReplacement(String, String, ReplacedInEachInput, Appendable, ValidResultFilter)
+      @see  #literalReplacement(AlterationRequired, String, String, ReplacedInEachInput, Appendable, ValidResultFilter)
     **/
-   public static final TextLineAlterAdapter<StringReplacer> replacement(Pattern ptrn_findWhat, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgDest_ifNonNull, ValidResultFilter filter_ifNonNull)  {
+   public static final TextLineAlterAdapter<StringReplacer> replacement(AlterationRequired required, Pattern ptrn_findWhat, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgDest_ifNonNull, ValidResultFilter filter_ifNonNull)  {
       RegexReplacer rr = new RegexReplacer_Cfg().
          direct(ptrn_findWhat, rplc_with).replaceWhatNotMatchNums(rplcs_what).
          debugTo(dbgDest_ifNonNull).build();
-      return  AdaptRegexReplacerTo.lineReplacer(rr, filter_ifNonNull);
+      return  AdaptRegexReplacerTo.lineReplacer(required, rr, filter_ifNonNull);
    }
    private NewTextLineAltererFor()  {
       throw  new IllegalStateException("Do not instantiate");

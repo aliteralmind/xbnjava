@@ -15,8 +15,6 @@
 package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
    import  com.github.xbn.linefilter.entity.OnOffAbort;
-   import  java.util.Objects;
-   import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.number.LengthInRange;
 /**
    <P>A {@code RawOnOffEntityFilter} that is dependant on the <I>being filtered</I> entity's {@linkplain RawEntity#getFullyActiveCount() fully-active count} being in a range.</P>

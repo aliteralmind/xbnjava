@@ -17,12 +17,7 @@
 package  com.github.xbn.io;
    import  java.io.File;
    import  com.github.xbn.lang.CrashIfObject;
-   import  java.io.FileWriter;
-   import  java.io.BufferedWriter;
    import  java.io.PrintWriter;
-   import  java.io.IOException;
-   import  java.io.FileNotFoundException;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Builder for creating a {@code PrintWriter} that writes text to a file. (This does not implement <CODE>xbn.neederneedable.Chainable</CODE>, because there are no self-returning functions that throw an exception.)</P>
 
@@ -173,31 +168,13 @@ public class NewPrintWriterToFile  {
       return  build(new File(path), do_append, do_autoFlush);
    }
    /**
-      <P>Create a new {@code PrintWriter} that writes to a file with specific configuration.</P>
+      <P><I>Deprecated: Use <CODE>{@link IOUtil}.{@link IOUtil#getPrintWriterToFile(File, boolean, boolean) getPrintWriterToFile}</CODE> instead</I> -- Create a new {@code PrintWriter} that writes to a file with specific configuration.</P>
 
-      @param  file  Must be non-{@code null} and writeable.
-      @param  do_append  If {@code true}, the file is appended to. Existing text is left untouched. If {@code false}, existing text is erased.
-      @param  do_autoFlush  If {@code true} output is automatically {@link java.io.PrintWriter#flush() flush}ed. If {@code false}, output must be manually flushed.
-
-      @return  <CODE>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(File, boolean) FileWriter}(file, do_append)), do_autoFlush))</CODE>
-      @exception  RTFileNotFoundException  If a {@link java.io.FileNotFoundException FileNotFoundException} is thrown
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-      @exception  SecurityException  If the file is not writable.
-      @see  #build(String)
+      @deprecated  Use <CODE>{@link IOUtil}.{@link IOUtil#getPrintWriterToFile(File, boolean, boolean) getPrintWriterToFile}</CODE> instead</I>
+      @return  <CODE>{@link IOUtil}.{@link IOUtil#getPrintWriterToFile(File, boolean, boolean) getPrintWriterToFile}(file, do_append, do_autoFlush)</CODE>
     **/
    public static final PrintWriter build(File file, boolean do_append, boolean do_autoFlush)  {
-      try  {
-         //Create the object to actually write to the file.
-         return  (new PrintWriter(new BufferedWriter(new FileWriter(file, do_append)), do_autoFlush));
-
-         //The PrintWriter was successfully created.
-
-      }  catch(FileNotFoundException fnfx)  {
-         throw  new RTFileNotFoundException(sIOXPRE + file.getAbsolutePath(), fnfx);
-      }  catch(IOException iox)  {
-         throw  new RTIOException(sIOXPRE + file.getAbsolutePath(), iox);
-      }
+      return  IOUtil.getPrintWriterToFile(file, do_append, do_autoFlush);
    }
-      private static String sIOXPRE = "newPrintWriterForFile: path must point to a writeABLE file (the directory must exist, but the file need not exist). file: ";
 }
 

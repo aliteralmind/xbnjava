@@ -27,17 +27,32 @@ package  com.github.xbn.analyze.alter;
 public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
    private ValueAltererComposer<V,A> avc = null;
    /**
-      <P>Create a new {@code AbstractValueAlterer}.</P>
+      <P>Create a new instance with defaults.</P>
 
-      @see  #AbstractValueAlterer(ValueAlterer) AbstractValueAlterer(ValueAlterer)
+      <P>Sets the internal composer to
+      <BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer() ValueAltererComposer}&lt;V,A&gt;{@code ()}</P>
+
+      @see  #AbstractValueAlterer(ValueAlterer)
     **/
    protected AbstractValueAlterer()  {
       avc = new ValueAltererComposer<V,A>();
    }
    /**
+      <P>Create a new {@code AbstractAlterer} with the required setting.</P>
+
+      <P>Sets the internal composer to
+      <BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer(AlterationRequired) ValueAltererComposer}&lt;V,A&gt;{@code (required)}</P>
+
+      @see  #AbstractAlterer() AbstractAlterer()
+      @see  #AbstractAlterer(Alterer) AbstractAlterer(Alterer)
+    **/
+   protected AbstractValueAlterer(AlterationRequired required)  {
+      avc = new ValueAltererComposer<V,A>(required);
+   }
+   /**
       <P>Create a new {@code AbstractValueAlterer}.</P>
 
-      @see  #AbstractValueAlterer()
+      @see  #AbstractValueAlterer(AlterationRequired)
     **/
    public AbstractValueAlterer(ValueAlterer<V,A> to_copy)  {
       avc = new ValueAltererComposer<V,A>(to_copy);
@@ -78,6 +93,9 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
    }
    public boolean isExpired()  {
       return  avc.isExpired();
+   }
+   public boolean isRequired()  {
+      return  avc.isRequired();
    }
    protected void declareMayDelete(boolean may_del)  {
       avc.declareMayDelete_4prot(may_del);

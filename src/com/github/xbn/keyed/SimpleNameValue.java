@@ -17,7 +17,6 @@ package  com.github.xbn.keyed;
 //	import  com.github.xbn.util.copyval.ValueNotCopyable;
 //	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
 //	import  com.github.xbn.util.copyval.ValueCopierComposer;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Implementation of {@code NamedValue}.</P>
 

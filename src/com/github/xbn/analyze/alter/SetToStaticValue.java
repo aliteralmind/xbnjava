@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>A {@code ValueAlterer} that always changes the object to a pre-determined value.</P>
 

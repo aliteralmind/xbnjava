@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.KeepUnmatched;
    import  com.github.xbn.linefilter.Returns;
@@ -48,24 +49,24 @@ public class StripOptionalAsterisksFromJDLineStarts  {
       //Example proper:
 
       StealthBlockEntity javaMlcBlock = NewStealthBlockEntityFor.javaComment(
-         "comment", IncludeJavaDoc.NO,
-         null,       //dbgStart
-         null,       //dbgEnd
-         KeepMatched.YES, EntityRequired.YES, null,
-         null);      //dbgLineNums
+         "comment", KeepMatched.YES, EntityRequired.YES, IncludeJavaDoc.NO,
+            null,    //dbgStart
+            null,    //dbgEnd
+         null,       //on-off filter
+            null);   //dbgLineNums
 
       TextLineAlterer stripAsterisks = NewTextLineAltererFor.replacement(
-         Pattern.compile("[ \t]*\\*(.*)"), "$1",
+         AlterationRequired.YES, Pattern.compile("[ \t]*\\*(.*)"), "$1",
          ReplacedInEachInput.FIRST,
-         null,       //debug
+            null,    //debug
          null);
 
       BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
-         "doccomment",
-         null,       //dbgStart
-         null,       //dbgEnd
-         EntityRequired.YES, null,
-         null).      //dbgLineNums
+         "doccomment", EntityRequired.YES,
+            null,    //dbgStart
+            null,    //dbgEnd
+         null,       //on-off filter
+            null).   //dbgLineNums
          midAlter(stripAsterisks).
          keepAll().build();
 

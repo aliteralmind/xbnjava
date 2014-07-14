@@ -15,7 +15,6 @@
 package  com.github.xbn.array;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.util.JavaUtil;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Base class for {@code Xbn*IndexOutOfBoundsException}.</P>
 

@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.array;
    import  com.github.xbn.lang.CrashIfObject;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.number.NumberUtil;
 /**
    <P>Get the middle index given a specific length. Intended for future utilities related to indexable and lengthable containers (such as strings, arrays, and collections).</P>

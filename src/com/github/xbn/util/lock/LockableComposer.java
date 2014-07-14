@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.util.lock;
    import  com.github.xbn.lang.CrashIfObject;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For classes needing to implement {@code Lockable}, that cannot extend {@code AbstractLockable}.</P>
 

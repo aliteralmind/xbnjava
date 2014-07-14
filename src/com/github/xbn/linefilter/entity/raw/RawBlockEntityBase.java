@@ -15,7 +15,6 @@
 package  com.github.xbn.linefilter.entity.raw;
    import  com.github.xbn.linefilter.entity.OnOffAbort;
    import  com.github.xbn.number.LengthInRange;
-   import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.alter.Altered;
    import  com.github.xbn.io.TextAppenter;

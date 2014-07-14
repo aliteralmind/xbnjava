@@ -14,14 +14,12 @@
 \*license*/
 package  com.github.xbn.number;
    import  com.github.xbn.analyze.validate.NullnessValidator;
-   import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.number.NumberInRange;
    import  com.github.xbn.number.z.NumberInRangeValidator_Fieldable;
    import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>{@code ValueValidator} for testing a number's {@code null}-ness and that it is in a {@code NumberInRange}.</P>
 

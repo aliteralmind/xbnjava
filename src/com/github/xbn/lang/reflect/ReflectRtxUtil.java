@@ -13,25 +13,20 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang.reflect;
-   import  java.lang.reflect.Field;
-   import  com.github.xbn.lang.RTIllegalAccessException;
-   import  com.github.xbn.lang.RTInstantiationException;
-   import  com.github.xbn.lang.RTExceptionInInitializerError;
    import  com.github.xbn.io.NewTextAppenterFor;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.XInfoAccumulator;
+   import  com.github.xbn.lang.RTExceptionInInitializerError;
+   import  com.github.xbn.lang.RTIllegalAccessException;
+   import  com.github.xbn.lang.RTInstantiationException;
    import  com.github.xbn.text.CrashIfString;
-   import  java.lang.reflect.InvocationTargetException;
    import  java.lang.reflect.Constructor;
+   import  java.lang.reflect.Field;
    import  java.lang.reflect.Method;
    import  java.util.ArrayList;
    import  java.util.List;
    import  java.util.Objects;
-   import  java.util.regex.Matcher;
-   import  java.util.regex.Pattern;
    import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Reflection-related utilities with runtime errors only. The original exception is accessible via {@code getCause()}.</P>
 

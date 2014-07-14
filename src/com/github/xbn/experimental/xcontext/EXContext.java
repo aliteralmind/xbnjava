@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.xcontext;
-   import  com.github.xbn.experimental.BadInterfaceBehaviorException;
 
 /**
    <P>Implementation of {@code ElementExceptionContext}.</P>

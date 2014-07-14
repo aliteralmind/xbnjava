@@ -15,9 +15,7 @@
 package  com.github.xbn.number;
    import  com.github.xbn.number.z.LengthInRangeValidator_Fieldable;
    import  com.github.xbn.lang.RuleType;
-   import  static com.github.xbn.lang.CrashIfBase.*;
    import  java.util.Collection;
-   import  com.github.xbn.number.IntBoundInclusive;
    import  com.github.xbn.number.LengthInRange;
 /**
    <P>{@code ValueValidator} for testing an length's {@code null}-ness (the integer-object that represents length) and that it is in a {@code LengthInRange}.</P>

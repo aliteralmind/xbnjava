@@ -13,10 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util.non_xbn;
-   import  java.util.Iterator;
-   import  java.util.Map;
-   import  java.util.Set;
-   import  java.util.TreeMap;
 /**
    <P>Elegant and short solution to finding the number of occurances of each number in an int-array.</P>
 

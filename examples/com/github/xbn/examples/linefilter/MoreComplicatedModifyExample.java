@@ -13,6 +13,7 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
    import  com.github.xbn.linefilter.FilteredLineIterator;
    import  com.github.xbn.linefilter.Returns;
@@ -67,7 +68,7 @@ public class MoreComplicatedModifyExample  {
       };
 
       TextLineAlterer midAlterer = AdaptRegexReplacerTo.
-         lineReplacer(replaceNumWithStrNum, null);
+         lineReplacer(AlterationRequired.YES, replaceNumWithStrNum, null);
 
       TextLineAlterer startIdOnly = NewTextLineAltererFor.
          textValidateOnly("start", null,

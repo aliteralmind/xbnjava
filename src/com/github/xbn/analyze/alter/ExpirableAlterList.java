@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
    import  com.github.xbn.lang.RuleType;
-   import  com.github.xbn.array.NullContainer;
    import  com.github.xbn.array.CrashIfArray;
    import  com.github.xbn.array.NullElement;
    import  com.github.xbn.lang.CrashIfObject;
@@ -197,11 +196,11 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    /**
       <P>Did any alterer not make an alteration?. This is intended for use after all alterations are attempted.</P>
 
-      @return  {@code false} If at least one element's {@linkplain com.github.xbn.analyze.alter.Alterer#getAlteredCount() alteration count} is zero.
+      @return  {@code false} If at least one {@linkplain Alterer#isRequired() required} element's {@linkplain com.github.xbn.analyze.alter.Alterer#getAlteredCount() alteration count} is zero.
     **/
    public boolean isComplete()  {
       for(ValueAlterer<V,A> alterer : alterList)  {
-         if(alterer.getAlteredCount() == 0)  {
+         if(alterer.isRequired()  &&  alterer.getAlteredCount() == 0)  {
             return  false;
          }
       }
@@ -218,7 +217,9 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       to_appendTo.append("Alterations attempted but not made:").append(LINE_SEP);
       for(ValueAlterer<V,A> alterer : alterList)  {
          if(alterer.getAlteredCount() == 0)  {
-            to_appendTo.append(" - ");
+            to_appendTo.append(" -").
+               append(alterer.isRequired() ? "" : "[optional]-").
+               append(" ");
             alterer.appendToString(to_appendTo);
             to_appendTo.append(LINE_SEP);
          }

@@ -14,9 +14,6 @@
 \*license*/
 package  com.github.xbn.array.helper;
    import  java.util.Objects;
-   import  com.github.xbn.lang.ToStringDefensive;
-   import  com.github.xbn.text.StringUtilBase;
-   import  static com.github.xbn.lang.CrashIfBase.*;
    import  com.github.xbn.lang.reflect.ReflectRtxUtil;
    import  java.util.Iterator;
    import  org.apache.commons.collections4.iterators.ObjectArrayIterator;

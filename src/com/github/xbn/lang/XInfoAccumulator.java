@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.lang;
    import  java.util.ArrayList;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For collecting multiple extra information objects during the execution of an error checking function--the {@code toString()} of these objects is not executed unless and until an error is thrown. This is not intended to be listed in the signature for any error-checking function. Instead, the extra-information parameter should always be an object. When and if a second piece of extra information is needed, it is added with
    <BR> &nbsp; &nbsp; <CODE>XInfoAccumulator.{@link #getAddedOrNew(Object, Object) getAddedOrNew}(xtra_errInfo, &quot;new info&quot;)</CODE>

@@ -21,6 +21,10 @@ package  com.github.xbn.experimental;
 
  **/
 public class IllegalPositionException extends IllegalArgumentException  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = 6741484132806618783L;
    public IllegalPositionException(String message)  {
       super(message);
    }

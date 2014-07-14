@@ -44,28 +44,28 @@ public class PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging  {
       //Example proper:
 
       StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.javaComment(
-         "comment", IncludeJavaDoc.NO,
-         null,         //dbgStart (on:System.out, off:null)
-         null,         //dbgEnd
-         KeepMatched.YES, EntityRequired.YES, null,
-         null);        //dbgLineNums
+         "comment", KeepMatched.YES, EntityRequired.YES,  IncludeJavaDoc.NO,
+            null,      //dbgStart (on:System.out, off:null)
+            null,      //dbgEnd
+         null,         //on-off filter
+            null);     //dbgLineNums
 
       BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
-         "doccomment",
-         null,       //dbgStart
-         null,       //dbgEnd
-         EntityRequired.YES, null,
-         System.out).   //<--Automated line-number debugging
+         "doccomment", EntityRequired.YES,
+            null,      //dbgStart
+            null,      //dbgEnd
+         null,         //on-off filter
+         System.out).        //<--Automated line-number debugging
          keepAll().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          rawInputLineItr, Returns.KEPT, KeepUnmatched.NO,
-      //Debug every line OFF:
-         null, null,    //dbgEveryLine and its line-range
-      //Debug every line ON (all lines):
-         //System.out, null,
-      //Debug every line ON (lines 3-6 only):
-         //System.out, com.github.xbn.number.NewLengthInRangeFor.minMaxInclusive(null, 3, 6, null, null),
+         //Debug every line OFF:
+            null, null, //dbgEveryLine and its line-range
+         //Debug all lines:
+            //System.out, null,
+         //Debug lines 3-6:
+            //System.out, com.github.xbn.number.NewLengthInRangeFor.minMaxInclusive(null, 3, 6, null, null),
          javaMlcStealth, javaDocBlock);
 
       while(filteredItr.hasNext())  {

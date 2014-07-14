@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang;
-   import  com.github.xbn.text.CrashIfString;
    import  com.github.xbn.testdev.CompositionConstructor;
    import  com.github.xbn.testdev.CompositionFunction;
 /**

@@ -14,11 +14,9 @@
 \*license*/
 package  com.github.xbn.experimental;
    import  com.github.xbn.array.CrashIfIndex;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.util.lock.AbstractOneWayLockable;
    import  java.util.Iterator;
    import  java.util.ArrayList;
-   import  java.util.NoSuchElementException;
 /**
    <P>Iterator for a <I>series</I> of iterators, treating each as if it were a column in an odometer--getting every possible combination. IterationOdometer properly deals with each column 'flipping' (from 9 back to 0), and incrementing the 'higher'-place column (its left neighbor) when the flip occurs.</P>
 
@@ -93,7 +91,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
 
       @return  {@code addColumnsFrom(itr_odometer, false)}
     **/
-   public final IterationOdometer<T> addColumnsFrom(IterationOdometer itr_odometer)  {
+   public final IterationOdometer<T> addColumnsFrom(IterationOdometer<T> itr_odometer)  {
       return  addColumnsFrom(itr_odometer, false);
    }
 
@@ -107,7 +105,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
       @see  #addColumnsFrom(IterationOdometer) addColumnsFrom(iod)
       @see  #addColumn(Iterable)
     **/
-   public final IterationOdometer<T> addColumnsFrom(IterationOdometer itr_odometer, boolean does_containLastColumn)  {
+   public final IterationOdometer<T> addColumnsFrom(IterationOdometer<T> itr_odometer, boolean does_containLastColumn)  {
       ciLocked();
 
 
@@ -153,7 +151,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    public final boolean wasLastColumnAdded()  {
       return  bLastColAdded;
    }
-   public final IterationOdometer lastColumnAdded()  {
+   public final IterationOdometer<T> lastColumnAdded()  {
   	   bLastColAdded = true;
       return  this;
    }
@@ -265,7 +263,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
       ArrayList<String> vs = new ArrayList<String>(string_elements.length);
       IteratorIOD<T> ioditrt = (IteratorIOD<T>)iterator();
 
-      boolean bQ = false;
+//		boolean bQ = false;
 
       while(ioditrt.hasNext())  {
          if(elements_toBypassCount > 0)  {

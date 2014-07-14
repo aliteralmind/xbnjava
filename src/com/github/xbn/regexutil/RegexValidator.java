@@ -15,11 +15,8 @@
 package  com.github.xbn.regexutil;
    import  java.util.regex.Matcher;
    import  java.util.regex.Pattern;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.analyze.validate.NullnessValidator;
-   import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.regexutil.z.RegexValidator_Fieldable;
    import  com.github.xbn.text.padchop.VzblPadChop;
    import  com.github.xbn.text.padchop.NewVzblPadChopFor;

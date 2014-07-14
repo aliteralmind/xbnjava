@@ -13,10 +13,10 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.analyze.alter.Altered;
    import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
-   import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.analyze.alter.AbstractValueAlterer;
    import  com.github.xbn.lang.Adapter;
    import  com.github.xbn.lang.SimpleAdapter;
@@ -35,8 +35,8 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
       <P>Equal to
       <BR> &nbsp; &nbsp; <CODE>{@link #StringReplacer(StringValidatorReplacer) this}(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull))</CODE></P>
     **/
-   public StringReplacer(RegexReplacer replacer, ValidResultFilter vfr_unfilteredIfNull)  {
-      this(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull));
+   public StringReplacer(RegexReplacer replacer, AlterationRequired required, ValidResultFilter vfr_unfilteredIfNull)  {
+      this(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull), required);
    }
    /**
       <P>Create a new instance from a {@code StringValidatorReplacer}.</P>
@@ -44,11 +44,11 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
       <P>This sets {@link com.github.xbn.analyze.alter.AbstractValueAlterer#doesExpire() doesExpire}{@code ()}* to  <CODE>sv_replacer.{@link com.github.xbn.analyze.validate.AbstractValidator#doesExpire() doesExpire}()</CODE>.
 
       @param  sv_replacer  May not be {@code null} or {@link com.github.xbn.lang.Expirable#isExpired() expired}. Get with {@link #getAdapted() getAdapted}{@code ()}. Get the {@link com.github.xbn.regexutil.RegexReplacer RegexReplacer} with {@link #getRegexReplacer() getRegexReplacer}{@code ()}.
-      @see  #StringReplacer(RegexReplacer, ValidResultFilter) this(rr,vrf)
+      @see  #StringReplacer(RegexReplacer, AlterationRequired, ValidResultFilter) this(rr,ar,vrf)
       @see  #StringReplacer(StringReplacer) this(sr)
     **/
-   public StringReplacer(StringValidatorReplacer sv_replacer)  {
-      super();
+   public StringReplacer(StringValidatorReplacer sv_replacer, AlterationRequired required)  {
+      super(required);
       sa = new SimpleAdapter<StringValidatorReplacer>(sv_replacer, "sv_replacer");
       if(sv_replacer.isExpired())  {
          throw  new IllegalArgumentException("sv_replacer.isExpired() is true");

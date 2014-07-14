@@ -13,8 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.text;
-   import  com.github.xbn.array.Duplicates;
-   import  com.github.xbn.regexutil.IgnoreCase;
    import  com.github.xbn.io.RTIOException;
    import  com.github.xbn.lang.CrashIfObject;
    import  java.io.BufferedReader;

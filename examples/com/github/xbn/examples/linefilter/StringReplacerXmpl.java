@@ -12,6 +12,7 @@
    You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA*)
 \*license*/
 package  com.github.xbn.examples.linefilter;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
@@ -34,7 +35,7 @@ public class StringReplacerXmpl  {
          null);     //<--Debug filter: System.out. No debug: null
 
       StringReplacer svrTDotToThe234 = AdaptRegexReplacerTo.stringReplacer(
-         Pattern.compile("T.", Pattern.LITERAL),
+         AlterationRequired.YES, Pattern.compile("T.", Pattern.LITERAL),
          "The", ReplacedInEachInput.FIRST, vrf,
             null);  //<--Debug replacer
 

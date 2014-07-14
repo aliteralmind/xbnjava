@@ -116,9 +116,13 @@ public interface Alterer extends Analyzer  {
     **/
    int getAlteredCount();
    /**
+      <P>Is it required that this alterer actually makes an alteration?.</P>
+    **/
+   boolean isRequired();
+   /**
       <P>Was an alteration made (at any time in the past) and, if a multi-part alteration, did it finish?.</P>
 
-      @return  At it's simplest, this can return
+      @return  If {@link #isRequired() isRequired}{@code ()} is {@code false}, this always returns {@code true}. Otherwise, at it's simplest, this can return
       <BR> &nbsp; &nbsp; <CODE>({@link #getAlteredCount() getAlteredCount}() != 0)</CODE>
       @see  #appendIncompleteInfo(StringBuilder)
     **/

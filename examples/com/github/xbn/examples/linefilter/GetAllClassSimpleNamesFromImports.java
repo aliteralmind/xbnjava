@@ -56,19 +56,20 @@ public class GetAllClassSimpleNamesFromImports  {
          null);        //debug (on:System.out, off:null)
 
       StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.
-         javaComment(null, IncludeJavaDoc.YES,
-            null,      //dbgStart
-            null,      //dbgEnd
-            KeepMatched.NO, EntityRequired.YES, onOffFilter,
-            null);     //dbgLineNums
+         javaComment(null, KeepMatched.NO, EntityRequired.YES,
+            IncludeJavaDoc.YES,
+               null,      //dbgStart
+               null,      //dbgEnd
+            onOffFilter,
+               null);     //dbgLineNums
 
       SingleLineEntity importLineEntity = NewSingleLineEntityFor.
-         replacement("importline", KeepMatched.YES,
-         Pattern.compile(JavaRegexes.IMPORT_LINE_CAPTURE_SIMPLE_NAME), "$1",
-         ReplacedInEachInput.FIRST,
-         null,         //dbgAlter
-         EntityRequired.YES, null,
-         null);        //dbgLineNums
+         replacement("importline", KeepMatched.YES, EntityRequired.YES,
+            Pattern.compile(JavaRegexes.IMPORT_LINE_CAPTURE_SIMPLE_NAME), "$1",
+            ReplacedInEachInput.FIRST,
+               null,      //dbgAlter
+            null,
+               null);     //dbgLineNums
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(
          rawInputLineItr, Returns.KEPT, KeepUnmatched.NO,

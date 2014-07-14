@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn;
    import java.util.*;
-   import static java.lang.Math.abs;
 /**
    <P>Demonstrates the use of test-data in an application requiring user-input at the console, preventing the need for user-input during development. This is an answer to
    <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/21584988/looping-with-different-variables">http://stackoverflow.com/questions/21584988/looping-with-different-variables</A></CODE></P>

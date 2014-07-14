@@ -24,11 +24,9 @@ package  com.github.xbn.experimental.listify.arrayofsame;
    import  com.github.xbn.list.CollectionUtil;
    import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
    import  com.github.xbn.util.copyval.ValueCopier;
-   import  java.util.Arrays;
    import  java.util.Collection;
    import  java.util.Iterator;
    import  java.util.List;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For building listifiers whose raw object is a primitive array, and whose virtual elements are their wrapper-types (such as {@code int[]} and {@code java.lang.Integer}).</P>
 

@@ -1,6 +1,5 @@
 package  com.github.xbn.experimental.xcontext;
    import  com.github.xbn.text.CrashIfString;
-   import  static com.github.xbn.lang.XbnConstants.*;
 
 /**
    <P>Implementation of {@code ExceptionContextElement}.</P>

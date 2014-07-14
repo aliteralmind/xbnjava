@@ -12,7 +12,7 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.examples.txt.regex.non_xbn;
+package  com.github.xbn.examples.regexutil.non_xbn;
    import  java.util.regex.Pattern;
    import  java.util.regex.Matcher;
 /**

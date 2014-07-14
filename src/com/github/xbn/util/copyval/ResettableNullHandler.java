@@ -13,8 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.copyval;
-   import  com.github.xbn.lang.Copyable;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Mutable {@code NullHandler} for static internal use only.</P>
 

@@ -12,6 +12,8 @@
    </target>
 
    <target name="doc" description="Generates javadoc documentation.">
+      <copy file="${dir_src_xbn}prev_versions.html" todir="${dir_build_docs_javadoc}"/>
+
       <!--
          Packages need to be delimited by both commas and colons.  In build.properties, it's only delimited by commas.  Commas (with or without spaces) are needed by the JavaDoc "packagenames" attribute, and colons (without spaces) are needed by the "group" sub-tags.
 
@@ -87,12 +89,16 @@
          <fileset dir="${dir_sandbox_examples}com/github/xbn/examples/linefilter/" includes="*_input.txt"/>
       </copy>
 
+      <replace file="${dir_build_docs_javadoc}overview-summary.html" summary="yes"
+      	token="${version}" value="${version.number}"/>
+
       <replace dir="${dir_build_docs_javadoc}" summary="yes">
          <replacetoken><![CDATA[</head>]]></replacetoken>
          <replacevalue><![CDATA[<meta name="viewport" content="width=device-width" />
 </HEAD>]]></replacevalue>
       </replace>
-      <java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true">
+
+      <java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true" classpathref="project_classpath">
          <arg value="${dir_build_docs_javadoc}"/>
          <arg value="com.github.xbn."/>
          <arg value="analyze.validate.z,io,keyed,linefilter.entity.raw.z,linefilter.entity.z,list.lister.z,neederneedable,number,number.z,regexutil.z,text.padchop.z,util"/>

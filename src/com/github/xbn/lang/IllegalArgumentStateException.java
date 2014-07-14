@@ -22,6 +22,10 @@ package  com.github.xbn.lang;
  **/
 public class IllegalArgumentStateException extends IllegalArgumentException  {
    /**
+    * 
+    */
+   private static final long serialVersionUID = 1827662705643375426L;
+   /**
       <P>Create a IllegalArgumentStateException with no error message.</P>
     **/
    public IllegalArgumentStateException()  {

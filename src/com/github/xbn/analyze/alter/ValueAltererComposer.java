@@ -30,6 +30,9 @@ public class ValueAltererComposer<V,A> extends AltererComposer  {
    public ValueAltererComposer()  {
       super();
    }
+   public ValueAltererComposer(AlterationRequired required)  {
+      super(required);
+   }
    public ValueAltererComposer(boolean ignored, ValueAltererComposer to_copy)  {
       super(ignored, to_copy);
    }

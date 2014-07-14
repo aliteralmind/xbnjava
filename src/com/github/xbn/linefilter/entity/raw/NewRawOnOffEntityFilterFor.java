@@ -39,7 +39,7 @@ class FilterAlways<L> implements RawOnOffEntityFilter<L>  {
       pre = pre_state;
       post = post_state;
    }
-   public FilterAlways(FilterAlways to_copy)  {
+   public FilterAlways(FilterAlways<L> to_copy)  {
       try  {
          pre = to_copy.pre;
       }  catch(RuntimeException rx)  {

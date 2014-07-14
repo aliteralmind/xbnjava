@@ -7,7 +7,7 @@
       </target>
          <target name="docclean"
                description="Delete the entire build documentation directory">
-            <delete dir="${DIR_bld_docs}" includeemptydirs="true" quiet="true"/>
+            <delete dir="${dir_build_docs}" includeemptydirs="true" quiet="true"/>
          </target>
          <target name="delete_build_javadoc"
                description="Delete the build JavaDoc directory">

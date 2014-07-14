@@ -14,7 +14,6 @@
 \*license*/
 package  com.github.xbn.array.z;
    import  com.github.xbn.array.XbnArrayIndexOutOfBoundsException;
-   import  java.util.Collection;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring an {@link com.github.xbn.array.XbnArrayIndexOutOfBoundsException XbnArrayIndexOutOfBoundsException}.</P>
 

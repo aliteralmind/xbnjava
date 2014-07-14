@@ -44,18 +44,18 @@ public class PrintAllJavaDocBlockStartAndEndLineNums  {
       //Example proper:
 
       StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.javaComment(
-         "comment", IncludeJavaDoc.NO,
-         null,         //dbgStart (on:System.out, off:null)
-         null,         //dbgEnd
-         KeepMatched.YES, EntityRequired.YES, null,
-         null);        //dbgLineNums
+         "comment", KeepMatched.YES, EntityRequired.YES, IncludeJavaDoc.NO,
+            null,      //dbgStart (on:System.out, off:null)
+            null,      //dbgEnd
+         null,         //on-off filter
+            null);     //dbgLineNums
 
       BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
-         "doccomment",
-         null,       //dbgStart
-         null,       //dbgEnd
-         EntityRequired.YES, null,
-         null).      //dbgLineNums
+         "doccomment", EntityRequired.YES,
+            null,      //dbgStart
+            null,      //dbgEnd
+         null,         //on-off filter
+            null).     //dbgLineNums
          keepAll().build();
 
       FilteredLineIterator filteredItr = new FilteredLineIterator(

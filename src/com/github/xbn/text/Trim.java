@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.text;
-   import  com.github.xbn.util.EnumUtil;
 /**
    <P>Should the string be trimmed?.</P>
 

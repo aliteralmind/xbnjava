@@ -13,21 +13,16 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.analyze.validate.NullnessValidator;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
    import  com.github.xbn.analyze.validate.ResultReturnedBy;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
    import  com.github.xbn.analyze.validate.Validator;
-   import  com.github.xbn.analyze.validate.ValidatorComposer;
    import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.analyze.validate.ValueValidatorAdapter;
-   import  com.github.xbn.analyze.validate.z.ValueValidator_Cfg;
    import  com.github.xbn.io.TextAppenter;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.lang.ObjectOrCrashIfNull;
    import  com.github.xbn.lang.RuleType;
-   import  com.github.xbn.lang.RuleableComposer;
    import  com.github.xbn.lang.SimpleAdapter;
-   import  com.github.xbn.neederneedable.Needer;
    import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
    import  com.github.xbn.regexutil.RegexReplacer;
    import  com.github.xbn.regexutil.RegexValidator;
@@ -90,8 +85,8 @@ public class NewTextLineValidatorFor  {
    /**
       <P>A new text-line validator that identifies <I>and replaces</I> the line's text based on a regular expression.</P>
     **/
-   public static final TextLineValidatorAdapter<StringValidatorReplacer> textReplacer(Pattern find_what, String rplcWith_direct, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
-      return  new TLVForSVR(AdaptRegexReplacerTo.stringValidator(find_what, rplcWith_direct, ReplacedInEachInput.MATCHES, filter_ifNonNull, dbgDest_ifNonNull));
+   public static final TextLineValidatorAdapter<StringValidatorReplacer> textReplacer(AlterationRequired required, Pattern find_what, String rplcWith_direct, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
+      return  new TLVForSVR(AdaptRegexReplacerTo.stringValidator(required, find_what, rplcWith_direct, ReplacedInEachInput.MATCHES, filter_ifNonNull, dbgDest_ifNonNull));
    }
 }
 class TLVForSVR extends SimpleAdapter<StringValidatorReplacer> implements TextLineValidatorAdapter<StringValidatorReplacer>  {

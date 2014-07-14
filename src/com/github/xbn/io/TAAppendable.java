@@ -17,7 +17,6 @@ package  com.github.xbn.io;
    import  java.io.Flushable;
    import  java.io.PrintStream;
    import  java.io.IOException;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Immutable {@code TextAppender} for {@code Appendable}-s. See {@link com.github.xbn.io.TAAppendMutable TAAppendMutable}.</P>
 

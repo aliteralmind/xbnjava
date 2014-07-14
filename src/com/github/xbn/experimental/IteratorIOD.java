@@ -25,7 +25,7 @@ package  com.github.xbn.experimental;
    <P>The {@code hasNext()} function in this class was one of the more challenging programming exercises I've encountered.</P>
  **/
 public class IteratorIOD<T> implements Iterator<ArrayList<T>>  {
-   private int iodColCount = -1;
+//	private int iodColCount = -1;
    private ArrayList<Iterable<T>> vitrblt = null;
    private ArrayList<Iterator<T>> vitrt = null;
    private int ixLastColumn = -1;

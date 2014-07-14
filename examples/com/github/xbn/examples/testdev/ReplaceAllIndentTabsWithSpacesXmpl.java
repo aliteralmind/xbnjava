@@ -18,7 +18,6 @@ package  com.github.xbn.examples.testdev;
    import  com.github.xbn.testdev.ReplaceAllIndentTabsWithSpaces;
    import  com.github.xbn.testdev.TabToSpaceDebugLevel;
    import  java.io.File;
-   import  java.io.IOException;
    import  java.nio.file.Path;
    import  java.util.Iterator;
    import  java.util.Scanner;

@@ -22,6 +22,10 @@ package  com.github.xbn.experimental;
 public class BadInterfaceBehaviorException extends RuntimeException  {
 
    /**
+    * 
+    */
+   private static final long serialVersionUID = 662435855718670622L;
+   /**
       <P>Create an BadInterfaceBehaviorException with no error message.</P>
     **/
    public BadInterfaceBehaviorException()  {

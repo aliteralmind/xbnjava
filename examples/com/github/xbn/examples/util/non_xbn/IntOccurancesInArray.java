@@ -44,7 +44,7 @@ public class IntOccurancesInArray  {
 
       int[] ai100 = new int[100];
 
-      int i = 0;
+//		int i = 0;
       while(itrInts.hasNext())  {
          int iValue = itrInts.next();
          int iHits = mpNumWHits.get(iValue);

@@ -17,10 +17,7 @@ package  com.github.xbn.text;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.analyze.validate.z.ValueValidator_Fieldable;
    import  com.github.xbn.analyze.validate.NullnessValidator;
-   import  com.github.xbn.analyze.validate.z.SimpleValidator_F;
-   import  com.github.xbn.lang.SimpleAdapter;
    import  com.github.xbn.lang.Adapter;
-   import  com.github.xbn.analyze.validate.AbstractValidator;
 /**
    <P>For adapting something into a string validator.</P>
 

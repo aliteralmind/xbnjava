@@ -29,7 +29,7 @@ package  com.github.xbn.examples.lang.functor;
  **/
 public class WriterForAppendableAnonCls extends Writer  {
    public static final void main(String[] ignored)  {
-      Writer wrtr = new WriterForAppendable(System.out);
+      Writer wrtr = new WriterForAppendableAnonCls(System.out);
       try  {
          wrtr.append("hello");
          wrtr.close();            //System.out isn't closeable, but let's do it anyway...
@@ -40,7 +40,7 @@ public class WriterForAppendableAnonCls extends Writer  {
    private final Appendable apbl;
    private final Flushable  flshbl;
    private final Closeable  clsbl;
-   public WriterForAppendable(Appendable apbl)  {
+   public WriterForAppendableAnonCls(Appendable apbl)  {
       if(apbl == null)  {
          throw  new NullPointerException("apbl");
       }

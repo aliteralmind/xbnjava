@@ -24,7 +24,11 @@ package  com.github.xbn.number;
   201011     je               Added mixed-numbers and testing function</PRE>
 **/
 public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
-/*
+/**
+    * 
+    */
+   private static final long serialVersionUID = 8586858857475058852L;
+   /*
    public static final void main(String[] ignored)  {
       System.out.println("Parse string 5/10:");
 
@@ -489,7 +493,6 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
          return  getNumerator() + "/" + getDenominator();
    }
 
-   private static String sZQB = "]";
    private static final String LINE_SEP = System.getProperty("line.separator", "\n");
 
    public final String test_values(long mixed_wholeNum, long mixed_numerator, long mixed_denominator, long unmixed_numerator, long unmixed_denominator, String mixed_fracStr, String unmixedFrac_str)  {

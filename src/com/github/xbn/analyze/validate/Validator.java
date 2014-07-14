@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate;
-   import  com.github.xbn.lang.Copyable;
    import  com.github.xbn.lang.ExtraErrInfoable;
    import  com.github.xbn.analyze.Analyzer;
       import  com.github.xbn.lang.Ruleable;

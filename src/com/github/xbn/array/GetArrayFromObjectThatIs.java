@@ -172,6 +172,7 @@ public class GetArrayFromObjectThatIs  {
       try  {
          switch(getELType())  {
             case BOOLEAN: return  getAOBoolean().length;
+            case BYTE:   return   getAOByte().length;
             case SHORT:   return  getAOShort().length;
             case INT:     return  getAOInt().length;
             case LONG:    return  getAOLong().length;

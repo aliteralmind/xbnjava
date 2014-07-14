@@ -15,7 +15,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
-   import  com.github.xbn.lang.CrashIfObject;
 /**
    <P>Indicates an alteration was attempted, but was not made.</P>
 
@@ -25,6 +24,10 @@ package  com.github.xbn.analyze.alter;
 
  **/
 public class AlterationNotMadeException extends IllegalArgumentException  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = -6649923180589226650L;
    public AlterationNotMadeException()  {
    }
    public AlterationNotMadeException(String message)  {

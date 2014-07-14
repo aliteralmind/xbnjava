@@ -15,7 +15,6 @@
 package  com.github.xbn.array;
    import  com.github.xbn.text.StringWithNullDefault;
    import  com.github.xbn.lang.IllegalArgumentStateException;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  com.github.xbn.lang.CrashIfObject;
 /**
    <P>Data related to an {@code XbnIndexOutOfBoundsException} when a single <I>index</I> is bad.</P>

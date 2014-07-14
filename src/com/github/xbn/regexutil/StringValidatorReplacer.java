@@ -13,11 +13,8 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
-   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
-   import  java.util.regex.Pattern;
    import  com.github.xbn.analyze.validate.ValueValidatorAdapter;
    import  com.github.xbn.analyze.validate.z.SimpleValueValidator_F;
-   import  com.github.xbn.analyze.validate.ValidResultFilterUtil;
    import  com.github.xbn.analyze.validate.ValidResultFilter;
 /**
    <P>Adapts a {@code RegexReplacer} into a string-validator, where <CODE><I>[RegexReplacer]</I>.wasJustMatched()</CODE> determines validity--The replacement is made available via {@link #getMostRecentReplaced() getMostRecentReplaced}{@code ()}.</P>

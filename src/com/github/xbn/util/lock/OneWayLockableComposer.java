@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.lock;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>For classes needing to implement {@code OneWayLockable}, that cannot extend {@code AbstractOneWayLockable}. See {@link com.github.xbn.util.lock.LockableComposer LockableComposer} for implementation details.</P>
  **/

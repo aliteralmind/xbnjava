@@ -28,8 +28,6 @@ package  com.github.xbn.list;
    import  java.util.List;
    import  java.util.Objects;
    import  org.apache.commons.lang3.StringUtils;
-   import  static com.github.xbn.lang.CrashIfBase.*;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Translate lists to arrays and lists of primitives, objects, and strings, and other list-related utilities.</P>
 
@@ -44,10 +42,10 @@ public class ListUtil  {
     **/
    public static final void deleteElementsNotInAscUnqIndexList(List<?> list, List<Integer> list_ofUniqueAscIdxsToDelete)  {
       int iOrigSz = -1;
-      int iLXSz = -1;
+//		int iLXSz = -1;
       try  {
          iOrigSz = list.size();
-         iLXSz = list_ofUniqueAscIdxsToDelete.size();
+//			iLXSz = list_ofUniqueAscIdxsToDelete.size();
       }  catch(RuntimeException rx)  {
          Objects.requireNonNull(list, "list");
          throw  CrashIfObject.nullOrReturnCause(list_ofUniqueAscIdxsToDelete, "list_ofUniqueAscIdxsToDelete", null, rx);

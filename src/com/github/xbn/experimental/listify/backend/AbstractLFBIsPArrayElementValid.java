@@ -14,8 +14,6 @@
 \*license*/
 package  com.github.xbn.experimental.listify.backend;
    import  com.github.xbn.array.helper.PrimitiveArrayHelper;
-   import  java.util.Iterator;
-   import  java.util.List;
    import  com.github.xbn.analyze.validate.ValueValidator;
    import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**

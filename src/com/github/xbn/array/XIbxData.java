@@ -17,7 +17,6 @@ package  com.github.xbn.array;
    import  com.github.xbn.lang.IllegalArgumentStateException;
    import  com.github.xbn.text.StringWithNullDefault;
    import  java.util.Collection;
-   import  static com.github.xbn.lang.XbnConstants.*;
 /**
    <P>Data accessors for {@code Xbn*IndexOutOfBoundsException}-s.</P>
 

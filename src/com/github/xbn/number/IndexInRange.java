@@ -16,11 +16,7 @@ package  com.github.xbn.number;
    import  com.github.xbn.lang.RuleType;
    import  com.github.xbn.lang.Invert;
    import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.array.ArrayUtil;
-   import  static com.github.xbn.lang.XbnConstants.*;
    import  static com.github.xbn.lang.CrashIfBase.*;
-   import  com.github.xbn.text.StringUtilBase;  //Must import Base, otherwise circular dependency
-   import  java.util.Collection;
 
 /**
    <P>Determines if an index is within an {@code IndexRange}.</P>

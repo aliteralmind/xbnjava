@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
-   import  com.github.xbn.util.EnumUtil;
 /**
    <P>When using a series of alterers, should the <I>thing being altered</I> be altered by all of them, cumulatively, or by one-at-the-most?.</P>
 

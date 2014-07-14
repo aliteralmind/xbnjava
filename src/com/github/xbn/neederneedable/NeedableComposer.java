@@ -16,8 +16,6 @@ package  com.github.xbn.neederneedable;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.testdev.CompositionConstructor;
    import  com.github.xbn.testdev.CompositionFunction;
-   import  static com.github.xbn.lang.XbnConstants.*;
-   import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
    <P>For classes that need to implement {@code Needable}, that cannot extend {@code AbstractNeedable}.</P>
 

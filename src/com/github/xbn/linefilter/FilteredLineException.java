@@ -13,7 +13,6 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.lang.CrashIfObject;
 /**
    <P>Indicates a problem with a line being filtered.</P>
 
@@ -22,6 +21,10 @@ package  com.github.xbn.linefilter;
 
  **/
 public class FilteredLineException extends IllegalArgumentException  {
+   /**
+    * 
+    */
+   private static final long serialVersionUID = -466381548710281347L;
    private final int lineNum;
    private final Object line;
    public FilteredLineException(int line_num, Object line, String message)  {

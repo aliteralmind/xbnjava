@@ -15,11 +15,11 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 
-package  com.github.xbn.examples.lang;
+package  com.github.xbn.examples.lang.non_xbn;
 /**
    <P>Inserts an element into an existing array, moving all subsequent elements to the right (discarding the last).</P>
 
-   <P>{@code java com.github.xbn.examples.lang.ManualArrayInsertWItrDiscardLastElement}</P>
+   <P>{@code java com.github.xbn.examples.lang.non_xbn.ManualArrayInsertWItrDiscardLastElement}</P>
 
    @see  com.github.xbn.examples.lang.ManualArrayInsertWItrIntoNewArray
    @since 0.1.0

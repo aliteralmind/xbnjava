@@ -15,9 +15,6 @@
 package  com.github.xbn.examples.io;
    import  java.io.IOException;
    import  com.github.xbn.io.IOUtil;
-   import  java.io.Closeable;
-   import  java.io.Flushable;
-   import  java.io.Writer;
 /**
    <P>Adapt a {@code java.lang.}{@link java.lang.Appendable Appendable} into a {@code java.io.}{@link java.io.Writer Writer}, using <CODE>xbn.io.{@link com.github.xbn.io.IOUtil IOUtil}.{@link com.github.xbn.io.IOUtil#newWriterForAppendable(Appendable) newWriterForAppendable}(apbl)</CODE></P>
 

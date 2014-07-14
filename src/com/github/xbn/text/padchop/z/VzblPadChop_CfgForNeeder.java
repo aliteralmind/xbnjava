@@ -21,7 +21,6 @@ package  com.github.xbn.text.padchop.z;
    import  com.github.xbn.text.padchop.VzblPadChop;
    import  com.github.xbn.neederneedable.AbstractNeedableWithSubs;
    import  com.github.xbn.neederneedable.Needer;
-   import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
    <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}.</P>
 
