@@ -6,13 +6,13 @@
    </target>
 
    <target name="jar">
-      <delete file="${dir_build_download}${project_name_with_version}_all.jar"/>
-      <delete file="${dir_build_download}${project_name_with_version}_core.jar"/>
-      <jar destfile="${dir_build_download}${project_name_with_version}_all.jar"
+      <delete file="${project_all_jar}"/>
+      <delete file="${dir_build_download}${project_name_with_version}.jar"/>
+      <jar destfile="${project_all_jar}"
          basedir="${build.class.dir}"
          includes="${com_github_xbn}**/*.class"
       />
-      <jar destfile="${dir_build_download}${project_name_with_version}_core.jar"
+      <jar destfile="${dir_build_download}${project_name_with_version}.jar"
          basedir="${build.class.dir}"
          includes="${com_github_xbn}**/*.class"
          excludes="${com_github_xbn}examples${fs}**/*.class,${com_github_xbn}test${fs}**/*.class"

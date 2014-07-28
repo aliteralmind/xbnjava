@@ -9,7 +9,7 @@
    <property name="fs" value="${file.separator}"/>      <!-- Shortcut -->
 
    <property name="project_name_fs" value="${project.name}${fs}"/>
-   <property name="project_name_with_version" value="${project.name}_${version.number}"/>
+   <property name="project_name_with_version" value="${project.name}-${version.number}"/>
 
    <!-- Ignores base directories -->
    <property name="com_github_xbn" value="com${fs}github${fs}xbn${fs}"/>
@@ -28,7 +28,10 @@
    <property name="dir_build_parent" value="${build.dir}${fs}"/>
       <property name="dir_classes_xbn" value="${build.class.dir}${fs}${com_github_xbn}"/>
       <property name="dir_build" value="${dir_build_parent}${project_name_with_version}${fs}"/>
-      <property name="dir_build_download" value="${dir_build}download${fs}"/>
+         <property name="dir_build_download" value="${dir_build}download${fs}"/>
+            <property name="download_zip_docs" value="${dir_build_download}${download_zip_docs_name}"/>
+            <property name="download_zip_source" value="${dir_build_download}${download_zip_source_name}"/>
+            <property name="project_all_jar" value="${dir_build_download}${project_name_with_version}-all.jar"/>
          <property name="dir_build_docs" value="${dir_build}documentation${fs}"/>
             <property name="dir_build_docs_javadoc" value="${dir_build_docs}javadoc${fs}"/>
 
@@ -48,7 +51,7 @@
          <include name="commons-io-2.4.jar"/>
          <include name="commons-lang3-3.3.2.jar"/>
          <include name="junit-4.11.jar"/>
-         <include name="codelet_0p1p0_all.jar"/>
+         <include name="codelet_0p1p0-all.jar"/>
       </fileset>
  -->
       <pathelement location="${build.class.dir}"/>
@@ -72,6 +75,14 @@ The *documentation* for both XBN-Java and Template Feather use codelets. But Cod
   -4- Finish building XBN-Java proper (part 2 of 2): pubpostcodelet
   -5- Finish building Template Feather (part 2 of 2): pubpostcodelet
 
+Actually, to avoid JavaDoc errors, the following steps should be taken instead of the above step 5.
+
+  -5- Upload XBN-Java to aliteralmind.com
+  -6- Finish building Template Feather (part 2 of 2): pubpostcodelet
+  -7- Upload Template Feather to aliteralmind.com
+  -8- Rerun "ant doczip" in Codelet
+  -9- Upload Codelet to aliteralmind.com
+
 Documentation for both XBN-Java and Template Feather can be generated before Codelet is built. The example codes will be excluded.</echo>
    </target>
 
@@ -90,8 +101,11 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
          optional="true"/>
 
    <target name="copycodeletjars" description="Duplicates the 'core' jars files from the Codelet and Template Featherweight build directories.">
-      <copy file="${base.dir}\\build\\${codelet_project_name_and_version}\\download\\${codelet_project_name_and_version}_core.jar" todir="${dir_sandbox_jar_dependencies}"/>
-      <copy file="${base.dir}\\build\\${templatefeather_project_name_and_version}\\download\\${templatefeather_project_name_and_version}_core.jar" todir="${dir_sandbox_jar_dependencies}"/>
+      <property name="codelet_project_name_and_version" value="codelet-${codelet_project_version}"/>
+      <copy file="${base.dir}\\build\\${codelet_project_name_and_version}\\download\\${codelet_project_name_and_version}.jar" todir="${dir_sandbox_jar_dependencies}"/>
+
+      <property name="templatefeather_project_name_and_version" value="templatefeather-${templatefeather_project_version}"/>
+      <copy file="${base.dir}\\build\\${templatefeather_project_name_and_version}\\download\\${templatefeather_project_name_and_version}.jar" todir="${dir_sandbox_jar_dependencies}"/>
    </target>
    <target name="-autocopycodeletjars" if="do.auto.copy.codelet.jars">
       <antcall target="copycodeletjars"/>
@@ -105,8 +119,8 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <record name="${dir_build}build_log_pre_codelet.txt" action="stop"/>
    </target>
 
-   <target name="pubprecodelet2" description="compileexample, pubprecodelet3">
-      <antcall target="compileexample"/>
+   <target name="pubprecodelet2" description="compileexamples, pubprecodelet3">
+      <antcall target="compileexamples"/>
       <antcall target="pubprecodelet3"/>
    </target>
 
@@ -117,14 +131,28 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <antcall target="unit"/>
    </target>
 
-   <target name="poc" description="Shortcut for pubpostcodelet.">
+   <target name="poc" description="Shortcut for pubpostcodelet">
       <antcall target="pubpostcodelet"/>
    </target>
-   <target name="pubpostcodelet" description="compilepostcodelet, doc, zip">
+   <target name="pubpostcodelet" description="compilepostcodelet, doczip, preppoms">
       <record name="${dir_build}build_log_post_codelet.txt" action="start"/>
       <antcall target="-autocopycodeletjars"/>
       <antcall target="compilepostcodelet"/>
       <antcall target="doczip"/>
+      <antcall target="preppoms"/>
+      <record name="${dir_build}build_log_post_codelet.txt" action="stop"/>
+   </target>
+
+   <target name="pocnd" description="Shortcut for pubpostcodeletnodoc">
+      <antcall target="pubpostcodeletnodoc"/>
+   </target>
+   <target name="pubpostcodeletnodoc" description="Same as pubpostcodelet, without doc">
+      <record name="${dir_build}build_log_post_codelet.txt" action="start"/>
+      <antcall target="-autocopycodeletjars"/>
+      <antcall target="compilepostcodelet"/>
+      <antcall target="zip"/>
+      <antcall target="zip2"/>
+      <antcall target="preppoms"/>
       <record name="${dir_build}build_log_post_codelet.txt" action="stop"/>
    </target>
 
@@ -152,6 +180,19 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
          <property name="@{propname}" value="${@{valuepropname}}"/>
       </sequential>
    </macrodef>
+
+   <target name="pp" description="Shortcut for preppoms.">
+      <antcall target="preppoms"/>
+   </target>
+   <target name="preppoms" description="Moves z_build/pom_source_file.xml to pom.xml, and sets the proper version number.">
+      <property name="pom_xml_dest" value="${dir_sandbox}pom.xml"/>
+      <delete file="${pom_xml_dest}"/><!-- Originates in task preppoms. Needed by task clean -->
+      <copy file="${dir_sandbox_bldfiles}pom_source_file.xml" tofile="${pom_xml_dest}"/>
+      <replace file="${pom_xml_dest}" summary="yes"
+         token="^{project_version_for_jd}" value="${version.number}"/>
+      <replace file="${pom_xml_dest}" summary="yes"
+         token="^{project_build_dir}" value="${dir_build_parent}"/>
+   </target>
 
    <target name="pot" description="Shortcut for pubposttabs.">
       <antcall target="pubposttabs"/>

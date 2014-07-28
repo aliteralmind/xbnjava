@@ -13,19 +13,19 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.testdev;
-   import  com.google.common.base.Joiner;
-   import  com.github.xbn.util.EnumUtil;
-   import  com.github.xbn.regexutil.IgnoreCase;
-   import  com.github.xbn.io.NewTextAppenterFor;
-   import  com.github.xbn.io.PlainTextFileUtil;
-   import  com.github.xbn.io.TextAppenter;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.number.IntInRange;
-   import  com.github.xbn.number.NewIntInRangeFor;
-   import  com.github.xbn.util.GetBooleanFromString;
-   import  java.util.Arrays;
-   import  java.util.Iterator;
-   import  static com.github.xbn.lang.XbnConstants.*;
+   import com.github.xbn.io.NewTextAppenterFor;
+   import com.github.xbn.io.PlainTextFileUtil;
+   import com.github.xbn.io.TextAppenter;
+   import com.github.xbn.lang.CrashIfObject;
+   import com.github.xbn.number.IntInRange;
+   import com.github.xbn.number.NewIntInRangeFor;
+   import com.github.xbn.regexutil.IgnoreCase;
+   import com.github.xbn.util.EnumUtil;
+   import com.github.xbn.util.GetBooleanFromString;
+   import com.google.common.base.Joiner;
+   import java.util.Arrays;
+   import java.util.Iterator;
+   import static com.github.xbn.lang.XbnConstants.LINE_SEP;
 /**
    <P>Get an object at a specific index, from command line parameters.</P>
 

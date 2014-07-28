@@ -1,24 +1,24 @@
 <project name="compile_examples" basedir=".">
    <property name="dir_src_examples" value="${dir_sandbox_examples}${com_github_xbn}examples${fs}"/>
 
-   <target name="compileexample">
-      <antcall target="-compileexampleasawhole"/>
-      <antcall target="-compileexample1by1"/>
+   <target name="compileexamples">
+      <antcall target="-compileexamplesasawhole"/>
+      <antcall target="-compileexamples1by1"/>
    </target>
-   <target name="-compileexampleasawhole" if="compile.as.a.whole">
-      <antcall target="compileexampleasawhole"/>
+   <target name="-compileexamplesasawhole" if="compile.as.a.whole">
+      <antcall target="compileexamplesasawhole"/>
    </target>
-   <target name="-compileexample1by1" unless="compile.as.a.whole">
-      <antcall target="compileexample1by1"/>
-      <antcall target="compileexample1by1b"/>
+   <target name="-compileexamples1by1" unless="compile.as.a.whole">
+      <antcall target="compileexamples1by1"/>
+      <antcall target="compileexamples1by1b"/>
    </target>
-   <target name="compileexampleasawhole" description="Compiles all XBN-Java example code in a single javac call.">
+   <target name="compileexamplesasawhole" description="Compiles all XBN-Java example code in a single javac call.">
       <javac srcdir="${dir_sandbox_examples}" classpathref="project_classpath" listfiles="false" includeantruntime="true" createMissingPackageInfoClass="false"
          destdir="${build.class.dir}"
          includes="**/*.java"/>
    </target>
 
-   <target name="compileexample1by1">
+   <target name="compileexamples1by1">
       <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
          includes="analyze/alter/ValueAltererXmpl.java"/>
       <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
@@ -178,7 +178,7 @@
       <javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
          includes="util/tuple/PotentialStringConcatWithThreeObjs.java"/>
 </target>
-<target name="compileexample1by1b">
+<target name="compileexamples1by1b">
    </target>
 </project>
 

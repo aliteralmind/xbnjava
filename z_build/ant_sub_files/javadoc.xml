@@ -91,7 +91,7 @@
       </copy>
 
       <replace file="${dir_build_docs_javadoc}overview-summary.html" summary="yes"
-         token="${version}" value="${version.number}"/>
+         token="${project_version_for_jd}" value="${version.number}"/>
 
       <replace dir="${dir_build_docs_javadoc}" summary="yes">
          <replacetoken><![CDATA[</head>]]></replacetoken>

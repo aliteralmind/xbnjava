@@ -1,9 +1,7 @@
 <project name="zip" basedir=".">
 
       <property name="download_zip_source_name" value="${project_name_with_version}-sources.jar"/>
-      <property name="download_zip_source" value="${dir_build_download}${download_zip_source_name}"/>
       <property name="download_zip_docs_name" value="${project_name_with_version}-javadoc.jar"/>
-      <property name="download_zip_docs" value="${dir_build_download}${download_zip_docs_name}"/>
    <target name="zip" description="Creates end-user download archives for source-code, documentation, and jars. Also creates placeholder-only build.properties and codelet.properties DIRECTLY INTO THE SANDBOX, with a 'placeholder__' prefix. Both the live and placeholder files are committed.">
       <copy todir="${dir_build}">
          <fileset dir="${dir_sandbox}" includes="LICENSE, README.md"/>
@@ -60,7 +58,7 @@
       <move file="${download_zip_temp_file}" todir="${dir_build_download}"/>
 
       <echo>Creating documentation download zip.</echo>
-      <zip destfile="${download_zip_docs}" whenempty="fail"
+      <zip destfile="${dir_build_download}${download_zip_docs_name}" whenempty="fail"
          basedir="${dir_build_parent}"
          includes="${project_name_with_version}${fs}documentation/**/*"/>
 </target>
