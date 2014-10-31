@@ -14,31 +14,31 @@
 \*license*/
 package  com.github.xbn.util.lock;
 /**
-   <P>Abstract implementation of {@code OneWayLockable}. For classes needing to implement {@code OneWayLockable}, but cannot extend this class, use {@link com.github.xbn.util.lock.OneWayLockableComposer OneWayLockableComposer}.</P>
+	<P>Abstract implementation of {@code OneWayLockable}. For classes needing to implement {@code OneWayLockable}, but cannot extend this class, use {@link com.github.xbn.util.lock.OneWayLockableComposer OneWayLockableComposer}.</P>
  **/
 public abstract class AbstractOneWayLockable extends AbstractLockable implements OneWayLockable  {
-   /**
-      <P>Create a new {@code AbstractOneWayLockable}.</P>
+	/**
+		<P>Create a new {@code AbstractOneWayLockable}.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.util.lock.AbstractLockable#AbstractLockable(boolean) super}{@code (false)}</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.lock.AbstractLockable#AbstractLockable(boolean) super}{@code (false)}</P>
 
-      @see  #AbstractOneWayLockable(OneWayLockable, boolean) this(owl,b)
-    **/
-   public AbstractOneWayLockable()  {
-      super(false);
-   }
-   /**
-      <P>Create a new {@code AbstractOneWayLockable} from a {@code OneWayLockable}.</P>
+		@see  #AbstractOneWayLockable(OneWayLockable, boolean) this(owl,b)
+	 **/
+	public AbstractOneWayLockable()  {
+		super(false);
+	}
+	/**
+		<P>Create a new {@code AbstractOneWayLockable} from a {@code OneWayLockable}.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.util.lock.AbstractLockable#AbstractLockable(Lockable) super}{@code (to_copy)}</P>
-      @see  #AbstractOneWayLockable(boolean) this(b)
-    **/
-   public AbstractOneWayLockable(OneWayLockable to_copy)  {
-      super(to_copy);
-   }
-   public void lock()  {
-      lock(true);
-   }
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.lock.AbstractLockable#AbstractLockable(Lockable) super}{@code (to_copy)}</P>
+		@see  #AbstractOneWayLockable(boolean) this(b)
+	 **/
+	public AbstractOneWayLockable(OneWayLockable to_copy)  {
+		super(to_copy);
+	}
+	public void lock()  {
+		lock(true);
+	}
 }

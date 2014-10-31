@@ -18,61 +18,61 @@ package  com.github.xbn.examples.lang.builder.finalv;
 
    <P>Validation of all fields occurs in the <CODE>UserConfig</CODE> constructor. However, each validation requirement is document only in this classes setter functions.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class UserConfig_Cfg implements UserConfig_Fieldable  {
-   public String sName    ;
-   public int    iAge     ;
-   public String sFavColor;
-   /**
-      <P>Create a new instance with the user's name.</P>
+	public String sName    ;
+	public int    iAge     ;
+	public String sFavColor;
+	/**
+		<P>Create a new instance with the user's name.</P>
 
-      @param  name  May not be {@code null} or empty, and must contain only letters, digits, and underscores. Get with {@code UserConfig#getName() getName()}{@code ()}*.
-    **/
-   public UserConfig_Cfg(String name)  {
-      sName = name;
-   }
-   //self-returning setters...START
-      /**
-         <P>Set the user's age.</P>
+		@param  name  May not be {@code null} or empty, and must contain only letters, digits, and underscores. Get with {@code UserConfig#getName() getName()}{@code ()}*.
+	 **/
+	public UserConfig_Cfg(String name)  {
+		sName = name;
+	}
+	//self-returning setters...START
+		/**
+			<P>Set the user's age.</P>
 
-         @param  years  May not be less than zero. Get with {@code UserConfig#getName() getName()}{@code ()}*.
-         @see  #favoriteColor(String)
-       **/
-      public UserConfig_Cfg age(int years)  {
-         iAge = years;
-         return  this;
-      }
-      /**
-         <P>Set the user's favorite color.</P>
+			@param  years  May not be less than zero. Get with {@code UserConfig#getName() getName()}{@code ()}*.
+			@see  #favoriteColor(String)
+		 **/
+		public UserConfig_Cfg age(int years)  {
+			iAge = years;
+			return  this;
+		}
+		/**
+			<P>Set the user's favorite color.</P>
 
-         @param  color  Must be {@code "red"}, {@code "blue"}, {@code green}, or {@code "hot pink"}. Get with {@code UserConfig#getName() getName()}{@code ()}*.
-         @see  #age(int)
-       **/
-      public UserConfig_Cfg favoriteColor(String color)  {
-         sFavColor = color;
-         return  this;
-      }
-   //self-returning setters...END
-   //getters...START
-      public String getName()  {
-         return  sName;
-      }
-      public int getAge()  {
-         return  iAge;
-      }
-      public String getFavoriteColor()  {
-         return  sFavColor;
-      }
-   //getters...END
-   /**
-      <P>Build the {@code UserConfig}, as configured.</P>
+			@param  color  Must be {@code "red"}, {@code "blue"}, {@code green}, or {@code "hot pink"}. Get with {@code UserConfig#getName() getName()}{@code ()}*.
+			@see  #age(int)
+		 **/
+		public UserConfig_Cfg favoriteColor(String color)  {
+			sFavColor = color;
+			return  this;
+		}
+	//self-returning setters...END
+	//getters...START
+		public String getName()  {
+			return  sName;
+		}
+		public int getAge()  {
+			return  iAge;
+		}
+		public String getFavoriteColor()  {
+			return  sFavColor;
+		}
+	//getters...END
+	/**
+		<P>Build the {@code UserConfig}, as configured.</P>
 
-      @return  <CODE>(new {@link UserConfig#UserConfig(UserConfig_Fieldable) UserConfig}(this))</CODE>
-    **/
-   public UserConfig build()  {
-      return  (new UserConfig(this));
-   }
+		@return  <CODE>(new {@link UserConfig#UserConfig(UserConfig_Fieldable) UserConfig}(this))</CODE>
+	 **/
+	public UserConfig build()  {
+		return  (new UserConfig(this));
+	}
 }

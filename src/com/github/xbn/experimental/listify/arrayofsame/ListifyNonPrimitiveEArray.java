@@ -15,16 +15,16 @@
 package  com.github.xbn.experimental.listify.arrayofsame;
 
 /**
-   <P>Listifier whose raw object is a non-primitive array, and whose virtual elements are of the same type.</P>
+	<P>Listifier whose raw object is a non-primitive array, and whose virtual elements are of the same type.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface ListifyNonPrimitiveEArray<E> extends ListifyEArray<E>  {
-   /**
-      <P>Get the raw array of {@code E}.</P>
+	/**
+		<P>Get the raw array of {@code E}.</P>
 
-      @return  <CODE>(E[])<I>[{@link com.github.xbn.experimental.listify.Listify super}]</I>.{@link com.github.xbn.experimental.listify.Listify#getRawObject() getRawObject}()</CODE>
-    **/
-   E[] getRawEArray();
+		@return  <CODE>(E[])<I>[{@link com.github.xbn.experimental.listify.Listify super}]</I>.{@link com.github.xbn.experimental.listify.Listify#getRawObject() getRawObject}()</CODE>
+	 **/
+	E[] getRawEArray();
 }

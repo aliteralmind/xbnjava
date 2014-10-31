@@ -16,43 +16,43 @@ package  com.github.xbn.lang;
 /**
    <P>Indicates a container's length is invalid.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class BadDuplicateException extends IllegalArgumentException  {
-   /**
-    * 
-    */
-   private static final long serialVersionUID = 1410377225966758555L;
-   private final String obj1Name;
-   private final String obj2Name;
-   private final Object value   ;
-   public BadDuplicateException(String message)  {
-      super(message);
-      obj1Name   = null;
-      obj2Name   = null;
-      this.value = null;
-   }
-   public BadDuplicateException(String object1_name, String object2_name, Object value)  {
-      this(object1_name, object2_name, value, null);
-   }
-      private static final String getMsg(String object1_name, String object2_name, Object value)  {
-         return  object1_name + " and " + object2_name + " both equal [" + value + "]";
-      }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1410377225966758555L;
+	private final String obj1Name;
+	private final String obj2Name;
+	private final Object value   ;
+	public BadDuplicateException(String message)  {
+		super(message);
+		obj1Name   = null;
+		obj2Name   = null;
+		this.value = null;
+	}
+	public BadDuplicateException(String object1_name, String object2_name, Object value)  {
+		this(object1_name, object2_name, value, null);
+	}
+		private static final String getMsg(String object1_name, String object2_name, Object value)  {
+			return  object1_name + " and " + object2_name + " both equal [" + value + "]";
+		}
    public BadDuplicateException(String object1_name, String object2_name, Object value, Throwable cause)  {
-      super(BadDuplicateException.getMsg(object1_name, object2_name, value), cause);
-      obj1Name   = object1_name;
-      obj2Name   = object2_name;
-      this.value = value;
-   }
-   public String getObject1Name()  {
-      return  obj1Name;
-   }
-   public String getObject2Name()  {
-      return  obj2Name;
-   }
-   public Object getValue()  {
-      return  value;
-   }
+		super(BadDuplicateException.getMsg(object1_name, object2_name, value), cause);
+		obj1Name   = object1_name;
+		obj2Name   = object2_name;
+		this.value = value;
+	}
+	public String getObject1Name()  {
+		return  obj1Name;
+	}
+	public String getObject2Name()  {
+		return  obj2Name;
+	}
+	public Object getValue()  {
+		return  value;
+	}
 }

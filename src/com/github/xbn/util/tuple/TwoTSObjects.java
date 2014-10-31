@@ -13,68 +13,68 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.tuple;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.ToStringDefensive;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.ToStringDefensive;
 /**
-   <P>Holds two objects.</P>
+	<P>Holds two objects.</P>
 
 {@.codelet.and.out com.github.xbn.examples.util.tuple.PotentialStringConcatWithThreeObjs%eliminateCommentBlocksAndPackageDecl()}
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class TwoTSObjects  {
-   private final String callingNonFQClnNm;
-   private Object o1;
-   private Object o2;
+	private final String callingNonFQClnNm;
+	private Object o1;
+	private Object o2;
 //constructors...START
-   public TwoTSObjects(Object o_1, Object o_2)  {
-      this("TwoTSObjects", o_1, o_2);
-   }
-   protected TwoTSObjects(String calling_nonFQclassName, Object o_1, Object o_2)  {
-      callingNonFQClnNm = calling_nonFQclassName;
-      set1(o_1);
-      set2(o_2);
-   }
+	public TwoTSObjects(Object o_1, Object o_2)  {
+		this("TwoTSObjects", o_1, o_2);
+	}
+	protected TwoTSObjects(String calling_nonFQclassName, Object o_1, Object o_2)  {
+		callingNonFQClnNm = calling_nonFQclassName;
+		set1(o_1);
+		set2(o_2);
+	}
 //constructors...END
-   public Object get1()  {
-      return  o1;
-   }
-   public Object get2()  {
-      return  o2;
-   }
-   public TwoTSObjects set1(Object o_1)  {
-      o1 = o_1;
-      return  this;
-   }
-   public TwoTSObjects set2(Object o_2)  {
-      o2 = o_2;
-      return  this;
-   }
-   public TwoTSObjects set(Object o_1, Object o_2)  {
-      set1(o_1);
-      return  set2(o_2);
-   }
-   public String toString()  {
-      return  getJoined();
-   }
-   public String getJoined()  {
-      return  appendJoined(new StringBuilder()).toString();
-   }
-   public Appendable appendJoined(Appendable to_appendTo, Object... dddo_3AndUp)  {
-      try  {
-         if(get1() != null)  {
-            ToStringDefensive.append(to_appendTo, get1(), callingNonFQClnNm, 1);
-         }
-         if(get2() != null)  {
-            ToStringDefensive.append(to_appendTo, get2(), callingNonFQClnNm, 2);
-         }
-         for(int i = 0, j = 3; i < dddo_3AndUp.length; i++, j++)  {
-            ToStringDefensive.append(to_appendTo, dddo_3AndUp[i], callingNonFQClnNm, j);
-         }
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
-      }
-      return  to_appendTo;
-   }
+	public Object get1()  {
+		return  o1;
+	}
+	public Object get2()  {
+		return  o2;
+	}
+	public TwoTSObjects set1(Object o_1)  {
+		o1 = o_1;
+		return  this;
+	}
+	public TwoTSObjects set2(Object o_2)  {
+		o2 = o_2;
+		return  this;
+	}
+	public TwoTSObjects set(Object o_1, Object o_2)  {
+		set1(o_1);
+		return  set2(o_2);
+	}
+	public String toString()  {
+		return  getJoined();
+	}
+	public String getJoined()  {
+		return  appendJoined(new StringBuilder()).toString();
+	}
+	public Appendable appendJoined(Appendable to_appendTo, Object... dddo_3AndUp)  {
+		try  {
+			if(get1() != null)  {
+				ToStringDefensive.append(to_appendTo, get1(), callingNonFQClnNm, 1);
+			}
+			if(get2() != null)  {
+				ToStringDefensive.append(to_appendTo, get2(), callingNonFQClnNm, 2);
+			}
+			for(int i = 0, j = 3; i < dddo_3AndUp.length; i++, j++)  {
+				ToStringDefensive.append(to_appendTo, dddo_3AndUp[i], callingNonFQClnNm, j);
+			}
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+		}
+		return  to_appendTo;
+	}
 }

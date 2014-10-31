@@ -13,149 +13,149 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.lock;
-   import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>For classes needing to implement {@code Lockable}, that cannot extend {@code AbstractLockable}.</P>
+	<P>For classes needing to implement {@code Lockable}, that cannot extend {@code AbstractLockable}.</P>
 
-   <H3>Implementation template (view source)</H3>
+	<H3>Implementation template (view source)</H3>
  **/
 public class LockableComposer  {
-   //state
-      private boolean bLkd = false;
-      private boolean bUnlkbl = false;
+	//state
+		private boolean bLkd = false;
+		private boolean bUnlkbl = false;
 
-   /**
-      <P>Create a new {@code LockableComposer}.</P>
+	/**
+		<P>Create a new {@code LockableComposer}.</P>
 
-      <P>This<OL>
-         <LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code is_unlockable}.</LI>
-         <LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
-      </OL></P>
+		<P>This<OL>
+			<LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code is_unlockable}.</LI>
+			<LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
+		</OL></P>
 
-      @see  #LockableComposer(boolean, LockableComposer) this(b,lc)
-      @see  #LockableComposer(Lockable) LockableComposer(lkbl)
-    **/
-   public LockableComposer(boolean is_unlockable)  {
-      bUnlkbl = is_unlockable;
-      bLkd = false;
-   }
-   /**
-      <P>Create a new {@code LockableComposer} from a {@code Lockable} object.</P>
+		@see  #LockableComposer(boolean, LockableComposer) this(b,lc)
+		@see  #LockableComposer(Lockable) LockableComposer(lkbl)
+	 **/
+	public LockableComposer(boolean is_unlockable)  {
+		bUnlkbl = is_unlockable;
+		bLkd = false;
+	}
+	/**
+		<P>Create a new {@code LockableComposer} from a {@code Lockable} object.</P>
 
-      <P>This<OL>
-         <LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</LI>
-         <LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
-      </OL></P>
-      @see  #LockableComposer(boolean) this(b)
-    **/
-   public LockableComposer(boolean ignored, LockableComposer to_copy)  {
-      try  {
-         bUnlkbl = to_copy.isUnlockable();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-      }
+		<P>This<OL>
+			<LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</LI>
+			<LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
+		</OL></P>
+		@see  #LockableComposer(boolean) this(b)
+	 **/
+	public LockableComposer(boolean ignored, LockableComposer to_copy)  {
+		try  {
+			bUnlkbl = to_copy.isUnlockable();
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+		}
 
-      //Never ever call interface functions, directly or indirectly, in a constructor.
-      zlockLB(false);
-   }
-   /**
-      <P>Create a new {@code LockableComposer} from a {@code Lockable} object.</P>
+		//Never ever call interface functions, directly or indirectly, in a constructor.
+		zlockLB(false);
+	}
+	/**
+		<P>Create a new {@code LockableComposer} from a {@code Lockable} object.</P>
 
-      <P>This<OL>
-         <LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</LI>
-         <LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
-      </OL></P>
-      @see  #LockableComposer(boolean) this(b)
-    **/
-   public LockableComposer(Lockable to_copy)  {
-      try  {
-         bUnlkbl = to_copy.isUnlockable();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-      }
+		<P>This<OL>
+			<LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</LI>
+			<LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
+		</OL></P>
+		@see  #LockableComposer(boolean) this(b)
+	 **/
+	public LockableComposer(Lockable to_copy)  {
+		try  {
+			bUnlkbl = to_copy.isUnlockable();
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+		}
 
-      //Never ever call interface functions, directly or indirectly, in a constructor.
-      zlockLB(false);
-   }
-   /**
-      <P>Can it be unlocked?.</P>
+		//Never ever call interface functions, directly or indirectly, in a constructor.
+		zlockLB(false);
+	}
+	/**
+		<P>Can it be unlocked?.</P>
 
-      @return  {@code true}  If it is safe to call {@link #unlock() unlock}{@code ()}
-      @see  #LockableComposer(boolean) this(b)
-      @see  #forceUnlock_4prot()
-    **/
-   public boolean isUnlockable()  {
-      return  bUnlkbl;
-   }
-   /**
-      <P>Is it locked?.</P>
+		@return  {@code true}  If it is safe to call {@link #unlock() unlock}{@code ()}
+		@see  #LockableComposer(boolean) this(b)
+		@see  #forceUnlock_4prot()
+	 **/
+	public boolean isUnlockable()  {
+		return  bUnlkbl;
+	}
+	/**
+		<P>Is it locked?.</P>
 
-      @return  <UL>
-         <LI><B>{@code true}</B> If {@link #lock(boolean) lock}{@code (b)} was called (more recently than {@link #forceUnlock_4prot() forceUnlock_4prot}{@code ()}).</LI>
-         <LI><B>{@code false}</B> If otherwise.</LI>
-      </UL>
-    **/
-   public boolean isLocked()  {
-      return  bLkd;
-   }
-   public void lock()  {
-      lock(true);
-   }
-   public void lock(boolean do_lock)  {
-      zlockLB(do_lock);
-   }
-   protected final void zlockLB(boolean do_lock)  {
-      if(isLocked()  &&  !isUnlockable()  &&  !do_lock)  {
-         throw  new IllegalStateException("Cannot unlock. isLocked()=" + isLocked() + ", isUnlockable()=" + isUnlockable() + ", do_lock=" + do_lock);
-      }
+		@return  <UL>
+			<LI><B>{@code true}</B> If {@link #lock(boolean) lock}{@code (b)} was called (more recently than {@link #forceUnlock_4prot() forceUnlock_4prot}{@code ()}).</LI>
+			<LI><B>{@code false}</B> If otherwise.</LI>
+		</UL>
+	 **/
+	public boolean isLocked()  {
+		return  bLkd;
+	}
+	public void lock()  {
+		lock(true);
+	}
+	public void lock(boolean do_lock)  {
+		zlockLB(do_lock);
+	}
+	protected final void zlockLB(boolean do_lock)  {
+		if(isLocked()  &&  !isUnlockable()  &&  !do_lock)  {
+			throw  new IllegalStateException("Cannot unlock. isLocked()=" + isLocked() + ", isUnlockable()=" + isUnlockable() + ", do_lock=" + do_lock);
+		}
 
-      bLkd = do_lock;
-   }
-   /**
-      <P>Crash if this {@code LockableComposer} is locked.</P>
+		bLkd = do_lock;
+	}
+	/**
+		<P>Crash if this {@code LockableComposer} is locked.</P>
 
-      @exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code true}.
+		@exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code true}.
 
-      @see
-         <LI>{@link #ciNotLocked() ciNotLocked}{@code ()}</LI>
-      </UL>
-    **/
-   public void ciLocked_4prot()  {
-      if(isLocked())  {
-         throw  new LockException("isLocked() is true");
-      }
-   }
-   /**
-      <P>Crash if this {@code LockableComposer} is unlocked.</P>
+		@see
+			<LI>{@link #ciNotLocked() ciNotLocked}{@code ()}</LI>
+		</UL>
+	 **/
+	public void ciLocked_4prot()  {
+		if(isLocked())  {
+			throw  new LockException("isLocked() is true");
+		}
+	}
+	/**
+		<P>Crash if this {@code LockableComposer} is unlocked.</P>
 
-      @exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code false}.
-      @see  #ciLocked(String) ciLocked(s)
-    **/
-   public void ciNotLocked_4prot()  {
-      if(!isLocked())  {
-         throw  new LockException("isLocked() is false");
-      }
-   }
-   /**
-      <P>Forces {@code isLocked()} to be {@code false}, regardless the value of {@code isUnlockable()}.</P>
+		@exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code false}.
+		@see  #ciLocked(String) ciLocked(s)
+	 **/
+	public void ciNotLocked_4prot()  {
+		if(!isLocked())  {
+			throw  new LockException("isLocked() is false");
+		}
+	}
+	/**
+		<P>Forces {@code isLocked()} to be {@code false}, regardless the value of {@code isUnlockable()}.</P>
 
-      <P>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</P>
-    **/
-   public void forceUnlock_4prot()  {
-      bLkd = false;
-   }
-   public String toString()  {
-      return  appendToString(new StringBuilder()).toString();
-   }
-   public StringBuilder appendToString(StringBuilder to_appendTo)  {
-      return  to_appendTo.append("isLocked()=").append(isLocked()).append(", isUnlockable()=").append(isUnlockable());
-   }
+		<P>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</P>
+	 **/
+	public void forceUnlock_4prot()  {
+		bLkd = false;
+	}
+	public String toString()  {
+		return  appendToString(new StringBuilder()).toString();
+	}
+	public StringBuilder appendToString(StringBuilder to_appendTo)  {
+		return  to_appendTo.append("isLocked()=").append(isLocked()).append(", isUnlockable()=").append(isUnlockable());
+	}
 //static...START
-   public static final void lockIfNNull(Lockable lk_bl, boolean do_lock)  {
-      if(lk_bl != null)  {
-         lk_bl.lock(do_lock);
-      }
-   }
+	public static final void lockIfNNull(Lockable lk_bl, boolean do_lock)  {
+		if(lk_bl != null)  {
+			lk_bl.lock(do_lock);
+		}
+	}
 //static...END
 }
 

@@ -24,7 +24,7 @@ public class NotExclamationImportantLines  {
       //expression `"important! ?"
       Matcher importantMtchr = Pattern.compile("!important ?;").matcher("");
       for(int i = 1; i < lines.length - 1; i++)  {
-         String line = lines[i];
+			String line = lines[i];
          if(!importantMtchr.reset(line).find())  {
             System.out.println(line);
          }

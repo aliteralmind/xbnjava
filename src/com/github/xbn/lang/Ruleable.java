@@ -14,32 +14,32 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-   <P>{@code Ruleable}s have zero or more restrictions to impose on something else.</P>
+	<P>{@code Ruleable}s have zero or more restrictions to impose on something else.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface Ruleable extends ToStringAppendable  {
-   /**
-      <P>Get the rules of this class in a concise format.</P>
+	/**
+		<P>Get the rules of this class in a concise format.</P>
 
-      @return  <CODE>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</CODE>
-    **/
-   String getRules();
-   /**
-      <P>Append the rules in a concise format.</P>
+		@return  <CODE>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</CODE>
+	 **/
+	String getRules();
+	/**
+		<P>Append the rules in a concise format.</P>
 
-      @param  to_appendTo  May not be {@code null}.
-    **/
-   StringBuilder appendRules(StringBuilder to_appendTo);
-   /**
-      <P>What level of restrictive-ness is this ruleable?</P>
+		@param  to_appendTo  May not be {@code null}.
+	 **/
+	StringBuilder appendRules(StringBuilder to_appendTo);
+	/**
+		<P>What level of restrictive-ness is this ruleable?</P>
 
-      @return  <UL>
-         <LI>{@code RuleType.}{@link com.github.xbn.lang.RuleType#UNRESTRICTED UNRESTRICTED}: If it is impossible for the rules to <I>not</I> be followed.</LI>
-         <LI>{@code RuleType.}{@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}: If the rules may or may not be followable.</LI>
-         <LI>{@code RuleType.}{@link com.github.xbn.lang.RuleType#IMPOSSIBLE IMPOSSIBLE}: If it is impossible for the rules to be followed.</LI>
-      </UL>
-    **/
-   RuleType getRuleType();
+		@return  <UL>
+			<LI>{@code RuleType.}{@link com.github.xbn.lang.RuleType#UNRESTRICTED UNRESTRICTED}: If it is impossible for the rules to <I>not</I> be followed.</LI>
+			<LI>{@code RuleType.}{@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}: If the rules may or may not be followable.</LI>
+			<LI>{@code RuleType.}{@link com.github.xbn.lang.RuleType#IMPOSSIBLE IMPOSSIBLE}: If it is impossible for the rules to be followed.</LI>
+		</UL>
+	 **/
+	RuleType getRuleType();
 }

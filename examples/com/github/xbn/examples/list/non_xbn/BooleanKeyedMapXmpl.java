@@ -13,65 +13,65 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.list.non_xbn;
-   import  java.util.ArrayList;
-   import  java.util.Arrays;
-   import  java.util.List;
-   import  java.util.Map;
-   import  java.util.TreeMap;
+	import  java.util.ArrayList;
+	import  java.util.Arrays;
+	import  java.util.List;
+	import  java.util.Map;
+	import  java.util.TreeMap;
 /**
-   <P>Adding multiple values per-key in a boolean-keyed map.</P>
+	<P>Adding multiple values per-key in a boolean-keyed map.</P>
 
-   <P>{@code java com.github.xbn.examples.list.non_xbn.BooleanKeyedMapXmpl}</P>
+	<P>{@code java com.github.xbn.examples.list.non_xbn.BooleanKeyedMapXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class BooleanKeyedMapXmpl  {
-   public static final void main(String[] ignored)  {
+	public static final void main(String[] ignored)  {
 
-      System.out.println("<Boolean,String>:");
-         Map<Boolean,String> mbs = new TreeMap<Boolean,String>();
+		System.out.println("<Boolean,String>:");
+			Map<Boolean,String> mbs = new TreeMap<Boolean,String>();
 
-         mbs.put(true, "hello");
-         mbs.put(false, "goodbye");
-         mbs.put(null, "Kermit The Frog");
+			mbs.put(true, "hello");
+			mbs.put(false, "goodbye");
+			mbs.put(null, "Kermit The Frog");
 
-         System.out.println("true: " + mbs.get(true));
-         System.out.println("false: " + mbs.get(false));
-         //NullPointerException:
-         //System.out.println("null: " + mbs.get(null));
-         System.out.println();
+			System.out.println("true: " + mbs.get(true));
+			System.out.println("false: " + mbs.get(false));
+			//NullPointerException:
+			//System.out.println("null: " + mbs.get(null));
+			System.out.println();
 
-      System.out.println("<Boolean,ArrayList<String>>:");
-         Map<Boolean,List<String>> mbls = new TreeMap<Boolean,List<String>>();
+		System.out.println("<Boolean,ArrayList<String>>:");
+			Map<Boolean,List<String>> mbls = new TreeMap<Boolean,List<String>>();
 
-         mbls.put(true, new ArrayList<String>());
-         mbls.put(false, new ArrayList<String>());
-         mbls.put(null, new ArrayList<String>());
+			mbls.put(true, new ArrayList<String>());
+			mbls.put(false, new ArrayList<String>());
+			mbls.put(null, new ArrayList<String>());
 
-         List<String> lsTrue = mbls.get(true);
-            lsTrue.add("hello1");
-            lsTrue.add("hello2");
-            lsTrue.add("hello3");
-            lsTrue.add("hello4");
-            lsTrue.add("hello5");
+			List<String> lsTrue = mbls.get(true);
+				lsTrue.add("hello1");
+				lsTrue.add("hello2");
+				lsTrue.add("hello3");
+				lsTrue.add("hello4");
+				lsTrue.add("hello5");
 
-         List<String> lsFalse = mbls.get(false);
-            lsFalse.add("goodbye1");
-            lsFalse.add("goodbye2");
-            lsFalse.add("goodbye3");
-            lsFalse.add("goodbye4");
-            lsFalse.add("goodbye5");
+			List<String> lsFalse = mbls.get(false);
+				lsFalse.add("goodbye1");
+				lsFalse.add("goodbye2");
+				lsFalse.add("goodbye3");
+				lsFalse.add("goodbye4");
+				lsFalse.add("goodbye5");
 
-         List<String> lsNull = mbls.get(null);
-            lsNull.add("Kermit The Frog1");
-            lsNull.add("Kermit The Frog2");
-            lsNull.add("Kermit The Frog3");
-            lsNull.add("Kermit The Frog4");
-            lsNull.add("Kermit The Frog5");
+			List<String> lsNull = mbls.get(null);
+				lsNull.add("Kermit The Frog1");
+				lsNull.add("Kermit The Frog2");
+				lsNull.add("Kermit The Frog3");
+				lsNull.add("Kermit The Frog4");
+				lsNull.add("Kermit The Frog5");
 
-         System.out.println("true: " + Arrays.deepToString(lsTrue.toArray()));
-         System.out.println("false: " + Arrays.deepToString(lsFalse.toArray()));
-         System.out.println("false: " + Arrays.deepToString(lsNull.toArray()));
-   }
-   }
+			System.out.println("true: " + Arrays.deepToString(lsTrue.toArray()));
+			System.out.println("false: " + Arrays.deepToString(lsFalse.toArray()));
+			System.out.println("false: " + Arrays.deepToString(lsNull.toArray()));
+	}
+	}

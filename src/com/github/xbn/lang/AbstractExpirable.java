@@ -16,31 +16,31 @@ package  com.github.xbn.lang;
 /**
    <P>Abstract implementation of <CODE>Expirable</CODE>. For classes needing to implement <CODE>Expirable</CODE>, that cannot extend <CODE>AbstractExpirable</CODE>, see <CODE><A HREF="ExpirableComposer.html">ExpirableComposer</A></CODE>.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class AbstractExpirable implements Expirable  {
    private final ExpirableComposer ec;
    public AbstractExpirable(boolean is_expirable)  {
-      ec = new ExpirableComposer(is_expirable);
-   }
-   public AbstractExpirable(Expirable xpr_bl)  {
-      ec = new ExpirableComposer(xpr_bl);
-   }
-   public boolean doesExpire()  {
-      return  ec.doesExpire();
-   }
-   protected void declareExpired()  {
-      ec.declareExpired_4prot();
-   }
-   public boolean isExpired()  {
-      return  ec.isExpired();
-   }
-   public String toString()  {
-      return  appendToString(new StringBuilder()).toString();
-   }
-   public StringBuilder appendToString(StringBuilder to_appendTo)  {
-      return  ec.appendToString(to_appendTo);
-   }
+		ec = new ExpirableComposer(is_expirable);
+	}
+	public AbstractExpirable(Expirable xpr_bl)  {
+		ec = new ExpirableComposer(xpr_bl);
+	}
+	public boolean doesExpire()  {
+		return  ec.doesExpire();
+	}
+	protected void declareExpired()  {
+		ec.declareExpired_4prot();
+	}
+	public boolean isExpired()  {
+		return  ec.isExpired();
+	}
+	public String toString()  {
+		return  appendToString(new StringBuilder()).toString();
+	}
+	public StringBuilder appendToString(StringBuilder to_appendTo)  {
+		return  ec.appendToString(to_appendTo);
+	}
 }

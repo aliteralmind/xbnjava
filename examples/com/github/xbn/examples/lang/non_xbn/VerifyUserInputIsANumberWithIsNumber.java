@@ -16,31 +16,31 @@ package com.github.xbn.examples.lang.non_xbn;
     import  java.util.Scanner;
     import  org.apache.commons.lang3.math.NumberUtils;
  /**
-   <P>Confirm a user-input number is a valid number by reading a string an testing it is numeric before converting it to an it--this loops until a valid number is provided.</P>
+	<P>Confirm a user-input number is a valid number by reading a string an testing it is numeric before converting it to an it--this loops until a valid number is provided.</P>
 
-   <P>{@code java com.github.xbn.examples.lang.non_xbn.VerifyUserInputIsANumberWithIsNumber}</P>
+	<P>{@code java com.github.xbn.examples.lang.non_xbn.VerifyUserInputIsANumberWithIsNumber}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
   **/
  public class VerifyUserInputIsANumberWithIsNumber  {
-   public static final void main(String[] ignored)  {
+	public static final void main(String[] ignored)  {
 
-      int num = -1;
-      boolean isNum = false;
+		int num = -1;
+		boolean isNum = false;
 
-      do  {
-         System.out.print("Number please: ");
-         String strInput = (new Scanner(System.in)).next();
-         if(!NumberUtils.isNumber(strInput))  {
-            System.out.println(strInput + " is not a number. Try again.");
-         }  else  {
-            //Safe to convert
-            num = Integer.parseInt(strInput);
-            isNum = true;
-         }
-      }  while(!isNum);
+		do  {
+			System.out.print("Number please: ");
+			String strInput = (new Scanner(System.in)).next();
+			if(!NumberUtils.isNumber(strInput))  {
+				System.out.println(strInput + " is not a number. Try again.");
+			}  else  {
+				//Safe to convert
+				num = Integer.parseInt(strInput);
+				isNum = true;
+			}
+		}  while(!isNum);
 
-      System.out.println("Number: " + num);
-   }
+		System.out.println("Number: " + num);
+	}
 }

@@ -15,19 +15,19 @@
 package  com.github.xbn.examples.util.non_xbn;
 
 /**
-   <P>Demonstrates obtaining the name of a class from a static context.</P>
+	<P>Demonstrates obtaining the name of a class from a static context.</P>
 
-   <P>{@code java com.github.xbn.examples.util.non_xbn.GetClassNameFromStaticContext}</P>
+	<P>{@code java com.github.xbn.examples.util.non_xbn.GetClassNameFromStaticContext}</P>
 
-   <P>Idea from <a href="http://www.artima.com/forums/flat.jsp?forum=1&thread=155230">http://www.artima.com/forums/flat.jsp?forum=1&thread=155230</a>, downloaded 20101113</P>
+	<P>Idea from <a href="http://www.artima.com/forums/flat.jsp?forum=1&thread=155230">http://www.artima.com/forums/flat.jsp?forum=1&thread=155230</a>, downloaded 20101113</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class GetClassNameFromStaticContext  {
-   public static final String getClassNameFromStaticContext()  {
-      StackTraceElement[] asTrace = (new Exception()).getStackTrace();
-      // sTrace[0] will be always there
-      return  asTrace[0].getClassName();
-   }
+	public static final String getClassNameFromStaticContext()  {
+		StackTraceElement[] asTrace = (new Exception()).getStackTrace();
+		// sTrace[0] will be always there
+		return  asTrace[0].getClassName();
+	}
 }

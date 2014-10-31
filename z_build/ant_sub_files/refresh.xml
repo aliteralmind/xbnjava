@@ -32,8 +32,8 @@
 
       <target name="cleansandbox"
             description="Deletes temporary files from the sandbox">
-         <delete file="${pom_xml_dest}"/><!-- Originates in task preppoms. Needed by task clean -->
-         <delete file="${dir_sandbox}temp.txt"/>
+			<delete file="${pom_xml_dest}"/><!-- Originates in task preppoms. Needed by task clean -->
+			<delete file="${dir_sandbox}temp.txt"/>
       </target>
 
       <target name="clean"

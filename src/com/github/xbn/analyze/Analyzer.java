@@ -13,72 +13,72 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze;
-   import  com.github.xbn.lang.ToStringAppendable;
-   import  com.github.xbn.lang.Expirable;
-   import  com.github.xbn.lang.ExtraErrInfoable;
-   import  com.github.xbn.lang.Copyable;
-      import  com.github.xbn.io.Debuggable;
+	import  com.github.xbn.lang.ToStringAppendable;
+	import  com.github.xbn.lang.Expirable;
+	import  com.github.xbn.lang.ExtraErrInfoable;
+	import  com.github.xbn.lang.Copyable;
+		import  com.github.xbn.io.Debuggable;
 
 /**
-   <P>Base class for {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.Validator Validator} and {@code com.github.xbn.analyze.alter.}{@link com.github.xbn.analyze.alter.Alterer Alterer}.</P>
+	<P>Base class for {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.Validator Validator} and {@code com.github.xbn.analyze.alter.}{@link com.github.xbn.analyze.alter.Alterer Alterer}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public interface Analyzer extends Copyable, Debuggable, ExtraErrInfoable, Expirable, ToStringAppendable  {
-   /**
-      <P>Reset state to defaults. This does not affect configuration or counts.</P>
+	/**
+		<P>Reset state to defaults. This does not affect configuration or counts.</P>
 
-      <P>This<OL>
-         <LI>Sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code false}.</LI>
-      </OL></P>
+		<P>This<OL>
+			<LI>Sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code false}.</LI>
+		</OL></P>
 
-      <P>Resets all internal state except counts. This does not change any user-configuration.</P>
+		<P>Resets all internal state except counts. This does not change any user-configuration.</P>
 
-      @see  #resetCounts()
-      @see  #doAutoResetState()
-    **/
-   void resetState();
+		@see  #resetCounts()
+		@see  #doAutoResetState()
+	 **/
+	void resetState();
 
-   /**
-      <P>Is state automatically reset before each analysis?.</P>
+	/**
+		<P>Is state automatically reset before each analysis?.</P>
 
-      @return  {@code true}  <A HREF="#resetState()">State</A> is automatically reset.
-    **/
-   boolean doAutoResetState();
-   /**
-      <P>Reset all counts to zero.</P>
+		@return  {@code true}  <A HREF="#resetState()">State</A> is automatically reset.
+	 **/
+	boolean doAutoResetState();
+	/**
+		<P>Reset all counts to zero.</P>
 
-      <P>Sets {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to zero.</P>
-      @see  #resetState()
-    **/
-   void resetCounts();
+		<P>Sets {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to zero.</P>
+		@see  #resetState()
+	 **/
+	void resetCounts();
 
-   /**
-      <P>How many times has something been analyzed?.</P>
-      @see  #resetCounts()
-    **/
-   int getAnalyzedCount();
+	/**
+		<P>How many times has something been analyzed?.</P>
+		@see  #resetCounts()
+	 **/
+	int getAnalyzedCount();
 
-   /**
-      <P>Was something just analyzed?.</P>
-      @see  #resetState() reset()
-    **/
-   boolean wasAnalyzed();
+	/**
+		<P>Was something just analyzed?.</P>
+		@see  #resetState() reset()
+	 **/
+	boolean wasAnalyzed();
 
-   /**
-      <P>Duplicate this {@code Analyzer} that, by default, has the same configuration (state and counts are reset).</P>
+	/**
+		<P>Duplicate this {@code Analyzer} that, by default, has the same configuration (state and counts are reset).</P>
 
-      @return  A non-{@code null} duplicate of this {@code Analyzer}.
-    **/
-   @Override
-   Analyzer getObjectCopy();
-   /**
-      <P>Returns {@code true} if another {@code Analyzer} has the same configuration as this one--state and counts are ignored.</P>
+		@return  A non-{@code null} duplicate of this {@code Analyzer}.
+	 **/
+	@Override
+	Analyzer getObjectCopy();
+	/**
+		<P>Returns {@code true} if another {@code Analyzer} has the same configuration as this one--state and counts are ignored.</P>
 
-      @see  #resetState()
-      @see  #resetCounts()
-    **/
-   boolean equals(Object to_compareTo);
+		@see  #resetState()
+		@see  #resetCounts()
+	 **/
+	boolean equals(Object to_compareTo);
 }

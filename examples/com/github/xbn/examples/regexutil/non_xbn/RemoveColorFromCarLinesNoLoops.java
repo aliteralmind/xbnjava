@@ -13,44 +13,44 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
-   import  java.util.regex.Pattern;
-   import  java.util.regex.Matcher;
+	import  java.util.regex.Pattern;
+	import  java.util.regex.Matcher;
 /**
-   <P>Remove the color from multiple input lines, where colors are in a specific column--using no loops.</P>
+	<P>Remove the color from multiple input lines, where colors are in a specific column--using no loops.</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.RemoveColorFromCarLinesNoLoops}</P>
+	<P>{@code java com.github.xbn.examples.regexutil.non_xbn.RemoveColorFromCarLinesNoLoops}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RemoveColorFromCarLinesNoLoops  {
-   public static final void main(String[] ignored)  {
+	public static final void main(String[] ignored)  {
 
-      //Add colors as necessary
-      String sColorsNonCaptureOr = "(?:Blue|Red|Purple|Inferno Red)";
-      String sRegex = "" +
-      "^(\\d+ )" +				//one-or-more digits, then one space
-      sColorsNonCaptureOr +	//color
-      " (.+)$";					//Everything after the color (space uncaptured)
+		//Add colors as necessary
+		String sColorsNonCaptureOr = "(?:Blue|Red|Purple|Inferno Red)";
+		String sRegex = "" +
+		"^(\\d+ )" +				//one-or-more digits, then one space
+		sColorsNonCaptureOr +	//color
+		" (.+)$";					//Everything after the color (space uncaptured)
 
-      String sRplcWith = "$1$2";
+		String sRplcWith = "$1$2";
 
-      //"": Unused search-string, so matcher can be reused.
-      Matcher m = Pattern.compile(sRegex).matcher("");
+		//"": Unused search-string, so matcher can be reused.
+		Matcher m = Pattern.compile(sRegex).matcher("");
 
-      String sColorRemoved1 = removeColorFromCarLine(m, "04 Blue Honda Accord", sRplcWith);
-      String sColorRemoved2 = removeColorFromCarLine(m, "12 Inferno Red Chevrolet Tahoe", sRplcWith);
-      String sColorRemoved3 = removeColorFromCarLine(m, "10 Purple Ford Taurus", sRplcWith);
-   }
-   private static final String removeColorFromCarLine(Matcher mtchr, String orig_carLine, String rplc_with)  {
-      mtchr.reset(orig_carLine);
-      if(!mtchr.matches())  {
-         throw  new IllegalArgumentException("Does not match: \"" + " + orig_carLine + " + "\", pattern=[" + mtchr.pattern() + "]");
-      }
+		String sColorRemoved1 = removeColorFromCarLine(m, "04 Blue Honda Accord", sRplcWith);
+		String sColorRemoved2 = removeColorFromCarLine(m, "12 Inferno Red Chevrolet Tahoe", sRplcWith);
+		String sColorRemoved3 = removeColorFromCarLine(m, "10 Purple Ford Taurus", sRplcWith);
+	}
+	private static final String removeColorFromCarLine(Matcher mtchr, String orig_carLine, String rplc_with)  {
+		mtchr.reset(orig_carLine);
+		if(!mtchr.matches())  {
+			throw  new IllegalArgumentException("Does not match: \"" + " + orig_carLine + " + "\", pattern=[" + mtchr.pattern() + "]");
+		}
 
-      //Since it matches(s), this is equivalent to "replace the entire line, as a whole"
-      String s = mtchr.replaceFirst(rplc_with);
-      System.out.println(orig_carLine + "  -->  " + s);
-      return  s;
-   }
+		//Since it matches(s), this is equivalent to "replace the entire line, as a whole"
+		String s = mtchr.replaceFirst(rplc_with);
+		System.out.println(orig_carLine + "  -->  " + s);
+		return  s;
+	}
 }

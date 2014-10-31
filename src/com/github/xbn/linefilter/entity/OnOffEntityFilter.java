@@ -13,13 +13,13 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity;
-   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
+	import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
 /**
-   <P>Dynamically turns an entity on or off, based on conditions. An example may be a block entity that should not be {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active} (should not analyze or alter any lines) until another entity has {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFullyActiveCount() been active} at least three times.</P>
+	<P>Dynamically turns an entity on or off, based on conditions. An example may be a block entity that should not be {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isActive() active} (should not analyze or alter any lines) until another entity has {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFullyActiveCount() been active} at least three times.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface OnOffEntityFilter extends RawOnOffEntityFilter<String>  {
-   OnOffEntityFilter getObjectCopy();
+	OnOffEntityFilter getObjectCopy();
 }

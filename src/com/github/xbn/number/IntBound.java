@@ -13,57 +13,57 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
-   import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>{@code NumberBound} for ints.</P>
+	<P>{@code NumberBound} for ints.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class IntBound extends NumberBound<Integer>  {
-   /**
-      <P>Create a new {@code IntBound}.</P>
+	/**
+		<P>Create a new {@code IntBound}.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberBound#NumberBound(N, boolean, String)">super</A>(num, is_inclusive, name)</CODE></P>
-    **/
-   public IntBound(Integer num, boolean is_inclusive, String name)  {
-      super(num, is_inclusive, name);
-   }
-   /**
-      <P>Create a new {@code IntBound} as a duplicate of another.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberBound#NumberBound(N, boolean, String)">super</A>(num, is_inclusive, name)</CODE></P>
+	 **/
+	public IntBound(Integer num, boolean is_inclusive, String name)  {
+		super(num, is_inclusive, name);
+	}
+	/**
+		<P>Create a new {@code IntBound} as a duplicate of another.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link NumberBound#NumberBound(NumberBound) super}{@code (to_copy)}</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link NumberBound#NumberBound(NumberBound) super}{@code (to_copy)}</P>
 
-      @param  to_copy  May not be {@code null}.
-    **/
-   public IntBound(IntBound to_copy)  {
-      super(to_copy);
-   }
-   /**
-      <P>Get the number as an int.</P>
+		@param  to_copy  May not be {@code null}.
+	 **/
+	public IntBound(IntBound to_copy)  {
+		super(to_copy);
+	}
+	/**
+		<P>Get the number as an int.</P>
 
-      @return  <CODE>{@link NumberBound#get() get}()*.{@link java.lang.Integer#intValue() intValue}()</CODE>
-    **/
-   public int getInt()  {
-      return  get().intValue();
-   }
-   public Integer getGivenIncl(BoundSide min_orMax)  {
-      try  {
-         return  (isInclusive() ? get() :
-            min_orMax.isMin()
-               ?  (get() + 1)
-               :  (get() - 1));
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(min_orMax, "min_orMax", null, rx);
-      }
-   }
-   public Integer getInclComparedTo(BoundSide min_orMax, Integer num)  {
-      try  {
-         return  getGivenIncl(min_orMax).intValue() - num.intValue();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(num, "num", null, rx);
-      }
-   }
+		@return  <CODE>{@link NumberBound#get() get}()*.{@link java.lang.Integer#intValue() intValue}()</CODE>
+	 **/
+	public int getInt()  {
+		return  get().intValue();
+	}
+	public Integer getGivenIncl(BoundSide min_orMax)  {
+		try  {
+			return  (isInclusive() ? get() :
+				min_orMax.isMin()
+					?  (get() + 1)
+					:  (get() - 1));
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(min_orMax, "min_orMax", null, rx);
+		}
+	}
+	public Integer getInclComparedTo(BoundSide min_orMax, Integer num)  {
+		try  {
+			return  getGivenIncl(min_orMax).intValue() - num.intValue();
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(num, "num", null, rx);
+		}
+	}
 }

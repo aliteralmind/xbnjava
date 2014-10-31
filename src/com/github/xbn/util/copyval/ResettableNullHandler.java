@@ -14,64 +14,64 @@
 \*license*/
 package  com.github.xbn.util.copyval;
 /**
-   <P>Mutable {@code NullHandler} for static internal use only.</P>
+	<P>Mutable {@code NullHandler} for static internal use only.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ResettableNullHandler<O> implements NullHandler<O>  {
-   private O e = null;
-   public ResettableNullHandler(O non_nullRplcmnt)  {
-      nonNullValue(non_nullRplcmnt);
-   }
-   /**
-      <P>Create a new {@code ResettableNullHandler} as a duplicate of another.</P>
+	private O e = null;
+	public ResettableNullHandler(O non_nullRplcmnt)  {
+		nonNullValue(non_nullRplcmnt);
+	}
+	/**
+		<P>Create a new {@code ResettableNullHandler} as a duplicate of another.</P>
 
-      <P>This<OL>
-         <LI>YYY</LI>
-      </OL></P>
+		<P>This<OL>
+			<LI>YYY</LI>
+		</OL></P>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-    **/
-   public ResettableNullHandler(ResettableNullHandler<O> to_copy)  {
-      nonNullValue(to_copy.getNonNull());
-   }
-   public final ResettableNullHandler nonNullValue(O non_nullRplcmnt)  {
-      if(non_nullRplcmnt == null)  {
-         throw  new NullPointerException("non_nullRplcmnt");
-      }
-      e = non_nullRplcmnt;
-      return  this;
-   }
-   public ActionForNull getAction()  {
-      return  ActionForNull.USE_NON_NULL;
-   }
-   public final boolean doCrash()  {
-      return  false;
-   }
-   public final boolean doUseNull()  {
-      return  false;
-   }
-   public final boolean doDelete()  {
-      return  false;
-   }
-   public final boolean doUseNonNull()  {
-      return  true;
-   }
-   public final O getNonNull()  {
-      return  e;
-   }
-   /**
-      <P>Duplicate this {@code ResettableNullHandler}.</P>
+		@param  to_copy  May not be {@code null}.
+		@see  #getObjectCopy()
+	 **/
+	public ResettableNullHandler(ResettableNullHandler<O> to_copy)  {
+		nonNullValue(to_copy.getNonNull());
+	}
+	public final ResettableNullHandler nonNullValue(O non_nullRplcmnt)  {
+		if(non_nullRplcmnt == null)  {
+			throw  new NullPointerException("non_nullRplcmnt");
+		}
+		e = non_nullRplcmnt;
+		return  this;
+	}
+	public ActionForNull getAction()  {
+		return  ActionForNull.USE_NON_NULL;
+	}
+	public final boolean doCrash()  {
+		return  false;
+	}
+	public final boolean doUseNull()  {
+		return  false;
+	}
+	public final boolean doDelete()  {
+		return  false;
+	}
+	public final boolean doUseNonNull()  {
+		return  true;
+	}
+	public final O getNonNull()  {
+		return  e;
+	}
+	/**
+		<P>Duplicate this {@code ResettableNullHandler}.</P>
 
-      @return  <CODE>(new {@link #ResettableNullHandler(ResettableNullHandler) ResettableNullHandler}&lt;O&gt;(this))</CODE>
-    **/
-   public NullHandler<O> getObjectCopy()  {
-      return  (new ResettableNullHandler<O>(this));
-   }
-   public String toString()  {
-      return  "getNonNull()=[" + getNonNull() + "]";
-   }
+		@return  <CODE>(new {@link #ResettableNullHandler(ResettableNullHandler) ResettableNullHandler}&lt;O&gt;(this))</CODE>
+	 **/
+	public NullHandler<O> getObjectCopy()  {
+		return  (new ResettableNullHandler<O>(this));
+	}
+	public String toString()  {
+		return  "getNonNull()=[" + getNonNull() + "]";
+	}
 
 }

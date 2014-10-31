@@ -13,191 +13,191 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.primitiveable;
-   import  com.github.xbn.experimental.listify.AddRemovable;
-   import  com.github.xbn.lang.ObjectOrCrashIfNull;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.util.copyval.SimpleNullHandler;
-   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
-   import  com.github.xbn.experimental.listify.ListifyComposer;
-   import  com.github.xbn.util.copyval.ValueCopier;
-   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
-   import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
+	import  com.github.xbn.experimental.listify.AddRemovable;
+	import  com.github.xbn.lang.ObjectOrCrashIfNull;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.util.copyval.SimpleNullHandler;
+	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
+	import  com.github.xbn.experimental.listify.ListifyComposer;
+	import  com.github.xbn.util.copyval.ValueCopier;
+	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
 /**
-   <P>For classes that need to implement {@code ListifyPrimitiveable}, that cannot extend {@code AbstractListifyPrimitiveable}</P>
+	<P>For classes that need to implement {@code ListifyPrimitiveable}, that cannot extend {@code AbstractListifyPrimitiveable}</P>
 
-   @see  ListifyPrimitiveable
-   @see  AbstractListifyPrimitiveable
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  ListifyPrimitiveable
+	@see  AbstractListifyPrimitiveable
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//implements ListifyPrimitiveable<E>  {
-   private NullHandlerForPrimitives<E> hnvnb = null;
+	private NullHandlerForPrimitives<E> hnvnb = null;
 //constructors...START
-   /**
-      <P>Create a new {@code ListifyPrimitiveableComposer}.</P>
+	/**
+		<P>Create a new {@code ListifyPrimitiveableComposer}.</P>
 
-      YYY
+		YYY
 
-      ...{@link com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives SimpleNullHandlerForPrimitives.}{@link com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives#CRASH CRASH})}
-    **/
-   @SuppressWarnings("unchecked")
-   public ListifyPrimitiveableComposer(Object raw_obj, AddRemovable add_rmvbl, PrimitiveArrayHelper<E> primitive_arrHelper, ValueCopier<E> get_valCopy)  {
-      this(raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy, SimpleNullHandlerForPrimitives.CRASH);
-   }
-   public ListifyPrimitiveableComposer(Object raw_obj, AddRemovable add_rmvbl, PrimitiveArrayHelper<E> primitive_arrHelper, ValueCopier<E> get_valCopy, NullHandlerForPrimitives<E> null_handler)  {
-      super(raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy);
-      if(null_handler == null)  {
-         throw  new NullPointerException("null_handler");
-      }
-      hnvnb = null_handler;
-   }
-   /**
-      <P>Create a new {@code ListifyPrimitiveableComposer} as a duplicate of another.</P>
+		...{@link com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives SimpleNullHandlerForPrimitives.}{@link com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives#CRASH CRASH})}
+	 **/
+	@SuppressWarnings("unchecked")
+	public ListifyPrimitiveableComposer(Object raw_obj, AddRemovable add_rmvbl, PrimitiveArrayHelper<E> primitive_arrHelper, ValueCopier<E> get_valCopy)  {
+		this(raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy, SimpleNullHandlerForPrimitives.CRASH);
+	}
+	public ListifyPrimitiveableComposer(Object raw_obj, AddRemovable add_rmvbl, PrimitiveArrayHelper<E> primitive_arrHelper, ValueCopier<E> get_valCopy, NullHandlerForPrimitives<E> null_handler)  {
+		super(raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy);
+		if(null_handler == null)  {
+			throw  new NullPointerException("null_handler");
+		}
+		hnvnb = null_handler;
+	}
+	/**
+		<P>Create a new {@code ListifyPrimitiveableComposer} as a duplicate of another.</P>
 
-      YYY
+		YYY
 
-      <P>This<OL>
-         <LI>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(boolean, ListifyComposer) super}{@code (ignored, to_copy)}</LI>
-         <LI>YYY</LI>
-      </OL></P>
+		<P>This<OL>
+			<LI>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(boolean, ListifyComposer) super}{@code (ignored, to_copy)}</LI>
+			<LI>YYY</LI>
+		</OL></P>
 
-      @param  to_copy  May not be {@code null}.
-    **/
-   @SuppressWarnings("unchecked")
-   public ListifyPrimitiveableComposer(boolean ignored, ListifyPrimitiveableComposer<E> to_copy)  {
-      super(ignored, to_copy);
+		@param  to_copy  May not be {@code null}.
+	 **/
+	@SuppressWarnings("unchecked")
+	public ListifyPrimitiveableComposer(boolean ignored, ListifyPrimitiveableComposer<E> to_copy)  {
+		super(ignored, to_copy);
 
-      @SuppressWarnings("unchecked")
-      NullHandlerForPrimitives<E> hnvnb2 = (NullHandlerForPrimitives<E>)ObjectOrCrashIfNull.
-         <NullHandlerForPrimitives>getCopy(to_copy.getNullHandlerForPrimitives(), NullHandlerForPrimitives.class, "to_copy.getNullHandlerForPrimitives()");
-      hnvnb = hnvnb2;
-   }
-   /**
-      <P>Create a new {@code ListifyPrimitiveableComposer} from a {@code ListifyPrimitiveable}.</P>
+		@SuppressWarnings("unchecked")
+		NullHandlerForPrimitives<E> hnvnb2 = (NullHandlerForPrimitives<E>)ObjectOrCrashIfNull.
+			<NullHandlerForPrimitives>getCopy(to_copy.getNullHandlerForPrimitives(), NullHandlerForPrimitives.class, "to_copy.getNullHandlerForPrimitives()");
+		hnvnb = hnvnb2;
+	}
+	/**
+		<P>Create a new {@code ListifyPrimitiveableComposer} from a {@code ListifyPrimitiveable}.</P>
 
-      YYY
+		YYY
 
-      <P>This<OL>
-         <LI>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</LI>
-         <LI>YYY</LI>
-      </OL></P>
+		<P>This<OL>
+			<LI>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</LI>
+			<LI>YYY</LI>
+		</OL></P>
 
-      @param  to_copy  May not be {@code null}.
-    **/
-   @SuppressWarnings("unchecked")
-   public ListifyPrimitiveableComposer(ListifyPrimitiveable<E> to_copy)  {
-      super(to_copy);
-      hnvnb = (NullHandlerForPrimitives<E>)to_copy.getNullHandlerForPrimitives().getObjectCopy();
-   }
+		@param  to_copy  May not be {@code null}.
+	 **/
+	@SuppressWarnings("unchecked")
+	public ListifyPrimitiveableComposer(ListifyPrimitiveable<E> to_copy)  {
+		super(to_copy);
+		hnvnb = (NullHandlerForPrimitives<E>)to_copy.getNullHandlerForPrimitives().getObjectCopy();
+	}
 //constructors...END
-   public NullHandlerForPrimitives<E> getNullHandlerForPrimitives()  {
-      return  hnvnb;
-   }
-   public PrimitiveArrayHelper<E> getArrayHelper()  {
-      return  (PrimitiveArrayHelper<E>)super.getArrayHelper();
-   }
-   public String toString()  {
-      return  appendToString(new StringBuilder()).toString();
-   }
-   public StringBuilder appendToString(StringBuilder to_appendTo)  {
-      return  super.appendToString(to_appendTo).append(", getNullHandlerForPrimitives()=[").append(getNullHandlerForPrimitives()).append("]");
-   }
+	public NullHandlerForPrimitives<E> getNullHandlerForPrimitives()  {
+		return  hnvnb;
+	}
+	public PrimitiveArrayHelper<E> getArrayHelper()  {
+		return  (PrimitiveArrayHelper<E>)super.getArrayHelper();
+	}
+	public String toString()  {
+		return  appendToString(new StringBuilder()).toString();
+	}
+	public StringBuilder appendToString(StringBuilder to_appendTo)  {
+		return  super.appendToString(to_appendTo).append(", getNullHandlerForPrimitives()=[").append(getNullHandlerForPrimitives()).append("]");
+	}
 //static...START
-   public static final <E> E getElementCopyCINullAndHNVCrashOrDel(ListifyPrimitiveable<E> listifier, int index)  {
-      try  {
-         return  SimpleNullHandler.getCopyCIOrigNullAndActionCrashOrDel(listifier.getNullHandlerForPrimitives(), listifier.get(index));
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(listifier, "listifier", null, rx);
-      }
-   }
-   /**
-      <P>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</P>
-    **/
-   public static final <E> void ciActionCrashOrDel(ListifyPrimitiveable<E> listifier, int index)  {
-      try  {
-         SimpleNullHandler.ciActionCrashOrDel(listifier.getNullHandlerForPrimitives());
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(listifier, "listifier", null, rx);
-      }
-   }
+	public static final <E> E getElementCopyCINullAndHNVCrashOrDel(ListifyPrimitiveable<E> listifier, int index)  {
+		try  {
+			return  SimpleNullHandler.getCopyCIOrigNullAndActionCrashOrDel(listifier.getNullHandlerForPrimitives(), listifier.get(index));
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(listifier, "listifier", null, rx);
+		}
+	}
+	/**
+		<P>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</P>
+	 **/
+	public static final <E> void ciActionCrashOrDel(ListifyPrimitiveable<E> listifier, int index)  {
+		try  {
+			SimpleNullHandler.ciActionCrashOrDel(listifier.getNullHandlerForPrimitives());
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(listifier, "listifier", null, rx);
+		}
+	}
 //static...END
 /*stub functions for implements compile...START
-   public final String[] getStringArrayOrNull(NullContainer null_ok, CopyElements copy_elements)  {
-      return  null;
-   }
-   public final Object[] getObjectArrayOrNull(NullContainer null_ok, CopyElements copy_elements)  {
-      return  null;
-   }
-   public final String getString(int index)  {
-      return  null;
-   }
-   public final Object getObject(int index)  {
-      return  null;
-   }
-   public final E get(int index)  {
-      return  null;
-   }
-   public final boolean isNull(int index)  {
-      return  false;
-   }
-   public final E getCopy(int index)  {
-      return  null;
-   }
-   public final int size()  {
-      return  -1;
-   }
-   public final java.util.List<String> getStringListOrNull(NullContainer null_ok, CopyElements copy_elements)  {
-      return  null;
-   }
-   public final java.util.List<Object> getObjectListOrNull(NullContainer null_ok, CopyElements copy_elements)  {
-      return  null;
-   }
-   public final java.util.List<E> getEListCopyOrNull(NullContainer null_ok, CopyElements copy_elements)  {
-      return  null;
-   }
-   public final E[] getEArrayCopyOrNull(NullContainer null_ok, CopyElements copy_elements)  {
-      return  null;
-   }
-   public final Object[] toArray()  {
-      return  null;
-   }
-   public final <T> T[] toArray(T[] array_ofT)  {
-      return  null;
-   }
-   public final boolean isEmpty()  {
-      return  false;
-   }
-   public final java.util.Iterator<E> iterator()  {
-      return  null;
-   }
+	public final String[] getStringArrayOrNull(NullContainer null_ok, CopyElements copy_elements)  {
+		return  null;
+	}
+	public final Object[] getObjectArrayOrNull(NullContainer null_ok, CopyElements copy_elements)  {
+		return  null;
+	}
+	public final String getString(int index)  {
+		return  null;
+	}
+	public final Object getObject(int index)  {
+		return  null;
+	}
+	public final E get(int index)  {
+		return  null;
+	}
+	public final boolean isNull(int index)  {
+		return  false;
+	}
+	public final E getCopy(int index)  {
+		return  null;
+	}
+	public final int size()  {
+		return  -1;
+	}
+	public final java.util.List<String> getStringListOrNull(NullContainer null_ok, CopyElements copy_elements)  {
+		return  null;
+	}
+	public final java.util.List<Object> getObjectListOrNull(NullContainer null_ok, CopyElements copy_elements)  {
+		return  null;
+	}
+	public final java.util.List<E> getEListCopyOrNull(NullContainer null_ok, CopyElements copy_elements)  {
+		return  null;
+	}
+	public final E[] getEArrayCopyOrNull(NullContainer null_ok, CopyElements copy_elements)  {
+		return  null;
+	}
+	public final Object[] toArray()  {
+		return  null;
+	}
+	public final <T> T[] toArray(T[] array_ofT)  {
+		return  null;
+	}
+	public final boolean isEmpty()  {
+		return  false;
+	}
+	public final java.util.Iterator<E> iterator()  {
+		return  null;
+	}
  	public final boolean contains(Object obj)  {
-      return  false;
-   }
+		return  false;
+	}
  	public final boolean containsAll(Collection<?> coll)  {
-      return  false;
-   }
+		return  false;
+	}
  	public final boolean contains_nullOk(Object obj)  {
-      return  false;
-   }
+		return  false;
+	}
  	public final boolean containsAll_nullOk(Collection<?> coll)  {
-      return  false;
-   }
-   public final void clear()  {
-   }
-   public final boolean retainAll(Collection<?> coll)  {
-      return  false;
-   }
-   public final boolean removeAll(Collection<?> coll)  {
-      return  false;
-   }
-   public final boolean addAll(Collection<? extends E> coll)  {
-      return  false;
-   }
-   public final boolean remove(Object obj)  {
-      return  false;
-   }
-   public final boolean add(E to_add)  {
-      return  false;
-   }
+		return  false;
+	}
+	public final void clear()  {
+	}
+	public final boolean retainAll(Collection<?> coll)  {
+		return  false;
+	}
+	public final boolean removeAll(Collection<?> coll)  {
+		return  false;
+	}
+	public final boolean addAll(Collection<? extends E> coll)  {
+		return  false;
+	}
+	public final boolean remove(Object obj)  {
+		return  false;
+	}
+	public final boolean add(E to_add)  {
+		return  false;
+	}
  stub functions for implements compile...END*/
 }

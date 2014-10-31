@@ -16,15 +16,15 @@ package  com.github.xbn.analyze.validate;
 /**
    <P>For validators that may optionally alter or suppress their valid-results.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public interface ValidResultFilterable  {
-   /**
-      <P>The filter that optionally alters or suppresses the valid result.</P>
+	/**
+		<P>The filter that optionally alters or suppresses the valid result.</P>
 
-      @return  A non-{@code null} {@code ValidResultFilter}
-    **/
-   ValidResultFilter getFilter();
+		@return  A non-{@code null} {@code ValidResultFilter}
+	 **/
+	ValidResultFilter getFilter();
 }

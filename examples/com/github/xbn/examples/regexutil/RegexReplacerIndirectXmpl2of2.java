@@ -13,35 +13,35 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil;
-   import  com.github.xbn.regexutil.IndirectRegexReplacer;
-   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
+	import  com.github.xbn.regexutil.IndirectRegexReplacer;
+	import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
 /**
-   <P>Demonstrates an indirect replacement using {@code com.github.xbn.regexutil.RegexReplacer}.</P>
+	<P>Demonstrates an indirect replacement using {@code com.github.xbn.regexutil.RegexReplacer}.</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl2of2}</P>
+	<P>{@code java com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl2of2}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RegexReplacerIndirectXmpl2of2  {
-   public static void main(String[] ignored)  {
+	public static void main(String[] ignored)  {
 
-      System.out.println("Change all ${...}-s to their \"values\":");
-      String sFindWhat = "\\$\\{([^\\}]+)\\}";
-      String sToSearch = "xyz=${xyz}. abc=${abc}...";
+		System.out.println("Change all ${...}-s to their \"values\":");
+		String sFindWhat = "\\$\\{([^\\}]+)\\}";
+		String sToSearch = "xyz=${xyz}. abc=${abc}...";
 
-      IndirectRegexReplacer rri = new IndirectRegexReplacer(new RegexReplacer_Cfg().findWhat(sFindWhat))  {
-         public String getIndirectReplacement()  {
-            String sBetweenCurlys = getGroup(1);
-            if(sBetweenCurlys.equals("abc"))  {
-               return  "VALUE_FOR_ABC";
-            }  else if(sBetweenCurlys.equals("xyz"))  {
-               return  "VALUE_FOR_XYZ";
-            }  else  {
-               throw  new IllegalStateException("Unknown token variable name: \"" + sBetweenCurlys + "\"");
-            }
-         }
-      };
-      System.out.println(rri.getReplaced(sToSearch));
-   }
+		IndirectRegexReplacer rri = new IndirectRegexReplacer(new RegexReplacer_Cfg().findWhat(sFindWhat))  {
+			public String getIndirectReplacement()  {
+				String sBetweenCurlys = getGroup(1);
+				if(sBetweenCurlys.equals("abc"))  {
+					return  "VALUE_FOR_ABC";
+				}  else if(sBetweenCurlys.equals("xyz"))  {
+					return  "VALUE_FOR_XYZ";
+				}  else  {
+					throw  new IllegalStateException("Unknown token variable name: \"" + sBetweenCurlys + "\"");
+				}
+			}
+		};
+		System.out.println(rri.getReplaced(sToSearch));
+	}
 }

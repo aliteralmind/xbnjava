@@ -13,48 +13,48 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.primitive;
-   import  com.github.xbn.array.CrashIfIndex;
+	import  com.github.xbn.array.CrashIfIndex;
 /**
-   <P>If an object that is <I>known to be a primitive array</I> is {@code null}, or the index for it is invalid, crash--otherwise <I>return</I> the causing error.</P>
+	<P>If an object that is <I>known to be a primitive array</I> is {@code null}, or the index for it is invalid, crash--otherwise <I>return</I> the causing error.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class CrashIfObjThatIsPrimitiveArray  {
-   /**
-      <P>If an object that is <I>known to be a primitive array</I> is {@code null}, or the index for it is invalid, crash--otherwise <I>return</I> the causing error.</P>
+	/**
+		<P>If an object that is <I>known to be a primitive array</I> is {@code null}, or the index for it is invalid, crash--otherwise <I>return</I> the causing error.</P>
 
-      @param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
-      @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitiveType(Class) isPrimitiveType(cls)
-    **/
-   public static final void nullOrBadIndex(Object objThatIsAPArray, int index, String idx_name, String obj_name)  {
-      if(objThatIsAPArray == null)  {
-         throw  new NullPointerException(obj_name);
-      }
-      int iLen = -1;
-      if(objThatIsAPArray instanceof boolean[])  {
-         iLen = ((boolean[])objThatIsAPArray).length;
-      }  else if(objThatIsAPArray instanceof char[])  {
-         iLen = ((char[])objThatIsAPArray).length;
-      }  else if(objThatIsAPArray instanceof byte[])  {
-         iLen = ((byte[])objThatIsAPArray).length;
-      }  else if(objThatIsAPArray instanceof short[])  {
-         iLen = ((short[])objThatIsAPArray).length;
-      }  else if(objThatIsAPArray instanceof int[])  {
-         iLen = ((int[])objThatIsAPArray).length;
-      }  else if(objThatIsAPArray instanceof long[])  {
-         iLen = ((long[])objThatIsAPArray).length;
-      }  else if(objThatIsAPArray instanceof float[])  {
-         iLen = ((float[])objThatIsAPArray).length;
-      }  else if(objThatIsAPArray instanceof double[])  {
-         iLen = ((double[])objThatIsAPArray).length;
-      }  else  {
-         throw  new IllegalArgumentException(obj_name + " should be a primitive array, but is a " + objThatIsAPArray.getClass().getName());
-      }
+		@param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
+		@see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitiveType(Class) isPrimitiveType(cls)
+	 **/
+	public static final void nullOrBadIndex(Object objThatIsAPArray, int index, String idx_name, String obj_name)  {
+		if(objThatIsAPArray == null)  {
+			throw  new NullPointerException(obj_name);
+		}
+		int iLen = -1;
+		if(objThatIsAPArray instanceof boolean[])  {
+			iLen = ((boolean[])objThatIsAPArray).length;
+		}  else if(objThatIsAPArray instanceof char[])  {
+			iLen = ((char[])objThatIsAPArray).length;
+		}  else if(objThatIsAPArray instanceof byte[])  {
+			iLen = ((byte[])objThatIsAPArray).length;
+		}  else if(objThatIsAPArray instanceof short[])  {
+			iLen = ((short[])objThatIsAPArray).length;
+		}  else if(objThatIsAPArray instanceof int[])  {
+			iLen = ((int[])objThatIsAPArray).length;
+		}  else if(objThatIsAPArray instanceof long[])  {
+			iLen = ((long[])objThatIsAPArray).length;
+		}  else if(objThatIsAPArray instanceof float[])  {
+			iLen = ((float[])objThatIsAPArray).length;
+		}  else if(objThatIsAPArray instanceof double[])  {
+			iLen = ((double[])objThatIsAPArray).length;
+		}  else  {
+			throw  new IllegalArgumentException(obj_name + " should be a primitive array, but is a " + objThatIsAPArray.getClass().getName());
+		}
 
-      CrashIfIndex.badForLength(index, iLen, idx_name, obj_name);
-   }
-   private CrashIfObjThatIsPrimitiveArray()  {
-      throw  new IllegalStateException("Do not instantiate.");
-   }
+		CrashIfIndex.badForLength(index, iLen, idx_name, obj_name);
+	}
+	private CrashIfObjThatIsPrimitiveArray()  {
+		throw  new IllegalStateException("Do not instantiate.");
+	}
 }

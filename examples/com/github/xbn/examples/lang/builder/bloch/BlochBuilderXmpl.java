@@ -16,60 +16,60 @@ package  com.github.xbn.examples.lang.builder.bloch;
 /**
    <P>Demonstrates a Bloch Builder.</P>
 
-   <P>{@code java com.github.xbn.examples.lang.builder.bloch.BlochBuilderXmpl}</P>
+	<P>{@code java com.github.xbn.examples.lang.builder.bloch.BlochBuilderXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class BlochBuilderXmpl  {
-   public static final void main(String[] ignored)  {
-      UserConfig uc = new UserConfig.Cfg("Kermit").age(50).favoriteColor("green").build();
-      System.out.println(uc);
-   }
+	public static final void main(String[] ignored)  {
+		UserConfig uc = new UserConfig.Cfg("Kermit").age(50).favoriteColor("green").build();
+		System.out.println(uc);
+	}
 }
 
 //CLASS TO BUILD (ENCLOSING)
 class UserConfig  {
-   private final String sName    ;
-   private final int    iAge     ;
-   private final String sFavColor;
+	private final String sName    ;
+	private final int    iAge     ;
+	private final String sFavColor;
    public UserConfig(UserConfig.Cfg uchr)  {
-      //transfer
-         try  {
-            sName  = uchr.sName;
-         }  catch(NullPointerException rx)  {
-            throw  new NullPointerException("uchr");
-         }
-         iAge      = uchr.iAge;
-         sFavColor = uchr.sFavColor;
+		//transfer
+			try  {
+				sName  = uchr.sName;
+			}  catch(NullPointerException rx)  {
+				throw  new NullPointerException("uchr");
+			}
+			iAge      = uchr.iAge;
+			sFavColor = uchr.sFavColor;
 
-      //Validate all fields here
-   }
-   public String toString()  {
-      return  "name=" + sName + ", age=" + iAge + ", sFavColor=" + sFavColor;
-   }
+		//Validate all fields here
+	}
+	public String toString()  {
+		return  "name=" + sName + ", age=" + iAge + ", sFavColor=" + sFavColor;
+	}
 
-   //BUILDER
-   public static class Cfg  {
-      private String sName    ;
-      private int    iAge     ;
-      private String sFavColor;
-      public Cfg(String name)  {
-         sName = name;
-      }
-      //self-returning setters...START
-         public Cfg age(int years)  {
-            iAge = years;
-            return  this;
-         }
-         public Cfg favoriteColor(String selfCmprolor)  {
-            sFavColor = selfCmprolor;
-            return  this;
-         }
-      //self-returning setters...END
-      public UserConfig build()  {
-         return  (new UserConfig(this));
-      }
-   }
+	//BUILDER
+	public static class Cfg  {
+		private String sName    ;
+		private int    iAge     ;
+		private String sFavColor;
+		public Cfg(String name)  {
+			sName = name;
+		}
+		//self-returning setters...START
+			public Cfg age(int years)  {
+				iAge = years;
+				return  this;
+			}
+			public Cfg favoriteColor(String selfCmprolor)  {
+				sFavColor = selfCmprolor;
+				return  this;
+			}
+		//self-returning setters...END
+		public UserConfig build()  {
+			return  (new UserConfig(this));
+		}
+	}
 }

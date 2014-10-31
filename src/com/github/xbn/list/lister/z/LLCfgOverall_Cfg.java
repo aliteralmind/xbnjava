@@ -13,22 +13,22 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list.lister.z;
-   import  com.github.xbn.list.lister.LLCfgOverall;
-   import  com.github.xbn.neederneedable.DummyForNoNeeder;
+	import  com.github.xbn.list.lister.LLCfgOverall;
+	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring an {@code com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</P>
+	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring an {@code com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class LLCfgOverall_Cfg<E> extends LLCfgOverall_CfgForNeeder<E,LLCfgOverall<E>,DummyForNoNeeder>   {
-   /**
-      <P>Create a new {@code zLLCfgOverall_Cfg} with defaults.</P>
+	/**
+		<P>Create a new {@code zLLCfgOverall_Cfg} with defaults.</P>
 
-         <P>Equal to
-      <BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="zLLConfigOverall_CfgForNeeder.html#zLLConfigOverall_CfgForNeeder(R)">super</A>(null)</CODE></P>
-    **/
-   public LLCfgOverall_Cfg()  {
-      super(null);
-   }
+			<P>Equal to
+		<BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="zLLConfigOverall_CfgForNeeder.html#zLLConfigOverall_CfgForNeeder(R)">super</A>(null)</CODE></P>
+	 **/
+	public LLCfgOverall_Cfg()  {
+		super(null);
+	}
 }

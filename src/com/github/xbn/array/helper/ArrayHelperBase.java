@@ -13,34 +13,34 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.helper;
-   import  com.github.xbn.array.NullContainer;
-   import  java.util.Iterator;
+	import  com.github.xbn.array.NullContainer;
+	import  java.util.Iterator;
 
 /**
-   <P>Base class for {@code ArrayHelper} and {@code PrimitiveArrayHelper}.</P>
+	<P>Base class for {@code ArrayHelper} and {@code PrimitiveArrayHelper}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface ArrayHelperBase<E>  {
-   Class<?> getStaticClass();
-   int getLength(Object obj_thatIsAnArray, String array_name);
-   Object[] getObjectArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad);
-   String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad);
-   /**
-      <P>Get a new iterator to step through the array's elements.</P>
-    **/
-   Iterator<E> getIterator(Object obj_thatIsAnArray, String array_name);
-   /**
-      <P>Get a new array of {@code E}, where each element is {@code null}. Use this in lieu of creating generic arrays, such as {@code new E[iLength]}, which is illegal.</P>
+	Class<?> getStaticClass();
+	int getLength(Object obj_thatIsAnArray, String array_name);
+	Object[] getObjectArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad);
+	String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad);
+	/**
+		<P>Get a new iterator to step through the array's elements.</P>
+	 **/
+	Iterator<E> getIterator(Object obj_thatIsAnArray, String array_name);
+	/**
+		<P>Get a new array of {@code E}, where each element is {@code null}. Use this in lieu of creating generic arrays, such as {@code new E[iLength]}, which is illegal.</P>
 
-      @see  #getEmpty()
-    **/
-   E[] getInitialized(int length);
-   /**
-      <P>Get an empty array of {@code E}. This returned array is recommended to be {@code static final}.</P>
+		@see  #getEmpty()
+	 **/
+	E[] getInitialized(int length);
+	/**
+		<P>Get an empty array of {@code E}. This returned array is recommended to be {@code static final}.</P>
 
-      @see  #getInitialized(int) getInitialized(int)
-    **/
-   E[] getEmpty();
+		@see  #getInitialized(int) getInitialized(int)
+	 **/
+	E[] getEmpty();
 }

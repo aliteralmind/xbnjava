@@ -13,24 +13,24 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.io;
-   import  com.github.xbn.io.NewTextAppenterFor;
-   import  com.github.xbn.io.TextAppenter;
+	import  com.github.xbn.io.NewTextAppenterFor;
+	import  com.github.xbn.io.TextAppenter;
 /**
-   <P>Demonstrates a use-case for <CODE>com.github.xbn.io.{@link com.github.xbn.io.TextAppenter}.{@link com.github.xbn.io.TextAppenter#newForUnusable() newForUnusable}()</CODE></P>
+	<P>Demonstrates a use-case for <CODE>com.github.xbn.io.{@link com.github.xbn.io.TextAppenter}.{@link com.github.xbn.io.TextAppenter#newForUnusable() newForUnusable}()</CODE></P>
 
-   <P>{@code java com.github.xbn.examples.io.UnusableAppenterExample}</P>
+	<P>{@code java com.github.xbn.examples.io.UnusableAppenterExample}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class UnusableAppenterExample  {
-   public static final void main(String[] ignored)  {
-      test(NewTextAppenterFor.appendableUnusableIfNull(System.out));
-      test(NewTextAppenterFor.appendableUnusableIfNull(null));
-   }
-   public static final void test(TextAppenter debug_aptr)  {
-      if(debug_aptr.isUseable())  {
-         debug_aptr.appentln("I'm worthy!");
-      }
-   }
+	public static final void main(String[] ignored)  {
+		test(NewTextAppenterFor.appendableUnusableIfNull(System.out));
+		test(NewTextAppenterFor.appendableUnusableIfNull(null));
+	}
+	public static final void test(TextAppenter debug_aptr)  {
+		if(debug_aptr.isUseable())  {
+			debug_aptr.appentln("I'm worthy!");
+		}
+	}
 }

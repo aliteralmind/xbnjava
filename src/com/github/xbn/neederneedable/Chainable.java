@@ -14,31 +14,31 @@
 \*license*/
 package  com.github.xbn.neederneedable;
 /**
-   <P>{@code Chainable} supports self-returning function chains, with the ability to insert arbitrary diagnostic identifiers at any point.</P>
+	<P>{@code Chainable} supports self-returning function chains, with the ability to insert arbitrary diagnostic identifiers at any point.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface Chainable  {
-   /**
-      <P>Insert a diagnostic identifier into the chain.</P>
+	/**
+		<P>Insert a diagnostic identifier into the chain.</P>
 
-      @param  id  May not be {@code null}. If a string, it <I>should</I> not be empty or invisible. Get with {@link #getChainID() getChainID}{@code ()}.
-      @return  The {@code Chainable} instance. This must be overridden by all concrete sub-classes.
-    **/
-   Chainable chainID(boolean do_setStatic, Object id);
-   /**
-      <P>The chain id. Any self-returning functions that potentially throw an exception, should append the chain-ids to their message.</P>
+		@param  id  May not be {@code null}. If a string, it <I>should</I> not be empty or invisible. Get with {@link #getChainID() getChainID}{@code ()}.
+		@return  The {@code Chainable} instance. This must be overridden by all concrete sub-classes.
+	 **/
+	Chainable chainID(boolean do_setStatic, Object id);
+	/**
+		<P>The chain id. Any self-returning functions that potentially throw an exception, should append the chain-ids to their message.</P>
 
 <PRE>{@literal public final ChainableClass doSomething()  {
-   try  {
-      //do stuff
-   }  catch(RuntimeException rx)  {
-      throw  new RuntimeException("getChainID()=[" + getChainID() + "], getStaticChainID()=[" + getStaticChainID() + "]", rx);
-   }
-   return  this;
+	try  {
+		//do stuff
+	}  catch(RuntimeException rx)  {
+		throw  new RuntimeException("getChainID()=[" + getChainID() + "], getStaticChainID()=[" + getStaticChainID() + "]", rx);
+	}
+	return  this;
 }}</PRE>
-    **/
-   Object getChainID();
-   Object getStaticChainID();
+	 **/
+	Object getChainID();
+	Object getStaticChainID();
 }

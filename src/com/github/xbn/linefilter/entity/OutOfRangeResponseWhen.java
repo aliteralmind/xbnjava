@@ -14,43 +14,43 @@
 \*license*/
 package  com.github.xbn.linefilter.entity;
 /**
-   <P>When the fully-active count is out of range, when should the out-of-range state (on/off/abort) be returned: immediately, or only when the <I>next</I> active line is found?.</P>
+	<P>When the fully-active count is out of range, when should the out-of-range state (on/off/abort) be returned: immediately, or only when the <I>next</I> active line is found?.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum OutOfRangeResponseWhen  {
-   /**
-      <P>YYY.</P>
+	/**
+		<P>YYY.</P>
 
-      @see  #NEXT_ACTIVE_LINE
-      @see  #isImmediate()
-    **/
-   IMMEDIATE,
-   /**
-      <P>YYY.</P>
+		@see  #NEXT_ACTIVE_LINE
+		@see  #isImmediate()
+	 **/
+	IMMEDIATE,
+	/**
+		<P>YYY.</P>
 
-      @see  #IMMEDIATE
-      @see  #isNextActiveLine()
-    **/
-   NEXT_ACTIVE_LINE;
-   /**
-      <P>Is this {@code OutOfRangeResponseWhen} equal to {@code IMMEDIATE}?.</P>
+		@see  #IMMEDIATE
+		@see  #isNextActiveLine()
+	 **/
+	NEXT_ACTIVE_LINE;
+	/**
+		<P>Is this {@code OutOfRangeResponseWhen} equal to {@code IMMEDIATE}?.</P>
 
-      @return  <CODE>this == {@link #IMMEDIATE}</CODE>
+		@return  <CODE>this == {@link #IMMEDIATE}</CODE>
 
-      @see  #isNextActiveLine()
-    **/
-   public final boolean isImmediate()  {
-      return  this == IMMEDIATE;
-   }
-   /**
-      <P>Is this {@code OutOfRangeResponseWhen} equal to {@code NEXT_ACTIVE_LINE}?.</P>
+		@see  #isNextActiveLine()
+	 **/
+	public final boolean isImmediate()  {
+		return  this == IMMEDIATE;
+	}
+	/**
+		<P>Is this {@code OutOfRangeResponseWhen} equal to {@code NEXT_ACTIVE_LINE}?.</P>
 
-      @return  <CODE>this == {@link #NEXT_ACTIVE_LINE}</CODE>
-      @see  #isImmediate()
-    **/
-   public final boolean isNextActiveLine()  {
-      return  this == NEXT_ACTIVE_LINE;
-   }
+		@return  <CODE>this == {@link #NEXT_ACTIVE_LINE}</CODE>
+		@see  #isImmediate()
+	 **/
+	public final boolean isNextActiveLine()  {
+		return  this == NEXT_ACTIVE_LINE;
+	}
 };

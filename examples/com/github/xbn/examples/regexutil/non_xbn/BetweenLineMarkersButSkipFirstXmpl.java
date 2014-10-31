@@ -13,61 +13,61 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
-   import  java.util.Iterator;
-   import  java.util.ArrayList;
-   import  java.io.File;
-   import  java.io.IOException;
-   import  org.apache.commons.io.FileUtils;
+	import  java.util.Iterator;
+	import  java.util.ArrayList;
+	import  java.io.File;
+	import  java.io.IOException;
+	import  org.apache.commons.io.FileUtils;
 /**
-   <P>Read in a file, accepting all lines between two markers, ignoring the first line.</P>
+	<P>Read in a file, accepting all lines between two markers, ignoring the first line.</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.BetweenLineMarkersButSkipFirstXmpl xbnjava\xbn\examples\text\regex\BetweenLineMarkersButSkipFirstXmpl_data.txt}</P>
+	<P>{@code java com.github.xbn.examples.regexutil.non_xbn.BetweenLineMarkersButSkipFirstXmpl xbnjava\xbn\examples\text\regex\BetweenLineMarkersButSkipFirstXmpl_data.txt}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 **/
 public class BetweenLineMarkersButSkipFirstXmpl  {
-   public static final void main(String[] as_1RqdTxtFilePath)  {
-      Iterator<String> lineItr = null;
-      try  {
-         lineItr = FileUtils.lineIterator(new File(as_1RqdTxtFilePath[0])); //Throws npx if null
-      }  catch(IOException iox)  {
-         throw  new RuntimeException("Attempting to open \"" + as_1RqdTxtFilePath[0] + "\"", iox);
-      }  catch(RuntimeException rx)  {
-         throw  new RuntimeException("One required parameter: The path to the text file.", rx);
-      }
+	public static final void main(String[] as_1RqdTxtFilePath)  {
+		Iterator<String> lineItr = null;
+		try  {
+			lineItr = FileUtils.lineIterator(new File(as_1RqdTxtFilePath[0])); //Throws npx if null
+		}  catch(IOException iox)  {
+			throw  new RuntimeException("Attempting to open \"" + as_1RqdTxtFilePath[0] + "\"", iox);
+		}  catch(RuntimeException rx)  {
+			throw  new RuntimeException("One required parameter: The path to the text file.", rx);
+		}
 
-      String LINE_SEP = System.getProperty("line.separator", "\n");
+		String LINE_SEP = System.getProperty("line.separator", "\n");
 
-      ArrayList<String> alsItems = new ArrayList<String>();
-      boolean bStartMark = false;
-      boolean bLine1Skipped = false;
-      StringBuilder sdCurrentItem = new StringBuilder();
-      while(lineItr.hasNext())  {
-         String sLine = lineItr.next().trim();
-         if(!bStartMark)  {
-            if(sLine.startsWith(".START_SEQUENCE"))  {
-               bStartMark = true;
-               continue;
-            }
-            throw  new IllegalStateException("Start mark not found.");
-         }  if(!bLine1Skipped)  {
-            bLine1Skipped = true;
-            continue;
-         }  else if(!sLine.equals(".END_SEQUENCE"))  {
-            sdCurrentItem.append(sLine).append(LINE_SEP);
-         }  else  {
-            alsItems.add(sdCurrentItem.toString());
-            sdCurrentItem.setLength(0);
-            bStartMark = false;
-            bLine1Skipped = false;
-            continue;
-         }
-      }
+		ArrayList<String> alsItems = new ArrayList<String>();
+		boolean bStartMark = false;
+		boolean bLine1Skipped = false;
+		StringBuilder sdCurrentItem = new StringBuilder();
+		while(lineItr.hasNext())  {
+			String sLine = lineItr.next().trim();
+			if(!bStartMark)  {
+				if(sLine.startsWith(".START_SEQUENCE"))  {
+					bStartMark = true;
+					continue;
+				}
+				throw  new IllegalStateException("Start mark not found.");
+			}  if(!bLine1Skipped)  {
+				bLine1Skipped = true;
+				continue;
+			}  else if(!sLine.equals(".END_SEQUENCE"))  {
+				sdCurrentItem.append(sLine).append(LINE_SEP);
+			}  else  {
+				alsItems.add(sdCurrentItem.toString());
+				sdCurrentItem.setLength(0);
+				bStartMark = false;
+				bLine1Skipped = false;
+				continue;
+			}
+		}
 
-      for(String s : alsItems)  {
-         System.out.println("----------");
-         System.out.print(s);
-      }
-   }
+		for(String s : alsItems)  {
+			System.out.println("----------");
+			System.out.print(s);
+		}
+	}
 }

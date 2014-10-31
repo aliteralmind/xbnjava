@@ -13,83 +13,83 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.util.EnumUtil;
+	import  com.github.xbn.util.EnumUtil;
 /**
-   <P>What should be returned by the filtered line iterator?.</P>
+	<P>What should be returned by the filtered line iterator?.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum Returns  {
-   /**
-      <P>YYY.</P>
+	/**
+		<P>YYY.</P>
 
-      @see  #ACTIVE
-      @see  #ALL
-      @see  #isKept()
-    **/
-   KEPT,
-   /**
-      <P>YYY.</P>
+		@see  #ACTIVE
+		@see  #ALL
+		@see  #isKept()
+	 **/
+	KEPT,
+	/**
+		<P>YYY.</P>
 
-      @see  #KEPT
-      @see  #isActive()
-    **/
-   ACTIVE,
-   /**
-      <P>YYY.</P>
+		@see  #KEPT
+		@see  #isActive()
+	 **/
+	ACTIVE,
+	/**
+		<P>YYY.</P>
 
-      @see  #KEPT
-      @see  #isAll()
-    **/
-   ALL;
-   /**
-      <P>Is this {@code Returns} equal to {@code KEPT}?.</P>
+		@see  #KEPT
+		@see  #isAll()
+	 **/
+	ALL;
+	/**
+		<P>Is this {@code Returns} equal to {@code KEPT}?.</P>
 
-      @return  <CODE>this == {@link #KEPT}</CODE>
+		@return  <CODE>this == {@link #KEPT}</CODE>
 
-      @see  #isActive()
-      @see  #isAll()
-    **/
-   public final boolean isKept()  {
-      return  this == KEPT;
-   }
-   /**
-      <P>Is this {@code Returns} equal to {@code ACTIVE}?.</P>
+		@see  #isActive()
+		@see  #isAll()
+	 **/
+	public final boolean isKept()  {
+		return  this == KEPT;
+	}
+	/**
+		<P>Is this {@code Returns} equal to {@code ACTIVE}?.</P>
 
-      @return  <CODE>this == {@link #ACTIVE}</CODE>
-      @see  #isKept()
-    **/
-   public final boolean isActive()  {
-      return  this == ACTIVE;
-   }
-   /**
-      <P>Is this {@code Returns} equal to {@code ALL}?.</P>
+		@return  <CODE>this == {@link #ACTIVE}</CODE>
+		@see  #isKept()
+	 **/
+	public final boolean isActive()  {
+		return  this == ACTIVE;
+	}
+	/**
+		<P>Is this {@code Returns} equal to {@code ALL}?.</P>
 
-      @return  <CODE>this == {@link #ALL}</CODE>
-      @see  #isKept()
-    **/
-   public final boolean isAll()  {
-      return  this == ALL;
-   }
-   /**
-      <P>If a <CODE>Returns</CODE> is not a required value, crash.</P>
+		@return  <CODE>this == {@link #ALL}</CODE>
+		@see  #isKept()
+	 **/
+	public final boolean isAll()  {
+		return  this == ALL;
+	}
+	/**
+		<P>If a <CODE>Returns</CODE> is not a required value, crash.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
-      @see  #crashIfForbiddenValue(Returns, String, Object) crashIfForbiddenValue(ert,s,o)
-    **/
-   public void crashIfNotRequiredValue(Returns e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
-      EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
-   }
-   /**
-      <P>If a <CODE>Returns</CODE> is a forbidden value, crash.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		@see  #crashIfForbiddenValue(Returns, String, Object) crashIfForbiddenValue(ert,s,o)
+	 **/
+	public void crashIfNotRequiredValue(Returns e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
+		EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
+	}
+	/**
+		<P>If a <CODE>Returns</CODE> is a forbidden value, crash.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
-      @see  #crashIfNotRequiredValue(Returns, String, Object) crashIfNotRequiredValue(ert,s,o)
-    **/
-   public void crashIfForbiddenValue(Returns e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
-      EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
-   }
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		@see  #crashIfNotRequiredValue(Returns, String, Object) crashIfNotRequiredValue(ert,s,o)
+	 **/
+	public void crashIfForbiddenValue(Returns e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
+		EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
+	}
 };

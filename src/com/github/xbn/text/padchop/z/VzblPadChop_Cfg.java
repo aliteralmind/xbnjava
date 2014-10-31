@@ -13,37 +13,37 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.text.padchop.z;
-   import  com.github.xbn.text.padchop.VzblPadChop;
-   import  com.github.xbn.neederneedable.DummyForNoNeeder;
+	import  com.github.xbn.text.padchop.VzblPadChop;
+	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}.</P>
+	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 /**
-   <P>. For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link VzblPadChop}.</P>
+	<P>. For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link VzblPadChop}.</P>
  **/
 public class VzblPadChop_Cfg extends VzblPadChop_CfgForNeeder<VzblPadChop,DummyForNoNeeder>   {
-   /**
-      <P>Create a new {@code zVzblPadChop_Cfg} with defaults.</P>
+	/**
+		<P>Create a new {@code zVzblPadChop_Cfg} with defaults.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#VzblPadChop_CfgForNeeder(R)">this</A>(null)</CODE></P>
-      @see  #VzblPadChop_Cfg(int) this(i)
-    **/
-   public VzblPadChop_Cfg()  {
-      super(null);
-   }
-   /**
-      <P>Create a new {@code zVzblPadChop_Cfg} with defaults, but a specific goal length.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#VzblPadChop_CfgForNeeder(R)">this</A>(null)</CODE></P>
+		@see  #VzblPadChop_Cfg(int) this(i)
+	 **/
+	public VzblPadChop_Cfg()  {
+		super(null);
+	}
+	/**
+		<P>Create a new {@code zVzblPadChop_Cfg} with defaults, but a specific goal length.</P>
 
-         <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="VzblPadChop_CfgForNeeder.html#VzblPadChop_CfgForNeeder(R, int)">super</A>(goal_len, null)</CODE></P>
+			<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="VzblPadChop_CfgForNeeder.html#VzblPadChop_CfgForNeeder(R, int)">super</A>(goal_len, null)</CODE></P>
 
-      @see  #VzblPadChop_Cfg() this()
-    **/
-   public VzblPadChop_Cfg(int goal_len)  {
-      super(null, goal_len);
-   }
+		@see  #VzblPadChop_Cfg() this()
+	 **/
+	public VzblPadChop_Cfg(int goal_len)  {
+		super(null, goal_len);
+	}
 }

@@ -13,69 +13,69 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn;
-   import  java.util.ArrayList;
+	import  java.util.ArrayList;
 /**
-   <P>Demonstrates {@link java.lang.Comparable Comparable}.<CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)">compareTo</A>(T)</CODE> for sets of three integers.</P>
+	<P>Demonstrates {@link java.lang.Comparable Comparable}.<CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html#compareTo(T)">compareTo</A>(T)</CODE> for sets of three integers.</P>
 
-   <P>{@code java com.github.xbn.examples.lang.non_xbn.ComparableForThreeIntsAsAUnit}</P>
+	<P>{@code java com.github.xbn.examples.lang.non_xbn.ComparableForThreeIntsAsAUnit}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ComparableForThreeIntsAsAUnit  {
-   public static final void main(String[] ignored)  {
-      String sInput = "1,2,3,5,56,66,44,88,77,99,12,14,25,36,15,17,89,15,17,28,58,95,97,58,64,84,21,23,28,27,36,39";
-      String[] asInts = sInput.split(",");
+	public static final void main(String[] ignored)  {
+		String sInput = "1,2,3,5,56,66,44,88,77,99,12,14,25,36,15,17,89,15,17,28,58,95,97,58,64,84,21,23,28,27,36,39";
+		String[] asInts = sInput.split(",");
 
-      int iTotalInts = asInts.length;
-      ArrayList<ThreeSeries> al3s = new ArrayList<ThreeSeries>(iTotalInts - 2);
-      for(int i = 0; i < iTotalInts - 2; i++)  {
-         al3s.add(new ThreeSeries(asInts[i], asInts[i + 1], asInts[i + 2]));
-      }
+		int iTotalInts = asInts.length;
+		ArrayList<ThreeSeries> al3s = new ArrayList<ThreeSeries>(iTotalInts - 2);
+		for(int i = 0; i < iTotalInts - 2; i++)  {
+			al3s.add(new ThreeSeries(asInts[i], asInts[i + 1], asInts[i + 2]));
+		}
 
-      for(int i = 0; i < al3s.size(); i++)  {
-         for(int j = i + 1; j < al3s.size(); j++)  {
-            ThreeSeries threeSI = al3s.get(i);
-            ThreeSeries threeSJ = al3s.get(j);
-            int iCompareResult = threeSI.compareTo(threeSJ);
+		for(int i = 0; i < al3s.size(); i++)  {
+			for(int j = i + 1; j < al3s.size(); j++)  {
+				ThreeSeries threeSI = al3s.get(i);
+				ThreeSeries threeSJ = al3s.get(j);
+				int iCompareResult = threeSI.compareTo(threeSJ);
 
-            System.out.println("Comparing " + threeSI + ".compareTo(" + threeSJ + ")=" + iCompareResult + " -- " + ((iCompareResult < 0)
-               ?  threeSI + " is LESS than " + threeSJ
-               :  (iCompareResult > 0)
-                  ?  threeSI + " is GREATER than " + threeSJ
-                  :  "EQUAL"));
-         }
-      }
-   }
+				System.out.println("Comparing " + threeSI + ".compareTo(" + threeSJ + ")=" + iCompareResult + " -- " + ((iCompareResult < 0)
+					?  threeSI + " is LESS than " + threeSJ
+					:  (iCompareResult > 0)
+						?  threeSI + " is GREATER than " + threeSJ
+						:  "EQUAL"));
+			}
+		}
+	}
 }
 class ThreeSeries implements Comparable<ThreeSeries>  {
-   private final int num1;
-   private final int num2;
-   private final int num3;
-   public ThreeSeries(String num_inStr1, String num_inStr2, String num_inStr3)  {
-      this(Integer.parseInt(num_inStr1), Integer.parseInt(num_inStr2), Integer.parseInt(num_inStr3));
-   }
-   public ThreeSeries(int num_1, int num_2, int num_3)  {
-      num1 = num_1;
-      num2 = num_2;
-      num3 = num_3;
-   }
-   public int get1()  {
-      return  num1;
-   }
-   public int get2()  {
-      return  num2;
-   }
-   public int get3()  {
-      return  num3;
-   }
-   public String toString()  {
-      return  "{" + get1() + ", " + get2() + ", " + get3() + "}";
-   }
-   public int compareTo(ThreeSeries three_series)  {
-      int num1Diff = get1() - three_series.get1();
-      int num2Diff = get2() - three_series.get2();
-      int num3Diff = get3() - three_series.get3();
-      return  (num1Diff + num2Diff + num3Diff);
-   }
+	private final int num1;
+	private final int num2;
+	private final int num3;
+	public ThreeSeries(String num_inStr1, String num_inStr2, String num_inStr3)  {
+		this(Integer.parseInt(num_inStr1), Integer.parseInt(num_inStr2), Integer.parseInt(num_inStr3));
+	}
+	public ThreeSeries(int num_1, int num_2, int num_3)  {
+		num1 = num_1;
+		num2 = num_2;
+		num3 = num_3;
+	}
+	public int get1()  {
+		return  num1;
+	}
+	public int get2()  {
+		return  num2;
+	}
+	public int get3()  {
+		return  num3;
+	}
+	public String toString()  {
+		return  "{" + get1() + ", " + get2() + ", " + get3() + "}";
+	}
+	public int compareTo(ThreeSeries three_series)  {
+		int num1Diff = get1() - three_series.get1();
+		int num2Diff = get2() - three_series.get2();
+		int num3Diff = get3() - three_series.get3();
+		return  (num1Diff + num2Diff + num3Diff);
+	}
 }

@@ -14,32 +14,32 @@
 \*license*/
 package  com.github.xbn.experimental;
 /**
-   <P>Thrown when an interface has done something obviously incorrect.</P>
+	<P>Thrown when an interface has done something obviously incorrect.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class BadInterfaceBehaviorException extends RuntimeException  {
 
-   /**
-    * 
-    */
-   private static final long serialVersionUID = 662435855718670622L;
-   /**
-      <P>Create an BadInterfaceBehaviorException with no error message.</P>
-    **/
-   public BadInterfaceBehaviorException()  {
-   }
-   /**
-      <P>Create an BadInterfaceBehaviorException.</P>
-    **/
-   public BadInterfaceBehaviorException(String message)  {
-      super(message);
-   }
-   public BadInterfaceBehaviorException(String message, Throwable cause)  {
-      super(message, cause);
-   }
-   public BadInterfaceBehaviorException(Throwable cause)  {
-      super(cause);
-   }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 662435855718670622L;
+	/**
+		<P>Create an BadInterfaceBehaviorException with no error message.</P>
+	 **/
+	public BadInterfaceBehaviorException()  {
+	}
+	/**
+		<P>Create an BadInterfaceBehaviorException.</P>
+	 **/
+	public BadInterfaceBehaviorException(String message)  {
+		super(message);
+	}
+	public BadInterfaceBehaviorException(String message, Throwable cause)  {
+		super(message, cause);
+	}
+	public BadInterfaceBehaviorException(Throwable cause)  {
+		super(cause);
+	}
 }

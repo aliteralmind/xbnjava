@@ -13,61 +13,61 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil;
-   import  com.github.xbn.regexutil.z.MaxUntilLoopsExceeded;
-   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
+	import  com.github.xbn.regexutil.z.MaxUntilLoopsExceeded;
+	import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
 /**
-   <P>Uses a {@code com.github.xbn.regexutil.RegexReplacer}, to replace specific terms: all, first, &quot;match numbers&quot;, until, or via {@code java.util.regex.}{@code java.util.regex.Matcher#matches() Matcher#matches()} or {@code java.util.regex.}{@code java.util.regex.Matcher#lookingAt() Matcher#lookingAt()}.</P>
+	<P>Uses a {@code com.github.xbn.regexutil.RegexReplacer}, to replace specific terms: all, first, &quot;match numbers&quot;, until, or via {@code java.util.regex.}{@code java.util.regex.Matcher#matches() Matcher#matches()} or {@code java.util.regex.}{@code java.util.regex.Matcher#lookingAt() Matcher#lookingAt()}.</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.RegexReplacerSpcfcTermsXmpl}</P>
+	<P>{@code java com.github.xbn.examples.regexutil.RegexReplacerSpcfcTermsXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RegexReplacerSpcfcTermsXmpl  {
-   public static void main(String[] ignored)  {
+	public static void main(String[] ignored)  {
 
-      String sToSearch = "one two three four five";
-      String sFindWhat = "\\b(\\w+)\\b";
-      String sRplcWithDirect = "[$1]";
+		String sToSearch = "one two three four five";
+		String sFindWhat = "\\b(\\w+)\\b";
+		String sRplcWithDirect = "[$1]";
 
-      System.out.println("ALL (all these examples are DIRECT replacements):");
-         new RegexReplacer_Cfg().all().direct(sFindWhat, sRplcWithDirect).build().
-            appendReplacedlns(2, System.out, sToSearch);
+		System.out.println("ALL (all these examples are DIRECT replacements):");
+			new RegexReplacer_Cfg().all().direct(sFindWhat, sRplcWithDirect).build().
+				appendReplacedlns(2, System.out, sToSearch);
 
-         //Equivalent to:
-         //	RegexReplacer rr = new RegexReplacer_Cfg().all().build(sFindWhat, sRplcWithDirect);
-         //		System.out.println(rr.getReplaced(sToSearch));
-         //		System.out.println();
+			//Equivalent to:
+			//	RegexReplacer rr = new RegexReplacer_Cfg().all().build(sFindWhat, sRplcWithDirect);
+			//		System.out.println(rr.getReplaced(sToSearch));
+			//		System.out.println();
 
-      System.out.println("TERMS 2-3 only:");
-         new RegexReplacer_Cfg().matchRange(2, 3).direct(sFindWhat, sRplcWithDirect).build().
-            appendReplacedlns(2, System.out, sToSearch);
+		System.out.println("TERMS 2-3 only:");
+			new RegexReplacer_Cfg().matchRange(2, 3).direct(sFindWhat, sRplcWithDirect).build().
+				appendReplacedlns(2, System.out, sToSearch);
 
-      System.out.println("LOOKING AT:");
-         new RegexReplacer_Cfg().lookingAt().direct(sFindWhat, sRplcWithDirect).build().
-            appendReplacedlns(2, System.out, sToSearch);
+		System.out.println("LOOKING AT:");
+			new RegexReplacer_Cfg().lookingAt().direct(sFindWhat, sRplcWithDirect).build().
+				appendReplacedlns(2, System.out, sToSearch);
 
-      System.out.println("FIRST:");
-         sFindWhat = "(\\w{4,})";
-         new RegexReplacer_Cfg().first().direct(sFindWhat, sRplcWithDirect).build().
-            appendReplacedlns(2, System.out, sToSearch);
+		System.out.println("FIRST:");
+			sFindWhat = "(\\w{4,})";
+			new RegexReplacer_Cfg().first().direct(sFindWhat, sRplcWithDirect).build().
+				appendReplacedlns(2, System.out, sToSearch);
 
-      System.out.println("MATCHES:");
-         sFindWhat = "(.+)";
-         new RegexReplacer_Cfg().matches().direct(sFindWhat, sRplcWithDirect).build().
-            appendReplacedlns(2, System.out, sToSearch);
+		System.out.println("MATCHES:");
+			sFindWhat = "(.+)";
+			new RegexReplacer_Cfg().matches().direct(sFindWhat, sRplcWithDirect).build().
+				appendReplacedlns(2, System.out, sToSearch);
 
-      sToSearch = "hello hello hello hello hello hello hello";
-      sFindWhat = "hello hello";
-      sRplcWithDirect = "hello";
+		sToSearch = "hello hello hello hello hello hello hello";
+		sFindWhat = "hello hello";
+		sRplcWithDirect = "hello";
 
-      System.out.println("UNTIL (until no more matches found):");
-         new RegexReplacer_Cfg().until().direct(sFindWhat, sRplcWithDirect).build().
-            appendReplacedlns(2, System.out, sToSearch);
+		System.out.println("UNTIL (until no more matches found):");
+			new RegexReplacer_Cfg().until().direct(sFindWhat, sRplcWithDirect).build().
+				appendReplacedlns(2, System.out, sToSearch);
 
-      System.out.println("UNTIL (two loops only):");
-         new RegexReplacer_Cfg().until(2, MaxUntilLoopsExceeded.OK).direct(sFindWhat, sRplcWithDirect).
-               build().
-            appendReplacedlns(2, System.out, sToSearch);
-   }
+		System.out.println("UNTIL (two loops only):");
+			new RegexReplacer_Cfg().until(2, MaxUntilLoopsExceeded.OK).direct(sFindWhat, sRplcWithDirect).
+					build().
+				appendReplacedlns(2, System.out, sToSearch);
+	}
 }

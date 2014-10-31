@@ -14,27 +14,27 @@
 \*license*/
 package  com.github.xbn.neederneedable;
 /**
-   <P>A {@code Needer} that needs nothing--this is required when using {@code Needable}-s directly. See {@link com.github.xbn.neederneedable.Needable#isAvailableToNeeder() isAvailableToNeeder}{@code ()}.</P>
+	<P>A {@code Needer} that needs nothing--this is required when using {@code Needable}-s directly. See {@link com.github.xbn.neederneedable.Needable#isAvailableToNeeder() isAvailableToNeeder}{@code ()}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class DummyForNoNeeder extends AbstractNeeder  {
-   /**
-      <P>Create a new instance that does nothing.</P>
-    **/
-   public DummyForNoNeeder()  {
-   }
-   /**
-      <P>Required by interface, but never called.</P>
-    **/
-   public final void startConfig()  {
-      startConfig(void.class);
-   }
+	/**
+		<P>Create a new instance that does nothing.</P>
+	 **/
+	public DummyForNoNeeder()  {
+	}
+	/**
+		<P>Required by interface, but never called.</P>
+	 **/
+	public final void startConfig()  {
+		startConfig(void.class);
+	}
 
-   /**
-      <P>Required by interface, but never called.</P>
-    **/
-   public void neeadableSetsNeeded(Object ignored)  {
-   }
+	/**
+		<P>Required by interface, but never called.</P>
+	 **/
+	public void neeadableSetsNeeded(Object ignored)  {
+	}
 }

@@ -13,119 +13,119 @@ package  com.github.xbn.util.copyval;
 /**
    <P>Convenience functions for creating {@code ValueCopier}s.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class NewValueCopier  {
    private NewValueCopier()  {
-      throw  new IllegalStateException("Do not instantiate");
-   }
-   /**
-      <P>A new value copier for values that are not copyable.</P>
+		throw  new IllegalStateException("Do not instantiate");
+	}
+	/**
+		<P>A new value copier for values that are not copyable.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.ValueNotCopyable ValueNotCopyable}.{@link com.github.xbn.util.copyval.ValueNotCopyable#INSTANCE INSTANCE}</CODE>
-    **/
-   public static final ValueNotCopyable forNotCopyable()  {
-      return  ValueNotCopyable.INSTANCE;
-   }
-   /**
-      <P>A new value copier for string builders.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.ValueNotCopyable ValueNotCopyable}.{@link com.github.xbn.util.copyval.ValueNotCopyable#INSTANCE INSTANCE}</CODE>
+	 **/
+	public static final ValueNotCopyable forNotCopyable()  {
+		return  ValueNotCopyable.INSTANCE;
+	}
+	/**
+		<P>A new value copier for string builders.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#STRING_BUILDER STRING_BUILDER}</CODE>
-      @see  #forString()
-      @see  #forBoolean()
-      @see  #forCharacter()
-      @see  #forByte()
-      @see  #forShort()
-      @see  #forInteger()
-      @see  #forLong()
-      @see  #forFloat()
-      @see  #forDouble()
-    **/
-   public static final OneParamCnstrValueCopier<StringBuilder> forStringBuilder()  {
-      return  	OneParamCnstrValueCopier.STRING_BUILDER;
-   }
-   /**
-      <P>A new value copier for strings.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#STRING_BUILDER STRING_BUILDER}</CODE>
+		@see  #forString()
+		@see  #forBoolean()
+		@see  #forCharacter()
+		@see  #forByte()
+		@see  #forShort()
+		@see  #forInteger()
+		@see  #forLong()
+		@see  #forFloat()
+		@see  #forDouble()
+	 **/
+	public static final OneParamCnstrValueCopier<StringBuilder> forStringBuilder()  {
+		return  	OneParamCnstrValueCopier.STRING_BUILDER;
+	}
+	/**
+		<P>A new value copier for strings.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#STRING STRING}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<String> forString()  {
-      return  	OneParamCnstrValueCopier.STRING;
-   }
-   /**
-      <P>A new value copier for booleans.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#STRING STRING}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<String> forString()  {
+		return  	OneParamCnstrValueCopier.STRING;
+	}
+	/**
+		<P>A new value copier for booleans.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#BOOLEAN BOOLEAN}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Boolean> forBoolean()  {
-      return  	OneParamCnstrValueCopier.BOOLEAN;
-   }
-   /**
-      <P>A new value copier for characters.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#BOOLEAN BOOLEAN}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Boolean> forBoolean()  {
+		return  	OneParamCnstrValueCopier.BOOLEAN;
+	}
+	/**
+		<P>A new value copier for characters.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#CHAR CHAR}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Character> forCharacter()  {
-      return  	OneParamCnstrValueCopier.CHAR;
-   }
-   /**
-      <P>A new value copier for bytes.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#CHAR CHAR}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Character> forCharacter()  {
+		return  	OneParamCnstrValueCopier.CHAR;
+	}
+	/**
+		<P>A new value copier for bytes.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#BYTE BYTE}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Byte> forByte()  {
-      return  	OneParamCnstrValueCopier.BYTE;
-   }
-   /**
-      <P>A new value copier for shorts.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#BYTE BYTE}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Byte> forByte()  {
+		return  	OneParamCnstrValueCopier.BYTE;
+	}
+	/**
+		<P>A new value copier for shorts.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#SHORT SHORT}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Short> forShort()  {
-      return  	OneParamCnstrValueCopier.SHORT;
-   }
-   /**
-      <P>A new value copier for integers.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#SHORT SHORT}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Short> forShort()  {
+		return  	OneParamCnstrValueCopier.SHORT;
+	}
+	/**
+		<P>A new value copier for integers.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#INT INT}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Integer> forInteger()  {
-      return  	OneParamCnstrValueCopier.INT;
-   }
-   /**
-      <P>A new value copier for longs.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#INT INT}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Integer> forInteger()  {
+		return  	OneParamCnstrValueCopier.INT;
+	}
+	/**
+		<P>A new value copier for longs.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#LONG LONG}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Long> forLong()  {
-      return  	OneParamCnstrValueCopier.LONG;
-   }
-   /**
-      <P>A new value copier for floats.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#LONG LONG}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Long> forLong()  {
+		return  	OneParamCnstrValueCopier.LONG;
+	}
+	/**
+		<P>A new value copier for floats.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#FLOAT FLOAT}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Float> forFloat()  {
-      return  	OneParamCnstrValueCopier.FLOAT;
-   }
-   /**
-      <P>A new value copier for doubles.</P>
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#FLOAT FLOAT}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Float> forFloat()  {
+		return  	OneParamCnstrValueCopier.FLOAT;
+	}
+	/**
+		<P>A new value copier for doubles.</P>
 
-      @return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#DOUBLE DOUBLE}</CODE>
-      @see  #forStringBuilder()
-    **/
-   public static final OneParamCnstrValueCopier<Double> forDouble()  {
-      return  	OneParamCnstrValueCopier.DOUBLE;
-   }
+		@return  <CODE>{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier OneParamCnstrValueCopier}.{@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#DOUBLE DOUBLE}</CODE>
+		@see  #forStringBuilder()
+	 **/
+	public static final OneParamCnstrValueCopier<Double> forDouble()  {
+		return  	OneParamCnstrValueCopier.DOUBLE;
+	}
 
 }

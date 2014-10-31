@@ -13,74 +13,74 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.copyval;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.util.copyval.NullHandler;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.util.copyval.NullHandler;
 /**
-   <P>Abstract implementation of {@code ValueCopier}. For classes needing to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}, see {@link com.github.xbn.util.copyval.ValueCopierComposer ValueCopierComposer}.</P>
+	<P>Abstract implementation of {@code ValueCopier}. For classes needing to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}, see {@link com.github.xbn.util.copyval.ValueCopierComposer ValueCopierComposer}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractValueCopier<O> implements ValueCopier<O>  {
-   private ValueCopierComposer<O> gvcc = null;
-   /**
-      <P>Create a new {@code AbstractValueCopier}.</P>
+	private ValueCopierComposer<O> gvcc = null;
+	/**
+		<P>Create a new {@code AbstractValueCopier}.</P>
 
-      YYY
+		YYY
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(boolean) super}{@code (is_copyable)}</P>
-    **/
-   public AbstractValueCopier(boolean is_copyable)  {
-      gvcc = new ValueCopierComposer<O>(is_copyable);
-   }
-   /**
-      <P>Create a new {@code AbstractValueCopier} as a duplicate of another.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(boolean) super}{@code (is_copyable)}</P>
+	 **/
+	public AbstractValueCopier(boolean is_copyable)  {
+		gvcc = new ValueCopierComposer<O>(is_copyable);
+	}
+	/**
+		<P>Create a new {@code AbstractValueCopier} as a duplicate of another.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(ValueCopier) super}{@code (to_copy)}</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(ValueCopier) super}{@code (to_copy)}</P>
 
-      @param  to_copy  May not be {@code null}.
-    **/
-   public AbstractValueCopier(ValueCopier<O> to_copy)  {
-      gvcc = new ValueCopierComposer<O>(to_copy);
-   }
+		@param  to_copy  May not be {@code null}.
+	 **/
+	public AbstractValueCopier(ValueCopier<O> to_copy)  {
+		gvcc = new ValueCopierComposer<O>(to_copy);
+	}
  	@SuppressWarnings("unchecked")
  	public O getValueCopy(O original, String orig_name)  {
-      return  getValueCopy(original, orig_name, NewNullHandlerFor.useNull());
-   }
+		return  getValueCopy(original, orig_name, NewNullHandlerFor.useNull());
+	}
 
  	public O getValueCopy(O original, String orig_name, NullHandler<O> null_handler)  {
-      if(original == null)  {
-         try  {
-            if(null_handler.getAction().doDelete())  {
-               throw  new IllegalStateException(orig_name + " is null and null_handler.getAction().doDelete() is true.");
-            }
-         }  catch(RuntimeException rx)  {
-            throw  CrashIfObject.nullOrReturnCause(null_handler, "null_handler", null, rx);
-         }
-         if(null_handler.getAction().doCrash())  {
-            throw  new NullPointerException("original (null_handler.getAction().doCrash() is true)");
-         }
-         if(null_handler.getAction().doUseNonNull())  {
-            original = null_handler.getNonNull();
+		if(original == null)  {
+			try  {
+				if(null_handler.getAction().doDelete())  {
+					throw  new IllegalStateException(orig_name + " is null and null_handler.getAction().doDelete() is true.");
+				}
+			}  catch(RuntimeException rx)  {
+				throw  CrashIfObject.nullOrReturnCause(null_handler, "null_handler", null, rx);
+			}
+			if(null_handler.getAction().doCrash())  {
+				throw  new NullPointerException("original (null_handler.getAction().doCrash() is true)");
+			}
+			if(null_handler.getAction().doUseNonNull())  {
+				original = null_handler.getNonNull();
 
-         }  //else: doUseNull()
-      }
+			}  //else: doUseNull()
+		}
 
-      return  getCopyOfNonNullOrig(original, orig_name);
-   }
-   protected abstract O getCopyOfNonNullOrig(O original, String orig_name);
-   public boolean isValueCopyable()  {
-      return  gvcc.isValueCopyable();
-   }
-   public String toString()  {
-      return  gvcc.toString();
-   }
+		return  getCopyOfNonNullOrig(original, orig_name);
+	}
+	protected abstract O getCopyOfNonNullOrig(O original, String orig_name);
+	public boolean isValueCopyable()  {
+		return  gvcc.isValueCopyable();
+	}
+	public String toString()  {
+		return  gvcc.toString();
+	}
 /*stub functions for non-abstract compile...START
  	public final O getValueCopy(O original, NullHandler<O> null_handler)  {
-      return  null;
-   }
+		return  null;
+	}
  stub functions for non-abstract compile...END*/
 }
 

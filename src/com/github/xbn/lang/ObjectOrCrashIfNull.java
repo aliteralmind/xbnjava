@@ -14,47 +14,47 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-   <P>Safely get a potentially-{@code null} object, or a copy of a potentially-{@code null} {@code Copyable}.</P>
+	<P>Safely get a potentially-{@code null} object, or a copy of a potentially-{@code null} {@code Copyable}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ObjectOrCrashIfNull  {
-   /**
-      <P>Safely get potentially-{@code null} objects in {@code super} or {@code this} constructor calls, where try-catch is not possible.</P>
+	/**
+		<P>Safely get potentially-{@code null} objects in {@code super} or {@code this} constructor calls, where try-catch is not possible.</P>
 
-      @param  obj  The object to get. May not be {@code null}.
-      @param  obj_varName  Descriptive name of {@code obj}. <I>Should</I> not be {@code null} or empty.
-      @return  {@code obj}  If its non-{@code null}.
-      @exception  NullPointerException  If it is.
-    **/
-   public static final <O> O get(O obj, String obj_varName)  {
-      if(obj == null)  {
-         throw  new NullPointerException(obj_varName);
-      }
-      return  obj;
-   }
-   /**
-      <P>Safely duplicate <CODE>Copyable</CODE> objects.</P>
+		@param  obj  The object to get. May not be {@code null}.
+		@param  obj_varName  Descriptive name of {@code obj}. <I>Should</I> not be {@code null} or empty.
+		@return  {@code obj}  If its non-{@code null}.
+		@exception  NullPointerException  If it is.
+	 **/
+	public static final <O> O get(O obj, String obj_varName)  {
+		if(obj == null)  {
+			throw  new NullPointerException(obj_varName);
+		}
+		return  obj;
+	}
+	/**
+		<P>Safely duplicate <CODE>Copyable</CODE> objects.</P>
 
-      @param  to_copy  May not be {@code null}.
-      @param  to_castTo  May not be {@code null}.
-      @param  toCopy_varName  Descriptive name of {@code to_copy}. <I>Should</I> not be {@code null} or empty.
-      @return  <CODE>to_castTo.{@link java.lang.Class#cast(Object) cast}(to_copy.{@link Copyable#getObjectCopy() getObjectCopy}())</CODE>
-      @exception  NullPointerException  If {@code to_copy} is {@code null}.
-    **/
-   @SuppressWarnings("unchecked")
-   public static final <C extends Copyable> C getCopy(Copyable to_copy, Class<C> to_castTo, String toCopy_varName)  {
-      Object oCopy = null;
-      try  {
-         oCopy = to_copy.getObjectCopy();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(to_copy, toCopy_varName, null, rx);
-      }
-      try  {
-         return  to_castTo.cast(oCopy);
-      }  catch(ClassCastException ccx)  {
-         throw  new ClassCastException("Attempting to_castTo.cast(" + toCopy_varName + ".getObjectCopy())  //  to_castTo.getName()=" + to_castTo.getName() + ", " + toCopy_varName + ".getClass().getName()=" + to_copy.getClass().getName() + ", to_castTo.getClass().getName()=" + to_castTo.getClass().getName() + ", " + toCopy_varName + ".getObjectCopy().getClass().getName()=" + to_copy.getObjectCopy().getClass().getName());
-      }
-   }
+		@param  to_copy  May not be {@code null}.
+		@param  to_castTo  May not be {@code null}.
+		@param  toCopy_varName  Descriptive name of {@code to_copy}. <I>Should</I> not be {@code null} or empty.
+		@return  <CODE>to_castTo.{@link java.lang.Class#cast(Object) cast}(to_copy.{@link Copyable#getObjectCopy() getObjectCopy}())</CODE>
+		@exception  NullPointerException  If {@code to_copy} is {@code null}.
+	 **/
+	@SuppressWarnings("unchecked")
+	public static final <C extends Copyable> C getCopy(Copyable to_copy, Class<C> to_castTo, String toCopy_varName)  {
+		Object oCopy = null;
+		try  {
+			oCopy = to_copy.getObjectCopy();
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(to_copy, toCopy_varName, null, rx);
+		}
+		try  {
+			return  to_castTo.cast(oCopy);
+		}  catch(ClassCastException ccx)  {
+			throw  new ClassCastException("Attempting to_castTo.cast(" + toCopy_varName + ".getObjectCopy())  //  to_castTo.getName()=" + to_castTo.getName() + ", " + toCopy_varName + ".getClass().getName()=" + to_copy.getClass().getName() + ", to_castTo.getClass().getName()=" + to_castTo.getClass().getName() + ", " + toCopy_varName + ".getObjectCopy().getClass().getName()=" + to_copy.getObjectCopy().getClass().getName());
+		}
+	}
 }

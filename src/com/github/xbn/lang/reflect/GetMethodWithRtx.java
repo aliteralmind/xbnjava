@@ -13,82 +13,82 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang.reflect;
-   import  java.util.Objects;
-   import  com.github.xbn.text.CrashIfString;
-   import  java.lang.reflect.Method;
+	import  java.util.Objects;
+	import  com.github.xbn.text.CrashIfString;
+	import  java.lang.reflect.Method;
 /**
-   <P>Builder for obtaining a method, with runtime errors only (the original exception is accessible with {@code getCause()})</P>
+	<P>Builder for obtaining a method, with runtime errors only (the original exception is accessible with {@code getCause()})</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class GetMethodWithRtx  {
 //state
-   private Class<?>   clsWMthd     = null ;
-   private Class<?>[] aClsPrmTyps  = null ;
-   private String     sMthdNm      = null ;
-   private boolean    bParamsSet = false;
-   private final Declared declared;
-   public static final Class<?>[] EMPTY_CLASS_ARRAY = new Class<?>[]{};
+	private Class<?>   clsWMthd     = null ;
+	private Class<?>[] aClsPrmTyps  = null ;
+	private String     sMthdNm      = null ;
+	private boolean    bParamsSet = false;
+	private final Declared declared;
+	public static final Class<?>[] EMPTY_CLASS_ARRAY = new Class<?>[]{};
 //public
-   public GetMethodWithRtx(Declared declared)  {
-      resetGDMR();
-      Objects.requireNonNull(declared, "declared");
-      this.declared = declared;
-   }
-   public GetMethodWithRtx reset()  {
-      resetGDMR();
-      return  this;
-   }
-   protected final void resetGDMR()  {
-      sMthdNm = null;
-      clsWMthd = null;
-      aClsPrmTyps = null;
-      bParamsSet = false;
-   }
-   public GetMethodWithRtx containingClass(String fq_className)  {
-      return  containingClass(ReflectRtxUtil.getClassForName(fq_className, "fq_className"));
-   }
-   public GetMethodWithRtx containingClass(Object object)  {
-      return  containingClass(ReflectRtxUtil.getClass(object, null));
-   }
-   public GetMethodWithRtx containingClass(Class<?> cls)  {
-      if(cls == null)  {
-         throw  new NullPointerException("cls");
-      }
-      clsWMthd = cls;
-      return  this;
-   }
-   public GetMethodWithRtx mainMethod()  {
-      name("main");
-      return  paramTypes(new Class<?>[]{String[].class});
-   }
-   public GetMethodWithRtx name(String method_name)  {
-      CrashIfString.nullEmpty(method_name, "method_name", null);
-      sMthdNm = method_name;
-      return  this;
-   }
-   public GetMethodWithRtx noParams()  {
-      return  paramTypes(EMPTY_CLASS_ARRAY);
-   }
-   public GetMethodWithRtx paramTypes(Class<?>[] class_paramTypes)  {
-      if(bParamsSet)  {
-         throw  new IllegalStateException("Param types already set.");
-      }
-      bParamsSet = true;
-      aClsPrmTyps = class_paramTypes;
-      return  this;
-   }
-   public Method get()  {
-      return  getWithExtraInfo(null);
-   }
-   public Method getWithExtraInfo(Object xtra_errInfo)  {
-      if(sMthdNm == null)  {
-         throw  new IllegalStateException("Method name not declared. Must call name(s).");
-      }
-      if(!bParamsSet)  {
-         throw  new IllegalStateException("Parameters not declared. Must call paramTypes(cls...).");
-      }
-      return  ReflectRtxUtil.getMethod(clsWMthd, sMthdNm, declared, xtra_errInfo, aClsPrmTyps);
-   }
+	public GetMethodWithRtx(Declared declared)  {
+		resetGDMR();
+		Objects.requireNonNull(declared, "declared");
+		this.declared = declared;
+	}
+	public GetMethodWithRtx reset()  {
+		resetGDMR();
+		return  this;
+	}
+	protected final void resetGDMR()  {
+		sMthdNm = null;
+		clsWMthd = null;
+		aClsPrmTyps = null;
+		bParamsSet = false;
+	}
+	public GetMethodWithRtx containingClass(String fq_className)  {
+		return  containingClass(ReflectRtxUtil.getClassForName(fq_className, "fq_className"));
+	}
+	public GetMethodWithRtx containingClass(Object object)  {
+		return  containingClass(ReflectRtxUtil.getClass(object, null));
+	}
+	public GetMethodWithRtx containingClass(Class<?> cls)  {
+		if(cls == null)  {
+			throw  new NullPointerException("cls");
+		}
+		clsWMthd = cls;
+		return  this;
+	}
+	public GetMethodWithRtx mainMethod()  {
+		name("main");
+		return  paramTypes(new Class<?>[]{String[].class});
+	}
+	public GetMethodWithRtx name(String method_name)  {
+		CrashIfString.nullEmpty(method_name, "method_name", null);
+		sMthdNm = method_name;
+		return  this;
+	}
+	public GetMethodWithRtx noParams()  {
+		return  paramTypes(EMPTY_CLASS_ARRAY);
+	}
+	public GetMethodWithRtx paramTypes(Class<?>[] class_paramTypes)  {
+		if(bParamsSet)  {
+			throw  new IllegalStateException("Param types already set.");
+		}
+		bParamsSet = true;
+		aClsPrmTyps = class_paramTypes;
+		return  this;
+	}
+	public Method get()  {
+		return  getWithExtraInfo(null);
+	}
+	public Method getWithExtraInfo(Object xtra_errInfo)  {
+		if(sMthdNm == null)  {
+			throw  new IllegalStateException("Method name not declared. Must call name(s).");
+		}
+		if(!bParamsSet)  {
+			throw  new IllegalStateException("Parameters not declared. Must call paramTypes(cls...).");
+		}
+		return  ReflectRtxUtil.getMethod(clsWMthd, sMthdNm, declared, xtra_errInfo, aClsPrmTyps);
+	}
 }

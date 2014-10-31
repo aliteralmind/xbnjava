@@ -13,22 +13,22 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil.z;
-   import  com.github.xbn.regexutil.RegexGroupExtractor;
+	import  com.github.xbn.regexutil.RegexGroupExtractor;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor}.</P>
+	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RegexGroupExtractor_Cfg extends RegexGroupExtractor_CfgForNeeder<RegexGroupExtractor,DummyForNoNeeder>   {
-   /**
-      <P>Create a new {@code zRegexValidator_Cfg} with defaults.</P>
+	/**
+		<P>Create a new {@code zRegexValidator_Cfg} with defaults.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#zRegexValidator_CfgForNeeder(R)">this</A>(null)</CODE></P>
-    **/
-   public RegexGroupExtractor_Cfg()  {
-      super(false, true, null);
-   }
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#zRegexValidator_CfgForNeeder(R)">this</A>(null)</CODE></P>
+	 **/
+	public RegexGroupExtractor_Cfg()  {
+		super(false, true, null);
+	}
 }

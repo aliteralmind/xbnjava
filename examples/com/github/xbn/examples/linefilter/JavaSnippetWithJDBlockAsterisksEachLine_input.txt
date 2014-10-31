@@ -1,5 +1,5 @@
 /*
-   A non-JavaDoc multi-line comment
+	A non-JavaDoc multi-line comment
 */
 /**
 * Comment section for Asset Record config OnStatusChange

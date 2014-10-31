@@ -14,50 +14,50 @@
 \*license*/
 package  com.github.xbn.array;
 /**
-   <P>Is the container (array, collection, etc.) allowed to be {@code null}?.</P>
+	<P>Is the container (array, collection, etc.) allowed to be {@code null}?.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum NullContainer  {
-   /**
-      <P>{@code null} is acceptable.</P>
+	/**
+		<P>{@code null} is acceptable.</P>
 
-      @see  #BAD
-      @see  #isOk()
-    **/
-   OK,
-   /**
-      <P>{@code null} is bad.</P>
+		@see  #BAD
+		@see  #isOk()
+	 **/
+	OK,
+	/**
+		<P>{@code null} is bad.</P>
 
-      @see  #OK
-      @see  #isBad()
-    **/
-   BAD;
-   /**
-      <P>Is this {@code NullContainer} equal to {@code OK}?.</P>
+		@see  #OK
+		@see  #isBad()
+	 **/
+	BAD;
+	/**
+		<P>Is this {@code NullContainer} equal to {@code OK}?.</P>
 
-      @return  <CODE>(this == {@link #OK})</CODE>
-      @see  #isBad()
-    **/
-   public final boolean isOk()  {
-      return  (this == OK);
-   }
-   /**
-      <P>Is this {@code NullContainer} equal to {@code BAD}?.</P>
+		@return  <CODE>(this == {@link #OK})</CODE>
+		@see  #isBad()
+	 **/
+	public final boolean isOk()  {
+		return  (this == OK);
+	}
+	/**
+		<P>Is this {@code NullContainer} equal to {@code BAD}?.</P>
 
-      @return  <CODE>(this == {@link #BAD})</CODE>
-      @see  #isOk()
-    **/
-   public final boolean isBad()  {
-      return  (this == BAD);
-   }
-   /**
-      <P>Get a {@code NullContainer} from an actual boolean.</P>
+		@return  <CODE>(this == {@link #BAD})</CODE>
+		@see  #isOk()
+	 **/
+	public final boolean isBad()  {
+		return  (this == BAD);
+	}
+	/**
+		<P>Get a {@code NullContainer} from an actual boolean.</P>
 
-      @return  <CODE>(b ? {@link #OK} : {@link #BAD})</CODE>
-    **/
-   public static final NullContainer getForBoolean(boolean b)  {
-      return  (b ? OK : BAD);
-   }
+		@return  <CODE>(b ? {@link #OK} : {@link #BAD})</CODE>
+	 **/
+	public static final NullContainer getForBoolean(boolean b)  {
+		return  (b ? OK : BAD);
+	}
 };

@@ -13,105 +13,105 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
-   import  com.github.xbn.util.EnumUtil;
+	import  com.github.xbn.util.EnumUtil;
 /**
-   <P>When searching for text with a {@code java.util.regex.Matcher}, what search-function should the matcher use? {@code find()}, {@code matches()}, {@code lookingAt()}, or custom.</P>
+	<P>When searching for text with a {@code java.util.regex.Matcher}, what search-function should the matcher use? {@code find()}, {@code matches()}, {@code lookingAt()}, or custom.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum MatcherUses  {
-   /**
-      <P>Use <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#find() find}()</CODE>.</P>
+	/**
+		<P>Use <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#find() find}()</CODE>.</P>
 
-      @see  #MATCHES
-      @see  #LOOKING_AT
-      @see  #CUSTOM
-      @see  #isFind()
-    **/
-   FIND,
-   /**
-      <P>Use <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#matches() matches}()</CODE>.</P>
+		@see  #MATCHES
+		@see  #LOOKING_AT
+		@see  #CUSTOM
+		@see  #isFind()
+	 **/
+	FIND,
+	/**
+		<P>Use <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#matches() matches}()</CODE>.</P>
 
-      @see  #FIND
-      @see  #isMatches()
-    **/
-   MATCHES,
-   /**
-      <P>Use <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#lookingAt() lookingAt}()</CODE>.</P>
+		@see  #FIND
+		@see  #isMatches()
+	 **/
+	MATCHES,
+	/**
+		<P>Use <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#lookingAt() lookingAt}()</CODE>.</P>
 
-      @see  #FIND
-      @see  #isLookingAt()
-    **/
-   LOOKING_AT,
-   /**
-      <P>Uses something other than, or some combination of, <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#find() find}()</CODE>, {@link java.util.regex.Matcher#matches() matches}{@code ()}, and {@link java.util.regex.Matcher#lookingAt() lookingAt}{@code ()}.</P>
+		@see  #FIND
+		@see  #isLookingAt()
+	 **/
+	LOOKING_AT,
+	/**
+		<P>Uses something other than, or some combination of, <CODE>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#find() find}()</CODE>, {@link java.util.regex.Matcher#matches() matches}{@code ()}, and {@link java.util.regex.Matcher#lookingAt() lookingAt}{@code ()}.</P>
 
-      @see  #FIND
-      @see  #isCustom()
-    **/
-   CUSTOM;
-   /**
-      <P>Is this {@code MatcherUses} equal to {@code FIND}?.</P>
+		@see  #FIND
+		@see  #isCustom()
+	 **/
+	CUSTOM;
+	/**
+		<P>Is this {@code MatcherUses} equal to {@code FIND}?.</P>
 
-      @return  <CODE>this == {@link #FIND}</CODE>
+		@return  <CODE>this == {@link #FIND}</CODE>
 
-      @see  #isMatches()
-      @see  #isLookingAt()
-      @see  #isCustom()
-    **/
-   public final boolean isFind()  {
-      return  this == FIND;
-   }
-   /**
-      <P>Is this {@code MatcherUses} equal to {@code MATCHES}?.</P>
+		@see  #isMatches()
+		@see  #isLookingAt()
+		@see  #isCustom()
+	 **/
+	public final boolean isFind()  {
+		return  this == FIND;
+	}
+	/**
+		<P>Is this {@code MatcherUses} equal to {@code MATCHES}?.</P>
 
-      @return  <CODE>this == {@link #MATCHES}</CODE>
+		@return  <CODE>this == {@link #MATCHES}</CODE>
 
-      @see  #isFind()
-    **/
-   public final boolean isMatches()  {
-      return  this == MATCHES;
-   }
-   /**
-      <P>Is this {@code MatcherUses} equal to {@code LOOKING_AT}?.</P>
+		@see  #isFind()
+	 **/
+	public final boolean isMatches()  {
+		return  this == MATCHES;
+	}
+	/**
+		<P>Is this {@code MatcherUses} equal to {@code LOOKING_AT}?.</P>
 
-      @return  <CODE>this == {@link #LOOKING_AT}</CODE>
+		@return  <CODE>this == {@link #LOOKING_AT}</CODE>
 
-      @see  #isFind()
-    **/
-   public final boolean isLookingAt()  {
-      return  this == LOOKING_AT;
-   }
-   /**
-      <P>Is this {@code MatcherUses} equal to {@code CUSTOM}?.</P>
+		@see  #isFind()
+	 **/
+	public final boolean isLookingAt()  {
+		return  this == LOOKING_AT;
+	}
+	/**
+		<P>Is this {@code MatcherUses} equal to {@code CUSTOM}?.</P>
 
-      @return  <CODE>this == {@link #CUSTOM}</CODE>
+		@return  <CODE>this == {@link #CUSTOM}</CODE>
 
-      @see  #isFind()
-    **/
-   public final boolean isCustom()  {
-      return  this == CUSTOM;
-   }
+		@see  #isFind()
+	 **/
+	public final boolean isCustom()  {
+		return  this == CUSTOM;
+	}
 
-   /**
-      <P>If an <CODE>MatcherUses</CODE> is not a required value, crash.</P>
+	/**
+		<P>If an <CODE>MatcherUses</CODE> is not a required value, crash.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
-      @see  #crashIfForbiddenValue(MatcherUses, String, Object) crashIfForbiddenValue(ert,s,o)
-    **/
-   public void crashIfNotRequiredValue(MatcherUses rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
-      EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
-   }
-   /**
-      <P>If an <CODE>MatcherUses</CODE> is a forbidden value, crash.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		@see  #crashIfForbiddenValue(MatcherUses, String, Object) crashIfForbiddenValue(ert,s,o)
+	 **/
+	public void crashIfNotRequiredValue(MatcherUses rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
+		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
+	}
+	/**
+		<P>If an <CODE>MatcherUses</CODE> is a forbidden value, crash.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
-      @see  #crashIfNotRequiredValue(MatcherUses, String, Object) crashIfNotRequiredValue(ert,s,o)
-    **/
-   public void crashIfForbiddenValue(MatcherUses rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
-      EnumUtil.crashIfForbiddenValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
-   }
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		@see  #crashIfNotRequiredValue(MatcherUses, String, Object) crashIfNotRequiredValue(ert,s,o)
+	 **/
+	public void crashIfForbiddenValue(MatcherUses rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
+		EnumUtil.crashIfForbiddenValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
+	}
 };

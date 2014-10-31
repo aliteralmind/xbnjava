@@ -14,29 +14,29 @@
 \*license*/
 package  com.github.xbn.examples.util.non_xbn;
 /**
-   <P>Elegant and short solution to finding the number of occurances of each number in an int-array.</P>
+	<P>Elegant and short solution to finding the number of occurances of each number in an int-array.</P>
 
-   <P>{@code java com.github.xbn.examples.util.non_xbn.IntOccurancesInArrayElegant}</P>
+	<P>{@code java com.github.xbn.examples.util.non_xbn.IntOccurancesInArrayElegant}</P>
 
-   @see  IntOccurancesInArray
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  IntOccurancesInArray
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class IntOccurancesInArrayElegant  {
-   public static final void main(String[] ignored)  {
-      int[] ai = new int[]{52, 67, 32, 43, 32, 21, 12, 5, 0, 3, 2, 0, 0};
-      int[] aiHits1to100 = new int[101];
-      for(int i : ai)  {
-         if(i >= 0  &&  i <= 100)  {
-            aiHits1to100[i]++;
-         }
-      }
-      for(int i = 0; i < aiHits1to100.length; i++)  {
-         int iOccurances = aiHits1to100[i];
-         if(iOccurances > 0)  {
-            System.out.println("number=" + i + ", occurances=" + iOccurances);
-         }
+	public static final void main(String[] ignored)  {
+		int[] ai = new int[]{52, 67, 32, 43, 32, 21, 12, 5, 0, 3, 2, 0, 0};
+		int[] aiHits1to100 = new int[101];
+		for(int i : ai)  {
+			if(i >= 0  &&  i <= 100)  {
+				aiHits1to100[i]++;
+			}
+		}
+		for(int i = 0; i < aiHits1to100.length; i++)  {
+			int iOccurances = aiHits1to100[i];
+			if(iOccurances > 0)  {
+				System.out.println("number=" + i + ", occurances=" + iOccurances);
+			}
 
-      }
-   }
+		}
+	}
 }

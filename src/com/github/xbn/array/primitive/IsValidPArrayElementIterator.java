@@ -13,28 +13,28 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.primitive;
-   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
-   import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.util.itr.AbstractIsValidElementIterator;
+	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
+	import  com.github.xbn.analyze.validate.ValueValidator;
+	import  com.github.xbn.util.itr.AbstractIsValidElementIterator;
 /**
-   <P>Iterator for primitive arrays, that returns a boolean expressing the <I>validity</I> of each primitive element.</P>
+	<P>Iterator for primitive arrays, that returns a boolean expressing the <I>validity</I> of each primitive element.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class IsValidPArrayElementIterator<R> extends AbstractIsValidElementIterator<R>  {
-   private PrimitiveArrayHelper<R> pah = null;
-   public IsValidPArrayElementIterator(Object obj_thatIsPrimArr, ValueValidator<R> vv_element, PrimitiveArrayHelper<R> array_helper)  {
-      super(obj_thatIsPrimArr, vv_element);
-      if(array_helper == null)  {
-         throw  new NullPointerException("array_helper");
-      }
-      pah = array_helper;
-   }
-   protected R getRawElementRTXOkay(int index)  {
-      return  pah.getWrapper(getContainer(), index, XBL_CNTR_OF_R_NAME);
-   }
-   public final int getTotalElementCount()  {
-      return  pah.getLength(getContainer(), XBL_CNTR_OF_R_NAME);
-   }
+	private PrimitiveArrayHelper<R> pah = null;
+	public IsValidPArrayElementIterator(Object obj_thatIsPrimArr, ValueValidator<R> vv_element, PrimitiveArrayHelper<R> array_helper)  {
+		super(obj_thatIsPrimArr, vv_element);
+		if(array_helper == null)  {
+			throw  new NullPointerException("array_helper");
+		}
+		pah = array_helper;
+	}
+	protected R getRawElementRTXOkay(int index)  {
+		return  pah.getWrapper(getContainer(), index, XBL_CNTR_OF_R_NAME);
+	}
+	public final int getTotalElementCount()  {
+		return  pah.getLength(getContainer(), XBL_CNTR_OF_R_NAME);
+	}
 }

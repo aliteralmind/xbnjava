@@ -14,20 +14,20 @@
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn.basic;
 /**
-   <P>ReplacedInEachInput all pipe characters (&quot;<CODE>|</CODE>&quot;) to new-lines, using the system property &quot;<CODE>line.separator</CODE>&quot;</P>
+	<P>ReplacedInEachInput all pipe characters (&quot;<CODE>|</CODE>&quot;) to new-lines, using the system property &quot;<CODE>line.separator</CODE>&quot;</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ReplacePipeToLineSeparator}</P>
+	<P>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ReplacePipeToLineSeparator}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ReplacePipeToLineSeparator  {
-   public static final void main(String[] ignored)  {
-      String sInput = "Tassimo T46 Home Brewing System|43-0439-6|17999|0.30:Moto Precise Fit Rear Wiper Blade|0210919|799|0.0: Easton Stealth Reflex Composite Hockey Stick| 83-4567-0|8999|0.5:Yardworks 4-Ton Log Splitter|60-3823-0|39999|0";
+	public static final void main(String[] ignored)  {
+		String sInput = "Tassimo T46 Home Brewing System|43-0439-6|17999|0.30:Moto Precise Fit Rear Wiper Blade|0210919|799|0.0: Easton Stealth Reflex Composite Hockey Stick| 83-4567-0|8999|0.5:Yardworks 4-Ton Log Splitter|60-3823-0|39999|0";
 
-      String output = sInput.replaceAll("\\|", " ").replaceAll(":", System.getProperty("line.separator", "\n"));
+		String output = sInput.replaceAll("\\|", " ").replaceAll(":", System.getProperty("line.separator", "\n"));
 
-      System.out.println(output);
-   }
+		System.out.println(output);
+	}
 }
 

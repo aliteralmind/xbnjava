@@ -14,38 +14,38 @@
 \*license*/
 package  com.github.xbn.io;
 /**
-   <P>Runtime-wrapper for {@code java.io.FileNotFoundException}-s.</P>
+	<P>Runtime-wrapper for {@code java.io.FileNotFoundException}-s.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RTFileNotFoundException extends RTIOException  {
 
-   /**
-    * 
-    */
-   private static final long serialVersionUID = 9178680229899979369L;
-   /**
-      <P>Create an RTFileNotFoundException with no error message.</P>
-    **/
-   public RTFileNotFoundException()  {
-   }
-   /**
-      <P>Create an RTFileNotFoundException.</P>
-    **/
-   public RTFileNotFoundException(String message)  {
-      super(message);
-   }
-   /**
-      <P>Create an RTFileNotFoundException with no error message.</P>
-    **/
-   public RTFileNotFoundException(Throwable cause)  {
-      super(cause);
-   }
-   /**
-      <P>Create an RTFileNotFoundException.</P>
-    **/
-   public RTFileNotFoundException(String message, Throwable cause)  {
-      super(message, cause);
-   }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9178680229899979369L;
+	/**
+		<P>Create an RTFileNotFoundException with no error message.</P>
+	 **/
+	public RTFileNotFoundException()  {
+	}
+	/**
+		<P>Create an RTFileNotFoundException.</P>
+	 **/
+	public RTFileNotFoundException(String message)  {
+		super(message);
+	}
+	/**
+		<P>Create an RTFileNotFoundException with no error message.</P>
+	 **/
+	public RTFileNotFoundException(Throwable cause)  {
+		super(cause);
+	}
+	/**
+		<P>Create an RTFileNotFoundException.</P>
+	 **/
+	public RTFileNotFoundException(String message, Throwable cause)  {
+		super(message, cause);
+	}
 }

@@ -14,56 +14,56 @@
 \*license*/
 package  com.github.xbn.util.lock;
 /**
-   <P>For classes needing to implement {@code OneWayLockable}, that cannot extend {@code AbstractOneWayLockable}. See {@link com.github.xbn.util.lock.LockableComposer LockableComposer} for implementation details.</P>
+	<P>For classes needing to implement {@code OneWayLockable}, that cannot extend {@code AbstractOneWayLockable}. See {@link com.github.xbn.util.lock.LockableComposer LockableComposer} for implementation details.</P>
  **/
 public class OneWayLockableComposer extends LockableComposer  {
-   /**
-      <P>Create a new {@code OneWayLockableComposer}.</P>
+	/**
+		<P>Create a new {@code OneWayLockableComposer}.</P>
 
 
-      <P>Calls<OL>
-         <LI>{@link com.github.xbn.util.lock.LockableComposer#LockableComposer(boolean) super}{@code (false)}</LI>
-         <LI> <CODE><I>[{@link com.github.xbn.util.lock.LockableComposer super}]</I>.{@link com.github.xbn.util.lock.LockableComposer#forceUnlock() forceUnlock}()</CODE></LI>
-      </OL></P>
+		<P>Calls<OL>
+			<LI>{@link com.github.xbn.util.lock.LockableComposer#LockableComposer(boolean) super}{@code (false)}</LI>
+			<LI> <CODE><I>[{@link com.github.xbn.util.lock.LockableComposer super}]</I>.{@link com.github.xbn.util.lock.LockableComposer#forceUnlock() forceUnlock}()</CODE></LI>
+		</OL></P>
 
-      @see  #OneWayLockableComposer(boolean, OneWayLockableComposer) this(b,owlc)
-      @see  #OneWayLockableComposer(OneWayLockable) this(owl)
-    **/
-   public OneWayLockableComposer()  {
-      super(false);
-   }
-   /**
-      <P>Create a new {@code OneWayLockableComposer}, as a duplicate of another.</P>
+		@see  #OneWayLockableComposer(boolean, OneWayLockableComposer) this(b,owlc)
+		@see  #OneWayLockableComposer(OneWayLockable) this(owl)
+	 **/
+	public OneWayLockableComposer()  {
+		super(false);
+	}
+	/**
+		<P>Create a new {@code OneWayLockableComposer}, as a duplicate of another.</P>
 
-      <P>Calls {@link LockableComposer#LockableComposer(boolean, LockableComposer) super}{@code (ignored, to_copy)}.</P>
-      @see  #OneWayLockableComposer(boolean) this(b)
-    **/
-   public OneWayLockableComposer(boolean ignored, OneWayLockableComposer to_copy)  {
-      super(ignored, to_copy);
-   }
-   /**
-      <P>Create a new {@code OneWayLockableComposer}, as a duplicate of another.</P>
+		<P>Calls {@link LockableComposer#LockableComposer(boolean, LockableComposer) super}{@code (ignored, to_copy)}.</P>
+		@see  #OneWayLockableComposer(boolean) this(b)
+	 **/
+	public OneWayLockableComposer(boolean ignored, OneWayLockableComposer to_copy)  {
+		super(ignored, to_copy);
+	}
+	/**
+		<P>Create a new {@code OneWayLockableComposer}, as a duplicate of another.</P>
 
-      <P>Calls {@link LockableComposer#LockableComposer(Lockable) super}{@code (to_copy)}.</P>
-      @see  #OneWayLockableComposer(boolean) this(b)
-    **/
-   public OneWayLockableComposer(OneWayLockable to_copy)  {
-      super(to_copy);
-   }
-   /**
-      <P>Lock--this returns <B>{@code null}</B> (must return &quot;{@code this}&quot; in sub-classes).</P>
+		<P>Calls {@link LockableComposer#LockableComposer(Lockable) super}{@code (to_copy)}.</P>
+		@see  #OneWayLockableComposer(boolean) this(b)
+	 **/
+	public OneWayLockableComposer(OneWayLockable to_copy)  {
+		super(to_copy);
+	}
+	/**
+		<P>Lock--this returns <B>{@code null}</B> (must return &quot;{@code this}&quot; in sub-classes).</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE><I>[{@link com.github.xbn.util.lock.LockableComposer super}]</I>.{@link com.github.xbn.util.lock.LockableComposer#lock(boolean) lock}(true)</CODE></P>
-    **/
-   public void lock()  {
-      lock(true);
-   }
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE><I>[{@link com.github.xbn.util.lock.LockableComposer super}]</I>.{@link com.github.xbn.util.lock.LockableComposer#lock(boolean) lock}(true)</CODE></P>
+	 **/
+	public void lock()  {
+		lock(true);
+	}
 //static...START
-   public static final void lockIfNNull(OneWayLockable ow_l)  {
-      if(ow_l != null)  {
-         ow_l.lock();
-      }
-   }
+	public static final void lockIfNNull(OneWayLockable ow_l)  {
+		if(ow_l != null)  {
+			ow_l.lock();
+		}
+	}
 //static...END
 }

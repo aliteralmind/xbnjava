@@ -13,15 +13,15 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.testdev;
-   import java.lang.annotation.ElementType;
-   import java.lang.annotation.Retention;
-   import java.lang.annotation.RetentionPolicy;
-   import java.lang.annotation.Target;
+	import java.lang.annotation.ElementType;
+	import java.lang.annotation.Retention;
+	import java.lang.annotation.RetentionPolicy;
+	import java.lang.annotation.Target;
 /**
-   <P>A marker annotation used in source-code, to denote constructors that are required when composing a class based on the class being annotated. These annotations are only detected to exist or not exist above a constructor signature (and it must be above it, on a line by itself).</P>
+	<P>A marker annotation used in source-code, to denote constructors that are required when composing a class based on the class being annotated. These annotations are only detected to exist or not exist above a constructor signature (and it must be above it, on a line by itself).</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 @Target(value = ElementType.CONSTRUCTOR)
 @Retention(value = RetentionPolicy.SOURCE)

@@ -13,64 +13,64 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.primitiveable;
-   import  com.github.xbn.experimental.listify.AddRemovable;
-   import  com.github.xbn.array.IndexableUtil;
-   import  com.github.xbn.array.NullContainer;
-   import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
-   import  com.github.xbn.experimental.listify.primitiveable.ListifyDoubleable;
-   import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyPrimitiveable;
-   import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
-   import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
-   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+	import  com.github.xbn.experimental.listify.AddRemovable;
+	import  com.github.xbn.array.IndexableUtil;
+	import  com.github.xbn.array.NullContainer;
+	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
+	import  com.github.xbn.experimental.listify.primitiveable.ListifyDoubleable;
+	import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyPrimitiveable;
+	import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
+	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
+	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-   <P>Abstract implementation of {@code ListifyDoubleable}.</P>
+	<P>Abstract implementation of {@code ListifyDoubleable}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractListifyDoubleable extends AbstractListifyPrimitiveable<Double> implements ListifyDoubleable  {
 //constructors...START
-   @SuppressWarnings("unchecked")
-   public AbstractListifyDoubleable(Object raw_obj)  {
-      this(raw_obj, SimpleNullHandlerForPrimitives.CRASH);
-   }
-   public AbstractListifyDoubleable(Object raw_obj, NullHandlerForPrimitives<Double> null_handler)  {
-      super(raw_obj, AddRemovable.NO, NewPrimitiveArrayHelper.forDouble(), (new OneParamCnstrValueCopier<Double>(Double.class)), null_handler);
-   }
+	@SuppressWarnings("unchecked")
+	public AbstractListifyDoubleable(Object raw_obj)  {
+		this(raw_obj, SimpleNullHandlerForPrimitives.CRASH);
+	}
+	public AbstractListifyDoubleable(Object raw_obj, NullHandlerForPrimitives<Double> null_handler)  {
+		super(raw_obj, AddRemovable.NO, NewPrimitiveArrayHelper.forDouble(), (new OneParamCnstrValueCopier<Double>(Double.class)), null_handler);
+	}
 //constructors...END
-   public final double[] getPArrayCopyOrNull(NullContainer nnull)  {
-      if(getRawObject() == null)  {
-         IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
-         return  null;
-      }
-      double[] ai = new double[size()];
-      int j = 0;
-      for(double i : this)  {
-         ai[j++] = i;
-      }
-      return  ai;
-   }
-   public final Double[] getEArrayCopyOrNull(NullContainer nnull, double copy_elements)  {
-      if(getRawObject() == null)  {
-         IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
-         return  null;
-      }
-      Double[] ao = new Double[size()];
-      int j = 0;
-      for(Double I : this)  {
-         ao[j++] = I;
-      }
-      return  ao;
-   }
-   protected final Double getElementRTXOkay(int index)  {
-      return  getPDouble(index);
-   }
+	public final double[] getPArrayCopyOrNull(NullContainer nnull)  {
+		if(getRawObject() == null)  {
+			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
+			return  null;
+		}
+		double[] ai = new double[size()];
+		int j = 0;
+		for(double i : this)  {
+			ai[j++] = i;
+		}
+		return  ai;
+	}
+	public final Double[] getEArrayCopyOrNull(NullContainer nnull, double copy_elements)  {
+		if(getRawObject() == null)  {
+			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
+			return  null;
+		}
+		Double[] ao = new Double[size()];
+		int j = 0;
+		for(Double I : this)  {
+			ao[j++] = I;
+		}
+		return  ao;
+	}
+	protected final Double getElementRTXOkay(int index)  {
+		return  getPDouble(index);
+	}
 /*stub functions for non-abstract compile...START
-   public final java.util.Iterator<Double> iterator()  {
-      return  null;
-   }
-   public final double getPDouble(int index)  {
-      return  -1;
-   }
+	public final java.util.Iterator<Double> iterator()  {
+		return  null;
+	}
+	public final double getPDouble(int index)  {
+		return  -1;
+	}
  stub functions for non-abstract compile...END*/
 }

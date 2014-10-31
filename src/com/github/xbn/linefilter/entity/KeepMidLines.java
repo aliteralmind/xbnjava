@@ -13,60 +13,60 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity;
-   import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Should the lines between the start and end lines in a block entity be kept?.</P>
+	<P>Should the lines between the start and end lines in a block entity be kept?.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum KeepMidLines  {
-   /**
-      <P>YYY.</P>
+	/**
+		<P>YYY.</P>
 
-      @see  #NO
-      @see  #isYes()
-    **/
-   YES,
-   /**
-      <P>YYY.</P>
+		@see  #NO
+		@see  #isYes()
+	 **/
+	YES,
+	/**
+		<P>YYY.</P>
 
-      @see  #YES
-      @see  #isNo()
-    **/
-   NO;
-   /**
-      <P>Is this {@code KeepMidLines} equal to {@code YES}?.</P>
+		@see  #YES
+		@see  #isNo()
+	 **/
+	NO;
+	/**
+		<P>Is this {@code KeepMidLines} equal to {@code YES}?.</P>
 
-      @return  <CODE>this == {@link #YES}</CODE>
+		@return  <CODE>this == {@link #YES}</CODE>
 
-      @see  #isNo()
-    **/
-   public final boolean isYes()  {
-      return  this == YES;
-   }
-   /**
-      <P>Is this {@code KeepMidLines} equal to {@code NO}?.</P>
+		@see  #isNo()
+	 **/
+	public final boolean isYes()  {
+		return  this == YES;
+	}
+	/**
+		<P>Is this {@code KeepMidLines} equal to {@code NO}?.</P>
 
-      @return  <CODE>this == {@link #NO}</CODE>
-      @see  #isYes()
-    **/
-   public final boolean isNo()  {
-      return  this == NO;
-   }
-   /**
-      <P>Return {@code KeepMidLines.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</P>
+		@return  <CODE>this == {@link #NO}</CODE>
+		@see  #isYes()
+	 **/
+	public final boolean isNo()  {
+		return  this == NO;
+	}
+	/**
+		<P>Return {@code KeepMidLines.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</P>
 
-      @return  <CODE>(flag ? {@link #YES} : {@link #NO})</CODE>
-    **/
-   public static final KeepMidLines getForBoolean(boolean flag)  {
-      return  (flag ? YES : NO);
-   }
-   public static final KeepMidLines getForKeepMatched(KeepMatched matched, String kam_varName)  {
-      try  {
-         return  (matched.isYes() ? YES : NO);
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(matched, kam_varName, null, rx);
-      }
-   }
+		@return  <CODE>(flag ? {@link #YES} : {@link #NO})</CODE>
+	 **/
+	public static final KeepMidLines getForBoolean(boolean flag)  {
+		return  (flag ? YES : NO);
+	}
+	public static final KeepMidLines getForKeepMatched(KeepMatched matched, String kam_varName)  {
+		try  {
+			return  (matched.isYes() ? YES : NO);
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(matched, kam_varName, null, rx);
+		}
+	}
 };

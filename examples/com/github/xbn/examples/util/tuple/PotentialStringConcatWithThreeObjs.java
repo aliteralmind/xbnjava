@@ -13,47 +13,47 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util.tuple;
-   import  com.github.xbn.util.tuple.ThreeTSObjects;
+	import  com.github.xbn.util.tuple.ThreeTSObjects;
 /**
-   <P>Uses {@code com.github.xbn.util.tuple.}{@link com.github.xbn.util.tuple.ThreeTSObjects} to hold a moderately-complex object, whose {@code toString()} should only be executed when an exception is thrown--This class throws an {@code IllegalStateException}.</P>
+	<P>Uses {@code com.github.xbn.util.tuple.}{@link com.github.xbn.util.tuple.ThreeTSObjects} to hold a moderately-complex object, whose {@code toString()} should only be executed when an exception is thrown--This class throws an {@code IllegalStateException}.</P>
 
    <P>{@code java com.github.xbn.examples.util.tuple.PotentialStringConcatWithThreeObjs}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class PotentialStringConcatWithThreeObjs  {
    public static final void main(String[] ignored)  {
-      ThreeTSObjects to = new ThreeTSObjects("Extra information: [", (new AModeratelyComplexObject()), "]");
+		ThreeTSObjects to = new ThreeTSObjects("Extra information: [", (new AModeratelyComplexObject()), "]");
 
-      try  {
-         if(false)  {
-            throw  new IllegalStateException("A bad: " + to.toString());
-         }
-         System.out.println("A good");
-      }  catch(RuntimeException rx)  {
-         System.out.println(rx);
-      }
-      try  {
-         if(true)  {
-            throw  new IllegalStateException("B bad: " + to.toString());
-         }
-         System.out.println("B good");
-      }  catch(RuntimeException rx)  {
-         System.out.println(rx);
-      }
-   }
+		try  {
+			if(false)  {
+				throw  new IllegalStateException("A bad: " + to.toString());
+			}
+			System.out.println("A good");
+		}  catch(RuntimeException rx)  {
+			System.out.println(rx);
+		}
+		try  {
+			if(true)  {
+				throw  new IllegalStateException("B bad: " + to.toString());
+			}
+			System.out.println("B good");
+		}  catch(RuntimeException rx)  {
+			System.out.println(rx);
+		}
+	}
 }
 class AModeratelyComplexObject  {
-   public long getNeg300BPlus1FiveMTimes()  {
-      long l = -300000000000L;
-      for(int i = 0; i < 5000000; i++)  {
-         l += 1;
-      }
-      return  l;
-   }
-   public String toString()  {
-      return  this.getClass().getName() + ": getNeg300BPlus1FiveMTimes()=" + getNeg300BPlus1FiveMTimes();
-   }
+	public long getNeg300BPlus1FiveMTimes()  {
+		long l = -300000000000L;
+		for(int i = 0; i < 5000000; i++)  {
+			l += 1;
+		}
+		return  l;
+	}
+	public String toString()  {
+		return  this.getClass().getName() + ": getNeg300BPlus1FiveMTimes()=" + getNeg300BPlus1FiveMTimes();
+	}
 }

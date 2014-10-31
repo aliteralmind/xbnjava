@@ -13,30 +13,30 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
-   import  com.github.xbn.linefilter.entity.OnOffAbort;
-   import  com.github.xbn.number.LengthInRange;
+	import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
+	import  com.github.xbn.linefilter.entity.OnOffAbort;
+	import  com.github.xbn.number.LengthInRange;
 /**
-   <P>A {@code RawOnOffEntityFilter} that is dependant on the <I>being filtered</I> entity's {@linkplain RawEntity#getFullyActiveCount() fully-active count} being in a range.</P>
+	<P>A {@code RawOnOffEntityFilter} that is dependant on the <I>being filtered</I> entity's {@linkplain RawEntity#getFullyActiveCount() fully-active count} being in a range.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RawPostFilterSelfActiveInOutRange<L> extends AbstractRawPostFilterActiveInOutRange<L>  {
-   /**
-      <P>Create a new instance from a range and when-in setting.</P>
+	/**
+		<P>Create a new instance from a range and when-in setting.</P>
 
-    **/
-   public RawPostFilterSelfActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
-      super(range, when_inRange, when_outOfRange, response, debug_ifNonNull);
-   }
-   /**
-      @return  <CODE>{@link AbstractRawPostFilterActiveInOutRange#getPostStateForCount(RawEntity) getStateForCount}(entity_beingFiltered))</CODE>
-    **/
-   public OnOffAbort getPostState(RawEntity<L> entity_beingFiltered, int ignored, L ignored3)  {
-      return  getPostStateForCount(entity_beingFiltered);
-   }
-   public RawPostFilterSelfActiveInOutRange<L> getObjectCopy()  {
-      return  this;
-   }
+	 **/
+	public RawPostFilterSelfActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
+		super(range, when_inRange, when_outOfRange, response, debug_ifNonNull);
+	}
+	/**
+		@return  <CODE>{@link AbstractRawPostFilterActiveInOutRange#getPostStateForCount(RawEntity) getStateForCount}(entity_beingFiltered))</CODE>
+	 **/
+	public OnOffAbort getPostState(RawEntity<L> entity_beingFiltered, int ignored, L ignored3)  {
+		return  getPostStateForCount(entity_beingFiltered);
+	}
+	public RawPostFilterSelfActiveInOutRange<L> getObjectCopy()  {
+		return  this;
+	}
 }

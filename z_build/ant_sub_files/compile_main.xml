@@ -1,53 +1,53 @@
 <project name="compile_main" basedir=".">
 
-   <target name="compilebuild" description="For starting compilation in the middle of the list, when needed.">
-      <javac srcdir="${dir_sandbox_bldfiles}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
-         includes="CreateTempBuildAndCodeletPropsForPublish.java"/>
-   </target>
+	<target name="compilebuild" description="For starting compilation in the middle of the list, when needed.">
+		<javac srcdir="${dir_sandbox_bldfiles}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+			includes="CreateTempBuildAndCodeletPropsForPublish.java"/>
+	</target>
 
-   <target name="jar">
-      <delete file="${project_all_jar}"/>
-      <delete file="${dir_build_download}${project_name_with_version}.jar"/>
-      <jar destfile="${project_all_jar}"
-         basedir="${build.class.dir}"
-         includes="${com_github_xbn}**/*.class"
-      />
-      <jar destfile="${dir_build_download}${project_name_with_version}.jar"
-         basedir="${build.class.dir}"
-         includes="${com_github_xbn}**/*.class"
-         excludes="${com_github_xbn}examples${fs}**/*.class,${com_github_xbn}test${fs}**/*.class"
-      />
-   </target>
+	<target name="jar">
+		<delete file="${project_all_jar}"/>
+		<delete file="${dir_build_download}${project_name_with_version}.jar"/>
+		<jar destfile="${project_all_jar}"
+			basedir="${build.class.dir}"
+			includes="${com_github_xbn}**/*.class"
+		/>
+		<jar destfile="${dir_build_download}${project_name_with_version}.jar"
+			basedir="${build.class.dir}"
+			includes="${com_github_xbn}**/*.class"
+			excludes="${com_github_xbn}examples${fs}**/*.class,${com_github_xbn}test${fs}**/*.class"
+		/>
+	</target>
 
-   <target name="compilehelp" description="Documentation on 'compileproper1by1b'">
+	<target name="compilehelp" description="Documentation on 'compileproper1by1b'">
 <echo>To avoid circular dependencies, compilation is done one-file-at-a-time. To compile all classes at once, un-comment the 'compile.as.a.whole' variable in build.properties.
 
 ReplaceAllGitOnlySandboxIndentTabsWithSpaces is used only by me (Jeff Epstein, the creator of XBN-Java). I use two separate sandboxes:
-   - main: Where I do my work, and in which all source code is tab-indented. This contains temp files and other stuff hard-coded to my setup, such as Windows "*.lnk" shortcuts. This directory is not committed to GitHub.
-   - gitonly: The directory committed to GitHub. I do no work in this directory. The source code in this is three-space delimited (after running ReplaceAllGitOnlySandboxIndentTabsWithSpaces on it, which is around 95% faster than ant's replaceregexp, using Java 1.7). This also contains all git-related files, which are never altered by this build process: The ".git" directory and other ".git" files.
+	- main: Where I do my work, and in which all source code is tab-indented. This contains temp files and other stuff hard-coded to my setup, such as Windows "*.lnk" shortcuts. This directory is not committed to GitHub.
+	- gitonly: The directory committed to GitHub. I do no work in this directory. The source code in this is three-space delimited (after running ReplaceAllGitOnlySandboxIndentTabsWithSpaces on it, which is around 95% faster than ant's replaceregexp, using Java 1.7). This also contains all git-related files, which are never altered by this build process: The ".git" directory and other ".git" files.
 
 To compile all (non-example/non-testing) code:
-   - YOU only need to execute 'ant pubprecodelet' in order to compile all classes
-   - *I* need to do the following
-      -In the main sandbox (all three of these tasks are called by 'pubpretabs', which in my main sandbox only):
-         -1- refresh
-         -2- compileproper1by1b
-         -3- gitonlyfill (only in my main sandbox. Calls ReplaceAllGitOnlySandboxIndentTabsWithSpaces)
-      -In the git-only sandbox:
-         -4- pubposttabs
+	- YOU only need to execute 'ant pubprecodelet' in order to compile all classes
+	- *I* need to do the following
+		-In the main sandbox (all three of these tasks are called by 'pubpretabs', which in my main sandbox only):
+			-1- refresh
+			-2- compileproper1by1b
+			-3- gitonlyfill (only in my main sandbox. Calls ReplaceAllGitOnlySandboxIndentTabsWithSpaces)
+		-In the git-only sandbox:
+		   -4- pubposttabs
 
 The compileproper1by1b list originates in
-   XBN-Java/z_build/ant_sub_files/compile.xml
+	XBN-Java/z_build/ant_sub_files/compile.xml
 and is required by
-   Template Featherweight/z_build/ant_sub_files/compile.xml
+	Template Featherweight/z_build/ant_sub_files/compile.xml
 
 Any changes to this list must be duplicated to Template Featherweight.</echo>
-   </target>
+	</target>
 
  <target name="compilepostcodelet" description="Optionally copies the Codelet jar to 'jar_dependencies', and then compiles all classes that depend on it.">
-      <antcall target="-autocopycodeletjars"/>
-      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
-         includes="text${fs}regex${fs}zCodeletCustomizers.java"/>
-      <antcall target="jar"/>
-   </target>
+		<antcall target="-autocopycodeletjars"/>
+		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+			includes="text${fs}regex${fs}zCodeletCustomizers.java"/>
+		<antcall target="jar"/>
+	</target>
 </project>

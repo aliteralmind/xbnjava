@@ -13,71 +13,71 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.keyed;
-   import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.CrashIfObject;
 //	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
-   import  java.util.regex.Pattern;
-   import  java.util.regex.Matcher;
+	import  java.util.regex.Pattern;
+	import  java.util.regex.Matcher;
 /**
-   <P>Implementation of {@code Named}.</P>
+	<P>Implementation of {@code Named}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class SimpleNamed extends SimpleKeyed<String> implements Named  {
 //constructors...START
-   private static final Matcher nameMtchr = Pattern.compile("\\w+").matcher("");
-   public SimpleNamed(String name)  {
-      this(name, "name");
-   }
-   /**
-      <P>Create a new instance.</P>
+	private static final Matcher nameMtchr = Pattern.compile("\\w+").matcher("");
+	public SimpleNamed(String name)  {
+		this(name, "name");
+	}
+	/**
+		<P>Create a new instance.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link SimpleKeyed#SimpleNamed(String, String) this}{@code (name, "name")}</P>
-    **/
-   public SimpleNamed(String name, String name_varName)  {
-      super(name);
-      ciBadNameInCnstr(name, name_varName);
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link SimpleKeyed#SimpleNamed(String, String) this}{@code (name, "name")}</P>
+	 **/
+	public SimpleNamed(String name, String name_varName)  {
+		super(name);
+		ciBadNameInCnstr(name, name_varName);
 //		this(name, "name");
-   }
-   /*
-      <P>Create a new instance</P>
-   public SimpleNamed(String name, String nameName)  {
-      super(name, OneParamCnstrValueCopier.STRING);
-   }
-    */
-   /*
-      <P>Create a new {@code SimpleNamed} as a duplicate of another.</P>
+	}
+	/*
+		<P>Create a new instance</P>
+	public SimpleNamed(String name, String nameName)  {
+		super(name, OneParamCnstrValueCopier.STRING);
+	}
+	 */
+	/*
+		<P>Create a new {@code SimpleNamed} as a duplicate of another.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link SimpleKeyed#SimpleKeyed(Keyed) super}{@code (to_copy)}</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link SimpleKeyed#SimpleKeyed(Keyed) super}{@code (to_copy)}</P>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-   public SimpleNamed(Named to_copy)  {
-      super(to_copy);
-   }
-    */
+		@param  to_copy  May not be {@code null}.
+		@see  #getObjectCopy()
+	public SimpleNamed(Named to_copy)  {
+		super(to_copy);
+	}
+	 */
 //constructors...END
-   public String getName()  {
-      return  getKey();
-   }
-   /*
-      <P>Duplicate this {@code SimpleNamed}.</P>
+	public String getName()  {
+		return  getKey();
+	}
+	/*
+		<P>Duplicate this {@code SimpleNamed}.</P>
 
-      @return  <CODE>(new {@link #SimpleNamed(Named) SimpleNamed}(this))</CODE>
-   public SimpleNamed getObjectCopy()  {
-      return  (new SimpleNamed(this));
-   }
-    */
-   public static final void ciBadNameInCnstr(String name, String nameName)  {
-      try  {
-         if(!nameMtchr.reset(name).matches())  {
-            throw  new IllegalArgumentException(nameName + " (\"" + name + "\") may not be empty, and may only contain letters, digits, and underscores (must match '\\w+')");
-         }
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(name, nameName, null, rx);
-      }
-   }
+		@return  <CODE>(new {@link #SimpleNamed(Named) SimpleNamed}(this))</CODE>
+	public SimpleNamed getObjectCopy()  {
+		return  (new SimpleNamed(this));
+	}
+	 */
+	public static final void ciBadNameInCnstr(String name, String nameName)  {
+		try  {
+			if(!nameMtchr.reset(name).matches())  {
+				throw  new IllegalArgumentException(nameName + " (\"" + name + "\") may not be empty, and may only contain letters, digits, and underscores (must match '\\w+')");
+			}
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(name, nameName, null, rx);
+		}
+	}
 }
 

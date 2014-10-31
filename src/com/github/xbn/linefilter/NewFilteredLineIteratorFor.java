@@ -13,46 +13,46 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter;
-   import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
-   import  com.github.xbn.number.LengthInRange;
-   import  java.util.Iterator;
+	import  com.github.xbn.linefilter.Returns;
+	import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
+	import  com.github.xbn.number.LengthInRange;
+	import  java.util.Iterator;
 /**
-   <P>Convenience functions for creating {@code FilteredLineIterator}s.</P>
+	<P>Convenience functions for creating {@code FilteredLineIterator}s.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NewFilteredLineIteratorFor  {
-   /**
-      <P>Create a new {@code FilteredLineIterator} that does nothing: All lines are kept and unaltered.</P>
+	/**
+		<P>Create a new {@code FilteredLineIterator} that does nothing: All lines are kept and unaltered.</P>
 
-      @return
+		@return
 <BLOCKQUOTE><PRE>new {@link FilteredLineIterator#FilteredLineIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) FilteredLineIterator}(all_lineItr, {@link Returns}.{@link Returns#KEPT KEPT},
-   dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-   {@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.{@link com.github.xbn.linefilter.entity.NewBlockEntityFor#keepAllUnchanged(String, RawOnOffEntityFilter, Appendable) keepAllUnchanged}(&quot;root&quot;))</PRE></BLOCKQUOTE>
-    **/
-   public static final FilteredLineIterator keepAllLinesUnchanged(Iterator<String> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
-      return  new FilteredLineIterator(all_lineItr, Returns.KEPT,
-         dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-         NewBlockEntityFor.keepAllUnchanged("root", null, null));
-   }
-   /*
-      <P>Create a new {@code FilteredLineIterator} that optionally keeps the start or end lines, or mid lines, but otherwise does nothing. No lines are altered.</P>
+	dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
+	{@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.{@link com.github.xbn.linefilter.entity.NewBlockEntityFor#keepAllUnchanged(String, RawOnOffEntityFilter, Appendable) keepAllUnchanged}(&quot;root&quot;))</PRE></BLOCKQUOTE>
+	 **/
+	public static final FilteredLineIterator keepAllLinesUnchanged(Iterator<String> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
+		return  new FilteredLineIterator(all_lineItr, Returns.KEPT,
+			dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
+			NewBlockEntityFor.keepAllUnchanged("root", null, null));
+	}
+	/*
+		<P>Create a new {@code FilteredLineIterator} that optionally keeps the start or end lines, or mid lines, but otherwise does nothing. No lines are altered.</P>
 
-      @return
+		@return
 <BLOCKQUOTE><PRE>new {@link FilteredLineIterator#FilteredLineIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) FilteredLineIterator}(all_lineItr, {@link Returns}.{@link Returns#KEPT KEPT},
-   dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-   {@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.{@link com.github.xbn.linefilter.entity.NewBlockEntityFor#keepAllUnchanged(String, RawOnOffEntityFilter, Appendable) keepAllUnchanged}(&quot;root&quot;,
-      root_startLine, root_midLines, root_endLine))</PRE></BLOCKQUOTE>
-   public static final FilteredLineIterator keptLinesUnchanged(Iterator<String> all_lineItr, KeepStartLine root_startLine, KeepMidLines root_midLines, KeepEndLine root_endLine, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
-      return  new FilteredLineIterator(all_lineItr, Returns.KEPT,
-         dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-         NewBlockEntityFor.keepAllUnchanged("root",
-            root_startLine, root_midLines, root_endLine));
-   }
-    */
-   public NewFilteredLineIteratorFor()  {
-      throw  new IllegalStateException("Do not instantiate.");
-   }
+	dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
+	{@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.{@link com.github.xbn.linefilter.entity.NewBlockEntityFor#keepAllUnchanged(String, RawOnOffEntityFilter, Appendable) keepAllUnchanged}(&quot;root&quot;,
+		root_startLine, root_midLines, root_endLine))</PRE></BLOCKQUOTE>
+	public static final FilteredLineIterator keptLinesUnchanged(Iterator<String> all_lineItr, KeepStartLine root_startLine, KeepMidLines root_midLines, KeepEndLine root_endLine, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
+		return  new FilteredLineIterator(all_lineItr, Returns.KEPT,
+			dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
+			NewBlockEntityFor.keepAllUnchanged("root",
+				root_startLine, root_midLines, root_endLine));
+	}
+	 */
+	public NewFilteredLineIteratorFor()  {
+		throw  new IllegalStateException("Do not instantiate.");
+	}
 }

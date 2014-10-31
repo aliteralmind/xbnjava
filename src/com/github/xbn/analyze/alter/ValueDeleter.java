@@ -14,35 +14,35 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
 /**
-   <P>A {@code ValueAlterer} that always deletes.</P>
+	<P>A {@code ValueAlterer} that always deletes.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ValueDeleter<V,A> extends AbstractValueAlterer<V,A>  {
-   public ValueDeleter()  {
-      super();
-   }
-   public ValueDeleter(ValueDeleter<V,A> to_copy)  {
-      super(to_copy);
-   }
-   public final A getAlteredPostResetCheck(V ignored1, A ignored2)  {
-      declareAltered(Altered.NO, NeedsToBeDeleted.YES);
-      return  null;
-   }
-   /**
-      @return  <CODE>(new {@link #ValueDeleter(ValueDeleter) ValueDeleter}&lt;V,A&gt;(this))</CODE>
-    **/
-   public ValueDeleter<V,A> getObjectCopy()  {
-      return  (new ValueDeleter<V,A>(this));
-   }
+	public ValueDeleter()  {
+		super();
+	}
+	public ValueDeleter(ValueDeleter<V,A> to_copy)  {
+		super(to_copy);
+	}
+	public final A getAlteredPostResetCheck(V ignored1, A ignored2)  {
+		declareAltered(Altered.NO, NeedsToBeDeleted.YES);
+		return  null;
+	}
+	/**
+		@return  <CODE>(new {@link #ValueDeleter(ValueDeleter) ValueDeleter}&lt;V,A&gt;(this))</CODE>
+	 **/
+	public ValueDeleter<V,A> getObjectCopy()  {
+		return  (new ValueDeleter<V,A>(this));
+	}
 /*
-   public ValueDeleter<V,A> extraErrInfo(Object info)  {
-      setExtraErrInfo(info);
-      return  this;
-   }
+	public ValueDeleter<V,A> extraErrInfo(Object info)  {
+		setExtraErrInfo(info);
+		return  this;
+	}
  */
-   public StringBuilder appendToString(StringBuilder to_appendTo)  {
-      return  to_appendTo.append(this.getClass().getName());
-   }
+	public StringBuilder appendToString(StringBuilder to_appendTo)  {
+		return  to_appendTo.append(this.getClass().getName());
+	}
 }

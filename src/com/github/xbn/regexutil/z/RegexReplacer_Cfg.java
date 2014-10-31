@@ -13,37 +13,37 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil.z;
-   import  com.github.xbn.regexutil.ReplacedInEachInput;
-   import  java.util.regex.Pattern;
-   import  com.github.xbn.regexutil.RegexReplacer;
-   import  com.github.xbn.neederneedable.DummyForNoNeeder;
+	import  com.github.xbn.regexutil.ReplacedInEachInput;
+	import  java.util.regex.Pattern;
+	import  com.github.xbn.regexutil.RegexReplacer;
+	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.regexutil.RegexReplacer RegexReplacer}.</P>
+	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.regexutil.RegexReplacer RegexReplacer}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RegexReplacer_Cfg extends RegexReplacer_CfgForNeeder<RegexReplacer,DummyForNoNeeder>   {
-   /**
-      <P>Create a new {@code RegexReplacer_Cfg} with defaults.</P>
+	/**
+		<P>Create a new {@code RegexReplacer_Cfg} with defaults.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RegexReplacer_CfgForNeeder.html#RegexReplacer_CfgForNeeder(R)">super</A>(null)</CODE></P>
-    **/
-   public RegexReplacer_Cfg()  {
-      super(null);
-   }
-   /**
-      <P>Create a new {@code RegexReplacer} for a direct replacement.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RegexReplacer_CfgForNeeder.html#RegexReplacer_CfgForNeeder(R)">super</A>(null)</CODE></P>
+	 **/
+	public RegexReplacer_Cfg()  {
+		super(null);
+	}
+	/**
+		<P>Create a new {@code RegexReplacer} for a direct replacement.</P>
 
-      @return  <CODE>new {@link #RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#direct(Pattern, Object) direct}(pattern_toFind, rplcWith_direct).
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rplcWhat_notMatchNums).
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}()</CODE>
-      @see  <A HREF="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#direct">Definition: direct</A>
-    **/
-   public static final RegexReplacer buildDirect(Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, Appendable dbgDest_ifNonNull)  {
-      return  new RegexReplacer_Cfg().direct(pattern_toFind, rplcWith_direct).
-         replaceWhatNotMatchNums(rplcWhat_notMatchNums).
-         debugTo(dbgDest_ifNonNull).build();
-   }
+		@return  <CODE>new {@link #RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#direct(Pattern, Object) direct}(pattern_toFind, rplcWith_direct).
+		<BR> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rplcWhat_notMatchNums).
+		<BR> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}()</CODE>
+		@see  <A HREF="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#direct">Definition: direct</A>
+	 **/
+	public static final RegexReplacer buildDirect(Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, Appendable dbgDest_ifNonNull)  {
+		return  new RegexReplacer_Cfg().direct(pattern_toFind, rplcWith_direct).
+			replaceWhatNotMatchNums(rplcWhat_notMatchNums).
+			debugTo(dbgDest_ifNonNull).build();
+	}
 }

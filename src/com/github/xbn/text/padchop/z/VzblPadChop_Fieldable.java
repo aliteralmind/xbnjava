@@ -13,23 +13,23 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.text.padchop.z;
-   import  com.github.xbn.io.z.GetDebugApbl_Fieldable;
-   import  com.github.xbn.text.padchop.ChopString;
-   import  com.github.xbn.text.padchop.EscapeAction;
-   import  com.github.xbn.text.padchop.PadString;
+	import  com.github.xbn.io.z.GetDebugApbl_Fieldable;
+	import  com.github.xbn.text.padchop.ChopString;
+	import  com.github.xbn.text.padchop.EscapeAction;
+	import  com.github.xbn.text.padchop.PadString;
 /**
-   <P>YYY</P>
+	<P>YYY</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface VzblPadChop_Fieldable extends GetDebugApbl_Fieldable  {
-   boolean doTrimLeft();
-   boolean doTrimRight();
-   EscapeAction getEscapeAction();
-   boolean doPad();
-   boolean doChop();
-   PadString getPad();
-   ChopString getChop();
-   boolean doPadFirst();
+	boolean doTrimLeft();
+	boolean doTrimRight();
+	EscapeAction getEscapeAction();
+	boolean doPad();
+	boolean doChop();
+	PadString getPad();
+	ChopString getChop();
+	boolean doPadFirst();
 }

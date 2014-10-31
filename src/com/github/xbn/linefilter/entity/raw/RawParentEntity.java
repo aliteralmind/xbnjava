@@ -13,33 +13,33 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-   import  java.util.List;
+	import  java.util.List;
 /**
-   <P>A block entity that spans multiple lines (is a &quot;block&quot;) and may contain zero or more child entities.</P>
+	<P>A block entity that spans multiple lines (is a &quot;block&quot;) and may contain zero or more child entities.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface RawParentEntity<L> extends RawBlockChildEntity<L>  {
-   /**
-      <P>The currently active child entity.</P>
+	/**
+		<P>The currently active child entity.</P>
 
-      @return  The non-{@code null}, currently active child, or {@code null} if no child entity is active.
-    **/
-   RawChildEntity<L> getRawActiveChild();
-   /**
-      <P>An immutable list of all child entities.</P>
+		@return  The non-{@code null}, currently active child, or {@code null} if no child entity is active.
+	 **/
+	RawChildEntity<L> getRawActiveChild();
+	/**
+		<P>An immutable list of all child entities.</P>
 
-      @return  A non-{@code null} list. <I>While the list itself is immutable, the elements are not.</I> Making any changes to an element (for example, by resetting its {@linkplain com.github.xbn.analyze.alter.Alterer#resetState() state} or {@linkplain com.github.xbn.analyze.alter.Alterer#resetCounts() counts}, or by directly calling <CODE><I>[an-entity]</I>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/alter/ValueAlterer.html#getAltered(V,A)">getAltered</A></CODE>) will cause unpredictable behavior.
-    **/
-   List<RawChildEntity<L>> getRawChildList();
-   /**
-      <P>YYY</P>
+		@return  A non-{@code null} list. <I>While the list itself is immutable, the elements are not.</I> Making any changes to an element (for example, by resetting its {@linkplain com.github.xbn.analyze.alter.Alterer#resetState() state} or {@linkplain com.github.xbn.analyze.alter.Alterer#resetCounts() counts}, or by directly calling <CODE><I>[an-entity]</I>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/alter/ValueAlterer.html#getAltered(V,A)">getAltered</A></CODE>) will cause unpredictable behavior.
+	 **/
+	List<RawChildEntity<L>> getRawChildList();
+	/**
+		<P>YYY</P>
 
-      @return  <CODE>({@link #areStartEndInclusive() areStartEndInclusive}() &nbsp;&amp;&amp; &nbsp;{@link #isEndLineInclusive() isEndLineInclusive}())</CODE>
-    **/
-   boolean areStartEndInclusive();
-   boolean isStartLineInclusive();
-   boolean isEndLineInclusive();
-   RawEntity<L> getEntityThatAborted();
+		@return  <CODE>({@link #areStartEndInclusive() areStartEndInclusive}() &nbsp;&amp;&amp; &nbsp;{@link #isEndLineInclusive() isEndLineInclusive}())</CODE>
+	 **/
+	boolean areStartEndInclusive();
+	boolean isStartLineInclusive();
+	boolean isEndLineInclusive();
+	RawEntity<L> getEntityThatAborted();
 }

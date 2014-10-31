@@ -13,35 +13,35 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate.z;
-   import  com.github.xbn.analyze.validate.ValidResultFilter;
-   import  com.github.xbn.io.z.SimpleGetDebugApbl_F;
+	import  com.github.xbn.analyze.validate.ValidResultFilter;
+	import  com.github.xbn.io.z.SimpleGetDebugApbl_F;
 /**
-   <P>YYY</P>
+	<P>YYY</P>
 
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class SimpleValidator_F extends SimpleGetDebugApbl_F implements Validator_Fieldable  {
-   public boolean           bInvert     ;
-   public ValidResultFilter vrFilter    ;
-   public Object            oXtraErrInfo;
-   public SimpleValidator_F(boolean do_invert, ValidResultFilter filter, Appendable dbgDest_ifNonNull, Object xtra_errInfo)  {
-      super(dbgDest_ifNonNull);
-      bInvert = do_invert;
-      vrFilter = filter;
-      oXtraErrInfo = xtra_errInfo;
-   }
-   public boolean doInvertRules()  {
-      return  bInvert;
-   }
-   public ValidResultFilter getFilter()  {
-      return  vrFilter;
-   }
-   public Object getExtraErrInfo()  {
-      return  oXtraErrInfo;
-   }
-   public String toString()  {
-      return  super.toString() + ", doInvertRules()=" + doInvertRules() + ", getFilter()=[" + getFilter() + "], getExtraErrInfo()=[" + getExtraErrInfo() + "]";
-   }
+	public boolean           bInvert     ;
+	public ValidResultFilter vrFilter    ;
+	public Object            oXtraErrInfo;
+	public SimpleValidator_F(boolean do_invert, ValidResultFilter filter, Appendable dbgDest_ifNonNull, Object xtra_errInfo)  {
+		super(dbgDest_ifNonNull);
+		bInvert = do_invert;
+		vrFilter = filter;
+		oXtraErrInfo = xtra_errInfo;
+	}
+	public boolean doInvertRules()  {
+		return  bInvert;
+	}
+	public ValidResultFilter getFilter()  {
+		return  vrFilter;
+	}
+	public Object getExtraErrInfo()  {
+		return  oXtraErrInfo;
+	}
+	public String toString()  {
+		return  super.toString() + ", doInvertRules()=" + doInvertRules() + ", getFilter()=[" + getFilter() + "], getExtraErrInfo()=[" + getExtraErrInfo() + "]";
+	}
 }

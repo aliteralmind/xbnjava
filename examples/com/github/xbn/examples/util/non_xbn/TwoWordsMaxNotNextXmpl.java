@@ -13,45 +13,45 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util.non_xbn;
-   import  java.util.ArrayList;
-   import  java.util.Arrays;
+	import  java.util.ArrayList;
+	import  java.util.Arrays;
 /**
-   <P>Reads in multiple words on the command line, crashing when two of the same word are next to each other, or appears more than twice total.<UL>
-      <LI><B>Good:</B> {@code java TwoWordsMaxNotNextXmpl banana apple banana watermelon apple kiwi}</LI>
-      <LI><B>Bad (next-to):</B> {@code java TwoWordsMaxNotNextXmpl banana apple banana watermelon watermelon apple kiwi}</LI>
-      <LI><B>Bad (too many):</B> {@code java TwoWordsMaxNotNextXmpl banana apple banana watermelon apple banana kiwi}</LI>
-   </UL></P>
+	<P>Reads in multiple words on the command line, crashing when two of the same word are next to each other, or appears more than twice total.<UL>
+		<LI><B>Good:</B> {@code java TwoWordsMaxNotNextXmpl banana apple banana watermelon apple kiwi}</LI>
+		<LI><B>Bad (next-to):</B> {@code java TwoWordsMaxNotNextXmpl banana apple banana watermelon watermelon apple kiwi}</LI>
+		<LI><B>Bad (too many):</B> {@code java TwoWordsMaxNotNextXmpl banana apple banana watermelon apple banana kiwi}</LI>
+	</UL></P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class TwoWordsMaxNotNextXmpl  {
-   public static final void main(String[] as_spaceDelimFruits)  {
-      ArrayList<String> als = new ArrayList<String>(as_spaceDelimFruits.length);
+	public static final void main(String[] as_spaceDelimFruits)  {
+		ArrayList<String> als = new ArrayList<String>(as_spaceDelimFruits.length);
 
-      //Add the first, which is always okay.
-      try  {
-         als.add(as_spaceDelimFruits[0]);
-         System.out.println(als.get(0));
-      }  catch(ArrayIndexOutOfBoundsException abx)  {
-         throw  new IllegalArgumentException("No fruits to test. Must provide at least one.");
-      }
+		//Add the first, which is always okay.
+		try  {
+			als.add(as_spaceDelimFruits[0]);
+			System.out.println(als.get(0));
+		}  catch(ArrayIndexOutOfBoundsException abx)  {
+			throw  new IllegalArgumentException("No fruits to test. Must provide at least one.");
+		}
 
-      for(int i = 1; i < as_spaceDelimFruits.length; i++)  {
-         String sFruit = as_spaceDelimFruits[i];
-         if(als.get(i - 1).equals(sFruit))  {
-            throw  new IllegalArgumentException("Two " + sFruit + "s in a row bad.");
-         }
-         int iX1 = als.indexOf(sFruit);
-         int iX2 = als.lastIndexOf(sFruit);
-         if(iX1 > -1  &&  iX1 != iX2)  {
-            throw  new IllegalArgumentException("Two " + sFruit + "s already added (at indexes " + iX1 + ", " + iX2 + ").");
-         }
+		for(int i = 1; i < as_spaceDelimFruits.length; i++)  {
+			String sFruit = as_spaceDelimFruits[i];
+			if(als.get(i - 1).equals(sFruit))  {
+				throw  new IllegalArgumentException("Two " + sFruit + "s in a row bad.");
+			}
+			int iX1 = als.indexOf(sFruit);
+			int iX2 = als.lastIndexOf(sFruit);
+			if(iX1 > -1  &&  iX1 != iX2)  {
+				throw  new IllegalArgumentException("Two " + sFruit + "s already added (at indexes " + iX1 + ", " + iX2 + ").");
+			}
 
-         als.add(sFruit);
-         System.out.println(sFruit);
-      }
+			als.add(sFruit);
+			System.out.println(sFruit);
+		}
 
-      System.out.println("DONE: " + Arrays.toString(als.toArray()));
-   }
+		System.out.println("DONE: " + Arrays.toString(als.toArray()));
+	}
 }

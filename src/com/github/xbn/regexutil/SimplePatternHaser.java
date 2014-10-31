@@ -13,105 +13,105 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.testdev.CompositionFunction;
-   import  java.util.regex.Pattern;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.testdev.CompositionFunction;
+	import  java.util.regex.Pattern;
 /**
-   <P>Rudimentary implementation of {@code PatternHaser} with mutable fields.</P>
+	<P>Rudimentary implementation of {@code PatternHaser} with mutable fields.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class SimplePatternHaser implements PatternHaser  {
 //config
-   private Pattern     p      ;
-   private int         matchIdx;
-   private int         matchCount;
-   private MatcherUses mu     ;
+	private Pattern     p      ;
+	private int         matchIdx;
+	private int         matchCount;
+	private MatcherUses mu     ;
 
-   public SimplePatternHaser()  {
-      p      = null ;
-      mu     = null ;
-      declareNotMatched();
-      resetMatchCount();
-   }
-   public SimplePatternHaser(PatternHaser to_copy)  {
-      this(to_copy, null);
-   }
-   public SimplePatternHaser(PatternHaser to_copy, Pattern newPtrn_ifNonNull)  {
-      try  {
-         p = RegexUtil.getPatternCopyOrNewIfNNull(to_copy.getPattern(), newPtrn_ifNonNull);
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-      }
-      matchIdx = to_copy.getMatchedIndex();
-      matchCount = to_copy.getMatchCount();
-      mu = to_copy.getMatcherUses();
-   }
-   public SimplePatternHaser pattern(Pattern pattern_toFind)  {
-      return  pattern(pattern_toFind, "pattern_toFind");
-   }
-   public SimplePatternHaser pattern(Pattern pattern_toFind, String ptrn_name)  {
-      if(pattern_toFind == null)  {
-         throw  new NullPointerException(ptrn_name);
-      }
-      p = pattern_toFind;
-      return  this;
-   }
-   public SimplePatternHaser declareNotMatched()  {
-      matchIdx = -1;
-      return  this;
-   }
-   public SimplePatternHaser matchedIndex(int index)  {
-      if(index < -1)  {
-         throw  new IllegalArgumentException("index (" + index + ") is less than -1.");
-      }
-      matchIdx = index;
-      matchCount++;
-      return  this;
-   }
-   public SimplePatternHaser matcherUses(MatcherUses uses)  {
-      return  matcherUses(uses, "uses");
-   }
-   public SimplePatternHaser matcherUsesFromReplacedInEachInputWhat(ReplacedInEachInput what)  {
-      return  matcherUses(ReplacedInEachInput.getMatcherUsesFrom(what));
-   }
-   public SimplePatternHaser matcherUses(MatcherUses uses, String mu_name)  {
-      if(uses == null)  {
-         throw  new NullPointerException(mu_name);
-      }
-      mu = uses;
-      return  this;
-   }
+	public SimplePatternHaser()  {
+		p      = null ;
+		mu     = null ;
+		declareNotMatched();
+		resetMatchCount();
+	}
+	public SimplePatternHaser(PatternHaser to_copy)  {
+		this(to_copy, null);
+	}
+	public SimplePatternHaser(PatternHaser to_copy, Pattern newPtrn_ifNonNull)  {
+		try  {
+			p = RegexUtil.getPatternCopyOrNewIfNNull(to_copy.getPattern(), newPtrn_ifNonNull);
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+		}
+		matchIdx = to_copy.getMatchedIndex();
+		matchCount = to_copy.getMatchCount();
+		mu = to_copy.getMatcherUses();
+	}
+	public SimplePatternHaser pattern(Pattern pattern_toFind)  {
+		return  pattern(pattern_toFind, "pattern_toFind");
+	}
+	public SimplePatternHaser pattern(Pattern pattern_toFind, String ptrn_name)  {
+		if(pattern_toFind == null)  {
+			throw  new NullPointerException(ptrn_name);
+		}
+		p = pattern_toFind;
+		return  this;
+	}
+	public SimplePatternHaser declareNotMatched()  {
+		matchIdx = -1;
+		return  this;
+	}
+	public SimplePatternHaser matchedIndex(int index)  {
+		if(index < -1)  {
+			throw  new IllegalArgumentException("index (" + index + ") is less than -1.");
+		}
+		matchIdx = index;
+		matchCount++;
+		return  this;
+	}
+	public SimplePatternHaser matcherUses(MatcherUses uses)  {
+		return  matcherUses(uses, "uses");
+	}
+	public SimplePatternHaser matcherUsesFromReplacedInEachInputWhat(ReplacedInEachInput what)  {
+		return  matcherUses(ReplacedInEachInput.getMatcherUsesFrom(what));
+	}
+	public SimplePatternHaser matcherUses(MatcherUses uses, String mu_name)  {
+		if(uses == null)  {
+			throw  new NullPointerException(mu_name);
+		}
+		mu = uses;
+		return  this;
+	}
 
-   @CompositionFunction
-   public Pattern getPattern()  {
-      return  p;
-   }
-   @CompositionFunction
-   public int getMatchedIndex()  {
-      return  matchIdx;
-   }
-   @CompositionFunction
-   public int getMatchCount()  {
-      return  matchCount;
-   }
-   public void resetMatchCount()  {
-      matchCount = 0;
-   }
-   public boolean wasJustMatched()  {
-      return  (getMatchedIndex() != -1);
-   }
-   @CompositionFunction
-   public MatcherUses getMatcherUses()  {
-      return  mu;
-   }
-   public String toString()  {
-      return  appendToString(new StringBuilder()).toString();
-   }
-   public StringBuilder appendToString(StringBuilder to_appendTo)  {
-      return  to_appendTo.append("getMatchedIndex()=").append(getMatchedIndex()).
-         append(", getMatcherUses()=").append(getMatcherUses()).
-         append(", getPattern()=[").append(getPattern()).append("]");
-   }
+	@CompositionFunction
+	public Pattern getPattern()  {
+		return  p;
+	}
+	@CompositionFunction
+	public int getMatchedIndex()  {
+		return  matchIdx;
+	}
+	@CompositionFunction
+	public int getMatchCount()  {
+		return  matchCount;
+	}
+	public void resetMatchCount()  {
+		matchCount = 0;
+	}
+	public boolean wasJustMatched()  {
+		return  (getMatchedIndex() != -1);
+	}
+	@CompositionFunction
+	public MatcherUses getMatcherUses()  {
+		return  mu;
+	}
+	public String toString()  {
+		return  appendToString(new StringBuilder()).toString();
+	}
+	public StringBuilder appendToString(StringBuilder to_appendTo)  {
+		return  to_appendTo.append("getMatchedIndex()=").append(getMatchedIndex()).
+			append(", getMatcherUses()=").append(getMatcherUses()).
+			append(", getPattern()=[").append(getPattern()).append("]");
+	}
 }

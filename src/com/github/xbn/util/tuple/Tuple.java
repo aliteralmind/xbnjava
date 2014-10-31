@@ -3,7 +3,7 @@
 package com.github.xbn.util.tuple;
 
 /**
-   <P>Create a {@code Tuple} of length two-through-five.</P>
+	<P>Create a {@code Tuple} of length two-through-five.</P>
  **/
 public class Tuple {
   public static final <A,B> TwoTuple<A,B> tuple(A a, B b) {

@@ -14,42 +14,42 @@
 \*license*/
 package  com.github.xbn.util.copyval;
 /**
-   <P>For types that cannot be duplicated (throws a {@code com.github.xbn.glist.NotCopyableException}).</P>
+	<P>For types that cannot be duplicated (throws a {@code com.github.xbn.glist.NotCopyableException}).</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ValueNotCopyable<O> extends AbstractValueCopier<O>  {
-   public static final ValueNotCopyable INSTANCE = new ValueNotCopyable();
+	public static final ValueNotCopyable INSTANCE = new ValueNotCopyable();
 //constructors...	START
-   /**
-      <P>Create a new {@code ValueNotCopyable}.</P>
+	/**
+		<P>Create a new {@code ValueNotCopyable}.</P>
 
-      YYY
+		YYY
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(boolean) super}{@code (false)}</P>
-    **/
-   private ValueNotCopyable()  {
-      super(false);
-   }
+		<P>Equal to
+		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(boolean) super}{@code (false)}</P>
+	 **/
+	private ValueNotCopyable()  {
+		super(false);
+	}
 //constructors...END
  	public O getValueCopy(O ignored1, String ignored2)  {
-      throw  new NotCopyableException();
-   }
+		throw  new NotCopyableException();
+	}
  	public O getValueCopy(O ignored1, String ignored2, NullHandler<O> ignored3)  {
-      throw  new NotCopyableException();
-   }
-   /**
-      <P><I>Do not use.</I></P>
+		throw  new NotCopyableException();
+	}
+	/**
+		<P><I>Do not use.</I></P>
 
-      @exception  UnsupportedOperationException
-    **/
-   protected O getCopyOfNonNullOrig(O ignored1, String ignored2)  {
-      throw  new UnsupportedOperationException("Should never be reached!");
-   }
-   public ValueCopier<O> getObjectCopy()  {
-      return  this;
-   }
+		@exception  UnsupportedOperationException
+	 **/
+	protected O getCopyOfNonNullOrig(O ignored1, String ignored2)  {
+		throw  new UnsupportedOperationException("Should never be reached!");
+	}
+	public ValueCopier<O> getObjectCopy()  {
+		return  this;
+	}
 }
 

@@ -13,36 +13,36 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.text.padchop.z;
-   import  com.github.xbn.text.padchop.ChopString;
-   import  com.github.xbn.neederneedable.DummyForNoNeeder;
+	import  com.github.xbn.text.padchop.ChopString;
+	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.text.padchop.ChopString ChopString}.</P>
+	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.text.padchop.ChopString ChopString}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ChopString_Cfg extends ChopString_CfgForNeeder<ChopString,DummyForNoNeeder>   {
-   /**
-      <P>Create a new {@code zChopString_Cfg} with defaults.</P>
+	/**
+		<P>Create a new {@code zChopString_Cfg} with defaults.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R)">super</A>(null)</CODE></P>
-      @see  #ChopString_Cfg(int) this(i)
-    **/
-   public ChopString_Cfg()  {
-      super(null);
-   }
-   /**
-      <P>Create a new {@code zChopString_Cfg} with defaults, but a specific goal length.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R)">super</A>(null)</CODE></P>
+		@see  #ChopString_Cfg(int) this(i)
+	 **/
+	public ChopString_Cfg()  {
+		super(null);
+	}
+	/**
+		<P>Create a new {@code zChopString_Cfg} with defaults, but a specific goal length.</P>
 
-         <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</A>(null, goal_len)</CODE></P>
-      @see  #ChopString_Cfg() this()
-    **/
-   public ChopString_Cfg(int goal_len)  {
-      super(null, goal_len);
-   }
-   public static final ChopString buildDddRightNoOver(int goal_len)  {
-      return  new ChopString_Cfg(goal_len).ddd().noOverhang().build();
-   }
+			<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</A>(null, goal_len)</CODE></P>
+		@see  #ChopString_Cfg() this()
+	 **/
+	public ChopString_Cfg(int goal_len)  {
+		super(null, goal_len);
+	}
+	public static final ChopString buildDddRightNoOver(int goal_len)  {
+		return  new ChopString_Cfg(goal_len).ddd().noOverhang().build();
+	}
 }

@@ -1,111 +1,113 @@
 <project name="xbnjava_javadoc" default="help" basedir=".">
-   <target name="doccl" description="Check (non @link/@see) links">
+	<target name="doccl" description="Check (non @link/@see) links">
 <echo>TODO: Need to set os="Windows..." into exec call</echo>
 <echo>TODO: Need to set os="Windows..." into exec call</echo>
 <echo>TODO: Need to set os="Windows..." into exec call</echo>
 
-         <exec executable="linkchecker" output="${dir_sandbox}broken_link_report.txt">
-           <arg value="${dir_build_docs_javadoc}overview-summary.html"/>
-           <arg value="--no-follow-url=http"/>
-           <arg value="--ignore-url=http"/>
-         </exec>
-   </target>
+			<exec executable="linkchecker" output="${dir_sandbox}broken_link_report.txt">
+			  <arg value="${dir_build_docs_javadoc}overview-summary.html"/>
+			  <arg value="--no-follow-url=http"/>
+			  <arg value="--ignore-url=http"/>
+			</exec>
+	</target>
 
-   <target name="doc" description="Generates javadoc documentation.">
-      <copy file="${dir_src_xbn}prev_versions.html" todir="${dir_build_docs_javadoc}"/>
+	<target name="doc" description="Generates javadoc documentation.">
+		<copy file="${dir_src_xbn}prev_versions.html" todir="${dir_build_docs_javadoc}"/>
 
-      <!--
-         Packages need to be delimited by both commas and colons.  In build.properties, it's only delimited by commas.  Commas (with or without spaces) are needed by the JavaDoc "packagenames" attribute, and colons (without spaces) are needed by the "group" sub-tags.
+		<!--
+			Packages need to be delimited by both commas and colons.  In build.properties, it's only delimited by commas.  Commas (with or without spaces) are needed by the JavaDoc "packagenames" attribute, and colons (without spaces) are needed by the "group" sub-tags.
 
-         Replace comma-space first, then comma-no-space
-        -->
-         <propfromrplc property="xbn.jd_colon.packages.featured" string="${xbn.javadoc.packages.featured}" what="," with=":"/>
-         <propfromrplc property="xbn.jd_colon.packages.main" string="${xbn.javadoc.packages.main}" what="," with=":"/>
-         <propfromrplc property="xbn.jd_colon.packages.secondary" string="${xbn.javadoc.packages.secondary}" what="," with=":"/>
-         <propfromrplc property="xbn.jd_colon.packages.tertiary" string="${xbn.javadoc.packages.tertiary}" what="," with=":"/>
-         <propfromrplc property="xbn.jd_colon.packages.z" string="${xbn.javadoc.packages.z}" what="," with=":"/>
-         <propfromrplc property="xbn.jd_colon.packages.examples" string="${xbn.javadoc.packages.examples}" what="," with=":"/>
-         <propfromrplc property="xbn.jd_colon.packages.examples.non_xbn" string="${xbn.javadoc.packages.examples.non_xbn}" what="," with=":"/>
+			Replace comma-space first, then comma-no-space
+		  -->
+			<propfromrplc property="xbn.jd_colon.packages.featured" string="${xbn.javadoc.packages.featured}" what="," with=":"/>
+			<propfromrplc property="xbn.jd_colon.packages.main" string="${xbn.javadoc.packages.main}" what="," with=":"/>
+			<propfromrplc property="xbn.jd_colon.packages.secondary" string="${xbn.javadoc.packages.secondary}" what="," with=":"/>
+			<propfromrplc property="xbn.jd_colon.packages.tertiary" string="${xbn.javadoc.packages.tertiary}" what="," with=":"/>
+			<propfromrplc property="xbn.jd_colon.packages.z" string="${xbn.javadoc.packages.z}" what="," with=":"/>
+			<propfromrplc property="xbn.jd_colon.packages.examples" string="${xbn.javadoc.packages.examples}" what="," with=":"/>
+			<propfromrplc property="xbn.jd_colon.packages.examples.non_xbn" string="${xbn.javadoc.packages.examples.non_xbn}" what="," with=":"/>
 
-      <property name="dir_sandbox_needed_by_javadoc" value="${dir_sandbox_bldfiles}needed_by_javadoc${fs}"/>
-      <record name="${dir_build}javadoc_output.txt" action="start"/>
-      <javadoc
-         packagenames="${xbn.javadoc.packages.featured},${xbn.javadoc.packages.main},${xbn.javadoc.packages.secondary},${xbn.javadoc.packages.tertiary},${xbn.javadoc.packages.z},${xbn.javadoc.packages.examples},${xbn.javadoc.packages.examples.non_xbn}"
-         defaultexcludes="yes"
-         destdir="${dir_build_docs_javadoc}"
-         splitindex="true"
-         author="true"
-         stylesheetfile="${dir_sandbox_needed_by_javadoc}javadoc_stylesheet.css"
-         access="protected"
-         overview="${dir_src_xbn}${project.name}_overview.html"
-         linksource="yes"
-         version="true"
-         windowtitle="XBN-Java"
-         nodeprecatedlist="yes"
-         classpathref="project_classpath"
-         additionalparam="-J-Dcodelet_config_dir=${dir_sandbox}${codelet.config.dir}${fs}"
-      >
-         <sourcepath>
-            <pathelement path="${dir_sandbox_src}"/>
-            <pathelement path="${dir_sandbox_examples}"/>
-            <pathelement path="${dir_sandbox_test}"/>
-         </sourcepath>
-         <!-- Custom taglets
-               <taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="R:\jeffy\programming\build\CLASSES\"/>-->
-            <taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-            <taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-            <taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-            <taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+		<property name="dir_sandbox_needed_by_javadoc" value="${dir_sandbox_bldfiles}needed_by_javadoc${fs}"/>
+		<record name="${dir_build}javadoc_output.txt" action="start"/>
+		<javadoc
+			packagenames="${xbn.javadoc.packages.featured},${xbn.javadoc.packages.main},${xbn.javadoc.packages.secondary},${xbn.javadoc.packages.tertiary},${xbn.javadoc.packages.z},${xbn.javadoc.packages.examples},${xbn.javadoc.packages.examples.non_xbn}"
+			defaultexcludes="yes"
+			destdir="${dir_build_docs_javadoc}"
+			splitindex="true"
+			author="true"
+			stylesheetfile="${dir_sandbox_needed_by_javadoc}javadoc_stylesheet.css"
+			access="protected"
+			overview="${dir_src_xbn}${project.name}_overview.html"
+			linksource="yes"
+			version="true"
+			windowtitle="XBN-Java"
+			nodeprecatedlist="yes"
+			classpathref="project_classpath"
+			additionalparam="-J-Dcodelet_config_dir=${dir_sandbox}${codelet.config.dir}${fs}"
+		>
+			<sourcepath>
+				<pathelement path="${dir_sandbox_src}"/>
+				<pathelement path="${dir_sandbox_examples}"/>
+				<pathelement path="${dir_sandbox_test}"/>
+			</sourcepath>
+			<!-- Custom taglets
+					<taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="R:\jeffy\programming\build\CLASSES\"/>-->
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
 
-         <group title="XBN-Java: Featured" packages="${xbn.jd_colon.packages.featured}"/>
-         <group title="XBN-Java: Main" packages="${xbn.jd_colon.packages.main}"/>
-         <group title="XBN-Java: Secondary" packages="${xbn.jd_colon.packages.secondary}"/>
-         <group title="XBN-Java: Blind Builders" packages="${xbn.jd_colon.packages.z}"/>
-         <group title="XBN-Java: Other" packages="${xbn.jd_colon.packages.tertiary}"/>
-         <group title="Example code: XBN-Java" packages="${xbn.jd_colon.packages.examples}"/>
-         <group title="Example code: Other" packages="${xbn.jd_colon.packages.examples.non_xbn}"/>
-         <!-- Custom taglets
-               <taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="R:\jeffy\programming\build\CLASSES\"/>-->
-            <taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-            <taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-            <taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-            <taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-         <link href="http://junit.sourceforge.net/javadoc/"/>
-         <link href="http://docs.oracle.com/javase/7/docs/api/"/>
-         <link href="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/"/>
-         <link href="http://commons.apache.org/proper/commons-collections/javadocs/api-release/"/>
-         <link href="http://commons.apache.org/proper/commons-lang/javadocs/api-release"/>
-         <link href="http://commons.apache.org/proper/commons-io/javadocs/api-2.4/"/>
+			<group title="XBN-Java: Featured" packages="${xbn.jd_colon.packages.featured}"/>
+			<group title="XBN-Java: Main" packages="${xbn.jd_colon.packages.main}"/>
+			<group title="XBN-Java: Secondary" packages="${xbn.jd_colon.packages.secondary}"/>
+			<group title="XBN-Java: Blind Builders" packages="${xbn.jd_colon.packages.z}"/>
+			<group title="XBN-Java: Other" packages="${xbn.jd_colon.packages.tertiary}"/>
+			<group title="Example code: XBN-Java" packages="${xbn.jd_colon.packages.examples}"/>
+			<group title="Example code: Other" packages="${xbn.jd_colon.packages.examples.non_xbn}"/>
+			<!-- Custom taglets
+					<taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="R:\jeffy\programming\build\CLASSES\"/>-->
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+			<link href="http://junit.sourceforge.net/javadoc/"/>
+			<link href="http://docs.oracle.com/javase/7/docs/api/"/>
+			<link href="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/"/>
+			<link href="http://commons.apache.org/proper/commons-collections/javadocs/api-release/"/>
+			<link href="http://commons.apache.org/proper/commons-lang/javadocs/api-release"/>
+			<link href="http://commons.apache.org/proper/commons-io/javadocs/api-2.4/"/>
 
-         <DOCTITLE><![CDATA[XBN Java<BR><font size=\"4\"><CODE><A HREF=\"https://github.com/aliteralmind/${project.name}\">https://github.com/aliteralmind/${project.name}</A></CODE></FONT>]]></DOCTITLE>
+			<DOCTITLE><![CDATA[XBN Java<BR><font size=\"4\"><CODE><A HREF=\"https://github.com/aliteralmind/${project.name}\">https://github.com/aliteralmind/${project.name}</A></CODE></FONT>]]></DOCTITLE>
 
-         <BOTTOM><![CDATA[<P><HR><CODE><B>Copyright 2014, Jeff Epstein</B>, All Rights Reserved.  See top of source code files for copyright notice.</CODE></P><P>&nbsp;</P><P><A HREF=\"https://github.com/aliteralmind/${project.name}\"><B><CODE>https://github.com/aliteralmind/${project.name}</CODE></B></A></P><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE>]]></BOTTOM>
-      </javadoc>
-      <copy file="${dir_sandbox_needed_by_javadoc}up_arrow.gif" todir="${dir_build_docs_javadoc}resources${fs}"/>
-      <record name="${dir_build}javadoc_output.txt" action="stop"/>
+			<BOTTOM><![CDATA[<P><HR><CODE><B>Copyright 2014, Jeff Epstein</B>, All Rights Reserved.  See top of source code files for copyright notice.</CODE></P><P>&nbsp;</P><P><A HREF=\"https://github.com/aliteralmind/${project.name}\"><B><CODE>https://github.com/aliteralmind/${project.name}</CODE></B></A></P><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE><PRE><P>&nbsp;</P></PRE>]]></BOTTOM>
+		</javadoc>
+		<copy file="${dir_sandbox_needed_by_javadoc}up_arrow.gif" todir="${dir_build_docs_javadoc}resources${fs}"/>
+		<record name="${dir_build}javadoc_output.txt" action="stop"/>
 </target>
 <target name="doc2" description="for intercepting the doc task.">
 
-      <copy todir="${dir_build_docs_javadoc}com/github/xbn/examples/linefilter/">
-         <fileset dir="${dir_sandbox_examples}com/github/xbn/examples/linefilter/" includes="*_input.txt"/>
-      </copy>
+		<copy todir="${dir_build_docs_javadoc}com/github/xbn/examples/linefilter/">
+			<fileset dir="${dir_sandbox_examples}com/github/xbn/examples/linefilter/" includes="*_input.txt"/>
+		</copy>
 
-      <replace file="${dir_build_docs_javadoc}overview-summary.html" summary="yes"
-         token="${project_version_for_jd}" value="${version.number}"/>
+		<replace file="${dir_build_docs_javadoc}overview-summary.html" summary="yes"
+			token="${project_version_for_jd}" value="${version.number}"/>
+		<replace file="${dir_build_docs_javadoc}prev_versions.html" summary="yes"
+			token="${project_version_for_jd}" value="${version.number}"/>
 
-      <replace dir="${dir_build_docs_javadoc}" summary="yes">
-         <replacetoken><![CDATA[</head>]]></replacetoken>
-         <replacevalue><![CDATA[<meta name="viewport" content="width=device-width" />
+		<replace dir="${dir_build_docs_javadoc}" summary="yes">
+			<replacetoken><![CDATA[</head>]]></replacetoken>
+			<replacevalue><![CDATA[<meta name="viewport" content="width=device-width" />
 </HEAD>]]></replacevalue>
-      </replace>
+		</replace>
 
-      <java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true" classpathref="project_classpath">
-         <arg value="${dir_build_docs_javadoc}"/>
-         <arg value="com.github.xbn."/>
-         <arg value="analyze.validate.z,io,keyed,linefilter.entity.raw.z,linefilter.entity.z,list.lister.z,neederneedable,number,number.z,regexutil.z,text.padchop.z,util"/>
-         <arg value="debugminimal"/>
-      </java>
-   </target>
+		<java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true" classpathref="project_classpath">
+			<arg value="${dir_build_docs_javadoc}"/>
+			<arg value="com.github.xbn."/>
+			<arg value="analyze.validate.z,io,keyed,linefilter.entity.raw.z,linefilter.entity.z,list.lister.z,neederneedable,number,number.z,regexutil.z,text.padchop.z,util"/>
+			<arg value="debugminimal"/>
+		</java>
+	</target>
 </project>
 
 

@@ -13,81 +13,81 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.neederneedable;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.testdev.CompositionConstructor;
-   import  com.github.xbn.testdev.CompositionFunction;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.testdev.CompositionConstructor;
+	import  com.github.xbn.testdev.CompositionFunction;
 /**
-   <P>For classes that need to implement {@code Needer}, that cannot extend {@code AbstractNeeder}.</P>
+	<P>For classes that need to implement {@code Needer}, that cannot extend {@code AbstractNeeder}.</P>
 
-   @see  Needer
-   @see  AbstractNeeder
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  Needer
+	@see  AbstractNeeder
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NeederComposer  {//implements Needer  {
 //state
-   Class<?> clsNdd = null;
-   boolean bCfgActv = false;
+	Class<?> clsNdd = null;
+	boolean bCfgActv = false;
 //internal
 //constructors...START
-   /**
-      <P>Create a new instance.</P>
-    **/
-   @CompositionConstructor
-   public NeederComposer()  {
-   }
+	/**
+		<P>Create a new instance.</P>
+	 **/
+	@CompositionConstructor
+	public NeederComposer()  {
+	}
 //constructors...END
-   //documented by interface
-   @SuppressWarnings("unchecked")
-   @CompositionFunction
-   public Class getNeededType()  {
-      return  clsNdd;
-   }
-   //documented by interface
-   @CompositionFunction
-   public boolean isConfigActive()  {
-      return  bCfgActv;
-   }
+	//documented by interface
+	@SuppressWarnings("unchecked")
+	@CompositionFunction
+	public Class getNeededType()  {
+		return  clsNdd;
+	}
+	//documented by interface
+	@CompositionFunction
+	public boolean isConfigActive()  {
+		return  bCfgActv;
+	}
 //main functionality...START
-   //documented by interface
-   @CompositionFunction
-   public <O> void startConfig(Class<O> needed_class)  {
-      if(isConfigActive())  {
-         throw  new IllegalStateException("isConfigActive() is true.");
-      }
-      if(needed_class == null)  {
-         throw  new NullPointerException("needed_class");
-      }
-      clsNdd = needed_class;
-      bCfgActv = true;
-   }
-   /**
-      <P>End configuration and get the fully-configured object--this must be implemented as {@code protected} with the name &quot;{@code setGetNeededEndConfig}&quot;.</P>
-    **/
-   @CompositionFunction
-   public Object setGetNeededEndConfig_4prot(Object needed_fullyConfigured)  {
-      if(!isConfigActive())  {
-         throw  new IllegalStateException("isConfigActive() is false.");
-      }
+	//documented by interface
+	@CompositionFunction
+	public <O> void startConfig(Class<O> needed_class)  {
+		if(isConfigActive())  {
+			throw  new IllegalStateException("isConfigActive() is true.");
+		}
+		if(needed_class == null)  {
+			throw  new NullPointerException("needed_class");
+		}
+		clsNdd = needed_class;
+		bCfgActv = true;
+	}
+	/**
+		<P>End configuration and get the fully-configured object--this must be implemented as {@code protected} with the name &quot;{@code setGetNeededEndConfig}&quot;.</P>
+	 **/
+	@CompositionFunction
+	public Object setGetNeededEndConfig_4prot(Object needed_fullyConfigured)  {
+		if(!isConfigActive())  {
+			throw  new IllegalStateException("isConfigActive() is false.");
+		}
 
-      if(!getNeededType().isInstance(needed_fullyConfigured))  {
-         throw  new ClassCastException("getNeededType().isInstance(needed_fullyConfigured) is false. getNeededType()=" + getNeededType() + ", needed_fullyConfigured=[" + needed_fullyConfigured + "]");
-      }
-      bCfgActv = false;
-      return  needed_fullyConfigured;
-   }
+		if(!getNeededType().isInstance(needed_fullyConfigured))  {
+			throw  new ClassCastException("getNeededType().isInstance(needed_fullyConfigured) is false. getNeededType()=" + getNeededType() + ", needed_fullyConfigured=[" + needed_fullyConfigured + "]");
+		}
+		bCfgActv = false;
+		return  needed_fullyConfigured;
+	}
 //main functionality...END
-   public static final void isxIfActiveIs(Needer needer, boolean crash_ifConfigIsActive)  {
-      try  {
-         if(needer.isConfigActive() == crash_ifConfigIsActive)  {
-            throw  new IllegalStateException("isConfigActive() is " + crash_ifConfigIsActive + ".");
-         }
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(needer, "needer", null, rx);
-      }
-   }
+	public static final void isxIfActiveIs(Needer needer, boolean crash_ifConfigIsActive)  {
+		try  {
+			if(needer.isConfigActive() == crash_ifConfigIsActive)  {
+				throw  new IllegalStateException("isConfigActive() is " + crash_ifConfigIsActive + ".");
+			}
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(needer, "needer", null, rx);
+		}
+	}
 /*stub functions for implements compile...START
-   public void neeadableSetsNeeded(Object fully_configured)  {
-   }
+	public void neeadableSetsNeeded(Object fully_configured)  {
+	}
  stub functions for implements compile...END*/
 }

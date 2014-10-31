@@ -16,8 +16,8 @@ package  com.github.xbn.experimental.listify;
 /**
    <P>In addition to the raw object itself, should its elements also copied?.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public enum CopyElements  {
@@ -54,12 +54,12 @@ public enum CopyElements  {
    public final boolean isNo()  {
       return  (this == NO);
    }
-   /**
-      <P>Get a {@code CopyElements} from an actual boolean.</P>
+	/**
+		<P>Get a {@code CopyElements} from an actual boolean.</P>
 
-      @return  <CODE>(b ? {@link #YES} : {@link #NO})</CODE>
-    **/
-   public static final CopyElements getForBoolean(boolean b)  {
-      return  (b ? YES : NO);
-   }
+		@return  <CODE>(b ? {@link #YES} : {@link #NO})</CODE>
+	 **/
+	public static final CopyElements getForBoolean(boolean b)  {
+		return  (b ? YES : NO);
+	}
 };

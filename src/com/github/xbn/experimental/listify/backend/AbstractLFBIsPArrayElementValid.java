@@ -13,39 +13,39 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.backend;
-   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
-   import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
+	import  com.github.xbn.analyze.validate.ValueValidator;
+	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-   <P>For building listifiers whose raw object is a primitive array, and whose virtual elements are booleans expressing the <I>validity</I> of those primitive elements.</P>
+	<P>For building listifiers whose raw object is a primitive array, and whose virtual elements are booleans expressing the <I>validity</I> of those primitive elements.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractLFBIsPArrayElementValid<R> extends AbstractListifyBooleanValidity<R>  {
 //constructors...START
-   private PrimitiveArrayHelper<R> pah = null;
-   public AbstractLFBIsPArrayElementValid(Object array, PrimitiveArrayHelper<R> array_helper, ValueValidator<R> raw_elementVldtr)  {
-      super(array, raw_elementVldtr);
-   }
-   public AbstractLFBIsPArrayElementValid(Object array, PrimitiveArrayHelper<R> array_helper, ValueValidator<R> raw_elementVldtr, NullHandlerForPrimitives<Boolean> null_handler)  {
-      super(array, raw_elementVldtr, null_handler);
-   }
-   public AbstractLFBIsPArrayElementValid(AbstractLFBIsPArrayElementValid<R> to_copy)  {
-      super(to_copy);
-      pah = to_copy.pah;
-   }
+	private PrimitiveArrayHelper<R> pah = null;
+	public AbstractLFBIsPArrayElementValid(Object array, PrimitiveArrayHelper<R> array_helper, ValueValidator<R> raw_elementVldtr)  {
+		super(array, raw_elementVldtr);
+	}
+	public AbstractLFBIsPArrayElementValid(Object array, PrimitiveArrayHelper<R> array_helper, ValueValidator<R> raw_elementVldtr, NullHandlerForPrimitives<Boolean> null_handler)  {
+		super(array, raw_elementVldtr, null_handler);
+	}
+	public AbstractLFBIsPArrayElementValid(AbstractLFBIsPArrayElementValid<R> to_copy)  {
+		super(to_copy);
+		pah = to_copy.pah;
+	}
 //constructors...END
-   public final int getSizeNPXOkay()  {
-      return  pah.getLength(getRawObject(), "getRawObject()");
-   }
-   protected R getRawElementRTXOkay(int index)  {
-      return  pah.getWrapper(getRawObject(), index, "getRawObject()");
-   }
+	public final int getSizeNPXOkay()  {
+		return  pah.getLength(getRawObject(), "getRawObject()");
+	}
+	protected R getRawElementRTXOkay(int index)  {
+		return  pah.getWrapper(getRawObject(), index, "getRawObject()");
+	}
 /*stub functions for non-abstract compile...START
-   public final Iterator<Boolean> iterator()  {
+	public final Iterator<Boolean> iterator()  {
 //		return  NewArrayIterator.forIsElementValid(getRawArray(), getVVRawElement());
-      return  null;
-   }
+		return  null;
+	}
  stub functions for non-abstract compile...END*/
 }

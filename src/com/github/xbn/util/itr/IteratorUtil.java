@@ -13,49 +13,49 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.itr;
-   import  java.util.Iterator;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  java.util.NoSuchElementException;
+	import  java.util.Iterator;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  java.util.NoSuchElementException;
 /**
-   <P>Iterator-related utilities.</P>
+	<P>Iterator-related utilities.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class IteratorUtil  {
-   /**
-      <P>Crash if there are not elements, otherwise <I>return</I> the cause.</P>
+	/**
+		<P>Crash if there are not elements, otherwise <I>return</I> the cause.</P>
 
-      @param  itr  May not be {@code null}.
-    **/
-   public static final void crashIfNoSuchElement(Iterator<?> itr)  {
-      try  {
-         if(!itr.hasNext())  {
-            throw  new NoSuchElementException();
-         }
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(itr, "itr", null, rx);
-      }
-   }
-   /**
-      <P>Creates a new iterator, skipping over the first x elements. This can be used to simulate a(n albeit inefficient) double-for loop for comparing elements, such as for detecting duplicates.</P>
+		@param  itr  May not be {@code null}.
+	 **/
+	public static final void crashIfNoSuchElement(Iterator<?> itr)  {
+		try  {
+			if(!itr.hasNext())  {
+				throw  new NoSuchElementException();
+			}
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(itr, "itr", null, rx);
+		}
+	}
+	/**
+		<P>Creates a new iterator, skipping over the first x elements. This can be used to simulate a(n albeit inefficient) double-for loop for comparing elements, such as for detecting duplicates.</P>
 
 {@.codelet.and.out com.github.xbn.examples.util.itr.DetectDupsWithIterators%eliminateCommentBlocksAndPackageDecl()}
-    **/
-   public static final <E> Iterator<E> newIteratorStartingAtIndex(int first_wantedIdx, Iterable<E> iterable)  {
-      Iterator<E> itr = iterable.iterator();
-      while(first_wantedIdx > 0)  {
-         try  {
-            itr.next();
-         }  catch(NoSuchElementException nsex)  {
-            throw  new NoSuchElementException("first_wantedIdx=" + first_wantedIdx);
-         }
-         first_wantedIdx--;
-      }
-      return  itr;
-   }
+	 **/
+	public static final <E> Iterator<E> newIteratorStartingAtIndex(int first_wantedIdx, Iterable<E> iterable)  {
+		Iterator<E> itr = iterable.iterator();
+		while(first_wantedIdx > 0)  {
+			try  {
+				itr.next();
+			}  catch(NoSuchElementException nsex)  {
+				throw  new NoSuchElementException("first_wantedIdx=" + first_wantedIdx);
+			}
+			first_wantedIdx--;
+		}
+		return  itr;
+	}
 
-   public IteratorUtil()  {
-      throw  new IllegalStateException("Do not instantiate.");
-   }
+	public IteratorUtil()  {
+		throw  new IllegalStateException("Do not instantiate.");
+	}
 }

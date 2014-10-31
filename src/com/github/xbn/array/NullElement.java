@@ -16,8 +16,8 @@ package  com.github.xbn.array;
 /**
    <P>Is a null element okay?.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public enum NullElement  {
@@ -54,12 +54,12 @@ public enum NullElement  {
    public final boolean isBad()  {
       return  (this == BAD);
    }
-   /**
-      <P>Get a {@code NullElement} from an actual boolean.</P>
+	/**
+		<P>Get a {@code NullElement} from an actual boolean.</P>
 
-      @return  <CODE>(b ? {@link #OK} : {@link #BAD})</CODE>
-    **/
-   public static final NullElement getForBoolean(boolean b)  {
-      return  (b ? OK : BAD);
-   }
+		@return  <CODE>(b ? {@link #OK} : {@link #BAD})</CODE>
+	 **/
+	public static final NullElement getForBoolean(boolean b)  {
+		return  (b ? OK : BAD);
+	}
 };

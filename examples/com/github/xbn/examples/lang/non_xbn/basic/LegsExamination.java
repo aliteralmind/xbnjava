@@ -14,44 +14,44 @@
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn.basic;
 /**
-   <P><I>No main class</I> -- An &quot;examination&quot; of one or both of a patients legs, designed as two classes (and a boolean-Enum): A {@code OneLegExam}, and a {@code LegsExamination}, whose constructor accepts one or two {@code OneLegExam}s.</P>
+	<P><I>No main class</I> -- An &quot;examination&quot; of one or both of a patients legs, designed as two classes (and a boolean-Enum): A {@code OneLegExam}, and a {@code LegsExamination}, whose constructor accepts one or two {@code OneLegExam}s.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class LegsExamination  {
-   private final OneLegExam leftLegExam;
-   private final OneLegExam rightLegExam;
-   public LegsExamination(OneLegExam leftLegExam, OneLegExam rightLegExam)  {
-      if(leftLegExam == null  &&  rightLegExam == null)  {
-         throw  new IllegalArgumentException("No legs! Both null");
-      }
-      this.leftLegExam = leftLegExam;
-      this.rightLegExam = rightLegExam;
-   }
-   public OneLegExam getLeft()  {
-      return  leftLegExam;
-   }
-   public OneLegExam getRight()  {
-      return  rightLegExam;
-   }
-   public boolean wasLeftExamined()  {
-      return  (leftLegExam != null);
-   }
-   public boolean wasRightExamined()  {
-      return  (rightLegExam != null);
-   }
+	private final OneLegExam leftLegExam;
+	private final OneLegExam rightLegExam;
+	public LegsExamination(OneLegExam leftLegExam, OneLegExam rightLegExam)  {
+		if(leftLegExam == null  &&  rightLegExam == null)  {
+			throw  new IllegalArgumentException("No legs! Both null");
+		}
+		this.leftLegExam = leftLegExam;
+		this.rightLegExam = rightLegExam;
+	}
+	public OneLegExam getLeft()  {
+		return  leftLegExam;
+	}
+	public OneLegExam getRight()  {
+		return  rightLegExam;
+	}
+	public boolean wasLeftExamined()  {
+		return  (leftLegExam != null);
+	}
+	public boolean wasRightExamined()  {
+		return  (rightLegExam != null);
+	}
 }
 class OneLegExam  {
-   private final Object scanImg ;
-   private final String      probDesc;
-   private final String      comments;
-   public OneLegExam(Object scanImg, String probDesc, String comments)  {
-      this.scanImg = scanImg;
-      this.probDesc = probDesc;
-      this.comments = comments;
-   }
+	private final Object scanImg ;
+	private final String      probDesc;
+	private final String      comments;
+	public OneLegExam(Object scanImg, String probDesc, String comments)  {
+		this.scanImg = scanImg;
+		this.probDesc = probDesc;
+		this.comments = comments;
+	}
 
-   //Put getters here
+	//Put getters here
  }
 enum LegSide  { LEFT, RIGHT; };

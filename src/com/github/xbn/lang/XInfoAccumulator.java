@@ -13,66 +13,66 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang;
-   import  java.util.ArrayList;
+	import  java.util.ArrayList;
 /**
-   <P>For collecting multiple extra information objects during the execution of an error checking function--the {@code toString()} of these objects is not executed unless and until an error is thrown. This is not intended to be listed in the signature for any error-checking function. Instead, the extra-information parameter should always be an object. When and if a second piece of extra information is needed, it is added with
-   <BR> &nbsp; &nbsp; <CODE>XInfoAccumulator.{@link #getAddedOrNew(Object, Object) getAddedOrNew}(xtra_errInfo, &quot;new info&quot;)</CODE>
+	<P>For collecting multiple extra information objects during the execution of an error checking function--the {@code toString()} of these objects is not executed unless and until an error is thrown. This is not intended to be listed in the signature for any error-checking function. Instead, the extra-information parameter should always be an object. When and if a second piece of extra information is needed, it is added with
+	<BR> &nbsp; &nbsp; <CODE>XInfoAccumulator.{@link #getAddedOrNew(Object, Object) getAddedOrNew}(xtra_errInfo, &quot;new info&quot;)</CODE>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class XInfoAccumulator implements ToStringAppendable  {
-   private final ArrayList<Object> al;
+	private final ArrayList<Object> al;
 //constructors...START
-   public XInfoAccumulator(Object first_xtraInfo)  {
-      al = new ArrayList<Object>(5);
-      addIfNNull(first_xtraInfo);
-   }
+	public XInfoAccumulator(Object first_xtraInfo)  {
+		al = new ArrayList<Object>(5);
+		addIfNNull(first_xtraInfo);
+	}
 //constructors...END
-   public XInfoAccumulator addIfNNull(Object xtra_errInfo)  {
-      if(xtra_errInfo != null)  {
-         al.add(xtra_errInfo);
-      }
-      return  this;
-   }
-   public XInfoAccumulator clear()  {
-      al.clear();
-      return  this;
-   }
-   public String toString()  {
-      return  appendToString(new StringBuilder()).toString();
-   }
-   public StringBuilder appendToString(StringBuilder to_appendTo)  {
-      int iItms = al.size();
-      if(iItms == 0)  {
-         return  to_appendTo;
-      }
-      int i = 0;
-      try  {
-         to_appendTo.append("Extra info").append(" (item-count=").append(iItms).append("): ");
-      }  catch(RuntimeException rx)  {
-         //Can't use CrashIfObject.nullOrReturnCause(...)
-         //Circular dependency: XInfoAccumulater-->CrashIfObject-->CrashIfBase-->XInfoAccumulator
+	public XInfoAccumulator addIfNNull(Object xtra_errInfo)  {
+		if(xtra_errInfo != null)  {
+			al.add(xtra_errInfo);
+		}
+		return  this;
+	}
+	public XInfoAccumulator clear()  {
+		al.clear();
+		return  this;
+	}
+	public String toString()  {
+		return  appendToString(new StringBuilder()).toString();
+	}
+	public StringBuilder appendToString(StringBuilder to_appendTo)  {
+		int iItms = al.size();
+		if(iItms == 0)  {
+			return  to_appendTo;
+		}
+		int i = 0;
+		try  {
+			to_appendTo.append("Extra info").append(" (item-count=").append(iItms).append("): ");
+		}  catch(RuntimeException rx)  {
+			//Can't use CrashIfObject.nullOrReturnCause(...)
+			//Circular dependency: XInfoAccumulater-->CrashIfObject-->CrashIfBase-->XInfoAccumulator
 
-         if(to_appendTo == null)  {
-            throw  new NullPointerException("to_appendTo");
-         }
-         throw  rx;
-      }
-      for(Object o : al)  {
-         to_appendTo.append("item-").append(++i).append("=[");
-         ToStringDefensive.append(to_appendTo, o, "[extra-info-items]", i);
-         to_appendTo.append("]");
-         if(i < iItms)  {
-            to_appendTo.append(", ");
-         }
-      }
-      return  to_appendTo;
-   }
-   public static final XInfoAccumulator getAddedOrNew(Object existing_infoMaybeXIA, Object new_infoNotAnXIA)  {
-      XInfoAccumulator xia = ((existing_infoMaybeXIA instanceof XInfoAccumulator)
-         ?  ((XInfoAccumulator)existing_infoMaybeXIA)
-         :  new XInfoAccumulator(existing_infoMaybeXIA));
-      return  xia.addIfNNull(new_infoNotAnXIA);
-   }
+			if(to_appendTo == null)  {
+				throw  new NullPointerException("to_appendTo");
+			}
+			throw  rx;
+		}
+		for(Object o : al)  {
+			to_appendTo.append("item-").append(++i).append("=[");
+			ToStringDefensive.append(to_appendTo, o, "[extra-info-items]", i);
+			to_appendTo.append("]");
+			if(i < iItms)  {
+				to_appendTo.append(", ");
+			}
+		}
+		return  to_appendTo;
+	}
+	public static final XInfoAccumulator getAddedOrNew(Object existing_infoMaybeXIA, Object new_infoNotAnXIA)  {
+		XInfoAccumulator xia = ((existing_infoMaybeXIA instanceof XInfoAccumulator)
+			?  ((XInfoAccumulator)existing_infoMaybeXIA)
+			:  new XInfoAccumulator(existing_infoMaybeXIA));
+		return  xia.addIfNNull(new_infoNotAnXIA);
+	}
 }

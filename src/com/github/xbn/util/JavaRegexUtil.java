@@ -13,30 +13,30 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util;
-   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
-   import  com.github.xbn.regexutil.RegexGroupExtractor;
-   import  com.github.xbn.regexutil.RegexReplacer;
-   import  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg;
+	import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
+	import  com.github.xbn.regexutil.RegexGroupExtractor;
+	import  com.github.xbn.regexutil.RegexReplacer;
+	import  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg;
 /**
-   <P>Regular expression-related utilities for Java code.</P>
+	<P>Regular expression-related utilities for Java code.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class JavaRegexUtil extends JavaUtil  {
-   private JavaRegexUtil()  {
-      throw  new IllegalStateException("Do not instantiate");
-   }
-   public static final RegexGroupExtractor newRXForCnstrSigLineToNameAllParams()  {
-      return  (new RegexGroupExtractor_Cfg().requiredGroups(2).pattern(JavaRegexes.CNSTR_NAME_ALL_PARAMS).build());
-   }
-   public static final RegexGroupExtractor newRXForFuncSigLineToRetTypNameAllParams()  {
-      return  (new RegexGroupExtractor_Cfg().requiredGroups(3).pattern(JavaRegexes.RTRN_TYPE_FNM_ALL_PARAMS).build());
-   }
-   public static final RegexReplacer newRRForAllParamTypeNamesToNames()  {
-      return  (new RegexReplacer_Cfg().findWhat(JavaRegexes.PARAM_TYPE_NAME_DIV).directReplacement("$4$5").build());
-   }
-   public static final RegexReplacer newRRForAllParamTypeNamesTo4FQTypes()  {
-      return  (new RegexReplacer_Cfg().findWhat(JavaRegexes.PARAM_TYPE_NAME_DIV).directReplacement("$2$5").build());
-   }
+	private JavaRegexUtil()  {
+		throw  new IllegalStateException("Do not instantiate");
+	}
+	public static final RegexGroupExtractor newRXForCnstrSigLineToNameAllParams()  {
+		return  (new RegexGroupExtractor_Cfg().requiredGroups(2).pattern(JavaRegexes.CNSTR_NAME_ALL_PARAMS).build());
+	}
+	public static final RegexGroupExtractor newRXForFuncSigLineToRetTypNameAllParams()  {
+		return  (new RegexGroupExtractor_Cfg().requiredGroups(3).pattern(JavaRegexes.RTRN_TYPE_FNM_ALL_PARAMS).build());
+	}
+	public static final RegexReplacer newRRForAllParamTypeNamesToNames()  {
+		return  (new RegexReplacer_Cfg().findWhat(JavaRegexes.PARAM_TYPE_NAME_DIV).directReplacement("$4$5").build());
+	}
+	public static final RegexReplacer newRRForAllParamTypeNamesTo4FQTypes()  {
+		return  (new RegexReplacer_Cfg().findWhat(JavaRegexes.PARAM_TYPE_NAME_DIV).directReplacement("$2$5").build());
+	}
 }

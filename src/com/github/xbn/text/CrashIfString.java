@@ -13,59 +13,59 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.text;
-   import  com.github.xbn.array.CrashIfIndex;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.Null;
-   import  static com.github.xbn.lang.CrashIfBase.*;
+	import  com.github.xbn.array.CrashIfIndex;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.Null;
+	import  static com.github.xbn.lang.CrashIfBase.*;
 /**
-   <P>Crash if a string is {@code null} or empty.</P>
+	<P>Crash if a string is {@code null} or empty.</P>
 
-   @see  com.github.xbn.lang.CrashIfObject
-   @see  <CODE><A HREF="{@docRoot}/com/github/xbn/array/CrashIfArray.html#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, com.github.xbn.array.Duplicates)">CrashIfArray#bad</A></CODE>
-   @see  com.github.xbn.list.CrashIfCollection#bad(Collection, String, NullContainer, int, String, NullElement, int, String) CrashIfCollection#bad
-   @see  com.github.xbn.list.CrashIfList#bad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) CrashIfList#ofStringsBad
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  com.github.xbn.lang.CrashIfObject
+	@see  <CODE><A HREF="{@docRoot}/com/github/xbn/array/CrashIfArray.html#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, com.github.xbn.array.Duplicates)">CrashIfArray#bad</A></CODE>
+	@see  com.github.xbn.list.CrashIfCollection#bad(Collection, String, NullContainer, int, String, NullElement, int, String) CrashIfCollection#bad
+	@see  com.github.xbn.list.CrashIfList#bad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) CrashIfList#ofStringsBad
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class CrashIfString  {
-   /**
-      <P>If a string is {@code null} or has no characters, crash. Otherwise, do nothing.</P>
+	/**
+		<P>If a string is {@code null} or has no characters, crash. Otherwise, do nothing.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link #empty(Null, Object, String, Object) empty}({@link com.github.xbn.lang.Null Null}.{@link com.github.xbn.lang.Null#BAD BAD}, string, str_name)</CODE></P>
-    **/
-   public static final void nullEmpty(Object string, String str_name, Object xtra_errInfo)  {
-      empty(Null.BAD, string, str_name, xtra_errInfo);
-   }
-   /**
-      <P>If a string is has no characters, crash. Otherwise, do nothing.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE>{@link #empty(Null, Object, String, Object) empty}({@link com.github.xbn.lang.Null Null}.{@link com.github.xbn.lang.Null#BAD BAD}, string, str_name)</CODE></P>
+	 **/
+	public static final void nullEmpty(Object string, String str_name, Object xtra_errInfo)  {
+		empty(Null.BAD, string, str_name, xtra_errInfo);
+	}
+	/**
+		<P>If a string is has no characters, crash. Otherwise, do nothing.</P>
 
-      @exception  NullPointerException  If {@code null}.
-      @exception  IllegalArgumentException  If empty.
-    **/
-   public static final void empty(Null nnull, Object string, String str_name, Object xtra_errInfo)  {
-      CrashIfObject.nnull(nnull, string, str_name, xtra_errInfo);
-      if(string != null  &&  string.toString().length() == 0)  {
-         throw  new IllegalArgumentException(getXMsg(str_name + " is non-null, but has no characters.", xtra_errInfo));
-      }
-   }
-   /**
-      <P>If a string-element has no characters, crash. Otherwise, do nothing.</P>
+		@exception  NullPointerException  If {@code null}.
+		@exception  IllegalArgumentException  If empty.
+	 **/
+	public static final void empty(Null nnull, Object string, String str_name, Object xtra_errInfo)  {
+		CrashIfObject.nnull(nnull, string, str_name, xtra_errInfo);
+		if(string != null  &&  string.toString().length() == 0)  {
+			throw  new IllegalArgumentException(getXMsg(str_name + " is non-null, but has no characters.", xtra_errInfo));
+		}
+	}
+	/**
+		<P>If a string-element has no characters, crash. Otherwise, do nothing.</P>
 
-      <P>This first calls
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.array.CrashIfIndex}.{@link com.github.xbn.array.CrashIfIndex#edElementIsNull(Object, int, Null, String, String) edElementIsNull}(string, index, nnull, container_name, index_varName)</CODE></P>
+		<P>This first calls
+		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.array.CrashIfIndex}.{@link com.github.xbn.array.CrashIfIndex#edElementIsNull(Object, int, Null, String, String) edElementIsNull}(string, index, nnull, container_name, index_varName)</CODE></P>
 
-      @exception  IllegalArgumentException  If the string element has no characters.
-      @see  <CODE><A HREF="{@docRoot}/com/github/xbn/array/CrashIfArray.html">CrashIfArray</A>.<A HREF="{@docRoot}/com/github/xbn/array/CrashIfArray.html#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, com.github.xbn.array.Duplicates)">bad</A></CODE>
-      @see  com.github.xbn.list.CrashIfCollection#ofStringsBad(Collection, String, NullContainer, int, String, NullElement, int, String, Duplicates)
-      @see  com.github.xbn.list.CrashIfList#ofStringsBad(List, String, NullContainer, int, String, NullElement, Duplicates)
-    **/
-   public static final void elementEmpty(Null nnull, Object string, int index, String container_name, String index_varName)  {
-      CrashIfIndex.edElementIsNull(string, index, nnull, container_name, index_varName);
-      if(string.toString().length() == 0)  {
-         throw  new IllegalArgumentException("Element " + index + " " +
-            ((index_varName == null) ? "" : "(" + index_varName + ") ") +
-         "in " + container_name + " has no characters.");
-      }
-   }
+		@exception  IllegalArgumentException  If the string element has no characters.
+		@see  <CODE><A HREF="{@docRoot}/com/github/xbn/array/CrashIfArray.html">CrashIfArray</A>.<A HREF="{@docRoot}/com/github/xbn/array/CrashIfArray.html#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, com.github.xbn.array.Duplicates)">bad</A></CODE>
+		@see  com.github.xbn.list.CrashIfCollection#ofStringsBad(Collection, String, NullContainer, int, String, NullElement, int, String, Duplicates)
+		@see  com.github.xbn.list.CrashIfList#ofStringsBad(List, String, NullContainer, int, String, NullElement, Duplicates)
+	 **/
+	public static final void elementEmpty(Null nnull, Object string, int index, String container_name, String index_varName)  {
+		CrashIfIndex.edElementIsNull(string, index, nnull, container_name, index_varName);
+		if(string.toString().length() == 0)  {
+			throw  new IllegalArgumentException("Element " + index + " " +
+				((index_varName == null) ? "" : "(" + index_varName + ") ") +
+			"in " + container_name + " has no characters.");
+		}
+	}
 }

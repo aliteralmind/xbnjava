@@ -13,38 +13,38 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.array;
-   import  com.github.xbn.array.XIbxBadIdx;
-   import  com.github.xbn.array.XbnIndexOutOfBoundsException;
-   import  com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg;
+	import  com.github.xbn.array.XIbxBadIdx;
+	import  com.github.xbn.array.XbnIndexOutOfBoundsException;
+	import  com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg;
 /**
-   <P>Demonstrates building an {@code com.github.xbn.array.}{@link com.github.xbn.array.XbnIndexOutOfBoundsException XbnIndexOutOfBoundsException}.</P>
+	<P>Demonstrates building an {@code com.github.xbn.array.}{@link com.github.xbn.array.XbnIndexOutOfBoundsException XbnIndexOutOfBoundsException}.</P>
 
-   <P>{@code java com.github.xbn.examples.array.XbnIndexOutOfBoundsExceptionXmpl}</P>
+	<P>{@code java com.github.xbn.examples.array.XbnIndexOutOfBoundsExceptionXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class XbnIndexOutOfBoundsExceptionXmpl  {
-   public static final void main(String[] ignored)  {
+	public static final void main(String[] ignored)  {
 
-      System.out.println("--Bad index, given a string's length:");
+		System.out.println("--Bad index, given a string's length:");
 
-         XbnIndexOutOfBoundsException xibx = new XbnIndexOutOfBoundsException_Cfg().
-            badIndex(-2, "index").absStringLength("Kermit T. Frog", "sName").
-            build();
+			XbnIndexOutOfBoundsException xibx = new XbnIndexOutOfBoundsException_Cfg().
+				badIndex(-2, "index").absStringLength("Kermit T. Frog", "sName").
+				build();
 
-         System.out.println(xibx);
-         XIbxBadIdx xdata = xibx.getBadIdxData();
-         System.out.println("bad-index=" + xdata.getBadIndex() + " (name=" + xdata.getBadIndexName() + ")");
-         System.out.println("container-length=" + xdata.getAbsMaxX() + " (name=" + xdata.getAbsMaxXName() + ")");
-         System.out.println();
+			System.out.println(xibx);
+			XIbxBadIdx xdata = xibx.getBadIdxData();
+			System.out.println("bad-index=" + xdata.getBadIndex() + " (name=" + xdata.getBadIndexName() + ")");
+			System.out.println("container-length=" + xdata.getAbsMaxX() + " (name=" + xdata.getAbsMaxXName() + ")");
+			System.out.println();
 
-      System.out.println("--Bad index-range, given an array's length:");
+		System.out.println("--Bad index-range, given an array's length:");
 
-         xibx = new XbnIndexOutOfBoundsException_Cfg().
-            badRange(-1, 2, "getMinBound()", "getMaxBound()").absMinAndPArrayLength(1, (new int[]{1, 2, 3, 4})).
-            buildWithInfo("Try better indexes next time, please.");
+			xibx = new XbnIndexOutOfBoundsException_Cfg().
+				badRange(-1, 2, "getMinBound()", "getMaxBound()").absMinAndPArrayLength(1, (new int[]{1, 2, 3, 4})).
+				buildWithInfo("Try better indexes next time, please.");
 
-         System.out.println(xibx);
-   }
+			System.out.println(xibx);
+	}
 }

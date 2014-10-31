@@ -13,30 +13,30 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.helper;
-   import  com.github.xbn.number.CrashIfIntIs;
-   import  org.apache.commons.lang3.ArrayUtils;
+	import  com.github.xbn.number.CrashIfIntIs;
+	import  org.apache.commons.lang3.ArrayUtils;
 /**
-   <P>{@code ArrayHelper} for objects.</P>
+	<P>{@code ArrayHelper} for objects.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 @SuppressWarnings("unchecked")
 public class ObjectArrayHelper extends AbstractArrayHelper<Object>  {
-   public ObjectArrayHelper()  {
-      super(Object[].class);
-   }
-   public Object[] getInitialized(int length)  {
-      if(length == 0)  {
-         return  getEmpty();
-      }
-      try  {
-         return  (new StringBuilder[length]);
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfIntIs.lessThanZeroOrReturnCause(length, "length", null, rx);
-      }
-   }
-   public Object[] getEmpty()  {
-      return  ArrayUtils.EMPTY_OBJECT_ARRAY;
-   }
+	public ObjectArrayHelper()  {
+		super(Object[].class);
+	}
+	public Object[] getInitialized(int length)  {
+		if(length == 0)  {
+			return  getEmpty();
+		}
+		try  {
+			return  (new StringBuilder[length]);
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfIntIs.lessThanZeroOrReturnCause(length, "length", null, rx);
+		}
+	}
+	public Object[] getEmpty()  {
+		return  ArrayUtils.EMPTY_OBJECT_ARRAY;
+	}
 }

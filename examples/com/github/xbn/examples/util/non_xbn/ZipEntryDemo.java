@@ -13,18 +13,18 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util.non_xbn;
-   import  java.io.*;
-   import  java.io.IOException;
-   import  java.util.zip.ZipEntry;
-   import  java.util.zip.ZipInputStream;
+	import  java.io.*;
+	import  java.io.IOException;
+	import  java.util.zip.ZipEntry;
+	import  java.util.zip.ZipInputStream;
 /**
-   <P>List all items in a zip file. From (viewed 4/26/2012):
-   <BR> &nbsp; &nbsp; <CODE><A HREF="http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html">http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html</A></CODE></P>
+	<P>List all items in a zip file. From (viewed 4/26/2012):
+	<BR> &nbsp; &nbsp; <CODE><A HREF="http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html">http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html</A></CODE></P>
 
-   <CODE>{@code java com.github.xbn.examples.util.non_xbn.ZipEntryDemo xbnjava_20120425152952_8hours.zip}</CODE>
+	<CODE>{@code java com.github.xbn.examples.util.non_xbn.ZipEntryDemo xbnjava_20120425152952_8hours.zip}</CODE>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ZipEntryDemo {
   public static void main(String[] args) throws IOException {

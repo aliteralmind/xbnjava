@@ -14,26 +14,26 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-   <P>Has optional extra information intended for display at the end of error messages.</P>
+	<P>Has optional extra information intended for display at the end of error messages.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface ExtraErrInfoable  {
-   /**
-      <P>Set optional extra error infromation</P>
+	/**
+		<P>Set optional extra error infromation</P>
 
-      @param  info  Get with {@link #getExtraErrInfo() getExtraErrInfo}{@code ()}.
-    **/
-   void setExtraErrInfo(Object info);
-   /**
-      <P>Get the optional extra error information.</P>
+		@param  info  Get with {@link #getExtraErrInfo() getExtraErrInfo}{@code ()}.
+	 **/
+	void setExtraErrInfo(Object info);
+	/**
+		<P>Get the optional extra error information.</P>
 
-      @return  <UL>
-         <LI>A non-{@code null} object, whose {@code toString()} should be appended to the end of error messages.</LI>
-         <LI>{@code null}: If there is no extra information.</LI>
-      </UL>This is not intended to be displayed in any object's {@code toString()}, or considered when comparing objects for equality or ordering.
-      @see  #setExtraErrInfo(Object)
-    **/
-   Object getExtraErrInfo();
+		@return  <UL>
+			<LI>A non-{@code null} object, whose {@code toString()} should be appended to the end of error messages.</LI>
+			<LI>{@code null}: If there is no extra information.</LI>
+		</UL>This is not intended to be displayed in any object's {@code toString()}, or considered when comparing objects for equality or ordering.
+		@see  #setExtraErrInfo(Object)
+	 **/
+	Object getExtraErrInfo();
 }

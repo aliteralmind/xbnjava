@@ -13,78 +13,78 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.analyze.validate;
-   import  com.github.xbn.lang.RuleType;
-   import  com.github.xbn.analyze.validate.NullnessValidator;
-   import  com.github.xbn.analyze.validate.ValueValidator;
-   import  com.github.xbn.analyze.validate.z.ValueValidator_Cfg;
-   import  com.github.xbn.analyze.validate.NewValueValidatorFor;
+	import  com.github.xbn.lang.RuleType;
+	import  com.github.xbn.analyze.validate.NullnessValidator;
+	import  com.github.xbn.analyze.validate.ValueValidator;
+	import  com.github.xbn.analyze.validate.z.ValueValidator_Cfg;
+	import  com.github.xbn.analyze.validate.NewValueValidatorFor;
 /**
-   <P>Simple custom {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.ValueValidator ValueValidator} for integers (must be non-{@code null} and equal to 3), and also demonstrates {@link com.github.xbn.analyze.validate.NullnessValidator NullnessValidator}.</P>
+	<P>Simple custom {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.ValueValidator ValueValidator} for integers (must be non-{@code null} and equal to 3), and also demonstrates {@link com.github.xbn.analyze.validate.NullnessValidator NullnessValidator}.</P>
 
-   <P>{@code java com.github.xbn.examples.analyze.validate.ValueValidatorXmpl}</P>
+	<P>{@code java com.github.xbn.examples.analyze.validate.ValueValidatorXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ValueValidatorXmpl  {
-   public static final void main(String[] ignored)  {
+	public static final void main(String[] ignored)  {
 
-      //Test the values against some pre-built NullnessValidator's
-         test(NewValueValidatorFor.<Integer>nullBad(null, null));
-         test(NewValueValidatorFor.<Integer>onlyNullGood(null, null));
+		//Test the values against some pre-built NullnessValidator's
+			test(NewValueValidatorFor.<Integer>nullBad(null, null));
+			test(NewValueValidatorFor.<Integer>onlyNullGood(null, null));
 
-      //Test them against the custom ValueValidator (at the bottom of this file)
-         test(new VVOnlyTheNumber3IsValid());
-   }
-   //Testing code...START
-      private static final void test(ValueValidator<Integer> int_validator)  {
-         System.out.println("Rules: " + int_validator.getRules());
-         testValueForVVI(int_validator, null);
-         testValueForVVI(int_validator, 3);
-         testValueForVVI(int_validator, 10);
-      }
-      private static final void testValueForVVI(ValueValidator<Integer> int_validator, Integer num)  {
-         System.out.println("   Testing " + num + "...");
+		//Test them against the custom ValueValidator (at the bottom of this file)
+			test(new VVOnlyTheNumber3IsValid());
+	}
+	//Testing code...START
+		private static final void test(ValueValidator<Integer> int_validator)  {
+			System.out.println("Rules: " + int_validator.getRules());
+			testValueForVVI(int_validator, null);
+			testValueForVVI(int_validator, 3);
+			testValueForVVI(int_validator, 10);
+		}
+		private static final void testValueForVVI(ValueValidator<Integer> int_validator, Integer num)  {
+			System.out.println("   Testing " + num + "...");
 
-         System.out.println("      Valid?  " + (int_validator.isValid(num) ? "Yes" : "No") + "  (source=" + int_validator.getValidResultSource() + ")");
+			System.out.println("      Valid?  " + (int_validator.isValid(num) ? "Yes" : "No") + "  (source=" + int_validator.getValidResultSource() + ")");
 
-         System.out.print("      Crash if bad: ");
-         try  {
-            int_validator.crashIfBadValue(num, "[thenumberobject]");
+			System.out.print("      Crash if bad: ");
+			try  {
+				int_validator.crashIfBadValue(num, "[thenumberobject]");
 
-            System.out.println("(valid)");
-         }  catch(RuntimeException rx)  {
-            System.out.println(rx);
-         }
-      }
-   //Testing code...END
+				System.out.println("(valid)");
+			}  catch(RuntimeException rx)  {
+				System.out.println(rx);
+			}
+		}
+	//Testing code...END
 }
 class VVOnlyTheNumber3IsValid extends NullnessValidator<Integer>  {
-   public VVOnlyTheNumber3IsValid()  {
-      super(RuleType.RESTRICTED, new ValueValidator_Cfg().nullOk(false).invert(false));
-   }
-   public VVOnlyTheNumber3IsValid(VVOnlyTheNumber3IsValid to_copy)  {
-      super(to_copy);
-   }
-   public boolean doesFollowRulesPreInvert(Integer num)  {
-      if(!super.doesFollowRulesPreInvert(num))  {
-         return  false;
-      }
-      if(num == null)  {
-         //We know it's not null, because "nullOk(false)".
-         //Putting this here prevents "nullOk(true)" from
-         //causing a problem in the future.
-         return  true;
-      }
+	public VVOnlyTheNumber3IsValid()  {
+		super(RuleType.RESTRICTED, new ValueValidator_Cfg().nullOk(false).invert(false));
+	}
+	public VVOnlyTheNumber3IsValid(VVOnlyTheNumber3IsValid to_copy)  {
+		super(to_copy);
+	}
+	public boolean doesFollowRulesPreInvert(Integer num)  {
+		if(!super.doesFollowRulesPreInvert(num))  {
+			return  false;
+		}
+		if(num == null)  {
+			//We know it's not null, because "nullOk(false)".
+			//Putting this here prevents "nullOk(true)" from
+			//causing a problem in the future.
+			return  true;
+		}
 
-      if(isDebugOn()) { getDebugAptr().appentln("<VVON3>    super.doesFollowRulesPreInvert(num) is true. Returning (num == 3)=" + (num == 3) + ""); }
+		if(isDebugOn()) { getDebugAptr().appentln("<VVON3>    super.doesFollowRulesPreInvert(num) is true. Returning (num == 3)=" + (num == 3) + ""); }
 
-      return  (num == 3);
-   }
-   public VVOnlyTheNumber3IsValid getObjectCopy()  {
-      return  (new VVOnlyTheNumber3IsValid(this));
-   }
-   public StringBuilder appendRules(StringBuilder to_appendTo)  {
-      return  super.appendRules(to_appendTo).append(", only legal value is 3.");
-   }
+		return  (num == 3);
+	}
+	public VVOnlyTheNumber3IsValid getObjectCopy()  {
+		return  (new VVOnlyTheNumber3IsValid(this));
+	}
+	public StringBuilder appendRules(StringBuilder to_appendTo)  {
+		return  super.appendRules(to_appendTo).append(", only legal value is 3.");
+	}
 }

@@ -14,42 +14,42 @@
 \*license*/
 package  com.github.xbn.number;
 /**
-   <P>Which bound side is it?--min or max?.</P>
+	<P>Which bound side is it?--min or max?.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum BoundSide {
-   /**
-      <P>The minimum bound side.</P>
+	/**
+		<P>The minimum bound side.</P>
 
-      @see  #MAX
-      @see  #isMin()
-    **/
-   MIN,
-   /**
-      <P>The maximum bound-side.</P>
+		@see  #MAX
+		@see  #isMin()
+	 **/
+	MIN,
+	/**
+		<P>The maximum bound-side.</P>
 
-      @see  #MIN
-      @see  #isMax()
-    **/
-   MAX;
-   /**
-      <P>Is this {@code BoundSide} equal to {@code MIN}?.</P>
+		@see  #MIN
+		@see  #isMax()
+	 **/
+	MAX;
+	/**
+		<P>Is this {@code BoundSide} equal to {@code MIN}?.</P>
 
-      @return  <CODE>this == {@link #MIN}</CODE>
-      @see  #isMax()
-    **/
-   public final boolean isMin()  {
-      return  this == MIN;
-   }
-   /**
-      <P>Is this {@code BoundSide} equal to {@code MAX}?.</P>
+		@return  <CODE>this == {@link #MIN}</CODE>
+		@see  #isMax()
+	 **/
+	public final boolean isMin()  {
+		return  this == MIN;
+	}
+	/**
+		<P>Is this {@code BoundSide} equal to {@code MAX}?.</P>
 
-      @return  <CODE>this == {@link #MAX}</CODE>
-      @see  #isMin()
-    **/
-   public final boolean isMax()  {
-      return  this == MAX;
-   }
+		@return  <CODE>this == {@link #MAX}</CODE>
+		@see  #isMin()
+	 **/
+	public final boolean isMax()  {
+		return  this == MAX;
+	}
 };

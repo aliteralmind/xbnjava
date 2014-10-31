@@ -14,29 +14,29 @@
 \*license*/
 package  com.github.xbn.util.lock;
 /**
-   <P>{@code Lockable}s can prevent changes to mutable fields.</P>
+	<P>{@code Lockable}s can prevent changes to mutable fields.</P>
 
-   <H3>For classes that extend both {@code com.github.xbn.lang.Copyable} and {@code com.github.xbn.util.lock.Lockable}, the duplicate should always be unlocked.</H3>
+	<H3>For classes that extend both {@code com.github.xbn.lang.Copyable} and {@code com.github.xbn.util.lock.Lockable}, the duplicate should always be unlocked.</H3>
  **/
 public interface Lockable  {
-   /**
-      <P>Is the object locked?.</P>
+	/**
+		<P>Is the object locked?.</P>
 
-      @see  #lock(boolean) lock(b)
-    **/
-   boolean isLocked();
-   /**
-      <P>Lock or unlock the object.</P>
+		@see  #lock(boolean) lock(b)
+	 **/
+	boolean isLocked();
+	/**
+		<P>Lock or unlock the object.</P>
 
-      @param  do_lock  If {@code true}, then lock the object. If {@code false}, unlock. Get with {@link #isLocked() isLocked}{@code ()}.
-      @exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code true}, and both {@code do_lock} and {@link #isUnlockable() isUnlockable}{@code ()} are {@code false}.
-      @see  #isLocked()
-    **/
-   void lock(boolean do_lock);
+		@param  do_lock  If {@code true}, then lock the object. If {@code false}, unlock. Get with {@link #isLocked() isLocked}{@code ()}.
+		@exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code true}, and both {@code do_lock} and {@link #isUnlockable() isUnlockable}{@code ()} are {@code false}.
+		@see  #isLocked()
+	 **/
+	void lock(boolean do_lock);
 
-   /**
-      <P>Is the object unlockable?.</P>
-      @see  #lock(boolean) lock(b)
-    **/
-   boolean isUnlockable();
+	/**
+		<P>Is the object unlockable?.</P>
+		@see  #lock(boolean) lock(b)
+	 **/
+	boolean isUnlockable();
 }

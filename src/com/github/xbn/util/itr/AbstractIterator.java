@@ -13,45 +13,45 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.itr;
-   import  java.util.Iterator;
-   import  java.util.NoSuchElementException;
+	import  java.util.Iterator;
+	import  java.util.NoSuchElementException;
 /**
-   <P>Assists in building iterators. Sub-classes must implement {@link java.util.Iterator#next() next}{@code ()} and {@link java.util.Iterator#hasNext() hasNext}{@code ()}.</P>
+	<P>Assists in building iterators. Sub-classes must implement {@link java.util.Iterator#next() next}{@code ()} and {@link java.util.Iterator#hasNext() hasNext}{@code ()}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractIterator<E> implements Iterator<E>  {
 //state
-   /**
-      <P>Create a new instance. This does nothing.</P>
-    **/
-   public AbstractIterator()  {
-   }
-   /**
-      <P><I>Do not use.</I></P>
+	/**
+		<P>Create a new instance. This does nothing.</P>
+	 **/
+	public AbstractIterator()  {
+	}
+	/**
+		<P><I>Do not use.</I></P>
 
-      @exception  UnsupportedOperationException
-    **/
-   public void remove() {
-      throw  new UnsupportedOperationException("remove()");
-   }
-   /**
-      <P>If there are no more elements, crash. Otherwise, do nothing.</P>
+		@exception  UnsupportedOperationException
+	 **/
+	public void remove() {
+		throw  new UnsupportedOperationException("remove()");
+	}
+	/**
+		<P>If there are no more elements, crash. Otherwise, do nothing.</P>
 
-      @exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is {@code false}.
-    **/
-   protected void crashIfNoNext()  {
-      if(!hasNext())  {
-         throw  new NoSuchElementException();
-      }
-   }
+		@exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is {@code false}.
+	 **/
+	protected void crashIfNoNext()  {
+		if(!hasNext())  {
+			throw  new NoSuchElementException();
+		}
+	}
 /*stub functions for implements compile...START
-   public boolean hasNext()  {
-      return  false;
-   }
-   public E next()  {
-      return  null;
-   }
+	public boolean hasNext()  {
+		return  false;
+	}
+	public E next()  {
+		return  null;
+	}
  stub functions for implements compile...END*/
 }

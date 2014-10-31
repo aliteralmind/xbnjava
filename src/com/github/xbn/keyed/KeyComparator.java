@@ -13,23 +13,23 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.keyed;
-   import  java.util.Objects;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  java.util.Comparator;
+	import  java.util.Objects;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  java.util.Comparator;
 /**
-   <P>Comparator for {@code Keyed} elements whose keys are comparable.</P>
+	<P>Comparator for {@code Keyed} elements whose keys are comparable.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class KeyComparator<K extends Comparable<? super K>,D extends Keyed<K>> implements Comparator<D>  {
-   @Override
-   public int compare(D keyed_a, D keyed_2)  {
-      try  {
-         return  keyed_a.getKey().compareTo(keyed_2.getKey());
-      }  catch(RuntimeException rx)  {
-         Objects.requireNonNull(keyed_a, "keyed_a");
-         throw  CrashIfObject.nullOrReturnCause(keyed_2, "keyed_2", null, rx);
-      }
-   }
+	@Override
+	public int compare(D keyed_a, D keyed_2)  {
+		try  {
+			return  keyed_a.getKey().compareTo(keyed_2.getKey());
+		}  catch(RuntimeException rx)  {
+			Objects.requireNonNull(keyed_a, "keyed_a");
+			throw  CrashIfObject.nullOrReturnCause(keyed_2, "keyed_2", null, rx);
+		}
+	}
 }

@@ -1,37 +1,37 @@
 /*license*\
-   XBN-Java Library
+	XBN-Java Library
 
-   Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+	Copyright (c) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
-   This software is dual-licensed under the:
-   - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
-   - Apache Software License (ASL) version 2.0.
+	This software is dual-licensed under the:
+	- Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
+	- Apache Software License (ASL) version 2.0.
 
-   Either license may be applied at your discretion. More information may be found at
-   - http://en.wikipedia.org/wiki/Multi-licensing.
+	Either license may be applied at your discretion. More information may be found at
+	- http://en.wikipedia.org/wiki/Multi-licensing.
 
-   The text of both licenses is available in the root directory of this project, under the names "LICENSE_lgpl-3.0.txt" and "LICENSE_asl-2.0.txt". The latest copies may be downloaded at:
-   - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
-   - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
+	The text of both licenses is available in the root directory of this project, under the names "LICENSE_lgpl-3.0.txt" and "LICENSE_asl-2.0.txt". The latest copies may be downloaded at:
+	- LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
+	- ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 
 package  com.github.xbn.examples.util.non_xbn;
-   import  java.util.ArrayList;
-   import  java.util.Arrays;
-   import  java.util.Iterator;
-   import  java.util.List;
-   import  java.util.Map;
-   import  java.util.TreeMap;
+	import  java.util.ArrayList;
+	import  java.util.Arrays;
+	import  java.util.Iterator;
+	import  java.util.List;
+	import  java.util.Map;
+	import  java.util.TreeMap;
 /**
-    <P>Sorts the <I>first</I> array in a two-dimensional array, and moves all partner elements (in the same &quot;column&quot;) in the <I>second</I> to the same sort-destination index.</P>
+	 <P>Sorts the <I>first</I> array in a two-dimensional array, and moves all partner elements (in the same &quot;column&quot;) in the <I>second</I> to the same sort-destination index.</P>
 
-    <P>This was used as an answer to
-    <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together">http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together</A></CODE></P>
+	 <P>This was used as an answer to
+	 <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together">http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together</A></CODE></P>
 
    <P>{@code java SortOneArrayKeepSecondArrayElementsAligned}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class SortOneArrayKeepSecondArrayElementsAligned  {

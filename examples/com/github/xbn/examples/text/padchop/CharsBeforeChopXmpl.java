@@ -13,35 +13,35 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.text.padchop;
-   import  com.github.xbn.text.padchop.z.ChopString_Cfg;
+	import  com.github.xbn.text.padchop.z.ChopString_Cfg;
 /**
-   <P>Demonstrates chop position.</P>
+	<P>Demonstrates chop position.</P>
 
-   <P>{@code java com.github.xbn.examples.text.padchop.CharsBeforeChopXmpl}</P>
+	<P>{@code java com.github.xbn.examples.text.padchop.CharsBeforeChopXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class CharsBeforeChopXmpl  {
-   public static final void main(String[] ignored)  {
+	public static final void main(String[] ignored)  {
 
-      System.out.println("Chop after the fifth character:");
+		System.out.println("Chop after the fifth character:");
 
-         new ChopString_Cfg(20).charsBefore(5).ddd().build().
-            appendChoppedlns(2, System.out, "Hi Ho! Kermit The Frog here!");
+			new ChopString_Cfg(20).charsBefore(5).ddd().build().
+				appendChoppedlns(2, System.out, "Hi Ho! Kermit The Frog here!");
 
-      System.out.println("In the middle:");
+		System.out.println("In the middle:");
 
-         new ChopString_Cfg(20).ddd().
-            inMiddle().          //Alternate: charsBefore(ChopString.iIN_MIDDLE)
-            build().
-            appendChoppedlns(2, System.out, "Hi Ho! Kermit The Frog here!");
+			new ChopString_Cfg(20).ddd().
+				inMiddle().          //Alternate: charsBefore(ChopString.iIN_MIDDLE)
+				build().
+				appendChoppedlns(2, System.out, "Hi Ho! Kermit The Frog here!");
 
-      System.out.println("At the end:");
+		System.out.println("At the end:");
 
-         new ChopString_Cfg(20).ddd().
-            atEnd().          //Alternate: charsBefore(ChopString.iAT_END)
-            build().
-            appendChoppedlns(0, System.out, "Hi Ho! Kermit The Frog here!");
-   }
+			new ChopString_Cfg(20).ddd().
+				atEnd().          //Alternate: charsBefore(ChopString.iAT_END)
+				build().
+				appendChoppedlns(0, System.out, "Hi Ho! Kermit The Frog here!");
+	}
 }

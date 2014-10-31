@@ -13,28 +13,28 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn.basic;
-   import  java.util.Arrays;
-   import  java.util.List;
+	import  java.util.Arrays;
+	import  java.util.List;
 /**
-   <P>Find the missing number in an ordered list of ints.</P>
+	<P>Find the missing number in an ordered list of ints.</P>
 
-   <P>{@code java com.github.xbn.examples.lang.non_xbn.basic.FindMissingNumInSequence}</P>
+	<P>{@code java com.github.xbn.examples.lang.non_xbn.basic.FindMissingNumInSequence}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class FindMissingNumInSequence  {
-   public static final void main(String[] ignored)  {
-      List<Integer> ascUnqIntList = Arrays.asList(4, 5, 8, 9);
+	public static final void main(String[] ignored)  {
+		List<Integer> ascUnqIntList = Arrays.asList(4, 5, 8, 9);
 
-      int num = ascUnqIntList.get(0);  //Initialize to the first one
-      for(int i : ascUnqIntList)  {
-         if(num != i)  {
-            System.out.println("First missing number in sequence: " + num);
-            break;
-         }
-         System.out.println(i);
-         num++;
-      }
-   }
+		int num = ascUnqIntList.get(0);  //Initialize to the first one
+		for(int i : ascUnqIntList)  {
+			if(num != i)  {
+				System.out.println("First missing number in sequence: " + num);
+				break;
+			}
+			System.out.println(i);
+			num++;
+		}
+	}
 }

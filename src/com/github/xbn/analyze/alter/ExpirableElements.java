@@ -13,67 +13,67 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.alter;
-   import  com.github.xbn.util.EnumUtil;
+	import  com.github.xbn.util.EnumUtil;
 /**
-   <P>Is it required that the elements in an {@code ExpirableAlterList} are expirable?.</P>
+	<P>Is it required that the elements in an {@code ExpirableAlterList} are expirable?.</P>
 
-   @see  ExpirableAlterList
-   @see  com.github.xbn.lang.Expirable#doesExpire()
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  ExpirableAlterList
+	@see  com.github.xbn.lang.Expirable#doesExpire()
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum ExpirableElements  {
-   /**
-      <P>Allow non-expirable elements.</P>
+	/**
+		<P>Allow non-expirable elements.</P>
 
-      @see  #REQUIRED
-      @see  #isOptional()
-    **/
-   OPTIONAL,
-   /**
-      <P>Do not allow.</P>
+		@see  #REQUIRED
+		@see  #isOptional()
+	 **/
+	OPTIONAL,
+	/**
+		<P>Do not allow.</P>
 
-      @see  #OPTIONAL
-      @see  #isRequired()
-    **/
-   REQUIRED;
-   /**
-      <P>Is this {@code ExpirableElements} equal to {@code OPTIONAL}?.</P>
+		@see  #OPTIONAL
+		@see  #isRequired()
+	 **/
+	REQUIRED;
+	/**
+		<P>Is this {@code ExpirableElements} equal to {@code OPTIONAL}?.</P>
 
-      @return  <CODE>this == {@link #OPTIONAL}</CODE>
+		@return  <CODE>this == {@link #OPTIONAL}</CODE>
 
-      @see  #isRequired()
-    **/
-   public final boolean isOptional()  {
-      return  this == OPTIONAL;
-   }
-   /**
-      <P>Is this {@code ExpirableElements} equal to {@code REQUIRED}?.</P>
+		@see  #isRequired()
+	 **/
+	public final boolean isOptional()  {
+		return  this == OPTIONAL;
+	}
+	/**
+		<P>Is this {@code ExpirableElements} equal to {@code REQUIRED}?.</P>
 
-      @return  <CODE>this == {@link #REQUIRED}</CODE>
-      @see  #isOptional()
-    **/
-   public final boolean isRequired()  {
-      return  this == REQUIRED;
-   }
-   /**
-      <P>If an <CODE>ExpirableElements</CODE> is not a required value, crash.</P>
+		@return  <CODE>this == {@link #REQUIRED}</CODE>
+		@see  #isOptional()
+	 **/
+	public final boolean isRequired()  {
+		return  this == REQUIRED;
+	}
+	/**
+		<P>If an <CODE>ExpirableElements</CODE> is not a required value, crash.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
-      @see  #crashIfForbiddenValue(ExpirableElements, String, Object) crashIfForbiddenValue(ert,s,o)
-    **/
-   public void crashIfNotRequiredValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
-      EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
-   }
-   /**
-      <P>If an <CODE>ExpirableElements</CODE> is a forbidden value, crash.</P>
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		@see  #crashIfForbiddenValue(ExpirableElements, String, Object) crashIfForbiddenValue(ert,s,o)
+	 **/
+	public void crashIfNotRequiredValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
+		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
+	}
+	/**
+		<P>If an <CODE>ExpirableElements</CODE> is a forbidden value, crash.</P>
 
-      <P>Equal to
-      <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
-      @see  #crashIfNotRequiredValue(ExpirableElements, String, Object) crashIfNotRequiredValue(ert,s,o)
-    **/
-   public void crashIfForbiddenValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
-      EnumUtil.crashIfForbiddenValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
-   }
+		<P>Equal to
+		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		@see  #crashIfNotRequiredValue(ExpirableElements, String, Object) crashIfNotRequiredValue(ert,s,o)
+	 **/
+	public void crashIfForbiddenValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
+		EnumUtil.crashIfForbiddenValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
+	}
 };

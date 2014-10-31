@@ -13,46 +13,46 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
-   import  java.util.regex.Pattern;
-   import  java.util.regex.Matcher;
+	import  java.util.regex.Pattern;
+	import  java.util.regex.Matcher;
 /**
-   <P>Duplicate lines where the duplicate has punctuation removed, and spaces replaced with dashes.</P>
+	<P>Duplicate lines where the duplicate has punctuation removed, and spaces replaced with dashes.</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.DupLinesChangeSpaceToDashInDup}</P>
+	<P>{@code java com.github.xbn.examples.regexutil.non_xbn.DupLinesChangeSpaceToDashInDup}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class DupLinesChangeSpaceToDashInDup  {
-   public static final void main(String[] ignored)  {
-      //input
-         String LINE_SEP = System.getProperty("line.separator", "\r\n");
-         StringBuilder inputBldr = new StringBuilder().
-            append("Hi. My name is Ni__ck.").append(LINE_SEP).
-            append("This is the second line!").append(LINE_SEP);
-         String[] textInputArr = inputBldr.toString().split(LINE_SEP);
+	public static final void main(String[] ignored)  {
+		//input
+			String LINE_SEP = System.getProperty("line.separator", "\r\n");
+			StringBuilder inputBldr = new StringBuilder().
+				append("Hi. My name is Ni__ck.").append(LINE_SEP).
+				append("This is the second line!").append(LINE_SEP);
+			String[] textInputArr = inputBldr.toString().split(LINE_SEP);
 
-      //config
-         //"": Dummy search string, to reuse matcher
-         Matcher mtchrNonWordChar = Pattern.compile("(\\W|_)").matcher("");
+		//config
+			//"": Dummy search string, to reuse matcher
+			Matcher mtchrNonWordChar = Pattern.compile("(\\W|_)").matcher("");
 
-      //go
-         StringBuffer rplcmntBfr = new StringBuffer();
-         for(String lineText : textInputArr)  {
-            rplcmntBfr.append(lineText).append("|");
+		//go
+			StringBuffer rplcmntBfr = new StringBuffer();
+			for(String lineText : textInputArr)  {
+				rplcmntBfr.append(lineText).append("|");
 
-            String[] wordArr = lineText.split(" ");
+				String[] wordArr = lineText.split(" ");
 
-            for(int i = 0; i < wordArr.length; i++)  {
-               String s = wordArr[i];
-               rplcmntBfr.append(mtchrNonWordChar.reset(s).replaceAll(""));
-               if(i < wordArr.length - 1)  {
-                  rplcmntBfr.append("-");
-               }
-            }
-            rplcmntBfr.append(LINE_SEP);
-         }
+				for(int i = 0; i < wordArr.length; i++)  {
+					String s = wordArr[i];
+					rplcmntBfr.append(mtchrNonWordChar.reset(s).replaceAll(""));
+					if(i < wordArr.length - 1)  {
+						rplcmntBfr.append("-");
+					}
+				}
+				rplcmntBfr.append(LINE_SEP);
+			}
 
-      System.out.println(rplcmntBfr);
-   }
+		System.out.println(rplcmntBfr);
+	}
 }

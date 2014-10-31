@@ -13,46 +13,46 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-   import  com.github.xbn.linefilter.entity.KeepMatched;
-   import  com.github.xbn.lang.ObjectOrCrashIfNull;
-   import  com.github.xbn.linefilter.entity.KeepStartLine;
-   import  com.github.xbn.linefilter.entity.KeepMidLines;
-   import  com.github.xbn.linefilter.entity.KeepEndLine;
-   import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_Cfg;
-   import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder;
+	import  com.github.xbn.linefilter.entity.KeepMatched;
+	import  com.github.xbn.lang.ObjectOrCrashIfNull;
+	import  com.github.xbn.linefilter.entity.KeepStartLine;
+	import  com.github.xbn.linefilter.entity.KeepMidLines;
+	import  com.github.xbn.linefilter.entity.KeepEndLine;
+	import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_Cfg;
+	import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder;
 /**
-   <P>Convenience functions for creating {@code RawBlockEntity}s.</P>
+	<P>Convenience functions for creating {@code RawBlockEntity}s.</P>
 
-   @see  com.github.xbn.linefilter.entity.NewBlockEntityFor
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  com.github.xbn.linefilter.entity.NewBlockEntityFor
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NewRawBlockEntityFor  {
-   public static final <L> RawBlockEntity_CfgForNeeder<L,?,?> returnKeptUnchanged_Cfg(String name_rootIfNull, KeepMatched keep_all)  {
-      return  returnKeptUnchanged_Cfg(name_rootIfNull,
-            KeepStartLine.getForKeepMatched(keep_all, "keep_all"),
-            KeepMidLines.getForKeepMatched(keep_all, null),
-            KeepEndLine.getForKeepMatched(keep_all, null));
-   }
-   public static final <L> RawBlockEntity_CfgForNeeder<L,?,?> returnKeptUnchanged_Cfg(String name_rootIfNull, KeepStartLine start, KeepMidLines mids, KeepEndLine end)  {
-      return  new RawBlockEntity_Cfg<L>(
-         (name_rootIfNull != null) ? "root" : name_rootIfNull).
-         keepStartMidEnd(
-            ObjectOrCrashIfNull.get(start, "start").isYes(),
-            ObjectOrCrashIfNull.get(mids, "mids").isYes(),
-            ObjectOrCrashIfNull.get(end, "end").isYes());
-   }
-   public static final <L> RawBlockEntity<L> keepAllUnchanged(String name_rootIfNull)  {
-      return  NewRawBlockEntityFor.<L>returnKeptUnchanged_Cfg(
-         name_rootIfNull, KeepStartLine.YES, KeepMidLines.YES, KeepEndLine.YES).
-         build();
-   }
+	public static final <L> RawBlockEntity_CfgForNeeder<L,?,?> returnKeptUnchanged_Cfg(String name_rootIfNull, KeepMatched keep_all)  {
+		return  returnKeptUnchanged_Cfg(name_rootIfNull,
+				KeepStartLine.getForKeepMatched(keep_all, "keep_all"),
+				KeepMidLines.getForKeepMatched(keep_all, null),
+				KeepEndLine.getForKeepMatched(keep_all, null));
+	}
+	public static final <L> RawBlockEntity_CfgForNeeder<L,?,?> returnKeptUnchanged_Cfg(String name_rootIfNull, KeepStartLine start, KeepMidLines mids, KeepEndLine end)  {
+		return  new RawBlockEntity_Cfg<L>(
+			(name_rootIfNull != null) ? "root" : name_rootIfNull).
+			keepStartMidEnd(
+				ObjectOrCrashIfNull.get(start, "start").isYes(),
+				ObjectOrCrashIfNull.get(mids, "mids").isYes(),
+				ObjectOrCrashIfNull.get(end, "end").isYes());
+	}
+	public static final <L> RawBlockEntity<L> keepAllUnchanged(String name_rootIfNull)  {
+		return  NewRawBlockEntityFor.<L>returnKeptUnchanged_Cfg(
+			name_rootIfNull, KeepStartLine.YES, KeepMidLines.YES, KeepEndLine.YES).
+			build();
+	}
 /*
-   public static final <L> RawBlockEntity<L> keepAllUnchanged(String name_rootIfNull, KeepStartLine start, KeepMidLines mids, KeepEndLine end)  {
-   }
+	public static final <L> RawBlockEntity<L> keepAllUnchanged(String name_rootIfNull, KeepStartLine start, KeepMidLines mids, KeepEndLine end)  {
+	}
  */
 
-   private NewRawBlockEntityFor()  {
-      throw  new IllegalStateException("Do not instantiate.");
-   }
+	private NewRawBlockEntityFor()  {
+		throw  new IllegalStateException("Do not instantiate.");
+	}
 }

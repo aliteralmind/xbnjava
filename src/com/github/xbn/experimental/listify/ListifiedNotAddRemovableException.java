@@ -14,27 +14,27 @@
 \*license*/
 package  com.github.xbn.experimental.listify;
 /**
-   <P>Thrown when a modify operation (such as remove, add, or set) is made on a {@code Listify} whose raw object is unmodifiable.</P>
+	<P>Thrown when a modify operation (such as remove, add, or set) is made on a {@code Listify} whose raw object is unmodifiable.</P>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <CODE><A HREF="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</A></CODE>, <A HREF="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</A>}
+	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <CODE><A HREF="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</A></CODE>, <A HREF="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</A>}
  **/
 public class ListifiedNotAddRemovableException extends IllegalStateException  {
 /**
-    * 
-    */
-   private static final long serialVersionUID = -8886369161416866624L;
-   //constructors...START
-   public ListifiedNotAddRemovableException()  {
-      super();
-   }
-   public ListifiedNotAddRemovableException(String message)  {
-      super(message);
-   }
-   public ListifiedNotAddRemovableException(Throwable cause)  {
-      super(cause);
-   }
-   public ListifiedNotAddRemovableException(String message, Throwable cause)  {
-      super(message, cause);
-   }
+	 * 
+	 */
+	private static final long serialVersionUID = -8886369161416866624L;
+	//constructors...START
+	public ListifiedNotAddRemovableException()  {
+		super();
+	}
+	public ListifiedNotAddRemovableException(String message)  {
+		super(message);
+	}
+	public ListifiedNotAddRemovableException(Throwable cause)  {
+		super(cause);
+	}
+	public ListifiedNotAddRemovableException(String message, Throwable cause)  {
+		super(message, cause);
+	}
 //constructors...END
 }

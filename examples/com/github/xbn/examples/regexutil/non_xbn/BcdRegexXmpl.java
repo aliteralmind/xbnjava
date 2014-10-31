@@ -16,38 +16,38 @@ package  com.github.xbn.examples.regexutil.non_xbn;
     import  java.util.regex.Matcher;
     import  java.util.regex.Pattern;
 /**
-   <P>Regex and non-regex example of finding the number of matches in a string.</P>
+	<P>Regex and non-regex example of finding the number of matches in a string.</P>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.BcdRegexXmpl}</P>
+	<P>{@code java com.github.xbn.examples.regexutil.non_xbn.BcdRegexXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 **/
 public class BcdRegexXmpl  {
-   public static final void main(String[] ignored)  {
-      String sSentence = "abcd bcdd";
-      int iBcds = 0;
-      int iIdx = 0;
-      while(true)  {
-         int iBcdIdx = sSentence.indexOf("bcd", iIdx);
-         if(iBcdIdx == -1)  {
-            break;
-         }
-         iIdx = iBcdIdx + "bcd".length();
-         iBcds++;
-      }
+	public static final void main(String[] ignored)  {
+		String sSentence = "abcd bcdd";
+		int iBcds = 0;
+		int iIdx = 0;
+		while(true)  {
+			int iBcdIdx = sSentence.indexOf("bcd", iIdx);
+			if(iBcdIdx == -1)  {
+				break;
+			}
+			iIdx = iBcdIdx + "bcd".length();
+			iBcds++;
+		}
 
-      System.out.println("Number of 'bcd's (no regex): " + iBcds);
+		System.out.println("Number of 'bcd's (no regex): " + iBcds);
 
-      //Alternatively
-      iBcds = 0;
-      //Same regex as @la-comadreja, with word-boundaries
-      //For multiple "bcd"-s in a single word, remove the "\\b"-s
-      Matcher m = Pattern.compile("\\b\\w*bcd\\w*\\b").matcher(sSentence);
-      while(m.find())  {
-         System.out.println("Found at index " + m.start());
-         iBcds++;
-      }
-      System.out.println("Number of 'bcd's (with regex): " + iBcds);
-   }
+		//Alternatively
+		iBcds = 0;
+		//Same regex as @la-comadreja, with word-boundaries
+		//For multiple "bcd"-s in a single word, remove the "\\b"-s
+		Matcher m = Pattern.compile("\\b\\w*bcd\\w*\\b").matcher(sSentence);
+		while(m.find())  {
+			System.out.println("Found at index " + m.start());
+			iBcds++;
+		}
+		System.out.println("Number of 'bcd's (with regex): " + iBcds);
+	}
 }

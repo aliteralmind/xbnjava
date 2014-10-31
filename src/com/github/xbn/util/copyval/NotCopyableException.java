@@ -14,20 +14,20 @@
 \*license*/
 package  com.github.xbn.util.copyval;
 /**
-   <P>Thrown when a copy-attempt is made on a value that is not copyable.</P>
+	<P>Thrown when a copy-attempt is made on a value that is not copyable.</P>
 
-   @see  ValueCopier#isValueCopyable()
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  ValueCopier#isValueCopyable()
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NotCopyableException extends IllegalStateException  {
-   /**
-    * 
-    */
-   private static final long serialVersionUID = -6708249065093317308L;
-   public NotCopyableException()  {
-   }
-   public NotCopyableException(String message)  {
-      super(message);
-   }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6708249065093317308L;
+	public NotCopyableException()  {
+	}
+	public NotCopyableException(String message)  {
+		super(message);
+	}
 }

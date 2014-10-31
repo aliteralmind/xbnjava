@@ -13,52 +13,52 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.helper;
-   import  com.github.xbn.array.NullContainer;
-   import  java.util.Iterator;
+	import  com.github.xbn.array.NullContainer;
+	import  java.util.Iterator;
 /**
-   <P>Implementation of {@code ArrayHelper}.</P>
+	<P>Implementation of {@code ArrayHelper}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractArrayHelper<E> implements ArrayHelper<E>  {
-   private final ArrayHelperComposer<E> ahc;
-   public AbstractArrayHelper(Class<E[]> cls_dotClassStatic)  {
-      ahc = new ArrayHelperComposer<E>(cls_dotClassStatic);
-   }
-   public Class<E[]> getStaticClass()  {
-      return  ahc.getStaticClass();
-   }
-   public Iterator<E> getIterator(E[] array, String array_name)  {
-      return  ahc.getIterator(array, array_name);
-   }
-   public Iterator<E> getIterator(Object obj_thatIsArray, String array_name)  {
-      return  ahc.getIterator(obj_thatIsArray, array_name);
-   }
-   public final int getLength(E[] array, String array_name)  {
-      return  ahc.getLength(array, array_name);
-   }
-   public final int getLength(Object obj_thatIsAnArray, String array_name)  {
-      return  ahc.getLength(obj_thatIsAnArray, array_name);
-   }
-   public final Object[] getObjectArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
-      return  ahc.getObjectArrayOrNull(array, null_ok, cntrName_forNullBad);
-   }
-   public final String[] getStringArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
-      return  ahc.getStringArrayOrNull(array, null_ok, cntrName_forNullBad);
-   }
-   public final Object[] getObjectArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
-      return  ahc.getObjectArrayOrNull(obj_thatIsAnArray, null_ok, cntrName_forNullBad);
-   }
-   public final String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
-      return  ahc.getStringArrayOrNull(obj_thatIsAnArray, null_ok, cntrName_forNullBad);
-   }
+	private final ArrayHelperComposer<E> ahc;
+	public AbstractArrayHelper(Class<E[]> cls_dotClassStatic)  {
+		ahc = new ArrayHelperComposer<E>(cls_dotClassStatic);
+	}
+	public Class<E[]> getStaticClass()  {
+		return  ahc.getStaticClass();
+	}
+	public Iterator<E> getIterator(E[] array, String array_name)  {
+		return  ahc.getIterator(array, array_name);
+	}
+	public Iterator<E> getIterator(Object obj_thatIsArray, String array_name)  {
+		return  ahc.getIterator(obj_thatIsArray, array_name);
+	}
+	public final int getLength(E[] array, String array_name)  {
+		return  ahc.getLength(array, array_name);
+	}
+	public final int getLength(Object obj_thatIsAnArray, String array_name)  {
+		return  ahc.getLength(obj_thatIsAnArray, array_name);
+	}
+	public final Object[] getObjectArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
+		return  ahc.getObjectArrayOrNull(array, null_ok, cntrName_forNullBad);
+	}
+	public final String[] getStringArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
+		return  ahc.getStringArrayOrNull(array, null_ok, cntrName_forNullBad);
+	}
+	public final Object[] getObjectArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
+		return  ahc.getObjectArrayOrNull(obj_thatIsAnArray, null_ok, cntrName_forNullBad);
+	}
+	public final String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
+		return  ahc.getStringArrayOrNull(obj_thatIsAnArray, null_ok, cntrName_forNullBad);
+	}
 /*stub functions for implements compile...START
  	public final E[] getInitialized(int length)  {
-      return  null;
-   }
+		return  null;
+	}
  	public final E[] getEmpty()  {
-      return  null;
-   }
+		return  null;
+	}
  stub functions for implements compile...END*/
 }

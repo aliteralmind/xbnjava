@@ -14,55 +14,55 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-   <P>Basic error message construction. It is encouraged that this class be <A HREF="http://docs.oracle.com/javase/8/docs/technotes/guides/language/static-import.html">statically imported</A> &quot;en masse&quot;:
-   <BR> &nbsp; &nbsp; {@code import  static com.github.xbn.lang.CrashIfBase.*;}</P>
+	<P>Basic error message construction. It is encouraged that this class be <A HREF="http://docs.oracle.com/javase/8/docs/technotes/guides/language/static-import.html">statically imported</A> &quot;en masse&quot;:
+	<BR> &nbsp; &nbsp; {@code import  static com.github.xbn.lang.CrashIfBase.*;}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class CrashIfBase  {
-   /**
-      <P>A basic error message with optional extra context. When there is no extra context, there is no point in using this function.</P>
+	/**
+		<P>A basic error message with optional extra context. When there is no extra context, there is no point in using this function.</P>
 
-      @see  #appendExtraInfoPostfix(StringBuilder, Object) appendExtraInfoPostfix(sd,o)
-    **/
+		@see  #appendExtraInfoPostfix(StringBuilder, Object) appendExtraInfoPostfix(sd,o)
+	 **/
 //getXMsg(String, Object)
-   public static final String getXMsg(String message, Object xtra_errInfo)  {
-      StringBuilder sd = (new StringBuilder());
+	public static final String getXMsg(String message, Object xtra_errInfo)  {
+		StringBuilder sd = (new StringBuilder());
 
-      if(message != null)  {
-         sd.append(message);
-      }
+		if(message != null)  {
+			sd.append(message);
+		}
 
-      return  appendExtraInfoPostfix(sd, xtra_errInfo).toString();
-   }
-   public static final StringBuilder appendExtraInfoPostfix(StringBuilder to_appendTo, Object xtra_errInfo)  {
-      if(xtra_errInfo == null)  {
-         return  to_appendTo;
-      }
+		return  appendExtraInfoPostfix(sd, xtra_errInfo).toString();
+	}
+	public static final StringBuilder appendExtraInfoPostfix(StringBuilder to_appendTo, Object xtra_errInfo)  {
+		if(xtra_errInfo == null)  {
+			return  to_appendTo;
+		}
 
-      to_appendTo.append(", ");
+		to_appendTo.append(", ");
 
-      boolean bNotXia = !(xtra_errInfo instanceof XInfoAccumulator);
+		boolean bNotXia = !(xtra_errInfo instanceof XInfoAccumulator);
 
-      if(bNotXia)  {
-         to_appendTo.append("extra-info=[");
-      }
+		if(bNotXia)  {
+			to_appendTo.append("extra-info=[");
+		}
 
-      ToStringDefensive.append(to_appendTo, xtra_errInfo, "xtra_errInfo", -1);
+		ToStringDefensive.append(to_appendTo, xtra_errInfo, "xtra_errInfo", -1);
 
-      if(bNotXia)  {
-         to_appendTo.append("]");
-      }
+		if(bNotXia)  {
+			to_appendTo.append("]");
+		}
 
-      return  to_appendTo;
-   }
-   public static final RuntimeException regetRtxCrashIfNull(RuntimeException cause, String cause_name)  {
-      if(cause == null)  {
-         throw  new NullPointerException(cause_name);
-      }
-      //Can't use. Would result in circular dependency.
-      //Objects.requireNonNull(cause, cause_name);
-      return  cause;
-   }
+		return  to_appendTo;
+	}
+	public static final RuntimeException regetRtxCrashIfNull(RuntimeException cause, String cause_name)  {
+		if(cause == null)  {
+			throw  new NullPointerException(cause_name);
+		}
+		//Can't use. Would result in circular dependency.
+		//Objects.requireNonNull(cause, cause_name);
+		return  cause;
+	}
 }

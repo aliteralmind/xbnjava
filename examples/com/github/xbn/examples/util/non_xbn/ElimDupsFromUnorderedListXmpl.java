@@ -1,6 +1,6 @@
 package  com.github.xbn.examples.util.non_xbn;
-   import  java.util.Arrays;
-   import  java.util.ArrayList;
+	import  java.util.Arrays;
+	import  java.util.ArrayList;
 
 /**
    <P>{@code java ElimDupsFromUnorderedListXmpl}</P>

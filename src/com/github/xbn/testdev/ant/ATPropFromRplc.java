@@ -13,94 +13,94 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.testdev.ant;
-   import  org.apache.tools.ant.Task;
-   import  org.apache.tools.ant.BuildException;
+	import  org.apache.tools.ant.Task;
+	import  org.apache.tools.ant.BuildException;
 
 /**
-   <P>Within a string, replace all instances of a 'what' string with a 'with' string, placing the result into a property. This only does a single pass through.</P>
+	<P>Within a string, replace all instances of a 'what' string with a 'with' string, placing the result into a property. This only does a single pass through.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ATPropFromRplc extends Task  {
-   private String sString = null;
-   private String sWhat = null;
-   private String sWith = null;
-   private String sProperty = null;
+	private String sString = null;
+	private String sWhat = null;
+	private String sWith = null;
+	private String sProperty = null;
 
-   /**
-      <P>Create a ATPropFromRplc. This does nothing.</P>
-    **/
-   public ATPropFromRplc()  {
-   }
-   /**
-      <P>Set the name of the property to put the result in.</P>
-    **/
-   public void setProperty(String prop_name)  {
-      sProperty = prop_name;
-   }
-   /**
-      <P>The string in which the replacements should occur.</P>
-    **/
-   public void setString(String to_replace)  {
-      sString = to_replace;
-   }
-   /**
-      <P>The 'what' string to search for.</P>
-    **/
-   public void setWhat(String find_what)  {
-      sWhat = find_what;
-   }
-   /**
-      <P>The 'with' string to replace it (the 'what' string) with.</P>
-    **/
-   public void setWith(String rplc_with)  {
-      sWith = rplc_with;
-   }
-   /**
-      <P>Do it. Uh huh. Oh yeah.</P>
-    **/
-   public void execute() throws BuildException  {
-      //This can't be dependent on any xbn code, because Ant
-      //*builds* the xbn code.
-      if(sProperty == null  ||  sProperty.length() == 0)  {
-         throw  new BuildException("Required attribute 'property' missing or empty.");
-      }
+	/**
+		<P>Create a ATPropFromRplc. This does nothing.</P>
+	 **/
+	public ATPropFromRplc()  {
+	}
+	/**
+		<P>Set the name of the property to put the result in.</P>
+	 **/
+	public void setProperty(String prop_name)  {
+		sProperty = prop_name;
+	}
+	/**
+		<P>The string in which the replacements should occur.</P>
+	 **/
+	public void setString(String to_replace)  {
+		sString = to_replace;
+	}
+	/**
+		<P>The 'what' string to search for.</P>
+	 **/
+	public void setWhat(String find_what)  {
+		sWhat = find_what;
+	}
+	/**
+		<P>The 'with' string to replace it (the 'what' string) with.</P>
+	 **/
+	public void setWith(String rplc_with)  {
+		sWith = rplc_with;
+	}
+	/**
+		<P>Do it. Uh huh. Oh yeah.</P>
+	 **/
+	public void execute() throws BuildException  {
+		//This can't be dependent on any xbn code, because Ant
+		//*builds* the xbn code.
+		if(sProperty == null  ||  sProperty.length() == 0)  {
+			throw  new BuildException("Required attribute 'property' missing or empty.");
+		}
 
-      if(sString == null  ||  sString.length() == 0)  {
-         throw  new BuildException("Required attribute 'string' missing or empty.");
-      }
+		if(sString == null  ||  sString.length() == 0)  {
+			throw  new BuildException("Required attribute 'string' missing or empty.");
+		}
 
-      if(sWhat == null  ||  sWhat.length() == 0)  {
-         throw  new BuildException("Required attribute 'what' missing or empty.");
-      }
+		if(sWhat == null  ||  sWhat.length() == 0)  {
+			throw  new BuildException("Required attribute 'what' missing or empty.");
+		}
 
-      if(sWith == null  ||  sWith.length() == 0)  {
-         throw  new BuildException("Required attribute 'with' missing or empty.");
-      }
+		if(sWith == null  ||  sWith.length() == 0)  {
+			throw  new BuildException("Required attribute 'with' missing or empty.");
+		}
 
-      StringBuilder sb = new StringBuilder(sString);
+		StringBuilder sb = new StringBuilder(sString);
 
-      int ixOfWhat = 0;
-      int iReplacements = 0;
-      for(int i = 0; i < sString.length(); i++)  {
-         ixOfWhat = sb.toString().indexOf(sWhat, ixOfWhat);
+		int ixOfWhat = 0;
+		int iReplacements = 0;
+		for(int i = 0; i < sString.length(); i++)  {
+			ixOfWhat = sb.toString().indexOf(sWhat, ixOfWhat);
 
-         if(ixOfWhat == -1)  {
-            break;
-         }
-         //It was found.
+			if(ixOfWhat == -1)  {
+				break;
+			}
+			//It was found.
 
-         iReplacements++;
+			iReplacements++;
 
-         sb.delete(ixOfWhat, (ixOfWhat + sWhat.length()));
-         sb.insert(ixOfWhat, sWith);
+			sb.delete(ixOfWhat, (ixOfWhat + sWhat.length()));
+			sb.insert(ixOfWhat, sWith);
 
-         ixOfWhat += sWith.length();
-      }
+			ixOfWhat += sWith.length();
+		}
 
-      log(iReplacements + " replacements");
+		log(iReplacements + " replacements");
 
-      getProject().setProperty(sProperty, sb.toString());
-   }
+		getProject().setProperty(sProperty, sb.toString());
+	}
 }

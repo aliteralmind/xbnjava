@@ -15,26 +15,26 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.io.non_xbn;
-   import  java.io.FileInputStream;
-   import  java.io.FileNotFoundException;
-   import  java.io.IOException;
-   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
+	import  java.io.FileInputStream;
+	import  java.io.FileNotFoundException;
+	import  java.io.IOException;
+	import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
 
 /**
    <P>A demonstration of a static utility function that reads in all plain text from a file</P>
 
    <P>{@code java com.github.xbn.examples.io.non_xbn.ManualReadAllPlainTextFromFile PATH_TO_FILE}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class ManualReadAllPlainTextFromFile  {
-   public static final void main(String[] pathToFile_idx0)  {
-      String path = GetFromCommandLineAtIndex.text(pathToFile_idx0, 0,
-         "full path to file", null);
-      System.out.println(appendFileText((new StringBuilder()), path).toString());
-   }
+	public static final void main(String[] pathToFile_idx0)  {
+		String path = GetFromCommandLineAtIndex.text(pathToFile_idx0, 0,
+			"full path to file", null);
+		System.out.println(appendFileText((new StringBuilder()), path).toString());
+	}
    /*
       <P>Read all text in from a file and append it onto a StringBuilder. No parsing is done, this is just a blind file read. Note: This function is useful, not efficient (?).</P>
 
@@ -44,7 +44,7 @@ public class ManualReadAllPlainTextFromFile  {
       @exception RuntimeException  Thrown when {@code path} is invalid.
       @exception RTIOException  Thrown when an IOException is otherwise caused.
     */
-   public static final StringBuilder appendFileText(StringBuilder to_appendTo, String path)  {
+	public static final StringBuilder appendFileText(StringBuilder to_appendTo, String path)  {
       FileInputStream fis = null;
 
       FileNotFoundException fnfxGlobal = null;

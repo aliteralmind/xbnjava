@@ -13,39 +13,39 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.io;
-   import  com.github.xbn.io.NewTextAppenterFor;
-   import  com.github.xbn.io.TextAppenter;
+	import  com.github.xbn.io.NewTextAppenterFor;
+	import  com.github.xbn.io.TextAppenter;
 /**
-   <P>Basic demonstration of using {@code TextAppenter} to optionally debug an object.</P>
+	<P>Basic demonstration of using {@code TextAppenter} to optionally debug an object.</P>
 
-   <P>{@code java com.github.xbn.examples.io.TextAppenterObjectDebugging}</P>
+	<P>{@code java com.github.xbn.examples.io.TextAppenterObjectDebugging}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class TextAppenterObjectDebugging  {
-   public static final void main(String[] params)  {
-      new AnObjectThatNeedsDebugging(1, null).doSomeComplicatedStuff();
-      new AnObjectThatNeedsDebugging(2, System.out).doSomeComplicatedStuff();
-   }
+	public static final void main(String[] params)  {
+		new AnObjectThatNeedsDebugging(1, null).doSomeComplicatedStuff();
+		new AnObjectThatNeedsDebugging(2, System.out).doSomeComplicatedStuff();
+	}
 }
 class AnObjectThatNeedsDebugging  {
-   private final int id;
-   private final TextAppenter dbgAptr;
-   public AnObjectThatNeedsDebugging(int id, Appendable debug_ifNonNull)  {
-      this.id = id;
-      dbgAptr = NewTextAppenterFor.appendableUnusableIfNull(debug_ifNonNull);
-   }
-   public void doSomeComplicatedStuff()  {
-      if(dbgAptr.isUseable())  {
-         dbgAptr.appentln("[id=" + id +
-            "] About to do some complicated stuff...");
-      }
+	private final int id;
+	private final TextAppenter dbgAptr;
+	public AnObjectThatNeedsDebugging(int id, Appendable debug_ifNonNull)  {
+		this.id = id;
+		dbgAptr = NewTextAppenterFor.appendableUnusableIfNull(debug_ifNonNull);
+	}
+	public void doSomeComplicatedStuff()  {
+		if(dbgAptr.isUseable())  {
+			dbgAptr.appentln("[id=" + id +
+			   "] About to do some complicated stuff...");
+		}
 
-      //complicated stuff goes here
+		//complicated stuff goes here
 
-      if(dbgAptr.isUseable())  {
-         dbgAptr.appentln("[id=" + id + "] DONE");
-      }
-   }
+		if(dbgAptr.isUseable())  {
+			dbgAptr.appentln("[id=" + id + "] DONE");
+		}
+	}
 }

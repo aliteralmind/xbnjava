@@ -13,88 +13,88 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util;
-   import  java.util.Objects;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.lang.IllegalArgumentStateException;
+	import  java.util.Objects;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
    <P>Get a boolean primitive from a string, with specific strings representing true and false, and optional {@code null} and empty defaults.</P>
 
    @author  Copyright (C) 2013 Jeff Epstein, released under the LPGL 2.1. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class GetBooleanFromString  {
-   private String stringName;
-   private String trueVal;
-   private String falseVal;
-   private Boolean ifNull;
-   private Boolean ifEmpty;
+	private String stringName;
+	private String trueVal;
+	private String falseVal;
+	private Boolean ifNull;
+	private Boolean ifEmpty;
    public GetBooleanFromString()  {
-      this(null);
-   }
+		this(null);
+	}
    /**
    	@since  0.1.1
     **/
    public GetBooleanFromString(String string_varName)  {
-      stringName = ((string_varName != null) ? string_varName : "boolean_string");
-      trueFalse("true", "false");
-      nullEmptyDefaults_ifNullThenBad(null, null);
-   }
-   public GetBooleanFromString trueFalse(String true_value, String false_value)  {
-      try  {
-         if(true_value.equals(false_value))  {
-            throw  new IllegalArgumentStateException("true_value and false_value both equal \"" + true_value + "\"");
-         }
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(true_value, "true_value", null, rx);
-      }
-      Objects.requireNonNull(false_value, "false_value");
-      trueVal = true_value;
-      falseVal = false_value;
-      return  this;
-   }
-   public GetBooleanFromString nullEmptyDefaults_ifNullThenBad(Boolean if_null, Boolean if_empty)  {
-      ifNull = if_null;
-      ifEmpty = if_empty;
-      return  this;
-   }
-   public boolean get(String boolean_string)  {
-      if(boolean_string == null  &&  getIfNull() != null)  {
-         return  getIfNull().booleanValue();
-      }
-      try  {
-         if(boolean_string.length() == 0  &&  getIfEmpty() != null)  {
-            return  getIfEmpty().booleanValue();
-         }
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(boolean_string, getStringName(), null, rx);
-      }
+		stringName = ((string_varName != null) ? string_varName : "boolean_string");
+		trueFalse("true", "false");
+		nullEmptyDefaults_ifNullThenBad(null, null);
+	}
+	public GetBooleanFromString trueFalse(String true_value, String false_value)  {
+		try  {
+			if(true_value.equals(false_value))  {
+				throw  new IllegalArgumentStateException("true_value and false_value both equal \"" + true_value + "\"");
+			}
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(true_value, "true_value", null, rx);
+		}
+		Objects.requireNonNull(false_value, "false_value");
+		trueVal = true_value;
+		falseVal = false_value;
+		return  this;
+	}
+	public GetBooleanFromString nullEmptyDefaults_ifNullThenBad(Boolean if_null, Boolean if_empty)  {
+		ifNull = if_null;
+		ifEmpty = if_empty;
+		return  this;
+	}
+	public boolean get(String boolean_string)  {
+		if(boolean_string == null  &&  getIfNull() != null)  {
+			return  getIfNull().booleanValue();
+		}
+		try  {
+			if(boolean_string.length() == 0  &&  getIfEmpty() != null)  {
+				return  getIfEmpty().booleanValue();
+			}
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(boolean_string, getStringName(), null, rx);
+		}
 
-      try  {
-         if(getTrue().equals(boolean_string))  {
-            return  true;
-         }  else if(getFalse().equals(boolean_string))  {
-            return  false;
-         }
-      }  catch(NullPointerException npx)  {
-         if(trueVal == null)  {
-            throw  new IllegalStateException("Must set trueFalse(s,s)");
-         }
-      }
+		try  {
+			if(getTrue().equals(boolean_string))  {
+				return  true;
+			}  else if(getFalse().equals(boolean_string))  {
+				return  false;
+			}
+		}  catch(NullPointerException npx)  {
+			if(trueVal == null)  {
+				throw  new IllegalStateException("Must set trueFalse(s,s)");
+			}
+		}
 
-      throw  new IllegalArgumentException(getStringName() + " (\"" + boolean_string + "\") is not equal to getTrue() (\"" + getTrue() + "\") or getFalse() (\"" + getFalse() + "\") values.");
-   }
-   public String getStringName()  {
-      return  stringName;
-   }
-   public String getTrue()  {
-      return  trueVal;
-   }
-   public String getFalse()  {
-      return  falseVal;
-   }
-   public Boolean getIfNull()  {
-      return  ifNull;
-   }
-   public Boolean getIfEmpty()  {
-      return  ifEmpty;
-   }
+		throw  new IllegalArgumentException(getStringName() + " (\"" + boolean_string + "\") is not equal to getTrue() (\"" + getTrue() + "\") or getFalse() (\"" + getFalse() + "\") values.");
+	}
+	public String getStringName()  {
+		return  stringName;
+	}
+	public String getTrue()  {
+		return  trueVal;
+	}
+	public String getFalse()  {
+		return  falseVal;
+	}
+	public Boolean getIfNull()  {
+		return  ifNull;
+	}
+	public Boolean getIfEmpty()  {
+		return  ifEmpty;
+	}
 }

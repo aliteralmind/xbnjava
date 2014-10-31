@@ -15,22 +15,22 @@
 package  com.github.xbn.lang;
 
 /**
-   <P>Fundamental constants used throughout {@code com.github.xbn.*}. Consider importing this staticly:
-   <BR> &nbsp; &nbsp; {@code import  com.github.xbn.lang.XbnConstants.*;}</P>
+	<P>Fundamental constants used throughout {@code com.github.xbn.*}. Consider importing this staticly:
+	<BR> &nbsp; &nbsp; {@code import  com.github.xbn.lang.XbnConstants.*;}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class XbnConstants  {
-   public static final String sXMK = "X" + "XX";
-   public static final String sYMK = "Y" + "YY";
-   /**
-      <P>The line separator appropriate for this environment--Equal to <CODE>System.getProperty("line.separator", "\r\n")</CODE></P>
-    **/
-   public static final String LINE_SEP = System.getProperty("line.separator", "\r\n");
-   /**
-      <P>The default file-separator--Equal to <CODE>System.getProperty(&quot;file.separator&quot;, &quot;\\&quot;</CODE></P>
-    **/
-   public static final String FILE_SEP = System.getProperty("file.separator", "\\");
+	public static final String sXMK = "X" + "XX";
+	public static final String sYMK = "Y" + "YY";
+	/**
+		<P>The line separator appropriate for this environment--Equal to <CODE>System.getProperty("line.separator", "\r\n")</CODE></P>
+	 **/
+	public static final String LINE_SEP = System.getProperty("line.separator", "\r\n");
+	/**
+		<P>The default file-separator--Equal to <CODE>System.getProperty(&quot;file.separator&quot;, &quot;\\&quot;</CODE></P>
+	 **/
+	public static final String FILE_SEP = System.getProperty("file.separator", "\\");
 }
 

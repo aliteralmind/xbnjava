@@ -13,106 +13,106 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util;
-   import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Regular expressions related to Java code.</P>
+	<P>Regular expressions related to Java code.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class JavaRegexes  {
-   /**
-      <P>Matches a Java identifier string (such as the name of a function, class, or package-element), using long character-class names--equal to {@code "\\p{javaJavaIdentifierStart}\\p{javaJavaIdentifierPart}*"}. <I>This works, but is not recognized by RegexBuddy, which is a significant part of my workflow.</I></P>
+	/**
+		<P>Matches a Java identifier string (such as the name of a function, class, or package-element), using long character-class names--equal to {@code "\\p{javaJavaIdentifierStart}\\p{javaJavaIdentifierPart}*"}. <I>This works, but is not recognized by RegexBuddy, which is a significant part of my workflow.</I></P>
 
-      <P>From stackoverflow user <A HREF="http://stackoverflow.com/users/20938/alan-moore">AlanMoore</A>, in a comment under <A HREF="http://stackoverflow.com/questions/5205339/regular-expression-matching-fully-qualified-java-classes/5205467#5205467">this answer</A>.</P>
+		<P>From stackoverflow user <A HREF="http://stackoverflow.com/users/20938/alan-moore">AlanMoore</A>, in a comment under <A HREF="http://stackoverflow.com/questions/5205339/regular-expression-matching-fully-qualified-java-classes/5205467#5205467">this answer</A>.</P>
 
-      @see  #IDENTIFIER
-    **/
-   public static final String IDENTIFIER_W_CHR_CLS = "\\p{javaJavaIdentifierStart}\\p{javaJavaIdentifierPart}*";
-   /**
-      <P>Matches a Java identifier string (such as the name of a function, class, or package-element), using abbreviated character classes--equal to {@code "[\\p{L}_\\p{Sc}][\\p{L}\\p{N}_\\p{Sc}]*"}. <I>This is equivalent to {@link #IDENTIFIER_W_CHR_CLS} and works in RegexBuddy.</I></P>
+		@see  #IDENTIFIER
+	 **/
+	public static final String IDENTIFIER_W_CHR_CLS = "\\p{javaJavaIdentifierStart}\\p{javaJavaIdentifierPart}*";
+	/**
+		<P>Matches a Java identifier string (such as the name of a function, class, or package-element), using abbreviated character classes--equal to {@code "[\\p{L}_\\p{Sc}][\\p{L}\\p{N}_\\p{Sc}]*"}. <I>This is equivalent to {@link #IDENTIFIER_W_CHR_CLS} and works in RegexBuddy.</I></P>
 
-      <P>From <A HREF="http://stackoverflow.com/questions/5205339/regular-expression-matching-fully-qualified-java-classes/5205467#5205467">this answer</A> on <CODE>stackoverflow</CODE>.</P>
-    **/
-   public static final String IDENTIFIER = "[\\p{L}_\\p{Sc}][\\p{L}\\p{N}_\\p{Sc}]*";
-   /**
-      <P>A package name with no capturing groups.</P>
+		<P>From <A HREF="http://stackoverflow.com/questions/5205339/regular-expression-matching-fully-qualified-java-classes/5205467#5205467">this answer</A> on <CODE>stackoverflow</CODE>.</P>
+	 **/
+	public static final String IDENTIFIER = "[\\p{L}_\\p{Sc}][\\p{L}\\p{N}_\\p{Sc}]*";
+	/**
+		<P>A package name with no capturing groups.</P>
 
-      <P>Equal to</P>
+		<P>Equal to</P>
 
 <BLOCKQUOTE><PRE>&quot;(?:&quot; + {@link #IDENTIFIER} + &quot;\\.)*&quot; + IDENTIFIER + &quot;&quot;</PRE></BLOCKQUOTE>
-    **/
-   public static final String PACKAGE_NAME = "(?:" + IDENTIFIER + "\\.)*" + IDENTIFIER + "";
-   /**
-      <P>A package name, with a capturing group for the classes simple name (the final identifier).</P>
+	 **/
+	public static final String PACKAGE_NAME = "(?:" + IDENTIFIER + "\\.)*" + IDENTIFIER + "";
+	/**
+		<P>A package name, with a capturing group for the classes simple name (the final identifier).</P>
 
-      <P>Equal to</P>
+		<P>Equal to</P>
 
 <BLOCKQUOTE><PRE>&quot;(?:&quot; + {@link #IDENTIFIER} + &quot;\\.)*(&quot; + IDENTIFIER + &quot;)&quot;</PRE></BLOCKQUOTE>
-    **/
-   public static final String PACKAGE_CAPTURE_SIMPLE_NAME = "(?:" + IDENTIFIER + "\\.)*(" + IDENTIFIER + ")";
-   /**
-      <P>Captures an import statement on a single line, with a capturing group for the classes simple name--the import may or may not be static.</P>
+	 **/
+	public static final String PACKAGE_CAPTURE_SIMPLE_NAME = "(?:" + IDENTIFIER + "\\.)*(" + IDENTIFIER + ")";
+	/**
+		<P>Captures an import statement on a single line, with a capturing group for the classes simple name--the import may or may not be static.</P>
 
-      <P>Equal to</P>
+		<P>Equal to</P>
 
 <BLOCKQUOTE><PRE>&quot;[ \\t]*import[ \\t]+(?:static[ \\t]+)?(?:&quot; + {@link #PACKAGE_CAPTURE_SIMPLE_NAME} + &quot;(\\.\\*)&quot;</PRE></BLOCKQUOTE>
-    **/
-   public static final String IMPORT_LINE_CAPTURE_SIMPLE_NAME = "[ \\t]*import[ \\t]+(?:static[ \\t]+)?" + PACKAGE_CAPTURE_SIMPLE_NAME + "(?:\\.\\*)?[ \t]*;[ \t]*(?://.*)?$";
+	 **/
+	public static final String IMPORT_LINE_CAPTURE_SIMPLE_NAME = "[ \\t]*import[ \\t]+(?:static[ \\t]+)?" + PACKAGE_CAPTURE_SIMPLE_NAME + "(?:\\.\\*)?[ \t]*;[ \t]*(?://.*)?$";
 
-   /**
-      <P>A package declaration that exist in a single line, and contains no comments.</P>
+	/**
+		<P>A package declaration that exist in a single line, and contains no comments.</P>
 
-      <P>Equal to</P>
+		<P>Equal to</P>
 
 <BLOCKQUOTE><PRE>&quot;^[ \\t]*package[ \\t]+&quot; + {@link #PACKAGE_NAME} + &quot;[ \\t]*;[ \\t]*$&quot;</PRE></BLOCKQUOTE>
-    **/
-   public static final String PACKAGE_DECL_ONE_LINE_NO_CMTS = "^[ \\t]*package[ \\t]+" + PACKAGE_NAME + "[ \\t]*;[ \\t]*$";
-   /**
-      <P>A package name, ending with a dot ({@code '.'}).</P>
-    **/
-   public static final String FQ_CLASS_NAME = PACKAGE_NAME + IDENTIFIER;
-   public static final String CNSTR_NAME_ALL_PARAMS = "\\b([\\w.]+)\\b\\(([^\\)\\n\\r]*)\\)";
-   public static final String PARAM_TYPE_NAME_DIV = "(?<=(^|, ))([\\w.]+)((?:<[^>]+>)?(?:\\[\\])?(?:\\.\\.\\.)?)\\s+(\\w+)(|$)";
-   public static final String RTRN_TYPE_FNM_ALL_PARAMS = (new StringBuilder()).
-      append("\\s+\\b"               ).
-      append("([\\w.]+)"             ). //Return type
-      append("\\b(?:<[^>]+>)?\\s+\\b").
-      append("([\\w.]+)"             ). //Function name
-      append("\\b\\("                ).
-      append("([^\\)\\n\\r]*)"       ). //All parameters
-      append("\\)"                   ).toString();
+	 **/
+	public static final String PACKAGE_DECL_ONE_LINE_NO_CMTS = "^[ \\t]*package[ \\t]+" + PACKAGE_NAME + "[ \\t]*;[ \\t]*$";
+	/**
+		<P>A package name, ending with a dot ({@code '.'}).</P>
+	 **/
+	public static final String FQ_CLASS_NAME = PACKAGE_NAME + IDENTIFIER;
+	public static final String CNSTR_NAME_ALL_PARAMS = "\\b([\\w.]+)\\b\\(([^\\)\\n\\r]*)\\)";
+	public static final String PARAM_TYPE_NAME_DIV = "(?<=(^|, ))([\\w.]+)((?:<[^>]+>)?(?:\\[\\])?(?:\\.\\.\\.)?)\\s+(\\w+)(|$)";
+	public static final String RTRN_TYPE_FNM_ALL_PARAMS = (new StringBuilder()).
+		append("\\s+\\b"               ).
+		append("([\\w.]+)"             ). //Return type
+		append("\\b(?:<[^>]+>)?\\s+\\b").
+		append("([\\w.]+)"             ). //Function name
+		append("\\b\\("                ).
+		append("([^\\)\\n\\r]*)"       ). //All parameters
+		append("\\)"                   ).toString();
 
-   /**
-      <P>Matches a line containing a single-line comment, with <I>no other text (whitespace only) before the comment</I>--this  matches up-through-and-including the &quot;/<!--  -->/&quot;.</P>
+	/**
+		<P>Matches a line containing a single-line comment, with <I>no other text (whitespace only) before the comment</I>--this  matches up-through-and-including the &quot;/<!--  -->/&quot;.</P>
 
-      <P>Equal to <B>{@code &quot;^(\\s*)/&quot; + &quot;/&quot;}</B></P>
-    **/
-   public static final String LN_STRT_WS_2SLASHES = "^(\\s*)/" + "/";
-   /**
-      <P>Matches a line containing a single-line comment, with <I>no other text (whitespace only) before the comment</I>--this  matches the entire line.</P>
+		<P>Equal to <B>{@code &quot;^(\\s*)/&quot; + &quot;/&quot;}</B></P>
+	 **/
+	public static final String LN_STRT_WS_2SLASHES = "^(\\s*)/" + "/";
+	/**
+		<P>Matches a line containing a single-line comment, with <I>no other text (whitespace only) before the comment</I>--this  matches the entire line.</P>
 
-      <P>Equal to {@link #LN_STRT_WS_2SLASHES LN_STRT_WS_2SLASHES}{@code + "(.*)$"}</P>
-    **/
-   public static final String LN_STRT_WS_2SLASHES_DOT_STAR = LN_STRT_WS_2SLASHES + "(.*)$";
-   /**
-      <P>The open marker in a Java multi-line comment ({@code "/}{@code *"}) which optionally recognizes JavaDoc blocks ({@code "/}{@code **"}).</P>
+		<P>Equal to {@link #LN_STRT_WS_2SLASHES LN_STRT_WS_2SLASHES}{@code + "(.*)$"}</P>
+	 **/
+	public static final String LN_STRT_WS_2SLASHES_DOT_STAR = LN_STRT_WS_2SLASHES + "(.*)$";
+	/**
+		<P>The open marker in a Java multi-line comment ({@code "/}{@code *"}) which optionally recognizes JavaDoc blocks ({@code "/}{@code **"}).</P>
 
-      @param  java_doc  If {@link IncludeJavaDoc#YES YES}, then JavaDoc blocks (those that start with two asterisks following the slash) are also matched. If {@link IncludeJavaDoc#NO NO}, then JavaDoc blocks are ignored. May not be {@code null}.
-      @return  If<UL>
-         <LI>{@code java_doc.YES}: {@code "(?:/"+"\\*)"}</LI>
-         <LI>{@code java_doc.NO}: {@code "(?:/"+"\\*(?!\\*))"} (a <A HREF="http://www.regular-expressions.info/lookaround.html">negative lookahead</A> for the second asterisk)</LI>
-      </UL>
-    **/
-   public static final String getMultiLineCommentOpenMarkerRegex(IncludeJavaDoc java_doc)  {
-      String s = "(?:/"+"\\*";
-      try  {
-         if(java_doc.isNo())  {
-            s += "(?!\\*)";
-         }
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(java_doc, "java_doc", null, rx);
-      }
-      return  s + ")";
-   }
+		@param  java_doc  If {@link IncludeJavaDoc#YES YES}, then JavaDoc blocks (those that start with two asterisks following the slash) are also matched. If {@link IncludeJavaDoc#NO NO}, then JavaDoc blocks are ignored. May not be {@code null}.
+		@return  If<UL>
+			<LI>{@code java_doc.YES}: {@code "(?:/"+"\\*)"}</LI>
+			<LI>{@code java_doc.NO}: {@code "(?:/"+"\\*(?!\\*))"} (a <A HREF="http://www.regular-expressions.info/lookaround.html">negative lookahead</A> for the second asterisk)</LI>
+		</UL>
+	 **/
+	public static final String getMultiLineCommentOpenMarkerRegex(IncludeJavaDoc java_doc)  {
+		String s = "(?:/"+"\\*";
+		try  {
+			if(java_doc.isNo())  {
+				s += "(?!\\*)";
+			}
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(java_doc, "java_doc", null, rx);
+		}
+		return  s + ")";
+	}
 }

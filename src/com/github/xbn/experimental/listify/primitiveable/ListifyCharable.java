@@ -13,26 +13,26 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.primitiveable;
-   import  com.github.xbn.array.NullContainer;
+	import  com.github.xbn.array.NullContainer;
 /**
-   <P>Listifier whose virtual elements are chars.</P>
+	<P>Listifier whose virtual elements are chars.</P>
 
-   <P><I>All {@code Listify[Type]} are derived from {@link com.github.xbn.experimental.listify.primitiveable.ListifyBoolable ListifyBoolable}. <B>Only edit {@code ListifyBoolable}.</B></I></P>
+	<P><I>All {@code Listify[Type]} are derived from {@link com.github.xbn.experimental.listify.primitiveable.ListifyBoolable ListifyBoolable}. <B>Only edit {@code ListifyBoolable}.</B></I></P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface ListifyCharable extends ListifyPrimitiveable<Character>  {
-   /**
-      <P>Get an element as a {@code char} primitive--{@code null} elements are handled.</P>
+	/**
+		<P>Get an element as a {@code char} primitive--{@code null} elements are handled.</P>
 
-      @return  If  <CODE><I>[{@link com.github.xbn.experimental.listify.Listify Listify}]</I>.{@link com.github.xbn.experimental.listify.Listify#get(int) get}(index)</CODE> is<UL>
-         <LI>non-{@code null}: {@code get(index)}</LI>
-         <LI>{@code null} and {@code <I>[{@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveable super}]</I>.{@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveable#getNullHandlerForPrimitives() getNullHandlerForPrimitives}().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#doUseNonNull() doUseNonNull}()} is {@code true}:  <CODE><I>[super]</I>.getNullHandlerForPrimitives().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#getNonNull() getNonNull}()</CODE></LI>
-         </UL></LI>
-      </UL>
-      @exception  IllegalStateException  If {@code <I>[Listify]</I>.get(index)} is {@code null} and  <CODE><I>[super]</I>.getNullHandlerForPrimitives().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#getAction() getAction}().{@link com.github.xbn.util.copyval.ActionForNull#doCrash() doCrash}()</CODE> or <CODE>getNullHandlerForPrimitives().getAction().{@link com.github.xbn.util.copyval.ActionForNull#doDelete() doDelete}()</CODE> is {@code true}.
-    **/
-   char getChar(int index);
-   char[] getPArrayCopyOrNull(NullContainer nnull);
+		@return  If  <CODE><I>[{@link com.github.xbn.experimental.listify.Listify Listify}]</I>.{@link com.github.xbn.experimental.listify.Listify#get(int) get}(index)</CODE> is<UL>
+			<LI>non-{@code null}: {@code get(index)}</LI>
+			<LI>{@code null} and {@code <I>[{@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveable super}]</I>.{@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveable#getNullHandlerForPrimitives() getNullHandlerForPrimitives}().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#doUseNonNull() doUseNonNull}()} is {@code true}:  <CODE><I>[super]</I>.getNullHandlerForPrimitives().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#getNonNull() getNonNull}()</CODE></LI>
+			</UL></LI>
+		</UL>
+		@exception  IllegalStateException  If {@code <I>[Listify]</I>.get(index)} is {@code null} and  <CODE><I>[super]</I>.getNullHandlerForPrimitives().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#getAction() getAction}().{@link com.github.xbn.util.copyval.ActionForNull#doCrash() doCrash}()</CODE> or <CODE>getNullHandlerForPrimitives().getAction().{@link com.github.xbn.util.copyval.ActionForNull#doDelete() doDelete}()</CODE> is {@code true}.
+	 **/
+	char getChar(int index);
+	char[] getPArrayCopyOrNull(NullContainer nnull);
 }

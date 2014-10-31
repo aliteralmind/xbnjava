@@ -13,76 +13,76 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn;
-   import  java.util.regex.Matcher;
-   import  java.util.regex.Pattern;
-   import  java.util.Arrays;
+	import  java.util.regex.Matcher;
+	import  java.util.regex.Pattern;
+	import  java.util.Arrays;
 /**
-   <P>Translate an int array to a string array, and safely translate it back, by verifying each is indeed a number with a regular expression.</P>
+	<P>Translate an int array to a string array, and safely translate it back, by verifying each is indeed a number with a regular expression.</P>
 
-   <P>java com.github.xbn.examples.lang.non_xbn.IntArrayToStringToIntArray</P>
+	<P>java com.github.xbn.examples.lang.non_xbn.IntArrayToStringToIntArray</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class IntArrayToStringToIntArray  {
-   private static final Pattern pDigits = Pattern.compile("-?\\d+");
-   public static final void main(String[] ignored)  {
+	private static final Pattern pDigits = Pattern.compile("-?\\d+");
+	public static final void main(String[] ignored)  {
 
-      String sArray = Arrays.toString(new int[]{1, 2, -45, 678});
-         System.out.println("---The array: " + sArray);
-         System.out.println(isSafeToConvertToStringedArrayToIntArray(sArray));
-         int[] ai = getIntArrayFromToStringedArray(sArray);
-         for(int i : ai)  {
-            System.out.println(i);
-         }
-         System.out.println();
+		String sArray = Arrays.toString(new int[]{1, 2, -45, 678});
+			System.out.println("---The array: " + sArray);
+			System.out.println(isSafeToConvertToStringedArrayToIntArray(sArray));
+			int[] ai = getIntArrayFromToStringedArray(sArray);
+			for(int i : ai)  {
+				System.out.println(i);
+			}
+			System.out.println();
 
-      sArray = Arrays.toString(new int[]{1});
-         System.out.println("---The array: " + sArray);
-         System.out.println(isSafeToConvertToStringedArrayToIntArray(sArray));
-         ai = getIntArrayFromToStringedArray(sArray);
-         for(int i : ai)  {
-            System.out.println(i);
-         }
-         System.out.println();
+		sArray = Arrays.toString(new int[]{1});
+			System.out.println("---The array: " + sArray);
+			System.out.println(isSafeToConvertToStringedArrayToIntArray(sArray));
+			ai = getIntArrayFromToStringedArray(sArray);
+			for(int i : ai)  {
+				System.out.println(i);
+			}
+			System.out.println();
 
-      sArray = "bogus";
-         System.out.println("---The array: " + sArray);
-         System.out.println(isSafeToConvertToStringedArrayToIntArray(sArray));
-   }
-   //Assumes the string is formatted as if by Arrays.toString(int[])
-   public static final boolean isSafeToConvertToStringedArrayToIntArray(String str_ofInts)  {
-      //Eliminate the surrounding square brackets
-      str_ofInts = str_ofInts.substring(1, str_ofInts.length() - 1);
-      String[] as = str_ofInts.split(", ");
+		sArray = "bogus";
+			System.out.println("---The array: " + sArray);
+			System.out.println(isSafeToConvertToStringedArrayToIntArray(sArray));
+	}
+	//Assumes the string is formatted as if by Arrays.toString(int[])
+	public static final boolean isSafeToConvertToStringedArrayToIntArray(String str_ofInts)  {
+		//Eliminate the surrounding square brackets
+		str_ofInts = str_ofInts.substring(1, str_ofInts.length() - 1);
+		String[] as = str_ofInts.split(", ");
 
-      for(String s : as)  {
-         Matcher m = pDigits.matcher(s);
-         if(!m.matches())  {
-            return  false;
-         }
-      }
+		for(String s : as)  {
+			Matcher m = pDigits.matcher(s);
+			if(!m.matches())  {
+				return  false;
+			}
+		}
 
-      return  true;
-   }
+		return  true;
+	}
 
-   //Assumes the string is formatted as if by Arrays.toString(int[])
-   public static final int[] getIntArrayFromToStringedArray(String str_ofInts)  {
-      //Eliminate the surrounding square brackets
-      str_ofInts = str_ofInts.substring(1, str_ofInts.length() - 1);
+	//Assumes the string is formatted as if by Arrays.toString(int[])
+	public static final int[] getIntArrayFromToStringedArray(String str_ofInts)  {
+		//Eliminate the surrounding square brackets
+		str_ofInts = str_ofInts.substring(1, str_ofInts.length() - 1);
 
-      String[] as = str_ofInts.split(", ");
+		String[] as = str_ofInts.split(", ");
 
-      int[] ai = new int[as.length];
-      for(int i = 0; i < as.length; i++)  {
-         String s = as[i];
-         Matcher m = pDigits.matcher(s);
-         if(m.matches())  {
-            ai[i] = Integer.parseInt(s);
-         }  else  {
-            throw  new IllegalArgumentException("Element " + i + " in str_ofInts is not an int: \"" + s + "\".");
-         }
-      }
-      return  ai;
-   }
+		int[] ai = new int[as.length];
+		for(int i = 0; i < as.length; i++)  {
+			String s = as[i];
+			Matcher m = pDigits.matcher(s);
+			if(m.matches())  {
+				ai[i] = Integer.parseInt(s);
+			}  else  {
+				throw  new IllegalArgumentException("Element " + i + " in str_ofInts is not an int: \"" + s + "\".");
+			}
+		}
+		return  ai;
+	}
 }

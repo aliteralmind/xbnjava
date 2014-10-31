@@ -13,64 +13,64 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.primitiveable;
-   import  com.github.xbn.experimental.listify.AddRemovable;
-   import  com.github.xbn.array.IndexableUtil;
-   import  com.github.xbn.array.NullContainer;
-   import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
-   import  com.github.xbn.experimental.listify.primitiveable.ListifyByteable;
-   import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyPrimitiveable;
-   import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
-   import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
-   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+	import  com.github.xbn.experimental.listify.AddRemovable;
+	import  com.github.xbn.array.IndexableUtil;
+	import  com.github.xbn.array.NullContainer;
+	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
+	import  com.github.xbn.experimental.listify.primitiveable.ListifyByteable;
+	import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyPrimitiveable;
+	import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
+	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
+	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-   <P>Abstract implementation of {@code ListifyByteable}.</P>
+	<P>Abstract implementation of {@code ListifyByteable}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractListifyByteable extends AbstractListifyPrimitiveable<Byte> implements ListifyByteable  {
 //constructors...START
-   @SuppressWarnings("unchecked")
-   public AbstractListifyByteable(Object raw_obj)  {
-      this(raw_obj, SimpleNullHandlerForPrimitives.CRASH);
-   }
-   public AbstractListifyByteable(Object raw_obj, NullHandlerForPrimitives<Byte> null_handler)  {
-      super(raw_obj, AddRemovable.NO, NewPrimitiveArrayHelper.forByte(), (new OneParamCnstrValueCopier<Byte>(Byte.class)), null_handler);
-   }
+	@SuppressWarnings("unchecked")
+	public AbstractListifyByteable(Object raw_obj)  {
+		this(raw_obj, SimpleNullHandlerForPrimitives.CRASH);
+	}
+	public AbstractListifyByteable(Object raw_obj, NullHandlerForPrimitives<Byte> null_handler)  {
+		super(raw_obj, AddRemovable.NO, NewPrimitiveArrayHelper.forByte(), (new OneParamCnstrValueCopier<Byte>(Byte.class)), null_handler);
+	}
 //constructors...END
-   public final byte[] getPArrayCopyOrNull(NullContainer nnull)  {
-      if(getRawObject() == null)  {
-         IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
-         return  null;
-      }
-      byte[] ai = new byte[size()];
-      int j = 0;
-      for(byte i : this)  {
-         ai[j++] = i;
-      }
-      return  ai;
-   }
-   public final Byte[] getEArrayCopyOrNull(NullContainer nnull, byte copy_elements)  {
-      if(getRawObject() == null)  {
-         IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
-         return  null;
-      }
-      Byte[] ao = new Byte[size()];
-      int j = 0;
-      for(Byte I : this)  {
-         ao[j++] = I;
-      }
-      return  ao;
-   }
-   protected final Byte getElementRTXOkay(int index)  {
-      return  getPByte(index);
-   }
+	public final byte[] getPArrayCopyOrNull(NullContainer nnull)  {
+		if(getRawObject() == null)  {
+			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
+			return  null;
+		}
+		byte[] ai = new byte[size()];
+		int j = 0;
+		for(byte i : this)  {
+			ai[j++] = i;
+		}
+		return  ai;
+	}
+	public final Byte[] getEArrayCopyOrNull(NullContainer nnull, byte copy_elements)  {
+		if(getRawObject() == null)  {
+			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
+			return  null;
+		}
+		Byte[] ao = new Byte[size()];
+		int j = 0;
+		for(Byte I : this)  {
+			ao[j++] = I;
+		}
+		return  ao;
+	}
+	protected final Byte getElementRTXOkay(int index)  {
+		return  getPByte(index);
+	}
 /*stub functions for non-abstract compile...START
-   public final java.util.Iterator<Byte> iterator()  {
-      return  null;
-   }
-   public final byte getPByte(int index)  {
-      return  -1;
-   }
+	public final java.util.Iterator<Byte> iterator()  {
+		return  null;
+	}
+	public final byte getPByte(int index)  {
+		return  -1;
+	}
  stub functions for non-abstract compile...END*/
 }

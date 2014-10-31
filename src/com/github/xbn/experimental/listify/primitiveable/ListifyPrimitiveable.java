@@ -13,31 +13,31 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.primitiveable;
-   import  com.github.xbn.array.NullContainer;
-   import  com.github.xbn.experimental.listify.Listify;
-   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
-   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
+	import  com.github.xbn.array.NullContainer;
+	import  com.github.xbn.experimental.listify.Listify;
+	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
 /**
-   <P>Listifier whose virtual elements are primitive wrappers, such as {@code java.lang.Integer}s or {@code java.lang.Boolean}s.</P>
+	<P>Listifier whose virtual elements are primitive wrappers, such as {@code java.lang.Integer}s or {@code java.lang.Boolean}s.</P>
  **/
 public interface ListifyPrimitiveable<E> extends Listify<E>  {
-   /**
-      <P>For obtaining initialized arrays of both the wrapper and primitive type, and basic manipulation and access of the raw object, when it is also a primitive array.</P>
-    **/
-   @Override
-   PrimitiveArrayHelper<E> getArrayHelper();
-   /**
-      <P>Defines how {@code null} elements should be handled when creating new primitive arrays containing the virtual elements.</P>
-    **/
-   NullHandlerForPrimitives<E> getNullHandlerForPrimitives();
-   /**
-      <P>Createa new primitive array containing all virtual elements.</P>
+	/**
+		<P>For obtaining initialized arrays of both the wrapper and primitive type, and basic manipulation and access of the raw object, when it is also a primitive array.</P>
+	 **/
+	@Override
+	PrimitiveArrayHelper<E> getArrayHelper();
+	/**
+		<P>Defines how {@code null} elements should be handled when creating new primitive arrays containing the virtual elements.</P>
+	 **/
+	NullHandlerForPrimitives<E> getNullHandlerForPrimitives();
+	/**
+		<P>Createa new primitive array containing all virtual elements.</P>
 
-      @param  nnull  If the <A HREF="#getRawObject()">raw object</A> is {@code null}, and this parameter is<UL>
-         <LI>non-{@code null}: crash ({@code is_nullCntrOk} is the name of the function calling this one)</LI>
-         <LI>{@code null}: <I><B>return</B></I> {@code null}</LI>
-      </UL>.
-      @see  com.github.xbn.array.IndexableUtil#crashIfContainerIsNullAndThatIsBad(NullContainer, boolean) CrashIfObject#crashIfContainerIsNullAndThatIsBad(nci,b)
-    **/
-   Object getPArrayCopyOrNull(NullContainer nnull);
+		@param  nnull  If the <A HREF="#getRawObject()">raw object</A> is {@code null}, and this parameter is<UL>
+			<LI>non-{@code null}: crash ({@code is_nullCntrOk} is the name of the function calling this one)</LI>
+			<LI>{@code null}: <I><B>return</B></I> {@code null}</LI>
+		</UL>.
+		@see  com.github.xbn.array.IndexableUtil#crashIfContainerIsNullAndThatIsBad(NullContainer, boolean) CrashIfObject#crashIfContainerIsNullAndThatIsBad(nci,b)
+	 **/
+	Object getPArrayCopyOrNull(NullContainer nnull);
 }

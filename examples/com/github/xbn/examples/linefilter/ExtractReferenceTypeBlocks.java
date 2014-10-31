@@ -13,63 +13,63 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-   import  com.github.xbn.linefilter.FilteredLineIterator;
-   import  com.github.xbn.linefilter.Returns;
-   import  com.github.xbn.linefilter.entity.BlockEntity;
-   import  com.github.xbn.linefilter.entity.EntityRequired;
-   import  com.github.xbn.linefilter.entity.KeepMatched;
-   import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
-   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
-   import  java.util.Iterator;
-   import  java.util.regex.Pattern;
+	import  com.github.xbn.linefilter.FilteredLineIterator;
+	import  com.github.xbn.linefilter.Returns;
+	import  com.github.xbn.linefilter.entity.BlockEntity;
+	import  com.github.xbn.linefilter.entity.EntityRequired;
+	import  com.github.xbn.linefilter.entity.KeepMatched;
+	import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
+	import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
+	import  java.util.Iterator;
+	import  java.util.regex.Pattern;
 /**
-   <P>Demonstrates using {@code FilteredLineIterator} to return only the lines in a particular kind of block.</P>
+	<P>Demonstrates using {@code FilteredLineIterator} to return only the lines in a particular kind of block.</P>
 
-   <P>{@code java com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocks examples\com\github\xbn\examples\linefilter\reference_type_through_attachment_blocks_input.txt}</P>
+	<P>{@code java com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocks examples\com\github\xbn\examples\linefilter\reference_type_through_attachment_blocks_input.txt}</P>
 
-   @see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic</A></CODE>
-   @since  0.1.2
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic</A></CODE>
+	@since  0.1.2
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ExtractReferenceTypeBlocks  {
-   public static final void main(String[] params)  {
-      //Example setup
-         Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
-            params, 0,
-            null);   //debugPath
+	public static final void main(String[] params)  {
+		//Example setup
+			Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
+				params, 0,
+				null);   //debugPath
 
-      //Example proper:
+		//Example proper:
 
-      BlockEntity block = NewBlockEntityFor.lineRange(null,
-         KeepMatched.YES, EntityRequired.YES,
-         Pattern.compile("^Reference Type: +"), null,
-            null,          //dbgStart (on:System.out, off:null)
-         Pattern.compile("^'File' Attachments: +"), null,
-            null,          //dbgEnd
-         null,
-            null);         //dbgLineNums
+		BlockEntity block = NewBlockEntityFor.lineRange(null,
+			KeepMatched.YES, EntityRequired.YES,
+			Pattern.compile("^Reference Type: +"), null,
+				null,          //dbgStart (on:System.out, off:null)
+			Pattern.compile("^'File' Attachments: +"), null,
+				null,          //dbgEnd
+			null,
+				null);         //dbgLineNums
 
-      FilteredLineIterator filteredItr = new FilteredLineIterator(
-         rawInputLineItr, Returns.KEPT,
-            null, null,    //dbgEveryLine and its line-range
-         block);
+		FilteredLineIterator filteredItr = new FilteredLineIterator(
+			rawInputLineItr, Returns.KEPT,
+				null, null,    //dbgEveryLine and its line-range
+			block);
 
-      StringBuilder allBlockTextBldr = new StringBuilder();
+		StringBuilder allBlockTextBldr = new StringBuilder();
 
-      final String LINE_SEP = System.getProperty("line.separator", "\r\n");
+		final String LINE_SEP = System.getProperty("line.separator", "\r\n");
 
-      while(filteredItr.hasNext())  {
-         String nextKeptLine = filteredItr.next();
+		while(filteredItr.hasNext())  {
+			String nextKeptLine = filteredItr.next();
 
-         if(!filteredItr.getRootBlock().isActive())  {
-            continue;
-         }
+			if(!filteredItr.getRootBlock().isActive())  {
+				continue;
+			}
 
-         System.out.println("--BLOCK FOUND:");
+			System.out.println("--BLOCK FOUND:");
 
-         filteredItr.appendAllBlockLines(System.out, nextKeptLine, null, null);
+			filteredItr.appendAllBlockLines(System.out, nextKeptLine, null, null);
 
-         System.out.println();
-      }  //End snippet
-   }
+			System.out.println();
+		}  //End snippet
+	}
 }

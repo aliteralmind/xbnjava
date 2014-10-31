@@ -15,38 +15,38 @@
 package  com.github.xbn.io;
 
 /**
-   <P>Runtime-wrapper for {@code java.io.IOException}-s.</P>
+	<P>Runtime-wrapper for {@code java.io.IOException}-s.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RTIOException extends RuntimeException  {
 
-   /**
-    * 
-    */
-   private static final long serialVersionUID = 1563847492924544988L;
-   /**
-      <P>Create an RTIOException with no error message.</P>
-    **/
-   public RTIOException()  {
-   }
-   /**
-      <P>Create an RTIOException.</P>
-    **/
-   public RTIOException(String message)  {
-      super(message);
-   }
-   /**
-      <P>Create an RTIOException with no error message.</P>
-    **/
-   public RTIOException(Throwable cause)  {
-      super(cause);
-   }
-   /**
-      <P>Create an RTIOException.</P>
-    **/
-   public RTIOException(String message, Throwable cause)  {
-      super(message, cause);
-   }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1563847492924544988L;
+	/**
+		<P>Create an RTIOException with no error message.</P>
+	 **/
+	public RTIOException()  {
+	}
+	/**
+		<P>Create an RTIOException.</P>
+	 **/
+	public RTIOException(String message)  {
+		super(message);
+	}
+	/**
+		<P>Create an RTIOException with no error message.</P>
+	 **/
+	public RTIOException(Throwable cause)  {
+		super(cause);
+	}
+	/**
+		<P>Create an RTIOException.</P>
+	 **/
+	public RTIOException(String message, Throwable cause)  {
+		super(message, cause);
+	}
 }

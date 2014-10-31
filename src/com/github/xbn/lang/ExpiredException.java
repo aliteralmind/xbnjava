@@ -16,24 +16,24 @@ package  com.github.xbn.lang;
 /**
    <P>Indicates an expirable object is expired and may not be.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public class ExpiredException extends IllegalArgumentException  {
    /**
-    * 
-    */
-   private static final long serialVersionUID = -2909315108071342617L;
+	 * 
+	 */
+	private static final long serialVersionUID = -2909315108071342617L;
 public ExpiredException()  {
-   }
+	}
    public ExpiredException(String message)  {
-      super(message);
-   }
+		super(message);
+	}
    public ExpiredException(Throwable cause)  {
-      super(cause);
-   }
+		super(cause);
+	}
    public ExpiredException(String message, Throwable cause)  {
-      super(message, cause);
-   }
+		super(message, cause);
+	}
 }

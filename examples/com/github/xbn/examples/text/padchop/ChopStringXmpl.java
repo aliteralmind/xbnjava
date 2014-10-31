@@ -13,42 +13,42 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.text.padchop;
-   import  com.github.xbn.text.padchop.ChopString;
-   import  com.github.xbn.text.padchop.z.ChopString_Cfg;
+	import  com.github.xbn.text.padchop.ChopString;
+	import  com.github.xbn.text.padchop.z.ChopString_Cfg;
 /**
-   <P>Demonstration of {@code com.github.xbn.text.padchop.}{@link com.github.xbn.text.padchop.ChopString ChopString}.</P>
+	<P>Demonstration of {@code com.github.xbn.text.padchop.}{@link com.github.xbn.text.padchop.ChopString ChopString}.</P>
 
-   <P>{@code java com.github.xbn.examples.text.padchop.ChopStringXmpl}</P>
+	<P>{@code java com.github.xbn.examples.text.padchop.ChopStringXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ChopStringXmpl  {
-   public static final void main(String[] ignored)  {
-                        //28 characters
-      String sToChop = "Hi Ho! Kermit The Frog here.";
-         System.out.println("Original: \"" + sToChop + "\"");
-         System.out.println();
+	public static final void main(String[] ignored)  {
+								//28 characters
+		String sToChop = "Hi Ho! Kermit The Frog here.";
+			System.out.println("Original: \"" + sToChop + "\"");
+			System.out.println();
 
-      System.out.println("--Chop to 20 characters (original " + sToChop.length() + ")");
+		System.out.println("--Chop to 20 characters (original " + sToChop.length() + ")");
 
-         ChopString cs = new ChopString_Cfg(20).build();
-         System.out.println(cs.getChopped(sToChop));
-         System.out.println();
+			ChopString cs = new ChopString_Cfg(20).build();
+			System.out.println(cs.getChopped(sToChop));
+			System.out.println();
 
-      System.out.println("--With ellipsis:");
+		System.out.println("--With ellipsis:");
 
-         new ChopString_Cfg(20).ddd().build().
-            appendChoppedlns(2, System.out, sToChop);
+			new ChopString_Cfg(20).ddd().build().
+				appendChoppedlns(2, System.out, sToChop);
 
-      System.out.println("--Hanging ellipsis:");
+		System.out.println("--Hanging ellipsis:");
 
-         new ChopString_Cfg(20).ddd().maxOverhang().build().
-            appendChoppedlns(2, System.out, sToChop);
+			new ChopString_Cfg(20).ddd().maxOverhang().build().
+				appendChoppedlns(2, System.out, sToChop);
 
-      System.out.println("--Custom (and flush) ellipsis:");
+		System.out.println("--Custom (and flush) ellipsis:");
 
-         new ChopString_Cfg(20).ddd("~~~").noOverhang().build().
-            appendChoppedlns(2, System.out, sToChop);
-   }
+			new ChopString_Cfg(20).ddd("~~~").noOverhang().build().
+				appendChoppedlns(2, System.out, sToChop);
+	}
 }

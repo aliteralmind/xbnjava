@@ -13,40 +13,40 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang;
-   import  com.github.xbn.testdev.CompositionConstructor;
-   import  com.github.xbn.testdev.CompositionFunction;
+	import  com.github.xbn.testdev.CompositionConstructor;
+	import  com.github.xbn.testdev.CompositionFunction;
 /**
-   <P>For classes that need to implement {@code ExtraErrInfoable}, that cannot extend concrete or abstract implementations.</P>
+	<P>For classes that need to implement {@code ExtraErrInfoable}, that cannot extend concrete or abstract implementations.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class ExtraErrInfoableComposer  {
-   private Object oXtrNfo = null;
-   @CompositionConstructor
-   public ExtraErrInfoableComposer()  {
-   }
-   public ExtraErrInfoableComposer(boolean ignored, ExtraErrInfoableComposer to_copy)  {
-      oXtrNfo = to_copy.getExtraErrInfo();
-   }
-   @CompositionConstructor
-   public ExtraErrInfoableComposer(ExtraErrInfoable cfxi_toCopy)  {
-      try  {
-         oXtrNfo = cfxi_toCopy.getExtraErrInfo();
-      }  catch(RuntimeException rx)  {
-         throw  CrashIfObject.nullOrReturnCause(cfxi_toCopy, "cfxi_toCopy", null, rx);
-      }
-   }
-   @CompositionFunction
-   public Object getExtraErrInfo()  {
-      return  oXtrNfo;
-   }
-   @CompositionFunction
-   public ExtraErrInfoableComposer extraErrInfo(Object xtra_errInfo)  {
-      setExtraErrInfo(xtra_errInfo);
-      return this;
-   }
-   public void setExtraErrInfo(Object xtra_errInfo)  {
-      oXtrNfo = xtra_errInfo;
-   }
+	private Object oXtrNfo = null;
+	@CompositionConstructor
+	public ExtraErrInfoableComposer()  {
+	}
+	public ExtraErrInfoableComposer(boolean ignored, ExtraErrInfoableComposer to_copy)  {
+		oXtrNfo = to_copy.getExtraErrInfo();
+	}
+	@CompositionConstructor
+	public ExtraErrInfoableComposer(ExtraErrInfoable cfxi_toCopy)  {
+		try  {
+			oXtrNfo = cfxi_toCopy.getExtraErrInfo();
+		}  catch(RuntimeException rx)  {
+			throw  CrashIfObject.nullOrReturnCause(cfxi_toCopy, "cfxi_toCopy", null, rx);
+		}
+	}
+	@CompositionFunction
+	public Object getExtraErrInfo()  {
+		return  oXtrNfo;
+	}
+	@CompositionFunction
+	public ExtraErrInfoableComposer extraErrInfo(Object xtra_errInfo)  {
+		setExtraErrInfo(xtra_errInfo);
+		return this;
+	}
+	public void setExtraErrInfo(Object xtra_errInfo)  {
+		oXtrNfo = xtra_errInfo;
+	}
 }

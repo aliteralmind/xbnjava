@@ -124,14 +124,14 @@ class NullnessValidator<O> extends AbstractValidator implements ValueValidator<O
    }
 }
 public class DemonstrateVVNullInheritOnly  {
-   public static final void main(String[] ignored)  {
-      NullnessValidator<String> strNotNullVldtr = new NullnessValidator<String>(Null.BAD);
-      System.out.println("null is valid? " + strNotNullVldtr.isValid(null));
+	public static final void main(String[] ignored)  {
+		NullnessValidator<String> strNotNullVldtr = new NullnessValidator<String>(Null.BAD);
+		System.out.println("null is valid? " + strNotNullVldtr.isValid(null));
 
-      strNotNullVldtr.resetState();
+		strNotNullVldtr.resetState();
 
-      System.out.println("\"hello\" is valid? " + strNotNullVldtr.isValid("hello"));
+		System.out.println("\"hello\" is valid? " + strNotNullVldtr.isValid("hello"));
 
-      System.out.println("strNotNullVldtr.toString(): " + strNotNullVldtr.toString());
-   }
+		System.out.println("strNotNullVldtr.toString(): " + strNotNullVldtr.toString());
+	}
 }

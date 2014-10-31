@@ -13,58 +13,58 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity;
-   import  com.github.xbn.analyze.alter.AlterationRequired;
-   import  com.github.xbn.lang.CrashIfObject;
-   import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
-   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
-   import  com.github.xbn.linefilter.entity.z.SingleLineEntity_Cfg;
-   import  com.github.xbn.regexutil.NewPatternFor;
-   import  com.github.xbn.regexutil.ReplacedInEachInput;
-   import  java.util.regex.Pattern;
+	import  com.github.xbn.analyze.alter.AlterationRequired;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.linefilter.alter.NewTextLineAltererFor;
+	import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
+	import  com.github.xbn.linefilter.entity.z.SingleLineEntity_Cfg;
+	import  com.github.xbn.regexutil.NewPatternFor;
+	import  com.github.xbn.regexutil.ReplacedInEachInput;
+	import  java.util.regex.Pattern;
 /**
-   <P>Convenience functions for creating {@code SingleLineEntity}s.</P>
+	<P>Convenience functions for creating {@code SingleLineEntity}s.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NewSingleLineEntityFor  {
-   public static final SingleLineEntity match(String name_ifNonNull, KeepMatched keep, EntityRequired required, Pattern pattern_toFind, Appendable dbgAlter_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
-      try  {
-         return  new SingleLineEntity_Cfg(name_ifNonNull).
-            alterer(NewTextLineAltererFor.textValidateOnly(pattern_toFind,
-               null, dbgAlter_ifNonNull)).
-            keepMatchedLines(keep.isYes()).
-            filter(filter_ifNonNull).debugLineNumbers(dbgLineNums_ifNonNull).
-            required(required.isYes()).
-            build();
-      }  catch(RuntimeException rx)  {
-         CrashIfObject.nnull(required, "required", null);
-         throw  CrashIfObject.nullOrReturnCause(keep, "keep", null, rx);
-      }
-   }
+	public static final SingleLineEntity match(String name_ifNonNull, KeepMatched keep, EntityRequired required, Pattern pattern_toFind, Appendable dbgAlter_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
+		try  {
+			return  new SingleLineEntity_Cfg(name_ifNonNull).
+				alterer(NewTextLineAltererFor.textValidateOnly(pattern_toFind,
+					null, dbgAlter_ifNonNull)).
+				keepMatchedLines(keep.isYes()).
+				filter(filter_ifNonNull).debugLineNumbers(dbgLineNums_ifNonNull).
+				required(required.isYes()).
+				build();
+		}  catch(RuntimeException rx)  {
+			CrashIfObject.nnull(required, "required", null);
+			throw  CrashIfObject.nullOrReturnCause(keep, "keep", null, rx);
+		}
+	}
 
-   public static final SingleLineEntity literalReplacement(String name_ifNonNull, KeepMatched keep, EntityRequired required, String find_what, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgAlter_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
-      return  replacement(name_ifNonNull, keep, required,
-         NewPatternFor.literal(find_what, "find_what"),
-         rplc_with, rplcs_what, dbgAlter_ifNonNull,
-         filter_ifNonNull, dbgLineNums_ifNonNull);
-   }
-   public static final SingleLineEntity replacement(String name_ifNonNull, KeepMatched keep, EntityRequired required, Pattern ptrn_findWhat, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgAlter_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
-      try  {
-         return  new SingleLineEntity_Cfg(name_ifNonNull).
-            alterer(NewTextLineAltererFor.replacement(
-               AlterationRequired.getForBoolean(required.isYes()),
-               ptrn_findWhat, rplc_with, rplcs_what,
-               dbgAlter_ifNonNull, null)).
-            keepMatchedLines(keep.isYes()).
-            filter(filter_ifNonNull).debugLineNumbers(dbgLineNums_ifNonNull).
-            required(required.isYes()).build();
-      }  catch(RuntimeException rx)  {
-         CrashIfObject.nnull(required, "required", null);
-         throw  CrashIfObject.nullOrReturnCause(keep, "keep", null, rx);
-      }
-   }
-   private NewSingleLineEntityFor()  {
-      throw  new IllegalStateException("Do not instantiate.");
-   }
+	public static final SingleLineEntity literalReplacement(String name_ifNonNull, KeepMatched keep, EntityRequired required, String find_what, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgAlter_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
+		return  replacement(name_ifNonNull, keep, required,
+			NewPatternFor.literal(find_what, "find_what"),
+			rplc_with, rplcs_what, dbgAlter_ifNonNull,
+			filter_ifNonNull, dbgLineNums_ifNonNull);
+	}
+	public static final SingleLineEntity replacement(String name_ifNonNull, KeepMatched keep, EntityRequired required, Pattern ptrn_findWhat, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgAlter_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
+		try  {
+			return  new SingleLineEntity_Cfg(name_ifNonNull).
+				alterer(NewTextLineAltererFor.replacement(
+					AlterationRequired.getForBoolean(required.isYes()),
+					ptrn_findWhat, rplc_with, rplcs_what,
+					dbgAlter_ifNonNull, null)).
+				keepMatchedLines(keep.isYes()).
+				filter(filter_ifNonNull).debugLineNumbers(dbgLineNums_ifNonNull).
+				required(required.isYes()).build();
+		}  catch(RuntimeException rx)  {
+			CrashIfObject.nnull(required, "required", null);
+			throw  CrashIfObject.nullOrReturnCause(keep, "keep", null, rx);
+		}
+	}
+	private NewSingleLineEntityFor()  {
+		throw  new IllegalStateException("Do not instantiate.");
+	}
 }

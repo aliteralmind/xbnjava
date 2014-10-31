@@ -13,23 +13,23 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.number;
-   import  com.github.xbn.number.Fraction;
+	import  com.github.xbn.number.Fraction;
 /**
-   <P>Demonstrates {@code number.}{@link com.github.xbn.number.Fraction Fraction}.</P>
+	<P>Demonstrates {@code number.}{@link com.github.xbn.number.Fraction Fraction}.</P>
 
-   <P>{@code java com.github.xbn.examples.number.FractionXmpl}</P>
+	<P>{@code java com.github.xbn.examples.number.FractionXmpl}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class FractionXmpl  {
-   public static final void main(String[] ignored)  {
-      System.out.print("Parse string 5/10: Reduced to ");
-         Fraction f = new Fraction("5/10");
-         System.out.println(f.toString());
+	public static final void main(String[] ignored)  {
+		System.out.print("Parse string 5/10: Reduced to ");
+			Fraction f = new Fraction("5/10");
+			System.out.println(f.toString());
 
-      System.out.print("Parse numerator 5, denominator 10: ");
-         f = new Fraction(5, 10);
-         System.out.println(f.toString());
-   }
+		System.out.print("Parse numerator 5, denominator 10: ");
+			f = new Fraction(5, 10);
+			System.out.println(f.toString());
+	}
 }

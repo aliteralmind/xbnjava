@@ -13,31 +13,31 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number.z;
-   import  com.github.xbn.number.NumberInRange;
-   import  com.github.xbn.number.NumberInRangeValidator;
-   import  com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder;
-   import  com.github.xbn.neederneedable.Needer;
+	import  com.github.xbn.number.NumberInRange;
+	import  com.github.xbn.number.NumberInRangeValidator;
+	import  com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder;
+	import  com.github.xbn.neederneedable.Needer;
 /**
-   <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.number.NumberInRangeValidator}.</P>
+	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.number.NumberInRangeValidator}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NumberInRangeValidator_CfgForNeeder<N extends Number,G extends NumberInRange<N>,V extends NumberInRangeValidator<N>, R extends Needer> extends ValueValidator_CfgForNeeder<N,V,R> implements NumberInRangeValidator_Fieldable<N,G>  {
-   public G nir = null;
-   /**
-      <P>YYY</P>
+	public G nir = null;
+	/**
+		<P>YYY</P>
 
-         <LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRangeValidator_CfgForNeeder.html#NumberInRangeValidator_CfgForNeeder(boolean, boolean, R)">super</A>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</CODE></LI>
+			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRangeValidator_CfgForNeeder.html#NumberInRangeValidator_CfgForNeeder(boolean, boolean, R)">super</A>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</CODE></LI>
 
-    **/
-   public NumberInRangeValidator_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
-      super(is_avaliableToNeeders, is_neededUseableAtInit, needer);
-   }
-   public G getRange()  {
-      return  nir;
-   }
-   public String toString()  {
-      return  super.toString() + ", getRange()=[" + getRange() + "]";
-   }
+	 **/
+	public NumberInRangeValidator_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
+		super(is_avaliableToNeeders, is_neededUseableAtInit, needer);
+	}
+	public G getRange()  {
+		return  nir;
+	}
+	public String toString()  {
+		return  super.toString() + ", getRange()=[" + getRange() + "]";
+	}
 }

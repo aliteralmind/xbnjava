@@ -14,35 +14,35 @@
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn.basic;
 /**
-   <P>Demonstrates constructor parameters in an Enum.</P>
+	<P>Demonstrates constructor parameters in an Enum.</P>
 
-   <P>{@code java com.github.xbn.examples.lang.non_xbn.basic.EnumWithCnstrParams}</P>
+	<P>{@code java com.github.xbn.examples.lang.non_xbn.basic.EnumWithCnstrParams}</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class EnumWithCnstrParams  {
-   public static final void main(String[] ignored)  {
-      System.out.println("BOX: " + eShape.BOX.getSize());
-      System.out.println("GRID: " + eShape.GRID.getSize());
-      System.out.println("GAME: " + eShape.GAME.getSize());
-   }
+	public static final void main(String[] ignored)  {
+		System.out.println("BOX: " + eShape.BOX.getSize());
+		System.out.println("GRID: " + eShape.GRID.getSize());
+		System.out.println("GAME: " + eShape.GAME.getSize());
+	}
 }
 interface ShapeConstants  {
-   int iBOX_PXLS = 5;
-   int iGRID_BOXES = 30;
+	int iBOX_PXLS = 5;
+	int iGRID_BOXES = 30;
 }
 enum eShape implements ShapeConstants  {
-   BOX(iBOX_PXLS),
-   GRID(iGRID_BOXES),
-   GAME(iBOX_PXLS * iGRID_BOXES);
+	BOX(iBOX_PXLS),
+	GRID(iGRID_BOXES),
+	GAME(iBOX_PXLS * iGRID_BOXES);
 
-   private final int iSz;
+	private final int iSz;
 
-   eShape(int size)  {
-      iSz = size;
-   }
-   public final int getSize()  {
-      return  iSz;
-   }
+	eShape(int size)  {
+		iSz = size;
+	}
+	public final int getSize()  {
+		return  iSz;
+	}
 }

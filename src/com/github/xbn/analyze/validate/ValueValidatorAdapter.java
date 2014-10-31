@@ -13,39 +13,39 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate;
-   import  com.github.xbn.lang.SimpleAdapter;
-   import  com.github.xbn.lang.RuleType;
-   import  com.github.xbn.analyze.validate.z.ValueValidator_Fieldable;
-   import  com.github.xbn.lang.Adapter;
+	import  com.github.xbn.lang.SimpleAdapter;
+	import  com.github.xbn.lang.RuleType;
+	import  com.github.xbn.analyze.validate.z.ValueValidator_Fieldable;
+	import  com.github.xbn.lang.Adapter;
 /**
    <P>Makes anything behave like a <CODE>ValueValidator</CODE>.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
 
  **/
 public abstract class ValueValidatorAdapter<O,D> extends NullnessValidator<O> implements Adapter<D>, ValueValidator<O>  {
-   private final SimpleAdapter<D> sa;
-   protected ValueValidatorAdapter(D to_adapt, ValueValidator_Fieldable fieldable)  {
-      super(fieldable);
-      sa = new SimpleAdapter<D>(to_adapt, "to_adapt");
-   }
-   protected ValueValidatorAdapter(D to_adapt, RuleType type, ValueValidator_Fieldable fieldable)  {
-      super(type, fieldable);
-      sa = new SimpleAdapter<D>(to_adapt, "to_adapt");
-   }
+	private final SimpleAdapter<D> sa;
+	protected ValueValidatorAdapter(D to_adapt, ValueValidator_Fieldable fieldable)  {
+		super(fieldable);
+		sa = new SimpleAdapter<D>(to_adapt, "to_adapt");
+	}
+	protected ValueValidatorAdapter(D to_adapt, RuleType type, ValueValidator_Fieldable fieldable)  {
+		super(type, fieldable);
+		sa = new SimpleAdapter<D>(to_adapt, "to_adapt");
+	}
 
-   public ValueValidatorAdapter(ValueValidatorAdapter<O,D> to_copy)  {
-      super(to_copy);
-      sa = new SimpleAdapter<D>(to_copy.sa);
-   }
-   public D getAdapted()  {
-      return  sa.getAdapted();
-   }
-   public String toString()  {
-      return  appendToString(new StringBuilder()).toString();
-   }
-   public StringBuilder appendToString(StringBuilder to_appendTo)  {
-      return  sa.appendToString(to_appendTo);
-   }
+	public ValueValidatorAdapter(ValueValidatorAdapter<O,D> to_copy)  {
+		super(to_copy);
+		sa = new SimpleAdapter<D>(to_copy.sa);
+	}
+	public D getAdapted()  {
+		return  sa.getAdapted();
+	}
+	public String toString()  {
+		return  appendToString(new StringBuilder()).toString();
+	}
+	public StringBuilder appendToString(StringBuilder to_appendTo)  {
+		return  sa.appendToString(to_appendTo);
+	}
 }

@@ -13,47 +13,47 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil.z;
-   import  com.github.xbn.regexutil.RegexTokenizer;
-   import  java.util.regex.Pattern;
-   import  com.github.xbn.neederneedable.DummyForNoNeeder;
+	import  com.github.xbn.regexutil.RegexTokenizer;
+	import  java.util.regex.Pattern;
+	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.regexutil.RegexReplacer RegexReplacer}.</P>
+	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.regexutil.RegexReplacer RegexReplacer}.</P>
 
-   @since 0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@since 0.1.0
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 /**
-   <P>. For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link RegexTokenizer}.</P>
+	<P>. For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link RegexTokenizer}.</P>
  **/
 public class RegexTokenizer_Cfg extends RegexTokenizer_CfgForNeeder<RegexTokenizer,DummyForNoNeeder>  {
-   public RegexTokenizer_Cfg()  {
-      super(false, true, null);
-   }
-   public RegexTokenizer_Cfg(Pattern separator_regex)  {
-      super(false, true, null);
-      separator(separator_regex);
-   }
-   public RegexTokenizer_Cfg(Pattern separator_regex, String to_tokenize)  {
-      super(false, true, null);
-      separator(separator_regex);
-      toTokenize(to_tokenize);
-   }
-   public RegexTokenizer_Cfg(String separator_regex)  {
-      super(false, true, null);
-      separator(separator_regex);
-   }
-   public RegexTokenizer_Cfg(String separator_regex, String to_tokenize)  {
-      super(false, true, null);
-      separator(separator_regex);
-      toTokenize(to_tokenize);
-   }
-   public RegexTokenizer_Cfg(String separator_regex, int bit_flags)  {
-      super(false, true, null);
-      separator(separator_regex, bit_flags);
-   }
-   public RegexTokenizer_Cfg(String separator_regex, int bit_flags, String to_tokenize)  {
-      super(false, true, null);
-      separator(separator_regex, bit_flags);
-      toTokenize(to_tokenize);
-   }
+	public RegexTokenizer_Cfg()  {
+		super(false, true, null);
+	}
+	public RegexTokenizer_Cfg(Pattern separator_regex)  {
+		super(false, true, null);
+		separator(separator_regex);
+	}
+	public RegexTokenizer_Cfg(Pattern separator_regex, String to_tokenize)  {
+		super(false, true, null);
+		separator(separator_regex);
+		toTokenize(to_tokenize);
+	}
+	public RegexTokenizer_Cfg(String separator_regex)  {
+		super(false, true, null);
+		separator(separator_regex);
+	}
+	public RegexTokenizer_Cfg(String separator_regex, String to_tokenize)  {
+		super(false, true, null);
+		separator(separator_regex);
+		toTokenize(to_tokenize);
+	}
+	public RegexTokenizer_Cfg(String separator_regex, int bit_flags)  {
+		super(false, true, null);
+		separator(separator_regex, bit_flags);
+	}
+	public RegexTokenizer_Cfg(String separator_regex, int bit_flags, String to_tokenize)  {
+		super(false, true, null);
+		separator(separator_regex, bit_flags);
+		toTokenize(to_tokenize);
+	}
 }
