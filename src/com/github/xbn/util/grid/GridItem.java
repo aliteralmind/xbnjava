@@ -79,4 +79,20 @@ public class GridItem<O>  {
 		return  "[" + getHorizIndex() + ", " + getVertIndex() + "]=" +
 			StringUtilBase.getChopped(Trim.YES, get(), 50, "...");
 	}
+
+	public GridDirection getHorizVertDirection(GridDirection direction)  {
+		boolean isHorizLessThanVert = (getHorizIndex() < getVertIndex());
+		try  {
+			switch(direction)  {
+				case UP_LEFT:     return  (isHorizLessThanVert ? UP : LEFT);
+				case UP_RIGHT:    return  (isHorizLessThanVert ? UP : RIGHT);
+				case DOWN_LEFT:   return  (isHorizLessThanVert ? DOWN : LEFT);
+				case DOWN_RIGHT:  return  (isHorizLessThanVert ? DOWN : RIGHT);
+				default:          return  direction;
+			}
+		}  catch(NullPointerException npx)  {
+			throw  new NullPointerException("direction");
+		}
+	}
+
 }

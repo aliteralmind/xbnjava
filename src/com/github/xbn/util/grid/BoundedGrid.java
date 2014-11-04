@@ -18,8 +18,8 @@ package  com.github.xbn.util;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  java.util.Arrays;
 /**
- * <p>For traversing a double-array of {@code GridItem}s, and determining
- * how many neighbors exist between an item and an edge.</p>
+ * <p>For traversing the elements in a rectangular double-array, in any
+ * direction: up, down, left, right, up-left, up-right, down-left, down-right.</p>
  *
  * @see  GridItem
  * @since  0.1.4.2
@@ -31,8 +31,10 @@ public class BoundedGrid<O>  {
 	/**
 	 * <p>Create a new instance from a double-array of items.</p>
 	 *
-	 * @param  items  The items. May not be <code>null</code>, and each sub-array must be non-<code>null</code> and the same length. All arrays are duplicated internally, but the item-elements are not.
-	 * Get with {@link #getItems()}.
+	 * @param  items  The items. May not be <code>null</code>, and each
+	 * sub-array must be non-<code>null</code> and the same length. All
+	 * arrays are duplicated internally, but the item-elements are not. Get
+	 * with {@link #getItems()}.
 	 */
 	public BoundedGrid(GridItem<O> items)  {
 		int len = -1;
@@ -89,17 +91,15 @@ public class BoundedGrid<O>  {
 	 * given {@link #getHorizLength()}{@code ()}.
 	 * @param  vert_idx  The index of the sub-array within the overall array.
 	 * Must be valid given {@link #getVertLength()}{@code ()}.
-	 * @return  <code>items[horiz_idx, vert_idx]</code>, where <code>items</code>
+	 * @return  <code>items[horiz_idx][vert_idx]</code>, where <code>items</code>
 	 * is as provided to the
 	 * {@link #BoundedGrid(com.github.xbn.util.grid.GridItem<O>) constructor}.
 	 */
 	public GridItem<O> get(int horiz_idx, int vert_idx)  {
 		try  {
-			return  items[horiz_idx, vert_idx];
+			return  items[horiz_idx][vert_idx];
 		}  catch(ArrayIndexOutOfBoundsException abx)  {
-			throw  new ArrayIndexOutOfBoundsException("getItems().length=" +
-				getItems().length + ", horiz_idx=" + horiz_idx + ", vert_idx=" +
-				vert_idx);
+			throw  new ArrayIndexOutOfBoundsException("Invalid coordinate: horiz_idx=" + horiz_idx + ", vert_idx=" + vert_idx + ", getHorizLength()=" + getHorizLength() + ", getVertLength()=" + getVertLength());
 		}
 	}
 	public boolean isValidCoordinate(int horiz_idx, int vert_idx)  {
@@ -107,51 +107,42 @@ public class BoundedGrid<O>  {
 			0 <= vert_idx  &&  vert_idx < getVertLength());
 	}
 	/**
-	 * How many neighbor items are there between <i>this</i> item and the
-	 * grid's edge?.
+	 * How many neighbors are there between an item and the grid's edge, in
+	 * the given direction?.
+	 * @param   direction May not be <code>null</code>.
+	 * @return  <code>getHorizVertNeighborCountFor(dirHorizVert)</code>
+	 * <br/>Where <code>dirHorizVert</code> is equal to
+	 * <br> &nbsp; &nbsp; <code>{@link #getItem(int, int)}(horiz_idx, vert_idx).{@link GridItem#getHorizVertDirectionForItem(com.github.xbn.util.grid.GridDirection)}(direction)</code>
+	 */
+	public int getNeighborCount(int horiz_idx, int vert_idx, GridDirection direction)  {
+		dirHorizVert = getItem(horiz_idx, vert_idx).getHorizVertDirectionForItem(direction);
+		return  getHorizVertNeighborCountFor(dirHorizVert);
+	}
+	/**
+	 * How many neighbors are there between an item and the grid's edge, in
+	 * the given <i>horizontal or vertical</i> direction?.
+	 *
 	 * @param  horiz_idx  The index of the element within a sub-array.
 	 * Must be a valid index given {@link #getVertLength()}{@code ()}.
 	 * @param  vert_idx   The index of the sub-array within the overall
 	 * array. Must be a valid index given {@link #getVertLength()}{@code ()}.
-	 * @param   direction May not be <code>null</code>.
-	 * @return  The number of items between this one and the edge, not
-	 * including this one.
+	 * @param  direction The direction to search. May not be <code>null</code>,
+	 * and must be {@link GridDirection.UP UP}, {@link GridDirection.DOWN DOWN},
+	 * {@link GridDirection.LEFT LEFT}, or {@link GridDirection.RIGHT RIGHT}.
+	 * @return  The number of items between the item and the edge, not
+	 * including the item itself.
+	 * @see  #getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection)
 	 */
-	public int getNeighborCount(int horiz_idx, int vert_idx, GridDirection direction)  {
-		if(!isValidCoordinate(horiz_idx, vert_idx))  {
-			throw  new IllegalArgumentException("Invalid coordinate. horiz_idx=" + horiz_idx + ", vert_idx=" + vert_idx + ", getHorizLength()=" + getHorizLength() + ", getVertLength()=" + getVertLength());
+	public int getHorizVertNeighborCountFor(int horiz_idx, int vert_idx,
+				GridDirection direction)  {
+		switch(dirHorizVert)  {
+			case UP:  return  vert_idx;
+			case DOWN: return  (getVertLength() - vert_idx + 1);
+			case LEFT: return  horiz_idx;
+			case RIGHT: return  (getHorizLength() - horiz_idx + 1);
 		}
-		try  {
-			switch(direction)  {
-				case UP:  return  vert_idx;
-				case DOWN: return  (getVertLength() - vert_idx + 1);
-				case LEFT: return  horiz_idx;
-				case RIGHT: return  (getHorizLength() - horiz_idx + 1);
-				case UP_LEFT:
-				default:
-			}
-		}  catch(NullPointerException npx)  {
-			throw  new NullPointerException("direction");
-		}
-
-		if(direction.isDown())  {
-			;
-		}
-
-		if(direction.isLeft())  {
-			return  horiz_idx;
-		}
-
-		if
-	}
-	public final int getNeighborCount(int horiz_idx, int vert_idx)  {
-		if(isHorizontal())  {
-			return  (horiz_idx + getHorizIncrement());
-		}  else if(isVertical())  {
-			return  (vert_idx + getVertIncrement());
-		}
-		//Diagonal
-
+		throw  new IllegalArgumentException("direction (" + direction +
+			") must be UP, DOWN, LEFT, or RIGHT.");
 	}
 	/**
 	 * Get a grid item that is next to another.

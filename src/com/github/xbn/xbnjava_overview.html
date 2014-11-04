@@ -34,14 +34,14 @@
 	<P>Adding the following elements to your <A HREF="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html">classpath</A> will install XBN-Java:</P>
 
 <BLOCKQUOTE><PRE>INSTALLATION_DIR\xbnjava-${project_version_for_jd}_dependency_jars\*
-INSTALLATION_DIR\xbnjava-${project_version_for_jd}-all.jar &nbsp; &nbsp; <I>(or {@code ".jar"})</I></PRE></BLOCKQUOTE>
+INSTALLATION_DIR\xbnjava-${project_version_for_jd}-all.jar &nbsp; &nbsp; <I>(or {@code "xbnjava-${project_version_for_jd}.jar"})</I></PRE></BLOCKQUOTE>
 
 	<P><B>Building XBN-Java</B></P>
 
 	<P><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/xbnjava-${project_version_for_jd}-sources.jar">Download</A> all source code, including all files necessary to build XBN-Java.</P>
 
 	<P>In addition to the jars needed to use XBN-Java, building requires additional jars, which are all located in {@code "z_build/dependency_jars"}:<OL>
-		<LI><A HREF="http://ant.apache.org/">Apache Ant</A>, <A HREF="http://junit.org">JUnit</A>, <A HREF="http://codelet.aliteralmind.com">Codelet</A>, and <A HREF="http://templatefeather.aliteralmind.com">Template Featherweight</A>. (Codelet is only necessary for displaying example code in the JavaDoc. JavaDoc will still work, but example code will be omitted, and one warning will be displayed for every non-working taglet.)</LI>
+		<LI><A HREF="http://ant.apache.org/">Apache Ant</A>, <A HREF="http://junit.org">JUnit</A>, <A HREF="http://codelet.aliteralmind.com">Codelet</A>, and <A HREF="http://templatefeather.aliteralmind.com">Template Featherweight</A>. Codelet is only necessary for displaying example code in the JavaDoc. Without it, <i>JavaDoc will still work</i>, but example code will be omitted (one warning will be given for every non-working taglet).</LI>
 	</OL></P>
 
 	<P>Open a command prompt to the XBN-Java root installation directory, and call &quot;{@code ant help}&quot; for more information. The build process already has the Codelet taglets installed.</P>

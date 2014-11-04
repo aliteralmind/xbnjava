@@ -1042,11 +1042,11 @@
 		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
 			includes="linefilter/NewFilteredLineIteratorFor.java"/>
 		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
-			includes="util/grid/GridItem.java"/>
-		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
 			includes="util/grid/GridDirection.java"/>
 		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
 			includes="util/grid/EdgeExceeded.java"/>
+		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+			includes="util/grid/GridItem.java"/>
 		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
 			includes="util/grid/BoundedGrid.java"/>
 		<javac srcdir="${dir_sandbox_bldfiles}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
