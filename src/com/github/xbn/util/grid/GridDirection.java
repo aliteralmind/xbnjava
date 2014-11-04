@@ -21,7 +21,7 @@ package  com.github.xbn.util.grid;
  *
  * @see BoundedGrid#getNeighbor(int, int, com.github.xbn.util.grid.GridDirection, int, com.github.xbn.util.grid.EdgeExceeded) BoundedGrid#getNeighbor
  * @since  0.1.4.2
- * author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
 public enum GridDirection  {
 	/**
@@ -39,6 +39,7 @@ public enum GridDirection  {
 	 * @see  #UP_RIGHT
 	 * @see  #DOWN_LEFT
 	 * @see  #DOWN_RIGHT
+	 * @see  #isVertical()
 	 */
 	UP(0, -1),
 	/**
@@ -51,6 +52,7 @@ public enum GridDirection  {
 	 *
 	 * @see  #UP
 	 * @see  #isDown()
+	 * @see  #isVertical()
 	 */
 	DOWN(0, 1),
 	/**
@@ -63,6 +65,7 @@ public enum GridDirection  {
 	 *
 	 * @see  #UP
 	 * @see  #isLeft()
+	 * @see  #isHorizontal()
 	 */
 	LEFT(-1, 0),
 	/**
@@ -75,6 +78,7 @@ public enum GridDirection  {
 	 *
 	 * @see  #UP
 	 * @see  #isRight()
+	 * @see  #isHorizontal()
 	 **/
 	RIGHT(1, 0),
 	/**
@@ -87,6 +91,7 @@ public enum GridDirection  {
 	 *
 	 * @see  #UP
 	 * @see  #isUpLeft()
+	 * @see  #isDiagonal()
 	 **/
 	UP_LEFT(-1, -1),
 	/**
@@ -99,6 +104,7 @@ public enum GridDirection  {
 	 *
 	 * @see  #UP
 	 * @see  #isUpRight()
+	 * @see  #isDiagonal()
 	 **/
 	UP_RIGHT(1, -1),
 	/**
@@ -111,6 +117,7 @@ public enum GridDirection  {
 	 *
 	 * @see  #UP
 	 * @see  #isDownLeft()
+	 * @see  #isDiagonal()
 	 **/
 	DOWN_LEFT(-1, 1),
 	/**
@@ -123,17 +130,10 @@ public enum GridDirection  {
 	 *
 	 * @see  #UP
 	 * @see  #isDownRight()
+	 * @see  #isDiagonal()
 	 **/
 	DOWN_RIGHT(1, 1);
-	/**
-	 * <P>Is this {@code Right} equal to {@code RIGHT}?.</P>
-	 *
-	 * @return  <CODE>this == {@link #RIGHT}</CODE>
-	 * @see  #isUp()
-	 **/
-	public final boolean isRight()  {
-		return  this == RIGHT;
-	}
+
 	private int horizInc = -1;
 	private int vertInc = -1;
 	/**
@@ -161,6 +161,16 @@ public enum GridDirection  {
 	 */
 	public int getHorizIncrement()  {
 		return  horizInc;
+	}
+	/**
+	 * <P>Is this {@code Right} equal to {@code RIGHT}?.</P>
+	 *
+	 * @return  <CODE>this == {@link #RIGHT}</CODE>
+	 * @see  #isUp()
+	 * @see  #isHorizontal()
+	 **/
+	public final boolean isRight()  {
+		return  this == RIGHT;
 	}
 	/**
 	 * <P>Is this {@code GridDirection} equal to {@code UP}?.</P>
@@ -232,14 +242,62 @@ public enum GridDirection  {
 	public final boolean isLeft()  {
 		return  this == LEFT;
 	}
+	/**
+	 * Is <i><code>this</code></i> direction left or right?.
+	 * @return <code>({@link #isLeft()}{@code ()}&nbsp; || &nbsp;{@link #isRight()}{@code ()}</code>
+	 * @see #isVertical()
+	 * @see #isDiagonal()
+	 */
 	public final boolean isHorizontal()  {
 		return  (isLeft()  ||  isRight());
 	}
+	/**
+	 * Is <i><code>this</code></i> direction up or down?.
+	 * @return <code>({@link #isUp()}{@code ()}&nbsp; || &nbsp;{@link #isDown()}{@code ()}</code>
+	 * @see #isHorizontal()
+	 */
 	public final boolean isVertical()  {
 		return  (isUp()  ||  isDown());
 	}
+	/**
+	 * Is <i><code>this</code></i> <i>not</i> vertical or horizontal?.
+	 * @return <code>!({@link #isHorizontal()}{@code ()}  ||  {@link #isVertical()}{@code ()}</code>
+	 * @see #isHorizontal()
+	 */
 	public final boolean isDiagonal()  {
 		return  !(isHorizontal()  ||  isVertical());
+	}
+	/**
+	 * If <i><code>this</code></i> direction happens to be diagonal (for example,
+	 * {@link #UP_LEFT}), then get its vertical or horizontal direction
+	 * (either {@link #UP} or {@link #LEFT}) that represents the <i>shortest</i>
+	 * distance from a coordinate to an edge.
+	 *
+	 * @param  coord May not be <code>null</code>.
+	 * @return If <code>coord</code> is already
+	 * {@linkplain #isHorizontal() horizontal} or
+	 * {@linkplain #isVertical() vertical}, it is returned unchanged.
+	 * Otherwise, if
+	 * <br/> &nbsp; &nbsp; <code>(coord.{@link GridCoordinate#getHorizIndex() getHorizIndex}() &lt; coord.{@link GridCoordinate#getVertIndex() getVertIndex}())</code>
+	 * <br/>is <code>true</code>, then this returns the vertical &quot;portion&quot; of
+	 * the diagonal direction (if <i><code>this</code></i> is <code>UP_LEFT</code>, then <code>UP</code> is returned). If <code>false</code>, the horizontal portion is returned (for <code>UP_LEFT</code>: <code>LEFT</code>).
+	 * @see #isDiagonal()
+	 * @see BoundedGrid#getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection) BoundedGrid#getNeighborCount
+	 */
+	public GridDirection getHorizVertIfDiagonal(GridCoordinate coord)  {
+		boolean isHorizLessThanVert = false;
+		try  {
+			isHorizLessThanVert = (coord.getHorizIndex() < coord.getVertIndex());
+		}  catch(NullPointerException npx)  {
+			throw  new NullPointerException("coord");
+		}
+		switch(this)  {
+			case UP_LEFT:     return  (isHorizLessThanVert ? UP : LEFT);
+			case UP_RIGHT:    return  (isHorizLessThanVert ? UP : RIGHT);
+			case DOWN_LEFT:   return  (isHorizLessThanVert ? DOWN : LEFT);
+			case DOWN_RIGHT:  return  (isHorizLessThanVert ? DOWN : RIGHT);
+			default:          return  this;
+		}
 	}
 	/**
 	 * <P>If an <CODE>GridDirection</CODE> is not a required value, crash.</P>

@@ -20,21 +20,21 @@ package  com.github.xbn.util.grid;
  *
  * @see BoundedGrid#getNeighbor(int, int, com.github.xbn.util.grid.GridDirection, int, com.github.xbn.util.grid.EdgeExceeded) BoundedGrid#getNeighbor
  * @since  0.1.4.2
- * author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
 public enum EdgeExceeded  {
    /**
     * <P>Throw an exception.</P>
     *
     * @see  #WRAP
-    * @see  #isCrash()
+    * @see  #doCrash()
     */
    CRASH,
    /**
     * <P>Wrap to the item on the other side, a-la Asteroids.</P>
     *
     * @see  #CRASH
-    * @see  #isWrap()
+    * @see  #doWrap()
     */
    WRAP;
    /**
@@ -42,18 +42,18 @@ public enum EdgeExceeded  {
     *
     * @return  <CODE>this == {@link #CRASH}</CODE>
     *
-    * @see  #isWrap()
+    * @see  #doWrap()
     */
-   public final boolean isCrash()  {
+   public final boolean doCrash()  {
       return  this == CRASH;
    }
    /**
     * <P>Is this {@code EdgeExceeded} equal to {@code WRAP}?.</P>
     *
     * @return  <CODE>this == {@link #WRAP}</CODE>
-    * @see  #isCrash()
+    * @see  #doCrash()
     */
-   public final boolean isWrap()  {
+   public final boolean doWrap()  {
       return  this == WRAP;
    }
    /**
