@@ -240,7 +240,6 @@ public class BoundedGrid  {
 	 * @see #moveUpRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveUpRight(gc, ee)
 	 * @see #moveDownLeft(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveDownLeft(gc, ee)
 	 * @see #moveDownRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveDownRight(gc, ee)
-	 * @see #moveDownRight(com.github.xbn.util.grid.GridCoordinate) moveDownRight(gc)
 	 */
 	public GridCoordinate moveNextDoor(GridCoordinate item, GridDirection direction,
 				EdgeExceeded crash_or_wrap)  {
@@ -260,26 +259,12 @@ public class BoundedGrid  {
 		return  moveNextDoor(item, GridDirection.UP, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, up.
-	 * @return <code>{@link #moveUp(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(item, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveUp(GridCoordinate item)  {
-		return  moveUp(item, EdgeExceeded.CRASH);
-	}
-	/**
 	 * Get the directly adjacent coordinate, down.
 	 * @param  item         May not be <code>null</code>.
 	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#DOWN DOWN}, crash_or_wrap)</code>
 	 */
 	public GridCoordinate moveDown(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
 		return  moveNextDoor(item, GridDirection.DOWN, crash_or_wrap);
-	}
-	/**
-	 * Get the directly adjacent coordinate, down.
-	 * @return <code>{@link #moveDown(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(item, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveDown(GridCoordinate item)  {
-		return  moveDown(item, EdgeExceeded.CRASH);
 	}
 	/**
 	 * Get the directly adjacent coordinate, left.
@@ -290,26 +275,12 @@ public class BoundedGrid  {
 		return  moveNextDoor(item, GridDirection.LEFT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, left.
-	 * @return <code>{@link #moveLeft(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(item, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveLeft(GridCoordinate item)  {
-		return  moveLeft(item, EdgeExceeded.CRASH);
-	}
-	/**
 	 * Get the directly adjacent coordinate, right.
 	 * @param  item         May not be <code>null</code>.
 	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#RIGHT RIGHT}, crash_or_wrap)</code>
 	 */
 	public GridCoordinate moveRight(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
 		return  moveNextDoor(item, GridDirection.RIGHT, crash_or_wrap);
-	}
-	/**
-	 * Get the directly adjacent coordinate, right.
-	 * @return <code>{@link #moveRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(item, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveRight(GridCoordinate item)  {
-		return  moveRight(item, EdgeExceeded.CRASH);
 	}
 	/**
 	 * Get the directly adjacent coordinate, up-left.
@@ -320,26 +291,12 @@ public class BoundedGrid  {
 		return  moveNextDoor(item, GridDirection.UP_LEFT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, up-left.
-	 * @return <code>{@link #moveUpLeft(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(item, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveUpLeft(GridCoordinate item)  {
-		return  moveUpLeft(item, EdgeExceeded.CRASH);
-	}
-	/**
 	 * Get the directly adjacent coordinate, up-right.
 	 * @param  item         May not be <code>null</code>.
 	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#UP_RIGHT UP_RIGHT}, crash_or_wrap)</code>
 	 */
 	public GridCoordinate moveUpRight(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
 		return  moveNextDoor(item, GridDirection.UP_RIGHT, crash_or_wrap);
-	}
-	/**
-	 * Get the directly adjacent coordinate, up-right.
-	 * @return <code>{@link #moveUpRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(coord, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveUpRight(GridCoordinate item)  {
-		return  moveUpRight(item, EdgeExceeded.CRASH);
 	}
 	/**
 	 * Get the directly adjacent coordinate, down-left.
@@ -350,26 +307,12 @@ public class BoundedGrid  {
 		return  moveNextDoor(item, GridDirection.DOWN_LEFT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, down-left.
-	 * @return <code>{@link #moveDownLeft(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(item, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveDownLeft(GridCoordinate item)  {
-		return  moveDownLeft(item, EdgeExceeded.CRASH);
-	}
-	/**
 	 * Get the directly adjacent coordinate, down-right.
 	 * @param  item         May not be <code>null</code>.
 	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#DOWN_RIGHT DOWN_RIGHT}, crash_or_wrap)</code>
 	 */
 	public GridCoordinate moveDownRight(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
 		return  moveNextDoor(item, GridDirection.DOWN_RIGHT, crash_or_wrap);
-	}
-	/**
-	 * Get the directly adjacent coordinate, down-right.
-	 * @return <code>{@link #moveDownRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded)}(item, {@link EdgeExceeded}.{@link EdgeExceeded#CRASH CRASH})</code>
-	 */
-	public GridCoordinate moveDownRight(GridCoordinate item)  {
-		return  moveDownRight(item, EdgeExceeded.CRASH);
 	}
 	private final void throwHorizExceedsIAXIfCrash(
 				EdgeExceeded crash_or_wrap, int horiz_idx, GridDirection direction,
