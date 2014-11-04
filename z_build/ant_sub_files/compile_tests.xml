@@ -38,6 +38,8 @@
 		<javac srcdir="${dir_src_test}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
 			includes="lang/reflect/ShortcutMethodSignature_Unit.java"/>
 		<javac srcdir="${dir_src_test}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+			includes="util/grid/GridItem_Unit.java"/>
+		<javac srcdir="${dir_src_test}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
 			includes="UnitTestRunner.java"/>
 </target>
 <target name="compiletests1by1b">

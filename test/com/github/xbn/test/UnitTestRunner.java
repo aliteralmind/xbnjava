@@ -19,7 +19,8 @@ public class UnitTestRunner  {
 			com.github.xbn.test.list.CrashIfList_Unit.class,
 			com.github.xbn.test.number.IntInRange_Unit.class,
 			com.github.xbn.test.number.NumberUtil_Unit.class,
-			com.github.xbn.test.text.padchop.VzblPadChop_Unit.class
+			com.github.xbn.test.text.padchop.VzblPadChop_Unit.class,
+			com.github.xbn.test.util.grid.GridItem_Unit.class
 /*
  */
 		};
