@@ -60,9 +60,6 @@ public class GridCoordinate  {
 	public int getVertIndex()  {
 		return  vertIdx;
 	}
-	/**
-	 * @return Prints the first 50 characters of {@linkplain #get() the object}.
-	 */
 	public String toString()  {
 		return  "[" + getHorizIndex() + ", " + getVertIndex() + "]";
 	}

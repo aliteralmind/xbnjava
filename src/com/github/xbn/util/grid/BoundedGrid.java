@@ -16,6 +16,7 @@
 \*license*/
 package  com.github.xbn.util.grid;
 	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.number.IntInRange;
 	import  java.util.Arrays;
 /**
  * <p>For traversing the elements in a rectangular double-array, in any
@@ -120,21 +121,21 @@ public class BoundedGrid  {
 	/**
 	 * <p>How many neighbors are there between an item and the grid's edge?.</p>
 	 * @param   direction May not be <code>null</code>.
-	 * @return  <code>getHorizVertNeighborCount(hzDirection)</code>
-	 * <br/>Where <code>hzDirection</code> is equal to
-	 * <br> &nbsp; &nbsp; <code>{@link #getCoordinate(int, int)}(horiz_idx, vert_idx).{@link GridCoordinate#getHorizVertIfDiagonal(com.github.xbn.util.grid.GridDirection)}(direction)</code>
+	 * @return  <code>getHVNeighborCount(hvDirection)</code>
+	 * <br/>Where <code>hvDirection</code> is equal to
+	 * <br> &nbsp; &nbsp; <code>{@link #getCoordinate(int, int)}(horiz_idx, vert_idx).{@link GridCoordinate#getShortestHVForDiagonal(com.github.xbn.util.grid.GridDirection)}(direction)</code>
 	 * @see #getNeighborCount(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection) getNeighborCount(gc,gd)
 	 * @see #isNeighborCountAtLeast(int, int, com.github.xbn.util.grid.GridDirection, int) isNeighborCountAtLeast(i,i,gd,i)
 	 */
 	public int getNeighborCount(int horiz_idx, int vert_idx, GridDirection direction)  {
 		GridCoordinate item = getCoordinate(horiz_idx, vert_idx);
-		GridDirection hzDirection = null;
+		HorizVertDirection hvDirection = null;
 		try  {
-			hzDirection = direction.getHorizVertIfDiagonal(item);
+			hvDirection = direction.getShortestHVForDiagonal(item);
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("direction");
 		}
-		return  getHorizVertNeighborCount(horiz_idx, vert_idx, hzDirection);
+		return  getHVNeighborCount(horiz_idx, vert_idx, hvDirection);
 	}
 	/**
 	 * How many neighbors are there between an item and the grid's edge, in
@@ -143,23 +144,20 @@ public class BoundedGrid  {
 	 * Must be a valid index given {@link #getHeight()}{@code ()}.
 	 * @param  vert_idx   The index of the sub-array within the overall
 	 * array. Must be a valid index given {@link #getHeight()}{@code ()}.
-	 * @param  direction The direction to search. May not be <code>null</code>,
-	 * and must be {@link GridDirection.UP UP}, {@link GridDirection.DOWN DOWN},
-	 * {@link GridDirection.LEFT LEFT}, or {@link GridDirection.RIGHT RIGHT}.
-	 * @return  The number of items between the item and the edge, not
-	 * including the item itself.
+	 * @param  hv_direction May not be <code>null</code>.
+	 * @return  The number of neighbor-items between the item and the edge, not
+	 * including itself.
 	 * @see  #getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection)
 	 */
-	public int getHorizVertNeighborCount(int horiz_idx, int vert_idx,
-				GridDirection direction)  {
-		switch(direction)  {
+	public int getHVNeighborCount(int horiz_idx, int vert_idx,
+				HorizVertDirection hv_direction)  {
+		switch(hv_direction)  {
 			case UP:  return  vert_idx;
 			case DOWN: return  (getHeight() - vert_idx + 1);
 			case LEFT: return  horiz_idx;
 			case RIGHT: return  (getWidth() - horiz_idx + 1);
 		}
-		throw  new IllegalArgumentException("direction (" + direction +
-			") must be UP, DOWN, LEFT, or RIGHT.");
+		throw  new IllegalArgumentException("Unexpected value for hv_direction: " + hv_direction);
 	}
 	/**
 	 * Get a coordinate next to another.
@@ -314,36 +312,65 @@ public class BoundedGrid  {
 	public GridCoordinate moveDownRight(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
 		return  moveNextDoor(item, GridDirection.DOWN_RIGHT, crash_or_wrap);
 	}
-	private final void throwHorizExceedsIAXIfCrash(
-				EdgeExceeded crash_or_wrap, int horiz_idx, GridDirection direction,
-				int doors_down, int resulting_idx)  {
+	/**
+	 * <p>Get the range of indexes in a single row-or-column unit, that have the
+	 * required number of neighbors. This is useful for narrowing down which
+	 * items to analyze.</p>
+	 * @param  row_col  May not be <code>null</code>.
+	 * @param  rc_index  Must be between zero and, if <ul>
+	 *    <li><code>row_col.{@link RowColumn#isRow() isRow}()</code>:
+	 *    <code>({@link #getWidth()}() - 1)</code></li>
+	 *    <li><code>row_col.{@link RowColumn#isColumn() isColumn}()</code>:
+	 *    ({@link #getHeigh()}() - 1)</li>
+	 * </ul>
+	 * @param  direction  May not be <code>null</code>.
+	 * @param  neighbor_count The number of expected neighbors between each
+	 * item and the edge. If negative, then the opposite of <code>direction</code>
+	 * is used.
+	 * @return  The range of indexes in the unit that have the
+	 * required number of neighbors. If there are no items, this returns
+	 * <code>null</code>.
+	 */
+	public IntInRange getIndexRangeForUnitNeighborCount(RowColumn row_col, int rc_index,
+				GridDirection direction, int neighbor_count)  {
 		try  {
-			if(crash_or_wrap.doCrash())  {
-				throw  new IllegalArgumentException(
-					"Horizontal index exceeds edge. horiz_idx=" + horiz_idx +
-					", direction=" + direction + ", doors_down=" + doors_down +
-					", resulting horizontal index after move: " + resulting_idx +
-					", getWidth()=" + getWidth() + ".");
+			if(row_col.isRow())  {
+
 			}
 		}  catch(NullPointerException npx)  {
-			CrashIfObject.nullOrReturnCause(crash_or_wrap, "crash_or_wrap", null, npx);
+			throw  new NullPointerException("row_col");
 		}
 	}
-	private final void throwVertExceedsIAXIfCrash(
-				EdgeExceeded crash_or_wrap, int vert_idx, GridDirection direction,
-				int doors_down, int resulting_idx)  {
-		try  {
-			if(crash_or_wrap.doCrash())  {
-				throw  new IllegalArgumentException(
-					"Vertical index exceeds edge. vert_idx=" + vert_idx +
-					", direction=" + direction + ", doors_down=" + doors_down +
-					", resulting vertical index after move: " + resulting_idx +
-					", getHeight()=" + getHeight() + ".");
+		private final void throwHorizExceedsIAXIfCrash(
+					EdgeExceeded crash_or_wrap, int horiz_idx, GridDirection direction,
+					int doors_down, int resulting_idx)  {
+			try  {
+				if(crash_or_wrap.doCrash())  {
+					throw  new IllegalArgumentException(
+						"Horizontal index exceeds edge. horiz_idx=" + horiz_idx +
+						", direction=" + direction + ", doors_down=" + doors_down +
+						", resulting horizontal index after move: " + resulting_idx +
+						", getWidth()=" + getWidth() + ".");
+				}
+			}  catch(NullPointerException npx)  {
+				CrashIfObject.nullOrReturnCause(crash_or_wrap, "crash_or_wrap", null, npx);
 			}
-		}  catch(NullPointerException npx)  {
-			CrashIfObject.nullOrReturnCause(crash_or_wrap, "crash_or_wrap", null, npx);
 		}
-	}
+		private final void throwVertExceedsIAXIfCrash(
+					EdgeExceeded crash_or_wrap, int vert_idx, GridDirection direction,
+					int doors_down, int resulting_idx)  {
+			try  {
+				if(crash_or_wrap.doCrash())  {
+					throw  new IllegalArgumentException(
+						"Vertical index exceeds edge. vert_idx=" + vert_idx +
+						", direction=" + direction + ", doors_down=" + doors_down +
+						", resulting vertical index after move: " + resulting_idx +
+						", getHeight()=" + getHeight() + ".");
+				}
+			}  catch(NullPointerException npx)  {
+				CrashIfObject.nullOrReturnCause(crash_or_wrap, "crash_or_wrap", null, npx);
+			}
+		}
 	/**
 	 * Is a iteminate valid?.
 	 * @param  grid      May not be <code>null</code>.
