@@ -16,7 +16,7 @@
 \*license*/
 package  com.github.xbn.util.grid;
 	import  com.github.xbn.lang.CrashIfObject;
-	import  com.github.xbn.number.IntInRange;
+	import  com.github.xbn.number.IndexInRange;
 	import  java.util.Arrays;
 /**
  * <p>For traversing the elements in a rectangular double-array, in any
@@ -331,8 +331,8 @@ public class BoundedGrid  {
 	 * required number of neighbors. If there are no items, this returns
 	 * <code>null</code>.
 	 */
-	public IntInRange getIndexRangeForUnitNeighborCount(RowColumn row_col, int rc_index,
-				GridDirection direction, int neighbor_count)  {
+	public IndexInRange getUnitIndexRangeForNeighborCount(RowColumn row_col,
+				int rc_index, GridDirection direction, int neighbor_count)  {
 		try  {
 			if(row_col.isRow())  {
 
