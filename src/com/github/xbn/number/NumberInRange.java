@@ -281,14 +281,6 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 			throw  new IllegalStateException("hasM" + in_orAx + "() is false.");
 		}
 	}
-	/**
-	 * <P>If the bounds are not valid, crash.</P>
-	 * @exception  IllegalArgumentStateException  If both bounds are
-	 * non-{@code null} and the minimum bound is greater than the maximum
-	 * (this correctly considers the
-	 * {@link NumberBound#isInclusive() inclusive}-ness of both bounds).
-	 */
-//	public abstract void crashIfBadBoundsForCnstr(NumberBound<N> nb_min, NumberBound<N> nb_max);
 	public abstract void crashIfBadBoundsForCnstr();
 
 //other...END
@@ -366,13 +358,15 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	 * Get a new range containing the values in <i>both</i>
 	 * <i>{@code this}</i> and another range.
 	 * @param  to_intersectWith May not be <code>null</code>.
-	 * @return  If {@code to_intersectWith} is overlapping with
-	 * <i>{@code this}</i> (at least, its min is the same as
-	 * <i>{@code this}</i>'s max, or its max is the same as
-	 * <i>{@code this}</i>'s min--<i>{@linkplain #isGTOEMinGivenIncl() given inclusiveness}</i>),
-	 * this returns a new range that contains only those
-	 * values in both. If they do not overlap, this returns {@code null}.
-	 * @see #getMerged(NumberInRange, TouchOverlapRequired)
+	 * @return  If {@code to_intersectWith} {@linkplain #doesOverlap(com.github.xbn.number.NumberInRange) overlaps} <i>{@code this}</i> range, this returns a new range that
+	 * contains only those values in both. If they do not overlap, this
+	 * returns {@code null}. <i>If the min (or max) bounds for
+ 	 * both ranges are inclusive (or exclusive), then the returned range
+ 	 * also has a inclusive min (or max) bound. If they are
+	 * different (or at least one is {@code null}), then the bound will
+	 * always be inclusive.</i></i>
+	 * @see #getMerged(NumberInRange, OverlapRequired)
+	 * @since 0.1.4.2
 	 */
 	public abstract NumberInRange<N> getIntersection(
 			NumberInRange<N> to_intersectWith);
@@ -380,48 +374,114 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	 * Get a new range containing the values in <i>either</i>
 	 * <i>{@code this}</i> and another range.
 	 * @param  to_mergeWith May not be <code>null</code>. If
-	 * <code>to_rqd.{@link TouchOverlapRequired#YES YES}</code>, this must
-	 * be touching or overlapping with <i>{@code this}</i> range (at least,
-	 * its min is the same as <i>{@code this}</i>'s max, or its max is the
-	 * same as <i>{@code this}</i>'s
-	 * min--<i>{@linkplain #isGTOEMinGivenIncl() given inclusiveness}</i>).
-	 * Otherwise, this may or may not be overlapping.
+	 * <code>to_rqd.{@link OverlapRequired#YES YES}</code>, must
+	 * {@linkplain #doesOverlap(com.github.xbn.number.NumberInRange) overlaps}
+	 *  <i>{@code this}</i> range.
 	 * @param  to_rqd  May not be <code>null</code>.
 	 * @return  A new range whose values are in <i>either</i>
-	 * <i>{@code this}</i> or {@code to_mergeWith}.
+	 * <i>{@code this}</i> or {@code to_mergeWith}. <i>If the min (or max)
+	 * bounds for both ranges are inclusive (or exclusive), then the
+	 * returned range also has a inclusive min (or max) bound. If they are
+	 * different (or at least one is {@code null}), then the bound will
+	 * always be inclusive.</i>
 	 * @exception IllegalArgumentException If {@code to_rqd.YES} and
 	 * {@code to_mergeWith} does not overlap or touch <i>{@code this}</i>
 	 * one.
 	 * @see #getIntersection(NumberInRange)
+	 * @since 0.1.4.2
 	 */
 	public abstract NumberInRange<N> getMerged(NumberInRange<N> to_mergeWith,
-			TouchOverlapRequired to_rqd);
+			OverlapRequired overlap_rqd);
+	/**
+	 * Get the minimum bound, given inclusivity.
+	 * @return <code>{@link #getMinBound()}().{@link NumberBound#getGivenIncl(BoundSide) getGivenIncl}({@link BoundSide}.{@link BoundSide#MIN MIN})</code>
+	 * @exception IllegalStateException If {@link #hasMin()}{@code ()} is {@code false}.
+	 * @see #getMaxGivenIncl()
+	 * @since 0.1.4.2
+	 */
+	public N getMinGivenIncl()  {
+		try  {
+			return  getMinBound().getGivenIncl(BoundSide.MIN);
+		}  catch(NullPointerException npx)  {
+			throw  new IllegalStateException("hasMin() is false.");
+		}
+	}
+	/**
+	 * Get the maximum bound, given inclusivity.
+	 * @return <code>{@link #getMaxBound()}().{@link NumberBound#getGivenIncl(BoundSide) getGivenIncl}({@link BoundSide}.{@link BoundSide#MAX MAX})</code>
+	 * @exception IllegalStateException If {@link #hasMax()}{@code ()} is {@code false}.
+	 * @see #getMinGivenIncl()
+	 * @since 0.1.4.2
+	 */
+	public N getMaxGivenIncl()  {
+		try  {
+			return  getMaxBound().getGivenIncl(BoundSide.MAX);
+		}  catch(NullPointerException npx)  {
+			throw  new IllegalStateException("hasMax() is false.");
+		}
+	}
+	/**
+	 * Does <i>{@code this}</i> range overlap another?
+	 * @param  to_compareTo May not be <code>null</code>.
+	 * @return  <blockquote><pre>({@link #isIn(N) isIn}(to_compareTo.{@link #getMinGivenIncl()}())  ||
+	 *	   isIn(to_compareTo.{@link #getMaxGivenIncl()}()())  ||
+	 *    to_compareTo.isIn(getMinGivenIncl())  ||
+	 *    to_compareTo.isIn(getMaxGivenIncl()))</pre></blockquote>
+	 * @since 0.1.4.2
+	 */
+	public boolean doesOverlap(NumberInRange<N> to_compareTo)  {
+		try  {
+			return  (isIn(to_compareTo.getMinGivenIncl())  ||
+				isIn(to_compareTo.getMaxGivenIncl())  ||
+				to_compareTo.isIn(getMinGivenIncl())  ||
+				to_compareTo.isIn(getMaxGivenIncl()));
+		}  catch(NullPointerException npx)  {
+			throw  new NullPointerException("to_compareTo");
+		}
+	}
 	/**
 	 * <P>Are all relevant fields equal?.</P>
 	 * @param  to_compareTo  May not be {@code null}.
 	 */
 	public abstract boolean areFieldsEqual(NumberInRange<N> to_compareTo);
+	/**
+	 * @deprecated Use {@link #getIsInDebugging(N) getIsInDebugging}{@code (N)}
+	 */
 	public static final <N extends Number> String getValidityDebugging(NumberInRange<N> range, N to_validate, String to_vldtName)  {
-		return  to_vldtName + "=" + to_validate + ", range=<" + range + ">, valid-for-min?=" +
-			(!range.hasMin()
+		try  {
+			return  to_vldtName + "=" + to_validate + ", range=<" + range + ">, " + range.getIsInDebugging(to_validate);
+		}  catch(NullPointerException npx)  {
+			throw  new NullPointerException("range");
+		}
+	}
+	/**
+	 * In depth explanation on why a number is in or not in <i>{@code this}</i> range.
+	 * @param  range       May not be <code>null</code>.
+	 * @param  to_validate The number to analyze. May not be <code>null</code>.
+	 * @return  Description on why {@code to_validate} is in or not in this range. This uses the terminology &quot;valid&quot; instead of &quot;in&quot;.
+	 * @since 0.1.4.2
+	 */
+	public final String getIsInDebugging(N to_validate)  {
+		return  "valid-for-min?=" +
+			(!hasMin()
 				?  "yes (no min-bound)"
-				:  (!range.isGTOEMinGivenIncl(to_validate)
+				:  (!isGTOEMinGivenIncl(to_validate)
 					?  "no (less than min, given its inclusive-ness)"
 					:  "yes (greater-than-or-equal-to min)")) +
 		", valid-for-max?=" +
-			(!range.hasMax()
+			(!hasMax()
 				?  "yes (no max-bound)"
-				:  (!range.isLTOEMaxGivenIncl(to_validate)
+				:  (!isLTOEMaxGivenIncl(to_validate)
 					?  "no (greater than max, given its inclusive-ness)"
 					:  "yes (greater-than-or-equal-to max)")) +
 		", valid entirely, NOT considering invertedness? " + ((
-			(!range.hasMin()  ||  range.isGTOEMinGivenIncl(to_validate))  &&
-			(!range.hasMax()  ||  range.isLTOEMaxGivenIncl(to_validate)))
+			(!hasMin()  ||  isGTOEMinGivenIncl(to_validate))  &&
+			(!hasMax()  ||  isLTOEMaxGivenIncl(to_validate)))
 				? "yes" : "no") +
 		", valid entirely, considering invertedness? " + ((
-			(!range.hasMin()  ||  range.isGTOEMinGivenIncl(to_validate))  &&
-			(!range.hasMax()  ||  range.isLTOEMaxGivenIncl(to_validate))  &&
-			range.isInverted())
+			(!hasMin()  ||  isGTOEMinGivenIncl(to_validate))  &&
+			(!hasMax()  ||  isLTOEMaxGivenIncl(to_validate))  &&
+			isInverted())
 				? "yes" : "no");
 	}
 }

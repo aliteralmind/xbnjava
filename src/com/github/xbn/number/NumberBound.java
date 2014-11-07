@@ -4,32 +4,40 @@ package  com.github.xbn.number;
 	import  com.github.xbn.lang.Null;
 	import  com.github.xbn.text.CrashIfString;
 	import  com.github.xbn.lang.CrashIfObject;
-
 /**
-	<P>Minimum or maximum extreme of a range.</P>
+ * <P>Minimum or maximum extreme of a range.</P>
  **/
 public abstract class NumberBound<N extends Number> implements Named  {
 	private final N num;
 	private final boolean isInclusive;
 	private final String name;
 	/**
-		<P>Create a new {@code NumberBound}.</P>
+	 * @deprecated Use {@link #NumberBound(N, com.github.xbn.number.Inclusive, java.lang.String) NumberBound}{@code (N,i,s)}
 	 **/
 	public NumberBound(N num, boolean is_inclusive, String name)  {
+		this(num, Inclusive.getForBoolean(is_inclusive), name);
+	}
+	/**
+	 * <P>Create a new {@code NumberBound}.</P>
+	 * @param  num  May not be <code>null</code>. Get with {@link #get()}{@code ()}.
+	 * @param  incl May not be <code>null</code>. Get with {@link #isInclusive()}{@code ()}.
+	 * @param  name Descriptive name. Get with {@link #getName()}{@code ()}.
+	 * @since 0.1.4.2
+	 */
+	public NumberBound(N num, Inclusive incl, String name)  {
 		Objects.requireNonNull(num, "num");
 		this.num = num;
-		isInclusive = is_inclusive;
+		isInclusive = incl.isYes();
 		CrashIfString.empty(Null.OK, name, "name", null);
 		this.name = name;
 	}
 	/**
-		<P>Create a new {@code NumberBound} as a duplicate of another.</P>
-
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
-
-		@param  to_copy  May not be {@code null}.
+	 * <P>Create a new {@code NumberBound} as a duplicate of another.</P>
+	 *
+	 * <P>This<OL>
+	 *    <LI>YYY</LI>
+	 * </OL></P>
+	 * @param  to_copy  May not be {@code null}.
 	 **/
 	public NumberBound(NumberBound<N> to_copy)  {
 		try  {
@@ -40,24 +48,51 @@ public abstract class NumberBound<N extends Number> implements Named  {
 		isInclusive = to_copy.isInclusive();
 		name = to_copy.getName();
 	}
+	/**
+	 * The descriptive name of this bound.
+	 * @return A name suitable for diagnostics.
+	 * @see #NumberBound(N, com.github.xbn.number.Inclusive, String)
+	 */
 	public String getName()  {
 		return  name;
 	}
 	/**
-		<P>Get the bound number.</P>
+	 * <P>Get the bound number.</P>
+	 * @see #NumberBound(N, com.github.xbn.number.Inclusive, String)
+	 * @see #getGivenIncl(com.github.xbn.number.BoundSide)
 	 **/
 	public final N get()  {
 		return  num;
 	}
+	/**
+	 * Get the absolute bound-value, given its inclusivity.
+	 * @param  min_orMax May not be <code>null</code>.
+	 * @return  Integer example: If {@linkplain #isInclusive() inclusive}is <ul>
+	 *   <li>{@code true}:  {@link #get()}{@code ()}</li>
+	 *   <li>{@code false}: If <code>min_orMax.{@link BoundSide#isMin() isMin}()</code> is <ul>
+	 *      <li>{@code true}: {@code (get() + 1)}</li>
+	 *      <li>{@code false}: {@code (get() - 1)}</li>
+	 *   </ul></li>
+	 * </ul>
+	 * @see #get()
+	 */
 	public abstract N getGivenIncl(BoundSide min_orMax);
+	/**
+	 * Compare the <i>inclusive</i> bound-value against a number.
+	 * @param  min_orMax May not be <code>null</code>.
+	 * @param  num       May not be <code>null</code>.
+	 * @return  Integer example:
+	 * <br/> &nbsp; &nbsp; <code>{@link #getGivenIncl(BoundSide) getGivenIncl}(min_orMax).intValue() - num.intValue();</code>
+	 * @exception NullPointerException If {@code num} is {@code null}.
+	 */
 	public abstract N getInclComparedTo(BoundSide min_orMax, N num);
 	/**
-		<P>Is this bound considered inclusive?.</P>
-
-		@return  <UL>
-			<LI>{@code true} This bound is inclusive (meaning--if a minimum--a number must be greater-than-or-equal-to it).</LI>
-			<LI>{@code false}: Exclusive (a number must be greater than it).</LI>
-		</UL>
+	 * <P>Is this bound considered inclusive?.</P>
+	 * @return  <UL>
+	 *    <LI>{@code true} This bound is inclusive (meaning--if a minimum--a number must be greater-than-or-equal-to it).</LI>
+	 *    <LI>{@code false}: Exclusive (a number must be greater than it).</LI>
+	 * </UL>
+	 * @see #NumberBound(N, com.github.xbn.number.Inclusive, String)
 	 **/
 	public final boolean isInclusive()  {
 		return  isInclusive;
@@ -67,7 +102,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
 			get() + " (" + (isInclusive() ? "in" : "ex") + "clusive)";
 	}
 	/**
-		@param  to_compareTo  May not be {@code null}.
+	 * @param  to_compareTo  May not be {@code null}.
 	 **/
 	@Override
 	public boolean equals(Object to_compareTo)  {
@@ -78,7 +113,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
 			return  true;
 		}
 
-		/**
+		/*
 			http://www.javapractices.com/topic/TopicAction.do?Id=17
 			downloaded 10/14/2010
 			use instanceof instead of getClass here for two reasons
@@ -103,9 +138,8 @@ public abstract class NumberBound<N extends Number> implements Named  {
 		return  areFieldsEqual(o);
 	}
 	/**
-		<P>Are all relevant fields equal?.</P>
-
-		@param  to_compareTo  May not be {@code null}.
+	 * <P>Are all relevant fields equal?.</P>
+	 * @param  to_compareTo  May not be {@code null}.
 	 **/
 	public boolean areFieldsEqual(NumberBound<?> to_compareTo)  {
 		return  (get().equals(to_compareTo.get())  &&

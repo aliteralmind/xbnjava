@@ -1,5 +1,7 @@
 /*license*\
-   XBN-Java: Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
+   XBN-Java: http://xbnjava.aliteralmind.com
+
+   Copyright (C) 2014, Jeff Epstein (aliteralmind __DASH__ github __AT__ yahoo __DOT__ com)
 
    This software is dual-licensed under the:
    - Lesser General Public License (LGPL) version 3.0 or, at your option, any later version;
@@ -12,39 +14,45 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.number;
+package  com.github.xbn.util.grid;
 /**
- * <P>Which bound side is it?--min or max?.</P>
- * @since 0.1.0
+ * <p>Defines the kind of grid-unit.</p>
+ *
+ * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
-public enum BoundSide {
+public enum RowColumn  {
 	/**
-	 * <P>The minimum bound side.</P>
-	 * @see  #MAX
-	 * @see  #isMin()
+	 * <P>A row.</P>
+	 *
+	 * @see  #COLUMN
+	 * @see  #isRow()
 	 */
-	MIN,
+	ROW,
 	/**
-	 * <P>The maximum bound-side.</P>
-	 * @see  #MIN
-	 * @see  #isMax()
+	 * <P>A column.</P>
+	 *
+	 * @see  #ROW
+	 * @see  #isColumn()
 	 */
-	MAX;
+	COLUMN;
 	/**
-	 * <P>Is this {@code BoundSide} equal to {@code MIN}?.</P>
-	 * @return  <CODE>this == {@link #MIN}</CODE>
-	 * @see  #isMax()
+	 * <P>Is this {@code RowColumn} equal to {@code ROW}?.</P>
+	 *
+	 * @return  <CODE>this == {@link #ROW}</CODE>
+	 *
+	 * @see  #isColumn()
 	 */
-	public final boolean isMin()  {
-		return  this == MIN;
+	public final boolean isRow()  {
+		return  this == ROW;
 	}
 	/**
-	 * <P>Is this {@code BoundSide} equal to {@code MAX}?.</P>
-	 * @return  <CODE>this == {@link #MAX}</CODE>
-	 * @see  #isMin()
+	 * <P>Is this {@code RowColumn} equal to {@code COLUMN}?.</P>
+	 *
+	 * @return  <CODE>this == {@link #COLUMN}</CODE>
+	 * @see  #isRow()
 	 */
-	public final boolean isMax()  {
-		return  this == MAX;
+	public final boolean isColumn()  {
+		return  this == COLUMN;
 	}
 };
