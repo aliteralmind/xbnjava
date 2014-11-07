@@ -19,6 +19,7 @@ package  com.github.xbn.number;
 	import  com.github.xbn.lang.RuleType;
 	import  com.github.xbn.lang.RuleableComposer;
 	import  com.github.xbn.lang.Ruleable;
+	import  static com.github.xbn.lang.XbnConstants.*;
 /**
  * <P>Determines if a number is within a {@code NumberRange}.</P>
  * @since 0.1.0
@@ -239,8 +240,8 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 			to_appendTo.append(max.get()).append(max.isInclusive() ? "]" : ")");
 		}
 
-		String minName = getMinBound().getName();
-		String maxName = getMinBound().getName();
+		String minName = (!hasMin() ? null : getMinBound().getName());
+		String maxName = (!hasMax() ? null : getMinBound().getName());
 
 		if(minName != null  ||  maxName != null)  {
 			to_appendTo.append(" (");
@@ -427,17 +428,74 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	 *	   isIn(to_compareTo.{@link #getMaxGivenIncl()}()())  ||
 	 *    to_compareTo.isIn(getMinGivenIncl())  ||
 	 *    to_compareTo.isIn(getMaxGivenIncl()))</pre></blockquote>
+	 * @see getOverlapDebugging(NumberInRange)
 	 * @since 0.1.4.2
 	 */
 	public boolean doesOverlap(NumberInRange<N> to_compareTo)  {
+		N inclMinThis = (!hasMin() ?  null : getMinGivenIncl());
+		N inclMaxThis = (!hasMax() ?  null : getMaxGivenIncl());
+		N inclMinThat = null;
 		try  {
-			return  (isIn(to_compareTo.getMinGivenIncl())  ||
-				isIn(to_compareTo.getMaxGivenIncl())  ||
-				to_compareTo.isIn(getMinGivenIncl())  ||
-				to_compareTo.isIn(getMaxGivenIncl()));
+			inclMinThat = (!to_compareTo.hasMin() ?  null
+				:  to_compareTo.getMinGivenIncl());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_compareTo");
 		}
+		N inclMaxThat = (!to_compareTo.hasMax() ?  null
+			:  to_compareTo.getMaxGivenIncl());
+
+		if(inclMinThis != null)  {
+			if(to_compareTo.isIn(inclMinThis))  {
+				return  true;
+			}
+		}
+		if(inclMaxThis != null)  {
+			if(to_compareTo.isIn(inclMaxThis))  {
+				return  true;
+			}
+		}
+		if(inclMinThat != null)  {
+			if(isIn(inclMinThat))  {
+				return  true;
+			}
+		}
+		if(inclMaxThat != null)  {
+			if(isIn(inclMaxThat))  {
+				return  true;
+			}
+		}
+
+		return  (inclMinThis == null  &&  inclMinThat == null  &&
+			inclMaxThis == null  &&  inclMaxThat == null);
+	}
+	public String getOverlapDebugging(NumberInRange<N> to_compareTo)  {
+		StringBuilder bldr = new StringBuilder("doesOverlap: this=" + this +
+			", to_compareTo=" + to_compareTo).append(LINE_SEP);
+		if(to_compareTo.hasMin())  {
+			bldr.append("   this.isIn(" + to_compareTo.getMinGivenIncl() + ")=" +
+				isIn(to_compareTo.getMinGivenIncl())).append(LINE_SEP);
+		}  else  {
+			bldr.append("to_compareTo.hasMin() is false");
+		}
+		if(to_compareTo.hasMax())  {
+			bldr.append("   this.isIn(" + to_compareTo.getMaxGivenIncl() + ")=" +
+				isIn(to_compareTo.getMaxGivenIncl())).append(LINE_SEP);
+		}  else  {
+			bldr.append("to_compareTo.hasMax() is false");
+		}
+		if(hasMin())  {
+			bldr.append("   to_compareTo.isIn(" + getMinGivenIncl() + ")=" +
+				to_compareTo.isIn(getMinGivenIncl())).append(LINE_SEP);
+		}  else  {
+			bldr.append("this.hasMin() is false");
+		}
+		if(hasMax())  {
+			bldr.append("   to_compareTo.isIn(" + getMaxGivenIncl() + ")=" +
+				to_compareTo.isIn(getMaxGivenIncl())).append(LINE_SEP);
+		}  else  {
+			bldr.append("this.hasMax() is false");
+		}
+		return  bldr.toString();
 	}
 	/**
 	 * <P>Are all relevant fields equal?.</P>

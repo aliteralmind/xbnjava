@@ -168,46 +168,49 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 			return  null;
 		}
 
-		Inclusive incl = null;
-		Integer num = -1;
-
+		IntBound highestMinBound = null;
 		try  {
 			if(!to_intersectWith.hasMin())  {
-				incl = Inclusive.YES;
-				num = getMinBound().get();
+				highestMinBound = (!hasMin() ? null
+					:  new IntBoundInclusive(getMinBound().get(), null));
 			}  else if(!hasMin())  {
-				incl = Inclusive.YES;
-				num = to_intersectWith.getMinBound().get();
+				highestMinBound = (!to_intersectWith.hasMin() ? null
+					:  new IntBoundInclusive(to_intersectWith.getMinBound().get(), null));
 			}  else  {
-				incl = getInclForIntersectMrg(to_intersectWith.getMinBound());
+				Inclusive incl = getInclForIntersectMrg(to_intersectWith.getMinBound());
 				int tiwMinIncl = to_intersectWith.getMinGivenIncl();
-				num = ((tiwMinIncl < getMinGivenIncl()) ? getMinGivenIncl() : tiwMinIncl);
+				int num = ((tiwMinIncl < getMinGivenIncl()) ? getMinGivenIncl() : tiwMinIncl);
 				if(incl.isNo())  {
 					//Both bounds exist, and they're both inclusive
 					num--;
 				}
+				highestMinBound = new IntBound(num, incl, null);
 			}
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_intersectWith");
 		}
-		IntBound highestMinBound = new IntBound(num, incl, null);
 
-		if(!to_intersectWith.hasMax())  {
-			incl = Inclusive.YES;
-			num = getMaxBound().get();
-		}  else if(!hasMax())  {
-			incl = Inclusive.YES;
-			num = to_intersectWith.getMaxBound().get();
-		}  else  {
-			incl = getInclForIntersectMrg(to_intersectWith.getMaxBound());
-			int tiwMaxIncl = to_intersectWith.getMaxGivenIncl();
-			num = ((tiwMaxIncl < getMaxGivenIncl()) ? tiwMaxIncl : getMaxGivenIncl());
-			if(incl.isNo())  {
-				//Both bounds exist, and they're both inclusive
-				num--;
+		IntBound lowestMaxBound = null;
+		try  {
+			if(!to_intersectWith.hasMax())  {
+				lowestMaxBound = (!hasMax() ? null
+					:  new IntBoundInclusive(getMaxBound().get(), null));
+			}  else if(!hasMax())  {
+				lowestMaxBound = (!to_intersectWith.hasMax() ? null
+					:  new IntBoundInclusive(to_intersectWith.getMaxBound().get(), null));
+			}  else  {
+				Inclusive incl = getInclForIntersectMrg(to_intersectWith.getMaxBound());
+				int tiwMaxIncl = to_intersectWith.getMaxGivenIncl();
+				int num = ((getMaxGivenIncl() < tiwMaxIncl) ? getMaxGivenIncl() : tiwMaxIncl);
+				if(incl.isNo())  {
+					//Both bounds exist, and they're both inclusive
+					num--;
+				}
+				lowestMaxBound = new IntBound(num, incl, null);
 			}
+		}  catch(NullPointerException npx)  {
+			throw  new NullPointerException("to_intersectWith");
 		}
-		IntBound lowestMaxBound = new IntBound(num, incl, null);
 
 		return  new IntInRange(highestMinBound, lowestMaxBound);
 	}
@@ -262,7 +265,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 			num = ((getMaxGivenIncl() < tiwMaxIncl) ? tiwMaxIncl : getMaxGivenIncl());
 			if(incl.isNo())  {
 				//Both bounds exist, and they're both inclusive
-				num--;
+				num++;
 			}
 		}
 		IntBound highestMaxBound = new IntBound(num, incl, null);
