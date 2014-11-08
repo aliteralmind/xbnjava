@@ -170,6 +170,37 @@ public enum HorizVertDirection  {
 		return  (isUp()  ||  isDown());
 	}
 	/**
+	 * Get the opposite direction.
+	 * @return If {@link #UP}, then {@link #DOWN} is returned (and vice-versa). If {@link #LEFT}, then {@link #RIGHT} is returned.
+	 * @see getPerpendicularTowardsZero()
+	 */
+	public final HorizVertDirection getOpposite()  {
+		switch(this)  {
+			case UP:  return  DOWN;
+			case DOWN: return  UP;
+			case LEFT: return  RIGHT;
+			case RIGHT: return  LEFT;
+			default:  throw  new IllegalStateException("Unknown HorizVertDirection value: " + this);
+		}
+	}
+	/**
+	 * <p>Get the direction perpendicular to this one, towards the zero-th element.</p>
+	 *
+	 * <p>To get the perpendicular direction towards length, use
+	 	 * <br/><blockquote><code>hvd.getPerpendicularTowardsZero().{@link #getOpposite()}()</code></blockquote></p>
+	 * @return If either {@link #UP} or {@link #DOWN}, this returns {@link #LEFT}. If {@code LEFT} or {@link #RIGHT}, this returns {@code UP}.
+	 * @see  #getOpposite()
+	 */
+	public final HorizVertDirection getPerpendicularTowardsZero()  {
+		switch(this)  {
+			case UP:  return  LEFT;
+			case DOWN: return  LEFT;
+			case LEFT: return  UP;
+			case RIGHT: return  UP;
+			default:  throw  new IllegalStateException("Unknown HorizVertDirection value: " + this);
+		}
+	}
+	/**
 	 * <P>If an <CODE>HorizVertDirection</CODE> is not a required value, crash.</P>
 	 *
 	 * <P>Equal to

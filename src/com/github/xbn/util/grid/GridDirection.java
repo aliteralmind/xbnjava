@@ -289,6 +289,31 @@ public enum GridDirection  {
 		return  this == UP_LEFT;
 	}
 	/**
+	 * Get the opposite direction.
+	 * @return <ul>
+	 *    <li>{@link #UP} is the opposite of {@link #DOWN}</li>
+	 *    <li>{@link #LEFT} is the opposite of {@link #RIGHT}</li>
+	 *    <li>{@link #UP_LEFT} is the opposite of {@link #DOWN_RIGHT}</li>
+	 *    <li>{@link #DOWN_LEFT} is the opposite of {@link #UP_RIGHT}</li>
+	 *    <li>{@link #UP_RIGHT} is the opposite of {@link #DOWN_LEFT}</li>
+	 *    <li>{@link #DOWN_RIGHT} is the opposite of {@link #UP_LEFT}</li>
+	 * </ul>
+	 * @see getPerpendicularTowardsZero()
+	 */
+	public final GridDirection getOpposite()  {
+		switch(this)  {
+			case UP:          return  DOWN;
+			case DOWN:        return  UP;
+			case LEFT:        return  RIGHT;
+			case RIGHT:       return  LEFT;
+			case UP_LEFT:     return  DOWN_RIGHT;
+			case UP_RIGHT:    return  DOWN_LEFT;
+			case DOWN_LEFT:   return  UP_RIGHT;
+			case DOWN_RIGHT:  return  UP_LEFT;
+			default:  throw  new IllegalStateException("Unknown GridDirection value: " + this);
+		}
+	}
+	/**
 	 * <P>Is this direction {@code UP}? or a diagonal containing up?.</P>
 	 *
 	 * @return  <CODE>({@link #getVertPortion()}{@code ()} == {@link HorizVertDirection}.{@link HorizVertDirection#UP UP})</CODE>
@@ -314,6 +339,7 @@ public enum GridDirection  {
 	 *
 	 * @return  <CODE>({@link #getHorizPortion()}{@code ()} == {@link HorizVertDirection}.{@link HorizVertDirection#RIGHT RIGHT})</CODE>
 	 * @see  #hasUp()
+	 * @see  #isHorizontal()
 	 * @see  #hasHorizontal()
 	 **/
 	public final boolean hasRight()  {
@@ -329,9 +355,26 @@ public enum GridDirection  {
 		return  (getHorizPortion() == HorizVertDirection.LEFT);
 	}
 	/**
+	 * Is this diagonal <i>or</i> horizontal?.
+	 * @return <code>({@link #hasRight}()  ||  {@link #hasLeft}())</code>
+	 * @@see  #hasVertical()
+	 */
+	public final boolean hasHorizontal()  {
+		return  (hasRight()  ||  hasLeft());
+	}
+	/**
+	 * Is this diagonal <i>or</i> vertical?.
+	 * @return <code>({@link #hasUp}()  ||  {@link #hasDown}())</code>
+	 * @@see  #hasVertical()
+	 */
+	public final boolean hasVertical()  {
+		return  (hasUp()  ||  hasDown());
+	}
+	/**
 	 * Is <i><code>this</code></i> direction left or right?.
 	 * @return <code>({@link #isLeft()}{@code ()}&nbsp; || &nbsp;{@link #isRight()}{@code ()}</code>
 	 * @see #isVertical()
+	 * @see #isHorizOrVert()
 	 * @see #isDiagonal()
 	 */
 	public final boolean isHorizontal()  {
@@ -344,6 +387,14 @@ public enum GridDirection  {
 	 */
 	public final boolean isVertical()  {
 		return  (isUp()  ||  isDown());
+	}
+	/**
+	 * Is <i><code>this</code></i> direction up, down, left, or right?.
+	 * @return <code>({@link #isHorizontal()}{@code ()}&nbsp; || &nbsp;{@link #isVertical()}{@code ()}</code>
+	 * @see #isHorizontal()
+	 */
+	public final boolean isHorizOrVert()  {
+		return  (isHorizontal()  ||  isVertical());
 	}
 	/**
 	 * Is <i><code>this</code></i> <i>not</i> vertical or horizontal?.
@@ -362,8 +413,11 @@ public enum GridDirection  {
 	 * @param  coord May not be <code>null</code>.
 	 * @return If <code>coord</code> is already
 	 * {@linkplain #isHorizontal() horizontal} or
-	 * {@linkplain #isVertical() vertical}, it is returned unchanged.
-	 * Otherwise, if
+	 * {@linkplain #isVertical() vertical}, its {@code HorizVertDirection}
+	 * equivalent is returned (if <i>{@code this}</i> is
+	 * {@code GridDirection.UP}, then
+	 * <code>HorizVertDirection.{@link HorizVertDirection#UP UP}</code> is
+	 * returned).
 	 * <br/> &nbsp; &nbsp; <code>(coord.{@link GridCoordinate#getHorizIndex() getHorizIndex}() &lt; coord.{@link GridCoordinate#getVertIndex() getVertIndex}())</code>
 	 * <br/>is <code>true</code>, then this returns the vertical &quot;portion&quot; of
 	 * the diagonal direction (if <i><code>this</code></i> is <code>UP_LEFT</code>, then <code>UP</code> is returned). If <code>false</code>, the horizontal portion is returned (for <code>UP_LEFT</code>: <code>LEFT</code>).
@@ -382,8 +436,11 @@ public enum GridDirection  {
 	 * @param  coord May not be <code>null</code>.
 	 * @return If <code>coord</code> is already
 	 * {@linkplain #isHorizontal() horizontal} or
-	 * {@linkplain #isVertical() vertical}, it is returned unchanged.
-	 * Otherwise, if
+	 * {@linkplain #isVertical() vertical}, its {@code HorizVertDirection}
+	 * equivalent is returned (if <i>{@code this}</i> is
+	 * {@code GridDirection.UP}, then
+	 * <code>HorizVertDirection.{@link HorizVertDirection#UP UP}</code> is
+	 * returned). Otherwise, if
 	 * <br/> &nbsp; &nbsp; <code>(coord.{@link GridCoordinate#getHorizIndex() getHorizIndex}() &gt; coord.{@link GridCoordinate#getVertIndex() getVertIndex}())</code>
 	 * <br/>is <code>true</code>, then this returns the vertical &quot;portion&quot; of
 	 * the diagonal direction (if <i><code>this</code></i> is <code>UP_LEFT</code>, then <code>UP</code> is returned). If <code>false</code>, the horizontal portion is returned (for <code>UP_LEFT</code>: <code>LEFT</code>).
@@ -392,7 +449,7 @@ public enum GridDirection  {
 	 * @see BoundedGrid#getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection) BoundedGrid#getNeighborCount
 	 */
 	public HorizVertDirection getLongestHVForDiagonal(GridCoordinate coord)  {
-		return  getHVPortion(ShortLong.SHORTEST, coord);
+		return  getHVPortion(ShortLong.LONGEST, coord);
 	}
 		private enum ShortLong {SHORTEST, LONGEST};
 		private HorizVertDirection getHVPortion(ShortLong short_long, GridCoordinate coord)  {
