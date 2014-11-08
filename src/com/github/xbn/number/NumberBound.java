@@ -106,33 +106,20 @@ public abstract class NumberBound<N extends Number> implements Named  {
 	 **/
 	@Override
 	public boolean equals(Object to_compareTo)  {
-		if(to_compareTo == null)  {
-			throw  new NullPointerException("to_compareTo");
-		}
+		//Check for object equality first, since it's faster than instanceof.
 		if(this == to_compareTo)  {
 			return  true;
 		}
-
-		/*
-			http://www.javapractices.com/topic/TopicAction.do?Id=17
-			downloaded 10/14/2010
-			use instanceof instead of getClass here for two reasons
-			1. if need be, it can match any supertype, and not just one class;
-			2. it renders an explict check for "that == null" redundant, since
-			it does the check for null already - "null instanceof [type]" always
-			returns false. (See Effective Java by Joshua Bloch.)
-
-			[[[
-				Item two is wrong. When the parameter is null, it should throw an npx instead of throwing false:
-				See: xbnjava\z_build\answers\is-it-a-bad-idea-if-equalsnull-throws-nullpointerexception-instead.txt
-			]]]
-		 **/
 		if(!(to_compareTo instanceof NumberBound))  {
+			//to_compareTo is either null or not an NumberBound.
+			//java.lang.Object.object(o): "For any non-null reference value x,
+			//x.equals(null) should return false."
 			return  false;
 		}
 
+		//Safe to cast
 		@SuppressWarnings("unchecked")
-		NumberBound<?> o = (NumberBound<?>)to_compareTo;
+		NumberBound<N> o = (NumberBound<N>)to_compareTo;
 
 		//Finish with field-by-field comparison.
 		return  areFieldsEqual(o);

@@ -13,13 +13,13 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
+	import  com.github.xbn.lang.CrashIfObject;
+	import  com.github.xbn.lang.IllegalArgumentStateException;
 	import  com.github.xbn.lang.Invert;
 	import  com.github.xbn.lang.RuleType;
-	import  java.util.Objects;
 	import  com.github.xbn.lang.XInfoAccumulator;
-	import  com.github.xbn.lang.CrashIfObject;
+	import  java.util.Objects;
 	import  static com.github.xbn.lang.CrashIfBase.*;
-	import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
  * <P>Determines if an int is within an {@code IntRange}.</P>
  * @since 0.1.0
@@ -177,7 +177,9 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 				highestMinBound = (!to_intersectWith.hasMin() ? null
 					:  new IntBoundInclusive(to_intersectWith.getMinBound().get(), null));
 			}  else  {
-				Inclusive incl = getInclForIntersectMrg(to_intersectWith.getMinBound());
+				iasxIfDiffInclsivities("in", "intersect", getMinBound(),
+					to_intersectWith.getMinBound());
+				Inclusive incl = Inclusive.getForBoolean(getMinBound().isInclusive());
 				int tiwMinIncl = to_intersectWith.getMinGivenIncl();
 				int num = ((tiwMinIncl < getMinGivenIncl()) ? getMinGivenIncl() : tiwMinIncl);
 				if(incl.isNo())  {
@@ -199,12 +201,14 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 				lowestMaxBound = (!to_intersectWith.hasMax() ? null
 					:  new IntBoundInclusive(to_intersectWith.getMaxBound().get(), null));
 			}  else  {
-				Inclusive incl = getInclForIntersectMrg(to_intersectWith.getMaxBound());
+				iasxIfDiffInclsivities("ax", "intersect", getMaxBound(),
+					to_intersectWith.getMaxBound());
+				Inclusive incl = Inclusive.getForBoolean(getMaxBound().isInclusive());
 				int tiwMaxIncl = to_intersectWith.getMaxGivenIncl();
 				int num = ((getMaxGivenIncl() < tiwMaxIncl) ? getMaxGivenIncl() : tiwMaxIncl);
 				if(incl.isNo())  {
 					//Both bounds exist, and they're both inclusive
-					num--;
+					num++;
 				}
 				lowestMaxBound = new IntBound(num, incl, null);
 			}
@@ -214,64 +218,67 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 
 		return  new IntInRange(highestMinBound, lowestMaxBound);
 	}
-		private Inclusive getInclForIntersectMrg(NumberBound<Integer> bound_ofToIntrMrgWith)  {
-			return  ((getMinBound().isInclusive() == bound_ofToIntrMrgWith.isInclusive())
-							?  Inclusive.getForBoolean(getMinBound().isInclusive())
-							:  Inclusive.YES);
-		}
 	public NumberInRange<Integer> getMerged(NumberInRange<Integer> to_mergeWith,
 				OverlapRequired overlap_rqd)  {
 		try  {
 			if(overlap_rqd.isYes()  &&  !doesOverlap(to_mergeWith))  {
-				throw  new IllegalArgumentException("to_mergeWith (" + to_mergeWith + ") does not overlap *this* (" + this + ")");
+				throw  new IllegalArgumentStateException("to_mergeWith < " +
+					to_mergeWith + " > does not overlap *this* < " + this + " >");
 			}
 		}  catch(NullPointerException npx)  {
 			CrashIfObject.nullOrReturnCause(overlap_rqd, "overlap_rqd", null, npx);
 		}
-
-		Inclusive incl = null;
-		Integer num = -1;
-
+		IntBound lowestMinBound = null;
 		try  {
-			if(!to_mergeWith.hasMin())  {
-				incl = Inclusive.YES;
-				num = getMin();
-			}  else if(!hasMin())  {
-				incl = Inclusive.YES;
-				num = to_mergeWith.getMinBound().get();
+			if(!to_mergeWith.hasMin()  ||  !hasMin())  {
+				lowestMinBound = null;
 			}  else  {
-				incl = getInclForIntersectMrg(to_mergeWith.getMinBound());
+				iasxIfDiffInclsivities("in", "merge", getMinBound(),
+					to_mergeWith.getMinBound());
+				Inclusive incl = Inclusive.getForBoolean(getMinBound().isInclusive());
 				int tiwMinIncl = to_mergeWith.getMinGivenIncl();
-				num = ((getMinGivenIncl() < tiwMinIncl) ? getMinGivenIncl() : tiwMinIncl);
+				int num = ((getMinGivenIncl() < tiwMinIncl) ? getMinGivenIncl() : tiwMinIncl);
 				if(incl.isNo())  {
 					//Both bounds exist, and they're both inclusive
 					num--;
 				}
+				lowestMinBound = new IntBound(num, incl, null);
 			}
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_mergeWith");
 		}
-		IntBound lowestMinBound = new IntBound(num, incl, null);
 
-		if(!to_mergeWith.hasMax())  {
-			incl = Inclusive.YES;
-			num = getMaxBound().get();
-		}  else if(!hasMax())  {
-			incl = Inclusive.YES;
-			num = to_mergeWith.getMaxBound().get();
-		}  else  {
-			incl = getInclForIntersectMrg(to_mergeWith.getMaxBound());
-			int tiwMaxIncl = to_mergeWith.getMaxGivenIncl();
-			num = ((getMaxGivenIncl() < tiwMaxIncl) ? tiwMaxIncl : getMaxGivenIncl());
-			if(incl.isNo())  {
-				//Both bounds exist, and they're both inclusive
-				num++;
+		IntBound highestMaxBound = null;
+		try  {
+			if(!to_mergeWith.hasMax()  ||  !hasMax())  {
+				highestMaxBound = null;
+			}  else  {
+				iasxIfDiffInclsivities("ax", "merge", getMaxBound(),
+					to_mergeWith.getMaxBound());
+				Inclusive incl = Inclusive.getForBoolean(getMaxBound().isInclusive());
+				int tiwMaxIncl = to_mergeWith.getMaxGivenIncl();
+				int num = ((tiwMaxIncl < getMaxGivenIncl()) ? getMaxGivenIncl() : tiwMaxIncl);
+				if(incl.isNo())  {
+					//Both bounds exist, and they're both inclusive
+					num++;
+				}
+				highestMaxBound = new IntBound(num, incl, null);
 			}
+		}  catch(NullPointerException npx)  {
+			throw  new NullPointerException("to_mergeWith");
 		}
-		IntBound highestMaxBound = new IntBound(num, incl, null);
 
 		return  new IntInRange(lowestMinBound, highestMaxBound);
 	}
+		private void iasxIfDiffInclsivities(String in_ax, String mrg_intr,
+					NumberBound<Integer> this_bound, NumberBound<Integer> that_bound)  {
+			if(this_bound.isInclusive() != that_bound.isInclusive())  {
+				throw  new IllegalArgumentStateException("getM" + in_ax +
+					"Bound().isInclusive() (" + this_bound.isInclusive() +
+					") is different than to_" + mrg_intr + "With.getM" + in_ax +
+					"Bound().isInclusive().");
+			}
+		}
 //other...START
 	public boolean isValidInclusiveRange(Integer min, Integer max)  {
 		try  {
@@ -391,18 +398,24 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 	 * @see  #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength(ibi,nb,s,s,o)
 	 * @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRange#isIn(N)">isIn</A>(N)*</CODE>
 	 */
-	public static final void crashIfBadBounds(IntBound min, IntBound max, String min_name, String max_name, Object xtra_errInfo)  {
+	public static final void crashIfBadBounds(IntBound min, IntBound max,
+				String min_name, String max_name, Object xtra_errInfo)  {
 		if(min == null  ||  max == null)  {
 			return;
 		}
 		int iAway = (min.isInclusive() ? 0 : 1) + (max.isInclusive() ? 0 : 1);
 		if(min.get() > (max.get() - iAway))  {
 			String sMid = ((min.isInclusive()  &&  max.isInclusive()) ?  "."
-				:  " minus " + iAway + " (max.get()-" + iAway + "=" + (max.get() - iAway) + ").");
-			String sMsg = "Both " + min_name + " and " + max_name + " are non-null, but " + min_name + ".get() (" + min.get() + ") is greater than " + max_name + ".get() (" + max.get() + ")" + sMid;
+				:  " minus " + iAway + " (max.get()-" + iAway + "=" +
+					(max.get() - iAway) + ").");
+			String sMsg = "Both " + min_name + " and " + max_name +
+				" are non-null, but " + min_name + ".get() (" + min.get() +
+					") is greater than " + max_name + ".get() (" + max.get() + ")" +
+					sMid;
 			throw  new IllegalArgumentStateException(getXMsg(sMsg,
 				XInfoAccumulator.getAddedOrNew(xtra_errInfo,
-				min_name + ".isInclusive()=" + min.isInclusive() + ", " + max_name + ".isInclusive()=" + max.isInclusive())));
+				min_name + ".isInclusive()=" + min.isInclusive() + ", " + max_name +
+				".isInclusive()=" + max.isInclusive())));
 		}
 	}
 	/**
@@ -414,7 +427,8 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
 	 * the minimum bound must be non-{@code null} and
 	 * greater-than-or-equal-to zero.</P>
 	 */
-	protected static final void crashIfBadBoundsForLength(IntBoundInclusive min, IntBound max, String min_name, String max_name, Object xtra_errInfo)  {
+	protected static final void crashIfBadBoundsForLength(IntBoundInclusive min,
+				IntBound max, String min_name, String max_name, Object xtra_errInfo)  {
 		try  {
 			if(min.getInt() < 0)  {
 				throw  new IllegalArgumentException("Min less than zero: " + min);

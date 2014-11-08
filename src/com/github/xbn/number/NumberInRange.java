@@ -359,13 +359,16 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	 * Get a new range containing the values in <i>both</i>
 	 * <i>{@code this}</i> and another range.
 	 * @param  to_intersectWith May not be <code>null</code>.
-	 * @return  If {@code to_intersectWith} {@linkplain #doesOverlap(com.github.xbn.number.NumberInRange) overlaps} <i>{@code this}</i> range, this returns a new range that
+	 * @return  If {@code to_intersectWith}
+	 * {@linkplain #doesOverlap(com.github.xbn.number.NumberInRange) overlaps}
+	 * <i>{@code this}</i> range, this returns a new range that
 	 * contains only those values in both. If they do not overlap, this
-	 * returns {@code null}. <i>If the min (or max) bounds for
- 	 * both ranges are inclusive (or exclusive), then the returned range
- 	 * also has a inclusive min (or max) bound. If they are
-	 * different (or at least one is {@code null}), then the bound will
-	 * always be inclusive.</i></i>
+	 * returns {@code null}.  It is required that both
+	 * {@linkplain #getMinBound() min bounds} and both
+	 * {@linkplain #getMaxBound() max bounds} have the same inclusivity
+	 * (must both be {@linkplain Inclusive#YES inclusive} or both
+	 * {@linkplain Inclusive#NO exclusive}). (It is okay for one min (or
+	 *  max) bound to exist, and the other not exist.)
 	 * @see #getMerged(NumberInRange, OverlapRequired)
 	 * @since 0.1.4.2
 	 */
@@ -380,11 +383,12 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	 *  <i>{@code this}</i> range.
 	 * @param  to_rqd  May not be <code>null</code>.
 	 * @return  A new range whose values are in <i>either</i>
-	 * <i>{@code this}</i> or {@code to_mergeWith}. <i>If the min (or max)
-	 * bounds for both ranges are inclusive (or exclusive), then the
-	 * returned range also has a inclusive min (or max) bound. If they are
-	 * different (or at least one is {@code null}), then the bound will
-	 * always be inclusive.</i>
+	 * <i>{@code this}</i> or {@code to_mergeWith}. It is required that both
+	 * {@linkplain #getMinBound() min bounds} and both
+	 * {@linkplain #getMaxBound() max bounds} have the same inclusivity
+	 * (must both be {@linkplain Inclusive#YES inclusive} or both
+	 * {@linkplain Inclusive#NO exclusive}). (It is okay for one min (or max)
+	 * bound to exist, and the other not exist.)
 	 * @exception IllegalArgumentException If {@code to_rqd.YES} and
 	 * {@code to_mergeWith} does not overlap or touch <i>{@code this}</i>
 	 * one.
