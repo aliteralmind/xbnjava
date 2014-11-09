@@ -17,7 +17,8 @@
 package  com.github.xbn.util.grid;
 	import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
- * <p>A set of contiguous coordinates in a bounded grid, going in one of the {@code GridDirection}s.</p>
+ * <p>A set of contiguous coordinates in a bounded grid, going in one of
+ * the {@code GridDirection}s.</p>
  * @see GridDirection
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
@@ -26,20 +27,22 @@ public class GridLine  {
 	private final DistanceDirection dd;
 	private final GridCoordinate[] coords;
 	private final BoundedGrid grid;
-	public GridLine(BoundedGrid grid, int start_horizIdx, int start_vertIdx, GridDirection direction, int length)  {
+	public GridLine(BoundedGrid grid, int start_horizIdx, int start_vertIdx,
+				GridDirection direction, int length)  {
 		try  {
 			coords = new GridCoordinate[length];
 		}  catch(ArrayIndexOutOfBoundsException abx)  {
 			throw  new ArrayIndexOutOfBoundsException("length=" + length);
 		}
+		GridCoordinate start = null;
 		try  {
-			coords[0] = grid.getCoordinate(start_horizIdx, start_vertIdx,
+			start = grid.get(start_horizIdx, start_vertIdx,
 				"start_horizIdx", "start_vertIdx");
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("grid");
 		}
-		GridCoordinate start = coords[0];
-		GridCoordinate current = coords[0];
+		coords[0] = start;
+		GridCoordinate current = start;
 		for(int i = 1; i < length; i++)  {
 			GridCoordinate next = null;
 			try  {
@@ -56,24 +59,25 @@ public class GridLine  {
 		dd = DistanceDirection.newForStartEnd(start, current);
 
 		assert  (direction == dd.getDirection()) : "direction (" + direction +
-			") does not equal DistanceDirection.newForStartEnd(" + start + ", " + current +
-			").getDirection() (" + dd.getDirection() + ")";
+			") does not equal DistanceDirection.newForStartEnd(" + start + ", " +
+			current + ").getDirection() (" + dd.getDirection() + ")";
 	}
 	public int getLength()  {
 		return  coords.length;
 	}
-	public GridCoordinate getCoordinate(int index)  {
+	public GridCoordinate get(int index)  {
 		try  {
 			return  coords[index];
 		}  catch(ArrayIndexOutOfBoundsException ibx)  {
-			throw  new ArrayIndexOutOfBoundsException("index=" + index + ", getLength()=" + getLength());
+			throw  new ArrayIndexOutOfBoundsException("index=" + index +
+				", getLength()=" + getLength());
 		}
 	}
 	public GridCoordinate getFirstOverlappingCoord(GridLine line)  {
 		for(int i = 0; i < line.getLength(); i++)  {
 			for(int j = 0; j < getLength(); j++)  {
-				GridCoordinate gcFromParam = line.getCoordinate(i);
-				if(gcFromParam.equals(getCoordinate(j)))  {
+				GridCoordinate gcFromParam = line.get(i);
+				if(gcFromParam.equals(get(j)))  {
 					return  gcFromParam;
 				}
 			}

@@ -21,7 +21,8 @@ package  com.github.xbn.util.grid;
 	import  java.util.Arrays;
 /**
  * <p>For traversing the elements in a rectangular double-array, in any
- * direction: up, down, left, right, up-left, up-right, down-left, down-right.</p>
+ * direction: up, down, left, right, up-left, up-right, down-left,
+ * down-right.</p>
  * @see  GridCoordinate
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
@@ -67,8 +68,8 @@ public class BoundedGrid  {
 	public int getHeight()  {
 		return  coords.length;
 	}
-	public GridCoordinate getCoordinate(int horiz_idx, int vert_idx)  {
-		return  getCoordinate(horiz_idx, vert_idx, "horiz_idx", "vert_idx");
+	public GridCoordinate get(int horiz_idx, int vert_idx)  {
+		return  get(horiz_idx, vert_idx, "horiz_idx", "vert_idx");
 	}
 	/**
 	 * Get the coordinate at a specific location in the grid.
@@ -81,7 +82,7 @@ public class BoundedGrid  {
 	 * @return  A <code>GridCoordinate</code> with the provided indexes.
 	 * @exception ArrayIndexOutOfBoundsException If either index is invalid.
 	 */
-	public GridCoordinate getCoordinate(int horiz_idx, int vert_idx, String hi_name, String vi_name)  {
+	public GridCoordinate get(int horiz_idx, int vert_idx, String hi_name, String vi_name)  {
 		try  {
 			return  coords[horiz_idx][vert_idx];
 		}  catch(ArrayIndexOutOfBoundsException abx)  {
@@ -126,12 +127,12 @@ public class BoundedGrid  {
 	 * @param   direction May not be <code>null</code>.
 	 * @return  <code>getHVNeighborCount(hvDirection)</code>
 	 * <br/>Where <code>hvDirection</code> is equal to
-	 * <br> &nbsp; &nbsp; <code>{@link #getCoordinate(int, int)}(horiz_idx, vert_idx).{@link GridCoordinate#getShortestHVForDiagonal(com.github.xbn.util.grid.GridDirection)}(direction)</code>
+	 * <br> &nbsp; &nbsp; <code>{@link #get(int, int)}(horiz_idx, vert_idx).{@link GridCoordinate#getShortestHVForDiagonal(com.github.xbn.util.grid.GridDirection)}(direction)</code>
 	 * @see #getNeighborCount(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection) getNeighborCount(gc,gd)
 	 * @see #isNeighborCountAtLeast(int, int, com.github.xbn.util.grid.GridDirection, int) isNeighborCountAtLeast(i,i,gd,i)
 	 */
 	public int getNeighborCount(int horiz_idx, int vert_idx, GridDirection direction)  {
-		GridCoordinate item = getCoordinate(horiz_idx, vert_idx);
+		GridCoordinate item = get(horiz_idx, vert_idx);
 		HorizVertDirection hvDirection = null;
 		try  {
 			hvDirection = direction.getShortestHVForDiagonal(item);
@@ -174,15 +175,15 @@ public class BoundedGrid  {
 	 * be valid given {@link #getHeight()}{@code ()}.
 	 * @return  <code>start.getDistance(end)</code>
 	 * <br/>Where {@code start} is
-	 * <br/> &nbsp; &nbsp; <code>getCoordinate(start_horizIdx, start_vertIdx)</code>
+	 * <br/> &nbsp; &nbsp; <code>get(start_horizIdx, start_vertIdx)</code>
 	 * <br/>and {@code end} is
-	 * <br/> &nbsp; &nbsp; <code>getCoordinate(end_horizIdx, end_vertIdx)</code>
+	 * <br/> &nbsp; &nbsp; <code>get(end_horizIdx, end_vertIdx)</code>
 	 */
 	public DistanceDirection getNeighborDistDir(int start_horizIdx, int start_vertIdx,
 			                                      int end_horizIdx,   int end_vertIdx)  {
-		GridCoordinate start = getCoordinate(start_horizIdx, start_vertIdx,
+		GridCoordinate start = get(start_horizIdx, start_vertIdx,
 			"start_horizIdx", "start_vertIdx");
-		GridCoordinate end = getCoordinate(end_horizIdx, end_vertIdx,
+		GridCoordinate end = get(end_horizIdx, end_vertIdx,
 			"end_horizIdx", "end_vertIdx");
 		return  DistanceDirection.newForStartEnd(start, end);
 	}
@@ -249,7 +250,7 @@ public class BoundedGrid  {
 				v -= getHeight();
 			}
 		}
-		return  getCoordinate(h, v);
+		return  get(h, v);
 	}
 		private final void throwHorizExceedsIAXIfCrash(
 					EdgeExceeded crash_or_wrap, int horiz_idx, GridDirection direction,
