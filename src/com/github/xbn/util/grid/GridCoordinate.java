@@ -85,8 +85,4 @@ public class GridCoordinate extends AbstractCoordinate  {
 			throw  new NullPointerException("to_compareTo");
 		}
 	}
-	public DistanceDirection getDistance(GridCoordinate to_compareTo)  {
-		return  new DistanceDirection(getHorizDistance(to_compareTo),
-			                           getVertDistance(to_compareTo));
-	}
 }

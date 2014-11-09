@@ -34,27 +34,7 @@ public class DistanceDirection extends AbstractCoordinate  {
 	 */
 	public DistanceDirection(int horiz, int vert)  {
 		super(horiz, vert);
-
-		GridDirection tempDir = null;
-		if(horiz != 0)  {
-			if(vert == 0)  {
-				tempDir = ((horiz < 0) ? GridDirection.RIGHT : GridDirection.LEFT);
-			}  else if(Math.abs(horiz) == Math.abs(vert))  {
-				//Directly diagonal
-				if(horiz < 0)  {
-					//This is to the left
-					tempDir = ((vert < 0) ?  GridDirection.DOWN_RIGHT: GridDirection.UP_RIGHT);
-				}  else  {
-					//This is to the right
-					tempDir = ((vert < 0) ?  GridDirection.DOWN_LEFT: GridDirection.UP_LEFT);
-				}
-			}  //Not directly diagonal, vertical, or horizontal
-
-		}  else if(vert != 0)  {
-			//Horiz is zero, vert is not
-			tempDir = ((vert < 0) ? GridDirection.DOWN : GridDirection.UP);
-		}
-		dir = tempDir;
+		dir = getDirectionFromDistances(horiz, vert);
 	}
 	/**
 	 * The direction between the two coordinates, if it happens to be a
@@ -64,11 +44,37 @@ public class DistanceDirection extends AbstractCoordinate  {
 	 * directly left, right, up, down, up-left, up-right, down-left, or
 	 * down-right.
 	 */
-	public GridDirection getGridDirection()  {
+	public GridDirection getDirection()  {
 		return  dir;
 	}
 	public String toString()  {
 		return  super.toString() + ": direction=" +
-			((getGridDirection() != null) ? getGridDirection() : "SELF-OR-UNKNOWN");
+			((getDirection() != null) ? getDirection() : "SELF-OR-UNKNOWN");
+	}
+	public static final DistanceDirection newForStartEnd(GridCoordinate start, GridCoordinate end)  {
+		return  new DistanceDirection(start.getHorizDistance(end),
+			                           start.getVertDistance(end));
+	}
+	public static final GridDirection getDirectionFromDistances(int horiz, int vert)  {
+		GridDirection dir = null;
+		if(horiz != 0)  {
+			if(vert == 0)  {
+				dir = ((horiz < 0) ? GridDirection.RIGHT : GridDirection.LEFT);
+			}  else if(Math.abs(horiz) == Math.abs(vert))  {
+				//Directly diagonal
+				if(horiz < 0)  {
+					//This is to the left
+					dir = ((vert < 0) ?  GridDirection.DOWN_RIGHT: GridDirection.UP_RIGHT);
+				}  else  {
+					//This is to the right
+					dir = ((vert < 0) ?  GridDirection.DOWN_LEFT: GridDirection.UP_LEFT);
+				}
+			}  //Not directly diagonal, vertical, or horizontal
+
+		}  else if(vert != 0)  {
+			//Horiz is zero, vert is not
+			dir = ((vert < 0) ? GridDirection.DOWN : GridDirection.UP);
+		}
+		return  dir;
 	}
 }

@@ -67,6 +67,9 @@ public class BoundedGrid  {
 	public int getHeight()  {
 		return  coords.length;
 	}
+	public GridCoordinate getCoordinate(int horiz_idx, int vert_idx)  {
+		return  getCoordinate(horiz_idx, vert_idx, "horiz_idx", "vert_idx");
+	}
 	/**
 	 * Get the coordinate at a specific location in the grid.
 	 * @param  horiz_idx The element index corresponding to
@@ -78,11 +81,11 @@ public class BoundedGrid  {
 	 * @return  A <code>GridCoordinate</code> with the provided indexes.
 	 * @exception ArrayIndexOutOfBoundsException If either index is invalid.
 	 */
-	public GridCoordinate getCoordinate(int horiz_idx, int vert_idx)  {
+	public GridCoordinate getCoordinate(int horiz_idx, int vert_idx, String hi_name, String vi_name)  {
 		try  {
 			return  coords[horiz_idx][vert_idx];
 		}  catch(ArrayIndexOutOfBoundsException abx)  {
-			throw  new ArrayIndexOutOfBoundsException("horiz_idx=" + horiz_idx + ", vert_idx=" + vert_idx + ", getWidth()=" + getWidth() + ", getHeight()=" + getHeight());
+			throw  new ArrayIndexOutOfBoundsException(hi_name + "=" + horiz_idx + ", " + vi_name + "=" + vert_idx + ", getWidth()=" + getWidth() + ", getHeight()=" + getHeight());
 		}
 	}
 	/**
@@ -177,27 +180,11 @@ public class BoundedGrid  {
 	 */
 	public DistanceDirection getNeighborDistDir(int start_horizIdx, int start_vertIdx,
 			                                      int end_horizIdx,   int end_vertIdx)  {
-		GridCoordinate start = null;
-		GridCoordinate end = null;
-		try  {
-			start = getCoordinate(start_horizIdx, start_vertIdx);
-		}  catch(ArrayIndexOutOfBoundsException abx)  {
-			throw  ExceptionUtil.returnCauseSetIntoThrowable(
-				new ArrayIndexOutOfBoundsException(
-					"Attempting getCoordinate(start_horizIdx, start_vertIdx) -- start_horizIdx=" +
-					start_horizIdx + ", start_vertIdx=" + start_vertIdx),
-				abx);
-		}
-		try  {
-			end = getCoordinate(end_horizIdx, end_vertIdx);
-		}  catch(ArrayIndexOutOfBoundsException abx)  {
-			throw  ExceptionUtil.returnCauseSetIntoThrowable(
-				new ArrayIndexOutOfBoundsException(
-					"Attempting getCoordinate(end_horizIdx, end_vertIdx) -- end_horizIdx=" +
-					end_horizIdx + ", end_vertIdx=" + end_vertIdx),
-				abx);
-		}
-		return  start.getDistance(end);
+		GridCoordinate start = getCoordinate(start_horizIdx, start_vertIdx,
+			"start_horizIdx", "start_vertIdx");
+		GridCoordinate end = getCoordinate(end_horizIdx, end_vertIdx,
+			"end_horizIdx", "end_vertIdx");
+		return  DistanceDirection.newForStartEnd(start, end);
 	}
 	/**
 	 * Get a coordinate that is a neighbor of another.
@@ -499,6 +486,9 @@ public class BoundedGrid  {
 			:  getWidth());
 
 		return  new IndexInRange(topIdx, bottomIdxExcl);
+	}
+	public String toString()  {
+		return  "width=" + getWidth() + ", height=" + getHeight();
 	}
 	/**
 	 * Is a coordinate valid for this grid?.
