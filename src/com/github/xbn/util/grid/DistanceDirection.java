@@ -25,16 +25,16 @@ public class DistanceDirection extends AbstractCoordinate  {
 	private final GridDirection dir;
 	/**
 	 * <p>Create a new item from its coordinates.</p>
-	 * @param  horiz The number of columns away, one coordinate is from
+	 * @param  horiz_away The number of columns away, one coordinate is from
 	 * another. If zero, both items are in the same column. Get with
 	 * {@link #getHorizontal()}.
-	 * @param  vert  The number of rows away, one coordinate is from
+	 * @param  vert_away  The number of rows away, one coordinate is from
 	 * another. If zero, both items are in the same row. Get with
 	 * {@link #getVertical()}.
 	 */
-	public DistanceDirection(int horiz, int vert)  {
-		super(horiz, vert);
-		dir = getDirectionFromDistances(horiz, vert);
+	public DistanceDirection(int horiz_away, int vert_away)  {
+		super(horiz_away, vert_away);
+		dir = getDirectionFromDistances(horiz_away, vert_away);
 	}
 	/**
 	 * The direction between the two coordinates, if it happens to be a
@@ -55,25 +55,32 @@ public class DistanceDirection extends AbstractCoordinate  {
 		return  new DistanceDirection(start.getHorizDistance(end),
 			                           start.getVertDistance(end));
 	}
-	public static final GridDirection getDirectionFromDistances(int horiz, int vert)  {
+	/**
+	 * Given the relative distances between two coordinates, get the
+	 * direction between two coordinates.
+	 * @param  horiz_away [description]
+	 * @param  vert_away  [description]
+	 * @return            [description]
+	 */
+	public static final GridDirection getDirectionFromDistances(int horiz_away, int vert_away)  {
 		GridDirection dir = null;
-		if(horiz != 0)  {
-			if(vert == 0)  {
-				dir = ((horiz < 0) ? GridDirection.RIGHT : GridDirection.LEFT);
-			}  else if(Math.abs(horiz) == Math.abs(vert))  {
+		if(horiz_away != 0)  {
+			if(vert_away == 0)  {
+				dir = ((horiz_away < 0) ? GridDirection.RIGHT : GridDirection.LEFT);
+			}  else if(Math.abs(horiz_away) == Math.abs(vert_away))  {
 				//Directly diagonal
-				if(horiz < 0)  {
+				if(horiz_away < 0)  {
 					//This is to the left
-					dir = ((vert < 0) ?  GridDirection.DOWN_RIGHT: GridDirection.UP_RIGHT);
+					dir = ((vert_away < 0) ?  GridDirection.DOWN_RIGHT: GridDirection.UP_RIGHT);
 				}  else  {
 					//This is to the right
-					dir = ((vert < 0) ?  GridDirection.DOWN_LEFT: GridDirection.UP_LEFT);
+					dir = ((vert_away < 0) ?  GridDirection.DOWN_LEFT: GridDirection.UP_LEFT);
 				}
-			}  //Not directly diagonal, vertical, or horizontal
+			}  //Not directly diagonal, vert_awayical, or horizontal
 
-		}  else if(vert != 0)  {
-			//Horiz is zero, vert is not
-			dir = ((vert < 0) ? GridDirection.DOWN : GridDirection.UP);
+		}  else if(vert_away != 0)  {
+			//Horiz is zero, vert_away is not
+			dir = ((vert_away < 0) ? GridDirection.DOWN : GridDirection.UP);
 		}
 		return  dir;
 	}
