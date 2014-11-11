@@ -30,23 +30,14 @@ public class MatrixElement extends AbstractElement  {
 	 * @param  vert_idx  The index of this items' sub-array within the
 	 * overall array. May not be less than zero. Get with {@link #getVertIndex()}.
 	 */
-	public MatrixElement(int horiz_idx, int vert_idx)  {
-		super(horiz_idx, vert_idx);
-		if(horiz_idx < 0)  {
-			throw  new IllegalArgumentException("horiz_idx (" + horiz_idx + ") is less than zero.");
-		}
+	public MatrixElement(int vert_idx, int horiz_idx)  {
+		super(vert_idx, horiz_idx);
 		if(vert_idx < 0)  {
 			throw  new IllegalArgumentException("vert_idx (" + vert_idx + ") is less than zero.");
 		}
-	}
-	/**
-	 * <p>The index of this item within its sub-array.</p>
-	 *
-	 * @return  <code>horiz_idx</code>, as provided to the
-	 * {@link #MatrixElement(int, int, O) constructor}.
-	*/
-	public int getHorizIndex()  {
-		return  getHorizontal();
+		if(horiz_idx < 0)  {
+			throw  new IllegalArgumentException("horiz_idx (" + horiz_idx + ") is less than zero.");
+		}
 	}
 	/**
 	 * <p>The index of this items' sub-array within the overall array.</p>
@@ -56,6 +47,15 @@ public class MatrixElement extends AbstractElement  {
 	*/
 	public int getVertIndex()  {
 		return  getVertical();
+	}
+	/**
+	 * <p>The index of this item within its sub-array.</p>
+	 *
+	 * @return  <code>horiz_idx</code>, as provided to the
+	 * {@link #MatrixElement(int, int, O) constructor}.
+	*/
+	public int getHorizIndex()  {
+		return  getHorizontal();
 	}
 	/**
 	 * The horizontal distance (the number of cells away) from <i>{@code this}</i>

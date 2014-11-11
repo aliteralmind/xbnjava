@@ -24,8 +24,8 @@ public class FillableMatrix extends BoundedMatrix  {
 	/**
 	 * <p>Create a new grid with a particular height and width.</p>
 	 */
-	public FillableMatrix(int width, int height)  {
-		super(width, height);
+	public FillableMatrix(int height, int width)  {
+		super(height, width);
 	}
 	/**
 	 * Create a new instance as a duplicate of another.
@@ -39,11 +39,11 @@ public class FillableMatrix extends BoundedMatrix  {
 		super(coords);
 	}
 	 */
-	public FillableElement get(int horiz_idx, int vert_idx)  {
-		return  (FillableElement)super.get(horiz_idx, vert_idx);
+	public FillableElement get(int vert_idx, int horiz_idx)  {
+		return  (FillableElement)super.get(vert_idx, horiz_idx);
 	}
-	public FillableElement get(int horiz_idx, int vert_idx, String hi_name, String vi_name)  {
-		return  (FillableElement)super.get(horiz_idx, vert_idx, hi_name, vi_name);
+	public FillableElement get(int vert_idx, int horiz_idx, String hi_name, String vi_name)  {
+		return  (FillableElement)super.get(vert_idx, horiz_idx, hi_name, vi_name);
 	}
 	public void unfillAll()  {
 		fillAll(false);
@@ -75,18 +75,18 @@ public class FillableMatrix extends BoundedMatrix  {
 		}
 		return  filled;
 	}
-	public FillableMatrix unfill(int horiz_idx, int vert_idx)  {
-		return  fill(false, horiz_idx, vert_idx);
+	public FillableMatrix unfill(int vert_idx, int horiz_idx)  {
+		return  fill(false, vert_idx, horiz_idx);
 	}
-	public FillableMatrix fill(int horiz_idx, int vert_idx)  {
-		return  fill(true, horiz_idx, vert_idx);
+	public FillableMatrix fill(int vert_idx, int horiz_idx)  {
+		return  fill(true, vert_idx, horiz_idx);
 	}
-	public FillableMatrix fill(boolean is_filled, int horiz_idx, int vert_idx)  {
-		get(horiz_idx, vert_idx, "horiz_idx", "vert_idx").fill(is_filled);
+	public FillableMatrix fill(boolean is_filled, int vert_idx, int horiz_idx)  {
+		get(vert_idx, horiz_idx, "horiz_idx", "vert_idx").fill(is_filled);
 		return  this;
 	}
-	public boolean isFilled(int horiz_idx, int vert_idx)  {
-		return  get(horiz_idx, vert_idx, "horiz_idx", "vert_idx").isFilled();
+	public boolean isFilled(int vert_idx, int horiz_idx)  {
+		return  get(vert_idx, horiz_idx, "horiz_idx", "vert_idx").isFilled();
 	}
 	/**
 	 * Get a new double array of elements with a specific width and
@@ -103,7 +103,7 @@ public class FillableMatrix extends BoundedMatrix  {
 	 * equivalent to its location in the array (vertical is the sub-array,
 	 * horizontal is the }, within that array).
 	 */
-	public MatrixElement[][] getArrayFromWidthHeight(int width, int height)  {
+	public MatrixElement[][] getArrayFromWidthHeight(int height, int width)  {
 		FillableElement[][] coords = null;
 		try  {
 			coords = new FillableElement[width][height];

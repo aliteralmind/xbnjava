@@ -19,7 +19,7 @@ package  com.github.xbn.util.matrix;
 /**
  * <p>The direction of movement within a two dimensional array, horizontal, vertical, or diagonal.</p>
  *
- * @see HorizVertDirection
+ * @see VertHorizDirection
  * @see BoundedMatrix#getNeighbor(int, int, com.github.xbn.util.matrix.MatrixDirection, int, com.github.xbn.util.matrix.EdgeExceeded) BoundedMatrix#getNeighbor
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
@@ -29,10 +29,10 @@ public enum MatrixDirection  {
 	 * <P>Up.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code -1}</li>
-	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 0}</li>
+	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code -1}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 0}</li>
+	 *    <li>{@link #getVertPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#UP UP}</li>
 	 *    <li>{@link #getHorizPortion()}{@code ()} to {@code null}</li>
-	 *    <li>{@link #getVertPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#UP UP}</li>
 	 * </ul></p>
 	 *
 	 * @see  #DOWN
@@ -44,129 +44,138 @@ public enum MatrixDirection  {
 	 * @see  #DOWN_RIGHT
 	 * @see  #isVertical()
 	 */
-	UP(0, -1, null, HorizVertDirection.UP),
+	UP(-1, 0, VertHorizDirection.UP, null),
 	/**
 	 * <P>Down.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 1}</li>
-	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 0}</li>
+	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 1}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 0}</li>
+	 *    <li>{@link #getVertPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN}</li>
 	 *    <li>{@link #getHorizPortion()}{@code ()} to {@code null}</li>
-	 *    <li>{@link #getVertPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#DOWN DOWN}</li>
 	 * </ul></p>
 	 *
 	 * @see  #UP
 	 * @see  #isDown()
 	 * @see  #isVertical()
 	 */
-	DOWN(0, 1, null, HorizVertDirection.DOWN),
+	DOWN(1, 0, VertHorizDirection.DOWN, null),
 	/**
 	 * <P>Left.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 0}</li>
-	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code -1}</li>
-	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#LEFT LEFT}</li>
+	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 0}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code -1}</li>
 	 *    <li>{@link #getVertPortion()}{@code ()} to {@code null}</li>
+	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT}</li>
 	 * </ul></p>
 	 *
 	 * @see  #UP
 	 * @see  #isLeft()
 	 * @see  #isHorizontal()
 	 */
-	LEFT(-1, 0, HorizVertDirection.LEFT, null),
+	LEFT(0, -1, null, VertHorizDirection.LEFT),
 	/**
 	 * <P>Right.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 0}</li>
-	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 1}</li>
-	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#RIGHT RIGHT}</li>
+	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 0}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 1}</li>
 	 *    <li>{@link #getVertPortion()}{@code ()} to {@code null}</li>
+	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT}</li>
 	 * </ul></p>
 	 *
 	 * @see  #UP
 	 * @see  #isRight()
 	 * @see  #isHorizontal()
 	 **/
-	RIGHT(1, 0, HorizVertDirection.RIGHT, null),
+	RIGHT(0, 1, null, VertHorizDirection.RIGHT),
 	/**
 	 * <P>Diagonal up and to the left.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code -1}</li>
 	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code -1}</li>
-	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#LEFT LEFT}</li>
-	 *    <li>{@link #getVertPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#UP UP}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code -1}</li>
+	 *    <li>{@link #getVertPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#UP UP}</li>
+	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT}</li>
 	 * </ul></p>
 	 *
 	 * @see  #UP
 	 * @see  #isUpLeft()
 	 * @see  #isDiagonal()
 	 **/
-	UP_LEFT(-1, -1, HorizVertDirection.LEFT, HorizVertDirection.UP),
+	UP_LEFT(-1, -1, VertHorizDirection.UP, VertHorizDirection.LEFT),
 	/**
 	 * <P>Diagonal up and to the right.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code -1}</li>
-	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 1}</li>
-	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#RIGHT RIGHT}</li>
-	 *    <li>{@link #getVertPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#UP UP}</li>
+	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code -1}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 1}</li>
+	 *    <li>{@link #getVertPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#UP UP}</li>
+	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT}</li>
 	 * </ul></p>
 	 *
 	 * @see  #UP
 	 * @see  #isUpRight()
 	 * @see  #isDiagonal()
 	 **/
-	UP_RIGHT(1, -1, HorizVertDirection.RIGHT, HorizVertDirection.UP),
+	UP_RIGHT(-1, 1, VertHorizDirection.UP, VertHorizDirection.RIGHT),
 	/**
 	 * <P>Diagonal down and to the left.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 1}</li>
-	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code -1}</li>
-	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#LEFT LEFT}</li>
-	 *    <li>{@link #getVertPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#DOWN DOWN}</li>
+	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 1}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code -1}</li>
+	 *    <li>{@link #getVertPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN}</li>
+	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT}</li>
 	 * </ul></p>
 	 *
 	 * @see  #UP
 	 * @see  #isDownLeft()
 	 * @see  #isDiagonal()
 	 **/
-	DOWN_LEFT(-1, 1, HorizVertDirection.LEFT, HorizVertDirection.DOWN),
+	DOWN_LEFT(1, -1, VertHorizDirection.DOWN, VertHorizDirection.LEFT),
 	/**
 	 * <P>Diagonal down and to the right.</P>
 	 *
 	 * <p>Sets <ul>
-	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 1}</li>
 	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 1}</li>
-	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#RIGHT RIGHT}</li>
-	 *    <li>{@link #getVertPortion()}{@code ()} to {@link HorizVertDirection}.{@link HorizVertDirection#DOWN DOWN}</li>
+	 *    <li>{@link #getHorizIncrement()}{@code ()} to {@code 1}</li>
+	 *    <li>{@link #getVertPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN}</li>
+	 *    <li>{@link #getHorizPortion()}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT}</li>
 	 * </ul></p>
 	 *
 	 * @see  #UP
 	 * @see  #isDownRight()
 	 * @see  #isDiagonal()
 	 **/
-	DOWN_RIGHT(1, 1, HorizVertDirection.RIGHT, HorizVertDirection.DOWN);
+	DOWN_RIGHT(1, 1, VertHorizDirection.DOWN, VertHorizDirection.RIGHT);
 
-	private final int horizInc;
-	private final int vertInc;
-	private final HorizVertDirection horizPortion;
-	private final HorizVertDirection vertPortion;
+		private final int vertInc;
+		private final int horizInc;
+		private final VertHorizDirection vertPortion;
+		private final VertHorizDirection horizPortion;
+
 	/**
 	 * <p>Configure the value.</p>
 	 *
 	 * @param  horiz_increment  The value to change the horizontal index by, in order to move to the neighbor in the desired direction. Get with {@link #getHorizIncrement()}.
 	 * @param  vert_increment  The value to change the vertical index by. Get with {@link #getVertIncrement()}.
 	 */
-	MatrixDirection(int horiz_increment, int vert_increment,
-				HorizVertDirection horiz_portion, HorizVertDirection vert_portion)  {
-		horizInc = horiz_increment;
+	MatrixDirection(int vert_increment, int horiz_increment,
+				VertHorizDirection vert_portion, VertHorizDirection horiz_portion)  {
 		vertInc = vert_increment;
-		horizPortion = horiz_portion;
+		horizInc = horiz_increment;
 		vertPortion = vert_portion;
+		horizPortion = horiz_portion;
+	}
+	/**
+	 * <p>The value to change the vertical index by, in order to move to the neighbor in the desired direction.</p>
+	 *
+	 * @return  <code>vert_increment</code>, as provided to the {@link #MatrixDirection(int, int) constructor}.
+	 */
+	public int getVertIncrement()  {
+		return  vertInc;
 	}
 	/**
 	 * <p>The value to change the horizontal index by, in order to move to the neighbor in the desired direction.</p>
@@ -179,34 +188,26 @@ public enum MatrixDirection  {
 	/**
 	 * <p>The value to change the vertical index by, in order to move to the neighbor in the desired direction.</p>
 	 *
-	 * @return  <code>vert_increment</code>, as provided to the {@link #MatrixDirection(int, int) constructor}.
+	 * @return  As documented by {@linkplain #UP each value}. Examples: <ul>
+	 *    <li>{@link #UP} returns {@link VertHorizDirection}.{@link VertHorizDirection#UP UP}</li>
+	 *    <li>{@link #LEFT} returns <code>null</code></li>
+	 *    <li>{@link #DOWN_RIGHT} returns {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN}</li>
+	 * </ul>
 	 */
-	public int getVertIncrement()  {
-		return  vertInc;
+	public VertHorizDirection getVertPortion()  {
+		return  vertPortion;
 	}
 	/**
 	 * <p>The horizontal &quot;part&quot; of the current direction.</p>
 	 *
 	 * @return  As documented by {@linkplain #UP each value}. Examples: <ul>
 	 *    <li>{@link #UP} returns <code>null</code></li>
-	 *    <li>{@link #LEFT} returns {@link HorizVertDirection}.{@link HorizVertDirection#LEFT LEFT}</li>
-	 *    <li>{@link #DOWN_RIGHT} returns {@link HorizVertDirection}.{@link HorizVertDirection#RIGHT RIGHT}</li>
+	 *    <li>{@link #LEFT} returns {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT}</li>
+	 *    <li>{@link #DOWN_RIGHT} returns {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT}</li>
 	 * </ul>
 	 */
-	public HorizVertDirection getHorizPortion()  {
+	public VertHorizDirection getHorizPortion()  {
 		return  horizPortion;
-	}
-	/**
-	 * <p>The value to change the vertical index by, in order to move to the neighbor in the desired direction.</p>
-	 *
-	 * @return  As documented by {@linkplain #UP each value}. Examples: <ul>
-	 *    <li>{@link #UP} returns {@link HorizVertDirection}.{@link HorizVertDirection#UP UP}</li>
-	 *    <li>{@link #LEFT} returns <code>null</code></li>
-	 *    <li>{@link #DOWN_RIGHT} returns {@link HorizVertDirection}.{@link HorizVertDirection#DOWN DOWN}</li>
-	 * </ul>
-	 */
-	public HorizVertDirection getVertPortion()  {
-		return  vertPortion;
 	}
 	/**
 	 * <P>Is this direction {@code UP}?.</P>
@@ -316,51 +317,43 @@ public enum MatrixDirection  {
 	/**
 	 * <P>Is this direction {@code UP}? or a diagonal containing up?.</P>
 	 *
-	 * @return  <CODE>({@link #getVertPortion()}{@code ()} == {@link HorizVertDirection}.{@link HorizVertDirection#UP UP})</CODE>
+	 * @return  <CODE>({@link #getVertPortion()}{@code ()} == {@link VertHorizDirection}.{@link VertHorizDirection#UP UP})</CODE>
 	 *
 	 * @see  #hasDown()
 	 * @see  #hasLeft()
 	 * @see  #hasRight()
 	 */
 	public final boolean hasUp()  {
-		return  (getVertPortion() == HorizVertDirection.UP);
+		return  (getVertPortion() == VertHorizDirection.UP);
 	}
 	/**
 	 * <P>Is this direction {@code DOWN}, or a diagonal containing down?.</P>
 	 *
-	 * @return  <CODE>({@link #getVertPortion()}{@code ()} == {@link HorizVertDirection}.{@link HorizVertDirection#DOWN DOWN})</CODE>
+	 * @return  <CODE>({@link #getVertPortion()}{@code ()} == {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN})</CODE>
 	 * @see  #hasUp()
 	 */
 	public final boolean hasDown()  {
-		return  (getVertPortion() == HorizVertDirection.DOWN);
+		return  (getVertPortion() == VertHorizDirection.DOWN);
 	}
 	/**
 	 * <P>Is this direction {@code RIGHT}, or a diagonal containing right?.</P>
 	 *
-	 * @return  <CODE>({@link #getHorizPortion()}{@code ()} == {@link HorizVertDirection}.{@link HorizVertDirection#RIGHT RIGHT})</CODE>
+	 * @return  <CODE>({@link #getHorizPortion()}{@code ()} == {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT})</CODE>
 	 * @see  #hasUp()
 	 * @see  #isHorizontal()
 	 * @see  #hasHorizontal()
 	 **/
 	public final boolean hasRight()  {
-		return  (getHorizPortion() == HorizVertDirection.RIGHT);
+		return  (getHorizPortion() == VertHorizDirection.RIGHT);
 	}
 	/**
 	 * <P>Is this direction {@code LEFT}, or a diagonal containing left?.</P>
 	 *
-	 * @return  <CODE>({@link #getHorizPortion()}{@code ()} == {@link HorizVertDirection}.{@link HorizVertDirection#LEFT LEFT})</CODE>
+	 * @return  <CODE>({@link #getHorizPortion()}{@code ()} == {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT})</CODE>
 	 * @see  #hasUp()
 	 */
 	public final boolean hasLeft()  {
-		return  (getHorizPortion() == HorizVertDirection.LEFT);
-	}
-	/**
-	 * Is this diagonal <i>or</i> horizontal?.
-	 * @return <code>({@link #hasRight}()  ||  {@link #hasLeft}())</code>
-	 * @@see  #hasVertical()
-	 */
-	public final boolean hasHorizontal()  {
-		return  (hasRight()  ||  hasLeft());
+		return  (getHorizPortion() == VertHorizDirection.LEFT);
 	}
 	/**
 	 * Is this diagonal <i>or</i> vertical?.
@@ -371,14 +364,12 @@ public enum MatrixDirection  {
 		return  (hasUp()  ||  hasDown());
 	}
 	/**
-	 * Is <i><code>this</code></i> direction left or right?.
-	 * @return <code>({@link #isLeft()}{@code ()}&nbsp; || &nbsp;{@link #isRight()}{@code ()}</code>
-	 * @see #isVertical()
-	 * @see #isHorizOrVert()
-	 * @see #isDiagonal()
+	 * Is this diagonal <i>or</i> horizontal?.
+	 * @return <code>({@link #hasRight}()  ||  {@link #hasLeft}())</code>
+	 * @@see  #hasVertical()
 	 */
-	public final boolean isHorizontal()  {
-		return  (isLeft()  ||  isRight());
+	public final boolean hasHorizontal()  {
+		return  (hasRight()  ||  hasLeft());
 	}
 	/**
 	 * Is <i><code>this</code></i> direction up or down?.
@@ -389,88 +380,29 @@ public enum MatrixDirection  {
 		return  (isUp()  ||  isDown());
 	}
 	/**
-	 * Is <i><code>this</code></i> direction up, down, left, or right?.
-	 * @return <code>({@link #isHorizontal()}{@code ()}&nbsp; || &nbsp;{@link #isVertical()}{@code ()}</code>
-	 * @see #isHorizontal()
+	 * Is <i><code>this</code></i> direction left or right?.
+	 * @return <code>({@link #isLeft()}{@code ()}&nbsp; || &nbsp;{@link #isRight()}{@code ()}</code>
+	 * @see #isVertical()
+	 * @see #isVertOrHoriz()
+	 * @see #isDiagonal()
 	 */
-	public final boolean isHorizOrVert()  {
-		return  (isHorizontal()  ||  isVertical());
+	public final boolean isHorizontal()  {
+		return  (isLeft()  ||  isRight());
+	}
+	/**
+	 * Is <i><code>this</code></i> direction up, down, left, or right?.
+	 * @return <code>({@link #isVertical()}{@code ()}&nbsp; || &nbsp;{@link #isHorizontal()}{@code ()}</code>
+	 */
+	public final boolean isVertOrHoriz()  {
+		return  (isVertical()  ||  isHorizontal());
 	}
 	/**
 	 * Is <i><code>this</code></i> <i>not</i> vertical or horizontal?.
-	 * @return <code>!({@link #isHorizontal()}{@code ()}  ||  {@link #isVertical()}{@code ()}</code>
-	 * @see #isHorizontal()
+	 * @return <code>!({@link #isVertical()}{@code ()}  ||  {@link #isHorizontal()}{@code ()}</code>
 	 */
 	public final boolean isDiagonal()  {
-		return  !(isHorizontal()  ||  isVertical());
+		return  !(isVertical()  ||  isHorizontal());
 	}
-	/**
-	 * If <i><code>this</code></i> direction happens to be diagonal (for
-	 * example, {@link #UP_LEFT}), then get its vertical or horizontal
-	 * direction (for example, either {@link #UP} or {@link #LEFT}) that
-	 * represents the <i>shortest</i> distance from a element to an edge.
-	 *
-	 * @param  coord May not be <code>null</code>.
-	 * @return If <code>coord</code> is already
-	 * {@linkplain #isHorizontal() horizontal} or
-	 * {@linkplain #isVertical() vertical}, its {@code HorizVertDirection}
-	 * equivalent is returned (if <i>{@code this}</i> is
-	 * {@code MatrixDirection.UP}, then
-	 * <code>HorizVertDirection.{@link HorizVertDirection#UP UP}</code> is
-	 * returned).
-	 * <br/> &nbsp; &nbsp; <code>(coord.{@link MatrixElement#getHorizIndex() getHorizIndex}() &lt; coord.{@link MatrixElement#getVertIndex() getVertIndex}())</code>
-	 * <br/>is <code>true</code>, then this returns the vertical &quot;portion&quot; of
-	 * the diagonal direction (if <i><code>this</code></i> is <code>UP_LEFT</code>, then <code>UP</code> is returned). If <code>false</code>, the horizontal portion is returned (for <code>UP_LEFT</code>: <code>LEFT</code>).
-	 * @see #isDiagonal()
-	 * @see BoundedMatrix#getNeighborCount(int, int, com.github.xbn.util.matrix.MatrixDirection) BoundedMatrix#getNeighborCount
-	 */
-	public HorizVertDirection getShortestHVForDiagonal(MatrixElement coord)  {
-		return  getHVPortion(ShortLong.SHORTEST, coord);
-	}
-	/**
-	 * If <i><code>this</code></i> direction happens to be diagonal (for
-	 * example, {@link #UP_LEFT}), then get its vertical or horizontal
-	 * direction (for example, either {@link #UP} or {@link #LEFT}) that
-	 * represents the <i>longest</i> distance from a element to an edge.
-	 *
-	 * @param  coord May not be <code>null</code>.
-	 * @return If <code>coord</code> is already
-	 * {@linkplain #isHorizontal() horizontal} or
-	 * {@linkplain #isVertical() vertical}, its {@code HorizVertDirection}
-	 * equivalent is returned (if <i>{@code this}</i> is
-	 * {@code MatrixDirection.UP}, then
-	 * <code>HorizVertDirection.{@link HorizVertDirection#UP UP}</code> is
-	 * returned). Otherwise, if
-	 * <br/> &nbsp; &nbsp; <code>(coord.{@link MatrixElement#getHorizIndex() getHorizIndex}() &gt; coord.{@link MatrixElement#getVertIndex() getVertIndex}())</code>
-	 * <br/>is <code>true</code>, then this returns the vertical &quot;portion&quot; of
-	 * the diagonal direction (if <i><code>this</code></i> is <code>UP_LEFT</code>, then <code>UP</code> is returned). If <code>false</code>, the horizontal portion is returned (for <code>UP_LEFT</code>: <code>LEFT</code>).
-	 * @see #getShortestHVForDiagonal()
-	 * @see #isDiagonal()
-	 * @see BoundedMatrix#getNeighborCount(int, int, com.github.xbn.util.matrix.MatrixDirection) BoundedMatrix#getNeighborCount
-	 */
-	public HorizVertDirection getLongestHVForDiagonal(MatrixElement coord)  {
-		return  getHVPortion(ShortLong.LONGEST, coord);
-	}
-		private enum ShortLong {SHORTEST, LONGEST};
-		private HorizVertDirection getHVPortion(ShortLong short_long, MatrixElement coord)  {
-			if(isHorizontal())  {
-				return  getHorizPortion();
-			}  else if(isVertical())  {
-				return  getVertPortion();
-			}
-
-			//Diagonal
-
-			boolean comparisonPasses = false;
-			try  {
-				comparisonPasses = ((short_long == ShortLong.SHORTEST)
-					?  (coord.getHorizIndex() < coord.getVertIndex())
-					:  (coord.getHorizIndex() > coord.getVertIndex()));
-			}  catch(NullPointerException npx)  {
-				throw  new NullPointerException("coord");
-			}
-			return  (comparisonPasses ? getVertPortion() : getHorizPortion());
-		}
 	/**
 	 * <P>If an <CODE>MatrixDirection</CODE> is not a required value, crash.</P>
 	 *

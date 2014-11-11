@@ -25,25 +25,16 @@ package  com.github.xbn.util.matrix;
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
 public abstract class AbstractElement implements Copyable  {
-	private final int horiz;
 	private final int vert;
+	private final int horiz;
 	/**
 	 * <p>Create a new item from its elements.</p>
 	 * @param  horiz Horizontal. Get with {@link #getHorizontal()}.
 	 * @param  vert  Vertical. Get with {@link #getVertical()}.
 	 */
-	public AbstractElement(int horiz, int vert)  {
-		this.horiz = horiz;
+	public AbstractElement(int vert, int horiz)  {
 		this.vert = vert;
-	}
-	/**
-	 * <p>The horizontal number.</p>
-	 *
-	 * @return  <code>horiz</code>, as provided to the
-	 * {@link #AbstractElement(int, int) constructor}.
-	*/
-	public int getHorizontal()  {
-		return  horiz;
+		this.horiz = horiz;
 	}
 	/**
 	 * <p>The vertical number.</p>
@@ -53,6 +44,15 @@ public abstract class AbstractElement implements Copyable  {
 	*/
 	public int getVertical()  {
 		return  vert;
+	}
+	/**
+	 * <p>The horizontal number.</p>
+	 *
+	 * @return  <code>horiz</code>, as provided to the
+	 * {@link #AbstractElement(int, int) constructor}.
+	*/
+	public int getHorizontal()  {
+		return  horiz;
 	}
 	/**
 	 * @return  <code>{@link #appendToString(java.lang.StringBuilder)(new {@link java.lang.StringBuilder#StringBuilder() StringBuilder}()).toString()</code>
@@ -66,7 +66,7 @@ public abstract class AbstractElement implements Copyable  {
 	 */
 	public StringBuilder appendToString(StringBuilder bldr)  {
 		try  {
-			bldr.append("[").append(getHorizontal()).append(", ").append(getVertical()).append("]");
+			bldr.append("[v=").append(getVertical()).append(",h=").append(getHorizontal()).append("]");
 		}  catch(NullPointerException npx)  {
 			CrashIfObject.nullOrReturnCause(bldr, "bldr", null, npx);
 		}

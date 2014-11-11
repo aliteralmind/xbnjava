@@ -1,4 +1,4 @@
-package  com.github.xbn.util.matrix;
+package  com.github.xbn.test.util.matrix;
 	import  com.github.xbn.util.matrix.DistanceDirection;
 	import  com.github.xbn.util.matrix.MatrixElement;
 	import  com.github.xbn.util.matrix.MatrixDirection;
@@ -7,7 +7,7 @@ package  com.github.xbn.util.matrix;
 
 /*
 
-java com.github.xbn.util.matrix.DistanceDirection_Unit
+java com.github.xbn.test.util.matrix.DistanceDirection_Unit
 
  */
 public class DistanceDirection_Unit  {
@@ -21,8 +21,8 @@ public class DistanceDirection_Unit  {
 	@Test
 	public void test_basicObjCreation()  {
 		DistanceDirection dd = new DistanceDirection(1, 0);
-		assertEquals(1, dd.getHorizontal());
-		assertEquals(0, dd.getVertical());
+		assertEquals(1, dd.getVertical());
+		assertEquals(0, dd.getHorizontal());
 		assertEquals(MatrixDirection.RIGHT, dd.getDirection());
 	}
 	@Test
@@ -60,17 +60,17 @@ public class DistanceDirection_Unit  {
 	@Test
 	public void test_getDirectionFromDistances_nonNull()  {
 		MatrixElement start = new MatrixElement(0, 0);
-		MatrixElement end = new MatrixElement(0, 1);
+		MatrixElement end = new MatrixElement(1, 0);
 		testForTwoCoordsInclOpposite(start, end, MatrixDirection.DOWN);
 
 		start = new MatrixElement(2, 2);
-		end = new MatrixElement(1, 2);
+		end = new MatrixElement(2, 1);
 		testForTwoCoordsInclOpposite(start, end, MatrixDirection.LEFT);
 
 		end = new MatrixElement(3, 3);
 		testForTwoCoordsInclOpposite(start, end, MatrixDirection.DOWN_RIGHT);
 
-		end = new MatrixElement(3, 1);
+		end = new MatrixElement(1, 3);
 		testForTwoCoordsInclOpposite(start, end, MatrixDirection.UP_RIGHT);
 	}
 
@@ -87,5 +87,4 @@ public class DistanceDirection_Unit  {
 			DistanceDirection.getDirectionFromDistances(end.getHorizDistance(start),
 				                                         end.getVertDistance(start)));
 	}
-
 }

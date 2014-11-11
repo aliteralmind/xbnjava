@@ -28,13 +28,13 @@ public class FillableElement extends MatrixElement  {
 	 * <p>Create a new instance.</p>
 	 *
 	 * <p>This calls<ol>
-	 *    <li><code>{@link MatrixElement#MatrixElement(int, int) super}(horiz_idx, vert_idx)</code></li>
+	 *    <li><code>{@link MatrixElement#MatrixElement(int, int) super}(vert_idx, horiz_idx)</code></li>
 	 *    <li>{@link #unfill()}{@code ()}</li>
 	 * </ol></p>
 	 * @@see  #FillableElement(FillableElement)
 	 */
-	public FillableElement(int horiz_idx, int vert_idx)  {
-		super(horiz_idx, vert_idx);
+	public FillableElement(int vert_idx, int horiz_idx)  {
+		super(vert_idx, horiz_idx);
 		unfill();
 	}
 	/**
