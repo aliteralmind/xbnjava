@@ -14,22 +14,25 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.util.grid;
+package  com.github.xbn.util.matrix;
+	import  com.github.xbn.lang.Copyable;
+	import  com.github.xbn.lang.CrashIfObject;
+
 /**
- * <p>Foundation for coordinate-based information.</p>
+ * <p>Foundation for element-based information.</p>
  *
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
-public abstract class AbstractCoordinate  {
+public abstract class AbstractElement implements Copyable  {
 	private final int horiz;
 	private final int vert;
 	/**
-	 * <p>Create a new item from its coordinates.</p>
+	 * <p>Create a new item from its elements.</p>
 	 * @param  horiz Horizontal. Get with {@link #getHorizontal()}.
 	 * @param  vert  Vertical. Get with {@link #getVertical()}.
 	 */
-	public AbstractCoordinate(int horiz, int vert)  {
+	public AbstractElement(int horiz, int vert)  {
 		this.horiz = horiz;
 		this.vert = vert;
 	}
@@ -37,7 +40,7 @@ public abstract class AbstractCoordinate  {
 	 * <p>The horizontal number.</p>
 	 *
 	 * @return  <code>horiz</code>, as provided to the
-	 * {@link #AbstractCoordinate(int, int) constructor}.
+	 * {@link #AbstractElement(int, int) constructor}.
 	*/
 	public int getHorizontal()  {
 		return  horiz;
@@ -46,17 +49,32 @@ public abstract class AbstractCoordinate  {
 	 * <p>The vertical number.</p>
 	 *
 	 * @return  <code>vert</code>, as provided to the
-	 * {@link #AbstractCoordinate(int, int) constructor}.
+	 * {@link #AbstractElement(int, int) constructor}.
 	*/
 	public int getVertical()  {
 		return  vert;
 	}
+	/**
+	 * @return  <code>{@link #appendToString(java.lang.StringBuilder)(new {@link java.lang.StringBuilder#StringBuilder() StringBuilder}()).toString()</code>
+	 */
 	public String toString()  {
-		return  "[" + getHorizontal() + ", " + getVertical() + "]";
+		return  appendToString(new StringBuilder()).toString();
+	}
+	/**
+	 * @param  bldr  May not be <code>null</code>.
+	 * @see  #toString()
+	 */
+	public StringBuilder appendToString(StringBuilder bldr)  {
+		try  {
+			bldr.append("[").append(getHorizontal()).append(", ").append(getVertical()).append("]");
+		}  catch(NullPointerException npx)  {
+			CrashIfObject.nullOrReturnCause(bldr, "bldr", null, npx);
+		}
+		return  bldr;
 	}
 	/**
 	 * @return  <CODE>true</CODE> If {@code to_compareTo} is non-{@code null},
-	 * {2:n} {@code AbstractCoordinate}, and all its fields {@linkplain #areFieldsEqual(AbstractCoordinate)
+	 * {2:n} {@code AbstractElement}, and all its fields {@linkplain #areFieldsEqual(AbstractElement)
 	 * are equal}. This is implemented as suggested by Joshua Bloch in
 	 * &quot;Effective Java&quot; (2nd ed, item 8, page 46).
 	 **/
@@ -66,15 +84,15 @@ public abstract class AbstractCoordinate  {
 		if(this == to_compareTo)  {
 			return  true;
 		}
-		if(!(to_compareTo instanceof AbstractCoordinate))  {
-			//to_compareTo is either null or not an AbstractCoordinate.
+		if(!(to_compareTo instanceof AbstractElement))  {
+			//to_compareTo is either null or not an AbstractElement.
 			//java.lang.Object.object(o): "For any non-null reference value x,
 			//x.equals(null) should return false."
 			return  false;
 		}
 
 		//Safe to cast
-		AbstractCoordinate o = (AbstractCoordinate)to_compareTo;
+		AbstractElement o = (AbstractElement)to_compareTo;
 
 		//Finish with field-by-field comparison.
 		return  areFieldsEqual(o);
@@ -83,12 +101,18 @@ public abstract class AbstractCoordinate  {
 	 * <P>Are all relevant fields equal?.</P>
 	 * param  to_compareTo  May not be {@code null}.
 	 **/
-	public boolean areFieldsEqual(AbstractCoordinate to_compareTo)  {
+	public boolean areFieldsEqual(AbstractElement to_compareTo)  {
 		try  {
 			return  (getHorizontal() == to_compareTo.getHorizontal()  &&
 				getVertical() == to_compareTo.getVertical());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_compareTo");
 		}
+	}
+	/**
+	 * @return  <i>{@code this}</i>
+	 */
+	public AbstractElement getObjectCopy()  {
+		return  this;
 	}
 }

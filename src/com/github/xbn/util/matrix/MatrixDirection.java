@@ -14,17 +14,17 @@
 	- LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
 	- ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.util.grid;
+package  com.github.xbn.util.matrix;
 	import  com.github.xbn.util.EnumUtil;
 /**
  * <p>The direction of movement within a two dimensional array, horizontal, vertical, or diagonal.</p>
  *
  * @see HorizVertDirection
- * @see BoundedGrid#getNeighbor(int, int, com.github.xbn.util.grid.GridDirection, int, com.github.xbn.util.grid.EdgeExceeded) BoundedGrid#getNeighbor
+ * @see BoundedMatrix#getNeighbor(int, int, com.github.xbn.util.matrix.MatrixDirection, int, com.github.xbn.util.matrix.EdgeExceeded) BoundedMatrix#getNeighbor
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
-public enum GridDirection  {
+public enum MatrixDirection  {
 	/**
 	 * <P>Up.</P>
 	 *
@@ -161,7 +161,7 @@ public enum GridDirection  {
 	 * @param  horiz_increment  The value to change the horizontal index by, in order to move to the neighbor in the desired direction. Get with {@link #getHorizIncrement()}.
 	 * @param  vert_increment  The value to change the vertical index by. Get with {@link #getVertIncrement()}.
 	 */
-	GridDirection(int horiz_increment, int vert_increment,
+	MatrixDirection(int horiz_increment, int vert_increment,
 				HorizVertDirection horiz_portion, HorizVertDirection vert_portion)  {
 		horizInc = horiz_increment;
 		vertInc = vert_increment;
@@ -171,7 +171,7 @@ public enum GridDirection  {
 	/**
 	 * <p>The value to change the horizontal index by, in order to move to the neighbor in the desired direction.</p>
 	 *
-	 * @return  <code>horiz_increment</code>, as provided to the {@link #GridDirection(int, int) constructor}.
+	 * @return  <code>horiz_increment</code>, as provided to the {@link #MatrixDirection(int, int) constructor}.
 	 */
 	public int getHorizIncrement()  {
 		return  horizInc;
@@ -179,7 +179,7 @@ public enum GridDirection  {
 	/**
 	 * <p>The value to change the vertical index by, in order to move to the neighbor in the desired direction.</p>
 	 *
-	 * @return  <code>vert_increment</code>, as provided to the {@link #GridDirection(int, int) constructor}.
+	 * @return  <code>vert_increment</code>, as provided to the {@link #MatrixDirection(int, int) constructor}.
 	 */
 	public int getVertIncrement()  {
 		return  vertInc;
@@ -300,7 +300,7 @@ public enum GridDirection  {
 	 * </ul>
 	 * @see getPerpendicularTowardsZero()
 	 */
-	public final GridDirection getOpposite()  {
+	public final MatrixDirection getOpposite()  {
 		switch(this)  {
 			case UP:          return  DOWN;
 			case DOWN:        return  UP;
@@ -310,7 +310,7 @@ public enum GridDirection  {
 			case UP_RIGHT:    return  DOWN_LEFT;
 			case DOWN_LEFT:   return  UP_RIGHT;
 			case DOWN_RIGHT:  return  UP_LEFT;
-			default:  throw  new IllegalStateException("Unknown GridDirection value: " + this);
+			default:  throw  new IllegalStateException("Unknown MatrixDirection value: " + this);
 		}
 	}
 	/**
@@ -408,51 +408,51 @@ public enum GridDirection  {
 	 * If <i><code>this</code></i> direction happens to be diagonal (for
 	 * example, {@link #UP_LEFT}), then get its vertical or horizontal
 	 * direction (for example, either {@link #UP} or {@link #LEFT}) that
-	 * represents the <i>shortest</i> distance from a coordinate to an edge.
+	 * represents the <i>shortest</i> distance from a element to an edge.
 	 *
 	 * @param  coord May not be <code>null</code>.
 	 * @return If <code>coord</code> is already
 	 * {@linkplain #isHorizontal() horizontal} or
 	 * {@linkplain #isVertical() vertical}, its {@code HorizVertDirection}
 	 * equivalent is returned (if <i>{@code this}</i> is
-	 * {@code GridDirection.UP}, then
+	 * {@code MatrixDirection.UP}, then
 	 * <code>HorizVertDirection.{@link HorizVertDirection#UP UP}</code> is
 	 * returned).
-	 * <br/> &nbsp; &nbsp; <code>(coord.{@link GridCoordinate#getHorizIndex() getHorizIndex}() &lt; coord.{@link GridCoordinate#getVertIndex() getVertIndex}())</code>
+	 * <br/> &nbsp; &nbsp; <code>(coord.{@link MatrixElement#getHorizIndex() getHorizIndex}() &lt; coord.{@link MatrixElement#getVertIndex() getVertIndex}())</code>
 	 * <br/>is <code>true</code>, then this returns the vertical &quot;portion&quot; of
 	 * the diagonal direction (if <i><code>this</code></i> is <code>UP_LEFT</code>, then <code>UP</code> is returned). If <code>false</code>, the horizontal portion is returned (for <code>UP_LEFT</code>: <code>LEFT</code>).
 	 * @see #isDiagonal()
-	 * @see BoundedGrid#getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection) BoundedGrid#getNeighborCount
+	 * @see BoundedMatrix#getNeighborCount(int, int, com.github.xbn.util.matrix.MatrixDirection) BoundedMatrix#getNeighborCount
 	 */
-	public HorizVertDirection getShortestHVForDiagonal(GridCoordinate coord)  {
+	public HorizVertDirection getShortestHVForDiagonal(MatrixElement coord)  {
 		return  getHVPortion(ShortLong.SHORTEST, coord);
 	}
 	/**
 	 * If <i><code>this</code></i> direction happens to be diagonal (for
 	 * example, {@link #UP_LEFT}), then get its vertical or horizontal
 	 * direction (for example, either {@link #UP} or {@link #LEFT}) that
-	 * represents the <i>longest</i> distance from a coordinate to an edge.
+	 * represents the <i>longest</i> distance from a element to an edge.
 	 *
 	 * @param  coord May not be <code>null</code>.
 	 * @return If <code>coord</code> is already
 	 * {@linkplain #isHorizontal() horizontal} or
 	 * {@linkplain #isVertical() vertical}, its {@code HorizVertDirection}
 	 * equivalent is returned (if <i>{@code this}</i> is
-	 * {@code GridDirection.UP}, then
+	 * {@code MatrixDirection.UP}, then
 	 * <code>HorizVertDirection.{@link HorizVertDirection#UP UP}</code> is
 	 * returned). Otherwise, if
-	 * <br/> &nbsp; &nbsp; <code>(coord.{@link GridCoordinate#getHorizIndex() getHorizIndex}() &gt; coord.{@link GridCoordinate#getVertIndex() getVertIndex}())</code>
+	 * <br/> &nbsp; &nbsp; <code>(coord.{@link MatrixElement#getHorizIndex() getHorizIndex}() &gt; coord.{@link MatrixElement#getVertIndex() getVertIndex}())</code>
 	 * <br/>is <code>true</code>, then this returns the vertical &quot;portion&quot; of
 	 * the diagonal direction (if <i><code>this</code></i> is <code>UP_LEFT</code>, then <code>UP</code> is returned). If <code>false</code>, the horizontal portion is returned (for <code>UP_LEFT</code>: <code>LEFT</code>).
 	 * @see #getShortestHVForDiagonal()
 	 * @see #isDiagonal()
-	 * @see BoundedGrid#getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection) BoundedGrid#getNeighborCount
+	 * @see BoundedMatrix#getNeighborCount(int, int, com.github.xbn.util.matrix.MatrixDirection) BoundedMatrix#getNeighborCount
 	 */
-	public HorizVertDirection getLongestHVForDiagonal(GridCoordinate coord)  {
+	public HorizVertDirection getLongestHVForDiagonal(MatrixElement coord)  {
 		return  getHVPortion(ShortLong.LONGEST, coord);
 	}
 		private enum ShortLong {SHORTEST, LONGEST};
-		private HorizVertDirection getHVPortion(ShortLong short_long, GridCoordinate coord)  {
+		private HorizVertDirection getHVPortion(ShortLong short_long, MatrixElement coord)  {
 			if(isHorizontal())  {
 				return  getHorizPortion();
 			}  else if(isVertical())  {
@@ -472,23 +472,23 @@ public enum GridDirection  {
 			return  (comparisonPasses ? getVertPortion() : getHorizPortion());
 		}
 	/**
-	 * <P>If an <CODE>GridDirection</CODE> is not a required value, crash.</P>
+	 * <P>If an <CODE>MatrixDirection</CODE> is not a required value, crash.</P>
 	 *
 	 * <P>Equal to
 	 * <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
-	 * @see  #crashIfForbiddenValue(GridDirection, String, Object) crashIfForbiddenValue(ert,s,o)
+	 * @see  #crashIfForbiddenValue(MatrixDirection, String, Object) crashIfForbiddenValue(ert,s,o)
 	 */
-	public void crashIfNotRequiredValue(GridDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
+	public void crashIfNotRequiredValue(MatrixDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
 			EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
 	}
 	/**
-	 * <P>If an <CODE>GridDirection</CODE> is a forbidden value, crash.</P>
+	 * <P>If an <CODE>MatrixDirection</CODE> is a forbidden value, crash.</P>
 	 *
 	 * <P>Equal to
 	 * <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
-	 * @see  #crashIfNotRequiredValue(GridDirection, String, Object) crashIfNotRequiredValue(ert,s,o)
+	 * @see  #crashIfNotRequiredValue(MatrixDirection, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 */
-	public void crashIfForbiddenValue(GridDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
+	public void crashIfForbiddenValue(MatrixDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
 			EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
 	}
 };

@@ -14,47 +14,69 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.util.grid;
+package  com.github.xbn.util.matrix;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  com.github.xbn.number.IndexInRange;
 	import  com.github.xbn.lang.ExceptionUtil;
 	import  java.util.Arrays;
 /**
- * <p>For traversing the elements in a rectangular double-array, in any
+ * <p>For traversing the },s in a rectangular double-array, in any
  * direction: up, down, left, right, up-left, up-right, down-left,
  * down-right.</p>
- * @see  GridCoordinate
+ * @see  MatrixElement
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
-public class BoundedGrid  {
-	private final GridCoordinate[][] coords;
+public class BoundedMatrix  {
+	private final MatrixElement[][] coords;
 	private final int width;
 	/**
 	 * <p>Create a new grid with a particular height and width.</p>
-	 * @param  width  May not be less than zero. Get with {@link #getWidth()}{@code ()}.
-	 * @param  height  May not be less than zero. Get with {@link #getHeight()}{@code ()}.
+	 * @param  width  May not be less than zero. Get with
+	 * {@link #getWidth()}{@code ()}.
+	 * @param  height  May not be less than zero. Get with
+	 * {@link #getHeight()}{@code ()}.
+	 * @see  #BoundedMatrix(com.github.xbn.util.matrix.BoundedMatrix)
+	 * @see  #BoundedMatrix(com.github.xbn.util.matrix.MatrixElement[][]) BoundedMatrix(gc[][])
 	 */
-	public BoundedGrid(int width, int height)  {
-		try  {
-			coords = new GridCoordinate[width][height];
-		}  catch(ArrayIndexOutOfBoundsException ibx)  {
-			throw  new ArrayIndexOutOfBoundsException("width=" + width + ", height=" + height);
-		}
-
+	public BoundedMatrix(int width, int height)  {
+		coords = getArrayFromWidthHeight(width, height);
 		this.width = width;
-
-		for(int i = 0; i < coords.length; i++)  {
-			for(int j = 0; j < coords[0].length; j++)  {
-				coords[i][j] = new GridCoordinate(i, j);
-			}
-		}
 	}
 	/**
-	 * <p>The number of elements within each sub-array.</p>
+	 * Create a new instance as a duplicate of another.
+	 * @param   to_copy  May not be <code>null</code>
+	 * @see  #getObjectCopy()
+	 * @see  #BoundedMatrix(int, int)
+	 */
+	public BoundedMatrix(BoundedMatrix to_copy)  {
+		try  {
+			coords = new MatrixElement[to_copy.getHeight()][to_copy.getWidth()];
+		}  catch(NullPointerException npx)  {
+			throw  new NullPointerException("to_copy");
+		}
+		for(int i = 0; i < coords.length; i++)  {
+			for(int j = 0; j < coords[0].length; j++)  {
+				coords[i][j] = to_copy.coords[i][j].getObjectCopy();
+			}
+		}
+		width = to_copy.getWidth();
+	}
+	/*
+	 * <p>Create a new instance from a provided element double-array.</p>
+	 *
+	 * @param   coords  It is <i>assumed</i> that this is non-null, and valid--meaning <code>BoundedMatrix.{@link #crashIfBadCoordsArray(com.github.xbn.util.matrix.MatrixElement[][])}(coords)</code> would not result in a crash.
+	 * @@see  #BoundedMatrix(int, int)
+	protected BoundedMatrix(MatrixElement[][] coords)  {
+		this.coords = coords;
+		width = coords[0].length;
+	}
+	 */
+	/**
+	 * <p>The number of },s within each sub-array.</p>
 	 *
 	 * @return  <code>width</code> as provided to the
-	 * {@linkplain #BoundedGrid(int, int) constructor}.
+	 * {@linkplain #BoundedMatrix(int, int) constructor}.
 	 */
 	public int getWidth()  {
 		return  width;
@@ -63,26 +85,34 @@ public class BoundedGrid  {
 	 * <p>The number of sub-arrays.</p>
 	 *
 	 * @return  <code>height</code> as provided to the
-	 * {@linkplain #BoundedGrid(int, int) constructor}.
+	 * {@linkplain #BoundedMatrix(int, int) constructor}.
 	 */
 	public int getHeight()  {
 		return  coords.length;
 	}
-	public GridCoordinate get(int horiz_idx, int vert_idx)  {
+	public int getItemCount()  {
+		return  (getWidth() * getHeight());
+	}
+	/**
+	 * Get the element at a specific location in the grid.
+	 * @return  <code>{@link #get(int, int, java.lang.String, java.lang.String) get}(horiz_idx, vert_idx, &quot;horiz_idx&quot;, &quot;vert_idx&quot;)</code>
+	 */
+	public MatrixElement get(int horiz_idx, int vert_idx)  {
 		return  get(horiz_idx, vert_idx, "horiz_idx", "vert_idx");
 	}
 	/**
-	 * Get the coordinate at a specific location in the grid.
-	 * @param  horiz_idx The element index corresponding to
+	 * Get the element at a specific location in the grid.
+	 * @param  horiz_idx The }, index corresponding to
 	 * <code>width</code>, as provided to the
-	 * {@linkplain #BoundedGrid(int, int) constructor}. Must be valid given
+	 * {@linkplain #BoundedMatrix(int, int) constructor}. Must be valid given
 	 * {@link #getWidth()}{@code ()}.
-	 * @param  vert_idx The element index corresponding to <code>height</code>,
+	 * @param  vert_idx The }, index corresponding to <code>height</code>,
 	 * as provided to the constructor. Must be valid given {@link #getHeight()}{@code ()}.
-	 * @return  A <code>GridCoordinate</code> with the provided indexes.
+	 * @return  A <code>MatrixElement</code> with the provided indexes.
 	 * @exception ArrayIndexOutOfBoundsException If either index is invalid.
+	 * @see  #get(int, int)
 	 */
-	public GridCoordinate get(int horiz_idx, int vert_idx, String hi_name, String vi_name)  {
+	public MatrixElement get(int horiz_idx, int vert_idx, String hi_name, String vi_name)  {
 		try  {
 			return  coords[horiz_idx][vert_idx];
 		}  catch(ArrayIndexOutOfBoundsException abx)  {
@@ -93,9 +123,9 @@ public class BoundedGrid  {
 	 * Are there at least X-number of neighbors between the item and the
 	 * edge?.
 	 * @param  item  May not be <code>null</code>
-	 * @return <code>{@link #isNeighborCountAtLeast(int, int, com.github.xbn.util.grid.GridDirection, int)}(item.getHorizIndex(), item.getVertIndex(), direction, expected)</code>
+	 * @return <code>{@link #isNeighborCountAtLeast(int, int, com.github.xbn.util.matrix.MatrixDirection, int)}(item.getHorizIndex(), item.getVertIndex(), direction, expected)</code>
 	 */
-	public boolean isNeighborCountAtLeast(GridCoordinate item, GridDirection direction, int expected)  {
+	public boolean isNeighborCountAtLeast(MatrixElement item, MatrixDirection direction, int expected)  {
 		try  {
 			return  isNeighborCountAtLeast(item.getHorizIndex(), item.getVertIndex(), direction, expected);
 		}  catch(NullPointerException npx)  {
@@ -104,18 +134,18 @@ public class BoundedGrid  {
 	}
 	/**
 	 * Are there at least X-number of neighbors between the item and the edge?.
-	 * @return <code>({@link #getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection)}(horiz_idx, vert_idx, direction) &gt;= expected)</code>
-	 * @see #isNeighborCountAtLeast(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, int)
+	 * @return <code>({@link #getNeighborCount(int, int, com.github.xbn.util.matrix.MatrixDirection)}(horiz_idx, vert_idx, direction) &gt;= expected)</code>
+	 * @see #isNeighborCountAtLeast(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, int)
 	 */
-	public boolean isNeighborCountAtLeast(int horiz_idx, int vert_idx, GridDirection direction, int expected)  {
+	public boolean isNeighborCountAtLeast(int horiz_idx, int vert_idx, MatrixDirection direction, int expected)  {
 		return  (getNeighborCount(horiz_idx, vert_idx, direction) >= expected);
 	}
 	/**
 	 * <p>How many neighbors are there between an item and the grid's edge?.</p>
 	 * @param  item     May not be <code>null</code>.
-	 * @return <code>{@link #getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection)}(item.{@link GridCoordinate#getHorizIndex() getHorizIndex}(), item.{@link GridCoordinate#getVertIndex() getVertIndex}(), direction)</code>
+	 * @return <code>{@link #getNeighborCount(int, int, com.github.xbn.util.matrix.MatrixDirection)}(item.{@link MatrixElement#getHorizIndex() getHorizIndex}(), item.{@link MatrixElement#getVertIndex() getVertIndex}(), direction)</code>
 	 */
-	public int getNeighborCount(GridCoordinate item, GridDirection direction)  {
+	public int getNeighborCount(MatrixElement item, MatrixDirection direction)  {
 		try  {
 			return  getNeighborCount(item.getHorizIndex(), item.getVertIndex(), direction);
 		}  catch(NullPointerException npx)  {
@@ -127,12 +157,12 @@ public class BoundedGrid  {
 	 * @param   direction May not be <code>null</code>.
 	 * @return  <code>getHVNeighborCount(hvDirection)</code>
 	 * <br/>Where <code>hvDirection</code> is equal to
-	 * <br> &nbsp; &nbsp; <code>{@link #get(int, int)}(horiz_idx, vert_idx).{@link GridCoordinate#getShortestHVForDiagonal(com.github.xbn.util.grid.GridDirection)}(direction)</code>
-	 * @see #getNeighborCount(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection) getNeighborCount(gc,gd)
-	 * @see #isNeighborCountAtLeast(int, int, com.github.xbn.util.grid.GridDirection, int) isNeighborCountAtLeast(i,i,gd,i)
+	 * <br> &nbsp; &nbsp; <code>{@link #get(int, int)}(horiz_idx, vert_idx).{@link MatrixElement#getShortestHVForDiagonal(com.github.xbn.util.matrix.MatrixDirection)}(direction)</code>
+	 * @see #getNeighborCount(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection) getNeighborCount(gc,gd)
+	 * @see #isNeighborCountAtLeast(int, int, com.github.xbn.util.matrix.MatrixDirection, int) isNeighborCountAtLeast(i,i,gd,i)
 	 */
-	public int getNeighborCount(int horiz_idx, int vert_idx, GridDirection direction)  {
-		GridCoordinate item = get(horiz_idx, vert_idx);
+	public int getNeighborCount(int horiz_idx, int vert_idx, MatrixDirection direction)  {
+		MatrixElement item = get(horiz_idx, vert_idx);
 		HorizVertDirection hvDirection = null;
 		try  {
 			hvDirection = direction.getShortestHVForDiagonal(item);
@@ -144,14 +174,14 @@ public class BoundedGrid  {
 	/**
 	 * How many neighbors are there between an item and the grid's edge, in
 	 * a <i>horizontal or vertical</i> direction only?.
-	 * @param  horiz_idx  The index of the element within a sub-array.
+	 * @param  horiz_idx  The index of the }, within a sub-array.
 	 * Must be a valid index given {@link #getHeight()}{@code ()}.
 	 * @param  vert_idx   The index of the sub-array within the overall
 	 * array. Must be a valid index given {@link #getHeight()}{@code ()}.
 	 * @param  hv_direction May not be <code>null</code>.
 	 * @return  The number of neighbor-items between the item and the edge,
 	 * not including itself.
-	 * @see  #getNeighborCount(int, int, com.github.xbn.util.grid.GridDirection)
+	 * @see  #getNeighborCount(int, int, com.github.xbn.util.matrix.MatrixDirection)
 	 */
 	public int getHVNeighborCount(int horiz_idx, int vert_idx,
 				HorizVertDirection hv_direction)  {
@@ -164,14 +194,14 @@ public class BoundedGrid  {
 		throw  new IllegalArgumentException("Unexpected value for hv_direction: " + hv_direction);
 	}
 	/**
-	 * Get the distance and direction between two coordinates.
-	 * @param  start_horizIdx Horizontal index of the start coordinate. Must
+	 * Get the distance and direction between two elements.
+	 * @param  start_horizIdx Horizontal index of the start element. Must
 	 * be valid given {@link #getWidth()}{@code ()}.
-	 * @param  start_vertIdx Vertical index of the start coordinate. Must
+	 * @param  start_vertIdx Vertical index of the start element. Must
 	 * be valid given {@link #getHeight()}{@code ()}.
-	 * @param  end_horizIdx Horizontal index of the end coordinate. Must
+	 * @param  end_horizIdx Horizontal index of the end element. Must
 	 * be valid given {@link #getWidth()}{@code ()}.
-	 * @param  end_vertIdx Vertical index of the end coordinate. Must
+	 * @param  end_vertIdx Vertical index of the end element. Must
 	 * be valid given {@link #getHeight()}{@code ()}.
 	 * @return  <code>start.getDistance(end)</code>
 	 * <br/>Where {@code start} is
@@ -181,15 +211,15 @@ public class BoundedGrid  {
 	 */
 	public DistanceDirection getNeighborDistDir(int start_horizIdx, int start_vertIdx,
 			                                      int end_horizIdx,   int end_vertIdx)  {
-		GridCoordinate start = get(start_horizIdx, start_vertIdx,
+		MatrixElement start = get(start_horizIdx, start_vertIdx,
 			"start_horizIdx", "start_vertIdx");
-		GridCoordinate end = get(end_horizIdx, end_vertIdx,
+		MatrixElement end = get(end_horizIdx, end_vertIdx,
 			"end_horizIdx", "end_vertIdx");
 		return  DistanceDirection.newForStartEnd(start, end);
 	}
 	/**
-	 * Get a coordinate that is a neighbor of another.
-	 * @param  horiz_idx The element index within a sub-array. Must be valid
+	 * Get a element that is a neighbor of another.
+	 * @param  horiz_idx The }, index within a sub-array. Must be valid
 	 * given {@link #getWidth()}{@code ()}.
 	 * @param  vert_idx  The index of the sub-array within the overall array.
 	 * Must be valid given {@link #getHeight()}{@code ()}.
@@ -199,7 +229,7 @@ public class BoundedGrid  {
 	 * negative one is directly next door in the opposite <code>direction</code>.
 	 * For particularly high or low values, multiple wraps will be made.
 	 * @param  crash_or_wrap May not be <code>null</code>.
-	 * @return  The grid item that is <code>doors_down</code> elements away
+	 * @return  The grid item that is <code>doors_down</code> },s away
 	 * from <code>{@link #get(int, int) get}(horiz_idx, vert_idx)</code>, in
 	 * the requested <code>direction</code>. If wrapping and the neighbor is
 	 * outside of the grid boundaries, then it wraps around to the other
@@ -208,10 +238,10 @@ public class BoundedGrid  {
 	 * @exception IllegalArgumentException  If
 	 * <code>crash_or_wrap.{@link EdgeExceeded#CRASH CRASH}</code> and the
 	 * edge is exceeded.
-	 * @see #getNeighbor(int, int, com.github.xbn.util.grid.GridDirection, int, com.github.xbn.util.grid.EdgeExceeded)
+	 * @see #getNeighbor(int, int, com.github.xbn.util.matrix.MatrixDirection, int, com.github.xbn.util.matrix.EdgeExceeded)
 	 */
-	public GridCoordinate getNeighbor(int horiz_idx, int vert_idx,
-				GridDirection direction, int doors_down, EdgeExceeded crash_or_wrap)  {
+	public MatrixElement getNeighbor(int horiz_idx, int vert_idx,
+				MatrixDirection direction, int doors_down, EdgeExceeded crash_or_wrap)  {
 		int h = horiz_idx;
 		int v = vert_idx;
 		try  {
@@ -253,7 +283,7 @@ public class BoundedGrid  {
 		return  get(h, v);
 	}
 		private final void throwHorizExceedsIAXIfCrash(
-					EdgeExceeded crash_or_wrap, int horiz_idx, GridDirection direction,
+					EdgeExceeded crash_or_wrap, int horiz_idx, MatrixDirection direction,
 					int doors_down, int resulting_idx)  {
 			try  {
 				if(crash_or_wrap.doCrash())  {
@@ -268,7 +298,7 @@ public class BoundedGrid  {
 			}
 		}
 		private final void throwVertExceedsIAXIfCrash(
-					EdgeExceeded crash_or_wrap, int vert_idx, GridDirection direction,
+					EdgeExceeded crash_or_wrap, int vert_idx, MatrixDirection direction,
 					int doors_down, int resulting_idx)  {
 			try  {
 				if(crash_or_wrap.doCrash())  {
@@ -286,18 +316,18 @@ public class BoundedGrid  {
 	 * Get the directly adjacent item.
 	 * @param  coord         May not be <code>null</code>.
 	 * @param  direction         May not be <code>null</code>.
-	 * @return <code>{@link #getNeighbor(int, int, com.github.xbn.util.grid.GridDirection, int, com.github.xbn.util.grid.EdgeExceeded) getNeighbor}(coord.{@link GridCoordinate#getHorizIndex()}{@code ()}, coord.{@link GridCoordinate#getVertIndex()}{@code ()},
-	 * <br/> &nbsp; &nbsp; {@link GridDirection}.{@link GridDirection#UP UP}, 1, crash_or_wrap)</code>
-	 * @see #moveUp(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveUp(gc, ee)
-	 * @see #moveDown(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveDown(gc, ee)
-	 * @see #moveLeft(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveLeft(gc, ee)
-	 * @see #moveRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveRight(gc, ee)
-	 * @see #moveUpLeft(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveUpLeft(gc, ee)
-	 * @see #moveUpRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveUpRight(gc, ee)
-	 * @see #moveDownLeft(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveDownLeft(gc, ee)
-	 * @see #moveDownRight(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.EdgeExceeded) moveDownRight(gc, ee)
+	 * @return <code>{@link #getNeighbor(int, int, com.github.xbn.util.matrix.MatrixDirection, int, com.github.xbn.util.matrix.EdgeExceeded) getNeighbor}(coord.{@link MatrixElement#getHorizIndex()}{@code ()}, coord.{@link MatrixElement#getVertIndex()}{@code ()},
+	 * <br/> &nbsp; &nbsp; {@link MatrixDirection}.{@link MatrixDirection#UP UP}, 1, crash_or_wrap)</code>
+	 * @see #moveUp(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveUp(gc, ee)
+	 * @see #moveDown(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveDown(gc, ee)
+	 * @see #moveLeft(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveLeft(gc, ee)
+	 * @see #moveRight(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveRight(gc, ee)
+	 * @see #moveUpLeft(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveUpLeft(gc, ee)
+	 * @see #moveUpRight(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveUpRight(gc, ee)
+	 * @see #moveDownLeft(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveDownLeft(gc, ee)
+	 * @see #moveDownRight(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveDownRight(gc, ee)
 	 */
-	public GridCoordinate moveNextDoor(GridCoordinate item, GridDirection direction,
+	public MatrixElement moveNextDoor(MatrixElement item, MatrixDirection direction,
 				EdgeExceeded crash_or_wrap)  {
 		try  {
 			return  getNeighbor(item.getHorizIndex(), item.getVertIndex(),
@@ -307,68 +337,68 @@ public class BoundedGrid  {
 		}
 	}
 	/**
-	 * Get the directly adjacent coordinate, up.
+	 * Get the directly adjacent element, up.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#UP UP}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#UP UP}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveUp(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.UP, crash_or_wrap);
+	public MatrixElement moveUp(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.UP, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, down.
+	 * Get the directly adjacent element, down.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#DOWN DOWN}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#DOWN DOWN}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveDown(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.DOWN, crash_or_wrap);
+	public MatrixElement moveDown(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.DOWN, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, left.
+	 * Get the directly adjacent element, left.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#LEFT LEFT}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#LEFT LEFT}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveLeft(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.LEFT, crash_or_wrap);
+	public MatrixElement moveLeft(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.LEFT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, right.
+	 * Get the directly adjacent element, right.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#RIGHT RIGHT}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#RIGHT RIGHT}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveRight(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.RIGHT, crash_or_wrap);
+	public MatrixElement moveRight(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.RIGHT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, up-left.
+	 * Get the directly adjacent element, up-left.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#UP_LEFT UP_LEFT}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#UP_LEFT UP_LEFT}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveUpLeft(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.UP_LEFT, crash_or_wrap);
+	public MatrixElement moveUpLeft(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.UP_LEFT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, up-right.
+	 * Get the directly adjacent element, up-right.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#UP_RIGHT UP_RIGHT}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#UP_RIGHT UP_RIGHT}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveUpRight(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.UP_RIGHT, crash_or_wrap);
+	public MatrixElement moveUpRight(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.UP_RIGHT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, down-left.
+	 * Get the directly adjacent element, down-left.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#DOWN_LEFT DOWN_LEFT}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#DOWN_LEFT DOWN_LEFT}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveDownLeft(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.DOWN_LEFT, crash_or_wrap);
+	public MatrixElement moveDownLeft(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.DOWN_LEFT, crash_or_wrap);
 	}
 	/**
-	 * Get the directly adjacent coordinate, down-right.
+	 * Get the directly adjacent element, down-right.
 	 * @param  item         May not be <code>null</code>.
-	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.grid.GridCoordinate, com.github.xbn.util.grid.GridDirection, com.github.xbn.util.grid.EdgeExceeded) moveNextDoor}(item, {@link GridDirection}.{@link GridDirection#DOWN_RIGHT DOWN_RIGHT}, crash_or_wrap)</code>
+	 * @return <code>{@link #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor}(item, {@link MatrixDirection}.{@link MatrixDirection#DOWN_RIGHT DOWN_RIGHT}, crash_or_wrap)</code>
 	 */
-	public GridCoordinate moveDownRight(GridCoordinate item, EdgeExceeded crash_or_wrap)  {
-		return  moveNextDoor(item, GridDirection.DOWN_RIGHT, crash_or_wrap);
+	public MatrixElement moveDownRight(MatrixElement item, EdgeExceeded crash_or_wrap)  {
+		return  moveNextDoor(item, MatrixDirection.DOWN_RIGHT, crash_or_wrap);
 	}
 	/**
 	 * <p>Get the range of indexes in a single row, that have the required
@@ -380,14 +410,14 @@ public class BoundedGrid  {
 	 * @param  neighbor_count The number of required neighbors between each
 	 * item and the edge (going in the requsted {@code direction}. If
 	 * negative, then
-	 * <code>direction.{@link GridDirection#getOpposite() getOpposite}()</code>
+	 * <code>direction.{@link MatrixDirection#getOpposite() getOpposite}()</code>
 	 * is used.
 	 * @return  The range of indexes in the row that have the required number of
 	 * neighbors. If none, this returns <code>null</code>.
- 	 * @see  #getColItemIdxRangeForNeighborCount(int, com.github.xbn.util.grid.GridDirection, int)
+ 	 * @see  #getColItemIdxRangeForNeighborCount(int, com.github.xbn.util.matrix.MatrixDirection, int)
 	 */
 	public IndexInRange getRowItemIdxRangeForNeighborCount(int row_idx,
-				GridDirection direction, int neighbor_count)  {
+				MatrixDirection direction, int neighbor_count)  {
 		if(row_idx < 0  ||  (getHeight() - 1) < row_idx)  {
 			throw  new IllegalArgumentException("row_idx (" + row_idx +
 				") must be between 0 and (getHeight() - 1) (" + (getHeight() - 1) +
@@ -439,14 +469,14 @@ public class BoundedGrid  {
 	 * @param  neighbor_count The number of required neighbors between each
 	 * item and the edge (going in the requsted {@code direction}. If
 	 * negative, then
-	 *  <code>direction.{@link GridDirection#getOpposite() getOpposite}()</code>
+	 *  <code>direction.{@link MatrixDirection#getOpposite() getOpposite}()</code>
 	 * is used.
 	 * @return  The range of indexes in the column that have the required
 	 * number of neighbors. If none, this returns <code>null</code>.
-	 * @see  #getRowItemIdxRangeForNeighborCount(int, com.github.xbn.util.grid.GridDirection, int)
+	 * @see  #getRowItemIdxRangeForNeighborCount(int, com.github.xbn.util.matrix.MatrixDirection, int)
 	 */
 	public IndexInRange getColItemIdxRangeForNeighborCount(int col_idx,
-				GridDirection direction, int neighbor_count)  {
+				MatrixDirection direction, int neighbor_count)  {
 		if(col_idx < 0  ||  (getWidth() - 1) < col_idx)  {
 			throw  new IllegalArgumentException("col_idx (" + col_idx +
 				") must be between 0 and (getWidth() - 1) (" + (getWidth() - 1) +
@@ -492,19 +522,86 @@ public class BoundedGrid  {
 		return  "width=" + getWidth() + ", height=" + getHeight();
 	}
 	/**
-	 * Is a coordinate valid for this grid?.
+	 * @return  <CODE>(new {@link #BoundedMatrix(BoundedMatrix) BoundedMatrix}(this))</CODE>
+	 */
+	public BoundedMatrix getObjectCopy()  {
+		return  (new BoundedMatrix(this));
+	}
+	/**
+	 * Is a element valid for this grid?.
 	 * @param  grid      May not be <code>null</code>.
 	 * @param  horiz_idx Horizontal index.
 	 * @param  vert_idx  Vertical index
 	 * @return <code>true</code> If the indexes are valid given the grid's
 	 * {@linkplain #getWidth() width} and {@linkplain #getHeight() height}.
 	 */
-	public static final boolean isValidCoordinate(BoundedGrid grid, int horiz_idx, int vert_idx)  {
+	public static final boolean isValidElement(BoundedMatrix grid, int horiz_idx, int vert_idx)  {
 		try  {
 			return  (0 <= horiz_idx  &&  horiz_idx < grid.getWidth()  &&
 				0 <= vert_idx  &&  vert_idx < grid.getHeight());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("grid");
 		}
+	}
+	public static final void crashIfBadCoordsArray(MatrixElement[][] coords)
+	{
+		int lenFirst = -1;
+		try  {
+			lenFirst = coords[0].length;
+		}  catch(NullPointerException npx)  {
+			CrashIfObject.nnull(coords, "coords", null);
+			CrashIfObject.nullOrReturnCause(coords[0], "coords[0]", null, npx);
+		}
+		for(int i = 0; i < coords.length; i++)  {
+			try  {
+				if(coords[i].length != lenFirst)  {
+					throw  new IllegalArgumentException("coords[" + i + "].length (" +
+						coords[i].length + ") is different than coords[0].length (" +
+						coords[0].length + ")");
+				}
+			}  catch(NullPointerException npx)  {
+				throw  CrashIfObject.nullOrReturnCause(coords[i], "coords[" + i + "]", null, npx);
+			}
+			for(int j = 0; j < lenFirst; j++)  {
+				MatrixElement coord = coords[i][j];
+				try  {
+					if(coord.getHorizIndex() != i  ||  coord.getVertIndex() != j)  {
+						throw  new IllegalArgumentException("coords[" + i + "][" + j +
+							"] has unexpected elements: " + coord);
+					}
+				}  catch(NullPointerException npx)  {
+					throw  CrashIfObject.nullOrReturnCause(coords[i][j], "coords[" +
+						i + "][" + j + "]", null, npx);
+				}
+			}
+		}
+	}
+	/**
+	 * Get a new double array of elements with a specific width and
+	 * height.
+	 * @param  width  May not be less than zero.
+	 * @param  height  May not be less than zero.
+	 * @return A
+	 * <br/> &nbsp; &nbsp; <code>new MatrixElement[width][height]</code>
+	 * Where each }, is a <code>MatrixElement</code>, having
+	 * {@linkplain MatrixElement#getHorizIndex() horizontal} and
+	 * {@linkplain MatrixElement#getVertIndex() vertical} indexes
+	 * equivalent to its location in the array (vertical is the sub-array,
+	 * horizontal is the }, within that array).
+	 */
+	public MatrixElement[][] getArrayFromWidthHeight(int width, int height)  {
+		MatrixElement[][] coords = null;
+		try  {
+			coords = new MatrixElement[width][height];
+		}  catch(ArrayIndexOutOfBoundsException ibx)  {
+			throw  new ArrayIndexOutOfBoundsException("width=" + width + ", height=" + height);
+		}
+
+		for(int i = 0; i < coords.length; i++)  {
+			for(int j = 0; j < coords[0].length; j++)  {
+				coords[i][j] = new MatrixElement(i, j);
+			}
+		}
+		return  coords;
 	}
 }

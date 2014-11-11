@@ -14,14 +14,14 @@
 	- LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
 	- ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.util.grid;
+package  com.github.xbn.util.matrix;
 	import  com.github.xbn.util.EnumUtil;
 /**
  * <p>The direction of movement within a two dimensional array, going horizontal or vertical only.</p>
  *
- * @see GridDirection#getShortestHVForDiagonal(GridCoordinate)
- * @see GridDirection#getLongestHVForDiagonal(GridCoordinate)
- * @see BoundedGrid#getHVNeighborCount(int, int, com.github.xbn.util.grid.HorizVertDirection) BoundedGrid#getHVNeighborCount
+ * @see MatrixDirection#getShortestHVForDiagonal(MatrixElement)
+ * @see MatrixDirection#getLongestHVForDiagonal(MatrixElement)
+ * @see BoundedMatrix#getHVNeighborCount(int, int, com.github.xbn.util.matrix.HorizVertDirection) BoundedMatrix#getHVNeighborCount
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */

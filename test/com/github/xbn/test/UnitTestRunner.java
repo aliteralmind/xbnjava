@@ -21,7 +21,8 @@ public class UnitTestRunner  {
 			com.github.xbn.test.number.IntBound_Unit.class,
 			com.github.xbn.test.number.NumberUtil_Unit.class,
 			com.github.xbn.test.text.padchop.VzblPadChop_Unit.class,
-			com.github.xbn.test.util.grid.GridCoordinate_Unit.class
+			com.github.xbn.test.util.matrix.MatrixElement_Unit.class,
+			com.github.xbn.test.util.matrix.DistanceDirection_Unit.class
 /*
  */
 		};

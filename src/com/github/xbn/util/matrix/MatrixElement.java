@@ -14,23 +14,23 @@
 	- LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
 	- ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.util.grid;
+package  com.github.xbn.util.matrix;
 /**
  * <p>A single index-based location in a rectangular double-array.</p>
  *
- * @see  BoundedGrid
+ * @see  BoundedMatrix
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
-public class GridCoordinate extends AbstractCoordinate  {
+public class MatrixElement extends AbstractElement  {
 	/**
-	 * <p>Create a new item from its coordinates.</p>
+	 * <p>Create a new item from its elements.</p>
 	 * @param  horiz_idx The index of this item within its sub-array. May
 	 * not be less than zero. Get with {@link #getHorizIndex()}.
 	 * @param  vert_idx  The index of this items' sub-array within the
 	 * overall array. May not be less than zero. Get with {@link #getVertIndex()}.
 	 */
-	public GridCoordinate(int horiz_idx, int vert_idx)  {
+	public MatrixElement(int horiz_idx, int vert_idx)  {
 		super(horiz_idx, vert_idx);
 		if(horiz_idx < 0)  {
 			throw  new IllegalArgumentException("horiz_idx (" + horiz_idx + ") is less than zero.");
@@ -43,7 +43,7 @@ public class GridCoordinate extends AbstractCoordinate  {
 	 * <p>The index of this item within its sub-array.</p>
 	 *
 	 * @return  <code>horiz_idx</code>, as provided to the
-	 * {@link #GridCoordinate(int, int, O) constructor}.
+	 * {@link #MatrixElement(int, int, O) constructor}.
 	*/
 	public int getHorizIndex()  {
 		return  getHorizontal();
@@ -52,37 +52,44 @@ public class GridCoordinate extends AbstractCoordinate  {
 	 * <p>The index of this items' sub-array within the overall array.</p>
 	 *
 	 * @return  <code>vert_idx</code>, as provided to the
-	 * {@link #GridCoordinate(int) constructor}.
+	 * {@link #MatrixElement(int) constructor}.
 	*/
 	public int getVertIndex()  {
 		return  getVertical();
 	}
 	/**
-	 * The difference in the horizontal indexes between this and another
-	 * coordinate.
+	 * The horizontal distance (the number of cells away) from <i>{@code this}</i>
+	 * element to another.
 	 * @param  to_compareTo May not be <code>null</code>
-	 * @return <code>({@link #getHorizIndex()}() - to_compareTo.getHorizIndex())</code>
+	 * @return <code>(to_compareTo.{@link #getHorizIndex()}() - getHorizIndex())</code>
 	 * @see  #getVertDistance()
 	 */
-	public int getHorizDistance(GridCoordinate to_compareTo)  {
+	public int getHorizDistance(MatrixElement to_compareTo)  {
 		try  {
-			return  (getHorizIndex() - to_compareTo.getHorizIndex());
+			return  (to_compareTo.getHorizIndex() - getHorizIndex());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_compareTo");
 		}
 	}
 	/**
-	 * The difference in the vertical indexes between this and another
-	 * coordinate.
+	 * The vertical distance (the number of cells away) from <i>{@code this}</i>
+	 * element to another.
 	 * @param  to_compareTo May not be <code>null</code>
-	 * @return <code>({@link #getVertIndex()}() - to_compareTo.getVertIndex())</code>
+	 * @return <code>(to_compareTo.{@link #getVertIndex()}() - getVertIndex())</code>
 	 * @see  #getVertDistance()
 	 */
-	public int getVertDistance(GridCoordinate to_compareTo)  {
+	public int getVertDistance(MatrixElement to_compareTo)  {
 		try  {
-			return  (getVertIndex() - to_compareTo.getVertIndex());
+			return  (to_compareTo.getVertIndex() - getVertIndex());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_compareTo");
 		}
 	}
+	/**
+	 * @return  <i>{@code this}</i>
+	 */
+	public MatrixElement getObjectCopy()  {
+		return  this;
+	}
+
 }

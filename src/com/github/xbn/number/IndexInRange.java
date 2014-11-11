@@ -31,23 +31,23 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 
 		<P>Equal to
 		<BR> &nbsp; &nbsp; <CODE>new {@link #IndexInRange() IndexInRange}()</CODE></P>
-	 **/
+	 */
 	public static final IndexInRange UNRESTRICTED = new IndexInRange();
 	/**
 		<P>An {@code IndexInRange} with no members.</P>
 
 		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>new {@link #IndexInRange(Invert, IntBoundInclusive, IntBoundExclusive) IndexInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null</CODE></P>
-	 **/
+		<BR> &nbsp; &nbsp; <CODE>new {@link #IndexInRange(Invert, com.github.xbn.number.IntBoundInclusive, com.github.xbn.number.IntBoundExclusive) IndexInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null</CODE></P>
+	 */
 	public static final IndexInRange IMPOSSIBLE = new IndexInRange(Invert.YES, new IntBoundInclusive(0, null), null);
 	/**
 		<P>Create a new instance with no bounds.</P>
 
 		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #IndexInRange(IntBoundInclusive, IntBoundExclusive) this}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null)</CODE></P>
+		<BR> &nbsp; &nbsp; <CODE>{@link #IndexInRange(com.github.xbn.number.IntBoundInclusive, com.github.xbn.number.IntBoundExclusive) this}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null)</CODE></P>
 
 		@see  #UNRESTRICTED
-	 **/
+	 */
 	public IndexInRange()  {
 		this(new IntBoundInclusive(0, null), null);
 	}
@@ -55,26 +55,28 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 		<P>Create a new instance with bounds.</P>
 
 		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(int, int) super}(min, max)</CODE></P>
-	 **/
+		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(new IntBoundInclusive(min, null), new IntBoundExclusive(max, null)</CODE></P>
+	 */
 	public IndexInRange(int min, int max)  {
-		super(min, max);
+		super(new IntBoundInclusive(min, null), new IntBoundExclusive(max, null));
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
-
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(int, int, String, String) super}(min, max, min_name, max_name)</CODE></P>
-	 **/
+	 * <P>Create a new instance with bounds.</P>
+	 *
+	 * <P>Equal to
+	 * <blockquote><pre>{@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(new IntBoundInclusive(min, min_name),
+	 *    new IntBoundExclusive(max, max_name))</pre></blockquote></P>
+	 */
 	public IndexInRange(int min, int max, String min_name, String max_name)  {
-		super(min, max, min_name, max_name);
+		super(new IntBoundInclusive(min, min_name),
+			new IntBoundExclusive(max, max_name));
 	}
 	/**
 		<P>Create a new instance.</P>
 
 		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(IntBound, IntBound) super}{@code (min_bound, max_bound)}</P>
-	 **/
+		<BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}{@code (min_bound, max_bound)}</P>
+	 */
 	public IndexInRange(IntBoundInclusive min_bound, IntBoundExclusive max_bound)  {
 		super(min_bound, max_bound);
 	}
@@ -82,32 +84,34 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 		<P>Create a new instance with bounds.</P>
 
 		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(Invert, int, int) super}(invert, min, max)</CODE></P>
-	 **/
+		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(com.github.xbn.lang.Invert, com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(invert, new IntBoundInclusive(min, null), new IntBoundExclusive(max, null)</CODE></P>
+	 */
 	public IndexInRange(Invert invert, int min, int max)  {
-		super(invert, min, max);
+		super(invert, new IntBoundInclusive(min, null), new IntBoundExclusive(max, null));
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
-
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(Invert, int, int, String, String) super}(invert, min, max, min_name, max_name)</CODE></P>
-	 **/
+		* <P>Create a new instance with bounds.</P>
+		*
+		* <P>Equal to
+		* <blockquote><pre>{@link IntInRange#IntInRange(com.github.xbn.lang.Invert, com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(invert, new IntBoundInclusive(min, min_name),
+		*    new IntBoundExclusive(max, max_name))</pre></blockquote></P>
+	 */
 	public IndexInRange(Invert invert, int min, int max, String min_name, String max_name)  {
-		super(invert, min, max, min_name, max_name);
+		super(invert, new IntBoundInclusive(min, min_name),
+			new IntBoundExclusive(max, max_name));
 	}
 	/**
 		<P>Create a new instance.</P>
 
 		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</P>
+		<BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(com.github.xbn.lang.Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</P>
 
 		@see  #IndexInRange()
 		@see  #IndexInRange(int, int) IndexInRange(i,i)
 		@see  #IndexInRange(Invert, int, int) IndexInRange(inv,i,i)
 		@see  #IndexInRange(int, int) IndexInRange(i,i,s,s)
 		@see  #IndexInRange(Invert, int, int) IndexInRange(inv,i,i,s,s)
-	 **/
+	 */
 	public IndexInRange(Invert invert, IntBoundInclusive min_bound, IntBoundExclusive max_bound)  {
 		super(invert, min_bound, max_bound);
 	}
@@ -116,10 +120,10 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 
 		<P>Equal to
 		<BR> &nbsp; &nbsp; <CODE>IntInRange.{@link #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength}({@link com.github.xbn.number.NumberInRange#getMinBound() getMinBound}(), {@link com.github.xbn.number.NumberInRange#getMaxBound() getMaxBound}, &quot;getMinBound()&quot;, &quot;getMaxBound()&quot;, {@link com.github.xbn.lang.ExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}())</CODE></P>
-	 **/
+	 */
 	public void crashIfBadBoundsForCnstr()  {
 		IntInRange.crashIfBadBoundsForLength(getMinBound(), getMaxBound(), "getMinBound()", "getMaxBound()", getExtraErrInfo());
-		if(getMaxBound().isInclusive())  {
+		if(hasMax()  &&  getMaxBound().isInclusive())  {
 			throw  new IllegalArgumentException("Max not exclusive: " + getMaxBound());
 		}
 	}
@@ -140,7 +144,7 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 
 		<P>Equal to
 		<BR> &nbsp; &nbsp; <CODE>IndexInRange.{@link #crashIfBadIndexObject(IndexInRange, Integer, String, Object) crashIfBadIndexObject}(this, index, idx_name, {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</CODE></P>
-	 **/
+	 */
 	public void crashIfBadIndexObject(int index, String idx_name)  {
 		IndexInRange.crashIfBadIndexObject(this, index, idx_name, getExtraErrInfo());
 	}
@@ -149,7 +153,7 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 
 		<P>Equal to
 		<BR> &nbsp; &nbsp; <CODE>{@link #crashIfBadIndexElement(IndexInRange, Integer, String, int, Object) crashIfBadIndexElement}(this, index, cntr_name, int idx_inCntr, {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</CODE></P>
-	 **/
+	 */
 	public void crashIfBadIndexElement(int index, String cntr_name, int idx_inCntr)  {
 		crashIfBadIndexElement(this, index, cntr_name, idx_inCntr, getExtraErrInfo());
 	}
