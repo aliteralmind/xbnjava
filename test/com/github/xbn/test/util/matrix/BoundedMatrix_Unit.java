@@ -17,7 +17,11 @@ java com.github.xbn.test.util.matrix.BoundedMatrix_Unit
 public class BoundedMatrix_Unit  {
 	public static final void main(String[] ignored)  {
 		BoundedMatrix_Unit unit = new BoundedMatrix_Unit();
+
+		//if(true) return;
+
 		unit.test_basics();
+		unit.test_getColItemIdxRangeForNeighborCount_none();
 		unit.test_getShortestLongestHVForDiagonal();
 		unit.test_neighborCount();
 		unit.test_getNeighbor_and_DistDir();
@@ -27,18 +31,19 @@ public class BoundedMatrix_Unit  {
 		unit.test_movementByOne_success();
 		unit.test_getColItemIdxRangeForNeighborCount_whole();
 		unit.test_getColItemIdxRangeForNeighborCount_partial();
-		unit.test_getColItemIdxRangeForNeighborCount_none();
+		unit.test_getColItemIdxRangeForNeighborCount_partialNeg();
 		unit.test_getRowItemIdxRangeForNeighborCount_whole();
 		unit.test_getRowItemIdxRangeForNeighborCount_partial();
+		unit.test_getRowItemIdxRangeForNeighborCount_partialNeg();
 		unit.test_getRowItemIdxRangeForNeighborCount_none();
 	}
 	@Test
 	public void test_getColItemIdxRangeForNeighborCount_whole()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
-		IndexInRange wholeColumn = new IndexInRange(0, matrix.getHeight());
+		IndexInRange wholeColumn = new IndexInRange(0, matrix.getRowCount());
+		assertEquals(wholeColumn, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.LEFT, 0));
 		assertEquals(wholeColumn, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.UP, 0));
 		assertEquals(wholeColumn, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN, 0));
-		assertEquals(wholeColumn, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.LEFT, 0));
 		assertEquals(wholeColumn, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.RIGHT, 0));
 		assertEquals(wholeColumn, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.UP_LEFT, 0));
 		assertEquals(wholeColumn, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.UP_RIGHT, 0));
@@ -48,7 +53,7 @@ public class BoundedMatrix_Unit  {
 	@Test
 	public void test_getColItemIdxRangeForNeighborCount_partial()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
-		int height = matrix.getHeight();
+		int height = matrix.getRowCount();
 		assertEquals(new IndexInRange(1, height), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.UP, 1));
 		assertEquals(new IndexInRange(0, (height - 3)), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN, 3));
 		assertEquals(new IndexInRange(1, height), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.UP_LEFT, 1));
@@ -57,11 +62,22 @@ public class BoundedMatrix_Unit  {
 		assertEquals(new IndexInRange(0, (height - 1)), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN_RIGHT, 1));
 	}
 	@Test
+	public void test_getColItemIdxRangeForNeighborCount_partialNeg()  {
+		BoundedMatrix matrix = new BoundedMatrix(5, 6);
+		int height = matrix.getRowCount();
+		assertEquals(new IndexInRange(1, height), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN, -1));
+		assertEquals(new IndexInRange(0, (height - 3)), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.UP, -3));
+		assertEquals(new IndexInRange(1, height), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN_RIGHT, -1));
+		assertEquals(new IndexInRange(1, height), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN_LEFT, -1));
+		assertEquals(new IndexInRange(0, (height - 1)), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.UP_RIGHT, -1));
+		assertEquals(new IndexInRange(0, (height - 1)), matrix.getColItemIdxRangeForNeighborCount(1, MatrixDirection.UP_LEFT, -1));
+	}
+	@Test
 	public void test_getColItemIdxRangeForNeighborCount_none()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
 		assertEquals(null, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.UP, 5));
-		assertEquals(null, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN, 5));
 		assertEquals(null, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.LEFT, 1));
+		assertEquals(null, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN, 5));
 		assertEquals(null, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.RIGHT, 6));
 		assertEquals(null, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.UP_LEFT, 5));
 		assertEquals(null, matrix.getColItemIdxRangeForNeighborCount(0, MatrixDirection.UP_RIGHT, 5));
@@ -71,11 +87,11 @@ public class BoundedMatrix_Unit  {
 	@Test
 	public void test_getRowItemIdxRangeForNeighborCount_whole()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
-		IndexInRange wholeRow = new IndexInRange(0, matrix.getHeight());
+		IndexInRange wholeRow = new IndexInRange(0, matrix.getElementsInRowCount());
+		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.RIGHT, 0));
 		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.UP, 0));
 		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN, 0));
 		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.LEFT, 0));
-		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.RIGHT, 0));
 		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.UP_LEFT, 0));
 		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.UP_RIGHT, 0));
 		assertEquals(wholeRow, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN_LEFT, 0));
@@ -84,7 +100,7 @@ public class BoundedMatrix_Unit  {
 	@Test
 	public void test_getRowItemIdxRangeForNeighborCount_partial()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
-		int width = matrix.getWidth();
+		int width = matrix.getElementsInRowCount();
 		assertEquals(new IndexInRange(0, (width - 1)), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.RIGHT, 1));
 		assertEquals(new IndexInRange(1, width), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.LEFT, 1));
 		assertEquals(new IndexInRange(1, width), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.UP_LEFT, 1));
@@ -93,15 +109,26 @@ public class BoundedMatrix_Unit  {
 		assertEquals(new IndexInRange(0, (width - 1)), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN_RIGHT, 1));
 	}
 	@Test
+	public void test_getRowItemIdxRangeForNeighborCount_partialNeg()  {
+		BoundedMatrix matrix = new BoundedMatrix(5, 6);
+		int width = matrix.getElementsInRowCount();
+		assertEquals(new IndexInRange(0, (width - 1)), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.LEFT, -1));
+		assertEquals(new IndexInRange(1, width), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.RIGHT, -1));
+		assertEquals(new IndexInRange(1, width), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN_RIGHT, -1));
+		assertEquals(new IndexInRange(0, (width - 1)), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.DOWN_LEFT, -1));
+		assertEquals(new IndexInRange(1, width), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.UP_RIGHT, -1));
+		assertEquals(new IndexInRange(0, (width - 1)), matrix.getRowItemIdxRangeForNeighborCount(1, MatrixDirection.UP_LEFT, -1));
+	}
+	@Test
 	public void test_getRowItemIdxRangeForNeighborCount_none()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
-		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.UP, 1));
+		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.LEFT, 6));
 		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN, 5));
-		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.LEFT, 1));
+		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.UP, 1));
 		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.RIGHT, 6));
 		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.UP_LEFT, 1));
 		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.UP_RIGHT, 1));
-		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN_LEFT, 1));
+		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN_LEFT, 5));
 		assertEquals(null, matrix.getRowItemIdxRangeForNeighborCount(0, MatrixDirection.DOWN_RIGHT, 5));
 	}
 	@Test
@@ -164,13 +191,13 @@ public class BoundedMatrix_Unit  {
 	public void test_getNeighbor_and_DistDir()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
 		DistanceDirection dd = matrix.getNeighborDistDir(1, 1, 4, 4);
-		assertEquals(3, dd.getVertical());
-		assertEquals(3, dd.getHorizontal());
+		assertEquals(3, dd.getRowIndex());
+		assertEquals(3, dd.getColumnIndex());
 		assertEquals(MatrixDirection.DOWN_RIGHT, dd.getDirection());
 
 		dd = matrix.getNeighborDistDir(1, 1, 4, 3);
-		assertEquals(3, dd.getVertical());
-		assertEquals(2, dd.getHorizontal());
+		assertEquals(3, dd.getRowIndex());
+		assertEquals(2, dd.getColumnIndex());
 		assertEquals(null, dd.getDirection());
 
 		MatrixElement elem = matrix.getNeighbor(0, 0, MatrixDirection.RIGHT, 3, EdgeExceeded.CRASH);
@@ -244,9 +271,9 @@ public class BoundedMatrix_Unit  {
 	@Test
 	public void test_basics()  {
 		BoundedMatrix matrix = new BoundedMatrix(5, 6);
-		assertEquals(5, matrix.getHeight());
-		assertEquals(6, matrix.getWidth());
-		assertEquals(30, matrix.getItemCount());
+		assertEquals(5, matrix.getRowCount());
+		assertEquals(6, matrix.getElementsInRowCount());
+		assertEquals(30, matrix.getElementCount());
 		assertEquals(new MatrixElement(0, 0), matrix.get(0, 0));
 		assertEquals(new MatrixElement(1, 1), matrix.get(1, 1));
 		assertEquals(new MatrixElement(3, 2), matrix.get(3, 2));
@@ -270,10 +297,10 @@ public class BoundedMatrix_Unit  {
 		testShortestLongestHVForDiagonal(matrix, dir, 0, 0, VertHorizDirection.DOWN, VertHorizDirection.RIGHT);
 	}
 		private void testShortestLongestHVForDiagonal(BoundedMatrix matrix, MatrixDirection dir,
-				int vert_idx, int horiz_idx,
+				int row_idx, int col_idx,
 				VertHorizDirection longest_dir, VertHorizDirection shortest_dir)  {
-			assertEquals(longest_dir, matrix.getShortestVHForDiagonal(vert_idx, horiz_idx, dir));
-			assertEquals(shortest_dir, matrix.getLongestVHForDiagonal(vert_idx, horiz_idx, dir));
+			assertEquals(longest_dir, matrix.getShortestVHForDiagonal(row_idx, col_idx, dir));
+			assertEquals(shortest_dir, matrix.getLongestVHForDiagonal(row_idx, col_idx, dir));
 		}
 
 }

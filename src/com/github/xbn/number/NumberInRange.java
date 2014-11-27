@@ -507,11 +507,11 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	 */
 	public abstract boolean areFieldsEqual(NumberInRange<N> to_compareTo);
 	/**
-	 * @deprecated Use {@link #getIsInDebugging(N) getIsInDebugging}{@code (N)}
+	 * @deprecated Use {@link #getDebuggingForIsIn(N) getDebuggingForIsIn}{@code (N)}
 	 */
 	public static final <N extends Number> String getValidityDebugging(NumberInRange<N> range, N to_validate, String to_vldtName)  {
 		try  {
-			return  to_vldtName + "=" + to_validate + ", range=<" + range + ">, " + range.getIsInDebugging(to_validate);
+			return  to_vldtName + "=" + to_validate + ", range=<" + range + ">, " + range.getDebuggingForIsIn(to_validate);
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("range");
 		}
@@ -523,7 +523,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	 * @return  Description on why {@code to_validate} is in or not in this range. This uses the terminology &quot;valid&quot; instead of &quot;in&quot;.
 	 * @since 0.1.4.2
 	 */
-	public final String getIsInDebugging(N to_validate)  {
+	public String getDebuggingForIsIn(N to_validate)  {
 		return  "valid-for-min?=" +
 			(!hasMin()
 				?  "yes (no min-bound)"

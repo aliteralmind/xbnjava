@@ -37,7 +37,7 @@ public class IndexableUtil  {
 		<P>Get a random index for a container, given its length.</P>
 	 **/
 	public static final int getRandomIndexForLength(int length)  {
-		return  NumberUtil.getRandomBetweenInclusive(0, (length - 1));
+		return  NumberUtil.getRandomIntBetweenInclusive(0, (length - 1));
 	}
 	public static final void crashIfContainerIsNullAndThatIsBad(NullContainer nnull, String obj_name)  {
 		boolean isBad = false;

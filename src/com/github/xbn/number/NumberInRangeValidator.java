@@ -112,7 +112,7 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
 			return  true;
 		}
 
-		if(isDebugOn()) { getDebugAptr().appentln("<VNIR>   doesFollowRulesPreInvert(to_validate): super is true and to_validate is non-null. Returning validity: <<<to_validate=" + NumberInRange.getIsInDebugging(getRange(), to_validate) + ">>>"); }
+		if(isDebugOn()) { getDebugAptr().appentln("<VNIR>   doesFollowRulesPreInvert(to_validate): super is true and to_validate is non-null. Returning validity: <<<to_validate=" + getRange().getDebuggingForIsIn(to_validate) + ">>>"); }
 		return  getRange().isIn(to_validate);
 	}
 //ValueValidator...END

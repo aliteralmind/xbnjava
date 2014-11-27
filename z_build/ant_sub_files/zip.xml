@@ -8,7 +8,7 @@
 		</copy>
 
 		<echo>xbnjavabuild.CreateTempBuildAndCodeletPropsForPublish</echo>
-		<java classname="xbnjavabuild.CreateTempBuildAndCodeletPropsForPublish" failonerror="true" classpathref="project_classpath">
+		<java classname="xbnjavabuild.CreateTempBuildAndCodeletPropsForPublish" failonerror="true" classpathref="project_classpath_id">
 			<arg value="${dir_sandbox}"/>
 			<arg value="${codelet.config.dir}${fs}"/>
 			<arg value="subproject"/>

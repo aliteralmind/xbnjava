@@ -19,40 +19,40 @@ package  com.github.xbn.util.matrix;
 	import  com.github.xbn.lang.CrashIfObject;
 
 /**
- * <p>Foundation for element-based information.</p>
+ * <p>An element's coordinates in a two-dimensional array.</p>
  *
  * @since  0.1.4.2
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  */
 public abstract class AbstractElement implements Copyable  {
-	private final int vert;
-	private final int horiz;
+	private final int row_idx;
+	private final int col_idx;
 	/**
-	 * <p>Create a new item from its elements.</p>
-	 * @param  horiz Horizontal. Get with {@link #getHorizontal()}.
-	 * @param  vert  Vertical. Get with {@link #getVertical()}.
+	 * <p>Create a new matrix element from its coordinates.</p>
+	 * @param  col_idx Horizontal. Get with {@link #getColumnIndex()}.
+	 * @param  row_idx  Vertical. Get with {@link #getRowIndex()}.
 	 */
-	public AbstractElement(int vert, int horiz)  {
-		this.vert = vert;
-		this.horiz = horiz;
+	public AbstractElement(int row_idx, int col_idx)  {
+		this.row_idx = row_idx;
+		this.col_idx = col_idx;
 	}
 	/**
-	 * <p>The vertical number.</p>
+	 * <p>The index of the row, as it exists in the overall array.</p>
 	 *
-	 * @return  <code>vert</code>, as provided to the
+	 * @return  <code>row_idx</code>, as provided to the
 	 * {@link #AbstractElement(int, int) constructor}.
 	*/
-	public int getVertical()  {
-		return  vert;
+	public int getRowIndex()  {
+		return  row_idx;
 	}
 	/**
-	 * <p>The horizontal number.</p>
+	 * <p>The index of the element within a row.</p>
 	 *
-	 * @return  <code>horiz</code>, as provided to the
+	 * @return  <code>col_idx</code>, as provided to the
 	 * {@link #AbstractElement(int, int) constructor}.
 	*/
-	public int getHorizontal()  {
-		return  horiz;
+	public int getColumnIndex()  {
+		return  col_idx;
 	}
 	/**
 	 * @return  <code>{@link #appendToString(java.lang.StringBuilder)(new {@link java.lang.StringBuilder#StringBuilder() StringBuilder}()).toString()</code>
@@ -66,7 +66,7 @@ public abstract class AbstractElement implements Copyable  {
 	 */
 	public StringBuilder appendToString(StringBuilder bldr)  {
 		try  {
-			bldr.append("[v=").append(getVertical()).append(",h=").append(getHorizontal()).append("]");
+			bldr.append("[row=").append(getRowIndex()).append(",col=").append(getColumnIndex()).append("]");
 		}  catch(NullPointerException npx)  {
 			CrashIfObject.nullOrReturnCause(bldr, "bldr", null, npx);
 		}
@@ -103,8 +103,8 @@ public abstract class AbstractElement implements Copyable  {
 	 **/
 	public boolean areFieldsEqual(AbstractElement to_compareTo)  {
 		try  {
-			return  (getHorizontal() == to_compareTo.getHorizontal()  &&
-				getVertical() == to_compareTo.getVertical());
+			return  (getColumnIndex() == to_compareTo.getColumnIndex()  &&
+				getRowIndex() == to_compareTo.getRowIndex());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_compareTo");
 		}

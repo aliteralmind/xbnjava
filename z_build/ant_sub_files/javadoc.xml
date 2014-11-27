@@ -29,6 +29,7 @@
 
 		<property name="dir_sandbox_needed_by_javadoc" value="${dir_sandbox_bldfiles}needed_by_javadoc${fs}"/>
 		<record name="${dir_build}javadoc_output.txt" action="start"/>
+		<echo>build.class.dir=${build.class.dir}</echo>
 		<javadoc
 			packagenames="${xbn.javadoc.packages.featured},${xbn.javadoc.packages.main},${xbn.javadoc.packages.secondary},${xbn.javadoc.packages.tertiary},${xbn.javadoc.packages.z},${xbn.javadoc.packages.examples},${xbn.javadoc.packages.examples.non_xbn}"
 			defaultexcludes="yes"
@@ -42,7 +43,7 @@
 			version="true"
 			windowtitle="XBN-Java"
 			nodeprecatedlist="yes"
-			classpathref="project_classpath"
+			classpathref="project_classpath_id"
 			additionalparam="-J-Dcodelet_config_dir=${dir_sandbox}${codelet.config.dir}${fs}"
 		>
 			<sourcepath>
@@ -51,11 +52,17 @@
 				<pathelement path="${dir_sandbox_test}"/>
 			</sourcepath>
 			<!-- Custom taglets
-					<taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="R:\jeffy\programming\build\CLASSES\"/>-->
-				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-				<taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+				http://stackoverflow.com/questions/27137850/ant-javadoc-task-throwing-noclassdeffounderror-from-within-a-custom-taglet-ev
+			  -->
+ 				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet"
+ 					path="${project_classpath_str}"/>
+ 				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet"
+ 					path="${project_classpath_str}"/>
+ 				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet"
+ 					path="${project_classpath_str}"/>
+ 				<taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet"
+ 					path="${project_classpath_str}"/>
+				<!-- <taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="${build.class.dir}"/> -->
 
 			<group title="XBN-Java: Featured" packages="${xbn.jd_colon.packages.featured}"/>
 			<group title="XBN-Java: Main" packages="${xbn.jd_colon.packages.main}"/>
@@ -65,11 +72,11 @@
 			<group title="Example code: XBN-Java" packages="${xbn.jd_colon.packages.examples}"/>
 			<group title="Example code: Other" packages="${xbn.jd_colon.packages.examples.non_xbn}"/>
 			<!-- Custom taglets
-					<taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="R:\jeffy\programming\build\CLASSES\"/>-->
-				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
-				<taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet" path="R:\jeffy\programming\build\CLASSES\"/>
+					<taglet name="com.github.aliteralmind.codelet.taglet.UnderlineTaglet" path="${build.class.dir}"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletTaglet" path="${build.class.dir}"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletDotOutTaglet" path="${build.class.dir}"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.CodeletAndOutTaglet" path="${build.class.dir}"/>
+				<taglet name="com.github.aliteralmind.codelet.taglet.FileTextletTaglet" path="${build.class.dir}"/>-->
 			<link href="http://junit.sourceforge.net/javadoc/"/>
 			<link href="http://docs.oracle.com/javase/7/docs/api/"/>
 			<link href="http://aliteralmind.com/docs/computer/programming/codelet/documentation/javadoc/"/>
@@ -101,7 +108,7 @@
 </HEAD>]]></replacevalue>
 		</replace>
 
-		<java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true" classpathref="project_classpath">
+		<java classname="xbnjavabuild.AddLineBreakBeforeGenericsInJavaDocPackageList" failonerror="true" classpathref="project_classpath_id">
 			<arg value="${dir_build_docs_javadoc}"/>
 			<arg value="com.github.xbn."/>
 			<arg value="analyze.validate.z,io,keyed,linefilter.entity.raw.z,linefilter.entity.z,list.lister.z,neederneedable,number,number.z,regexutil.z,text.padchop.z,util"/>

@@ -25,48 +25,50 @@ package  com.github.xbn.util.matrix;
 public class MatrixElement extends AbstractElement  {
 	/**
 	 * <p>Create a new item from its elements.</p>
-	 * @param  horiz_idx The index of this item within its sub-array. May
-	 * not be less than zero. Get with {@link #getHorizIndex()}.
-	 * @param  vert_idx  The index of this items' sub-array within the
-	 * overall array. May not be less than zero. Get with {@link #getVertIndex()}.
+	 * @param  col_idx The index of the column. This is intended to be the
+	 * element index within a single sub-array. May not be less than zero.
+	 * Get with {@link #getColumnIndex()}.
+	 * @param  row_index  The index of the row. This is intended to be the
+	 * sub-array index as it exists in the overall array. Get with
+	 * {@link #getRowIndex()}.
 	 */
-	public MatrixElement(int vert_idx, int horiz_idx)  {
-		super(vert_idx, horiz_idx);
-		if(vert_idx < 0)  {
-			throw  new IllegalArgumentException("vert_idx (" + vert_idx + ") is less than zero.");
+	public MatrixElement(int row_index, int col_idx)  {
+		super(row_index, col_idx);
+		if(row_index < 0)  {
+			throw  new IllegalArgumentException("row_index (" + row_index + ") is less than zero.");
 		}
-		if(horiz_idx < 0)  {
-			throw  new IllegalArgumentException("horiz_idx (" + horiz_idx + ") is less than zero.");
+		if(col_idx < 0)  {
+			throw  new IllegalArgumentException("col_idx (" + col_idx + ") is less than zero.");
 		}
 	}
-	/**
+	/*
 	 * <p>The index of this items' sub-array within the overall array.</p>
 	 *
-	 * @return  <code>vert_idx</code>, as provided to the
+	 * @return  <code>row_index</code>, as provided to the
 	 * {@link #MatrixElement(int) constructor}.
-	*/
-	public int getVertIndex()  {
+	public int getRowIndex()  {
 		return  getVertical();
 	}
-	/**
+	*/
+	/*
 	 * <p>The index of this item within its sub-array.</p>
 	 *
-	 * @return  <code>horiz_idx</code>, as provided to the
+	 * @return  <code>col_idx</code>, as provided to the
 	 * {@link #MatrixElement(int, int, O) constructor}.
-	*/
-	public int getHorizIndex()  {
+	public int getColumnIndex()  {
 		return  getHorizontal();
 	}
+	*/
 	/**
 	 * The horizontal distance (the number of cells away) from <i>{@code this}</i>
 	 * element to another.
 	 * @param  to_compareTo May not be <code>null</code>
-	 * @return <code>(to_compareTo.{@link #getHorizIndex()}() - getHorizIndex())</code>
+	 * @return <code>(to_compareTo.{@link #getColumnIndex()}() - getColumnIndex())</code>
 	 * @see  #getVertDistance()
 	 */
 	public int getHorizDistance(MatrixElement to_compareTo)  {
 		try  {
-			return  (to_compareTo.getHorizIndex() - getHorizIndex());
+			return  (to_compareTo.getColumnIndex() - getColumnIndex());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_compareTo");
 		}
@@ -75,12 +77,12 @@ public class MatrixElement extends AbstractElement  {
 	 * The vertical distance (the number of cells away) from <i>{@code this}</i>
 	 * element to another.
 	 * @param  to_compareTo May not be <code>null</code>
-	 * @return <code>(to_compareTo.{@link #getVertIndex()}() - getVertIndex())</code>
+	 * @return <code>(to_compareTo.{@link #getRowIndex()}() - getRowIndex())</code>
 	 * @see  #getVertDistance()
 	 */
 	public int getVertDistance(MatrixElement to_compareTo)  {
 		try  {
-			return  (to_compareTo.getVertIndex() - getVertIndex());
+			return  (to_compareTo.getRowIndex() - getRowIndex());
 		}  catch(NullPointerException npx)  {
 			throw  new NullPointerException("to_compareTo");
 		}

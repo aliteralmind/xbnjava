@@ -13,169 +13,171 @@
 		<antcall target="compileexamples1by1b"/>
 	</target>
 	<target name="compileexamplesasawhole" description="Compiles all XBN-Java example code in a single javac call.">
-		<javac srcdir="${dir_sandbox_examples}" classpathref="project_classpath" listfiles="false" includeantruntime="true" createMissingPackageInfoClass="false"
+		<javac srcdir="${dir_sandbox_examples}" classpathref="project_classpath_id" listfiles="false" includeantruntime="true" createMissingPackageInfoClass="false"
 			destdir="${build.class.dir}"
 			includes="**/*.java"/>
 	</target>
 
 	<target name="compileexamples1by1">
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="analyze/alter/ValueAltererXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="analyze/validate/FirstCheckIsAlwaysValidThenExpireXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="analyze/validate/ValidResultFilterXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="analyze/validate/ValueValidatorXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="array/BinarySearcherXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="array/BinarySearcherXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="array/XbnIndexOutOfBoundsExceptionXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="io/NewPrintWriterToFileXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="io/UnusableAppenterExample.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="io/TextAppenterObjectDebugging.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="io/TextAppenterWithLevelsAppExample.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="io/WriterForAppendableXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/builder/blind/BlindBuilderXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/builder/bloch/BlochBuilderXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/builder/finalv/UserConfig_Fieldable.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/builder/finalv/UserConfig.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/builder/finalv/UserConfig_Cfg.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/builder/finalv/UCBlindBuilderTest.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/builder/finalv/UCBlindBuilderTest.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/non_xbn/ElimOneCharForPalindrome.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/reflect/InvokeMainWithRtxXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="lang/reflect/InvokePrivateStaticMethodWithRtxXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/GetAllClassSimpleNamesFromImports.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/EliminateAllCommentBlocksAndPackageLine.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/PrintAllJavaDocBlockStartAndEndLineNums.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/PrintJavaDocBlockSubLinesBolded.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/PrintAllSubLinesBolded.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/StripOptionalAsterisksFromJDLineStarts.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/alter/ExtractReferenceTypeBlocks.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/alter/ExtractReferenceTypeBlocksWithChildRoot.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/alter/ExtractReferenceTypeBlocksWithChildStealth.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/alter/ExtractAllJavaDocBlockTextRaw.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/alter/ExtractAllJavaDocBlockTextStripLineAsterisks.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/alter/ExpirableTextLineAlterListXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/StringReplacerXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/StringValidatorReplacerXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/IterateActiveLines.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/IterateKeptLines.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/IterateKeptLinesManualBlock.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/IterateKeptLinesBlockAsChild.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/ModifyBlockLines.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="linefilter/MoreComplicatedModifyExample.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="neederneedable/NeedableNeederXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="number/FractionXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexGroupExtractorXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexReplacerDirectXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexReplacerIndirectXmpl1of2.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexReplacerIndirectXmpl2of2.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexReplacerLiteralXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexReplacerSpcfcTermsXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexReplacerValidTermXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexReplacerXmplsFromRewriter.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/RegexTokenizerXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/TemplateTokenizer.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="regexutil/non_xbn/OnePlusLetterDigitZeroPlusSpace.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="testdev/HelloWorld.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="testdev/TimeIteratorVsIndexIntegerList.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="testdev/UnitTestAppOutputContainsXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="text/VisibleIndexMaskXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="text/padchop/CharsBeforeChopXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="text/padchop/ChopStringXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="text/padchop/PadStringXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="text/padchop/VzblPadChopXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="testdev/ReplaceAllIndentTabsWithSpacesXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="testdev/ReplaceAllIndentTabsWithSpacesXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="testdev/Time3StringConcatVsAppend.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/JavaUtilInitializedValuesXmpl.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/GetFromExplicitStringValuesExample.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/GetIntAsZeroPadded31BitStringNoSignDemo.java"/>
-		<!--javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
-			includes="util/itr/IterationOdometerXmpl.java"/-->
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/GetZeroPaddedBinaryStringToLengthDemo.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/itr/DetectDupsWithIterators.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/GetFromExplicitStringValuesExample.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
+			includes="util/GetFromExplicitStringValuesExample.java"/>
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/non_xbn/TwoExponentHighestOneBitUsingBinaryStrings.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
-			includes="util/non_xbn/TwoExponentHighestOneBitUsingInts.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
+			includes="util/matrix/Largest4InARowProductInMatrix.java"/>
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
+			includes="util/matrix/Largest4InARowProductInMatrixEfficient.java"/>
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/non_xbn/TwoWaysToShowXExtendsY.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/tuple/PotentialStringConcatWithThreeObjs.java"/>
-		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath" listfiles="true" includeantruntime="true"
+		<javac srcdir="${dir_src_examples}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
 			includes="util/tuple/PotentialStringConcatWithThreeObjs.java"/>
 </target>
 <target name="compileexamples1by1b">

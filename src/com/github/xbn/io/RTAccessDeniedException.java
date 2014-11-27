@@ -12,27 +12,40 @@
    - LGPL 3.0: https://www.gnu.org/licenses/lgpl-3.0.txt
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
-package  com.github.xbn.util;
-	import  com.github.xbn.number.NumberUtil;
+package  com.github.xbn.io;
 /**
-	<P>Get a random boolean.</P>
+	<P>Runtime-wrapper for {@code java.nio.file.AccessDeniedException}-s.</P>
 
 	@since 0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
-public class BooleanUtil  {
-	private BooleanUtil()  {
-		throw  new IllegalStateException("Do not instantiate");
+public class RTAccessDeniedException extends RTIOException  {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7078314154264491059L;
+	/**
+		<P>Create an RTAccessDeniedException with no error message.</P>
+	 **/
+	public RTAccessDeniedException()  {
 	}
 	/**
-		<P>Get a random boolean.</P>
-
-		@return  <CODE>({@link com.github.xbn.number.NumberUtil#getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive}(0, 1) == 1)</CODE>
+		<P>Create an RTAccessDeniedException.</P>
 	 **/
-	public static final boolean getRandomBoolean()  {
-		return  (NumberUtil.getRandomIntBetweenInclusive(0, 1) == 1);
+	public RTAccessDeniedException(String message)  {
+		super(message);
 	}
-	public static final String toUpperCase(boolean b)  {
-		return  new Boolean(b).toString().toUpperCase();
+	/**
+		<P>Create an RTAccessDeniedException with no error message.</P>
+	 **/
+	public RTAccessDeniedException(Throwable cause)  {
+		super(cause);
+	}
+	/**
+		<P>Create an RTAccessDeniedException.</P>
+	 **/
+	public RTAccessDeniedException(String message, Throwable cause)  {
+		super(message, cause);
 	}
 }

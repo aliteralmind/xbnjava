@@ -10,62 +10,64 @@ public class ExampleCodeOutputsContain_Unit  {
 		"examples\\com\\github\\xbn\\examples\\";
 
    public static final void main(String[] ignored)  {
-		ExampleCodeOutputsContain_Unit test = new ExampleCodeOutputsContain_Unit();
+		ExampleCodeOutputsContain_Unit unit = new ExampleCodeOutputsContain_Unit();
 
-		test.linefilter_ExtractReferenceTypeBlocks();
-		test.linefilter_ExtractReferenceTypeBlocksWithChildRoot();
-		test.linefilter_ExtractReferenceTypeBlocksWithChildStealth();
-   	test.analyze_alter_ValueAltererXmpl();
-   	test.analyze_validate_FirstCheckIsAlwaysValidThenExpireXmpl();
-   	test.analyze_validate_ValidResultFilterXmpl();
-   	test.analyze_validate_ValueValidatorXmpl();
-   	test.array_BinarySearcherXmpl();
-   	test.array_XbnIndexOutOfBoundsExceptionXmpl();
-   	test.io_TextAppenterObjectDebugging();
-   	test.io_TextAppenterWithLevelsAppExample_off();
-   	test.io_UnusableAppenterExample();
-   	test.io_WriterForAppendableXmpl();
-   	test.lang_builder_blind_BlindBuilderXmpl();
-   	test.lang_builder_bloch_BlochBuilderXmpl();
-   	test.lang_builder_finalv_UCBlindBuilderTest();
-   	test.lang_reflect_InvokeMainWithRtxXmpl();
-   	test.lang_reflect_InvokePrivateStaticMethodWithRtxXmpl();
-   	test.linefilter_EliminateAllCommentBlocksAndPackageLine();
-   	test.linefilter_ExtractAllJavaDocBlockTextRaw();
-   	test.linefilter_ExtractAllJavaDocBlockTextStripLineAsterisks();
-   	test.linefilter_GetAllClassSimpleNamesFromImports();
-   	test.linefilter_IterateActiveLines();
-   	test.linefilter_IterateKeptLines();
-   	test.linefilter_IterateKeptLinesManualBlock();
-   	test.linefilter_ModifyBlockLines();
-   	test.linefilter_MoreComplicatedModifyExample();
-   	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNums();
-   	test.linefilter_PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging();
-   	test.linefilter_PrintJavaDocBlockSubLinesBolded();
-   	test.linefilter_StringReplacerXmpl();
-   	test.linefilter_StringValidatorReplacerXmpl();
-   	test.linefilter_alter_ExpirableAlterListXmpl();
-   	test.neederneedable_NeedableNeederXmpl();
-   	test.regexutil_RegexGroupExtractorXmpl();
-   	test.regexutil_RegexReplacerDirectXmpl();
-   	test.regexutil_RegexReplacerIndirectXmpl1of2();
-   	test.regexutil_RegexReplacerIndirectXmpl2of2();
-   	test.regexutil_RegexReplacerLiteralXmpl();
-   	test.regexutil_RegexReplacerSpcfcTermsXmpl();
-   	test.regexutil_RegexReplacerValidTermXmpl();
-   	test.regexutil_RegexReplacerXmplsFromRewriter();
-   	test.regexutil_RegexTokenizerXmpl();
-   	test.testdev_TimeIteratorVsIndexIntegerList();
-   	test.text_padchop_CharsBeforeChopXmpl();
-   	test.text_padchop_ChopStringXmpl();
-   	test.text_padchop_PadStringXmpl();
-   	test.text_padchop_VzblPadChopXmpl();
-   	test.util_JavaUtilInitializedValuesXmpl();
-   	test.util_tuple_PotentialStringConcatWithThreeObjs();
-//   	test.io_TextAppenterWithLevelsAppExample_minimal();
-//   	test.io_TextAppenterWithLevelsAppExample_verbose();
-//   	test.number_FractionXmpl();
-//   	test.testdev_UnitTestAppOutputContainsXmpl();
+		unit.linefilter_ExtractReferenceTypeBlocks();
+		unit.linefilter_ExtractReferenceTypeBlocksWithChildRoot();
+		unit.linefilter_ExtractReferenceTypeBlocksWithChildStealth();
+   	unit.analyze_alter_ValueAltererXmpl();
+   	unit.analyze_validate_FirstCheckIsAlwaysValidThenExpireXmpl();
+   	unit.analyze_validate_ValidResultFilterXmpl();
+   	unit.analyze_validate_ValueValidatorXmpl();
+   	unit.array_BinarySearcherXmpl();
+   	unit.array_XbnIndexOutOfBoundsExceptionXmpl();
+   	unit.io_TextAppenterObjectDebugging();
+   	unit.io_TextAppenterWithLevelsAppExample_off();
+   	unit.io_UnusableAppenterExample();
+   	unit.io_WriterForAppendableXmpl();
+   	unit.lang_builder_blind_BlindBuilderXmpl();
+   	unit.lang_builder_bloch_BlochBuilderXmpl();
+   	unit.lang_builder_finalv_UCBlindBuilderTest();
+   	unit.lang_reflect_InvokeMainWithRtxXmpl();
+   	unit.lang_reflect_InvokePrivateStaticMethodWithRtxXmpl();
+   	unit.linefilter_EliminateAllCommentBlocksAndPackageLine();
+   	unit.linefilter_ExtractAllJavaDocBlockTextRaw();
+   	unit.linefilter_ExtractAllJavaDocBlockTextStripLineAsterisks();
+   	unit.linefilter_GetAllClassSimpleNamesFromImports();
+   	unit.linefilter_IterateActiveLines();
+   	unit.linefilter_IterateKeptLines();
+   	unit.linefilter_IterateKeptLinesManualBlock();
+   	unit.linefilter_ModifyBlockLines();
+   	unit.linefilter_MoreComplicatedModifyExample();
+   	unit.linefilter_PrintAllJavaDocBlockStartAndEndLineNums();
+   	unit.linefilter_PrintAllJavaDocBlockStartAndEndLineNumsViaDebugging();
+   	unit.linefilter_PrintJavaDocBlockSubLinesBolded();
+   	unit.linefilter_StringReplacerXmpl();
+   	unit.linefilter_StringValidatorReplacerXmpl();
+   	unit.linefilter_alter_ExpirableAlterListXmpl();
+   	unit.neederneedable_NeedableNeederXmpl();
+   	unit.regexutil_RegexGroupExtractorXmpl();
+   	unit.regexutil_RegexReplacerDirectXmpl();
+   	unit.regexutil_RegexReplacerIndirectXmpl1of2();
+   	unit.regexutil_RegexReplacerIndirectXmpl2of2();
+   	unit.regexutil_RegexReplacerLiteralXmpl();
+   	unit.regexutil_RegexReplacerSpcfcTermsXmpl();
+   	unit.regexutil_RegexReplacerValidTermXmpl();
+   	unit.regexutil_RegexReplacerXmplsFromRewriter();
+   	unit.regexutil_RegexTokenizerXmpl();
+   	unit.testdev_TimeIteratorVsIndexIntegerList();
+   	unit.text_padchop_CharsBeforeChopXmpl();
+   	unit.text_padchop_ChopStringXmpl();
+   	unit.text_padchop_PadStringXmpl();
+   	unit.text_padchop_VzblPadChopXmpl();
+   	unit.util_JavaUtilInitializedValuesXmpl();
+   	unit.util_tuple_PotentialStringConcatWithThreeObjs();
+		unit.util_matrix_GetRowItemIdxRangeForNeighborCountXmpl();
+		unit.util_matrix_BoundedMatrixXmpl();
+//   	unit.io_TextAppenterWithLevelsAppExample_minimal();
+//   	unit.io_TextAppenterWithLevelsAppExample_verbose();
+//   	unit.number_FractionXmpl();
+//   	unit.testdev_UnitTestAppOutputContainsXmpl();
    }
    @Test
    public void array_XbnIndexOutOfBoundsExceptionXmpl()  {
@@ -464,5 +466,20 @@ public class ExampleCodeOutputsContain_Unit  {
 		VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
 			com.github.xbn.examples.util.tuple.PotentialStringConcatWithThreeObjs.class,
 			"A good", "B bad");
+	}
+	@Test
+	public void util_matrix_GetRowItemIdxRangeForNeighborCountXmpl()  {
+		VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+			com.github.xbn.examples.util.matrix.GetRowItemIdxRangeForNeighborCountXmpl.class,
+			"[0,20)", "null", "[0,20)", "[0,17)");
+	}
+	@Test
+	public void util_matrix_BoundedMatrixXmpl()  {
+		VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
+			com.github.xbn.examples.util.matrix.BoundedMatrixXmpl.class,
+			"3", "5",
+			"6", "8",
+			"7", "8",
+			"up", "7", "down", "12", "down-left", "8");
 	}
 }

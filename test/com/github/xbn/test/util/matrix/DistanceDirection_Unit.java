@@ -21,8 +21,8 @@ public class DistanceDirection_Unit  {
 	@Test
 	public void test_basicObjCreation()  {
 		DistanceDirection dd = new DistanceDirection(1, 0);
-		assertEquals(1, dd.getVertical());
-		assertEquals(0, dd.getHorizontal());
+		assertEquals(1, dd.getRowIndex());
+		assertEquals(0, dd.getColumnIndex());
 		assertEquals(MatrixDirection.RIGHT, dd.getDirection());
 	}
 	@Test

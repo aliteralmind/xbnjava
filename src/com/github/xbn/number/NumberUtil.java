@@ -259,11 +259,17 @@ public class NumberUtil  {
 	/**
 	 * <P>Get a random int.</P>
 	 *
-	 * @return  {@link #getRandomBetweenInclusive(int, int) getRandomBetweenInclusive(0, max)}
+	 * @return  {@link #getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive(0, max)}
 	 */
 	public static final int getRandomInt(int max)  {
-		return  getRandomBetweenInclusive(0, max);
+		return  getRandomIntBetweenInclusive(0, max);
 	}
+	/**
+	 * @deprecated Use {@link #getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive}{@code (i,i)}.
+	 */
+   public static final int getRandomBetweenInclusive(int min_inclusive, int max)  {
+	   return  getRandomIntBetweenInclusive(min_inclusive, max);
+   }
 	/**
 	 * <P>Get a random int between (or equal to) two bounds.</P>
 	 *
@@ -272,9 +278,11 @@ public class NumberUtil  {
 	 * @param  max  The maximum possible int to return.
 	 * @return  <CODE>(min_inclusive + (int)({@link java.lang.Math Math}.{@link java.lang.Math#random() random}() * ((max - min_inclusive) + 1)))</CODE>
 	 * @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java">http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java</A></CODE>
+	 * @since 0.1.4.2
 	 */
-   public static final int getRandomBetweenInclusive(int min_inclusive, int max)  {
+   public static final int getRandomIntBetweenInclusive(int min_inclusive, int max)  {
 		return  (min_inclusive + (int)(Math.random() * ((max - min_inclusive) + 1)));
+  
 		/*
 			//Alternative:
 
@@ -319,7 +327,7 @@ public class NumberUtil  {
 		StringBuilder sb = new StringBuilder();
 
 		for(int i = 0; i < digit_count; i++)  {
-			sb.append(acHEX[getRandomBetweenInclusive(0, 15)]);
+			sb.append(acHEX[getRandomIntBetweenInclusive(0, 15)]);
 		}
 
 		return  sb.toString();

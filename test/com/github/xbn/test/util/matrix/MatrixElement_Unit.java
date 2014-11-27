@@ -2,7 +2,6 @@ package  com.github.xbn.test.util.matrix;
 	import  org.junit.Test;
 	import  static org.junit.Assert.*;
 	import  com.github.xbn.util.matrix.MatrixElement;
-
 /*
 
 java com.github.xbn.test.util.matrix.MatrixElement_Unit
@@ -17,17 +16,17 @@ public class MatrixElement_Unit  {
 	@Test
 	public void test_basics()  {
 		MatrixElement element = new MatrixElement(1, 2);
-		assertEquals(1, element.getVertIndex());
-		assertEquals(2, element.getHorizIndex());
+		assertEquals(1, element.getRowIndex());
+		assertEquals(2, element.getColumnIndex());
 		try  {
 			new MatrixElement(-1, 2);
-			fail("Horiz below zero should crash.");
+			fail("Row idx below zero should crash.");
 		}  catch(IllegalArgumentException iax)  {
 			assertTrue(true);
 		}
 		try  {
 			new MatrixElement(1, -1);
-			fail("Vert below zero should crash.");
+			fail("Col idx below zero should crash.");
 		}  catch(IllegalArgumentException iax)  {
 			assertTrue(true);
 		}

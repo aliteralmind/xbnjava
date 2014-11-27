@@ -32,6 +32,7 @@
 				<property name="download_zip_docs" value="${dir_build_download}${download_zip_docs_name}"/>
 				<property name="download_zip_source" value="${dir_build_download}${download_zip_source_name}"/>
 				<property name="project_all_jar" value="${dir_build_download}${project_name_with_version}-all.jar"/>
+				<property name="project_core_jar" value="${dir_build_download}${project_name_with_version}.jar"/>
 			<property name="dir_build_docs" value="${dir_build}documentation${fs}"/>
 				<property name="dir_build_docs_javadoc" value="${dir_build_docs}javadoc${fs}"/>
 
@@ -43,7 +44,8 @@
    <property name="includeantruntime" value="false"/> -->
 
 <!-- CLASSPATH and custom tasks...START -->
-   <path id="project_classpath">
+   <path id="project_classpath_id">
+      <pathelement location="${build.class.dir}"/>
 		<fileset dir="${dir_sandbox_jar_dependencies}" includes="*.jar"/>
 <!--
       <fileset dir="${dir_sandbox_bldfiles}jar_dependencies${fs}">
@@ -54,11 +56,10 @@
 			<include name="codelet_0p1p0-all.jar"/>
       </fileset>
  -->
-      <pathelement location="${build.class.dir}"/>
    </path>
+	<pathconvert pathsep=";" property="project_classpath_str" refid="project_classpath_id"/>
 
-   <taskdef name="propfromrplc" classname="com.github.xbn.testdev.ant.ATPropFromRplc" />
-<!-- classpathref="project_classpath" -->
+   <taskdef name="propfromrplc" classname="com.github.xbn.testdev.ant.ATPropFromRplc" classpathref="project_classpath_id"/>
 <!-- CLASSPATH and custom tasks...END -->
    <target name="help" description="Getting started information">
       <echo>This is the Ant build file for ${project.name}.  Try
@@ -69,8 +70,8 @@ Installation of the XBN-Java build process is done in a single step: By changing
 --To do a full build of XBN-Java--
 
 The *documentation* for both XBN-Java and Template Feather use codelets. But Codelet is based on both XBN-Java and Template Feather. Hence, the rigamarole:
-  -1- Build XBN-Java proper (part 1 of 2): pubprecodelet
-  -2- Build Template Feather (part 1 of 2): pubprecodelet
+  -1- Build XBN-Java proper (part 1 of 2): pubprecodelet (prc)
+  -2- Build Template Feather (part 1 of 2): pubprecodelet (poc)
   -3- Build Codelet: cleanpublish
   -4- Finish building XBN-Java proper (part 2 of 2): pubpostcodelet
   -5- Finish building Template Feather (part 2 of 2): pubpostcodelet
@@ -100,7 +101,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 		<import file="${dir_sandbox_ant_subxml}gitonly_sandbox__execute_from_main_sandbox_only.xml"
 			optional="true"/>
 
-	<target name="copycodeletjars" description="Duplicates the 'core' jars files from the Codelet and Template Featherweight build directories.">
+	<!-- <target name="copycodeletjars" description="Duplicates the 'core' jars files from the Codelet and Template Featherweight build directories.">
 		<property name="codelet_project_name_and_version" value="codelet-${codelet_project_version}"/>
 		<copy file="${base.dir}\\build\\${codelet_project_name_and_version}\\download\\${codelet_project_name_and_version}.jar" todir="${dir_sandbox_jar_dependencies}"/>
 
@@ -109,7 +110,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	</target>
 	<target name="-autocopycodeletjars" if="do.auto.copy.codelet.jars">
 		<antcall target="copycodeletjars"/>
-	</target>
+	</target> -->
 
 	<target name="pubprecodelet" description="compileproper, pubprecodelet2">
 		<antcall target="refresh"/>
@@ -136,7 +137,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
    </target>
 	<target name="pubpostcodelet" description="compilepostcodelet, doczip, preppoms">
 		<record name="${dir_build}build_log_post_codelet.txt" action="start"/>
-		<antcall target="-autocopycodeletjars"/>
+		<!-- <antcall target="-autocopycodeletjars"/> -->
 		<antcall target="compilepostcodelet"/>
 		<antcall target="doczip"/>
 		<antcall target="preppoms"/>
@@ -148,7 +149,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
    </target>
 	<target name="pubpostcodeletnodoc" description="Same as pubpostcodelet, without doc">
 		<record name="${dir_build}build_log_post_codelet.txt" action="start"/>
-		<antcall target="-autocopycodeletjars"/>
+		<!-- <antcall target="-autocopycodeletjars"/> -->
 		<antcall target="compilepostcodelet"/>
 		<antcall target="zip"/>
 		<antcall target="zip2"/>
@@ -169,7 +170,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	</target>
 
 	<target name="unit" description="Executes com.github.xbn.test.UnitTestRunner">
-      <java classname="com.github.xbn.test.UnitTestRunner" failonerror="true" classpathref="project_classpath"/>
+      <java classname="com.github.xbn.test.UnitTestRunner" failonerror="true" classpathref="project_classpath_id"/>
 	</target>
 
 	<!-- See http://ant.apache.org/faq.html#propertyvalue-as-name-for-property -->
@@ -187,7 +188,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	<target name="preppoms" description="Moves z_build/pom_source_file.xml to pom.xml, and sets the proper version number.">
 		<property name="pom_xml_dest" value="${dir_sandbox}pom.xml"/>
 		<delete file="${pom_xml_dest}"/><!-- Originates in task preppoms. Needed by task clean -->
-		<copy file="${dir_sandbox_bldfiles}pom_source_file.xml" tofile="${pom_xml_dest}"/>
+		<copy file="${dir_sandbox_bldfiles}other/pom_source_file.xml" tofile="${pom_xml_dest}"/>
 		<replace file="${pom_xml_dest}" summary="yes"
 			token="^{project_version_for_jd}" value="${version.number}"/>
 		<replace file="${pom_xml_dest}" summary="yes"
