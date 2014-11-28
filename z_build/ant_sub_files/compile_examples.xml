@@ -1,5 +1,5 @@
 <project name="compile_examples" basedir=".">
-	<property name="dir_src_examples" value="${dir_sandbox_examples}${com_github_xbn}examples${fs}"/>
+	<property name="dir_src_examples" value="${dir_sandbox_examples}${com_github_xbn}examples/"/>
 
 	<target name="compileexamples">
 		<antcall target="-compileexamplesasawhole"/>

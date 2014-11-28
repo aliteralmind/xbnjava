@@ -6,44 +6,42 @@
    <!--  Read in the properties file.  -->
    <property file="build.properties"/>
 
-   <property name="fs" value="${file.separator}"/>      <!-- Shortcut -->
-
-   <property name="project_name_fs" value="${project.name}${fs}"/>
+   <property name="project_name_fs" value="${project.name}/"/>
    <property name="project_name_with_version" value="${project.name}-${version.number}"/>
 
 	<!-- Ignores base directories -->
-   <property name="com_github_xbn" value="com${fs}github${fs}xbn${fs}"/>
+   <property name="com_github_xbn" value="com/github/xbn/"/>
 
 	<!-- Uses base directories -->
-   <property name="dir_sandbox_parent" value="${sandbox.dir}${fs}"/>
+   <property name="dir_sandbox_parent" value="${sandbox.dir}/"/>
       <property name="dir_sandbox" value="${dir_sandbox_parent}${project_name_fs}"/>
-	      <property name="dir_sandbox_src" value="${dir_sandbox}src${fs}"/>
+	      <property name="dir_sandbox_src" value="${dir_sandbox}src/"/>
 				<property name="dir_src_xbn" value="${dir_sandbox_src}${com_github_xbn}"/>
-	      <property name="dir_sandbox_examples" value="${dir_sandbox}examples${fs}"/>
-	      <property name="dir_sandbox_test" value="${dir_sandbox}test${fs}"/>
+	      <property name="dir_sandbox_examples" value="${dir_sandbox}examples/"/>
+	      <property name="dir_sandbox_test" value="${dir_sandbox}test/"/>
 
-         <property name="dir_sandbox_bldfiles" value="${dir_sandbox}z_build${fs}"/>
-            <property name="dir_sandbox_jar_dependencies" value="${dir_sandbox_bldfiles}jar_dependencies${fs}"/>
+         <property name="dir_sandbox_bldfiles" value="${dir_sandbox}z_build/"/>
+            <property name="dir_sandbox_jar_dependencies" value="${dir_sandbox_bldfiles}jar_dependencies/"/>
 
-      <property name="dir_classes_xbn" value="${build.class.dir}${fs}${com_github_xbn}"/>
+      <property name="dir_classes_xbn" value="${build.class.dir}/${com_github_xbn}"/>
 
-   <property name="dir_build_grandparent" value="${build.dir}${fs}"/>
-		<property name="dir_build_parent" value="${dir_build_grandparent}${project_name_with_version}${fs}"/>
-			<property name="dir_build" value="${dir_build_parent}${project_name_with_version}${fs}"/>
-				<property name="dir_build_logs" value="${dir_build}logs${fs}"/>
-				<property name="dir_build_download" value="${dir_build}download${fs}"/>
+   <property name="dir_build_grandparent" value="${build.dir}/"/>
+		<property name="dir_build_parent" value="${dir_build_grandparent}${project_name_with_version}/"/>
+			<property name="dir_build" value="${dir_build_parent}${project_name_with_version}/"/>
+				<property name="dir_build_logs" value="${dir_build}logs/"/>
+				<property name="dir_build_download" value="${dir_build}download/"/>
 					<property name="download_zip_source_name" value="${project_name_with_version}-sources.jar"/>
 					<property name="download_zip_docs_name" value="${project_name_with_version}-javadoc.jar"/>
 					<property name="download_zip_docs" value="${dir_build_download}${download_zip_docs_name}"/>
 					<property name="download_zip_source" value="${dir_build_download}${download_zip_source_name}"/>
 					<property name="project_all_jar" value="${dir_build_download}${project_name_with_version}-all.jar"/>
 					<property name="project_core_jar" value="${dir_build_download}${project_name_with_version}.jar"/>
-				<property name="dir_build_docs" value="${dir_build}documentation${fs}"/>
-					<property name="dir_build_docs_javadoc" value="${dir_build_docs}javadoc${fs}"/>
+				<property name="dir_build_docs" value="${dir_build}documentation/"/>
+					<property name="dir_build_docs_javadoc" value="${dir_build_docs}javadoc/"/>
 			<property name="curr_redir_dir" value="${dir_build_parent}/redir_file_for_QcurrentQ_directory/"/>
 				<property name="curr_redir_file" value="${curr_redir_dir}index.html"/>
 
-      <property name="dir_working" value="${working.dir}${fs}${project_name_fs}"/>
+      <property name="dir_working" value="${working.dir}/${project_name_fs}"/>
 
 <!-- Global properties...END -->
 
@@ -55,7 +53,7 @@
       <pathelement location="${build.class.dir}"/>
 		<fileset dir="${dir_sandbox_jar_dependencies}" includes="*.jar"/>
 <!--
-      <fileset dir="${dir_sandbox_bldfiles}jar_dependencies${fs}">
+      <fileset dir="${dir_sandbox_bldfiles}jar_dependencies/">
          <include name="commons-collections4-4.0.jar"/>
          <include name="commons-io-2.4.jar"/>
          <include name="commons-lang3-3.3.2.jar"/>
@@ -96,7 +94,7 @@ Actually, to avoid JavaDoc errors, the following steps should be taken instead o
 Documentation for both XBN-Java and Template Feather can be generated before Codelet is built. The example codes will be excluded.</echo>
    </target>
 
-	<property name="dir_sandbox_ant_subxml" value="${dir_sandbox_bldfiles}ant_sub_files${fs}"/>
+	<property name="dir_sandbox_ant_subxml" value="${dir_sandbox_bldfiles}ant_sub_files/"/>
 	<import file="${dir_sandbox_ant_subxml}backup.xml"/>
 	<import file="${dir_sandbox_ant_subxml}compile_examples.xml"/>
 	<import file="${dir_sandbox_ant_subxml}compile_main.xml"/>
@@ -105,10 +103,6 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	<import file="${dir_sandbox_ant_subxml}javadoc.xml"/>
 	<import file="${dir_sandbox_ant_subxml}refresh.xml"/>
 	<import file="${dir_sandbox_ant_subxml}zip.xml"/>
-
-	<!-- FOR JEFF EPSTEIN'S USE ONLY. Does not exist in published version: -->
-		<import file="${dir_sandbox_ant_subxml}for_jeff_epstein_only.xml"
-			optional="true"/>
 
 	<target name="pubprecodelet" description="compileproper, pubprecodelet2">
 		<antcall target="refresh"/>
@@ -210,33 +204,39 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	<target name="pot" description="Shortcut for pubposttabs.">
 		<antcall target="pubposttabs"/>
    </target>
-	<target name="pubposttabs"
-				description="FOR JEFF EPSTEIN'S USE ONLY. Replacement for pubprecodelet2. Do not use. See 'compilehelp'.">
-		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
-			action="start"/>
-		<antcall target="pubprecodelet2"/>
-		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
-			action="stop"/>
-	</target>
 
-	<property name="alit_dir" value="C:\data_jeffy\jeffyepstein_com\jeffyepstein_com\docs\computer\programming\${project.name}\"/>
-	<target name="pocj"
-				description="FOR JEFF EPSTEIN'S USE ONLY. Shortcut for pubpostcodelet, dupbuildtoalit">
-		<antcall target="pubpostcodelet"/>
-		<antcall target="dupbuildtoalit"/>
-	</target>
-	<target name="dupbuildtoalit"
-				description="FOR JEFF EPSTEIN'S USE ONLY. Copy all files to local aliteralmind.com directory">
+	<!-- FOR JEFF EPSTEIN'S USE ONLY...start -->
+		<import file="${dir_sandbox_ant_subxml}for_jeff_epstein_only.xml"
+			optional="true"/>
 
-		<echo>Copying current-version redirect</echo>
-		<copy file="${curr_redir_file}" todir="${alit_dir}current"
-			overwrite="true"/>
+		<target name="pubposttabs"
+					description="FOR JEFF EPSTEIN'S USE ONLY. Replacement for pubprecodelet2. Do not use. See 'compilehelp'.">
+			<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
+				action="start"/>
+			<antcall target="pubprecodelet2"/>
+			<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
+				action="stop"/>
+		</target>
 
-		<echo>Copying entire build directory</echo>
-		<delete quiet="true" dir="${alit_dir}${project_name_with_version}"/>
-		<copy todir="${alit_dir}">
-			<fileset dir="${dir_build_parent}"
-				includes="${project_name_with_version}/**"/>
-		</copy>
-	</target>
+		<property name="alit_dir" value="C:\data_jeffy\jeffyepstein_com\jeffyepstein_com\docs\computer\programming\${project.name}\"/>
+		<target name="pocj"
+					description="FOR JEFF EPSTEIN'S USE ONLY. Shortcut for pubpostcodelet, dupbuildtoalit">
+			<antcall target="pubpostcodelet"/>
+			<antcall target="dupbuildtoalit"/>
+		</target>
+		<target name="dupbuildtoalit"
+					description="FOR JEFF EPSTEIN'S USE ONLY. Copy all files to local aliteralmind.com directory">
+
+			<echo>Copying current-version redirect</echo>
+			<copy file="${curr_redir_file}" todir="${alit_dir}current"
+				overwrite="true"/>
+
+			<echo>Copying entire build directory</echo>
+			<delete quiet="true" dir="${alit_dir}${project_name_with_version}"/>
+			<copy todir="${alit_dir}">
+				<fileset dir="${dir_build_parent}"
+					includes="${project_name_with_version}/**"/>
+			</copy>
+		</target>
+	<!-- FOR JEFF EPSTEIN'S USE ONLY...start -->
 </project>

@@ -1,5 +1,5 @@
 <project name="compile_tests" basedir=".">
-	<property name="dir_src_test" value="${dir_sandbox_test}${com_github_xbn}test${fs}"/>
+	<property name="dir_src_test" value="${dir_sandbox_test}${com_github_xbn}test/"/>
 
 	<target name="compiletests">
 		<antcall target="-compiletestsasawhole"/>

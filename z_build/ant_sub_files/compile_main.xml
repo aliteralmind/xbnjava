@@ -15,7 +15,7 @@
 		<jar destfile="${dir_build_download}${project_name_with_version}.jar"
 			basedir="${build.class.dir}"
 			includes="${com_github_xbn}**/*.class"
-			excludes="${com_github_xbn}examples${fs}**/*.class,${com_github_xbn}test${fs}**/*.class"
+			excludes="${com_github_xbn}examples/**/*.class,${com_github_xbn}test/**/*.class"
 		/>
 	</target>
 
@@ -34,7 +34,7 @@ Any changes to this list must be duplicated to Template Featherweight.</echo>
  <target name="compilepostcodelet" description="Compiles all classes that depend on Codelet (custom customizers), and re-builds the jar file.">
 		<!-- <antcall target="-autocopycodeletjars"/> -->
 		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
-			includes="text${fs}regex${fs}zCodeletCustomizers.java"/>
+			includes="text/regex/zCodeletCustomizers.java"/>
 		<antcall target="jar"/>
 	</target>
 </project>
