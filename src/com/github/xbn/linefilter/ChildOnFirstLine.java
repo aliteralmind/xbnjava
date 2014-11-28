@@ -17,7 +17,7 @@ package  com.github.xbn.linefilter;
 	<P>If a child block is active on the very first line of the root block, should the text of the {@linkplain #YES child} or {@linkplain #NO parent}-block be returned?</P>
 
 	@see  FilteredLineIterator#appendAllBlockLines(StringBuilder, String, StripFinalNewLine, ChildOnFirstLine) FilteredLineIterator#appendAllBlockLines
-	@since 0.1.2
+	@since  0.1.2
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum ChildOnFirstLine  {

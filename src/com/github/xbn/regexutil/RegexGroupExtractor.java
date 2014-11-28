@@ -40,7 +40,7 @@ package  com.github.xbn.regexutil;
 		<LI><B>Other:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#requiredGroups(int) requiredGroups}(i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
 	</UL></P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class RegexGroupExtractor extends AbstractIterator<List<String>> implements Copyable, PatternHaser   {

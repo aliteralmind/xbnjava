@@ -20,7 +20,7 @@ package  com.github.xbn.number.z;
 /**
 	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.number.NumberInRangeValidator}.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NumberInRangeValidator_CfgForNeeder<N extends Number,G extends NumberInRange<N>,V extends NumberInRangeValidator<N>, R extends Needer> extends ValueValidator_CfgForNeeder<N,V,R> implements NumberInRangeValidator_Fieldable<N,G>  {

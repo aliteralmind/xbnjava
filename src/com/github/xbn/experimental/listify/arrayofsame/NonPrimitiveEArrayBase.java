@@ -28,7 +28,7 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 /**
 	<P>Base class for a listifier whose raw object is a non-primitive array of any <I>non wrapper type</I>  (not {@code java.lang.Integer}s, for instance), and whose virtual elements are of the same type.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class NonPrimitiveEArrayBase<E> implements ListifyNonPrimitiveEArray<E>  {

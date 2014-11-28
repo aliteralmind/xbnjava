@@ -25,7 +25,7 @@ package  com.github.xbn.list;
 	<P>If a list is invalid, crash. Otherwise, do nothing. This is the same as {@link com.github.xbn.list.CrashIfCollection} except for the error messages.</P>
 
 	@see  com.github.xbn.lang.CrashIfObject
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class CrashIfList  {

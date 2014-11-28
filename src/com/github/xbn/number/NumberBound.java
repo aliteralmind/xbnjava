@@ -13,6 +13,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
 	private final String name;
 	/**
 	 * @deprecated Use {@link #NumberBound(N, com.github.xbn.number.Inclusive, java.lang.String) NumberBound}{@code (N,i,s)}
+	 * @since  0.1.4.2
 	 **/
 	public NumberBound(N num, boolean is_inclusive, String name)  {
 		this(num, Inclusive.getForBoolean(is_inclusive), name);
@@ -22,7 +23,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
 	 * @param  num  May not be <code>null</code>. Get with {@link #get()}{@code ()}.
 	 * @param  incl May not be <code>null</code>. Get with {@link #isInclusive()}{@code ()}.
 	 * @param  name Descriptive name. Get with {@link #getName()}{@code ()}.
-	 * @since 0.1.4.2
+	 * @since  0.1.4.2
 	 */
 	public NumberBound(N num, Inclusive incl, String name)  {
 		Objects.requireNonNull(num, "num");

@@ -47,7 +47,7 @@ package  com.github.xbn.linefilter.entity;
 	...END
   -->
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class SingleLineEntity extends RawSingleLineEntity<String> implements TextChildEntity  {
@@ -69,7 +69,7 @@ public class SingleLineEntity extends RawSingleLineEntity<String> implements Tex
 		return  (TextParentEntity)super.getTopParent();
 	}
    /**
-		@since 0.1.2
+		@since  0.1.2
     **/
    public SingleLineEntity getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<String> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       return  new SingleLineEntity(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);

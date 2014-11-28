@@ -25,7 +25,7 @@ package  com.github.xbn.number;
  * 2.0). See source code for details.
  * <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>,
  * <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
- * @since 0.1.0
+ * @since  0.1.0
  */
 public class NumberUtil  {
 	/**
@@ -266,6 +266,7 @@ public class NumberUtil  {
 	}
 	/**
 	 * @deprecated Use {@link #getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive}{@code (i,i)}.
+	 * @since  0.1.4.2
 	 */
    public static final int getRandomBetweenInclusive(int min_inclusive, int max)  {
 	   return  getRandomIntBetweenInclusive(min_inclusive, max);
@@ -278,11 +279,11 @@ public class NumberUtil  {
 	 * @param  max  The maximum possible int to return.
 	 * @return  <CODE>(min_inclusive + (int)({@link java.lang.Math Math}.{@link java.lang.Math#random() random}() * ((max - min_inclusive) + 1)))</CODE>
 	 * @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java">http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java</A></CODE>
-	 * @since 0.1.4.2
+	 * @since  0.1.4.2
 	 */
    public static final int getRandomIntBetweenInclusive(int min_inclusive, int max)  {
 		return  (min_inclusive + (int)(Math.random() * ((max - min_inclusive) + 1)));
-  
+
 		/*
 			//Alternative:
 
@@ -341,7 +342,7 @@ public class NumberUtil  {
 	 *
 	 * @param  num The number that may or may not be prime.
 	 * @return     <code>true</code> if the <code>num</code> is prime.
-	 * @since 0.1.4.2
+	 * @since  0.1.4.2
 	 * @see http://www.mkyong.com/java/how-to-determine-a-prime-number-in-java
 	 */
 	public static final boolean isPrime(long num)  {

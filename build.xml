@@ -25,16 +25,21 @@
          <property name="dir_sandbox_bldfiles" value="${dir_sandbox}z_build${fs}"/>
             <property name="dir_sandbox_jar_dependencies" value="${dir_sandbox_bldfiles}jar_dependencies${fs}"/>
 
-   <property name="dir_build_parent" value="${build.dir}${fs}"/>
       <property name="dir_classes_xbn" value="${build.class.dir}${fs}${com_github_xbn}"/>
-		<property name="dir_build" value="${dir_build_parent}${project_name_with_version}${fs}"/>
-			<property name="dir_build_download" value="${dir_build}download${fs}"/>
-				<property name="download_zip_docs" value="${dir_build_download}${download_zip_docs_name}"/>
-				<property name="download_zip_source" value="${dir_build_download}${download_zip_source_name}"/>
-				<property name="project_all_jar" value="${dir_build_download}${project_name_with_version}-all.jar"/>
-				<property name="project_core_jar" value="${dir_build_download}${project_name_with_version}.jar"/>
-			<property name="dir_build_docs" value="${dir_build}documentation${fs}"/>
-				<property name="dir_build_docs_javadoc" value="${dir_build_docs}javadoc${fs}"/>
+
+   <property name="dir_build_grandparent" value="${build.dir}${fs}"/>
+		<property name="dir_build_parent" value="${dir_build_grandparent}${project_name_with_version}${fs}"/>
+			<property name="dir_build" value="${dir_build_parent}${project_name_with_version}${fs}"/>
+				<property name="dir_build_logs" value="${dir_build}logs${fs}"/>
+				<property name="dir_build_download" value="${dir_build}download${fs}"/>
+					<property name="download_zip_source_name" value="${project_name_with_version}-sources.jar"/>
+					<property name="download_zip_docs_name" value="${project_name_with_version}-javadoc.jar"/>
+					<property name="download_zip_docs" value="${dir_build_download}${download_zip_docs_name}"/>
+					<property name="download_zip_source" value="${dir_build_download}${download_zip_source_name}"/>
+					<property name="project_all_jar" value="${dir_build_download}${project_name_with_version}-all.jar"/>
+					<property name="project_core_jar" value="${dir_build_download}${project_name_with_version}.jar"/>
+				<property name="dir_build_docs" value="${dir_build}documentation${fs}"/>
+					<property name="dir_build_docs_javadoc" value="${dir_build_docs}javadoc${fs}"/>
 
       <property name="dir_working" value="${working.dir}${fs}${project_name_fs}"/>
 
@@ -69,11 +74,13 @@ Installation of the XBN-Java build process is done in a single step: By changing
 
 --To do a full build of XBN-Java--
 
-The *documentation* for both XBN-Java and Template Feather use codelets. But Codelet is based on both XBN-Java and Template Feather. Hence, the rigamarole:
+The *documentation* for both XBN-Java and Template Feather use Codelet. But
+Codelet *code* is based on both XBN-Java and Template Feather. Hence, the
+rigamarole:
   -1- Build XBN-Java proper (part 1 of 2): pubprecodelet (prc)
-  -2- Build Template Feather (part 1 of 2): pubprecodelet (poc)
+  -2- Build Template Feather (part 1 of 2): pubprecodelet
   -3- Build Codelet: cleanpublish
-  -4- Finish building XBN-Java proper (part 2 of 2): pubpostcodelet
+  -4- Finish building XBN-Java proper (part 2 of 2): pubpostcodelet (poc)
   -5- Finish building Template Feather (part 2 of 2): pubpostcodelet
 
 Actually, to avoid JavaDoc errors, the following steps should be taken instead of the above step 5.
@@ -114,10 +121,10 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 
 	<target name="pubprecodelet" description="compileproper, pubprecodelet2">
 		<antcall target="refresh"/>
-		<record name="${dir_build}build_log_pre_codelet.txt" action="start"/>
+		<record name="${dir_build_logs}build_log_pre_codelet.txt" action="start"/>
 		<antcall target="compileproper"/>
 		<antcall target="pubprecodelet2"/>
-		<record name="${dir_build}build_log_pre_codelet.txt" action="stop"/>
+		<record name="${dir_build_logs}build_log_pre_codelet.txt" action="stop"/>
 	</target>
 
 	<target name="pubprecodelet2" description="compileexamples, pubprecodelet3">
@@ -136,37 +143,51 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 		<antcall target="pubpostcodelet"/>
    </target>
 	<target name="pubpostcodelet" description="compilepostcodelet, doczip, preppoms">
-		<record name="${dir_build}build_log_post_codelet.txt" action="start"/>
+		<record name="${dir_build_logs}build_log_post_codelet.txt" action="start"/>
 		<!-- <antcall target="-autocopycodeletjars"/> -->
 		<antcall target="compilepostcodelet"/>
 		<antcall target="doczip"/>
 		<antcall target="preppoms"/>
-		<record name="${dir_build}build_log_post_codelet.txt" action="stop"/>
+		<antcall target="currversionredirfile"/>
+		<record name="${dir_build_logs}build_log_post_codelet.txt" action="stop"/>
+	</target>
+
+	<target name="currversionredirfile"
+			description="Copies the 'current' directory redirect page to build, and updates its version number to the current.">
+		<property name="curr_redir_dir" value="${dir_build_parent}/redir_file_for_QcurrentQ_directory/"/>
+		<property name="curr_redir_file" value="${curr_redir_dir}index.html"/>
+
+		<delete quiet="true" dir="${curr_redir_dir}"/>
+		<mkdir dir="${curr_redir_dir}"/>
+
+		<copy file="${dir_sandbox_bldfiles}other/redir_for_QcurrentQ_directory_on_aliteralmind_com.html" tofile="${curr_redir_file}"/>
+		<replace file="${curr_redir_file}" summary="yes"
+			token="^{current_project_version}" value="${version.number}"/>
 	</target>
 
 	<target name="pocnd" description="Shortcut for pubpostcodeletnodoc">
 		<antcall target="pubpostcodeletnodoc"/>
    </target>
 	<target name="pubpostcodeletnodoc" description="Same as pubpostcodelet, without doc">
-		<record name="${dir_build}build_log_post_codelet.txt" action="start"/>
+		<record name="${dir_build_logs}build_log_post_codelet.txt" action="start"/>
 		<!-- <antcall target="-autocopycodeletjars"/> -->
 		<antcall target="compilepostcodelet"/>
 		<antcall target="zip"/>
 		<antcall target="zip2"/>
 		<antcall target="preppoms"/>
-		<record name="${dir_build}build_log_post_codelet.txt" action="stop"/>
+		<record name="${dir_build_logs}build_log_post_codelet.txt" action="stop"/>
 	</target>
 
 	<target name="dz" description="Shortcut for doczip.">
 		<antcall target="doczip"/>
    </target>
 	<target name="doczip" description="doc, doc2, zip, zip2">
-		<record name="${dir_build}javadoc_and_zip_log.txt" action="start"/>
+		<record name="${dir_build_logs}javadoc_and_zip_log.txt" action="start"/>
 		<antcall target="doc"/>
 		<antcall target="doc2"/>
 		<antcall target="zip"/>
 		<antcall target="zip2"/>
-		<record name="${dir_build}javadoc_and_zip_log.txt" action="stop"/>
+		<record name="${dir_build_logs}javadoc_and_zip_log.txt" action="stop"/>
 	</target>
 
 	<target name="unit" description="Executes com.github.xbn.test.UnitTestRunner">
@@ -192,15 +213,15 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 		<replace file="${pom_xml_dest}" summary="yes"
 			token="^{project_version_for_jd}" value="${version.number}"/>
 		<replace file="${pom_xml_dest}" summary="yes"
-			token="^{project_build_dir}" value="${dir_build_parent}"/>
+			token="^{project_build_dir}" value="${dir_build_grandparent}"/>
 	</target>
 
 	<target name="pot" description="Shortcut for pubposttabs.">
 		<antcall target="pubposttabs"/>
    </target>
 	<target name="pubposttabs" description="Jeff Epstein-only replacement for pubprecodelet2. DO NOT USE. See 'compilehelp'.">
-		<record name="${dir_build}build_log_post_tabs_pre_codelet.txt" action="start"/>
+		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt" action="start"/>
 		<antcall target="pubprecodelet2"/>
-		<record name="${dir_build}build_log_post_tabs_pre_codelet.txt" action="stop"/>
+		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt" action="stop"/>
 	</target>
 </project>

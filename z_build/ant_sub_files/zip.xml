@@ -1,7 +1,5 @@
 <project name="zip" basedir=".">
 
-		<property name="download_zip_source_name" value="${project_name_with_version}-sources.jar"/>
-		<property name="download_zip_docs_name" value="${project_name_with_version}-javadoc.jar"/>
 	<target name="zip" description="Creates end-user download archives for source-code, documentation, and jars. Also creates placeholder-only build.properties and codelet.properties DIRECTLY INTO THE SANDBOX, with a 'placeholder__' prefix. Both the live and placeholder files are committed.">
 		<copy todir="${dir_build}">
 			<fileset dir="${dir_sandbox}" includes="LICENSE, README.md"/>
@@ -33,6 +31,8 @@
  -->
 				<exclude name="**/offline_package_lists/*"/>
 				<exclude name="build.properties"/>
+				<exclude name="${build.class.dir.name}/**"/>
+				<exclude name="doc-files/**"/>
 				<exclude name="**/codelet.properties"/>
 				<exclude name=".git*"/>
 				<exclude name="**/placeholder_*.properties"/>
@@ -71,7 +71,7 @@
 
 		<copy todir="${zip_of_dependency_jars_working_dir}">
 			<fileset dir="${dir_sandbox_jar_dependencies}"
-				includes="commons-collections4-*.jar, commons-io-*.jar, commons-lang3-*.jar, guava-*.jar"/>
+				includes="commons-collections4-*.jar, commons-io-*.jar, commons-lang3-*.jar, guava-*.jar, templatefeather-*.jar, codelet-*.jar"/>
 		</copy>
 
 <!--

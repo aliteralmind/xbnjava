@@ -67,6 +67,7 @@
 
       <!-- The delete above is CLASSES/xbn, but mkdir here is only of CLASSES (parent) -->
       <mkdir dir="${dir_build_download}"/>
+      <mkdir dir="${dir_build_logs}"/>
       <mkdir dir="${dir_build_docs_javadoc}"/>
    </target>
 

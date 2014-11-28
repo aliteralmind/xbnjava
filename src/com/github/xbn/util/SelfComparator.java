@@ -20,7 +20,7 @@ package  com.github.xbn.util;
 /**
 	<P>{@code Comparator} that uses the {@code Comparable} object itself to do the comparison.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class SelfComparator<M extends Comparable<? super M>> implements Comparator<M>, Copyable  {

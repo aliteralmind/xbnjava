@@ -20,7 +20,7 @@ package  com.github.xbn.linefilter.entity;
 /**
 	<P>A {@code RawOnOffEntityFilter} that is dependant on the <I>being filtered</I> entity's {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#getFullyActiveCount() fully-active count} being in a range.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public class PostFilterSelfActiveInOutRange extends RawPostFilterSelfActiveInOutRange<String>  {

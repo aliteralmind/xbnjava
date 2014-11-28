@@ -18,7 +18,7 @@ package  com.github.xbn.regexutil;
 /**
 	<P>Has a pattern. This interface is intended to take advantage of <CODE>{@link com.github.xbn.regexutil.RegexUtil RegexUtil}.{@link com.github.xbn.regexutil.RegexUtil#getPatternCrashIfHaserNull(PatternHaser, String) getPatternCrashIfHaserNull}</CODE> and <CODE>{@link RegexUtil}.{@link RegexUtil#getPatternCopy(PatternHaser, String) getPatternCopy}</CODE>.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface PatternHaser extends PatternHaser_Fieldable  {

@@ -19,7 +19,7 @@ package  com.github.xbn.text.padchop;
 /**
 	<P>. The base class for {@code PadString} and {@code ChopString}. See {@link com.github.xbn.text.padchop.PadString PadString} and {@link com.github.xbn.text.padchop.ChopString ChopString}.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class PadChopBase implements Copyable  {

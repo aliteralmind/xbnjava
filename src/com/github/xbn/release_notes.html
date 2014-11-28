@@ -1,0 +1,85 @@
+<HTML><HEAD>
+	<TITLE></TITLE>
+	<meta name="viewport" content="width=device-width" />
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#0000FF"><a name="top"/>
+
+<H2>XBN-Java: Release notes</H2>
+
+<H3><a href="overview-summary.html#install">Current release</a>: Version <code>0.1.4.2</code></H3>
+https://github.com/aliteralmind/xbnjava/commits/utilgrid
+<p>New code:<ul>
+		<li>Package: <code>com.github.xbn.util.<a href="com/github/xbn/util/matrix/overview-summary.html">matrix</a></code></li>
+		<li>Boolean constructor in <code>com.github.xbn.number.<a href="com/github/xbn/number/NumberBound.html/">NumberBound</a></code> deprecated in favor of boolean enum version.</li>
+		<li><code>com.github.xbn.number.<a href="com/github/xbn/number/NumberUtil.html">NumberUtil</a>.<a href="com/github/xbn/number/NumberUtil.html# getRandomIntBetweenInclusive(int, int)">getRandomIntBetweenInclusive</a></code> (replacement for now-deprecated <code>getRandomBetweenInclusive</code>), <code><a href="com/github/xbn/number/NumberUtil.html#isPrime(long)">isPrime</a></code></li>
+		<li><code>com.github.xbn.number.<a href="com/github/xbn/number/NumberInRange.html">NumberInRange</a>.<a href="com/github/xbn/number/NumberInRange.html#getIntersection(
+	com.github.xbn.number.NumberInRange)">getIntersection</a></code>, <code><a href="com/github/xbn/number/NumberInRange.html#getOverlap(
+	com.github.xbn.number.NumberInRange)">getOverlap</a></code>, <code><a href="com/github/xbn/number/NumberInRange.html#doesOverlap(
+	com.github.xbn.number.NumberInRange)">doesOverlap</a></code>, <code><a href="com/github/xbn/number/NumberInRange.html#getMinGivenIncl()">getMinGivenIncl</a></code>, <code><a href="com/github/xbn/number/NumberInRange.html#getMaxGivenIncl()">getMaxGivenIncl</a></code></li>
+</ul></p>
+
+<p>Backend:<ul>
+	<li>XBN-Java is now compatible with Eclipse, which may be used for all XBN-Java project development, or just for debugging. Class files are now output to a &quot;<code>bin</code>&quot; directory (located in the sandbox root directory), and the system's classpath environment variable is entirely ignored.</li>
+	<LI>- Upgraded Template Feather from 0.1.1.1 to 0.1.1.2: <CODE><A HREF="http://templatefeather.aliteralmind.com">http://templatefeather.aliteralmind.com</A></CODE></LI>
+	<LI>- Upgraded Codelet from 0.1.4 to 0.1.4.1: <CODE><A HREF="http://codelet.aliteralmind.com">http://codelet.aliteralmind.com</A></CODE></LI>
+	<li>Starting with version <code>0.1.4.1</code>, all historical versions are entirely kept on <code>aliteralmind.com</code>. The current version is always available any any of these urls (1 redirects to 2, redirects to 3):<ol>
+		<li><code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code></li>
+		<li><code><a href="http://aliteralmind.com/docs/computer/programming/xbnjava/current">http://aliteralmind.com/docs/computer/programming/xbnjava/current</a></code></li>
+		<li><code><a href="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4.2/documentation/javadoc/overview-summary.html">http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4.2/documentation/javadoc/overview-summary.html</a></code></li>
+	</ol></li>
+</ul></p>
+
+<he>Version <code><a href="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4.1/documentation/javadoc/overview-summary.html">0.1.4.1</a></code></he>
+
+<P><B>Notes:</B> <UL>
+	<LI><B>-DOCS:</B><UL>
+		<LI>- Changed <CODE>http://aliteralmind.com/docs/computer/programming/xbnjava/z_download_release_notes/<I>[version_number]</I>/</CODE> to <CODE><A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/download/archive/">http://aliteralmind.com/docs/computer/programming/xbnjava/download/archive/</A><I>[version_number]</I>/</CODE></LI>
+	</UL></LI>
+	<LI><B>-BUILD:</B><UL>
+		<LI>- Upgraded Template Feather from 0.1.1 to 0.1.1.1: <CODE><A HREF="http://templatefeather.aliteralmind.com">http://templatefeather.aliteralmind.com</A></CODE></LI>
+		<LI>- Upgraded Codelet from 0.1.3 to 0.1.4: <CODE><A HREF="http://codelet.aliteralmind.com">http://codelet.aliteralmind.com</A></CODE></LI>
+	</UL></LI>
+</UL></P>
+
+<H3>Previous release: Version <code>0.1.4</code></H3>
+
+<P><B>Notes:</B> <I>Initial release</I></P>
+
+<P><B>Downloads</B> <I>(see <A HREF="overview-summary.html#install">current version</A> for details)</I>: Jars: <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4/download/xbnjava_0.1.4-all.jar">xbnjava-all</A>, <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4/download/xbnjava_0.1.4.jar">xbnjava-core</A>, <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4/download/xbnjava_0.1.4_dependency_jars.zip">dependencies</A>. Other: <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4/download/xbnjava_0.1.4-sources.jar">source-code</A>, <A HREF="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-0.1.4/download/xbnjava_0.1.4-javadoc.jar">documentation</A></P>
+
+
+<PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY></HTML>
+
+
+

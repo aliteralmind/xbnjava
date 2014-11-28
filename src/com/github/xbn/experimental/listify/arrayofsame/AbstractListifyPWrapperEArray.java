@@ -27,7 +27,7 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 /**
 	<P>For building listifiers whose raw object is a primitive array, and whose virtual elemens are their wrapper-types. Such as a raw object that is an {@code int[]}, and whose virtual elements are {@code java.lang.Integer}-s.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public abstract class AbstractListifyPWrapperEArray<E> extends AbstractListifyEArray<E> implements ListifyPWrapperEArray<E>  {

@@ -17,7 +17,7 @@ package  com.github.xbn.text.padchop;
 /**
 	<P>When creating a {@code VzblPadChop}, if the goal lengths in the {@code PadString} and {@code ChopString} are different, what action should be taken?.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public enum DifferentGoalLengths  {

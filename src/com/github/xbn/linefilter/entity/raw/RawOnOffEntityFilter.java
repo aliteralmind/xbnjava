@@ -19,7 +19,7 @@ package  com.github.xbn.linefilter.entity.raw;
 	<P>Determines when an entity is on, based on some conditions--The three possible states are on, off, and <I>stop the {@code FilteredIterator} right now</I> (abort). When off, lines are never analyzed, meaning it is not possible for it to be {@linkplain RawEntity#isActive() active}.</P>
 
 	@see  RawChildEntity#getFilter()
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface RawOnOffEntityFilter<L> extends Copyable  {

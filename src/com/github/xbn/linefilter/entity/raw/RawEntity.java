@@ -21,7 +21,7 @@ package  com.github.xbn.linefilter.entity.raw;
 /**
 	<P>Represents a set of requirements that may or may not be met by a single line or series of lines (a block). Matched lines may be optionally modified.</P>
 
-	@since 0.1.0
+	@since  0.1.0
 	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
  **/
 public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
