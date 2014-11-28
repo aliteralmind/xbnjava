@@ -105,7 +105,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	<import file="${dir_sandbox_ant_subxml}zip.xml"/>
 
 	<!-- For Jeff Epstein only. Does not exist in published version: -->
-		<import file="${dir_sandbox_ant_subxml}gitonly_sandbox__execute_from_main_sandbox_only.xml"
+		<import file="${dir_sandbox_ant_subxml}for_jeff_epstein_only.xml"
 			optional="true"/>
 
 	<!-- <target name="copycodeletjars" description="Duplicates the 'core' jars files from the Codelet and Template Featherweight build directories.">
@@ -142,14 +142,17 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	<target name="poc" description="Shortcut for pubpostcodelet">
 		<antcall target="pubpostcodelet"/>
    </target>
-	<target name="pubpostcodelet" description="compilepostcodelet, doczip, preppoms">
-		<record name="${dir_build_logs}build_log_post_codelet.txt" action="start"/>
+	<target name="pubpostcodelet"
+				description="compilepostcodelet, doczip, preppoms">
+		<record name="${dir_build_logs}build_log_post_codelet.txt"
+			action="start"/>
 		<!-- <antcall target="-autocopycodeletjars"/> -->
 		<antcall target="compilepostcodelet"/>
 		<antcall target="doczip"/>
 		<antcall target="preppoms"/>
 		<antcall target="currversionredirfile"/>
-		<record name="${dir_build_logs}build_log_post_codelet.txt" action="stop"/>
+		<record name="${dir_build_logs}build_log_post_codelet.txt"
+			action="stop"/>
 	</target>
 
 	<target name="currversionredirfile"
@@ -219,9 +222,12 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	<target name="pot" description="Shortcut for pubposttabs.">
 		<antcall target="pubposttabs"/>
    </target>
-	<target name="pubposttabs" description="Jeff Epstein-only replacement for pubprecodelet2. DO NOT USE. See 'compilehelp'.">
-		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt" action="start"/>
+	<target name="pubposttabs"
+				description="JEFF EPSTEIN-ONLY replacement for pubprecodelet2. Do not use. See 'compilehelp'.">
+		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
+			action="start"/>
 		<antcall target="pubprecodelet2"/>
-		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt" action="stop"/>
+		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
+			action="stop"/>
 	</target>
 </project>
