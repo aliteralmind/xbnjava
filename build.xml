@@ -40,6 +40,8 @@
 					<property name="project_core_jar" value="${dir_build_download}${project_name_with_version}.jar"/>
 				<property name="dir_build_docs" value="${dir_build}documentation${fs}"/>
 					<property name="dir_build_docs_javadoc" value="${dir_build_docs}javadoc${fs}"/>
+			<property name="curr_redir_dir" value="${dir_build_parent}/redir_file_for_QcurrentQ_directory/"/>
+				<property name="curr_redir_file" value="${curr_redir_dir}index.html"/>
 
       <property name="dir_working" value="${working.dir}${fs}${project_name_fs}"/>
 
@@ -104,20 +106,9 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 	<import file="${dir_sandbox_ant_subxml}refresh.xml"/>
 	<import file="${dir_sandbox_ant_subxml}zip.xml"/>
 
-	<!-- For Jeff Epstein only. Does not exist in published version: -->
+	<!-- FOR JEFF EPSTEIN'S USE ONLY. Does not exist in published version: -->
 		<import file="${dir_sandbox_ant_subxml}for_jeff_epstein_only.xml"
 			optional="true"/>
-
-	<!-- <target name="copycodeletjars" description="Duplicates the 'core' jars files from the Codelet and Template Featherweight build directories.">
-		<property name="codelet_project_name_and_version" value="codelet-${codelet_project_version}"/>
-		<copy file="${base.dir}\\build\\${codelet_project_name_and_version}\\download\\${codelet_project_name_and_version}.jar" todir="${dir_sandbox_jar_dependencies}"/>
-
-		<property name="templatefeather_project_name_and_version" value="templatefeather-${templatefeather_project_version}"/>
-		<copy file="${base.dir}\\build\\${templatefeather_project_name_and_version}\\download\\${templatefeather_project_name_and_version}.jar" todir="${dir_sandbox_jar_dependencies}"/>
-	</target>
-	<target name="-autocopycodeletjars" if="do.auto.copy.codelet.jars">
-		<antcall target="copycodeletjars"/>
-	</target> -->
 
 	<target name="pubprecodelet" description="compileproper, pubprecodelet2">
 		<antcall target="refresh"/>
@@ -157,9 +148,6 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 
 	<target name="currversionredirfile"
 			description="Copies the 'current' directory redirect page to build, and updates its version number to the current.">
-		<property name="curr_redir_dir" value="${dir_build_parent}/redir_file_for_QcurrentQ_directory/"/>
-		<property name="curr_redir_file" value="${curr_redir_dir}index.html"/>
-
 		<delete quiet="true" dir="${curr_redir_dir}"/>
 		<mkdir dir="${curr_redir_dir}"/>
 
@@ -223,11 +211,32 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 		<antcall target="pubposttabs"/>
    </target>
 	<target name="pubposttabs"
-				description="JEFF EPSTEIN-ONLY replacement for pubprecodelet2. Do not use. See 'compilehelp'.">
+				description="FOR JEFF EPSTEIN'S USE ONLY. Replacement for pubprecodelet2. Do not use. See 'compilehelp'.">
 		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
 			action="start"/>
 		<antcall target="pubprecodelet2"/>
 		<record name="${dir_build_logs}build_log_post_tabs_pre_codelet.txt"
 			action="stop"/>
+	</target>
+
+	<property name="alit_dir" value="C:\data_jeffy\jeffyepstein_com\jeffyepstein_com\docs\computer\programming\${project.name}\"/>
+	<target name="pocj"
+				description="FOR JEFF EPSTEIN'S USE ONLY. Shortcut for pubpostcodelet, dupbuildtoalit">
+		<antcall target="pubpostcodelet"/>
+		<antcall target="dupbuildtoalit"/>
+	</target>
+	<target name="dupbuildtoalit"
+				description="FOR JEFF EPSTEIN'S USE ONLY. Copy all files to local aliteralmind.com directory">
+
+		<echo>Copying current-version redirect</echo>
+		<copy file="${curr_redir_file}" todir="${alit_dir}current"
+			overwrite="true"/>
+
+		<echo>Copying entire build directory</echo>
+		<delete quiet="true" dir="${alit_dir}${project_name_with_version}"/>
+		<copy todir="${alit_dir}">
+			<fileset dir="${dir_build_parent}"
+				includes="${project_name_with_version}/**"/>
+		</copy>
 	</target>
 </project>
