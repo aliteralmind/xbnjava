@@ -21,21 +21,21 @@ package  com.github.xbn.list.lister.z;
 	import  com.github.xbn.number.NewLengthInRangeValidatorFor;
 	import  java.util.List;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring an {@link com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring an {@link com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Needer> extends LLConfigBase_CfgForNeeder<List<E>,C,R> implements LLCfgOverall_Fieldable  {
 	public ValueValidator<Integer> vvForElementLength;
 	public String                 sIfElementLength  ;
 //constructors...START
 	/**
-		<P>Create a new {@code zLLCfgOverall_CfgForNeeder} with defaults.</P>
+		<p>Create a new {@code zLLCfgOverall_CfgForNeeder} with defaults.</p>
 
-			<P>This<OL>
-			<LI>Calls <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</A>(needer)</CODE></LI>
-		</OL></P>
+			<p>This<ol>
+			<li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</a>(needer)</code></li>
+		</ol></p>
 	 **/
 	public LLCfgOverall_CfgForNeeder(R needer)  {
 		super(needer);
@@ -47,7 +47,7 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 		return  ifElementLength(NewLengthInRangeValidatorFor.impossible(Null.BAD, filter_ifNonNull, dbgDest_ifNonNull), null);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> ifElementLength(ValueValidator<Integer> len_validator, String display_ifValid)  {
 		vvForElementLength = len_validator;
@@ -58,14 +58,14 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 		return  ifElementLength(NewLengthInRangeValidatorFor.onlyZeroValid(Null.BAD, filter_ifNonNull, dbgDest_ifNonNull), alt_display);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> finalOutputUnaltered()  {
 		declareFinalOutputUnaltered();
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> reset()  {
 		super.declareReset();
@@ -76,21 +76,21 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 		noAltForElementLength(null, null);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> ifNull(String alt_display)  {
 		setIfNull(alt_display);
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> ifNonNull(String alt_display)  {
 		setIfNonNull(alt_display);
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> prePost(String prefixfix, String postfixfix)  {
 		setPrePost(prefixfix, postfixfix);
@@ -105,7 +105,7 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 	}
 //other...START
 	/**
-		<P>Create a new {@code LLCfgOverall} from the configuration.</P>
+		<p>Create a new {@code LLCfgOverall} from the configuration.</p>
 
 		@return  {@code (new }{@link com.github.xbn.list.lister.LLCfgOverall#LLCfgOverall(zLLCfgOverall_CfgForNeeder) LLCfgOverall}{@code (this, false))}
 		@see  #endCfg()
@@ -116,12 +116,12 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 		return  c;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@code startConfigReturnNeedable(needer, (Class&lt;LLCfgOverall&lt;E&gt;&gt;)((Class)LLCfgOverall.class))}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@code startConfigReturnNeedable(needer, (Class&lt;LLCfgOverall&lt;E&gt;&gt;)((Class)LLCfgOverall.class))}</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  com.github.xbn.neederneedable.Needer#startConfig(Class) Needer#startConfig(cls)
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> startConfigReturnNeedable(R needer)  {
@@ -131,15 +131,15 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 		return  this;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgOverall_CfgForNeeder<E,C,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);

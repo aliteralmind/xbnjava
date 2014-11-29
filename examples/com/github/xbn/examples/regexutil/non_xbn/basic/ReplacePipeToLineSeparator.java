@@ -14,12 +14,12 @@
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn.basic;
 /**
-	<P>ReplacedInEachInput all pipe characters (&quot;<CODE>|</CODE>&quot;) to new-lines, using the system property &quot;<CODE>line.separator</CODE>&quot;</P>
+	<p>ReplacedInEachInput all pipe characters (&quot;<code>|</code>&quot;) to new-lines, using the system property &quot;<code>line.separator</code>&quot;</p>
 
-	<P>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ReplacePipeToLineSeparator}</P>
+	<p>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ReplacePipeToLineSeparator}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReplacePipeToLineSeparator  {
 	public static final void main(String[] ignored)  {

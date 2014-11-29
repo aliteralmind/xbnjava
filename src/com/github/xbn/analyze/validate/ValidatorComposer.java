@@ -26,10 +26,10 @@ package  com.github.xbn.analyze.validate;
 	import  com.github.xbn.util.tuple.ThreeTSObjects;
 	import  static com.github.xbn.lang.CrashIfBase.*;
 /**
-	<P>For classes that need to implement {@code Validator}, that cannot extend {@code AbstractValidator}. See {@link com.github.xbn.analyze.AbstractAnalyzer AbstractValidator}.</P>
+	<p>For classes that need to implement {@code Validator}, that cannot extend {@code AbstractValidator}. See {@link com.github.xbn.analyze.AbstractAnalyzer AbstractValidator}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class ValidatorComposer extends AnalyzerComposer  {
@@ -44,12 +44,12 @@ public class ValidatorComposer extends AnalyzerComposer  {
 	private final ValidResultFilter vrFilter ;
 //constructors...START
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
-		<P>Field-documentation:<UL>
-			<LI><CODE>fieldable.{@link com.github.xbn.analyze.validate.z.Validator_Fieldable#getFilter() getFilter}()</CODE>: If non-{@code null}, this suppresses or alters valid results. It may not be {@link com.github.xbn.lang.Expirable#isExpired() expired}. If {@code null}, then {@link #unfiltered() no filtering} occurs.</LI>
-			<LI><CODE>fieldable.{@link com.github.xbn.analyze.validate.z.Validator_Fieldable#getDebugApbl() getDebugApbl}():</CODE> If non-{@code null}, then debugging is {@link com.github.xbn.io.Debuggable#setDebugOn(boolean) turned on}, and printed by this.</LI>
-		</UL></P>
+		<p>Field-documentation:<ul>
+			<li><code>fieldable.{@link com.github.xbn.analyze.validate.z.Validator_Fieldable#getFilter() getFilter}()</code>: If non-{@code null}, this suppresses or alters valid results. It may not be {@link com.github.xbn.lang.Expirable#isExpired() expired}. If {@code null}, then {@link #unfiltered() no filtering} occurs.</li>
+			<li><code>fieldable.{@link com.github.xbn.analyze.validate.z.Validator_Fieldable#getDebugApbl() getDebugApbl}():</code> If non-{@code null}, then debugging is {@link com.github.xbn.io.Debuggable#setDebugOn(boolean) turned on}, and printed by this.</li>
+		</ul></p>
 
 		@see  #ValidatorComposer(boolean, ValidatorComposer) this(b,vc)
 		@see  #ValidatorComposer(Validator) this(v)
@@ -68,12 +68,12 @@ public class ValidatorComposer extends AnalyzerComposer  {
 		zresetCountsVB();
 	}
 	/**
-		<P>Create a new {@code ValidatorComposer} as a duplicate of another.</P>
+		<p>Create a new {@code ValidatorComposer} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls <CODE>{@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(boolean, AnalyzerComposer) super}(ignored, to_copy)</CODE></LI>
-			<LI>Sets {@link #getValidCount() getValidCount}{@code ()} to {@code to_copy.getValidCount()}.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls <code>{@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(boolean, AnalyzerComposer) super}(ignored, to_copy)</code></li>
+			<li>Sets {@link #getValidCount() getValidCount}{@code ()} to {@code to_copy.getValidCount()}.</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -87,12 +87,12 @@ public class ValidatorComposer extends AnalyzerComposer  {
 		vrFilter = to_copy.getFilter();
 	}
 	/**
-		<P>Create a new {@code ValidatorComposer} from a {@code Validator}.</P>
+		<p>Create a new {@code ValidatorComposer} from a {@code Validator}.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (validator)}</LI>
-			<LI>Sets {@link #getValidCount() getValidCount}{@code ()} to {@code validator.getValidCount()}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (validator)}</li>
+			<li>Sets {@link #getValidCount() getValidCount}{@code ()} to {@code validator.getValidCount()}</li>
+		</ol></p>
 		@see  #ValidatorComposer(RuleType, Validator_Fieldable) this(rti,vrFilter)
 	 **/
 	@CompositionConstructor
@@ -116,14 +116,14 @@ public class ValidatorComposer extends AnalyzerComposer  {
 		validResultSource = null;
 	}
 	/**
-		<P>Revert all counts to zero.</P>
+		<p>Revert all counts to zero.</p>
 
-		<P><I>There is no {@code resetState()} function, because there is no state unique to this {@code ValidatorComposer}.</I></P>
+		<p><i>There is no {@code resetState()} function, because there is no state unique to this {@code ValidatorComposer}.</i></p>
 
-		<P>This calls<OL>
-			<LI>{@link com.github.xbn.analyze.AnalyzerComposer super}.{@link com.github.xbn.analyze.AnalyzerComposer#resetCounts() resetCounts}{@code ()}</LI>
-			<LI>{@link #zresetCountsVB() zresetCountsVB}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link com.github.xbn.analyze.AnalyzerComposer super}.{@link com.github.xbn.analyze.AnalyzerComposer#resetCounts() resetCounts}{@code ()}</li>
+			<li>{@link #zresetCountsVB() zresetCountsVB}{@code ()}</li>
+		</ol></p>
 	 **/
 	@CompositionFunction
 	public void resetCounts()  {
@@ -131,9 +131,9 @@ public class ValidatorComposer extends AnalyzerComposer  {
 		zresetCountsVB();
 	}
 	/**
-		<P>Reset counts specific to this {@code ValidatorComposer}.</P>
+		<p>Reset counts specific to this {@code ValidatorComposer}.</p>
 
-		<P>This sets {@link #getValidCount() getValidCount}{@code ()} to zero.</P>
+		<p>This sets {@link #getValidCount() getValidCount}{@code ()} to zero.</p>
 		@see  #resetCounts()
 	 **/
 	protected final void zresetCountsVB()  {
@@ -244,10 +244,10 @@ public class ValidatorComposer extends AnalyzerComposer  {
 //other...END
 //static...START
 	/**
-		<P>If a <CODE>Validator</CODE>-s rule-type is not as required, crash.</P>
+		<p>If a <code>Validator</code>-s rule-type is not as required, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>validator.getRuleType().{@link com.github.xbn.lang.RuleType#crashIfNotRequiredValue(RuleType, String, Object) ciNotRequiredRuleType}(validator.{@link #getRuleType() getRuleType}(), rqd_value, vldtr_name)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>validator.getRuleType().{@link com.github.xbn.lang.RuleType#crashIfNotRequiredValue(RuleType, String, Object) ciNotRequiredRuleType}(validator.{@link #getRuleType() getRuleType}(), rqd_value, vldtr_name)</code></p>
 	 **/
 	public static final void ciNotRequiredRuleType(Validator validator, RuleType rqd_value, String vldtr_name, Object xtra_errInfo)  {
 		try  {
@@ -258,10 +258,10 @@ public class ValidatorComposer extends AnalyzerComposer  {
 		}
 	}
 	/**
-		<P>If a <CODE>Validator</CODE>-s rule-type is a forbidden value, crash.</P>
+		<p>If a <code>Validator</code>-s rule-type is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>validator.getRuleType().{@link com.github.xbn.lang.RuleType#crashIfForbiddenValue(RuleType, String, Object)}(validator.{@link #getRuleType() getRuleType}(), rqd_value, vldtr_name)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>validator.getRuleType().{@link com.github.xbn.lang.RuleType#crashIfForbiddenValue(RuleType, String, Object)}(validator.{@link #getRuleType() getRuleType}(), rqd_value, vldtr_name)</code></p>
 	 **/
 	public static final void ciForbiddenRuleType(Validator validator, RuleType rqd_value, String vldtr_name, Object xtra_errInfo)  {
 		try  {
@@ -303,7 +303,7 @@ public class ValidatorComposer extends AnalyzerComposer  {
 	}
 //static...END
 	/**
-		<P>A valid-result filter that does nothing--it always passes the follows-the-rules value unchanged. This is a singleton that never {@link com.github.xbn.lang.Expirable#isExpired() expires}, whose {@link ValidResultFilter#getPreAction() pre-action} is always {@link FilterPreAction#PROCEED PROCEED}, {@link ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-value} is always {@link FilterAfterValue#UNCHANGED UNCHANGED}.</P>
+		<p>A valid-result filter that does nothing--it always passes the follows-the-rules value unchanged. This is a singleton that never {@link com.github.xbn.lang.Expirable#isExpired() expires}, whose {@link ValidResultFilter#getPreAction() pre-action} is always {@link FilterPreAction#PROCEED PROCEED}, {@link ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-value} is always {@link FilterAfterValue#UNCHANGED UNCHANGED}.</p>
 	 **/
 	public static final ValidResultFilter unfiltered()  {
 		return  VRFDoesNothing.INSTANCE;

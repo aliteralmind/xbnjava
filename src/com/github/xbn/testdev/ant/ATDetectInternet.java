@@ -22,22 +22,22 @@ package  com.github.xbn.testdev.ant;
 	import  org.apache.tools.ant.BuildException;
 	import  org.apache.tools.ant.Task;
 /**
-	<P>Detect if the internet is available, determined by the ability to reach a specific url.</P>
+	<p>Detect if the internet is available, determined by the ability to reach a specific url.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ATDetectInternet extends Task  {
 	private String sUrl = null;
 	private String sProperty = null;
 
 	/**
-		<P>Create an ATDetectInternet. This does nothing.</P>
+		<p>Create an ATDetectInternet. This does nothing.</p>
 	 **/
 	public ATDetectInternet()  {
 	}
 	/**
-		<P>Set the url to reach.</P>
+		<p>Set the url to reach.</p>
 
 		@param  url  The url. May not be null or empty.
 	 **/
@@ -45,7 +45,7 @@ public class ATDetectInternet extends Task  {
 		sUrl = url;
 	}
 	/**
-		<P>The property which should be set only if the url can be reached. It is either set to true (if the url can be reached) or not set at all.</P>
+		<p>The property which should be set only if the url can be reached. It is either set to true (if the url can be reached) or not set at all.</p>
 
 		@param  prop_name  The property name. May not be null or empty.
 	 **/
@@ -53,7 +53,7 @@ public class ATDetectInternet extends Task  {
 		sProperty = prop_name;
 	}
 	/**
-		<P>Do it. Uh huh. Oh yeah.</P>
+		<p>Do it. Uh huh. Oh yeah.</p>
 	 **/
 	public void execute() throws BuildException  {
 		if(sUrl == null  ||  sUrl.length() == 0)  {

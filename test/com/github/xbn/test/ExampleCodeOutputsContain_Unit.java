@@ -3,7 +3,7 @@ package  com.github.xbn.test;
 	import  com.github.xbn.testdev.VerifyApplicationOutput;
 	import  org.junit.Test;
 /**
-   <P>{@code java com.github.xbn.test.ExampleCodeOutputsContain_Unit}</P>
+   <p>{@code java com.github.xbn.test.ExampleCodeOutputsContain_Unit}</p>
  **/
 public class ExampleCodeOutputsContain_Unit  {
 	private static final String EXAMPLE_CODE_ROOT_DIR =
@@ -153,7 +153,7 @@ public class ExampleCodeOutputsContain_Unit  {
    public void linefilter_ModifyBlockLines()  {
 		VerifyApplicationOutput.assertWithNoParameters(DisplayOutputToConsole.NO, null,
 			com.github.xbn.examples.linefilter.ModifyBlockLines.class,
-			"<B>mid1</B>", "<B>mid2</B>");
+			"<b>mid1</b>", "<b>mid2</b>");
 	}
    @Test
    public void linefilter_MoreComplicatedModifyExample()  {
@@ -188,14 +188,14 @@ public class ExampleCodeOutputsContain_Unit  {
 			com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded.class,
 			new String[] {JAVA_CLASS_INPUT_PREFIX + "WithSub_input.txt"},
 			"//sub-mode...START", "//sub-mode...END",
-			"<P>Another JavaDoc block</P>", "<B><P>info</P></B>", "<B></B>",
-			"<B><P>info</P></B>", "<B></B>", "<B><P>info</P></B>", "<P>info</P>",
-			"StayClassy()", "<P>Does stuff.</P>");
+			"<p>Another JavaDoc block</p>", "<b><p>info</p></b>", "<b></b>",
+			"<b><p>info</p></b>", "<b></b>", "<b><p>info</p></b>", "<p>info</p>",
+			"StayClassy()", "<p>Does stuff.</p>");
 	}
    @Test
    public void linefilter_EliminateAllCommentBlocksAndPackageLine()  {
 		VerifyApplicationOutput.assertWithParameters(DisplayOutputToConsole.NO,
-			new String[] {"path:", "package", "sub-mode", "<P>", "*"+"/"},
+			new String[] {"path:", "package", "sub-mode", "<p>", "*"+"/"},
 			com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine.class,
 			JAVA_CLASS_INPUT_FILE,
 			"class StayClassy", "StayClassy()", "doStuff()");
@@ -206,7 +206,7 @@ public class ExampleCodeOutputsContain_Unit  {
 			new String[] {"path:"},
 			com.github.xbn.examples.linefilter.ExtractAllJavaDocBlockTextStripLineAsterisks.class,
 			JAVA_CLASS_INPUT_FILE,
-			"<P>The main", "<P>Constructor", "<P>Function", "<P>This function", "<P>Lots and");
+			"<p>The main", "<p>Constructor", "<p>Function", "<p>This function", "<p>Lots and");
 	}
    @Test
    public void linefilter_ExtractAllJavaDocBlockTextRaw()  {
@@ -214,7 +214,7 @@ public class ExampleCodeOutputsContain_Unit  {
 			new String[] {"path:"},
 			com.github.xbn.examples.linefilter.ExtractAllJavaDocBlockTextRaw.class,
 			JAVA_CLASS_INPUT_FILE,
-			"<P>The main", "<P>Constructor", "* <P>Function", "* <P>This function", "* <P>Lots and");
+			"<p>The main", "<p>Constructor", "* <p>Function", "* <p>This function", "* <p>Lots and");
 	}
 		private static final String[] REF_BLOCK_INPUT_FILE = new String[] {
 			EXAMPLE_CODE_ROOT_DIR + "linefilter\\reference_type_through_attachment_blocks_input.txt"};

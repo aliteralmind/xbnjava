@@ -15,13 +15,13 @@
 package  com.github.xbn.examples.lang.non_xbn.basic;
 	import  java.util.Arrays;
 /**
-	<P>Looping through an array, find its largest number. This uses <CODE>java.lang.{@link java.lang.Integer}.{@link java.lang.Integer#MAX_VALUE MAX_VALUE}</CODE> as the initial &quot;smallest&quot; value.</P>
+	<p>Looping through an array, find its largest number. This uses <code>java.lang.{@link java.lang.Integer}.{@link java.lang.Integer#MAX_VALUE MAX_VALUE}</code> as the initial &quot;smallest&quot; value.</p>
 
-	<P>{@code java com.github.xbn.examples.lang.non_xbn.basic.FindSmallestNumberInArray}</P>
+	<p>{@code java com.github.xbn.examples.lang.non_xbn.basic.FindSmallestNumberInArray}</p>
 
 	@see  FindLargestNumberInArray
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FindSmallestNumberInArray  {
 	public static final void main(String[] ignored)  {

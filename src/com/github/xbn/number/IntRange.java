@@ -1,7 +1,7 @@
 package  com.github.xbn.number;
 
 /**
-	<P><CODE>NumberRange</CODE> for ints.</P>
+	<p><code>NumberRange</code> for ints.</p>
  **/
 public interface IntRange extends NumberRange<Integer>  {
 	@Override

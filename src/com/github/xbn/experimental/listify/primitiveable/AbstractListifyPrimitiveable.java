@@ -26,41 +26,41 @@ package  com.github.xbn.experimental.listify.primitiveable;
 	import  com.github.xbn.util.copyval.ValueCopier;
 	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-	<P>Abstract implementation of {@code ListifyPrimitiveable}.</P>
+	<p>Abstract implementation of {@code ListifyPrimitiveable}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyPrimitiveable<E> implements ListifyPrimitiveable<E>  {
 	private ListifyPrimitiveableComposer<E> lpc = null;
 //constructors...START
 	/**
-		<P>Create a new {@code AbstractListifyPrimitiveable}.</P>
+		<p>Create a new {@code AbstractListifyPrimitiveable}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveableComposer#ListifyPrimitiveableComposer(Object, boolean, PrimitiveArrayHelper, ValueCopier) super}{@code (raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveableComposer#ListifyPrimitiveableComposer(Object, boolean, PrimitiveArrayHelper, ValueCopier) super}{@code (raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy)}</p>
 	 **/
 	public AbstractListifyPrimitiveable(Object raw_obj, AddRemovable add_rmvbl, PrimitiveArrayHelper<E> primitive_arrHelper, ValueCopier<E> get_valCopy)  {
 		lpc = new ListifyPrimitiveableComposer<E>(raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy);
 	}
 	/**
-		<P>Create a new {@code AbstractListifyPrimitiveable}.</P>
+		<p>Create a new {@code AbstractListifyPrimitiveable}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveableComposer#ListifyPrimitiveableComposer(Object, boolean, PrimitiveArrayHelper, ValueCopier, NullHandlerForPrimitives) super}{@code (raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy, null_handler)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveableComposer#ListifyPrimitiveableComposer(Object, boolean, PrimitiveArrayHelper, ValueCopier, NullHandlerForPrimitives) super}{@code (raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy, null_handler)}</p>
 	 **/
 	public AbstractListifyPrimitiveable(Object raw_obj, AddRemovable add_rmvbl, PrimitiveArrayHelper<E> primitive_arrHelper, ValueCopier<E> get_valCopy, NullHandlerForPrimitives<E> null_handler)  {
 		lpc = new ListifyPrimitiveableComposer<E>(raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy, null_handler);
 	}
 	/**
-		<P>Create a new {@code AbstractListifyPrimitiveable} as a duplicate of another.</P>
+		<p>Create a new {@code AbstractListifyPrimitiveable} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveableComposer#ListifyPrimitiveableComposer(ListifyPrimitiveable) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveableComposer#ListifyPrimitiveableComposer(ListifyPrimitiveable) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()

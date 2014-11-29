@@ -23,10 +23,10 @@ package  com.github.xbn.io;
 	import  java.io.IOException;
 	import  java.nio.file.Paths;
 /**
-	<P>If a {@link java.nio.file.Path} is bad, crash. Otherwise, do nothing.</P>
+	<p>If a {@link java.nio.file.Path} is bad, crash. Otherwise, do nothing.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PathMustBe  {
 	private Existence     existing;
@@ -35,15 +35,15 @@ public class PathMustBe  {
 	private FileDirectory fileDir  ;
 	private LinkOption[]  linkOpts ;
 	/**
-		<P>Create a new instance that has no restrictions.</P>
+		<p>Create a new instance that has no restrictions.</p>
 
-		<P>This calls<OL>
-			<LI>{@link #existing(Existence) existing}<CODE>({@link Existence}.{@link Existence#OPTIONAL OPTIONAL})</CODE></LI>
-			<LI>{@link #readable(Readable) readable}<CODE>({@link Readable}.{@link Readable#OPTIONAL OPTIONAL})</CODE></LI>
-			<LI>{@link #writable(Writable) writable}<CODE>({@link Writable}.{@link Writable#OPTIONAL OPTIONAL})</CODE></LI>
-			<LI>{@link #fileOrDirectory(FileDirectory) fileOrDirectory}<CODE>({@link FileDirectory}.{@link FileDirectory#EITHER EITHER})</CODE></LI>
-			<LI>{@link #linkOptions(LinkOption...)}(new {@link java.nio.file.LinkOption}[]{});
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link #existing(Existence) existing}<code>({@link Existence}.{@link Existence#OPTIONAL OPTIONAL})</code></li>
+			<li>{@link #readable(Readable) readable}<code>({@link Readable}.{@link Readable#OPTIONAL OPTIONAL})</code></li>
+			<li>{@link #writable(Writable) writable}<code>({@link Writable}.{@link Writable#OPTIONAL OPTIONAL})</code></li>
+			<li>{@link #fileOrDirectory(FileDirectory) fileOrDirectory}<code>({@link FileDirectory}.{@link FileDirectory#EITHER EITHER})</code></li>
+			<li>{@link #linkOptions(LinkOption...)}(new {@link java.nio.file.LinkOption}[]{});
+		</ol></p>
 	 **/
 	public PathMustBe()  {
 		existing(Existence.OPTIONAL);
@@ -53,7 +53,7 @@ public class PathMustBe  {
 		linkOptions(new LinkOption[]{});
 	}
 	/**
-		<P>Is existing required?.</P>
+		<p>Is existing required?.</p>
 
 		@see  #PathMustBe()
 		@see  #existing() existing
@@ -62,7 +62,7 @@ public class PathMustBe  {
 		return  existing;
 	}
 	/**
-		<P>Is readable required?.</P>
+		<p>Is readable required?.</p>
 
 		@see  #PathMustBe()
 		@see  #readable() readable
@@ -71,7 +71,7 @@ public class PathMustBe  {
 		return   readable;
 	}
 	/**
-		<P>Is writablity required?.</P>
+		<p>Is writablity required?.</p>
 
 		@see  #PathMustBe() PathMustBe
 		@see  #writable() writable
@@ -80,7 +80,7 @@ public class PathMustBe  {
 		return   writable;
 	}
 	/**
-		<P>Must the path be a regular-file or a directory?.</P>
+		<p>Must the path be a regular-file or a directory?.</p>
 
 		@see  #PathMustBe() PathMustBe
 		@see  #directory() directory
@@ -90,9 +90,9 @@ public class PathMustBe  {
 		return  fileDir;
 	}
 	/**
-		<P>Should symbolic links be followed?.</P>
+		<p>Should symbolic links be followed?.</p>
 
-		@return  A <B><I>mutable</I></B> array of all link options.
+		@return  A <b><i>mutable</i></b> array of all link options.
 		@see  #PathMustBe() PathMustBe
 		@see  #existing() existing
 		@see  #regularFile() regularFile
@@ -102,18 +102,18 @@ public class PathMustBe  {
 		return  linkOpts;
 	}
 	/**
-		<P>Must exist.</P>
+		<p>Must exist.</p>
 
-		@return  <CODE>{@link #existing(Existence) existing}({@link Existence}.{@link Existence#REQUIRED REQUIRED})</CODE>
+		@return  <code>{@link #existing(Existence) existing}({@link Existence}.{@link Existence#REQUIRED REQUIRED})</code>
 	 **/
 	public PathMustBe existing()  {
 		return  existing(Existence.REQUIRED);
 	}
 	/**
-		<P>Declare if existing is required.</P>
+		<p>Declare if existing is required.</p>
 
 		@param  existing  May not be {@code null}. Get with {@link #getExistence() getExistence}{@code ()}
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #existing()
 		@see  #linkOptions(LinkOption...) linkOptions
 	 **/
@@ -123,18 +123,18 @@ public class PathMustBe  {
 		return  this;
 	}
 	/**
-		<P>Must be readable.</P>
+		<p>Must be readable.</p>
 
-		@return  <CODE>{@link #readable(Readable) readable}({@link Readable}.{@link Readable#REQUIRED REQUIRED})</CODE>
+		@return  <code>{@link #readable(Readable) readable}({@link Readable}.{@link Readable#REQUIRED REQUIRED})</code>
 	 **/
 	public PathMustBe readable()  {
 		return  readable(Readable.REQUIRED);
 	}
 	/**
-		<P>Declare if readable is required.</P>
+		<p>Declare if readable is required.</p>
 
 		@param  readable  May not be {@code null}. Get with {@link #getReadable() getReadable}{@code ()}
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #readable()
 		@see  #linkOptions(LinkOption...) linkOptions
 	 **/
@@ -144,18 +144,18 @@ public class PathMustBe  {
 		return  this;
 	}
 	/**
-		<P>Must be writable.</P>
+		<p>Must be writable.</p>
 
-		@return  <CODE>{@link #writable(Writable) writable}({@link Writable}.{@link Writable#REQUIRED REQUIRED})</CODE>
+		@return  <code>{@link #writable(Writable) writable}({@link Writable}.{@link Writable#REQUIRED REQUIRED})</code>
 	 **/
 	public PathMustBe writable()  {
 		return  writable(Writable.REQUIRED);
 	}
 	/**
-		<P>Declare if writable is required.</P>
+		<p>Declare if writable is required.</p>
 
 		@param  writable  May not be {@code null}. Get with {@link #getWritable() getWritable}{@code ()}.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #writable()
 		@see  #linkOptions(LinkOption...) linkOptions
 	 **/
@@ -165,10 +165,10 @@ public class PathMustBe  {
 		return  this;
 	}
 	/**
-		<P>Should symbolic links be followed?. Used when testing for {@linkplain #existing() existing} and is-a-{@linkplain #regularFile() file}-or-{@linkplain #directory() directory}.</P>
+		<p>Should symbolic links be followed?. Used when testing for {@linkplain #existing() existing} and is-a-{@linkplain #regularFile() file}-or-{@linkplain #directory() directory}.</p>
 
 		@param  link_opts  Options indicating how symbolic links are handled. Get with {@link #getLinkOptions() getLinkOptions}{@code ()}
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #noFollowLinks()
 	 **/
 	public PathMustBe linkOptions(LinkOption... link_opts)  {
@@ -176,34 +176,34 @@ public class PathMustBe  {
 		return  this;
 	}
 	/**
-		<P>Do not follow symbolic links.</P>
+		<p>Do not follow symbolic links.</p>
 
-		@return  <CODE>{@link #linkOptions(LinkOption...) linkOptions}({@link java.nio.file.LinkOption}.{@link java.nio.file.LinkOption#NOFOLLOW_LINKS NOFOLLOW_LINKS})</CODE>
+		@return  <code>{@link #linkOptions(LinkOption...) linkOptions}({@link java.nio.file.LinkOption}.{@link java.nio.file.LinkOption#NOFOLLOW_LINKS NOFOLLOW_LINKS})</code>
 	 **/
 	public PathMustBe noFollowLinks()  {
 		return  linkOptions(LinkOption.NOFOLLOW_LINKS);
 	}
 	/**
-		<P>Must be a directory.</P>
+		<p>Must be a directory.</p>
 
-		@return  <CODE>{@link #fileOrDirectory(FileDirectory) fileOrDirectory}({@link FileDirectory}.{@link FileDirectory#DIRECTORY DIRECTORY})</CODE>
+		@return  <code>{@link #fileOrDirectory(FileDirectory) fileOrDirectory}({@link FileDirectory}.{@link FileDirectory#DIRECTORY DIRECTORY})</code>
 	 **/
 	public PathMustBe directory()  {
 		return  fileOrDirectory(FileDirectory.DIRECTORY);
 	}
 	/**
-		<P>Must be a regular file.</P>
+		<p>Must be a regular file.</p>
 
-		@return  <CODE>{@link #fileOrDirectory(FileDirectory) fileOrDirectory}({@link FileDirectory}.{@link FileDirectory#REGULAR_FILE REGULAR_FILE})</CODE>
+		@return  <code>{@link #fileOrDirectory(FileDirectory) fileOrDirectory}({@link FileDirectory}.{@link FileDirectory#REGULAR_FILE REGULAR_FILE})</code>
 	 **/
 	public PathMustBe regularFile()  {
 		return  fileOrDirectory(FileDirectory.REGULAR_FILE);
 	}
 	/**
-		<P>Declare if the path must be a regular file or a directory.</P>
+		<p>Declare if the path must be a regular file or a directory.</p>
 
 		@param  file_dir  May not be {@code null}. Get with {@link #getFileDirectory() getFileDirectory}{@code ()}.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #linkOptions(LinkOption...) linkOptions
 		@see  #directory()
 		@see  #regularFile()
@@ -215,10 +215,10 @@ public class PathMustBe  {
 	}
 
 	/**
-		<P>If a path is invalid, crash (with runtime errors only). Otherwise, do nothing.</P>
+		<p>If a path is invalid, crash (with runtime errors only). Otherwise, do nothing.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #crashIfBadX(Path, String) crashIfBadX}(path, path_varName)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #crashIfBadX(Path, String) crashIfBadX}(path, path_varName)</code></p>
 	 **/
 	public void crashIfBad(Path path, String path_varName)  {
 		try  {
@@ -228,9 +228,9 @@ public class PathMustBe  {
 		}
 	}
 	/**
-		<P>If a path is valid, get it. Otherwise, crash (with runtime errors only).</P>
+		<p>If a path is valid, get it. Otherwise, crash (with runtime errors only).</p>
 
-		@return  <CODE>{@link #getOrCrashIfBadX(String, String) getOrCrashIfBadX}(path, path_varName)</CODE></P>
+		@return  <code>{@link #getOrCrashIfBadX(String, String) getOrCrashIfBadX}(path, path_varName)</code></p>
 	 **/
 	public Path getOrCrashIfBad(String path, String path_varName)  {
 		try  {
@@ -242,12 +242,12 @@ public class PathMustBe  {
 		}
 	}
 	/**
-		<P>If a path is valid, get it. Otherwise, crash.</P>
+		<p>If a path is valid, get it. Otherwise, crash.</p>
 
-		<P>This<OL>
-			<LI>Calls <CODE>crashIfBadX({@link java.nio.file.Paths}.{@link java.nio.file.Paths#get(String, String...) get}(path), path_varName)</CODE></LI>
-			<LI>And returns the path.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls <code>crashIfBadX({@link java.nio.file.Paths}.{@link java.nio.file.Paths#get(String, String...) get}(path), path_varName)</code></li>
+			<li>And returns the path.</li>
+		</ol></p>
 	 **/
 	public Path getOrCrashIfBadX(String path, String path_varName) throws NoSuchFileException, AccessDeniedException  {
 		Path ppath = Paths.get(path);
@@ -255,10 +255,10 @@ public class PathMustBe  {
 		return  ppath;
 	}
 	/**
-		<P>If a path is invalid, crash. Otherwise, do nothing.</P>
+		<p>If a path is invalid, crash. Otherwise, do nothing.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, existing_is, readable_is, writable_is, file_directory, link_opts)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, existing_is, readable_is, writable_is, file_directory, link_opts)</code></p>
 	 **/
 	public static final void crashIfBad(Path path, String path_varName, Existence existing_is, Readable readable_is, Writable writable_is, FileDirectory file_directory, LinkOption... link_opts)  {
 		try  {
@@ -271,19 +271,19 @@ public class PathMustBe  {
 	}
 //Originates with crashIfBadX, needed by isGood...START
 	/**
-		<P>If a path is invalid, crash. Otherwise, do nothing.</P>
+		<p>If a path is invalid, crash. Otherwise, do nothing.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>PathMustBe.{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>PathMustBe.{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</code></p>
 	 **/
 	public void crashIfBadX(Path path, String path_varName) throws NoSuchFileException, AccessDeniedException  {
 		PathMustBe.crashIfBadX(path, path_varName, getExistence(), getReadable(), getWritable(), getFileDirectory(), (LinkOption[])getLinkOptions());
 	}
 	/**
-		<P>If a path is invalid, crash. Otherwise, do nothing.</P>
+		<p>If a path is invalid, crash. Otherwise, do nothing.</p>
 
 		@param  path  May not be {@code null}.
-		@param  path_varName  Descriptive name for {@code path}. <I>Should</I> not be {@code null} or empty.
+		@param  path_varName  Descriptive name for {@code path}. <i>Should</i> not be {@code null} or empty.
 		@param  existing_is  May not be {@code null}.
 		@param  readable_is  May not be {@code null}.
 		@param  writable_is  May not be {@code null}
@@ -333,19 +333,19 @@ public class PathMustBe  {
 //Originates with crashIfBadX, needed by isGood...END
 //Originates with crashIfBadX, needed by isGood...START
 	/**
-		<P>Does a path conform to all its restrictions?.</P>
+		<p>Does a path conform to all its restrictions?.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>PathMustBe.{@link #isGood(Path, Existence, Readable, Writable, FileDirectory, LinkOption...) isGood}(path, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>PathMustBe.{@link #isGood(Path, Existence, Readable, Writable, FileDirectory, LinkOption...) isGood}(path, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</code></p>
 	 **/
 	public boolean isGood(Path path)  {
 		return  PathMustBe.isGood(path, getExistence(), getReadable(), getWritable(), getFileDirectory(), (LinkOption[])getLinkOptions());
 	}
 	/**
-		<P>Does a path conform to all its restrictions?.</P>
+		<p>Does a path conform to all its restrictions?.</p>
 
 		@param  path  May not be {@code null}.
-		@param  path_varName  Descriptive name for {@code path}. <I>Should</I> not be {@code null} or empty.
+		@param  path_varName  Descriptive name for {@code path}. <i>Should</i> not be {@code null} or empty.
 		@param  existing_is  May not be {@code null}.
 		@param  readable_is  May not be {@code null}.
 		@param  writable_is  May not be {@code null}

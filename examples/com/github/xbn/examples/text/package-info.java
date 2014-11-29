@@ -1,4 +1,4 @@
 /**
-	<P>Demonstrates classes in {@code com.github.xbn.text.*}.</P>
+	<p>Demonstrates classes in {@code com.github.xbn.text.*}.</p>
  **/
 package  com.github.xbn.examples.text;

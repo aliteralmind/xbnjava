@@ -14,30 +14,30 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
 /**
-	<P>In {@code ReturnValueUnchanged} only, after each call to <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</A>(V,A)</CODE>, what should its {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#wasAltered() wasAltered}{@code ()} flag be set to?.</P>
+	<p>In {@code ReturnValueUnchanged} only, after each call to <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</a>(V,A)</code>, what should its {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#wasAltered() wasAltered}{@code ()} flag be set to?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum SetWasAlteredToWhenInRange {
 	/**
-		<P>Set {@code wasAltered()} to {@code false}.</P>
+		<p>Set {@code wasAltered()} to {@code false}.</p>
 
 		@see  #FALSE
 		@see  #isTrue()
 	 **/
 	TRUE,
 	/**
-		<P>Set {@code wasAltered()} to {@code true}.</P>
+		<p>Set {@code wasAltered()} to {@code true}.</p>
 
 		@see  #TRUE
 		@see  #isFalse()
 	 **/
 	FALSE;
 	/**
-		<P>Is this {@code SetWasAlteredToWhenInRange} equal to {@code TRUE}?.</P>
+		<p>Is this {@code SetWasAlteredToWhenInRange} equal to {@code TRUE}?.</p>
 
-		@return  <CODE>this == {@link #TRUE}</CODE>
+		@return  <code>this == {@link #TRUE}</code>
 
 		@see  #isFalse()
 	 **/
@@ -45,9 +45,9 @@ public enum SetWasAlteredToWhenInRange {
 		return  this == TRUE;
 	}
 	/**
-		<P>Is this {@code SetWasAlteredToWhenInRange} equal to {@code FALSE}?.</P>
+		<p>Is this {@code SetWasAlteredToWhenInRange} equal to {@code FALSE}?.</p>
 
-		@return  <CODE>this == {@link #FALSE}</CODE>
+		@return  <code>this == {@link #FALSE}</code>
 		@see  #isTrue()
 	 **/
 	public final boolean isFalse()  {

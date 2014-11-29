@@ -26,28 +26,28 @@ package  com.github.xbn.text.padchop;
 	import  com.github.xbn.text.StringUtil;
 	import  com.github.xbn.text.padchop.z.VzblPadChop_Fieldable;
 /**
-	<P>Highly configurable trimming, unescaping, padding, and chopping of a string.</P>
+	<p>Highly configurable trimming, unescaping, padding, and chopping of a string.</p>
 
 {@.codelet.and.out com.github.xbn.examples.text.padchop.VzblPadChopXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.VzblPadChop_Cfg VzblPadChop_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.text.padchop.z.VzblPadChop_Cfg VzblPadChop_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Used by:</B> <CODE>xbn.list.lister.<a href="../../list/lister/zL_CfgOverall.html#cfg">zL_CfgOverall</A></CODE> and <CODE><a href="../../list/lister/zL_CfgElement.html#cfg">zL_CfgElement</A></CODE></LI>
-		</UL></LI>
-		<LI><B>Sub configs:</B><UL>
-			<LI><B><CODE><A HREF="ChopString.html#cfg">ChopString</A></CODE>:</B> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop() cfgChop}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean) cfgChop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(int) cfgChop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) cfgChop}{@code (b,i)}<UL>
-				<LI>{@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#chop(boolean) chop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#chopFirst() chopFirst}{@code ()}</LI>
-			</UL></LI>
-			<LI><B><CODE><A HREF="PadString.html#cfg">PadString</A></CODE>:</B> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad() cfgPad}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean) cfgPad}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(int) cfgPad}{@code (i)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) cfgPad}{@code (b,i)}<UL>
-				<LI>{@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#pad(boolean) pad}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#padFirst() padFirst}{@code ()}</LI>
-			</UL></LI>
-		</UL>
-		<LI><B>Pad-chop goal length:</B> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#goalLen(int) goalLen}{@code (i)}</LI>
-		<LI><B>EscapeAction:</B> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#escape() escape}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#noEscape() noEscape}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#unescape() unescape}{@code ()}</LI>
-		<LI><B>Trim:</B> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim() trim}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) trim}{@code (b,b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trimLeft() trimLeft}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trimRight() trimRight}{@code ()}</LI>
-		<LI><B>Defaults:</B> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#reset() reset}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#reset(int) reset}{@code (i)}</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Used by:</b> <code>xbn.list.lister.<a href="../../list/lister/zL_CfgOverall.html#cfg">zL_CfgOverall</a></code> and <code><a href="../../list/lister/zL_CfgElement.html#cfg">zL_CfgElement</a></code></li>
+		</ul></li>
+		<li><b>Sub configs:</b><ul>
+			<li><b><code><a href="ChopString.html#cfg">ChopString</a></code>:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop() cfgChop}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean) cfgChop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(int) cfgChop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) cfgChop}{@code (b,i)}<ul>
+				<li>{@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#chop(boolean) chop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#chopFirst() chopFirst}{@code ()}</li>
+			</ul></li>
+			<li><b><code><a href="PadString.html#cfg">PadString</a></code>:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad() cfgPad}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean) cfgPad}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(int) cfgPad}{@code (i)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) cfgPad}{@code (b,i)}<ul>
+				<li>{@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#pad(boolean) pad}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#padFirst() padFirst}{@code ()}</li>
+			</ul></li>
+		</ul>
+		<li><b>Pad-chop goal length:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#goalLen(int) goalLen}{@code (i)}</li>
+		<li><b>EscapeAction:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#escape() escape}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#noEscape() noEscape}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#unescape() unescape}{@code ()}</li>
+		<li><b>Trim:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim() trim}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) trim}{@code (b,b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trimLeft() trimLeft}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trimRight() trimRight}{@code ()}</li>
+		<li><b>Defaults:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#reset() reset}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#reset(int) reset}{@code (i)}</li>
+	</ul></p>
 
  **/
 public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable, Copyable, Debuggable  {
@@ -63,7 +63,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 
 //constructors...START
 	/**
-		<P>Create a new {@code VzblPadChop}.</P>
+		<p>Create a new {@code VzblPadChop}.</p>
 
 
 		@see  #VzblPadChop(VzblPadChop) this(padchop)
@@ -141,10 +141,10 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		setDebug(getDebugApbl(), isDebugOn());  //See setDebugOn(apbl,b)
 	}
 	/**
-		<P>Create a new {@code VzblPadChop} as a duplicate of another.</P>
+		<p>Create a new {@code VzblPadChop} as a duplicate of another.</p>
 
-		<P>This<OL>
-		</OL></P>
+		<p>This<ol>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -164,7 +164,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 //constructors...END
 //getters...START
 	/**
-		<P>Is the string trimmed on the left side?.</P>
+		<p>Is the string trimmed on the left side?.</p>
 
 		@see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) VzblPadChop_Cfg#trim(b,b)
 		@see  #doTrimLeftRight()
@@ -175,7 +175,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  bTrimL;
 	}
 	/**
-		<P>Is the string trimmed on the right side?.</P>
+		<p>Is the string trimmed on the right side?.</p>
 
 		@see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) VzblPadChop_Cfg#trim(b,b)
 		@see  #doTrimLeft()
@@ -184,7 +184,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  bTrimR;
 	}
 	/**
-		<P>Will the string be escaped, unescaped, or left alone?.</P>
+		<p>Will the string be escaped, unescaped, or left alone?.</p>
 
 		@see  #doTrimLeft()
 	 **/
@@ -192,7 +192,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  eesc;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) VzblPadChop_Cfg#cfgPad(b,i)
 		@see  #getPad()
@@ -201,7 +201,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  bPad;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) VzblPadChop_Cfg#cfgChop(b,i)
 		@see  #getPad()
@@ -210,7 +210,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  bChop;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) VzblPadPad_Cfg#cfgPad(b,i)
 		@see  #doChop()
@@ -223,7 +223,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  ps;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) VzblPadChop_Cfg#cfgChop(b,i)
 		@see  #getPad()
@@ -232,7 +232,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  cs;
 	}
 	/**
-		<P>When both padding and chopping are active, which occurs first?.</P>
+		<p>When both padding and chopping are active, which occurs first?.</p>
 
 		@see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#padFirst() VzblPadChop_Cfg#padFirst()
 		@see  #getPad()
@@ -241,18 +241,18 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		return  bPad1st;
 	}
 	/**
-		<P>Is the string trimmed on both sides?.</P>
+		<p>Is the string trimmed on both sides?.</p>
 
-		@return  <CODE>({@link #doTrimLeft() doTrimLeft}() &nbsp;&amp;&amp; &nbsp;{@link #doTrimRight() doTrimRight}())</CODE>
+		@return  <code>({@link #doTrimLeft() doTrimLeft}() &nbsp;&amp;&amp; &nbsp;{@link #doTrimRight() doTrimRight}())</code>
 		@see  #getPad()
 	 **/
 	public boolean doTrimLeftRight()  {
 		return  (doTrimLeft()  &&  doTrimRight());
 	}
 	/**
-		<P>Is the string both padded and chopped?.</P>
+		<p>Is the string both padded and chopped?.</p>
 
-		@return  <CODE>({@link #doPad() doPad}() &nbsp;&amp;&amp; &nbsp;{@link #doChop() doChop}())</CODE>
+		@return  <code>({@link #doPad() doPad}() &nbsp;&amp;&amp; &nbsp;{@link #doChop() doChop}())</code>
 		@see  #getPad()
 	 **/
 	public boolean doPadChop()  {
@@ -297,18 +297,18 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		}
 	}
 	/**
-		<P>Alter the string as configured.</P>
+		<p>Alter the string as configured.</p>
 
-		@return  <CODE>{@link #get(int, Object) get}({@link #getGoalLenFromPadChop() getGoalLenFromPadChop}(), text)</CODE>
+		@return  <code>{@link #get(int, Object) get}({@link #getGoalLenFromPadChop() getGoalLenFromPadChop}(), text)</code>
 	 **/
 	public String get(Object text)  {
 		return  get(getGoalLenFromPadChop(), text);
 	}
 	/**
-		<P>Alter the string as configured, with a specific goal-length.</P>
+		<p>Alter the string as configured, with a specific goal-length.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #appendX(Appendable, int, Object) appendX}{@code ((new StringBuilder()), goal_len, text)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #appendX(Appendable, int, Object) appendX}{@code ((new StringBuilder()), goal_len, text)}</p>
 
 		@param  text  May not be {@code null}.
 		@return  {@code append((new StringBuilder()), goal_len, text).toString()}
@@ -324,7 +324,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		}
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 	 **/
 	public final Appendable append(Appendable to_appendTo, int goal_len, Object text)  {
 		try  {
@@ -362,9 +362,9 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 		}
 	}
 	/**
-		<P>Alter the string as configured.</P>
+		<p>Alter the string as configured.</p>
 
-		@return  <CODE>{@link #appendX(Appendable, int, Object) appendX}(to_appendTo, text, {@link #getGoalLenFromPadChop() getGoalLenFromPadChop}())</CODE>
+		@return  <code>{@link #appendX(Appendable, int, Object) appendX}(to_appendTo, text, {@link #getGoalLenFromPadChop() getGoalLenFromPadChop}())</code>
 	 **/
 	public Appendable appendX(Appendable to_appendTo, Object text) throws IOException  {
 		return  appendX(to_appendTo, getGoalLenFromPadChop(), text);
@@ -374,16 +374,16 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 	}
 
 	/**
-		<P>Format a string as configured.</P>
+		<p>Format a string as configured.</p>
 
-		<P>This:<OL>
-			<LI>If {@code text} is {@code null}, this returns {@code null}.</LI>
-			<LI>Otherwise, the string is<OL>
-				<LI>Trimmed <CODE>({@link #doTrimLeftRight() doTrimLeftRight}())</CODE></LI>
-				<LI>Unescaped <CODE>(@code getConfig().{@link #getEscapeAction() getEscapeAction}())</CODE></LI>
-				<LI>Padded/chopped <CODE>(getConfig().{@link #doPad() doPad}(), {@link #doChop() doChop}())</CODE></LI>
-			</OL></LI>
-		</OL></P>
+		<p>This:<ol>
+			<li>If {@code text} is {@code null}, this returns {@code null}.</li>
+			<li>Otherwise, the string is<ol>
+				<li>Trimmed <code>({@link #doTrimLeftRight() doTrimLeftRight}())</code></li>
+				<li>Unescaped <code>(@code getConfig().{@link #getEscapeAction() getEscapeAction}())</code></li>
+				<li>Padded/chopped <code>(getConfig().{@link #doPad() doPad}(), {@link #doChop() doChop}())</code></li>
+			</ol></li>
+		</ol></p>
 
 		@param  vpc  May not be {@code null}.
 		@param  to_appendTo  May not be {@code null}.
@@ -514,9 +514,9 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
 			return  to_appendTo.append(step_num).append("=<").append(pc_base).append(">");
 		}
 	/**
-		<P>Duplicate this {@code VzblPadChop}</P>
+		<p>Duplicate this {@code VzblPadChop}</p>
 
-		@return  <CODE>(new {@link #VzblPadChop(VzblPadChop) VzblPadChop}(this))</CODE>
+		@return  <code>(new {@link #VzblPadChop(VzblPadChop) VzblPadChop}(this))</code>
 	 **/
 	public VzblPadChop getObjectCopy()  {
 		return  (new VzblPadChop(this));

@@ -16,29 +16,29 @@ package  com.github.xbn.util.copyval;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  com.github.xbn.util.copyval.NullHandler;
 /**
-	<P>Abstract implementation of {@code ValueCopier}. For classes needing to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}, see {@link com.github.xbn.util.copyval.ValueCopierComposer ValueCopierComposer}.</P>
+	<p>Abstract implementation of {@code ValueCopier}. For classes needing to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}, see {@link com.github.xbn.util.copyval.ValueCopierComposer ValueCopierComposer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractValueCopier<O> implements ValueCopier<O>  {
 	private ValueCopierComposer<O> gvcc = null;
 	/**
-		<P>Create a new {@code AbstractValueCopier}.</P>
+		<p>Create a new {@code AbstractValueCopier}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(boolean) super}{@code (is_copyable)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(boolean) super}{@code (is_copyable)}</p>
 	 **/
 	public AbstractValueCopier(boolean is_copyable)  {
 		gvcc = new ValueCopierComposer<O>(is_copyable);
 	}
 	/**
-		<P>Create a new {@code AbstractValueCopier} as a duplicate of another.</P>
+		<p>Create a new {@code AbstractValueCopier} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(ValueCopier) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(ValueCopier) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/

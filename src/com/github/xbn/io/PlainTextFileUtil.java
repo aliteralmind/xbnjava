@@ -23,37 +23,37 @@ package  com.github.xbn.io;
    import  java.io.IOException;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
-   <P>Obtain line-iterators or the full-text from a plain-text file.</P>
+   <p>Obtain line-iterators or the full-text from a plain-text file.</p>
 
    @see  com.github.xbn.text.StringUtil
-   @author  Copyright (C) 2014, Jeff Epstein, with asistance by Marc Baumbach for {@code newWriterForAppendable(apbl)}. Released under the LPGL 2.1. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @author  Copyright (C) 2014, Jeff Epstein, with asistance by Marc Baumbach for {@code newWriterForAppendable(apbl)}. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PlainTextFileUtil  {
 	private PlainTextFileUtil()  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>Get all plain-text from a file, given its path.</P>
+		<p>Get all plain-text from a file, given its path.</p>
 
-		@return  <CODE>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), path, file_varName).toString()</CODE>
+		@return  <code>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), path, file_varName).toString()</code>
 	 **/
 	public static final String getText(String path, String file_varName)  {
 		return  appendText((new StringBuilder()), path, file_varName).toString();
 	}
 	/**
-		<P>Get all plain-text from a file, given its path.</P>
+		<p>Get all plain-text from a file, given its path.</p>
 
-		@return  <CODE>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), file, file_varName).toString()</CODE>
+		@return  <code>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), file, file_varName).toString()</code>
 	 **/
 	public static final String getText(File file, String file_varName)  {
 		return  appendText((new StringBuilder()), file, file_varName).toString();
 	}
 	/**
-		<P>Append all plain-text from a file, given its path.</P>
+		<p>Append all plain-text from a file, given its path.</p>
 
 		@return  {@code to_appendTo}, after all lines from
-		<BR> &nbsp; &nbsp; {@link #getLineIterator(String, String) getLineIterator}{@code (path, file_varName)}
-		<BR>are appended to it.
+		<br/> &nbsp; &nbsp; {@link #getLineIterator(String, String) getLineIterator}{@code (path, file_varName)}
+		<br/>are appended to it.
 		@see  #appendText(StringBuilder, File, String)
 	 **/
 	public static final StringBuilder appendText(StringBuilder to_appendTo, String path, String file_varName)  {
@@ -64,11 +64,11 @@ public class PlainTextFileUtil  {
 		return  to_appendTo;
 	}
 	/**
-		<P>Append all plain-text from a file.</P>
+		<p>Append all plain-text from a file.</p>
 
 		@return  {@code to_appendTo}, after all lines from
-		<BR> &nbsp; &nbsp; {@link #getLineIterator(File, String) getLineIterator}{@code (file, file_varName)}
-		<BR>are appended to it.
+		<br/> &nbsp; &nbsp; {@link #getLineIterator(File, String) getLineIterator}{@code (file, file_varName)}
+		<br/>are appended to it.
 		@see  #appendText(StringBuilder, String, String)
 	 **/
 	public static final StringBuilder appendText(StringBuilder to_appendTo, File file, String file_varName)  {
@@ -79,10 +79,10 @@ public class PlainTextFileUtil  {
 		return  to_appendTo;
 	}
 	/**
-		<P>Get a line-iterator for a file.</P>
+		<p>Get a line-iterator for a file.</p>
 
 		@see  com.github.xbn.text.StringUtil#getLineIterator(Object) StringUtil#getLineIteratorForString(cs)
-		@return  <CODE>{@link #getLineIterator(File, String) getLineIterator}((new {@link java.io.File#File(String) File}(path, path_varName)))</CODE>
+		@return  <code>{@link #getLineIterator(File, String) getLineIterator}((new {@link java.io.File#File(String) File}(path, path_varName)))</code>
 	 **/
 	public static final Iterator<String> getLineIterator(String path, String path_varName)  {
 		try  {
@@ -92,9 +92,9 @@ public class PlainTextFileUtil  {
 		}
 	}
    /**
-		<P>Get a line-iterator for a file.</P>
+		<p>Get a line-iterator for a file.</p>
 
-		@return  <CODE>{@link org.apache.commons.io.FileUtils}.{@link org.apache.commons.io.FileUtils#lineIterator(File) lineIterator}(file)</CODE>
+		@return  <code>{@link org.apache.commons.io.FileUtils}.{@link org.apache.commons.io.FileUtils#lineIterator(File) lineIterator}(file)</code>
 		@exception  RTIOException  If attempting to open the file results in an {@code java.io.IOException}
 		@see  #getLineIterator(String, String)
     **/

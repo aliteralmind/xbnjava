@@ -18,19 +18,19 @@ package  com.github.xbn.linefilter;
 	import  com.github.xbn.number.LengthInRange;
 	import  java.util.Iterator;
 /**
-	<P>Convenience functions for creating {@code FilteredIterator}s.</P>
+	<p>Convenience functions for creating {@code FilteredIterator}s.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewFilteredIteratorFor  {
 	/**
-		<P>Create a new {@code FilteredIterator} that does nothing: All lines are kept and unaltered.</P>
+		<p>Create a new {@code FilteredIterator} that does nothing: All lines are kept and unaltered.</p>
 
 		@return
-<BLOCKQUOTE><PRE>new {@link FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) FilteredLineIterator}(all_lineItr, {@link Returns}.{@link Returns#KEPT KEPT},
+<blockquote><pre>new {@link FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) FilteredLineIterator}(all_lineItr, {@link Returns}.{@link Returns#KEPT KEPT},
 	dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
-	{@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.&lt;O,L&gt;{@link com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor#keepAllUnchanged(String) keepAllUnchanged}(&quot;root&quot;, {@link com.github.xbn.linefilter.entity.KeepMatched}.{@link com.github.xbn.linefilter.entity.KeepMatched#YES YES}))</PRE></BLOCKQUOTE>
+	{@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.&lt;O,L&gt;{@link com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor#keepAllUnchanged(String) keepAllUnchanged}(&quot;root&quot;, {@link com.github.xbn.linefilter.entity.KeepMatched}.{@link com.github.xbn.linefilter.entity.KeepMatched#YES YES}))</pre></blockquote>
 	 **/
 	public static final <L> FilteredIterator<L> keepAllLinesUnchanged(Iterator<L> all_lineItr, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull)  {
 		return  new FilteredIterator<L>(all_lineItr, Returns.KEPT,

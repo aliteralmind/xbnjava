@@ -17,12 +17,12 @@ package  com.github.xbn.examples.regexutil;
 	import  com.github.xbn.regexutil.RegexGroupExtractor;
 	import  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg;
 /**
-	<P>Uses {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor} to extract the return-type, function-name, and all parameters from a series of function signature lines.</P>
+	<p>Uses {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor} to extract the return-type, function-name, and all parameters from a series of function signature lines.</p>
 
-	<P>{@code java com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl}</P>
+	<p>{@code java com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexGroupExtractorXmpl  {
 	public static final void main(String[] ignored)  {

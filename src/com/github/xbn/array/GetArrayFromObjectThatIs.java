@@ -17,26 +17,26 @@ package  com.github.xbn.array;
 	import  java.util.List;
 	import  java.util.Collections;
 /**
-	<P>Casts an object that happens to be an array, of either primitives or non-primitives, to the array itself.</P>
+	<p>Casts an object that happens to be an array, of either primitives or non-primitives, to the array itself.</p>
 
-	<P>POSTS TO ANSWER WITH THIS CLASS:<UL>
-		<LI>{@code <a href="http://www.codeguru.com/forum/showthread.php?t=349438">http://www.codeguru.com/forum/showthread.php?t=349438</a>}</LI>
-		<LI>{@code <a href="http://www.velocityreviews.com/forums/t147493-java-5-0-enum-why-not-valueof-int-ordinal.html">http://www.velocityreviews.com/forums/t147493-java-5-0-enum-why-not-valueof-int-ordinal.html</a>}</LI>
-	</UL></P>
+	<p>POSTS TO ANSWER WITH THIS CLASS:<ul>
+		<li>{@code <a href="http://www.codeguru.com/forum/showthread.php?t=349438">http://www.codeguru.com/forum/showthread.php?t=349438</a>}</li>
+		<li>{@code <a href="http://www.velocityreviews.com/forums/t147493-java-5-0-enum-why-not-valueof-int-ordinal.html">http://www.velocityreviews.com/forums/t147493-java-5-0-enum-why-not-valueof-int-ordinal.html</a>}</li>
+	</ul></p>
 
 	@see  com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class GetArrayFromObjectThatIs  {
 	/**
-		<P>Represents the type of element in the array.</P>
+		<p>Represents the type of element in the array.</p>
 	 **/
 	public static enum LMNT_TYPE_IS {BOOLEAN, BYTE, SHORT, INT, LONG, FLOAT, DOUBLE, CHAR, OBJECT, ARRAY};
 	/**
-		<P>The second character in an array's {@code getClass().getName()}. The first character is always a square bracket ({@code '<B>[</B>'}).</P>
+		<p>The second character in an array's {@code getClass().getName()}. The first character is always a square bracket ({@code '<b>[</b>'}).</p>
 
-		<P>Equal to {@code {'Z', 'B', 'S', 'I', 'J', 'F', 'D', 'C', 'L', '['}}</P>
+		<p>Equal to {@code {'Z', 'B', 'S', 'I', 'J', 'F', 'D', 'C', 'L', '['}}</p>
 	 **/
 	private static final Character[] LMNT_TYPE_CHAR_TWO = {'Z', 'B', 'S', 'I', 'J', 'F', 'D', 'C', 'L', '['};
 	public static final List<Character> LMNT_TYPE_CHAR_TWO_LIST = Collections.unmodifiableList(Arrays.asList(LMNT_TYPE_CHAR_TWO));
@@ -45,17 +45,17 @@ public class GetArrayFromObjectThatIs  {
 		private Object oa = null;
 
 	/**
-		<P>Create a new {@code GetArrayFromObjectThatIs}.</P>
+		<p>Create a new {@code GetArrayFromObjectThatIs}.</p>
 
-		<P>Equal to {@link #GetArrayFromObjectThatIs(Object, boolean) this(array_object, true)}</P>
+		<p>Equal to {@link #GetArrayFromObjectThatIs(Object, boolean) this(array_object, true)}</p>
 	 **/
 	public GetArrayFromObjectThatIs(Object array_object)  {
 		this(array_object, true);
 	}
 	/**
-		<P>Create a new {@code GetArrayFromObjectThatIs}.</P>
+		<p>Create a new {@code GetArrayFromObjectThatIs}.</p>
 
-		@param  array_object  The object expected to be an array. When null or not an array, {@link #getObject() getObject}{@code ()} returns null, and {@link #isArray() isArray}{@code ()} returns false. When {@code do_crashIfObjNNullAndNotArray} is true, this <I>must</I> be an array (when non-null).
+		@param  array_object  The object expected to be an array. When null or not an array, {@link #getObject() getObject}{@code ()} returns null, and {@link #isArray() isArray}{@code ()} returns false. When {@code do_crashIfObjNNullAndNotArray} is true, this <i>must</i> be an array (when non-null).
 		@exception  ClassCastException  When {@code do_crashIfObjNNullAndNotArray} is true and {@code array_object} is non-null but not an array.
 	 **/
 	public GetArrayFromObjectThatIs(Object array_object, boolean do_crashIfObjNNullAndNotArray)  {
@@ -97,11 +97,11 @@ public class GetArrayFromObjectThatIs  {
 		assert  ((getObject() == null) == (getELType() == null));
 	}
 	/**
-		<P>Get the array as an {@code Object}.</P>
+		<p>Get the array as an {@code Object}.</p>
 
 
-		@return  When the {@code array_object} {@link #GetArrayFromObjectThatIs(Object, boolean) constructor} parameter was both non-null and an array: <B>{@code array_object}</B>, exactly as provided.
-		<BR>When either null or not an array: {@code <B>null</B>}
+		@return  When the {@code array_object} {@link #GetArrayFromObjectThatIs(Object, boolean) constructor} parameter was both non-null and an array: <b>{@code array_object}</b>, exactly as provided.
+		<br/>When either null or not an array: {@code <b>null</b>}
 		@see  #isArray()
 		@see  #getELType()
 		@see  #isEmpty()
@@ -121,27 +121,27 @@ public class GetArrayFromObjectThatIs  {
 		return  oa;
 	}
 	/**
-		<P>Is the object an array?.</P>
+		<p>Is the object an array?.</p>
 
-		@return  <CODE>({@link #getObject() getObject}() != null)</CODE>
+		@return  <code>({@link #getObject() getObject}() != null)</code>
 	 **/
 	public final boolean isArray()  {
 		return  (getObject() != null);
 	}
 	/**
-		<P>Get the type of array.</P>
+		<p>Get the type of array.</p>
 
 		@return  When the {@code array_object} {@link #GetArrayFromObjectThatIs(Object, boolean) constructor} parameter was both non-null and an array: One of the values of {@code LMNT_TYPE_IS}.
-		<BR>When either null or not an array: {@code <B>null</B>}
+		<br/>When either null or not an array: {@code <b>null</b>}
 		@see  #getObject()
 	 **/
 	public final LMNT_TYPE_IS getELType()  {
 		return  eLType;
 	}
 	/**
-		<P>Get the type of array.</P>
+		<p>Get the type of array.</p>
 
-		@return  <CODE>({@link #getLength() getLength}{@code ()} == 0)</CODE>
+		@return  <code>({@link #getLength() getLength}{@code ()} == 0)</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
 	 **/
 	public final boolean isEmpty()  {
@@ -153,19 +153,19 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the array's length.</P>
+		<p>Get the array's length.</p>
 
-		@return  If {@link #getELType() getELType}{@code ()} is<UL>
-			<LI>{@code BOOLEAN}: {@link #getAOBoolean() getAOBoolean}{@code ().length}</LI>
-			<LI>{@code SHORT}: {@link #getAOShort() getAOShort}{@code ().length}</LI>
-			<LI>{@code INT}: {@link #getAOInt() getAOInt}{@code ().length}</LI>
-			<LI>{@code LONG}: {@link #getAOLong() getAOLong}{@code ().length}</LI>
-			<LI>{@code FLOAT}: {@link #getAOFloat() getAOFloat}{@code ().length}</LI>
-			<LI>{@code DOUBLE}: {@link #getAODouble() getAODouble}{@code ().length}</LI>
-			<LI>{@code CHAR}: {@link #getAOChar() getAOChar}{@code ().length}</LI>
-			<LI>{@code OBJECT}: {@link #getAOObject() getAOObject}{@code ().length}</LI>
-			<LI>{@code ARRAY}: {@link #getAOArray() getAOArray}{@code ().length}</LI>
-		</UL>
+		@return  If {@link #getELType() getELType}{@code ()} is<ul>
+			<li>{@code BOOLEAN}: {@link #getAOBoolean() getAOBoolean}{@code ().length}</li>
+			<li>{@code SHORT}: {@link #getAOShort() getAOShort}{@code ().length}</li>
+			<li>{@code INT}: {@link #getAOInt() getAOInt}{@code ().length}</li>
+			<li>{@code LONG}: {@link #getAOLong() getAOLong}{@code ().length}</li>
+			<li>{@code FLOAT}: {@link #getAOFloat() getAOFloat}{@code ().length}</li>
+			<li>{@code DOUBLE}: {@link #getAODouble() getAODouble}{@code ().length}</li>
+			<li>{@code CHAR}: {@link #getAOChar() getAOChar}{@code ().length}</li>
+			<li>{@code OBJECT}: {@link #getAOObject() getAOObject}{@code ().length}</li>
+			<li>{@code ARRAY}: {@link #getAOArray() getAOArray}{@code ().length}</li>
+		</ul>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
 	 **/
 	public final int getLength()  {
@@ -197,11 +197,11 @@ public class GetArrayFromObjectThatIs  {
 		return  s;
 	}
 	/**
-		<P>Get the {@code boolean} array.</P>
+		<p>Get the {@code boolean} array.</p>
 
-		@return   <CODE>(boolean[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(boolean[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#BOOLEAN}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#BOOLEAN}</code>
 	 **/
 	public final boolean[] getAOBoolean()  {
 		cinArray("Boolean");
@@ -212,11 +212,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code byte} array.</P>
+		<p>Get the {@code byte} array.</p>
 
-		@return   <CODE>(byte[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(byte[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#BYTE}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#BYTE}</code>
 	 **/
 	public final byte[] getAOByte()  {
 		cinArray("Byte");
@@ -227,11 +227,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code byte} array.</P>
+		<p>Get the {@code byte} array.</p>
 
-		@return   <CODE>(byte[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(byte[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#SHORT}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#SHORT}</code>
 	 **/
 	public final short[] getAOShort()  {
 		cinArray("Short");
@@ -242,11 +242,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code int} array.</P>
+		<p>Get the {@code int} array.</p>
 
-		@return   <CODE>(int[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(int[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#INT}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#INT}</code>
 	 **/
 	public final int[] getAOInt()  {
 		cinArray("Int");
@@ -257,11 +257,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code long} array.</P>
+		<p>Get the {@code long} array.</p>
 
-		@return   <CODE>(long[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(long[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#LONG}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#LONG}</code>
 	 **/
 	public final long[] getAOLong()  {
 		cinArray("Long");
@@ -272,11 +272,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code float} array.</P>
+		<p>Get the {@code float} array.</p>
 
-		@return   <CODE>(float[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(float[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#FLOAT}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#FLOAT}</code>
 	 **/
 	public final float[] getAOFloat()  {
 		cinArray("Float");
@@ -287,11 +287,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code double} array.</P>
+		<p>Get the {@code double} array.</p>
 
-		@return   <CODE>(double[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(double[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#DOUBLE}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#DOUBLE}</code>
 	 **/
 	public final double[] getAODouble()  {
 		cinArray("Double");
@@ -302,11 +302,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code char} array.</P>
+		<p>Get the {@code char} array.</p>
 
-		@return   <CODE>(char[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(char[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#CHAR}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#CHAR}</code>
 	 **/
 	public final char[] getAOChar()  {
 		cinArray("Char");
@@ -317,17 +317,17 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the {@code java.lang.Object} array.</P>
+		<p>Get the {@code java.lang.Object} array.</p>
 
-		<P>Note that this {@code getAO} function is unique, as it is the only one which that can be called for multiple types. Specifically, when {@link #getELType() getELType}{@code ()} is <I>either</I> <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#OBJECT}} or {@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#ARRAY}</CODE></P>
+		<p>Note that this {@code getAO} function is unique, as it is the only one which that can be called for multiple types. Specifically, when {@link #getELType() getELType}{@code ()} is <i>either</i> <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#OBJECT}} or {@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#ARRAY}</code></p>
 
-		<P>Note also, that while
-		<BR> &nbsp; &nbsp; {@code (new Object[] {"Hello", null, (new int[] {1, 2, 3})})}
-		<BR>has an element type of {@code LMNT_TYPE_IS.ARRAY}
-		<BR> &nbsp; &nbsp; {@code (new Object[][] {(new String[]{"Hello"}), null, (new int[] {1, 2, 3})})}
-		<BR>has an element type of {@code LMNT_TYPE_IS.OBJECT}</P>
+		<p>Note also, that while
+		<br/> &nbsp; &nbsp; {@code (new Object[] {"Hello", null, (new int[] {1, 2, 3})})}
+		<br/>has an element type of {@code LMNT_TYPE_IS.ARRAY}
+		<br/> &nbsp; &nbsp; {@code (new Object[][] {(new String[]{"Hello"}), null, (new int[] {1, 2, 3})})}
+		<br/>has an element type of {@code LMNT_TYPE_IS.OBJECT}</p>
 
-		@return   <CODE>(Object[]){@link #getObject() getObject}()</CODE>
+		@return   <code>(Object[]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
 		@exception  ClassCastException  If {@code getELType()} is not {@code LMNT_TYPE_IS.OBJECT}
 	 **/
@@ -340,11 +340,11 @@ public class GetArrayFromObjectThatIs  {
 		}
 	}
 	/**
-		<P>Get the <I>array</I> array (the double-array).</P>
+		<p>Get the <i>array</i> array (the double-array).</p>
 
-		@return   <CODE>(Object[][]){@link #getObject() getObject}()</CODE>
+		@return   <code>(Object[][]){@link #getObject() getObject}()</code>
 		@exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
-		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <CODE>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#ARRAY}</CODE>
+		@exception  ClassCastException  If {@link #getELType() getELType}{@code ()} is not <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#ARRAY}</code>
 		@see  #getAOObject() "for a special note on double-arrays"
 	 **/
 	public final Object[] getAOArray()  {
@@ -365,7 +365,7 @@ public class GetArrayFromObjectThatIs  {
 	}
 	private static final String LINE_SEP = System.getProperty("line.separator", "\n");
 	/**
-		<P>Testing function.</P>
+		<p>Testing function.</p>
 
 		@param  test_name  Descriptive name for this test.
 		@param  array_object  The object to test. Passed directly to the {@link #GetArrayFromObjectThatIs(Object, boolean) constructor}.
@@ -373,8 +373,8 @@ public class GetArrayFromObjectThatIs  {
 		@param  iselfCmprcxXpctdInCnstr  Is a {@code ClassCastException} expected from the constructor?
 		@param  expectedType_nullIfNotArray  If null, then {@code array_object} is either null or not an array. Otherwise, this is its element-type.
 		@param  xpctd_len  The expected length of the array, if it is one.
-		@return  <B>{@code null}</B> When actual values are as expected.
-		<BR>A descriptive string when actual is unexpected.
+		@return  <b>{@code null}</b> When actual values are as expected.
+		<br/>A descriptive string when actual is unexpected.
 	 **/
 	public static final String getMsgIfUnexpected(String test_name, Object array_object, boolean do_crashIfObjNNullAndNotArray, boolean iselfCmprcxXpctdInCnstr, LMNT_TYPE_IS expectedType_nullIfNotArray, int xpctd_len)  {
 		String s = "";

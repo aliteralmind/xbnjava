@@ -16,17 +16,17 @@ package  com.github.xbn.list.lister.z;
 	import  com.github.xbn.list.lister.ListLister;
 	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.list.lister.ListLister ListLister}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.list.lister.ListLister ListLister}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListLister_Cfg<E> extends ListLister_CfgForNeeder<E,ListLister<E>,DummyForNoNeeder>   {
 	/**
-		<P>Create a new {@code zListLister_Cfg} with defaults.</P>
+		<p>Create a new {@code zListLister_Cfg} with defaults.</p>
 
-			<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ListLister_CfgForNeeder.html#ListLister_CfgForNeeder(R)">super</A>(null)</CODE></P>
+			<p>Equal to
+		<br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ListLister_CfgForNeeder.html#ListLister_CfgForNeeder(R)">super</a>(null)</code></p>
 	 **/
 	public ListLister_Cfg()  {
 		super(null);

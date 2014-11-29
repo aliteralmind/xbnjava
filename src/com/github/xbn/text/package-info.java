@@ -1,5 +1,5 @@
 /**
-	<P>Basic utilities for text and strings.</P>
+	<p>Basic utilities for text and strings.</p>
 
 	@see  com.github.xbn.io.PlainTextFileUtil
  **/

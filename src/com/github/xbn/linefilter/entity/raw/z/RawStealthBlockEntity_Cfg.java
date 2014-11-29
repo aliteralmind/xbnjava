@@ -18,26 +18,26 @@ package  com.github.xbn.linefilter.entity.raw.z;
 	import  com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity;
 	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity RawStealthBlockEntity}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity RawStealthBlockEntity}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RawStealthBlockEntity_Cfg<L> extends RawStealthBlockEntity_CfgForNeeder<L,RawStealthBlockEntity<L>,DummyForNoNeeder>   {
 	/**
-		<P>Create a new {@code RawStealthBlockEntity_Cfg} for the root-mode only.</P>
+		<p>Create a new {@code RawStealthBlockEntity_Cfg} for the root-mode only.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #RawStealthBlockEntity_Cfg(String) this}(&quot;stealthblock&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #RawStealthBlockEntity_Cfg(String) this}(&quot;stealthblock&quot;)</code></p>
 	 **/
 	public RawStealthBlockEntity_Cfg()  {
 		this("stealthblock");
 	}
 	/**
-		<P>Create a new {@code RawStealthBlockEntity_Cfg} for a sub-mode (which will be added to another already-existing mode).</P>
+		<p>Create a new {@code RawStealthBlockEntity_Cfg} for a sub-mode (which will be added to another already-existing mode).</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RawStealthBlockEntity_CfgForNeeder.html#RawStealthBlockEntity_CfgForNeeder(R, java.lang.String)">super</A>(null, name)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawStealthBlockEntity_CfgForNeeder.html#RawStealthBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
 		@see  #RawStealthBlockEntity_Cfg() this()
 	 **/
 	public RawStealthBlockEntity_Cfg(String name)  {

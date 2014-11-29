@@ -13,10 +13,10 @@ package  com.github.xbn.array.primitive;
 	import  com.github.xbn.array.z.XbnIbxBase_Cfg;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-	<P>Determine if an object is a primitive or wrapper array, and get the length of an object known to be a primitive array.</P>
+	<p>Determine if an object is a primitive or wrapper array, and get the length of an object known to be a primitive array.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ObjThatIsPrimitiveArrayUtil  {
 //internal
@@ -32,29 +32,29 @@ public class ObjThatIsPrimitiveArrayUtil  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>Get the length of a primitive array <I>as held in an object</I>.</P>
+		<p>Get the length of a primitive array <i>as held in an object</i>.</p>
 
-		@return  <CODE>{@link #getLengthFromUnknownAsObject(Object, String, Object) getLengthFromUnknownAsObject}(objThatIs_primArray, &quot;objThatIs_primArray&quot;, null)</CODE>
+		@return  <code>{@link #getLengthFromUnknownAsObject(Object, String, Object) getLengthFromUnknownAsObject}(objThatIs_primArray, &quot;objThatIs_primArray&quot;, null)</code>
 	 **/
 	public static final int getLengthFromUnknownAsObject(Object objThatIs_primArray)  {
 		return  getLengthFromUnknownAsObject(objThatIs_primArray, "objThatIs_primArray", null);
 	}
 	/**
-		<P>Get the length of a primitive array <I>as held in an object</I>.</P>
+		<p>Get the length of a primitive array <i>as held in an object</i>.</p>
 
-		<P><I>This function originates in {@link com.github.xbn.array.z.XbnIbxBase_Cfg XbnIbxBase_Cfg} because that class must be compiled before this one.</I></P>
+		<p><i>This function originates in {@link com.github.xbn.array.z.XbnIbxBase_Cfg XbnIbxBase_Cfg} because that class must be compiled before this one.</i></p>
 
 		@param  objThatIs_primArray  May not be {@code null}, and must be a primitive array.
-		@param  obj_name  Descriptive name of {@code objThatIs_primArray}. <I>Should</I> not be {@code null} or empty.
+		@param  obj_name  Descriptive name of {@code objThatIs_primArray}. <i>Should</i> not be {@code null} or empty.
 		@param  xtra_errInfo  Optional extra information for the potential error message.
-		@return  <CODE>{@link com.github.xbn.array.z.XbnIbxBase_Cfg XbnIbxBase_Cfg}.{@link com.github.xbn.array.z.XbnIbxBase_Cfg#getLengthFromUnknownAsObject(Object, String, Object) getLengthFromUnknownAsObject}(objThatIs_primArray, obj_name, xtra_errInfo)</CODE>
+		@return  <code>{@link com.github.xbn.array.z.XbnIbxBase_Cfg XbnIbxBase_Cfg}.{@link com.github.xbn.array.z.XbnIbxBase_Cfg#getLengthFromUnknownAsObject(Object, String, Object) getLengthFromUnknownAsObject}(objThatIs_primArray, obj_name, xtra_errInfo)</code>
 		@see  #getLengthFromUnknownAsObject(Object)
 	 **/
 	public static final int getLengthFromUnknownAsObject(Object objThatIs_primArray, String obj_name, Object xtra_errInfo)  {
 		return  XbnIbxBase_Cfg.getLengthFromUnknownAsObject(objThatIs_primArray, obj_name, xtra_errInfo);
 	}
 	/**
-		<P>Is the provided object actually an array of primitives?.</P>
+		<p>Is the provided object actually an array of primitives?.</p>
 
 		@param  objThatMayBe_primArray  May not be {@code null}.
 		@return  {@link #isPrimitiveType(Class) isPrimitiveType}{@code (objThatMayBe_primArray.getClass())}
@@ -67,18 +67,18 @@ public class ObjThatIsPrimitiveArrayUtil  {
 		}
 	}
 	/**
-		<P>Is a class-type a primitive array?</P>
+		<p>Is a class-type a primitive array?</p>
 
-		<P>Idea from (viewed 12/5/2013)
-		<BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/">http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/</A></CODE></P>
+		<p>Idea from (viewed 12/5/2013)
+		<br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/">http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/</a></code></p>
 
 		@return  {@code true}  If
-		<BR> &nbsp; &nbsp; {@code objThatMayBe_primArray.getClass().isAssignableFrom(clsPType)}
-		<BR>is {@code true}, where {@code clsPType} is equal to one of the following:<UL>
-			<LI>{@code boolean[].class}, {@code char[].class}</LI>
-			<LI>{@code byte[].class}, {@code short[].class}, {@code int[].class}, {@code long[].class}</LI>
-			<LI>{@code float[].class}, {@code double[].class}</LI>
-		</UL>
+		<br/> &nbsp; &nbsp; {@code objThatMayBe_primArray.getClass().isAssignableFrom(clsPType)}
+		<br/>is {@code true}, where {@code clsPType} is equal to one of the following:<ul>
+			<li>{@code boolean[].class}, {@code char[].class}</li>
+			<li>{@code byte[].class}, {@code short[].class}, {@code int[].class}, {@code long[].class}</li>
+			<li>{@code float[].class}, {@code double[].class}</li>
+		</ul>
 		@see  #isPrimitive(Object)
 	 **/
 	public static final boolean isPrimitiveType(Class<?> clss)  {

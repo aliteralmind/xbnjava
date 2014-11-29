@@ -14,23 +14,23 @@
 \*license*/
 package  com.github.xbn.neederneedable;
 /**
-	<P>A {@code Chainable} whose purpose is to configure a single object, particularly a highly-configurable one, as needed by a {@code Needer}--a needable's self-returning function chain in is <I>shareable</I>, meaning it can be used by other classes <I>without those classes having to implement the functions</I>. See {@link com.github.xbn.neederneedable.Needer Needer}. {@code Needable}-s may be used  <A HREF="#direct">directly</A> or <A HREF="#indirect">indirectly</A></P>
+	<p>A {@code Chainable} whose purpose is to configure a single object, particularly a highly-configurable one, as needed by a {@code Needer}--a needable's self-returning function chain in is <i>shareable</i>, meaning it can be used by other classes <i>without those classes having to implement the functions</i>. See {@link com.github.xbn.neederneedable.Needer Needer}. {@code Needable}-s may be used  <a href="#direct">directly</a> or <a href="#indirect">indirectly</a></p>
 
 	@param  O  The type of needed object.
 	@param  R  The type of object needing the {@code O}.
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface Needable<O,R extends Needer> extends Chainable  {
 	/**
-		<P>Must this {@code Needable} be used directly?.</P>
+		<p>Must this {@code Needable} be used directly?.</p>
 
-		<A NAME="indirect"></A><H3>Indirect use</H3>
+		<A NAME="indirect"></a><h3>Indirect use</h3>
 
-		<P>The primary use of {@code Needable}-s is to make their method-chains available to any <I>needing</I> class--a {@link com.github.xbn.neederneedable.Needer Needer}. For example:
+		<p>The primary use of {@code Needable}-s is to make their method-chains available to any <i>needing</i> class--a {@link com.github.xbn.neederneedable.Needer Needer}. For example:
 
-<PRE>public static final void main(String[] ignored)  {
+<pre>public static final void main(String[] ignored)  {
 	UserSettings us = (new UserSettings()).
 		cfgFavInt().twentySeven().timesTwo().increment().endCfg().  //shared-chain
 		name("President Obama");                                    //local-chain
@@ -41,81 +41,81 @@ public interface Needable<O,R extends Needer> extends Chainable  {
 {@literal public FavNumConfigurator4Ndr<UserSettings> cfgFavInt()  {
 	FavNumConfigurator4Ndr<UserSettings> fnc = new FavNumConfigurator4Ndr<UserSettings>();
 	return  fnc.startConfigReturnNeedable(this);
-}}</PRE>
+}}</pre>
 
-		<P>The needable class, {@code FavNumConfigurator4Ndr}, is only instantiated by the needer. It is recommended that all {@code Needable}-s be named with a {@code ForNeeder} postfix.</P>
+		<p>The needable class, {@code FavNumConfigurator4Ndr}, is only instantiated by the needer. It is recommended that all {@code Needable}-s be named with a {@code ForNeeder} postfix.</p>
 
-		<P><I>All {@code Needable}-s may be <U>indirectly</U> used.</I></P>
+		<p><i>All {@code Needable}-s may be <u>indirectly</u> used.</i></p>
 
-		<A NAME="direct"></A><H3>Direct use</H3>
+		<A NAME="direct"></a><h3>Direct use</h3>
 
-		<P>Some {@code Needable}-s may also allow direct use. That is, the {@code Needable} can be directly instantiated, which implies that the {@code Needer} is ignored. For example</P>
+		<p>Some {@code Needable}-s may also allow direct use. That is, the {@code Needable} can be directly instantiated, which implies that the {@code Needer} is ignored. For example</p>
 
-		<BR> &nbsp; &nbsp; {@code int iFav = (new FavNumConfigurator()).
-		<BR> &nbsp; &nbsp; twentySeven().timesTwo().increment().get();}</P>
+		<br/> &nbsp; &nbsp; {@code int iFav = (new FavNumConfigurator()).
+		<br/> &nbsp; &nbsp; twentySeven().timesTwo().increment().get();}</p>
 
-		<P>Where {@code FavNumConfigurator} is a trivial class whose only purpose is to pass in a <I>dummy</I> (ignored) {@code Needer} to its super-{@code Needable}:</P>
+		<p>Where {@code FavNumConfigurator} is a trivial class whose only purpose is to pass in a <i>dummy</i> (ignored) {@code Needer} to its super-{@code Needable}:</p>
 
-<PRE>public class FavNumConfigurator extends FavNumConfigurator4Ndr&lt;{@link com.github.xbn.neederneedable.DummyForNoNeeder DummyForNoNeeder}&gt;  {
+<pre>public class FavNumConfigurator extends FavNumConfigurator4Ndr&lt;{@link com.github.xbn.neederneedable.DummyForNoNeeder DummyForNoNeeder}&gt;  {
 	//The only constructor in FavNumConfigurator4Ndr, and in this class,
 	//is a zero-parameter constructor, which is implicitly specified.
-}</PRE>
+}</pre>
 
-		@return  <UL>
-			<LI>{@code true}: May be used indirectly or directly. It is safe to call  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#startConfigReturnNeedable(R)">startConfigReturnNeedable</A>(R)</CODE> and {@link #endCfg() endCfg}{@code ()}</LI>
-			<LI>{@code false}:  <I>This {@code Needable} instance</I> must be used directly--it is illegal to call {@code startConfigReturnNeedable(R)} and {@code endCfg()}. <I>When this returns {@code false}, YYY</I></LI>
-		</UL>
+		@return  <ul>
+			<li>{@code true}: May be used indirectly or directly. It is safe to call  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(R)</code> and {@link #endCfg() endCfg}{@code ()}</li>
+			<li>{@code false}:  <i>This {@code Needable} instance</i> must be used directly--it is illegal to call {@code startConfigReturnNeedable(R)} and {@code endCfg()}. <i>When this returns {@code false}, YYY</i></li>
+		</ul>
 	 **/
 	boolean isAvailableToNeeder();
 	/**
-		<P>Start the configuration of a new object. For <A HREF="#indirect">indirect</A> use only.</P>
+		<p>Start the configuration of a new object. For <a href="#indirect">indirect</a> use only.</p>
 
-		<P>This sets<OL>
-			<LI>{@code getActiveNeeder()} to {@code true}.</LI>
-			<LI>{@link #isNeededUsable() isNeededUsable}{@code ()} as appropriate. <I>The value of {@code isNeededUsable()} must be maintained throughout this classes lifetime.</I></LI>
-		</OL></P>
+		<p>This sets<ol>
+			<li>{@code getActiveNeeder()} to {@code true}.</li>
+			<li>{@link #isNeededUsable() isNeededUsable}{@code ()} as appropriate. <i>The value of {@code isNeededUsable()} must be maintained throughout this classes lifetime.</i></li>
+		</ol></p>
 
-		<P>After calling this function, use the {@code Needable}'s self-returning functions to configure the object. The final call in the chain is always {@link #endCfg() endCfg}{@code ()}.</P>
+		<p>After calling this function, use the {@code Needable}'s self-returning functions to configure the object. The final call in the chain is always {@link #endCfg() endCfg}{@code ()}.</p>
 
 		@param  needer  The {@code Needer} needing the configured object. May not be {@code null}. Get with {@link #getActiveNeeder() getActiveNeeder}{@code ()}.
-		@return  <I>{@code this}</I> {@code Needable}
+		@return  <i>{@code this}</i> {@code Needable}
 		@exception  IllegalStateException  If {@code getActiveNeeder()} is {@code null} or {@link #isAvailableToNeeder() isAvailableToNeeder}{@code ()} is {@code false}.
 	 **/
 	Needable<O,R> startConfigReturnNeedable(R needer);
 	/**
-		<P>Is an object currently being configured?.</P>
+		<p>Is an object currently being configured?.</p>
 
-		@return  {@code true}  If <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#startConfigReturnNeedable(R)">startConfigReturnNeedable</A>(R)</CODE> was called more recently than {@link #endCfg() endCfg}{@code ()}, or {@link #isAvailableToNeeder() isAvailableToNeeder}{@code ()} is {@code true}.
+		@return  {@code true}  If <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(R)</code> was called more recently than {@link #endCfg() endCfg}{@code ()}, or {@link #isAvailableToNeeder() isAvailableToNeeder}{@code ()} is {@code true}.
 	 **/
 	R getActiveNeeder();
 	/**
-		<P>Is the currently-being-configured object in a usable state?. Used when portions of the configuration require multiple contiguous steps, which were started but not completed.</P>
+		<p>Is the currently-being-configured object in a usable state?. Used when portions of the configuration require multiple contiguous steps, which were started but not completed.</p>
 
 		@return  {@code true} If {@link #endCfg() endCfg}{@code ()} can be safely called. Otherwise, the {@code toString()} for this {@code Needable} should contain clear rules on how usability is achieved.
 		@exception  IllegalStateException  If {@code getActiveNeeder()} is {@code null}.
-		@see <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#startConfigReturnNeedable(R)">startConfigReturnNeedable</A>(R)</CODE>
+		@see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(R)</code>
 	 **/
 	boolean isNeededUsable();
 	/**
-		<P>Get the fully-configured object, and prepare for the next configuration. For <A HREF="#indirect">indirect</A> use only.</P>
+		<p>Get the fully-configured object, and prepare for the next configuration. For <a href="#indirect">indirect</a> use only.</p>
 
-		<P>This<OL>
-			<LI>Calls <CODE>{@link #getActiveNeeder() getActiveNeeder}().{@link com.github.xbn.neederneedable.Needer#neeadableSetsNeeded(Object) neeadableSetsNeeded}(<I>[the-fully-configured-object]</I>)</CODE></LI>
-			<LI>Sets {@code getActiveNeeder()} to {@code null}</LI>
-			<LI>Returns the needer.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls <code>{@link #getActiveNeeder() getActiveNeeder}().{@link com.github.xbn.neederneedable.Needer#neeadableSetsNeeded(Object) neeadableSetsNeeded}(<i>[the-fully-configured-object]</i>)</code></li>
+			<li>Sets {@code getActiveNeeder()} to {@code null}</li>
+			<li>Returns the needer.</li>
+		</ol></p>
 
 		@exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is {@code null} or {@link #isNeededUsable() isNeededUsable}{@code ()} is {@code false}.
-		@see <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#startConfigReturnNeedable(R)">startConfigReturnNeedable</A>(R)</CODE>
+		@see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(R)</code>
 	 **/
 	R endCfg();
 	/**
-		<P>Should all builder-data be re-verified in the enclosing ({@code Needer}) constructor?. Using this flag is only necessary when thread-safety is a concern.</P>
+		<p>Should all builder-data be re-verified in the enclosing ({@code Needer}) constructor?. Using this flag is only necessary when thread-safety is a concern.</p>
 
-		<P>A {@code Needable} that is also a Builder-pattern (as in Effective Java by Joshua Bloch, 2nd ed, item 2), is implemented as a static enclosing class. Because of this, other threads may change the data before the class is built ({@code build()} is called). This may require a re-verification of all data in the enclosing class. See (viewed 1/5/2014)
-		<BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co">http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co</A>}</P>
+		<p>A {@code Needable} that is also a Builder-pattern (as in Effective Java by Joshua Bloch, 2nd ed, item 2), is implemented as a static enclosing class. Because of this, other threads may change the data before the class is built ({@code build()} is called). This may require a re-verification of all data in the enclosing class. See (viewed 1/5/2014)
+		<br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co">http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co</a>}</p>
 
-   <P>{@code java com.github.xbn.examples.neederneedable.ReverifyBuilderInEnclosingCnstrXmpl}</P>
+   <p>{@code java com.github.xbn.examples.neederneedable.ReverifyBuilderInEnclosingCnstrXmpl}</p>
 
 		@return  {@code true}  If the enclosing classes constructor should re-verify all data retrieved from the builder.
 	boolean doReverifyInEnclosing();

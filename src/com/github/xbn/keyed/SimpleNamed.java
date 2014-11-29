@@ -18,10 +18,10 @@ package  com.github.xbn.keyed;
 	import  java.util.regex.Pattern;
 	import  java.util.regex.Matcher;
 /**
-	<P>Implementation of {@code Named}.</P>
+	<p>Implementation of {@code Named}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleNamed extends SimpleKeyed<String> implements Named  {
 //constructors...START
@@ -30,10 +30,10 @@ public class SimpleNamed extends SimpleKeyed<String> implements Named  {
 		this(name, "name");
 	}
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link SimpleKeyed#SimpleNamed(String, String) this}{@code (name, "name")}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link SimpleKeyed#SimpleNamed(String, String) this}{@code (name, "name")}</p>
 	 **/
 	public SimpleNamed(String name, String name_varName)  {
 		super(name);
@@ -41,16 +41,16 @@ public class SimpleNamed extends SimpleKeyed<String> implements Named  {
 //		this(name, "name");
 	}
 	/*
-		<P>Create a new instance</P>
+		<p>Create a new instance</p>
 	public SimpleNamed(String name, String nameName)  {
 		super(name, OneParamCnstrValueCopier.STRING);
 	}
 	 */
 	/*
-		<P>Create a new {@code SimpleNamed} as a duplicate of another.</P>
+		<p>Create a new {@code SimpleNamed} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link SimpleKeyed#SimpleKeyed(Keyed) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link SimpleKeyed#SimpleKeyed(Keyed) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -63,9 +63,9 @@ public class SimpleNamed extends SimpleKeyed<String> implements Named  {
 		return  getKey();
 	}
 	/*
-		<P>Duplicate this {@code SimpleNamed}.</P>
+		<p>Duplicate this {@code SimpleNamed}.</p>
 
-		@return  <CODE>(new {@link #SimpleNamed(Named) SimpleNamed}(this))</CODE>
+		@return  <code>(new {@link #SimpleNamed(Named) SimpleNamed}(this))</code>
 	public SimpleNamed getObjectCopy()  {
 		return  (new SimpleNamed(this));
 	}

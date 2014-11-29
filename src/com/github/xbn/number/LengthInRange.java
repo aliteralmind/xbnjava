@@ -21,40 +21,40 @@ package  com.github.xbn.number;
 	import  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil;
 	import  java.util.Collection;
 /**
-	<P>Determines if a length is within a {@code LengthRange}.</P>
+	<p>Determines if a length is within a {@code LengthRange}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LengthInRange extends IntInRange implements LengthRange  {
 //public
 	/**
-		<P>An {@code LengthInRange} with no bounds.</P>
+		<p>An {@code LengthInRange} with no bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>new {@link #LengthInRange() LengthInRange}()</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>new {@link #LengthInRange() LengthInRange}()</code></p>
 	 **/
 	public static final LengthInRange UNRESTRICTED = new LengthInRange();
 	/**
-		<P>An {@code LengthInRange} with no members.</P>
+		<p>An {@code LengthInRange} with no members.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>new {@link #LengthInRange(Invert, int, String, IntBound) LengthInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, 0, null, null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>new {@link #LengthInRange(Invert, int, String, IntBound) LengthInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, 0, null, null)</code></p>
 	 **/
 	public static final LengthInRange IMPOSSIBLE = new LengthInRange(Invert.YES, 0, null, null);
 	/**
-		<P>An instance in which only zero is bad--Equal to <CODE>new #LengthInRange(int, String, IntBoundInclusive)(1, null, null)</CODE></P>
+		<p>An instance in which only zero is bad--Equal to <code>new #LengthInRange(int, String, IntBoundInclusive)(1, null, null)</code></p>
 	 **/
 	public static final LengthInRange GREATER_THAN_ZERO = new LengthInRange(1, null, null);
 	/**
-		<P>An instance in which only zero is good--Equal to <CODE>new #LengthInRange(int, String, IntBound)(0, null, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null))</CODE></P>
+		<p>An instance in which only zero is good--Equal to <code>new #LengthInRange(int, String, IntBound)(0, null, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null))</code></p>
 	 **/
 	public static final LengthInRange ZERO_ONLY = new LengthInRange(0, null, new IntBoundInclusive(0, null));
 	/**
-		<P>Create an instance with no maximum bound.</P>
+		<p>Create an instance with no maximum bound.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #LengthInRange(int, String, IntBound) this}(0, null, null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #LengthInRange(int, String, IntBound) this}(0, null, null)</code></p>
 
 		@see  #UNRESTRICTED
 	 **/
@@ -62,70 +62,70 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		this(0, null, null);
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
+		<p>Create a new instance with bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(int, int, String, String) this}(min, max_exclusive, null, null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link LengthInRange#LengthInRange(int, int, String, String) this}(min, max_exclusive, null, null)</code></p>
 	 **/
 	public LengthInRange(int min, int max_exclusive)  {
 		this(min, max_exclusive, null, null);
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
+		<p>Create a new instance with bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min, max_exclusive, min_name, max_name)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min, max_exclusive, min_name, max_name)</code></p>
 	 **/
 	public LengthInRange(int min, int max_exclusive, String min_name, String max_name)  {
 		this(Invert.NO, min, max_exclusive, min_name, max_name);
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
+		<p>Create a new instance with bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min, min_name, max_bound)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min, min_name, max_bound)</code></p>
 	 **/
 	public LengthInRange(int min, String min_name, IntBound max_bound)  {
 		this(Invert.NO, min, min_name, max_bound);
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
+		<p>Create a new instance with bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link LengthInRange#LengthInRange(Invert, IntBoundInclusive, IntBound) this}{@code ({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min_bound, max_bound)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link LengthInRange#LengthInRange(Invert, IntBoundInclusive, IntBound) this}{@code ({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, min_bound, max_bound)}</p>
 	 **/
 	public LengthInRange(IntBoundInclusive min_bound, IntBound max_bound)  {
 		this(Invert.NO, min_bound, max_bound);
 	}
 	/**
-		<P>Create a new instance with bounds and invert-setting.</P>
+		<p>Create a new instance with bounds and invert-setting.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}(invert, min, max_exclusive, null, null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link LengthInRange#LengthInRange(Invert, int, int, String, String) this}(invert, min, max_exclusive, null, null)</code></p>
 	 **/
 	public LengthInRange(Invert invert, int min, int max_exclusive)  {
 		this(invert, min, max_exclusive, null, null);
 	}
 	/**
-		<P>Create a new instance with bounds and invert setting.</P>
+		<p>Create a new instance with bounds and invert setting.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link LengthInRange#LengthInRange(Invert, int, String, IntBound) this}(invert, min, min_name, new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max_exclusive, max_name))</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link LengthInRange#LengthInRange(Invert, int, String, IntBound) this}(invert, min, min_name, new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max_exclusive, max_name))</code></p>
 	 **/
 	public LengthInRange(Invert invert, int min, int max_exclusive, String min_name, String max_name)  {
 		this(invert, min, min_name, new IntBoundExclusive(max_exclusive, max_name));
 	}
 	/**
-		<P>Create a new instance with bounds and invert-setting.</P>
+		<p>Create a new instance with bounds and invert-setting.</p>
 	 **/
 	public LengthInRange(Invert invert, int min, String min_name, IntBound max_bound)  {
 		this(invert, new IntBoundInclusive(min, min_name), max_bound);
 	}
 	/**
-		<P>Create a new instance with bounds and invert-setting.</P>
+		<p>Create a new instance with bounds and invert-setting.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link IntInRange#IntInRange(Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</p>
 
 		@see  #LengthInRange() this()
 		@see  #LengthInRange(int, int) this(i,i)
@@ -140,10 +140,10 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		super(invert, min_bound, max_bound);
 	}
 	/**
-		<P>If the bounds of this {@code LengthInRange} are invalid, crash.</P>
+		<p>If the bounds of this {@code LengthInRange} are invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>IntInRange.{@link #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength}({@link com.github.xbn.number.NumberInRange#getMinBound() getMinBound}(), {@link com.github.xbn.number.NumberInRange#getMaxBound() getMaxBound}, &quot;getMinBound()&quot;, &quot;getMaxBound()&quot;, {@link com.github.xbn.lang.ExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}())</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength}({@link com.github.xbn.number.NumberInRange#getMinBound() getMinBound}(), {@link com.github.xbn.number.NumberInRange#getMaxBound() getMaxBound}, &quot;getMinBound()&quot;, &quot;getMaxBound()&quot;, {@link com.github.xbn.lang.ExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}())</code></p>
 	 **/
 	public void crashIfBadBoundsForCnstr()  {
 		IntInRange.crashIfBadBoundsForLength(getMinBound(), getMaxBound(), "getMinBound()", "getMaxBound()", getExtraErrInfo());
@@ -161,19 +161,19 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		return  new LengthInRange(Invert.getForBoolean(!isInverted()), getMinBound(), getMaxBound());
 	}
 	/**
-		<P>If a container's length is invalid, crash.</P>
+		<p>If a container's length is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE><I>[{@link IntInRange super}]</I>.{@link IntInRange#crashIfBadIntObject(Integer, String) crashIfBadIntObject}(length, cntr_name)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code><i>[{@link IntInRange super}]</i>.{@link IntInRange#crashIfBadIntObject(Integer, String) crashIfBadIntObject}(length, cntr_name)</code></p>
 	 **/
 	public void crashIfBadContainer(int length, String cntr_name)  {
 		crashIfBadIntObject(length, cntr_name);
 	}
 	/**
-		<P>If a string's length is invalid, crash.</P>
+		<p>If a string's length is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainer}{@code (text.toString().length(), cntr_name)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainer}{@code (text.toString().length(), cntr_name)}</p>
 
 		@param  text  May not be {@code null}.
 		@see  #crashIfBadContainer(int, String)
@@ -182,10 +182,10 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		crashIfBadContainer(text.toString().length(), cntr_name);
 	}
 	/**
-		<P>If an array's length is invalid, crash.</P>
+		<p>If an array's length is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainerLength}{@code (array.length, cntr_name)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainerLength}{@code (array.length, cntr_name)}</p>
 
 		@param  array  May not be {@code null}.
 		@see  #crashIfBadContainer(int, String)
@@ -194,10 +194,10 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		crashIfBadContainer(ArrayUtil.getLengthCrashIfNull(array, "array"), cntr_name);
 	}
 	/**
-		<P>If a collection's size is invalid, crash.</P>
+		<p>If a collection's size is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainerLength}{@code (coll.size(), cntr_name)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainerLength}{@code (coll.size(), cntr_name)}</p>
 
 		@param  coll  May not be {@code null}.
 		@see  #crashIfBadContainer(int, String) crashIfBadContainer(i,s)
@@ -206,10 +206,10 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		crashIfBadContainer(CollectionUtil.getSizeCrashIfNull(coll, cntr_name), cntr_name);
 	}
 	/**
-		<P>If a primitive array's length is invalid, crash.</P>
+		<p>If a primitive array's length is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainerLength}{@code (coll.size(), cntr_name)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #crashIfBadContainer(int, String) crashIfBadContainerLength}{@code (coll.size(), cntr_name)}</p>
 
 		@param  objThatIs_primArray  May not be {@code null}, and must be a primitive array.
 		@see  #crashIfBadContainer(int, String)
@@ -218,20 +218,20 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		crashIfBadContainer(ObjThatIsPrimitiveArrayUtil.getLengthFromUnknownAsObject(objThatIs_primArray, cntr_name, getExtraErrInfo()), cntr_name);
 	}
 	/**
-		<P>If an element's length is invalid, crash. The only difference between this and {@code crashIfBadContainer(i,s,s,o)} is the potential error message.</P>
+		<p>If an element's length is invalid, crash. The only difference between this and {@code crashIfBadContainer(i,s,s,o)} is the potential error message.</p>
 
 		<!-- MAIN FUNCTION -->
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE><I>[{@link IntInRange super}]</I>.{@link IntInRange#crashIfBadIntElement(Integer, String, int) crashIfBadIntElement}(length, cntr_name, idx_inCntr)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code><i>[{@link IntInRange super}]</i>.{@link IntInRange#crashIfBadIntElement(Integer, String, int) crashIfBadIntElement}(length, cntr_name, idx_inCntr)</code></p>
 	 **/
 	public void crashIfBadElement(int length, String cntr_name, int idx_inCntr)  {
 		crashIfBadIntElement(length, cntr_name, idx_inCntr);
 	}
 	/**
-		<P>If the length of a string <I>that is an element in a larger container</I> is invalid, crash.</P>
+		<p>If the length of a string <i>that is an element in a larger container</i> is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #crashIfBadElement(int, String, int) crashIfBadElementLength}{@code (text.toString().length(), cntr_name, idx_inCntr)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #crashIfBadElement(int, String, int) crashIfBadElementLength}{@code (text.toString().length(), cntr_name, idx_inCntr)}</p>
 
 		@param  text  May not be {@code null}.
 		@see  #crashIfBadElement(int, String, int) crashIfBadElement(i,s,i)
@@ -240,10 +240,10 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		crashIfBadElement(StringUtilBase.getLengthCrashIfNull(text, cntr_name), cntr_name, idx_inCntr);
 	}
 	/**
-		<P>If the length of an array <I>that is an element in a larger container</I> is invalid, crash.</P>
+		<p>If the length of an array <i>that is an element in a larger container</i> is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #crashIfBadElement(int, String, int) crashIfBadElement(array.length, cntr_name, idx_inCntr)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #crashIfBadElement(int, String, int) crashIfBadElement(array.length, cntr_name, idx_inCntr)}</p>
 
 		@param  array  May not be {@code null}.
 		@see  #crashIfBadElement(int, String, int) crashIfBadElement(i,s,i)
@@ -252,10 +252,10 @@ public class LengthInRange extends IntInRange implements LengthRange  {
 		crashIfBadElement(ArrayUtil.getLengthCrashIfNull(array, cntr_name), cntr_name, idx_inCntr);
 	}
 	/**
-		<P>If the length of a {@code java.util.Collection} <I>that is an element in a larger container</I> is invalid, crash.</P>
+		<p>If the length of a {@code java.util.Collection} <i>that is an element in a larger container</i> is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #crashIfBadElement(int, String, int) crashIfBadElementLength}{@code (coll.size(), cntr_name, idx_inCntr)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #crashIfBadElement(int, String, int) crashIfBadElementLength}{@code (coll.size(), cntr_name, idx_inCntr)}</p>
 
 		@param  coll  May not be {@code null}.
 		@see  #crashIfBadElement(int, String, int) crashIfBadElement(i,s,i)

@@ -14,17 +14,17 @@
 \*license*/
 package  com.github.xbn.util;
 /**
-   <P>When retrieving an enum from its string representation, if the string is {@code null} or empty, should a default value be provided for it?.</P>
+   <p>When retrieving an enum from its string representation, if the string is {@code null} or empty, should a default value be provided for it?.</p>
 
-   <P><I>This is used by {@link com.github.xbn.util.EnumUtil EnumUtil}, and therefore this class cannot directly use it.</I></P>
+   <p><i>This is used by {@link com.github.xbn.util.EnumUtil EnumUtil}, and therefore this class cannot directly use it.</i></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum DefaultValueFor  {
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #NULL_ONLY
       @see  #EMPTY_ONLY
@@ -33,21 +33,21 @@ public enum DefaultValueFor  {
     **/
    NULL_OR_EMPTY,
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #NULL_OR_EMPTY
       @see  #nullOnly()
     **/
    NULL_ONLY,
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #NULL_OR_EMPTY
       @see  #emptyOnly()
     **/
    EMPTY_ONLY,
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #NULL_OR_EMPTY
       @see  #nothing()
@@ -60,9 +60,9 @@ public enum DefaultValueFor  {
 		return  (nullOrEmpty()  ||  emptyOnly());
 	}
    /**
-      <P>Is this {@code DefaultValueFor} equal to {@code NULL_OR_EMPTY}?.</P>
+      <p>Is this {@code DefaultValueFor} equal to {@code NULL_OR_EMPTY}?.</p>
 
-      @return  <CODE>this == {@link #NULL_OR_EMPTY}</CODE>
+      @return  <code>this == {@link #NULL_OR_EMPTY}</code>
 
       @see  #nullOnly()
       @see  #emptyOnly()
@@ -72,27 +72,27 @@ public enum DefaultValueFor  {
       return  this == NULL_OR_EMPTY;
    }
    /**
-      <P>Is this {@code DefaultValueFor} equal to {@code NULL_ONLY}?.</P>
+      <p>Is this {@code DefaultValueFor} equal to {@code NULL_ONLY}?.</p>
 
-      @return  <CODE>this == {@link #NULL_ONLY}</CODE>
+      @return  <code>this == {@link #NULL_ONLY}</code>
       @see  #nullOrEmpty()
     **/
    public final boolean nullOnly()  {
       return  this == NULL_ONLY;
    }
    /**
-      <P>Is this {@code DefaultValueFor} equal to {@code EMPTY_ONLY}?.</P>
+      <p>Is this {@code DefaultValueFor} equal to {@code EMPTY_ONLY}?.</p>
 
-      @return  <CODE>this == {@link #EMPTY_ONLY}</CODE>
+      @return  <code>this == {@link #EMPTY_ONLY}</code>
       @see  #nullOrEmpty()
     **/
    public final boolean emptyOnly()  {
       return  this == EMPTY_ONLY;
    }
    /**
-      <P>Is this {@code DefaultValueFor} equal to {@code NOTHING}?.</P>
+      <p>Is this {@code DefaultValueFor} equal to {@code NOTHING}?.</p>
 
-      @return  <CODE>this == {@link #NOTHING}</CODE>
+      @return  <code>this == {@link #NOTHING}</code>
       @see  #nullOrEmpty()
     **/
    public final boolean nothing()  {

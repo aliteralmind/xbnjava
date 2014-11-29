@@ -15,14 +15,14 @@
 package  com.github.xbn.text.padchop;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>The escape-action to be taken on a string: escape, unescape, or do-nothing.</P>
+	<p>The escape-action to be taken on a string: escape, unescape, or do-nothing.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum EscapeAction  {
 	/**
-		<P>EscapeAction control characters so they literally display.</P>
+		<p>EscapeAction control characters so they literally display.</p>
 
 		@see  #NOTHING
 		@see  #UNESCAPE
@@ -30,23 +30,23 @@ public enum EscapeAction  {
 	 **/
 	ESCAPE,
 	/**
-		<P>Leave all control characters unchanged.</P>
+		<p>Leave all control characters unchanged.</p>
 
 		@see  #ESCAPE
 		@see  #isNothing()
 	 **/
 	NOTHING,
 	/**
-		<P>Unescape literally-displaying control characters.</P>
+		<p>Unescape literally-displaying control characters.</p>
 
 		@see  #ESCAPE
 		@see  #isUnescape()
 	 **/
 	UNESCAPE;
 	/**
-		<P>Is this {@code EscapeAction} equal to {@code ESCAPE}?.</P>
+		<p>Is this {@code EscapeAction} equal to {@code ESCAPE}?.</p>
 
-		@return  <CODE>this == {@link #ESCAPE}</CODE>
+		@return  <code>this == {@link #ESCAPE}</code>
 
 		@see  #isUnescape()
 		@see  #isNothing()
@@ -55,38 +55,38 @@ public enum EscapeAction  {
 		return  this == ESCAPE;
 	}
 	/**
-		<P>Is this {@code EscapeAction} equal to {@code NOTHING}?.</P>
+		<p>Is this {@code EscapeAction} equal to {@code NOTHING}?.</p>
 
-		@return  <CODE>this == {@link #NOTHING}</CODE>
+		@return  <code>this == {@link #NOTHING}</code>
 		@see  #isEscape()
 	 **/
 	public final boolean isNothing()  {
 		return  this == NOTHING;
 	}
 	/**
-		<P>Is this {@code EscapeAction} equal to {@code UNESCAPE}?.</P>
+		<p>Is this {@code EscapeAction} equal to {@code UNESCAPE}?.</p>
 
-		@return  <CODE>this == {@link #UNESCAPE}</CODE>
+		@return  <code>this == {@link #UNESCAPE}</code>
 		@see  #isEscape()
 	 **/
 	public final boolean isUnescape()  {
 		return  this == UNESCAPE;
 	}
 	/**
-		<P>If an <CODE>EscapeAction</CODE> is not a required value, crash.</P>
+		<p>If an <code>EscapeAction</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;EscapeAction&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;EscapeAction&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfForbiddenValue(EscapeAction, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(EscapeAction rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
 	}
 	/**
-		<P>If an <CODE>EscapeAction</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>EscapeAction</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;EscapeAction&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;EscapeAction&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfNotRequiredValue(EscapeAction, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(EscapeAction rqd_value, String this_enumsVarName, Object xtra_errInfo)  {

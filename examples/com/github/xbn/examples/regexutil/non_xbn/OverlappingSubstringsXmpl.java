@@ -16,12 +16,12 @@ package  com.github.xbn.examples.regexutil.non_xbn;
 	import  java.util.regex.Pattern;
 	import  java.util.regex.Matcher;
  /**
- 	<P>Using both regex and logic (non-regex), find a string that may overlap itself in a larger string--such as {@code "cdc"} is found at indexes 0 and 2 in {@code "cdcdc"}.</P>
+ 	<p>Using both regex and logic (non-regex), find a string that may overlap itself in a larger string--such as {@code "cdc"} is found at indexes 0 and 2 in {@code "cdcdc"}.</p>
 
-    <P>{@code java com.github.xbn.examples.regexutil.non_xbn.OverlappingSubstringsXmpl}</P>
+    <p>{@code java com.github.xbn.examples.regexutil.non_xbn.OverlappingSubstringsXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
   **/
  public class OverlappingSubstringsXmpl  {
     public static final void main(String[] ignored)  {

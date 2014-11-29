@@ -1,6 +1,6 @@
 package  com.github.xbn.number;
 /**
-	<P>bounded min-max range.</P>
+	<p>bounded min-max range.</p>
  **/
 public interface NumberRange<N extends Number>  {
 	NumberBound<N> getMinBound();

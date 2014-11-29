@@ -18,25 +18,25 @@ package  com.github.xbn.experimental.listify.primitiveable;
 	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
 /**
-	<P>Listifier whose virtual elements are primitive wrappers, such as {@code java.lang.Integer}s or {@code java.lang.Boolean}s.</P>
+	<p>Listifier whose virtual elements are primitive wrappers, such as {@code java.lang.Integer}s or {@code java.lang.Boolean}s.</p>
  **/
 public interface ListifyPrimitiveable<E> extends Listify<E>  {
 	/**
-		<P>For obtaining initialized arrays of both the wrapper and primitive type, and basic manipulation and access of the raw object, when it is also a primitive array.</P>
+		<p>For obtaining initialized arrays of both the wrapper and primitive type, and basic manipulation and access of the raw object, when it is also a primitive array.</p>
 	 **/
 	@Override
 	PrimitiveArrayHelper<E> getArrayHelper();
 	/**
-		<P>Defines how {@code null} elements should be handled when creating new primitive arrays containing the virtual elements.</P>
+		<p>Defines how {@code null} elements should be handled when creating new primitive arrays containing the virtual elements.</p>
 	 **/
 	NullHandlerForPrimitives<E> getNullHandlerForPrimitives();
 	/**
-		<P>Createa new primitive array containing all virtual elements.</P>
+		<p>Createa new primitive array containing all virtual elements.</p>
 
-		@param  nnull  If the <A HREF="#getRawObject()">raw object</A> is {@code null}, and this parameter is<UL>
-			<LI>non-{@code null}: crash ({@code is_nullCntrOk} is the name of the function calling this one)</LI>
-			<LI>{@code null}: <I><B>return</B></I> {@code null}</LI>
-		</UL>.
+		@param  nnull  If the <a href="#getRawObject()">raw object</a> is {@code null}, and this parameter is<ul>
+			<li>non-{@code null}: crash ({@code is_nullCntrOk} is the name of the function calling this one)</li>
+			<li>{@code null}: <i><b>return</b></i> {@code null}</li>
+		</ul>.
 		@see  com.github.xbn.array.IndexableUtil#crashIfContainerIsNullAndThatIsBad(NullContainer, boolean) CrashIfObject#crashIfContainerIsNullAndThatIsBad(nci,b)
 	 **/
 	Object getPArrayCopyOrNull(NullContainer nnull);

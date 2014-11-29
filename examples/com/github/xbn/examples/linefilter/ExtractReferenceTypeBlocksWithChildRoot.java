@@ -25,13 +25,13 @@ package  com.github.xbn.examples.linefilter;
 	import  java.util.Iterator;
 	import  java.util.regex.Pattern;
 /**
-	<P>Demonstrates using {@code FilteredLineIterator} to return only the lines in a particular kind of block.</P>
+	<p>Demonstrates using {@code FilteredLineIterator} to return only the lines in a particular kind of block.</p>
 
-	<P>{@code java com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocksWithChildRoot examples\com\github\xbn\examples\linefilter\reference_type_through_attachment_blocks_input.txt}</P>
+	<p>{@code java com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocksWithChildRoot examples\com\github\xbn\examples\linefilter\reference_type_through_attachment_blocks_input.txt}</p>
 
-	@see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic</A></CODE>
+	@see  <code><a href="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_basic</a></code>
 	@since  0.1.2
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ExtractReferenceTypeBlocksWithChildRoot  {
 	public static final void main(String[] params)  {

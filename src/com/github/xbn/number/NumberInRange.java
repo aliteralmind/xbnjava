@@ -21,9 +21,9 @@ package  com.github.xbn.number;
 	import  com.github.xbn.lang.Ruleable;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
- * <P>Determines if a number is within a {@code NumberRange}.</P>
+ * <p>Determines if a number is within a {@code NumberRange}.</p>
  * @since  0.1.0
- * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public abstract class NumberInRange<N extends Number> extends AbstractExtraErrInfoable implements NumberRange<N>, Ruleable  {
 //state
@@ -33,30 +33,30 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	protected final RuleableComposer ruleCmpsr;
 //constructors...START
 	/**
-	 * <P>Create a new {@code NumberInRange}.</P>
+	 * <p>Create a new {@code NumberInRange}.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp; <CODE>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, null, null)</CODE></P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp; <code>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, null, null)</code></p>
 	 */
 	public NumberInRange()  {
 		this(Invert.NO, null, null);
 	}
 	/**
-	 * <P>Create a new {@code NumberInRange}.</P>
+	 * <p>Create a new {@code NumberInRange}.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp; <CODE>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, nb_min, nb_max)</CODE></P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp; <code>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, nb_min, nb_max)</code></p>
 	 */
 	public NumberInRange(NumberBound<N> nb_min, NumberBound<N> nb_max)  {
 		this(Invert.NO, nb_min, nb_max);
 	}
 	/**
-	 * <P>Create a new {@code NumberInRange}.</P>
+	 * <p>Create a new {@code NumberInRange}.</p>
 	 * @param  nb_min  Get with {@link #getMinBound() getMinBound}{@code (null, null)}
 	 * @param  nb_max  Get with {@link #getMaxBound() getMaxBound}{@code ()}
 	 * @param  invert  If {@link com.github.xbn.lang.Invert#YES YES}, then
 	 * the range is made opposite--If the bounds are one and three, then
-	 * <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#isIn(N)">isIn</A>(2)</CODE>
+	 * <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#isIn(N)">isIn</a>(2)</code>
 	 * will return {@code false}. If {@link com.github.xbn.lang.Invert#NO NO},
 	 * the range is treated normally ({@code isIn(2)} returns {@code true}).
 	 * May not be {@code null}. Get with {@link #isInverted() isInverted}{@code ()}.
@@ -88,7 +88,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		return  ruleCmpsr.getRuleType();
 	}
 	/**
-	 * <P>Is there a minimum bound?.</P>
+	 * <p>Is there a minimum bound?.</p>
 	 * @return  {@code (getMinBound() != null)}
 	 * @see  #getMinBound()
 	 */
@@ -96,15 +96,15 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		return  (getMinBound() != null);
 	}
 	/**
-	 * <P>Is there a maximum bound?.</P>
-	 * @return  <CODE>({@link #getMaxBound() getMaxBound}() != null)</CODE>
+	 * <p>Is there a maximum bound?.</p>
+	 * @return  <code>({@link #getMaxBound() getMaxBound}() != null)</code>
 	 * @see  #getMinBound()
 	 */
 	public boolean hasMax()  {
 		return  (getMaxBound() != null);
 	}
 	/**
-	 * <P>The minimum bound.</P>
+	 * <p>The minimum bound.</p>
 	 * @see  #getMaxBound()
 	 * @see  #hasMin()
 	 * @see  #getMinNumber()
@@ -115,7 +115,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		return nbMin;
 	}
 	/**
-	 * <P>The maximum bound.</P>
+	 * <p>The maximum bound.</p>
 	 * @see  #getMinBound()
 	 * @see  #hasMax()
 	 * @see  #getMaxNumber()
@@ -126,23 +126,23 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		return nbMax;
 	}
 	/**
-	 * <P>Is the range inverted?.</P>
-	 * @return  <UL>
-	 *    <LI>{@code true}: The range is made opposite--If the bounds are
+	 * <p>Is the range inverted?.</p>
+	 * @return  <ul>
+	 *    <li>{@code true}: The range is made opposite--If the bounds are
 	 *    one and three, then
-	 *    <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#isIn(N)">isIn</A>(2)</CODE>
-	 *    will return {@code false}</LI>
-	 *    <LI>{@code false}: The range is treated normally ({@code isIn(2)}
-	 *    returns {@code true})</LI>
-	 * </UL>
+	 *    <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#isIn(N)">isIn</a>(2)</code>
+	 *    will return {@code false}</li>
+	 *    <li>{@code false}: The range is treated normally ({@code isIn(2)}
+	 *    returns {@code true})</li>
+	 * </ul>
 	 * @see  #NumberInRange(Invert, NumberBound, NumberBound) constructor
 	 */
 	public boolean isInverted()  {
 		return  isInverted;
 	}
 	/**
-	 * <P>Get the minimum bound number.</P>
-	 * @return  <CODE>getMinBound().{@link NumberBound#get() get}()</CODE>
+	 * <p>Get the minimum bound number.</p>
+	 * @return  <code>getMinBound().{@link NumberBound#get() get}()</code>
 	 * @exception  NullPointerException  If {@link #hasMin() hasMin}{@code ()} is {@code false}.
 	 * @see  #getMinBound()
 	 */
@@ -155,8 +155,8 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		}
 	}
 	/**
-	 * <P>Is the minimum bound inclusive?.</P>
-	 * @return  <CODE>getMinBound().{@link NumberBound#isInclusive() isInclusive}()</CODE>
+	 * <p>Is the minimum bound inclusive?.</p>
+	 * @return  <code>getMinBound().{@link NumberBound#isInclusive() isInclusive}()</code>
 	 * @exception  NullPointerException  If {@code getMinBound()} is {@code null}.
 	 * @see  #getMinBound()
 	 */
@@ -169,8 +169,8 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		}
 	}
 	/**
-	 * <P>Get the maximum bound number.</P>
-	 * @return  <CODE>{@link #getMaxBound() getMaxBound}().{@link NumberBound#get() get}()</CODE>
+	 * <p>Get the maximum bound number.</p>
+	 * @return  <code>{@link #getMaxBound() getMaxBound}().{@link NumberBound#get() get}()</code>
 	 * @exception  NullPointerException  If {@code getMaxBound()} is
 	 * {@code null}.
 	 * @see  #getMinBound()
@@ -184,8 +184,8 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		}
 	}
 	/**
-	 * <P>Is the maximum bound inclusive?.</P>
-	 * @return  <CODE>{@link #getMaxBound() getMaxBound}(){@link NumberBound#isInclusive() isInclusive}()</CODE>
+	 * <p>Is the maximum bound inclusive?.</p>
+	 * @return  <code>{@link #getMaxBound() getMaxBound}(){@link NumberBound#isInclusive() isInclusive}()</code>
 	 * @exception  NullPointerException  If {@code getMaxBound()} is {@code null}.
 	 * @see  #getMinBound()
 	 */
@@ -200,7 +200,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 //getters...END
 //other...START
 	/**
-	 * @return   <CODE>(!{@link #hasMin() hasMin}() &nbsp;&amp;&amp; &nbsp;!{@link #hasMax() hasMax}())</CODE>
+	 * @return   <code>(!{@link #hasMin() hasMin}() &nbsp;&amp;&amp; &nbsp;!{@link #hasMax() hasMax}())</code>
 	 */
 	public boolean isUnrestricted()  {
 		return  (!hasMin()  &&  !hasMax());
@@ -213,7 +213,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 	}
 	/**
 	 * @see  #getRules()
-	 * @see  <CODE><A HREF="http://en.wikibooks.org/wiki/Algebra/Interval_Notation">http://en.wikibooks.org/wiki/Algebra/Interval_Notation</A></CODE>
+	 * @see  <code><a href="http://en.wikibooks.org/wiki/Algebra/Interval_Notation">http://en.wikibooks.org/wiki/Algebra/Interval_Notation</a></code>
 	 */
 	public StringBuilder appendRules(StringBuilder to_appendTo)  {
 		NumberBound<?> min = getMinBound();
@@ -272,7 +272,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		return  appendRules(to_appendTo);
 	}
 	/**
-	 * <P>If a bound is {@code null}, throw an {@code IllegalStateException}.</P>
+	 * <p>If a bound is {@code null}, throw an {@code IllegalStateException}.</p>
 	 * @param  bound  The bound to check.
 	 * @param  in_orAx  If checking the minimum bound, set this to
 	 * &quot;{@code in}&quot;. If maximum, &quot;{@code ax}&quot;.
@@ -322,7 +322,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		return  (!isInverted() ? isValidUninv : !isValidUninv);
 	}
 	/**
-	 * @return  <CODE>true</CODE> If {@code to_compareTo} is
+	 * @return  <code>true</code> If {@code to_compareTo} is
 	 * non-{@code null}, a {@code NumberInRange}, and all its fields
 	 * {@linkplain #areFieldsEqual(NumberInRange) are equal}. This is
 	 * implemented as suggested by Joshua Bloch in &quot;Effective Java&quot;
@@ -502,7 +502,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
 		return  bldr.toString();
 	}
 	/**
-	 * <P>Are all relevant fields equal?.</P>
+	 * <p>Are all relevant fields equal?.</p>
 	 * @param  to_compareTo  May not be {@code null}.
 	 */
 	public abstract boolean areFieldsEqual(NumberInRange<N> to_compareTo);

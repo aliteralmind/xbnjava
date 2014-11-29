@@ -1,27 +1,27 @@
 package  com.github.xbn.experimental.xcontext;
 /**
-	<P>{@code ObjectExceptionContext} for objects that are elements in an index-able container (such as an array or {@code java.util.Collection}).</P>
+	<p>{@code ObjectExceptionContext} for objects that are elements in an index-able container (such as an array or {@code java.util.Collection}).</p>
  **/
 public interface ElementExceptionContext extends ObjectExceptionContext  {
 	/**
-		<P>Information on object that caused (may cause) the error.</P>
+		<p>Information on object that caused (may cause) the error.</p>
 
-		@return   <CODE>(ExceptionContextElement)<I>[{@link com.github.xbn.experimental.xcontext.ObjectExceptionContext super}]</I>.{@link com.github.xbn.experimental.xcontext.ObjectExceptionContext#getXCObject() getXCObject}()</CODE>
+		@return   <code>(ExceptionContextElement)<i>[{@link com.github.xbn.experimental.xcontext.ObjectExceptionContext super}]</i>.{@link com.github.xbn.experimental.xcontext.ObjectExceptionContext#getXCObject() getXCObject}()</code>
 	 **/
 	ExceptionContextElement getXCElement();
 	/**
-		<P>Shortcut for {@code getXCElement().getName()}.</P>
+		<p>Shortcut for {@code getXCElement().getName()}.</p>
 	 **/
 	String getContainerName();
 	/**
-		<P>Shortcut for {@code getXCElement().getIndex()}.</P>
+		<p>Shortcut for {@code getXCElement().getIndex()}.</p>
 	 **/
 	int getIndex();
 	/**
-		<P>Update the element's index.</P>
+		<p>Update the element's index.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #getXCElement() getXCElement}{@code ().}{@link com.github.xbn.experimental.xcontext.ExceptionContextElement#index(int) index}{@code ()}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #getXCElement() getXCElement}{@code ().}{@link com.github.xbn.experimental.xcontext.ExceptionContextElement#index(int) index}{@code ()}</p>
 	 **/
 	void setIndex(int index);
 }

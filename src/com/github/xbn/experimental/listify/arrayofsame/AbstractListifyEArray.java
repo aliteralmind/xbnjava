@@ -25,31 +25,31 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  com.github.xbn.experimental.listify.ListifyComposer;
 	import  com.github.xbn.util.copyval.ValueCopier;
 /**
-	<P>For building listifiers whose raw objects are arrays (primitive or non-primitive), and whose virtual elements are of the same type. For primitive arrays, the virtual type is their primitive wrapper (such as {@code int[]} and {@code java.lang.Integer[]}).</P>
+	<p>For building listifiers whose raw objects are arrays (primitive or non-primitive), and whose virtual elements are of the same type. For primitive arrays, the virtual type is their primitive wrapper (such as {@code int[]} and {@code java.lang.Integer[]}).</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyEArray<E> implements ListifyEArray<E>  {
 	private ListifyEArrayComposer<E> leac = null;
 	/**
-		<P>Create a new {@code AbstractListifyEArray}.</P>
+		<p>Create a new {@code AbstractListifyEArray}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(Object, ArrayHelperBase, ValueCopier) super}{@code (obj_thatIsArray, array_helper, get_valCopy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(Object, ArrayHelperBase, ValueCopier) super}{@code (obj_thatIsArray, array_helper, get_valCopy)}</p>
 	 **/
 	public AbstractListifyEArray(Object obj_thatIsArray, ArrayHelperBase<E> array_helper, ValueCopier<E> get_valCopy)  {
 		leac = new ListifyEArrayComposer<E>(obj_thatIsArray, array_helper, get_valCopy);
 	}
 	/**
-		<P>Create a new {@code AbstractListifyEArray} as a duplicate of another.</P>
+		<p>Create a new {@code AbstractListifyEArray} as a duplicate of another.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(ListifyEArrayBase) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(ListifyEArrayBase) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/

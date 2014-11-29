@@ -17,17 +17,17 @@
 package  com.github.xbn.io;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Off, or one through five, representing the amount of debugging that should be output.</P>
+   <p>Off, or one through five, representing the amount of debugging that should be output.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum DebugLevel  {
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
-      <P>This sets {@link #getNumber() getNumber}{@code ()} to zero.</P>
+      <p>This sets {@link #getNumber() getNumber}{@code ()} to zero.</p>
 
       @see  #ONE
       @see  #TWO
@@ -35,45 +35,45 @@ public enum DebugLevel  {
     **/
    OFF(0),
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
-      <P>This sets {@link #getNumber() getNumber}{@code ()} to one.</P>
+      <p>This sets {@link #getNumber() getNumber}{@code ()} to one.</p>
 
       @see  #OFF
       @see  #is1()
     **/
    ONE(1),
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
-      <P>This sets {@link #getNumber() getNumber}{@code ()} to two.</P>
+      <p>This sets {@link #getNumber() getNumber}{@code ()} to two.</p>
 
       @see  #OFF
       @see  #is2()
     **/
    TWO(2),
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
-      <P>This sets {@link #getNumber() getNumber}{@code ()} to three.</P>
+      <p>This sets {@link #getNumber() getNumber}{@code ()} to three.</p>
 
       @see  #OFF
       @see  #is2()
     **/
    THREE(3),
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
-      <P>This sets {@link #getNumber() getNumber}{@code ()} to four.</P>
+      <p>This sets {@link #getNumber() getNumber}{@code ()} to four.</p>
 
       @see  #OFF
       @see  #is2()
     **/
    FOUR(4),
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
-      <P>This sets {@link #getNumber() getNumber}{@code ()} to five.</P>
+      <p>This sets {@link #getNumber() getNumber}{@code ()} to five.</p>
 
       @see  #OFF
       @see  #is2()
@@ -84,7 +84,7 @@ public enum DebugLevel  {
 		this.number = number;
 	}
 	/**
-		<P>The number associated to this level.</P>
+		<p>The number associated to this level.</p>
 
 		@see  #OFF
 	 **/
@@ -92,9 +92,9 @@ public enum DebugLevel  {
 		return  number;
 	}
    /**
-      <P>Is this {@code DebugLevel} equal to {@code OFF}?.</P>
+      <p>Is this {@code DebugLevel} equal to {@code OFF}?.</p>
 
-      @return  <CODE>this == {@link #OFF}</CODE>
+      @return  <code>this == {@link #OFF}</code>
 
       @see  #is1()
       @see  #is2()
@@ -107,9 +107,9 @@ public enum DebugLevel  {
       return  this == OFF;
    }
    /**
-      <P>Is this {@code DebugLevel} equal to {@code ONE}?.</P>
+      <p>Is this {@code DebugLevel} equal to {@code ONE}?.</p>
 
-      @return  <CODE>this == {@link #ONE}</CODE>
+      @return  <code>this == {@link #ONE}</code>
       @see  #isOn()
       @see  #isOff()
     **/
@@ -117,9 +117,9 @@ public enum DebugLevel  {
       return  this == ONE;
    }
    /**
-      <P>Is this {@code DebugLevel} equal to {@code TWO}?.</P>
+      <p>Is this {@code DebugLevel} equal to {@code TWO}?.</p>
 
-      @return  <CODE>this == {@link #TWO}</CODE>
+      @return  <code>this == {@link #TWO}</code>
       @see  #isOn()
       @see  #isOff()
     **/
@@ -127,9 +127,9 @@ public enum DebugLevel  {
       return  this == TWO;
    }
    /**
-      <P>Is this {@code DebugLevel} equal to {@code THREE}?.</P>
+      <p>Is this {@code DebugLevel} equal to {@code THREE}?.</p>
 
-      @return  <CODE>this == {@link #THREE}</CODE>
+      @return  <code>this == {@link #THREE}</code>
       @see  #isOn()
       @see  #isOff()
     **/
@@ -137,9 +137,9 @@ public enum DebugLevel  {
       return  this == THREE;
    }
    /**
-      <P>Is this {@code DebugLevel} equal to {@code FOUR}?.</P>
+      <p>Is this {@code DebugLevel} equal to {@code FOUR}?.</p>
 
-      @return  <CODE>this == {@link #FOUR}</CODE>
+      @return  <code>this == {@link #FOUR}</code>
       @see  #isOn()
       @see  #isOff()
     **/
@@ -147,9 +147,9 @@ public enum DebugLevel  {
       return  this == FOUR;
    }
    /**
-      <P>Is this {@code DebugLevel} equal to {@code FIVE}?.</P>
+      <p>Is this {@code DebugLevel} equal to {@code FIVE}?.</p>
 
-      @return  <CODE>this == {@link #FIVE}</CODE>
+      @return  <code>this == {@link #FIVE}</code>
       @see  #isOn()
       @see  #isOff()
     **/
@@ -157,36 +157,36 @@ public enum DebugLevel  {
       return  this == FIVE;
    }
    /**
-   	<P>Is debugging on?.</P>
+   	<p>Is debugging on?.</p>
 
-   	@return  <CODE>({@link #is1() is1}() &nbsp;|| &nbsp;{@link #is2() is2}())</CODE>
+   	@return  <code>({@link #is1() is1}() &nbsp;|| &nbsp;{@link #is2() is2}())</code>
     **/
    public final boolean isOn()  {
 		return  (!isOff());
 	}
    /**
-   	<P>Is debugging at least a specific level?.</P>
+   	<p>Is debugging at least a specific level?.</p>
 
    	@param  min  May not be less than zero or greater than five.
-   	@return  <CODE>(min <= {@link #getNumber() getNumber}())</CODE>
+   	@return  <code>(min <= {@link #getNumber() getNumber}())</code>
    	@see  #isOnAndAtLeast(int)
     **/
    public final boolean isAtLeast(int min)  {
 		return  DebugLevel.isNumberAtLeast(getNumber(), min);
 	}
    /**
-   	<P>Is debugging on and at least a specific level?.</P>
+   	<p>Is debugging on and at least a specific level?.</p>
 
    	@param  min  May not be less than one.
-   	@return  <CODE>{@link #isAtLeast(int) isAtLeast}(min)</CODE>
+   	@return  <code>{@link #isAtLeast(int) isAtLeast}(min)</code>
     **/
    public final boolean isOnAndAtLeast(int min)  {
 		return  DebugLevel.isNumberOnAndAtLeast(getNumber(), min);
 	}
 	/**
-		<P>Get the highest level--from either <I>{@code this}</I> or one of the provided levels.</P>
+		<p>Get the highest level--from either <i>{@code this}</i> or one of the provided levels.</p>
 
-		@param  levels  Elements <I>should</I> be unique and not <I>this</I> object. {@code null} elements are ignored.
+		@param  levels  Elements <i>should</i> be unique and not <i>this</i> object. {@code null} elements are ignored.
 		@return  The level with the highest {@linkplain #getNumber() number}.
 		@see  #isThisOrAnyOn(DebugLevel...)
 		@see  #isHighestAtLeast(int, DebugLevel...)
@@ -208,52 +208,52 @@ public enum DebugLevel  {
 		return  highest;
 	}
 	/**
-		<P>Get the highest level number--from either <I>{@code this}</I> or one of the provided levels.</P>
+		<p>Get the highest level number--from either <i>{@code this}</i> or one of the provided levels.</p>
 
-		@return  <CODE>{@link #getHighestLevel(DebugLevel...) getHighestLevel}(levels).{@link #getNumber() getNumber}()</CODE>
+		@return  <code>{@link #getHighestLevel(DebugLevel...) getHighestLevel}(levels).{@link #getNumber() getNumber}()</code>
 	 **/
 	public final int getHighestNumber(DebugLevel... levels)  {
 		return  getHighestLevel(levels).getNumber();
 	}
 	/**
-		<P>Is this or any of the parameter levels on?.</P>
+		<p>Is this or any of the parameter levels on?.</p>
 
-		@return  <CODE>{@link #isHighestAtLeast(int, DebugLevel...) isHighestAtLeast}(1, levels)</CODE>
+		@return  <code>{@link #isHighestAtLeast(int, DebugLevel...) isHighestAtLeast}(1, levels)</code>
 	 **/
 	public final boolean isThisOrAnyOn(DebugLevel... levels)  {
 		return  isHighestAtLeast(1, levels);
 	}
 	/**
-		<P>Is the highest number at least a minimum?.</P>
+		<p>Is the highest number at least a minimum?.</p>
 
 		@param  min  May not be less than zero.
-		@return  <CODE>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</CODE>
+		@return  <code>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</code>
 		@see  #getHighestNumber(DebugLevel...)
 	 **/
 	public final boolean isHighestAtLeast(int min, DebugLevel... levels)  {
 		return  DebugLevel.isNumberAtLeast(getHighestNumber(levels), min);
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<P><TABLE ALIGN="center" WIDTH="100%" BORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#EEEEEE"><TR ALIGN="center" VALIGN="middle">
-			<TD><B><U>{@code compareTo}</U></B></TD>
-			<TD><B><U>{@code compareTo} result</U></B></TD>
-			<TD><B><U>Psuedo-logic equivalent</U></B></TD>
+		<p><TABLE ALIGN="center" WIDTH="100%" BORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#EEEEEE"><TR ALIGN="center" VALIGN="middle">
+			<TD><b><u>{@code compareTo}</u></b></TD>
+			<TD><b><u>{@code compareTo} result</u></b></TD>
+			<TD><b><u>Psuedo-logic equivalent</u></b></TD>
 		</TR><TR>
-			<TD><CODE>DebugLevel.{@link #ONE}.compareTo(DebugLevel.ONE) == 0</CODE></TD>
+			<TD><code>DebugLevel.{@link #ONE}.compareTo(DebugLevel.ONE) == 0</code></TD>
 			<TD>{@code 0}</TD>
-			<TD><CODE>DebugLevel.ONE == DebugLevel.ONE</CODE></TD>
+			<TD><code>DebugLevel.ONE == DebugLevel.ONE</code></TD>
 		</TR><TR>
-			<TD><CODE>DebugLevel.ONE.compareTo(DebugLevel.{@link #TWO}) &lt; 0</CODE></TD>
+			<TD><code>DebugLevel.ONE.compareTo(DebugLevel.{@link #TWO}) &lt; 0</code></TD>
 			<TD>{@code -1}</TD>
-			<TD><CODE>DebugLevel.ONE &lt; DebugLevel.TWO</CODE></TD>
+			<TD><code>DebugLevel.ONE &lt; DebugLevel.TWO</code></TD>
 		</TR><TR>
-			<TD><CODE>DebugLevel.{@link #THREE}.compareTo(DebugLevel.{@link #OFF}) &gt;= 0</CODE></TD>
+			<TD><code>DebugLevel.{@link #THREE}.compareTo(DebugLevel.{@link #OFF}) &gt;= 0</code></TD>
 			<TD>{@code 3}</TD>
-			<TD><CODE>DebugLevel.ONE &gt;= DebugLevel.OFF</CODE></TD>
-		</TR></TABLE></P>
-		@return  <CODE>({@link #getNumber() getNumber}() - to_compareTo.getNumber())</CODE>
+			<TD><code>DebugLevel.ONE &gt;= DebugLevel.OFF</code></TD>
+		</TR></TABLE></p>
+		@return  <code>({@link #getNumber() getNumber}() - to_compareTo.getNumber())</code>
 	public int compareTo(DebugLevel to_compareTo)  {
 		try  {
 			return  (getNumber() - to_compareTo.getNumber());
@@ -263,10 +263,10 @@ public enum DebugLevel  {
 	}
 	 **/
 	/**
-		<P>Is the highest number on and at least a minimum?.</P>
+		<p>Is the highest number on and at least a minimum?.</p>
 
 		@param  min  May not be less than one.
-		@return  <CODE>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</CODE>
+		@return  <code>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</code>
 		@see  #getHighestNumber(DebugLevel...)
 	 **/
 	public final boolean isHighestOnAndAtLeast(int min, DebugLevel... levels)  {
@@ -285,18 +285,18 @@ public enum DebugLevel  {
 			return  isNumberAtLeast(number, min);
 		}
 	/**
-		<P>Get the {@code DebugLevel} for a string equal to {@code "off"}, or a number between one and five.</P>
+		<p>Get the {@code DebugLevel} for a string equal to {@code "off"}, or a number between one and five.</p>
 
 		@param  value  May not be {@code null}, and must be a string equal to {@code "off"}, or a number one through five.
-		@param  value_varName  Descriptive name of {@code value}. <I>Should</I> not be {@code null} or empty.
-		@return  If {@code value} is<UL>
-			<LI>{@code "off"}: {@link #OFF}</LI>
-			<LI>{@code "1"}: {@link #ONE}</LI>
-			<LI>{@code "2"}: {@link #TWO}</LI>
-			<LI>{@code "3"}: {@link #THREE}</LI>
-			<LI>{@code "4"}: {@link #FOUR}</LI>
-			<LI>{@code "5"}: {@link #FIVE}</LI>
-		</UL>
+		@param  value_varName  Descriptive name of {@code value}. <i>Should</i> not be {@code null} or empty.
+		@return  If {@code value} is<ul>
+			<li>{@code "off"}: {@link #OFF}</li>
+			<li>{@code "1"}: {@link #ONE}</li>
+			<li>{@code "2"}: {@link #TWO}</li>
+			<li>{@code "3"}: {@link #THREE}</li>
+			<li>{@code "4"}: {@link #FOUR}</li>
+			<li>{@code "5"}: {@link #FIVE}</li>
+		</ul>
 		@exception  IllegalArgumentException  If {@code value} is invalid.
 	 **/
 	public static final DebugLevel getFromStringOff12345(String value, String value_varName)  {

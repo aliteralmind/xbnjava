@@ -8,15 +8,15 @@ package  com.github.xbn.list.lister;
 	import  com.github.xbn.number.z.LengthInRangeValidator_Cfg;
 	import  com.github.xbn.text.StringWithNullDefault;
 /**
-	<P>Utility class for size-related configuration, as in the length of the overall list, and the length of each element (if lengthable).</P>
+	<p>Utility class for size-related configuration, as in the length of the overall list, and the length of each element (if lengthable).</p>
 
  **/
 class LLCfgForLengthItems   {
 //internal
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<P>If the output of any configuration item, aside from  <CODE><I>[{@link com.github.xbn.list.lister.LLConfigBase LLConfigBase}]</I>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}()</CODE>, contains a {@link #sDISPLAY_SIZE_MARKER}, it is replaced with the list's {@code size()}. Only the first [left-most] marker in each item is recognized. This also includes the string-value of the list itself, if any only if it is altered.</P>
+		<p>If the output of any configuration item, aside from  <code><i>[{@link com.github.xbn.list.lister.LLConfigBase LLConfigBase}]</i>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}()</code>, contains a {@link #sDISPLAY_SIZE_MARKER}, it is replaced with the list's {@code size()}. Only the first [left-most] marker in each item is recognized. This also includes the string-value of the list itself, if any only if it is altered.</p>
 
 	 **/
 	public static final String sDISPLAY_SIZE_MARKER = "~size~";

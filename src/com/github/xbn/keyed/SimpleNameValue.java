@@ -18,10 +18,10 @@ package  com.github.xbn.keyed;
 //	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
 //	import  com.github.xbn.util.copyval.ValueCopierComposer;
 /**
-	<P>Implementation of {@code NamedValue}.</P>
+	<p>Implementation of {@code NamedValue}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleNameValue<V> extends SimpleKeyValue<String,V> implements NameValue<V>  {
 //constructors...START
@@ -41,12 +41,12 @@ public class SimpleNameValue<V> extends SimpleKeyValue<String,V> implements Name
 		super(name, (new OneParamCnstrValueCopier<String>(String.class)), value, copier);
 		SimpleNamed.ciBadNameInCnstr(name, "name");
 	}
-		<P>Create a new {@code SimpleNameValue} as a duplicate of another.</P>
+		<p>Create a new {@code SimpleNameValue} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link SimpleKeyValue#SimpleKeyValue(KeyValue) super}{@code (to_copy)}</LI>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link SimpleKeyValue#SimpleKeyValue(KeyValue) super}{@code (to_copy)}</li>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -59,9 +59,9 @@ public class SimpleNameValue<V> extends SimpleKeyValue<String,V> implements Name
 		return  getKey();
 	}
 	/*
-		<P>Duplicate this {@code SimpleNameValue}.</P>
+		<p>Duplicate this {@code SimpleNameValue}.</p>
 
-		@return  <CODE>(new {@link #SimpleNameValue(NameValue) SimpleNameValue}&lt;String,V&gt;(this))</CODE>
+		@return  <code>(new {@link #SimpleNameValue(NameValue) SimpleNameValue}&lt;String,V&gt;(this))</code>
 	public SimpleNameValue<V> getObjectCopy()  {
 		return  (new SimpleNameValue<V>(this));
 	}

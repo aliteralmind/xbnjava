@@ -17,10 +17,10 @@ package  com.github.xbn.io;
 	import  java.io.Closeable;
 	import  java.io.Flushable;
 /**
-	<P>Companion to {@code TAAppendable} in which the {@code Appendable} may be re-set. See {@link com.github.xbn.io.TAAppendable TAAppendable}.</P>
+	<p>Companion to {@code TAAppendable} in which the {@code Appendable} may be re-set. See {@link com.github.xbn.io.TAAppendable TAAppendable}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class TAAppendMutable<A extends Appendable> extends TextAppender  {
 	private A apbl = null;
@@ -73,9 +73,9 @@ public class TAAppendMutable<A extends Appendable> extends TextAppender  {
 		return  getAppendable().toString();
 	}
 	/**
-		<P>Get a reference to this {@code TAAppendMutable}.</P>
+		<p>Get a reference to this {@code TAAppendMutable}.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public TAAppendMutable<A> getObjectCopy()  {
 		return  this;

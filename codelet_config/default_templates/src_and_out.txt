@@ -1,3 +1,3 @@
-<BLOCKQUOTE><PRE class="brush: java">%body_source_code%</PRE></BLOCKQUOTE>
-<P><B>Output:</B></P>
-<BLOCKQUOTE><PRE style="background-color:#EEEEEE;">%body_console_output%</PRE></BLOCKQUOTE>
+<blockquote><pre class="brush: java">%body_source_code%</pre></blockquote>
+<p><b>Output:</b></p>
+<blockquote><pre style="background-color:#EEEEEE;">%body_console_output%</pre></blockquote>

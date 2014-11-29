@@ -20,10 +20,10 @@ package  com.github.xbn.regexutil.z;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  java.util.regex.Pattern;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.regexutil.RegexTokenizer RegexTokenizer}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.regexutil.RegexTokenizer RegexTokenizer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Needer> extends AbstractNeedable<T,R> implements RegexTokenizer_Fieldable  {
 	public Pattern    sepPtrn            = null ;
@@ -34,14 +34,14 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
 	public boolean    doReturnEmptyBtwns = false;
 	public Appendable apblDebug          = null ;
 	/**
-		<P>Create a new instance with defaults.</P>
+		<p>Create a new instance with defaults.</p>
 
-		<P>This calls<OL>
-			<LI>{@link #lineNumber(int) lineNumber}{@code (-1)}</LI>
-			<LI>{@link #setReturnSepsBtwns(boolean, boolean, boolean) setReturnSepsBtwns}{@code (false, false, false)}</LI>
-			<LI>{@link #debugTo(Appendable) debugTo}{@code (null)}</LI>
-			<LI>{@link #toTokenize(Object) toTokenize}{@code ("")}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link #lineNumber(int) lineNumber}{@code (-1)}</li>
+			<li>{@link #setReturnSepsBtwns(boolean, boolean, boolean) setReturnSepsBtwns}{@code (false, false, false)}</li>
+			<li>{@link #debugTo(Appendable) debugTo}{@code (null)}</li>
+			<li>{@link #toTokenize(Object) toTokenize}{@code ("")}</li>
+		</ol></p>
 	 **/
 	public RegexTokenizer_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
 		super(is_avaliableToNeeders, is_neededUseableAtInit, needer);
@@ -51,7 +51,7 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
 		toTokenize("");
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> lineNumber(int line_num)  {
 		lineNum = line_num;
@@ -61,7 +61,7 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
 		return  setReturnSepsBtwns(true, false, false);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	protected RegexTokenizer_CfgForNeeder<T,R> setReturnSepsBtwns(boolean do_separators, boolean do_nonEmptyBtwns, boolean do_emptyBtwns)  {
 		doReturnSeps = do_separators;
@@ -70,21 +70,21 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> separators()  {
 		doReturnSeps = true;
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> nonEmptyBetweens()  {
 		doReturnBtwns = true;
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> emptyBetweens()  {
 		doReturnBtwns = true;
@@ -101,10 +101,10 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
 		return  setReturnSepsBtwns(false, true, true);
 	}
 	/**
-		<P>Set debugging.</P>
+		<p>Set debugging.</p>
 
 		@param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> debugTo(Appendable dest_ifNonNull)  {
 		apblDebug = dest_ifNonNull;
@@ -141,14 +141,14 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
 		return  separator(NewPatternFor.regex(findWhat_regex, bit_flags, "findWhat_regex"));
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> separator(Pattern pattern_toFind)  {
 		sepPtrn = pattern_toFind;
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> toTokenize(Object to_tokenize)  {
 		try  {
@@ -164,22 +164,22 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
 		return  t;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexTokenizer_CfgForNeeder<T,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	@SuppressWarnings("unchecked")  //See LLCfgOverall.startConfigReturnNeedable(R)
 	public RegexTokenizer_CfgForNeeder<T,R> startConfigReturnNeedable(R needer)  {

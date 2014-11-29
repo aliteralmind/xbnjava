@@ -18,15 +18,15 @@ package  com.github.xbn.linefilter.entity.raw;
 	import  java.util.Objects;
 	import  com.github.xbn.number.LengthInRange;
 /**
-	<P>A {@code RawOnOffEntityFilter} that is dependant on a specific entity's fully-active count being in a range.</P>
+	<p>A {@code RawOnOffEntityFilter} that is dependant on a specific entity's fully-active count being in a range.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RawPostFilterActiveInOutRange<L> extends AbstractRawPostFilterActiveInOutRange<L>  {
 	private final RawEntity<L> entity;
 	/**
-		<P>Create a new instance from an entity, range, and when-in setting.</P>
+		<p>Create a new instance from an entity, range, and when-in setting.</p>
 
 		@param  entity_toTrack  The entity whose {@linkplain RawEntity#getFullyActiveCount() active count} should be monitored. Get with {@link #getEntityToTrack() getEntityToTrack}{@code ()}.
 	 **/
@@ -36,7 +36,7 @@ public class RawPostFilterActiveInOutRange<L> extends AbstractRawPostFilterActiv
 		entity = entity_toTrack;
 	}
 	/**
-		@return  <CODE>{@link AbstractRawPostFilterActiveInOutRange#getPostStateForCount(RawEntity) getStateForCount}({@link #getEntityToTrack() getEntityToTrack}())</CODE>
+		@return  <code>{@link AbstractRawPostFilterActiveInOutRange#getPostStateForCount(RawEntity) getStateForCount}({@link #getEntityToTrack() getEntityToTrack}())</code>
 	 **/
 	public OnOffAbort getPostState(RawEntity<L> ignored, int ignored2, L ignored3)  {
 		return  getPostStateForCount(getEntityToTrack());

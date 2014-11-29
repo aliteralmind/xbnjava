@@ -15,13 +15,13 @@
 package  com.github.xbn.list;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>Should the map's list values be sorted?.</P>
+	<p>Should the map's list values be sorted?.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <CODE><A HREF="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</A></CODE>, <CODE><A HREF="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</A></CODE>
+	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
  **/
 public enum SortListValues  {
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #DUPLICATE
 		@see  #UNSORTED
@@ -29,23 +29,23 @@ public enum SortListValues  {
 	 **/
 	ORIGINAL,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #ORIGINAL
 		@see  #doSortDuplicate()
 	 **/
 	DUPLICATE,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #ORIGINAL
 		@see  #doNotSort()
 	 **/
 	UNSORTED;
 	/**
-		<P>Is this {@code SortListValues} equal to {@code ORIGINAL}?.</P>
+		<p>Is this {@code SortListValues} equal to {@code ORIGINAL}?.</p>
 
-		@return  <CODE>this == {@link #ORIGINAL}</CODE>
+		@return  <code>this == {@link #ORIGINAL}</code>
 
 		@see  #doSortDuplicate()
 		@see  #doNotSort()
@@ -54,38 +54,38 @@ public enum SortListValues  {
 		return  this == ORIGINAL;
 	}
 	/**
-		<P>Is this {@code SortListValues} equal to {@code DUPLICATE}?.</P>
+		<p>Is this {@code SortListValues} equal to {@code DUPLICATE}?.</p>
 
-		@return  <CODE>this == {@link #DUPLICATE}</CODE>
+		@return  <code>this == {@link #DUPLICATE}</code>
 		@see  #doSortOriginal()
 	 **/
 	public final boolean doSortDuplicate()  {
 		return  this == DUPLICATE;
 	}
 	/**
-		<P>Is this {@code SortListValues} equal to {@code UNSORTED}?.</P>
+		<p>Is this {@code SortListValues} equal to {@code UNSORTED}?.</p>
 
-		@return  <CODE>this == {@link #UNSORTED}</CODE>
+		@return  <code>this == {@link #UNSORTED}</code>
 		@see  #doSortOriginal()
 	 **/
 	public final boolean doNotSort()  {
 		return  this == UNSORTED;
 	}
 	/**
-		<P>If an <CODE>SortListValues</CODE> is not a required value, crash.</P>
+		<p>If an <code>SortListValues</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfForbiddenValue(SortListValues, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
 	}
 	/**
-		<P>If an <CODE>SortListValues</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>SortListValues</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfNotRequiredValue(SortListValues, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

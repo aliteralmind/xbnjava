@@ -22,10 +22,10 @@ package  com.github.xbn.array.helper;
 	import  com.github.xbn.array.primitive.WrapperArrayFromPrimitive;
 	import  org.apache.commons.lang3.ArrayUtils;
 /**
-	<P>Convenience functions for creating {@code PrimitiveArrayHelper}s of any type.</P>
+	<p>Convenience functions for creating {@code PrimitiveArrayHelper}s of any type.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewPrimitiveArrayHelper  {
    private NewPrimitiveArrayHelper()  {
@@ -77,7 +77,7 @@ char Char
 		throw  new IllegalArgumentException("obj_thatIsPrimArr is not a primitive array. obj_thatIsPrimArr.getClass().getName()=" + obj_thatIsPrimArr.getClass().getName());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for booleans.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for booleans.</p>
 
 		@return  {@code (new }{@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}{@code ())}
 		@see  #forCharacter()
@@ -86,7 +86,7 @@ char Char
 		return  (new BooleanArrayHelper());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for chars.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for chars.</p>
 
 <!--
 ---nwrqm input---
@@ -98,7 +98,7 @@ Integer int INTEGER_O INT
 Short short SHORT_O SHORT
 Byte byte BYTE_O BYTE
 
-		<P><I>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {&#64;link #forChaxr() forChaxr()}{@code ()} (and its corresponding private class). <B>Do not edit any function except {@code forChaxr()}.</B></I></P>
+		<p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {&#64;link #forChaxr() forChaxr()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forChaxr()}.</b></i></p>
  -->
 
 		@return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
@@ -115,9 +115,9 @@ Byte byte BYTE_O BYTE
 		return  (new CharacterArrayHelper());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for bytes.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for bytes.</p>
 
-		<P><I>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <B>Do not edit any function except {@code forCharacter()}.</B></I></P>
+		<p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
 		@return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
 	 **/
@@ -125,9 +125,9 @@ Byte byte BYTE_O BYTE
 		return  (new ByteArrayHelper());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for shorts.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for shorts.</p>
 
-		<P><I>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <B>Do not edit any function except {@code forCharacter()}.</B></I></P>
+		<p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
 		@return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
 	 **/
@@ -135,9 +135,9 @@ Byte byte BYTE_O BYTE
 		return  (new ShortArrayHelper());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for ints.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for ints.</p>
 
-		<P><I>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <B>Do not edit any function except {@code forCharacter()}.</B></I></P>
+		<p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
 		@return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
 	 **/
@@ -145,9 +145,9 @@ Byte byte BYTE_O BYTE
 		return  (new IntegerArrayHelper());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for longs.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for longs.</p>
 
-		<P><I>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <B>Do not edit any function except {@code forCharacter()}.</B></I></P>
+		<p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
 		@return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
 	 **/
@@ -155,9 +155,9 @@ Byte byte BYTE_O BYTE
 		return  (new LongArrayHelper());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for floats.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for floats.</p>
 
-		<P><I>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <B>Do not edit any function except {@code forCharacter()}.</B></I></P>
+		<p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
 		@return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
 	 **/
@@ -165,9 +165,9 @@ Byte byte BYTE_O BYTE
 		return  (new FloatArrayHelper());
 	}
 	/**
-		<P>Get a new {@code PrimitiveArrayHelper} for doubles.</P>
+		<p>Get a new {@code PrimitiveArrayHelper} for doubles.</p>
 
-		<P><I>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <B>Do not edit any function except {@code forCharacter()}.</B></I></P>
+		<p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
 		@return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
 	 **/
@@ -176,7 +176,7 @@ Byte byte BYTE_O BYTE
 	}
 }
 /**
-	<P>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</P>
+	<p>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</p>
  **/
 class CharacterArrayHelper extends AbstractPrimitiveArrayHelper<Character>  {
 	public CharacterArrayHelper()  {
@@ -241,7 +241,7 @@ class CharacterArrayHelper extends AbstractPrimitiveArrayHelper<Character>  {
 	}
 }
 /**
-	<P>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</P>
+	<p>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</p>
  **/
 class ByteArrayHelper extends AbstractPrimitiveArrayHelper<Byte>  {
 	public ByteArrayHelper()  {
@@ -306,7 +306,7 @@ class ByteArrayHelper extends AbstractPrimitiveArrayHelper<Byte>  {
 	}
 }
 /**
-	<P>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</P>
+	<p>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</p>
  **/
 class ShortArrayHelper extends AbstractPrimitiveArrayHelper<Short>  {
 	public ShortArrayHelper()  {
@@ -371,7 +371,7 @@ class ShortArrayHelper extends AbstractPrimitiveArrayHelper<Short>  {
 	}
 }
 /**
-	<P>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</P>
+	<p>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</p>
  **/
 class IntegerArrayHelper extends AbstractPrimitiveArrayHelper<Integer>  {
 	public IntegerArrayHelper()  {
@@ -436,7 +436,7 @@ class IntegerArrayHelper extends AbstractPrimitiveArrayHelper<Integer>  {
 	}
 }
 /**
-	<P>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</P>
+	<p>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</p>
  **/
 class LongArrayHelper extends AbstractPrimitiveArrayHelper<Long>  {
 	public LongArrayHelper()  {
@@ -501,7 +501,7 @@ class LongArrayHelper extends AbstractPrimitiveArrayHelper<Long>  {
 	}
 }
 /**
-	<P>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</P>
+	<p>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</p>
  **/
 class FloatArrayHelper extends AbstractPrimitiveArrayHelper<Float>  {
 	public FloatArrayHelper()  {
@@ -566,7 +566,7 @@ class FloatArrayHelper extends AbstractPrimitiveArrayHelper<Float>  {
 	}
 }
 /**
-	<P>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</P>
+	<p>This class is derived from BooleanArrayHelper (exactly the same except for no JavaDoc). EDIT BooleanArrayHelper ONLY!</p>
  **/
 class DoubleArrayHelper extends AbstractPrimitiveArrayHelper<Double>  {
 	public DoubleArrayHelper()  {

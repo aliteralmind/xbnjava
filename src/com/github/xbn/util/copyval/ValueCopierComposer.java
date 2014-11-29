@@ -15,12 +15,12 @@
 package  com.github.xbn.util.copyval;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-	<P>For classes that need to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}.</P>
+	<p>For classes that need to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}.</p>
 
 	@see  ValueCopier
 	@see  AbstractValueCopier
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueCopierComposer<O> {
 	private final boolean bCpybl;
@@ -29,11 +29,11 @@ public class ValueCopierComposer<O> {
 		bCpybl = is_copyable;
 	}
 	/**
-		<P>Create a new {@code ValueCopierComposer} as a duplicate of another.</P>
+		<p>Create a new {@code ValueCopierComposer} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/

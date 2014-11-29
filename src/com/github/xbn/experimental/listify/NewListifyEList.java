@@ -42,10 +42,10 @@ package  com.github.xbn.experimental.listify;
 	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
 	import  com.github.xbn.util.copyval.SimpleNullHandler;
 /**
-	<P>Convenience functions for creating listifiers whose raw object is a {@code java.util.List}, and whose vitual elements are of the same type as the raw elements.</P>
+	<p>Convenience functions for creating listifiers whose raw object is a {@code java.util.List}, and whose vitual elements are of the same type as the raw elements.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewListifyEList<E>  {
    private NewListifyEList()  {
@@ -137,12 +137,12 @@ class ListifyEListPable<E> extends ListifyEListRoot<E>  {
 abstract class ListifyEListRoot<E> extends AbstractListify<E>  {
 //constructors...START
 	/**
-		<P>Create a new {@code ListifyEListRoot}.</P>
+		<p>Create a new {@code ListifyEListRoot}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, boolean, ArrayHelper, ValueCopier) super}{@code (raw_obj, add_rmvbl, ah_root, get_valCopy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, boolean, ArrayHelper, ValueCopier) super}{@code (raw_obj, add_rmvbl, ah_root, get_valCopy)}</p>
 	 **/
 	public ListifyEListRoot(List<E> list, AddRemovable add_rmvbl, ArrayHelperBase<E> ah_root, ValueCopier<E> get_valCopy)  {
 		super(list, add_rmvbl, ah_root, get_valCopy);
@@ -492,7 +492,7 @@ class ListifyDoubleList extends AbstractListifyEListPable<Double> implements Lis
 	}
 }
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 <!--
 ---nwrqm input---

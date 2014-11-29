@@ -22,32 +22,32 @@ package  com.github.xbn.array.primitive;
 	import  java.util.Collection;
 	import  java.util.Iterator;
 /**
-	<P>Translate a collection of wrappers to an array of its primitive type (such as {@code List<Integer>} to {@code int[]}).</P>
+	<p>Translate a collection of wrappers to an array of its primitive type (such as {@code List<Integer>} to {@code int[]}).</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PrimitiveArrayFromCollection  {
 //internal
 	@SuppressWarnings("unchecked")
 	private static final ResettableNullHandler rstblNullHndlr = new ResettableNullHandler(1);
 	/**
-		<P>Create a new instance--This does nothing.</P>
+		<p>Create a new instance--This does nothing.</p>
 	 **/
 	public PrimitiveArrayFromCollection()  {
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forBoolean(Collection, NullHandler, NullContainer, String) forBoolean}(coll, (new ResettableNullHandler&lt;Boolean&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forBoolean(Collection, NullHandler, NullContainer, String) forBoolean}(coll, (new ResettableNullHandler&lt;Boolean&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final boolean[] forBoolean(Collection<Boolean> coll, boolean for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forBoolean(coll, (NullHandler<Boolean>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 <!--
 ---nwrqm input for
@@ -111,7 +111,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/*
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacter(Collection) forCharacter(cll)
 	@SuppressWarnings("unchecked")
@@ -136,17 +136,17 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 	}
 	 */
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forCharacter(Collection, NullHandler, NullContainer, String) forCharacter}(coll, (new ResettableNullHandler&lt;Character&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forCharacter(Collection, NullHandler, NullContainer, String) forCharacter}(coll, (new ResettableNullHandler&lt;Character&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final char[] forCharacter(Collection<Character> coll, char for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forCharacter(coll, (NullHandler<Character>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@param  null_handler  May not be {@code null}.
 	 **/
@@ -191,17 +191,17 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forByte(Collection, NullHandler, NullContainer, String) forByte}(coll, (new ResettableNullHandler&lt;Byte&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forByte(Collection, NullHandler, NullContainer, String) forByte}(coll, (new ResettableNullHandler&lt;Byte&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final byte[] forByte(Collection<Byte> coll, byte for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forByte(coll, (NullHandler<Byte>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@param  null_handler  May not be {@code null}.
 	 **/
@@ -246,17 +246,17 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forShort(Collection, NullHandler, NullContainer, String) forShort}(coll, (new ResettableNullHandler&lt;Short&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forShort(Collection, NullHandler, NullContainer, String) forShort}(coll, (new ResettableNullHandler&lt;Short&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final short[] forShort(Collection<Short> coll, short for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forShort(coll, (NullHandler<Short>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@param  null_handler  May not be {@code null}.
 	 **/
@@ -301,17 +301,17 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forInteger(Collection, NullHandler, NullContainer, String) forInteger}(coll, (new ResettableNullHandler&lt;Integer&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forInteger(Collection, NullHandler, NullContainer, String) forInteger}(coll, (new ResettableNullHandler&lt;Integer&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final int[] forInteger(Collection<Integer> coll, int for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forInteger(coll, (NullHandler<Integer>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@param  null_handler  May not be {@code null}.
 	 **/
@@ -356,17 +356,17 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forLong(Collection, NullHandler, NullContainer, String) forLong}(coll, (new ResettableNullHandler&lt;Long&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forLong(Collection, NullHandler, NullContainer, String) forLong}(coll, (new ResettableNullHandler&lt;Long&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final long[] forLong(Collection<Long> coll, long for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forLong(coll, (NullHandler<Long>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@param  null_handler  May not be {@code null}.
 	 **/
@@ -411,17 +411,17 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forFloat(Collection, NullHandler, NullContainer, String) forFloat}(coll, (new ResettableNullHandler&lt;Float&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forFloat(Collection, NullHandler, NullContainer, String) forFloat}(coll, (new ResettableNullHandler&lt;Float&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final float[] forFloat(Collection<Float> coll, float for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forFloat(coll, (NullHandler<Float>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@param  null_handler  May not be {@code null}.
 	 **/
@@ -466,17 +466,17 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@return  The equivalent of
-		<BR> &nbsp; &nbsp; <CODE>{@link #forDouble(Collection, NullHandler, NullContainer, String) forDouble}(coll, (new ResettableNullHandler&lt;Double&gt;(for_whenNull)))</CODE>
+		<br/> &nbsp; &nbsp; <code>{@link #forDouble(Collection, NullHandler, NullContainer, String) forDouble}(coll, (new ResettableNullHandler&lt;Double&gt;(for_whenNull)))</code>
 	 **/
 	@SuppressWarnings("unchecked")
 	public static final double[] forDouble(Collection<Double> coll, double for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
 		return  forDouble(coll, (NullHandler<Double>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
 	}
 	/**
-		<P>Get a primitive array from an non-primitive array of its wrapper-type.</P>
+		<p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
 		@param  null_handler  May not be {@code null}.
 	 **/
@@ -521,7 +521,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
 		}
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 <!--
 ---nwrqm input---
@@ -561,7 +561,7 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
 		return ac;
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
 	 **/
@@ -586,7 +586,7 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
 		return ap;
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
 	 **/
@@ -611,7 +611,7 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
 		return ap;
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
 	 **/
@@ -636,7 +636,7 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
 		return ap;
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
 	 **/
@@ -661,7 +661,7 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
 		return ap;
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
 	 **/
@@ -686,7 +686,7 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
 		return ap;
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
 	 **/
@@ -711,7 +711,7 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
 		return ap;
 	}
 	/**
-		<P>Get a primitive array from a <I>non-{@code null}</I> collection that has <I>no {@code null} elements</I>.</P>
+		<p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
 		@see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
 	 **/

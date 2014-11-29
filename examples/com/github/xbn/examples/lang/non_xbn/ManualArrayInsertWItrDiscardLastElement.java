@@ -17,13 +17,13 @@
 
 package  com.github.xbn.examples.lang.non_xbn;
 /**
-   <P>Inserts an element into an existing array, moving all subsequent elements to the right (discarding the last).</P>
+   <p>Inserts an element into an existing array, moving all subsequent elements to the right (discarding the last).</p>
 
-   <P>{@code java com.github.xbn.examples.lang.non_xbn.ManualArrayInsertWItrDiscardLastElement}</P>
+   <p>{@code java com.github.xbn.examples.lang.non_xbn.ManualArrayInsertWItrDiscardLastElement}</p>
 
    @see  com.github.xbn.examples.lang.ManualArrayInsertWItrIntoNewArray
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 import  java.util.Arrays;

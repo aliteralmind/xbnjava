@@ -15,14 +15,14 @@
 package  com.github.xbn.linefilter.entity;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>Should the entity be turned on or off, or should the {@code FilteredIterator} be stopped entirely (all remaining lines are discarded)?.</P>
+	<p>Should the entity be turned on or off, or should the {@code FilteredIterator} be stopped entirely (all remaining lines are discarded)?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum OnOffAbort  {
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #OFF
 		@see  #ABORT_ITERATOR
@@ -30,23 +30,23 @@ public enum OnOffAbort  {
 	 **/
 	ON,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #ON
 		@see  #isOff()
 	 **/
 	OFF,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #ON
 		@see  #doAbortIterator()
 	 **/
 	ABORT_ITERATOR;
 	/**
-		<P>Is this {@code OnOffAbort} equal to {@code ON}?.</P>
+		<p>Is this {@code OnOffAbort} equal to {@code ON}?.</p>
 
-		@return  <CODE>this == {@link #ON}</CODE>
+		@return  <code>this == {@link #ON}</code>
 
 		@see  #isOff()
 		@see  #doAbortIterator()
@@ -55,38 +55,38 @@ public enum OnOffAbort  {
 		return  this == ON;
 	}
 	/**
-		<P>Is this {@code OnOffAbort} equal to {@code OFF}?.</P>
+		<p>Is this {@code OnOffAbort} equal to {@code OFF}?.</p>
 
-		@return  <CODE>this == {@link #OFF}</CODE>
+		@return  <code>this == {@link #OFF}</code>
 		@see  #isOn()
 	 **/
 	public final boolean isOff()  {
 		return  this == OFF;
 	}
 	/**
-		<P>Is this {@code OnOffAbort} equal to {@code ABORT_ITERATOR}?.</P>
+		<p>Is this {@code OnOffAbort} equal to {@code ABORT_ITERATOR}?.</p>
 
-		@return  <CODE>this == {@link #ABORT_ITERATOR}</CODE>
+		@return  <code>this == {@link #ABORT_ITERATOR}</code>
 		@see  #isOn()
 	 **/
 	public final boolean doAbortIterator()  {
 		return  this == ABORT_ITERATOR;
 	}
 	/**
-		<P>If an <CODE>OnOffAbort</CODE> is not a required value, crash.</P>
+		<p>If an <code>OnOffAbort</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfForbiddenValue(OnOffAbort, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(OnOffAbort e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
 	}
 	/**
-		<P>If an <CODE>OnOffAbort</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>OnOffAbort</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfNotRequiredValue(OnOffAbort, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(OnOffAbort e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

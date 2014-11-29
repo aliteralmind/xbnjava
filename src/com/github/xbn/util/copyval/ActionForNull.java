@@ -14,14 +14,14 @@
 \*license*/
 package  com.github.xbn.util.copyval;
 /**
-	<P>The action taken when attempting to duplicate a value that is {@code null}.</P>
+	<p>The action taken when attempting to duplicate a value that is {@code null}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum ActionForNull {
 	/**
-		<P>The duplicate should also be {@code null}.</P>
+		<p>The duplicate should also be {@code null}.</p>
 
 		@see  #USE_NON_NULL
 		@see  #DELETE
@@ -30,7 +30,7 @@ public enum ActionForNull {
 	 **/
 	USE_NULL,
 	/**
-		<P>The duplicate should be set to a pre-configured non-{@code null} value.</P>
+		<p>The duplicate should be set to a pre-configured non-{@code null} value.</p>
 
 		@see  #USE_NULL
 		@see  #doUseNonNull()
@@ -38,23 +38,23 @@ public enum ActionForNull {
 	 **/
 	USE_NON_NULL,
 	/**
-		<P>The duplicate should not be created.</P>
+		<p>The duplicate should not be created.</p>
 
 		@see  #USE_NULL
 		@see  #doDelete()
 	 **/
 	DELETE,
 	/**
-		<P>Throw an exception.</P>
+		<p>Throw an exception.</p>
 
 		@see  #USE_NULL
 		@see  #doCrash()
 	 **/
 	CRASH;
 	/**
-		<P>Is this {@code eCllLstAryOthr} equal to {@code USE_NULL}?.</P>
+		<p>Is this {@code eCllLstAryOthr} equal to {@code USE_NULL}?.</p>
 
-		@return  <CODE>this == {@link #USE_NULL}</CODE>
+		@return  <code>this == {@link #USE_NULL}</code>
 
 		@see  #doUseNonNull()
 		@see  #doDelete()
@@ -64,18 +64,18 @@ public enum ActionForNull {
 		return  this == USE_NULL;
 	}
 	/**
-		<P>Is this {@code eCllLstAryOthr} equal to {@code USE_NON_NULL}?.</P>
+		<p>Is this {@code eCllLstAryOthr} equal to {@code USE_NON_NULL}?.</p>
 
-		@return  <CODE>this == {@link #USE_NON_NULL}</CODE>
+		@return  <code>this == {@link #USE_NON_NULL}</code>
 		@see  #doUseNull()
 	 **/
 	public final boolean doUseNonNull()  {
 		return  this == USE_NON_NULL;
 	}
 	/**
-		<P>Is this {@code eCllLstAryOthr} equal to {@code DELETE}?.</P>
+		<p>Is this {@code eCllLstAryOthr} equal to {@code DELETE}?.</p>
 
-		@return  <CODE>this == {@link #DELETE}</CODE>
+		@return  <code>this == {@link #DELETE}</code>
 		@see  #doUseNull()
 		@see  #isNparray()
 	 **/
@@ -83,9 +83,9 @@ public enum ActionForNull {
 		return  this == DELETE;
 	}
 	/**
-		<P>Is this {@code eCllLstAryOthr} equal to {@code CRASH}?.</P>
+		<p>Is this {@code eCllLstAryOthr} equal to {@code CRASH}?.</p>
 
-		@return  <CODE>this == {@link #CRASH}</CODE>
+		@return  <code>this == {@link #CRASH}</code>
 		@see  #doUseNull()
 		@see  #isParray()
 	 **/

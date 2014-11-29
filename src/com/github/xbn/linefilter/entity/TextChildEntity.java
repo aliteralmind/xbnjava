@@ -15,29 +15,29 @@
 package  com.github.xbn.linefilter.entity;
 	import  com.github.xbn.linefilter.entity.raw.RawChildEntity;
 /**
-	<P>A textual entity that may exist in a parent entity.</P>
+	<p>A textual entity that may exist in a parent entity.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface TextChildEntity extends RawChildEntity<String>  {
 	/**
-		<P>The entity this is contained in.</P>
+		<p>The entity this is contained in.</p>
 
-		@return  <UL>
-			<LI>If this is the {@link #getTopParent() root parent} entity: {@code null},</LI>
-			<LI>Otherwise, a non-null parent entity which may or may not be the root.</LI>
-		</UL>
+		@return  <ul>
+			<li>If this is the {@link #getTopParent() root parent} entity: {@code null},</li>
+			<li>Otherwise, a non-null parent entity which may or may not be the root.</li>
+		</ul>
 		@see  RawChildEntity#getParent()
 	 **/
 	TextParentEntity getParent();
 	/**
-		<P>The root entity this is contained in.</P>
+		<p>The root entity this is contained in.</p>
 
-		@return  <UL>
-			<LI>If this is the root parent entity: {@code null}</LI>
-			<LI>Otherwise, a non-null parent entity whose parent is {@code null}.</LI>
-		</UL>
+		@return  <ul>
+			<li>If this is the root parent entity: {@code null}</li>
+			<li>Otherwise, a non-null parent entity whose parent is {@code null}.</li>
+		</ul>
 		@see  #getParent()
 		@see  RawChildEntity#getTopParent()
 	 **/

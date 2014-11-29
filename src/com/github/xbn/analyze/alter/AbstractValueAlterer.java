@@ -19,18 +19,18 @@ package  com.github.xbn.analyze.alter;
 	import  com.github.xbn.io.TextAppenter;
 	import  com.github.xbn.analyze.Analyzer;
 /**
-	<P>Abstract implementation of {@code ValueAlterer}.</P>
+	<p>Abstract implementation of {@code ValueAlterer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
 	private ValueAltererComposer<V,A> avc = null;
 	/**
-		<P>Create a new instance with defaults.</P>
+		<p>Create a new instance with defaults.</p>
 
-		<P>Sets the internal composer to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer() ValueAltererComposer}&lt;V,A&gt;{@code ()}</P>
+		<p>Sets the internal composer to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer() ValueAltererComposer}&lt;V,A&gt;{@code ()}</p>
 
 		@see  #AbstractValueAlterer(ValueAlterer)
 	 **/
@@ -38,10 +38,10 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
 		avc = new ValueAltererComposer<V,A>();
 	}
 	/**
-		<P>Create a new {@code AbstractAlterer} with the required setting.</P>
+		<p>Create a new {@code AbstractAlterer} with the required setting.</p>
 
-		<P>Sets the internal composer to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer(AlterationRequired) ValueAltererComposer}&lt;V,A&gt;{@code (required)}</P>
+		<p>Sets the internal composer to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer(AlterationRequired) ValueAltererComposer}&lt;V,A&gt;{@code (required)}</p>
 
 		@see  #AbstractAlterer() AbstractAlterer()
 		@see  #AbstractAlterer(Alterer) AbstractAlterer(Alterer)
@@ -50,7 +50,7 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
 		avc = new ValueAltererComposer<V,A>(required);
 	}
 	/**
-		<P>Create a new {@code AbstractValueAlterer}.</P>
+		<p>Create a new {@code AbstractValueAlterer}.</p>
 
 		@see  #AbstractValueAlterer(AlterationRequired)
 	 **/
@@ -58,10 +58,10 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
 		avc = new ValueAltererComposer<V,A>(to_copy);
 	}
 	/**
-		<P>If the {@code ValueAlterer} needs to have its state reset, crash. This is useful as the first line</P>
+		<p>If the {@code ValueAlterer} needs to have its state reset, crash. This is useful as the first line</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer.}{@link com.github.xbn.analyze.alter.AltererComposer#autoResetStateOrCINeedTo(Analyzer) autoResetStateOrCINeedTo}{@code (this)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer.}{@link com.github.xbn.analyze.alter.AltererComposer#autoResetStateOrCINeedTo(Analyzer) autoResetStateOrCINeedTo}{@code (this)}</p>
 	 **/
 	public void autoResetStateOrCINeedTo()  {
 		AnalyzerComposer.autoResetStateOrCINeedTo(this);
@@ -171,7 +171,7 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
 		return  RuleType.UNRESTRICTED;
 	}
 	/**
-		@return  <CODE>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</CODE>
+		@return  <code>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</code>
 	 **/
 	public String getRules()  {
 		return  appendRules(new StringBuilder()).toString();

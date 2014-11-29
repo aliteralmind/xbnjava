@@ -32,13 +32,13 @@ package  com.github.xbn.examples.linefilter;
 	import  java.util.Iterator;
 	import  java.util.regex.Pattern;
 /**
-	<P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to eliminate all comment blocks and the package declaration line from a Java source code file.</P>
+	<p>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to eliminate all comment blocks and the package declaration line from a Java source code file.</p>
 
-	<P>{@code java com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</P>
+	<p>{@code java com.github.xbn.examples.linefilter.EliminateAllCommentBlocksAndPackageLine examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</p>
 
-	@see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_strip_cmts_pkgln">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_strip_cmts_pkgln</A></CODE>
+	@see  <code><a href="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_strip_cmts_pkgln">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_strip_cmts_pkgln</a></code>
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class EliminateAllCommentBlocksAndPackageLine  {
 	public static final void main(String[] cmd_lineParams)  {

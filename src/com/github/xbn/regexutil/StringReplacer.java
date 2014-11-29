@@ -21,27 +21,27 @@ package  com.github.xbn.regexutil;
 	import  com.github.xbn.lang.Adapter;
 	import  com.github.xbn.lang.SimpleAdapter;
 /**
-   <P>Adapts {@code RegexReplacer} into a string alterer, via a {@code StringValidatorReplacer}.</P>
+   <p>Adapts {@code RegexReplacer} into a string alterer, via a {@code StringValidatorReplacer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class StringReplacer extends AbstractValueAlterer<String,String> implements Adapter<StringValidatorReplacer>  {
 	private final SimpleAdapter<StringValidatorReplacer> sa;
 	/**
-		<P>Create a new instance from a {@code RegexReplacer} and filter.</P>
+		<p>Create a new instance from a {@code RegexReplacer} and filter.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #StringReplacer(StringValidatorReplacer) this}(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull))</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #StringReplacer(StringValidatorReplacer) this}(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull))</code></p>
 	 **/
 	public StringReplacer(RegexReplacer replacer, AlterationRequired required, ValidResultFilter vfr_unfilteredIfNull)  {
 		this(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull), required);
 	}
 	/**
-		<P>Create a new instance from a {@code StringValidatorReplacer}.</P>
+		<p>Create a new instance from a {@code StringValidatorReplacer}.</p>
 
-		<P>This sets {@link com.github.xbn.analyze.alter.AbstractValueAlterer#doesExpire() doesExpire}{@code ()}* to  <CODE>sv_replacer.{@link com.github.xbn.analyze.validate.AbstractValidator#doesExpire() doesExpire}()</CODE>.
+		<p>This sets {@link com.github.xbn.analyze.alter.AbstractValueAlterer#doesExpire() doesExpire}{@code ()}* to  <code>sv_replacer.{@link com.github.xbn.analyze.validate.AbstractValidator#doesExpire() doesExpire}()</code>.
 
 		@param  sv_replacer  May not be {@code null} or {@link com.github.xbn.lang.Expirable#isExpired() expired}. Get with {@link #getAdapted() getAdapted}{@code ()}. Get the {@link com.github.xbn.regexutil.RegexReplacer RegexReplacer} with {@link #getRegexReplacer() getRegexReplacer}{@code ()}.
 		@see  #StringReplacer(RegexReplacer, AlterationRequired, ValidResultFilter) this(rr,ar,vrf)
@@ -58,12 +58,12 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
 		}
 	}
 	/**
-		<P>Create a new instance as a duplicate of another.</P>
+		<p>Create a new instance as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls <CODE>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#AbstractValueAlterer(ValueAlterer) AbstractValueAlterer}(to_copy)</CODE></LI>
-			<LI>Sets {@link #getAdapted() getAdapted}{@code ()} to {@code to_copy.getAdapted()}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls <code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#AbstractValueAlterer(ValueAlterer) AbstractValueAlterer}(to_copy)</code></li>
+			<li>Sets {@link #getAdapted() getAdapted}{@code ()} to {@code to_copy.getAdapted()}</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #StringReplacer(StringValidatorReplacer) this(svr)
@@ -93,26 +93,26 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
 		return  to_alter;
 	}
 	/**
-		<P>Get the adapted {@code RegexReplacer}.</P>
+		<p>Get the adapted {@code RegexReplacer}.</p>
 
-		@return  <CODE>{@link #getAdapted() getAdapted}().{@link com.github.xbn.regexutil.StringValidatorReplacer#getAdapted() getAdapted}()</CODE>
+		@return  <code>{@link #getAdapted() getAdapted}().{@link com.github.xbn.regexutil.StringValidatorReplacer#getAdapted() getAdapted}()</code>
 	 **/
 	public RegexReplacer getRegexReplacer()  {
 		return  getAdapted().getAdapted();
 	}
 	/**
-		<P>Get the adapted {@code StringValidatorReplacer}.</P>
+		<p>Get the adapted {@code StringValidatorReplacer}.</p>
 
-		@return  <CODE>sv_replacer</CODE> as provided to the {@link #StringReplacer(StringValidatorReplacer) constructor}
+		@return  <code>sv_replacer</code> as provided to the {@link #StringReplacer(StringValidatorReplacer) constructor}
 		@see  #getRegexReplacer()
 	 **/
 	public StringValidatorReplacer getAdapted()  {
 		return  sa.getAdapted();
 	}
 	/**
-		<P>Duplicate this <CODE>StringReplacer</CODE>.</P>
+		<p>Duplicate this <code>StringReplacer</code>.</p>
 
-		@return  <CODE>(new <A HREF="#StringReplacer(StringReplacer)">StringReplacer</A>(this))</CODE>
+		@return  <code>(new <a href="#StringReplacer(StringReplacer)">StringReplacer</a>(this))</code>
 	 **/
 	public StringReplacer getObjectCopy()  {
 		return  (new StringReplacer(this));

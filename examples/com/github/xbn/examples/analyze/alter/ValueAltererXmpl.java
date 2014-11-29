@@ -17,12 +17,12 @@ package  com.github.xbn.examples.analyze.alter;
 	import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
 	import  com.github.xbn.analyze.alter.AbstractValueAlterer;
 /**
-	<P>Simple custom <CODE>xbn.analyze.alter.{@link com.github.xbn.analyze.alter.ValueAlterer ValueAlterer}&lt;String&gt;</CODE> that converts the string to uppercase.</P>
+	<p>Simple custom <code>xbn.analyze.alter.{@link com.github.xbn.analyze.alter.ValueAlterer ValueAlterer}&lt;String&gt;</code> that converts the string to uppercase.</p>
 
-	<P>{@code java com.github.xbn.examples.analyze.alter.ValueAltererXmpl}</P>
+	<p>{@code java com.github.xbn.examples.analyze.alter.ValueAltererXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueAltererXmpl  {
 	public static final void main(String[] ignored)  {

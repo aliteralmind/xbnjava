@@ -20,10 +20,10 @@ package  com.github.xbn.experimental.listify;
 	import  com.github.xbn.array.helper.ArrayHelperBase;
 	import  com.github.xbn.util.copyval.ValueCopier;
 /**
-	<P>For classes needing to implement {@code Listify}, that cannot extend {@code AbstractListify}.</P>
+	<p>For classes needing to implement {@code Listify}, that cannot extend {@code AbstractListify}.</p>
 
 	@see  AbstractListify
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <CODE><A HREF="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</A></CODE>
+	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code>
  **/
 public class ListifyComposer<E>  {//implements Listify<E>  {
 	private Object oRaw = null;
@@ -44,13 +44,13 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
 		copyval = get_valCopy;
 	}
 	/**
-		<P>Create a new {@code ListifyComposer} as a duplicate of another.</P>
+		<p>Create a new {@code ListifyComposer} as a duplicate of another.</p>
 
 		YYY
 
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -68,13 +68,13 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
 		copyval = gvc2;
 	}
 	/**
-		<P>Create a new {@code ListifyComposer} as a duplicate of another.</P>
+		<p>Create a new {@code ListifyComposer} as a duplicate of another.</p>
 
 		YYY
 
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -121,7 +121,7 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
 	}
 //static...START
 	/**
-		<P>If the underlying object is {@code null}, crash. Otherwise, do nothing.</P>
+		<p>If the underlying object is {@code null}, crash. Otherwise, do nothing.</p>
 
 		@param  listifier  May not be {@code null}.
 	 **/
@@ -160,37 +160,37 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
 //Function-names for error-message calling-functions...START
 //do-not-use. Override if necessary...START
 	/**
-		<P>Do not use--override if necessary.</P>
+		<p>Do not use--override if necessary.</p>
 	 **/
 	public void clear()  {
 		throw  new ListifiedNotAddRemovableException("clear");
 	}
 	/**
-		<P>Do not use--override if necessary.</P>
+		<p>Do not use--override if necessary.</p>
 	 **/
 	public boolean retainAll(Collection<?> coll)  {
 		throw  new ListifiedNotAddRemovableException("retainAll");
 	}
 	/**
-		<P>Do not use--override if necessary.</P>
+		<p>Do not use--override if necessary.</p>
 	 **/
 	public boolean removeAll(Collection<?> coll)  {
 		throw  new ListifiedNotAddRemovableException("removeAll");
 	}
 	/**
-		<P>Do not use--override if necessary.</P>
+		<p>Do not use--override if necessary.</p>
 	 **/
 	public boolean addAll(Collection<? extends E> coll)  {
 		throw  new ListifiedNotAddRemovableException("addAll");
 	}
 	/**
-		<P>Do not use--override if necessary.</P>
+		<p>Do not use--override if necessary.</p>
 	 **/
 	public boolean remove(Object obj)  {
 		throw  new ListifiedNotAddRemovableException("remove");
 	}
 	/**
-		<P>Do not use--override if necessary.</P>
+		<p>Do not use--override if necessary.</p>
 	 **/
 	public boolean add(E to_add)  {
 		throw  new ListifiedNotAddRemovableException("add");

@@ -15,9 +15,9 @@
 package  com.github.xbn.number;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
- * <P>{@code NumberBound} for ints.</P>
+ * <p>{@code NumberBound} for ints.</p>
  * since 0.1.0
- * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IntBound extends NumberBound<Integer>  {
 	/**
@@ -28,28 +28,28 @@ public class IntBound extends NumberBound<Integer>  {
 		super(num, is_inclusive, name);
 	}
 	/**
-	 * <P>Create a new {@code IntBound}.</P>
+	 * <p>Create a new {@code IntBound}.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberBound#NumberBound(N, boolean, String)">super</A>(num, is_inclusive, name)</CODE></P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberBound#NumberBound(N, boolean, String)">super</a>(num, is_inclusive, name)</code></p>
 	 * @since  0.1.4.2
 	 **/
 	public IntBound(Integer num, Inclusive incl, String name)  {
 		super(num, incl, name);
 	}
 	/**
-	 * <P>Create a new {@code IntBound} as a duplicate of another.</P>
+	 * <p>Create a new {@code IntBound} as a duplicate of another.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp; {@link NumberBound#NumberBound(NumberBound) super}{@code (to_copy)}</P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp; {@link NumberBound#NumberBound(NumberBound) super}{@code (to_copy)}</p>
 	 * @param  to_copy  May not be {@code null}.
 	 **/
 	public IntBound(IntBound to_copy)  {
 		super(to_copy);
 	}
 	/**
-	 * <P>Get the number as an int.</P>
-	 * @return  <CODE>{@link NumberBound#get() get}()*.{@link java.lang.Integer#intValue() intValue}()</CODE>
+	 * <p>Get the number as an int.</p>
+	 * @return  <code>{@link NumberBound#get() get}()*.{@link java.lang.Integer#intValue() intValue}()</code>
 	 **/
 	public int getInt()  {
 		return  get().intValue();

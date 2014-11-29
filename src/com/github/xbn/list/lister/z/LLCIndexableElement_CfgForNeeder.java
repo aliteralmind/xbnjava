@@ -20,21 +20,21 @@ package  com.github.xbn.list.lister.z;
 	import  com.github.xbn.analyze.validate.ValueValidator;
 	import  com.github.xbn.number.NewLengthInRangeValidatorFor;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring an {@link com.github.xbn.list.lister.LLCIndexableElement LLCIndexableElement}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring an {@link com.github.xbn.list.lister.LLCIndexableElement LLCIndexableElement}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>,R extends Needer> extends LLCfgElement_CfgForNeeder<E,C,R> implements LLCIndexableElement_Fieldable<E>  {
 	public ValueValidator<Integer> vvForElementLength;
 	public String                 sIfElementLength  ;
 //constructors...START
 	/**
-		<P>Create a new {@code LLCIndexableElement_CfgForNeeder} with defaults.</P>
+		<p>Create a new {@code LLCIndexableElement_CfgForNeeder} with defaults.</p>
 
-			<P>This calls<OL>
-			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLCfgElement_CfgForNeeder.html#LLCfgElement_CfgForNeeder(R)">super</A>(needer)</CODE></LI>
-		</OL></P>
+			<p>This calls<ol>
+			<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCfgElement_CfgForNeeder.html#LLCfgElement_CfgForNeeder(R)">super</a>(needer)</code></li>
+		</ol></p>
 	 **/
 	public LLCIndexableElement_CfgForNeeder(R needer)  {
 		super(needer);
@@ -46,7 +46,7 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 	return  ifElementLength(NewLengthInRangeValidatorFor.impossible(Null.BAD, null, null), null);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> ifElementLength(ValueValidator<Integer> len_validator, String display_ifValid)  {
 		vvForElementLength = len_validator;
@@ -57,14 +57,14 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 		return  ifElementLength(NewLengthInRangeValidatorFor.onlyZeroValid(Null.BAD, filter_ifNonNull, dbgDest_ifNonNull), alt_display);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> finalOutputUnaltered()  {
 		declareFinalOutputUnaltered();
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> reset()  {
 		super.declareReset();
@@ -75,21 +75,21 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 		noAltForElementLength();
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> ifNull(String alt_display)  {
 		super.setIfNull(alt_display);
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> ifNonNull(String alt_display)  {
 		super.setIfNonNull(alt_display);
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> prePost(String prefixfix, String postfixfix)  {
 		super.setPrePost(prefixfix, postfixfix);
@@ -106,13 +106,13 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 //getters...END
 //other...START
 	/**
-		<P>Create a new {@code LLCIndexableElement} from the configuration.</P>
+		<p>Create a new {@code LLCIndexableElement} from the configuration.</p>
 
-			<P><I><B>See:</B></I><UL>
-			<LI><I>{@link #endCfg() endCfg}{@code ()}</I></LI>
-			</UL></P>
+			<p><i><b>See:</b></i><ul>
+			<li><i>{@link #endCfg() endCfg}{@code ()}</i></li>
+			</ul></p>
 
-		@return  <CODE>(new {@link com.github.xbn.list.lister.LLCIndexableElement#LLCIndexableElement(LLCIndexableElement_Fieldable) LLCIndexableElement}&lt;E&gt;(this, false))</CODE>
+		@return  <code>(new {@link com.github.xbn.list.lister.LLCIndexableElement#LLCIndexableElement(LLCIndexableElement_Fieldable) LLCIndexableElement}&lt;E&gt;(this, false))</code>
 	 **/
 	public C build()  {
 		@SuppressWarnings("unchecked")
@@ -120,12 +120,12 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 		return  c;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</A>(needer, (Class&lt;LLCIndexableElement&lt;E&gt;&gt;)((Class)LLCIndexableElement.class))</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</a>(needer, (Class&lt;LLCIndexableElement&lt;E&gt;&gt;)((Class)LLCIndexableElement.class))</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  com.github.xbn.neederneedable.Needer#startConfig(Class) Needer#startConfig(cls)
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> startConfigReturnNeedable(R needer)  {
@@ -138,7 +138,7 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCIndexableElement_CfgForNeeder<E,C,R> chainID(boolean do_setStatic, Object id)  {
 		super.chainID(do_setStatic, id);

@@ -16,16 +16,16 @@ package  com.github.xbn.testdev;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>YYY.</P>
+	<p>YYY.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum TabToSpaceDebugLevel  {
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
-		<P>This sets {@link #getNumber() getNumber}{@code ()} to {@code 0}.</P>
+		<p>This sets {@link #getNumber() getNumber}{@code ()} to {@code 0}.</p>
 
 		@see  #ALL_SUMMARY_ONLY
 		@see  #FILE_DOTS
@@ -35,45 +35,45 @@ public enum TabToSpaceDebugLevel  {
 	 **/
 	OFF(0),
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
-		<P>This sets {@link #getNumber() getNumber}{@code ()} to {@code 1}.</P>
+		<p>This sets {@link #getNumber() getNumber}{@code ()} to {@code 1}.</p>
 
 		@see  #OFF
 		@see  #isAllSummaryOnly()
 	 **/
 	ALL_SUMMARY_ONLY(1),
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
-		<P>This sets {@link #getNumber() getNumber}{@code ()} to {@code 2}.</P>
+		<p>This sets {@link #getNumber() getNumber}{@code ()} to {@code 2}.</p>
 
 		@see  #OFF
 		@see  #isFileDots()
 	 **/
 	FILE_DOTS(2),
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
-		<P>This sets {@link #getNumber() getNumber}{@code ()} to {@code 3}.</P>
+		<p>This sets {@link #getNumber() getNumber}{@code ()} to {@code 3}.</p>
 
 		@see  #OFF
 		@see  #isFileSummaries()
 	 **/
 	FILE_SUMMARIES(3),
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
-		<P>This sets {@link #getNumber() getNumber}{@code ()} to {@code 4}.</P>
+		<p>This sets {@link #getNumber() getNumber}{@code ()} to {@code 4}.</p>
 
 		@see  #OFF
 		@see  #isLineCounts()
 	 **/
 	LINE_COUNTS(4);
 	/**
-		<P>Is this {@code TabToSpaceDebugLevel} equal to {@code OFF}?.</P>
+		<p>Is this {@code TabToSpaceDebugLevel} equal to {@code OFF}?.</p>
 
-		@return  <CODE>this == {@link #OFF}</CODE>
+		@return  <code>this == {@link #OFF}</code>
 
 		@see  #isAllSummaryOnly()
 		@see  #isFileDots()
@@ -84,36 +84,36 @@ public enum TabToSpaceDebugLevel  {
 		return  this == OFF;
 	}
 	/**
-		<P>Is this {@code TabToSpaceDebugLevel} equal to {@code ALL_SUMMARY_ONLY}?.</P>
+		<p>Is this {@code TabToSpaceDebugLevel} equal to {@code ALL_SUMMARY_ONLY}?.</p>
 
-		@return  <CODE>this == {@link #ALL_SUMMARY_ONLY}</CODE>
+		@return  <code>this == {@link #ALL_SUMMARY_ONLY}</code>
 		@see  #isOff()
 	 **/
 	public final boolean isAllSummaryOnly()  {
 		return  this == ALL_SUMMARY_ONLY;
 	}
 	/**
-		<P>Is this {@code TabToSpaceDebugLevel} equal to {@code FILE_DOTS}?.</P>
+		<p>Is this {@code TabToSpaceDebugLevel} equal to {@code FILE_DOTS}?.</p>
 
-		@return  <CODE>this == {@link #FILE_DOTS}</CODE>
+		@return  <code>this == {@link #FILE_DOTS}</code>
 		@see  #isOff()
 	 **/
 	public final boolean isFileDots()  {
 		return  this == FILE_DOTS;
 	}
 	/**
-		<P>Is this {@code TabToSpaceDebugLevel} equal to {@code FILE_SUMMARIES}?.</P>
+		<p>Is this {@code TabToSpaceDebugLevel} equal to {@code FILE_SUMMARIES}?.</p>
 
-		@return  <CODE>this == {@link #FILE_SUMMARIES}</CODE>
+		@return  <code>this == {@link #FILE_SUMMARIES}</code>
 		@see  #isOff()
 	 **/
 	public final boolean isFileSummaries()  {
 		return  this == FILE_SUMMARIES;
 	}
 	/**
-		<P>Is this {@code TabToSpaceDebugLevel} equal to {@code LINE_COUNTS}?.</P>
+		<p>Is this {@code TabToSpaceDebugLevel} equal to {@code LINE_COUNTS}?.</p>
 
-		@return  <CODE>this == {@link #LINE_COUNTS}</CODE>
+		@return  <code>this == {@link #LINE_COUNTS}</code>
 		@see  #isOff()
 	 **/
 	public final boolean isLineCounts()  {
@@ -137,20 +137,20 @@ public enum TabToSpaceDebugLevel  {
 		return  number;
 	}
 	/**
-		<P>If an <CODE>TabToSpaceDebugLevel</CODE> is not a required value, crash.</P>
+		<p>If an <code>TabToSpaceDebugLevel</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfForbiddenValue(TabToSpaceDebugLevel, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(TabToSpaceDebugLevel e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
 	}
 	/**
-		<P>If an <CODE>TabToSpaceDebugLevel</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>TabToSpaceDebugLevel</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfNotRequiredValue(TabToSpaceDebugLevel, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(TabToSpaceDebugLevel e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

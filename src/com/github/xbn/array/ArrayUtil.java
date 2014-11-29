@@ -20,30 +20,30 @@ package  com.github.xbn.array;
 	import  java.util.Arrays;
 	import  java.util.List;
 /**
-	<P>Utilities related to non-primitive arrays, including error checking and conversion to other non-primitive containers.</P>
+	<p>Utilities related to non-primitive arrays, including error checking and conversion to other non-primitive containers.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ArrayUtil  {
 	public static final StringBuilder[] asdEMPTY = new StringBuilder[0];
 	/**
-		<P>Same as <CODE>Arrays.toString</CODE>, with the addition of highlighting a single element.</P>
+		<p>Same as <code>Arrays.toString</code>, with the addition of highlighting a single element.</p>
 
-		@return  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#appendToString(java.lang.StringBuilder, E[], java.lang.String, int, java.lang.String)">appendToString</A>(new StringBuilder(), array, prefix, index, postfix).toString()</CODE>
+		@return  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#appendToString(java.lang.StringBuilder, E[], java.lang.String, int, java.lang.String)">appendToString</a>(new StringBuilder(), array, prefix, index, postfix).toString()</code>
 	 **/
 	public static final <E> String toStringHighlightElement(E[] array, String prefix, int index, String postfix)  {
 		return  appendToStringHighlightElement(new StringBuilder(), array, prefix, index, postfix).toString();
 	}
 	/**
-		<P>Same as <CODE>{@link java.util.Arrays}.{@link java.util.Arrays#toString(Object[]) toString}</CODE>, with the addition of highlighting a single element.</P>
+		<p>Same as <code>{@link java.util.Arrays}.{@link java.util.Arrays#toString(Object[]) toString}</code>, with the addition of highlighting a single element.</p>
 
 		@param  to_appendTo May not be {@code null}.
 		@param  array  May not be {@code null}.
-		@param  prefix  Placed before the highlighted element. <I>Should</I> not be {@code null} or empty.
-		@param  index  The element to highlight. <I>Should</I> be a valid index.
+		@param  prefix  Placed before the highlighted element. <i>Should</i> not be {@code null} or empty.
+		@param  index  The element to highlight. <i>Should</i> be a valid index.
 		@param  postfix  Placed after the highlighted element.
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#toStringHighlightElement(E[], java.lang.String, int, java.lang.String)">toStringHighlightElement</A></CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#toStringHighlightElement(E[], java.lang.String, int, java.lang.String)">toStringHighlightElement</a></code>
 	 **/
 	public static final <E> StringBuilder appendToStringHighlightElement(StringBuilder to_appendTo, E[] array, String prefix, int index, String postfix)  {
 		try  {
@@ -67,10 +67,10 @@ public class ArrayUtil  {
 		return  to_appendTo;
 	}
 	/**
-		<P>Get the length of an array, or crash if it's {@code null}.</P>
+		<p>Get the length of an array, or crash if it's {@code null}.</p>
 
 		@param  array  The array whose length is needed.
-		@param  array_name  Descriptive name of {@code coll}. <I>Should</I> be non-{@code null} and non-empty.
+		@param  array_name  Descriptive name of {@code coll}. <i>Should</i> be non-{@code null} and non-empty.
 		@return  {@code array.length}
 		@exception  NullPointerException  If {@code array} is {@code null}.
 	 **/
@@ -82,9 +82,9 @@ public class ArrayUtil  {
 		}
 	}
 	/**
-		<P>Get a new non-primitive array, from another of a potentially different type.</P>
+		<p>Get a new non-primitive array, from another of a potentially different type.</p>
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</A>(E[],vc,b,s)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</a>(E[],vc,b,s)</code>
 	 **/
 	public static final <U,T> T[] getArrayCopyNewType(U[] original, Class<? extends T[]> new_type)  {
 		if(original == null)  {
@@ -97,15 +97,15 @@ public class ArrayUtil  {
 		}
 	}
 	/**
-		<P>Get a new object array from a non-primitive array.</P>
+		<p>Get a new object array from a non-primitive array.</p>
 
-		@param  get_valCopy  If non-{@code null}, all elements are duplicated. When {@code null}, the original elements are referenced. When non-{@code null}, <CODE>get_valCopy.{@link com.github.xbn.util.copyval.ValueCopier#isValueCopyable() isValueCopyable}()</CODE> must be {@code true}.
-		@param  nnull  If non-{@code null}, {@code array} may not be {@code null}. This is the name of the function calling this one. It <I>should</I> not be empty.
+		@param  get_valCopy  If non-{@code null}, all elements are duplicated. When {@code null}, the original elements are referenced. When non-{@code null}, <code>get_valCopy.{@link com.github.xbn.util.copyval.ValueCopier#isValueCopyable() isValueCopyable}()</code> must be {@code true}.
+		@param  nnull  If non-{@code null}, {@code array} may not be {@code null}. This is the name of the function calling this one. It <i>should</i> not be empty.
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getStringListOrNull(E[], java.lang.String, java.lang.String)">getStringListOrNull</A>(E[],s,s)</CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getObjectListOrNull(E[], xbn.util.copyval.ValueCopier, java.lang.String, java.lang.String)">getObjectListOrNull</A>(E[],vc,s,s)</CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getListOrNull(E[], xbn.util.copyval.ValueCopier, java.lang.String, java.lang.String)">getListOrNull</A>(E[],vc,s,s)</CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getArrayCopyNewType(U[], java.lang.Class)">getArrayCopyNewType</A>(U[],cls)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getStringListOrNull(E[], java.lang.String, java.lang.String)">getStringListOrNull</a>(E[],s,s)</code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getObjectListOrNull(E[], xbn.util.copyval.ValueCopier, java.lang.String, java.lang.String)">getObjectListOrNull</a>(E[],vc,s,s)</code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getListOrNull(E[], xbn.util.copyval.ValueCopier, java.lang.String, java.lang.String)">getListOrNull</a>(E[],vc,s,s)</code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getArrayCopyNewType(U[], java.lang.Class)">getArrayCopyNewType</a>(U[],cls)</code>
 	 **/
 	public static final <E> Object[] getObjectArrayOrNull(E[] array, ValueCopier<E> get_valCopy, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
@@ -125,15 +125,15 @@ public class ArrayUtil  {
 	}
 
 	/**
-		<P>Get a new string array from a non-primitive array.</P>
+		<p>Get a new string array from a non-primitive array.</p>
 
 		@param  array  The array to convert.
 		@param  nnull  If {@code false}, then {@code array} may not be {@code null}.
 		@param  cntrName_forNullBad  Descriptive name for {@code array}. When {@code null_ok} is {@code true}, this is ignored.
-		@return  If {@code array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>Non-{@code null}: A new string array containing each element's {@code toString()}, in the same order. If an element is {@code null}, it's corresponding element in the returned array is also {@code null}.</LI>
-		</UL>
+		@return  If {@code array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>Non-{@code null}: A new string array containing each element's {@code toString()}, in the same order. If an element is {@code null}, it's corresponding element in the returned array is also {@code null}.</li>
+		</ul>
 	 **/
 	public static final <E> String[] getStringArrayOrNull(E[] array, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
@@ -148,13 +148,13 @@ public class ArrayUtil  {
 		return  as;
 	}
 	/**
-		<P>Get the middle index of a non-primitive array.</P>
+		<p>Get the middle index of a non-primitive array.</p>
 
 		@param  array  May not be {@code null}.
-		@return  <CODE>{@link com.github.xbn.array.IndexableUtil IndexableUtil}.{@link com.github.xbn.array.IndexableUtil#getMiddleIndex(int) getMiddleIndex}(array.length)</CODE>
+		@return  <code>{@link com.github.xbn.array.IndexableUtil IndexableUtil}.{@link com.github.xbn.array.IndexableUtil#getMiddleIndex(int) getMiddleIndex}(array.length)</code>
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getNonPArrayElementTSLengthIterator(E[])">getNonPArrayElementTSLengthIterator</A>(E[])</CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="forIsElementValid(R[], xbn.analyze.validate.ValueValidator)">forIsElementValid</A>(R[],vv)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getNonPArrayElementTSLengthIterator(E[])">getNonPArrayElementTSLengthIterator</a>(E[])</code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="forIsElementValid(R[], xbn.analyze.validate.ValueValidator)">forIsElementValid</a>(R[],vv)</code>
 	 **/
 	public static final <E> int getMiddleIndex(E[] array)  {
 		try  {
@@ -164,16 +164,16 @@ public class ArrayUtil  {
 		}
 	}
 	/**
-		<P>Get a string list from a non-primitive array.</P>
+		<p>Get a string list from a non-primitive array.</p>
 
 		@param  array  The array to convert.
 		@param  nnull  If {@code false}, then {@code array} may not be {@code null}.
 		@param  cntrName_forNullBad  Descriptive name for {@code array}. When {@code null_ok} is {@code true}, this is ignored.
-		@return  If {@code array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>Non-{@code null}: A new list of strings, containing every element's {@code toString()}, or {@code null} if it's {@code null}.</LI>
-		</UL>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</A>(E[],vc,b,s)</CODE>
+		@return  If {@code array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>Non-{@code null}: A new list of strings, containing every element's {@code toString()}, or {@code null} if it's {@code null}.</li>
+		</ul>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</a>(E[],vc,b,s)</code>
 	 **/
 	public static final <E> List<String> getStringListOrNull(E[] array, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
@@ -189,9 +189,9 @@ public class ArrayUtil  {
 		return  vs;
 	}
 	/**
-		<P>Get an object list from a non-primitive array.</P>
+		<p>Get an object list from a non-primitive array.</p>
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</A>(E[],vc,b,s)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</a>(E[],vc,b,s)</code>
 	 **/
 	public static final <E> List<Object> getObjectListOrNull(E[] array, ValueCopier<E> get_valCopy, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
@@ -213,9 +213,9 @@ public class ArrayUtil  {
 		return  vs;
 	}
 	/**
-		<P>Get a list of the element-type, from a non-primitive array.</P>
+		<p>Get a list of the element-type, from a non-primitive array.</p>
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</A>(E[],vc,b,s)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getObjectArrayOrNull(E[], xbn.util.copyval.ValueCopier, boolean, java.lang.String)">getObjectArrayOrNull</a>(E[],vc,b,s)</code>
 	 **/
 	public static final <E> List<E> getListOrNull(E[] array, ValueCopier<E> get_valCopy, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
@@ -242,14 +242,14 @@ public class ArrayUtil  {
 		}
 	}
 	/*
-		<P>Get a list containing a primitive array's elements, in its wrapper-type, or {@code null} if it's {@code null}.</P>
+		<p>Get a list containing a primitive array's elements, in its wrapper-type, or {@code null} if it's {@code null}.</p>
 
-		@param  nnull  If non-{@code null}, then {@code array} may not be {@code null}. This is used for the potential error message, and <I>should</I> not be empty.
-		@return  If {@code array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null}:
-			<BR> &nbsp; &nbsp; {@code Arrays.asList(array)}</LI>
-		</UL>
+		@param  nnull  If non-{@code null}, then {@code array} may not be {@code null}. This is used for the potential error message, and <i>should</i> not be empty.
+		@return  If {@code array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null}:
+			<br/> &nbsp; &nbsp; {@code Arrays.asList(array)}</li>
+		</ul>
 	public static final <E> List<E> getListOrNull(E[] array, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
 			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -259,13 +259,13 @@ public class ArrayUtil  {
 	}
 	 */
 	/*
-		<P>Get a {@code java.util.List&lt;Object&gt;} containing all elements from a primitive array.</P>
+		<p>Get a {@code java.util.List&lt;Object&gt;} containing all elements from a primitive array.</p>
 
-		@param  nnull  If non-{@code null}, then {@code array} may not be {@code null}. This is used for the potential error message, and <I>should</I> not be empty.
-		@return  If {@code array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null}: A new object-list, containing all elements from {@code array}</LI>
-		</UL>
+		@param  nnull  If non-{@code null}, then {@code array} may not be {@code null}. This is used for the potential error message, and <i>should</i> not be empty.
+		@return  If {@code array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null}: A new object-list, containing all elements from {@code array}</li>
+		</ul>
 	public static final <E> List<Object> getObjectListOrNull(E[] array, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
 			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -280,13 +280,13 @@ public class ArrayUtil  {
 	}
 	 */
 	/*
-		<P>Get a {@code java.util.List&lt;String&gt;} containing all elements from a primitive array.</P>
+		<p>Get a {@code java.util.List&lt;String&gt;} containing all elements from a primitive array.</p>
 
-		@param  nnull  If non-{@code null}, then {@code array} may not be {@code null}. This is used for the potential error message, and <I>should</I> not be empty.
-		@return  If {@code array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null}: A new string-list, containing all elements from {@code array}</LI>
-		</UL>
+		@param  nnull  If non-{@code null}, then {@code array} may not be {@code null}. This is used for the potential error message, and <i>should</i> not be empty.
+		@return  If {@code array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null}: A new string-list, containing all elements from {@code array}</li>
+		</ul>
 	public static final <E> List<String> getStringListOrNull(E[] array, NullContainer nnull, String cntrName_forNullBad)  {
 		if(array == null)  {
 			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);

@@ -14,19 +14,19 @@
 \*license*/
 package  com.github.xbn.util.lock;
 /**
-	<P>A {@code Lockable} that cannot be unlocked.</P>
+	<p>A {@code Lockable} that cannot be unlocked.</p>
  **/
 public interface OneWayLockable extends Lockable  {
 	/**
-		@return  <B>{@code false}</B>
+		@return  <b>{@code false}</b>
 	 **/
 	boolean isUnlockable();
 
 	/**
-		<P>Shortcut for {@code lock(true)}</P>
+		<p>Shortcut for {@code lock(true)}</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>(OneWayLockable){@link com.github.xbn.util.lock.Lockable super}.{@link com.github.xbn.util.lock.Lockable#lock(boolean) lock}(true)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>(OneWayLockable){@link com.github.xbn.util.lock.Lockable super}.{@link com.github.xbn.util.lock.Lockable#lock(boolean) lock}(true)</code></p>
 	 **/
 	void lock();
 }

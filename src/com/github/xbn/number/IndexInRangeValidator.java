@@ -23,9 +23,9 @@ package  com.github.xbn.number;
 	import  java.util.Vector;
 
 /**
-	<P>{@code ValueValidator} for testing an indexes {@code null}-ness (an integer object that represents an index) and that it is in a {@code LengthInRange}. This also tests min-max index ranges.</P>
+	<p>{@code ValueValidator} for testing an indexes {@code null}-ness (an integer object that represents an index) and that it is in a {@code LengthInRange}. This also tests min-max index ranges.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.number.z.IndexInRangeValidator_Cfg IndexInRangeValidator_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.number.z.IndexInRangeValidator_Cfg IndexInRangeValidator_Cfg}</h3>
 
 	public IndexInRangeValidator_CfgForNeeder<G,V,R> extraErrInfo(Object info)  {
 	public IndexInRangeValidator_CfgForNeeder<G,V,R> range(G range)  {
@@ -37,7 +37,7 @@ package  com.github.xbn.number;
 	public IndexInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 	@see  IndexInRange
  **/
 public class IndexInRangeValidator extends IntInRangeValidator  {
@@ -49,10 +49,10 @@ public class IndexInRangeValidator extends IntInRangeValidator  {
 		super(type, fieldable);
 	}
 	/**
-		<P>Create a new {@code IndexInRangeValidator} as a duplicate of another.</P>
+		<p>Create a new {@code IndexInRangeValidator} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link IntInRangeValidator#IntInRangeValidator(IntInRangeValidator) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link IntInRangeValidator#IntInRangeValidator(IntInRangeValidator) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -81,7 +81,7 @@ public class IndexInRangeValidator extends IntInRangeValidator  {
 		getRange().crashIfBadIndexElement(index, cntr_name, idx_inCntr);
 	}
 	/**
-		@return  <CODE>(new {@link #IndexInRangeValidator(IndexInRangeValidator) IndexInRangeValidator}(this))</CODE>
+		@return  <code>(new {@link #IndexInRangeValidator(IndexInRangeValidator) IndexInRangeValidator}(this))</code>
 	 **/
 	public IndexInRangeValidator getObjectCopy()  {
 		return  (new IndexInRangeValidator(this));

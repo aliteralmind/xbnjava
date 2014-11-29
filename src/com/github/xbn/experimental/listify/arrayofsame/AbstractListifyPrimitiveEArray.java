@@ -28,22 +28,22 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  java.util.Iterator;
 	import  java.util.List;
 /**
-	<P>For building listifiers whose raw object is a primitive array, and whose virtual elements are their wrapper-types (such as {@code int[]} and {@code java.lang.Integer}).</P>
+	<p>For building listifiers whose raw object is a primitive array, and whose virtual elements are their wrapper-types (such as {@code int[]} and {@code java.lang.Integer}).</p>
 
  	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyPrimitiveEArray<E> implements ListifyPrimitiveEArray<E>  {
 	private ListifyPrimitiveableComposer<E> lpbc = null;
 	private ListifyEArrayComposer<E> leac = null;
 //constructors...START
 	/**
-		<P>Create a new {@code AbstractListifyPrimitiveEArray}.</P>
+		<p>Create a new {@code AbstractListifyPrimitiveEArray}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, ValueCopier) super}{@code (obj_thatIsPrimArr, get_valCopy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, ValueCopier) super}{@code (obj_thatIsPrimArr, get_valCopy)}</p>
 	 **/
 	public AbstractListifyPrimitiveEArray(Object obj_thatIsPrimArr, PrimitiveArrayHelper<E> pa_helper, ValueCopier<E> get_valCopy)  {
 		leac = new ListifyEArrayComposer<E>(obj_thatIsPrimArr, pa_helper, get_valCopy);
@@ -57,12 +57,12 @@ public abstract class AbstractListifyPrimitiveEArray<E> implements ListifyPrimit
 		lpbc = new ListifyPrimitiveableComposer<E>(obj_thatIsPrimArr, AddRemovable.NO, pa_helper, get_valCopy, hnr_nb);
 	}
 	/**
-		<P>Create a new {@code AbstractListifyPrimitiveEArray} as a duplicate of another.</P>
+		<p>Create a new {@code AbstractListifyPrimitiveEArray} as a duplicate of another.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; ...........</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; ...........</p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -108,7 +108,7 @@ public abstract class AbstractListifyPrimitiveEArray<E> implements ListifyPrimit
 		return  getRawObject();
 	}
 	/**
-		<P>If the array is {@code null}, crash--otherwise, <I>return</I> the error-cause.</P>
+		<p>If the array is {@code null}, crash--otherwise, <i>return</i> the error-cause.</p>
 
 		@return  {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray super}.{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#ciRawObjectNullOrReturnCause_4prot(String, RuntimeException) ciRawObjectNullOrReturnCause_4prot}{@code (cause)}
 	protected RuntimeException ciRawObjectNullOrReturnCause(RuntimeException cause)  {
@@ -116,7 +116,7 @@ public abstract class AbstractListifyPrimitiveEArray<E> implements ListifyPrimit
 	}
 	 **/
 	/**
-		<P>If the array is {@code null}, or an index is bad given its length, crash--otherwise <I>return</I> the causing error.</P>
+		<p>If the array is {@code null}, or an index is bad given its length, crash--otherwise <i>return</i> the causing error.</p>
 	 **/
 	protected void ciArrayNullOrBadIndex(int index)  {
 		CrashIfObjThatIsPrimitiveArray.nullOrBadIndex(getRawObject(), index, "index", "getRawPArray()");

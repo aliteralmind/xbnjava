@@ -17,36 +17,36 @@ package  com.github.xbn.number;
 	import  java.util.Collections;
 	import  java.util.Arrays;
 /**
- * <P>Get the median of two ints, determine a long's digit-length, retrieve
- * random values, and other number-related utilities.</P>
+ * <p>Get the median of two ints, determine a long's digit-length, retrieve
+ * random values, and other number-related utilities.</p>
  *
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}),
  * dual-licensed under the LGPL (version 3.0 or later) or the ASL (version
  * 2.0). See source code for details.
- * <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>,
- * <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>,
+ * <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  * @since  0.1.0
  */
 public class NumberUtil  {
 	/**
 	 *
-	 * <P>The infinity character: <CODE>'&infin;'</CODE></P>
+	 * <p>The infinity character: <code>'&infin;'</code></p>
 	 *
-	 * <P>In html: {@code "&infin;"} or {@code "&#8734;"}</P>
+	 * <p>In html: {@code "&infin;"} or {@code "&#8734;"}</p>
 	 *
-	 * <P><I>With thanks to
-	 * <A HREF="http://stackoverflow.com/users/1093528/fge">fge</A> on
-	 * stackoverflow.</I></P>
+	 * <p><i>With thanks to
+	 * <a href="http://stackoverflow.com/users/1093528/fge">fge</a> on
+	 * stackoverflow.</i></p>
 	 *
-	 * @see  <CODE><A HREF="http://www.fileformat.info/info/unicode/char/221e/index.htm">http://www.fileformat.info/info/unicode/char/221e/index.htm</A></CODE></I>
-	 * @see  <CODE><A HREF="http://stackoverflow.com/questions/2254913/infinity-symbol-with-html">http://stackoverflow.com/questions/2254913/infinity-symbol-with-html</A></CODE>
+	 * @see  <code><a href="http://www.fileformat.info/info/unicode/char/221e/index.htm">http://www.fileformat.info/info/unicode/char/221e/index.htm</a></code></i>
+	 * @see  <code><a href="http://stackoverflow.com/questions/2254913/infinity-symbol-with-html">http://stackoverflow.com/questions/2254913/infinity-symbol-with-html</a></code>
 	 */
 	public static final char INFINITY_CHAR = '\u221E';
 	/**
-	 * <P>For representing up to the number 62 with a single character. This
+	 * <p>For representing up to the number 62 with a single character. This
 	 * is an unmodifiable character list of digits (0-9), followed by
 	 * lowercase letters (a-z), uppercase letters (A-Z), and finally the
-	 * infinity character (&infin;).</P>
+	 * infinity character (&infin;).</p>
 	 *
 	 * @see  #getCharForNumber0Through62(int)
 	 */
@@ -60,13 +60,13 @@ public class NumberUtil  {
 			'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
 			'Y', 'Z', INFINITY_CHAR}));
 	/**
-	 * <P>Get a character representing a number, using {@code CHAR_LIST_FOR_NUMBERS_0_THROUGH_62}.</P>
+	 * <p>Get a character representing a number, using {@code CHAR_LIST_FOR_NUMBERS_0_THROUGH_62}.</p>
 	 *
-	 * @return  If {@code num} is<UL>
-	 * 	<LI>Negative: {@code '-'}</LI>
-	 * 	<LI>1 through 62: <CODE>{@link #CHAR_LIST_FOR_NUMBERS_0_THROUGH_62}.{@link java.util.List#get(int) get}(num)</CODE></LI>
-	 * 	<LI>63 or greater: {@link #INFINITY_CHAR}</LI>
-	 * </UL>
+	 * @return  If {@code num} is<ul>
+	 * 	<li>Negative: {@code '-'}</li>
+	 * 	<li>1 through 62: <code>{@link #CHAR_LIST_FOR_NUMBERS_0_THROUGH_62}.{@link java.util.List#get(int) get}(num)</code></li>
+	 * 	<li>63 or greater: {@link #INFINITY_CHAR}</li>
+	 * </ul>
 	 */
 	public static final char getCharForNumber0Through62(int num)  {
 		return  ((num < 0) ? '-'
@@ -74,41 +74,41 @@ public class NumberUtil  {
 				:  CHAR_LIST_FOR_NUMBERS_0_THROUGH_62.get(num)));
 	}
 	/**
-	 * <P>Get the integer in the middle of two others.</P>
+	 * <p>Get the integer in the middle of two others.</p>
 	 *
-	 * <P>From
-	 * <BR> &nbsp; &nbsp; {@code http://stackoverflow.com/questions/2707605/java-arraylist-middle}
-	 * <BR>(User {@code polygenelubricants}, downloaded 11/13/2013)
-	 * <BR>&quot;Generally, if you need to find the middle of items between
+	 * <p>From
+	 * <br/> &nbsp; &nbsp; {@code http://stackoverflow.com/questions/2707605/java-arraylist-middle}
+	 * <br/>(User {@code polygenelubricants}, downloaded 11/13/2013)
+	 * <br/>&quot;Generally, if you need to find the middle of items between
 	 * index low (inclusive) and high (exclusive), it's mathematically
-	 * <BR> &nbsp; &nbsp; {@code int mid = (low + high) / 2}
-	 * <BR>But due to arithmetic overflow in limited-precision integer, the
+	 * <br/> &nbsp; &nbsp; {@code int mid = (low + high) / 2}
+	 * <br/>But due to arithmetic overflow in limited-precision integer, the
 	 * proper formula is
-	 * <BR> &nbsp; &nbsp; {@code int mid = (low + high) >>> 1}&quot;</P>
+	 * <br/> &nbsp; &nbsp; {@code int mid = (low + high) >>> 1}&quot;</p>
 	 *
-	 * <P>{@code low} <I>should</I> be less-than-or-equal-to {@code high}.</P>
+	 * <p>{@code low} <i>should</i> be less-than-or-equal-to {@code high}.</p>
 	 */
 	public static final int getMiddleInt(int low, int high)  {
 		return  (low + high) >>> 1;
 	}
 	/**
-	 * <P>Is the int in the int-array?.</P>
+	 * <p>Is the int in the int-array?.</p>
 	 *
-	 * @return  <CODE>({@link #getFoundIdx(int, int[]) getFoundIdx}(num, ints) != -1)</CODE>
+	 * @return  <code>({@link #getFoundIdx(int, int[]) getFoundIdx}(num, ints) != -1)</code>
 	 */
 	public static final boolean isIn(int num, int[] ints)  {
 		return  (getFoundIdx(num, ints) != -1);
 	}
 	/**
-	 * <P>Is the int in the int-array?.</P>
+	 * <p>Is the int in the int-array?.</p>
 	 *
-	 * @return  <CODE>({@link #getFoundIdx(int, int[], boolean) getFoundIdx}(num, ints, do_orderAsc) != -1)</CODE>
+	 * @return  <code>({@link #getFoundIdx(int, int[], boolean) getFoundIdx}(num, ints, do_orderAsc) != -1)</code>
 	 */
 	public static final boolean isIn(int num, int[] ints, boolean do_orderAsc)  {
 		return  (getFoundIdx(num, ints, do_orderAsc) != -1);
 	}
 	/**
-	 * <P>Get the (first) index at which a int exists in a int-array.</P>
+	 * <p>Get the (first) index at which a int exists in a int-array.</p>
 	 *
 	 * @return  {@link #getFoundIdx(int, int[], boolean) getFoundIdx(num, ints, true)}
 	 */
@@ -116,13 +116,13 @@ public class NumberUtil  {
 		return  getFoundIdx(num, ints, true);
 	}
 	/**
-	 * <P>Get the (first) index at which a int exists in a int-array.</P>
+	 * <p>Get the (first) index at which a int exists in a int-array.</p>
 	 *
 	 * @param  num  The int to analyze.
-	 * @param  ints  The array which {@code num} should be in. May not be null, and, if {@code do_orderAsc} is true, <I>should</I> be non-empty, unique, and sorted ascending. If not, this function will not work properly.
-	 * @param  do_orderAsc  If true, then <CODE>{@link java.util.Arrays}.{@link java.util.Arrays#binarySearch(char[], char) binarySearch}(c[],c)</CODE> is used to search the array. If false, a for loop is used.
+	 * @param  ints  The array which {@code num} should be in. May not be null, and, if {@code do_orderAsc} is true, <i>should</i> be non-empty, unique, and sorted ascending. If not, this function will not work properly.
+	 * @param  do_orderAsc  If true, then <code>{@link java.util.Arrays}.{@link java.util.Arrays#binarySearch(char[], char) binarySearch}(c[],c)</code> is used to search the array. If false, a for loop is used.
 	 * @return  The first index in {@code ints} at which {@code num} exists.
-	 * <BR>{@code <B>-1</B>} If it doesn't.
+	 * <br/>{@code <b>-1</b>} If it doesn't.
 	 */
 	public static final int getFoundIdx(int num, int[] ints, boolean do_orderAsc)  {
 		if(ints == null)  {
@@ -142,29 +142,29 @@ public class NumberUtil  {
 		return  -1;
 	}
 	/**
-	 * <P>How many digits in length is the provided number?.</P>
+	 * <p>How many digits in length is the provided number?.</p>
 	 *
-	 * <P>An alternative method for determining the number of digits is to
+	 * <p>An alternative method for determining the number of digits is to
 	 * convert the number to a string, and then get the string's length
 	 * (although you need to anticipate the possible dash, with negative
-	 * numbers):</P>
+	 * numbers):</p>
 	 *
-	 * <PRE>((new Long(num)).toString()).length()</PRE>
+	 * <pre>((new Long(num)).toString()).length()</pre>
 	 *
-	 * <P><FONT SIZE="-1"><I>The answer to &quot;how many digits does a
+	 * <p><FONT SIZE="-1"><i>The answer to &quot;how many digits does a
 	 * number contain?&quot; is &quot;how many times can you divide ten into
-	 * it?...plus one&quot;.</I></FONT></P>
+	 * it?...plus one&quot;.</i></FONT></p>
 	 *
 	 * @param  num  The number you want to know the amount of digits in.
 	 * Trailing zeros (zeros on the left side of the number) are ignored,
 	 * however, the number zero is considered a one-digit number.
-	 * @return  The number of digits in num. For example:<UL>
-	 *		<LI><B>10:</B>  Returns <B>2</B>.</LI>
-	 *		<LI><B>-94:</B>  Returns <B>2</B>.</LI>
-	 *		<LI><B>000037:</B>  Returns <B>2</B>.</LI>
-	 *		<LI><B>0:</B>  Returns <B>1</B></LI>
-	 *		<LI><B>687482:</B>  Returns <B>6</B></LI>
-	 * </UL>
+	 * @return  The number of digits in num. For example:<ul>
+	 *		<li><b>10:</b>  Returns <b>2</b>.</li>
+	 *		<li><b>-94:</b>  Returns <b>2</b>.</li>
+	 *		<li><b>000037:</b>  Returns <b>2</b>.</li>
+	 *		<li><b>0:</b>  Returns <b>1</b></li>
+	 *		<li><b>687482:</b>  Returns <b>6</b></li>
+	 * </ul>
 	 */
 	public static int getDigitLength(long num)  {
 		//How many digits does this number contain?  It contains at least one.
@@ -190,7 +190,7 @@ public class NumberUtil  {
 		return  iDigits;
 	}
 	/**
-	 * <P>Get a string-version of a double, with a specific-decimal precision.</P>
+	 * <p>Get a string-version of a double, with a specific-decimal precision.</p>
 	 *
 	 * @param  num  The double.
 	 * @param  decimalPlace_count  The number of decimal places to return.
@@ -257,7 +257,7 @@ public class NumberUtil  {
 		return  ((num % 2) == 1);
 	}
 	/**
-	 * <P>Get a random int.</P>
+	 * <p>Get a random int.</p>
 	 *
 	 * @return  {@link #getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive(0, max)}
 	 */
@@ -272,13 +272,13 @@ public class NumberUtil  {
 	   return  getRandomIntBetweenInclusive(min_inclusive, max);
    }
 	/**
-	 * <P>Get a random int between (or equal to) two bounds.</P>
+	 * <p>Get a random int between (or equal to) two bounds.</p>
 	 *
-	 * @param  min_inclusive  The minimum possible int to return. <I>Should</I>
+	 * @param  min_inclusive  The minimum possible int to return. <i>Should</i>
 	 * be less than {@code max}.
 	 * @param  max  The maximum possible int to return.
-	 * @return  <CODE>(min_inclusive + (int)({@link java.lang.Math Math}.{@link java.lang.Math#random() random}() * ((max - min_inclusive) + 1)))</CODE>
-	 * @see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java">http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java</A></CODE>
+	 * @return  <code>(min_inclusive + (int)({@link java.lang.Math Math}.{@link java.lang.Math#random() random}() * ((max - min_inclusive) + 1)))</code>
+	 * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java">http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java</a></code>
 	 * @since  0.1.4.2
 	 */
    public static final int getRandomIntBetweenInclusive(int min_inclusive, int max)  {
@@ -303,8 +303,8 @@ public class NumberUtil  {
 		*/
 	}
 	/**
-	 * <P>Get a random hexidecimal number as a String, using
-	 * {@code Math.random()} at its core.</P>
+	 * <p>Get a random hexidecimal number as a String, using
+	 * {@code Math.random()} at its core.</p>
 	 *
 	 *
 	 * @param  digit_count  The number of digits the returned number should

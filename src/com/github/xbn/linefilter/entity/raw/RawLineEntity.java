@@ -32,19 +32,19 @@ package  com.github.xbn.linefilter.entity.raw;
 	import  java.util.Objects;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>The base class for all entities.</P>
+	<p>The base class for all entities.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder RawLineEntity_CfgForNeeder}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder RawLineEntity_CfgForNeeder}</h3>
 
-	<P><UL>
-		<LI>YYY</LI>
+	<p><ul>
+		<li>YYY</li>
 	com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder#reset()
 	com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder#debugLineNumbers(Appendable)
 	com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder#chainID(boolean, Object)
-	</UL></P>
+	</ul></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> implements RawChildEntity<L>   {
 	private final RawParentEntity<L> parent         ;
@@ -61,9 +61,9 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
 	private int     fullyActiveCount ;
 	private boolean doAbortItr       ;
 	/**
-		<P>Create a new and <I>temporarily unusable</I> instance from a fieldable.</P>
+		<p>Create a new and <i>temporarily unusable</i> instance from a fieldable.</p>
 
-		@param  fieldable  May not be {@code null}, and all its fields must conform to the restrictions as documented in the setters of all sub-classes (<CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/entity/SingleLineEntity.html#cfg">SingleLineEntity</A></CODE>, <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/entity/BlockEntity.html#cfg">BlockEntity</A></CODE>, <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/entity/StealthBlockEntity.html#cfg">StealthBlockEntity</A></CODE>).
+		@param  fieldable  May not be {@code null}, and all its fields must conform to the restrictions as documented in the setters of all sub-classes (<code><a href="{@docRoot}/com/github/xbn/linefilter/entity/SingleLineEntity.html#cfg">SingleLineEntity</a></code>, <code><a href="{@docRoot}/com/github/xbn/linefilter/entity/BlockEntity.html#cfg">BlockEntity</a></code>, <code><a href="{@docRoot}/com/github/xbn/linefilter/entity/StealthBlockEntity.html#cfg">StealthBlockEntity</a></code>).
 	 **/
 	public RawLineEntity(RawLineEntity_Fieldable<L> fieldable)  {
 		super();
@@ -159,7 +159,7 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
 		mostRecentLineNum = 0;
 	}
 	/**
-		<P>The outputter for diagnostics on every analyzed line.</P>
+		<p>The outputter for diagnostics on every analyzed line.</p>
 
 		@see  com.github.xbn.linefilter.FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
 	 **/
@@ -300,7 +300,7 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
 		return  to_appendTo;
 	}
 	/**
-		@return  <CODE>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</CODE>
+		@return  <code>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</code>
 	 **/
 	public String toString()  {
 		return  appendToString(new StringBuilder()).toString();
@@ -342,7 +342,7 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
 		}
 	}
 	/**
-		<P><I>Do not use</I>--Use {@code getAlteredPostResetCheck} instead.</P>
+		<p><i>Do not use</i>--Use {@code getAlteredPostResetCheck} instead.</p>
 
 		@exception  UnsupportedOperationException
 	 **/

@@ -21,10 +21,10 @@ package  com.github.xbn.experimental.listify.backend;
 	import  com.github.xbn.util.copyval.SimpleNullHandler;
 	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-	<P>Listifier whose virtual elements are the <I>lengths of the {@code toString()}-s</I> of its raw elements.</P>
+	<p>Listifier whose virtual elements are the <i>lengths of the {@code toString()}-s</i> of its raw elements.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListifyListOfToStringLengths<R> extends AbstractListifyIntable  {
 //constructors...START
@@ -35,10 +35,10 @@ public class ListifyListOfToStringLengths<R> extends AbstractListifyIntable  {
 		super(list, null_handler);
 	}
 	/**
-		<P>Create a new {@code ListifyListOfToStringLengths} as a duplicate of another.</P>
+		<p>Create a new {@code ListifyListOfToStringLengths} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyIntable#AbstractListifyIntable(ListifyIntable) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyIntable#AbstractListifyIntable(ListifyIntable) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -74,9 +74,9 @@ public class ListifyListOfToStringLengths<R> extends AbstractListifyIntable  {
 		return  getRawList().size();
 	}
 	/**
-		<P>Duplicate this {@code ListifyListOfToStringLengths}.</P>
+		<p>Duplicate this {@code ListifyListOfToStringLengths}.</p>
 
-		@return  <CODE>(new {@link #ListifyListOfToStringLengths(ListifyListOfToStringLengths) ListifyListOfToStringLengths}&lt;R&gt;(this))</CODE>
+		@return  <code>(new {@link #ListifyListOfToStringLengths(ListifyListOfToStringLengths) ListifyListOfToStringLengths}&lt;R&gt;(this))</code>
 	 **/
 	public ListifyListOfToStringLengths<R> getObjectCopy()  {
 		return  (new ListifyListOfToStringLengths<R>(this));

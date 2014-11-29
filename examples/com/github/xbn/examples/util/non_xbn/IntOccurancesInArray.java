@@ -18,13 +18,13 @@ package  com.github.xbn.examples.util.non_xbn;
 	import  java.util.Set;
 	import  java.util.TreeMap;
 /**
-	<P>Collection-based solution to finding the number of occurances of each number in an int-array.</P>
+	<p>Collection-based solution to finding the number of occurances of each number in an int-array.</p>
 
-	<P>{@code java com.github.xbn.examples.util.non_xbn.IntOccurancesInArray}</P>
+	<p>{@code java com.github.xbn.examples.util.non_xbn.IntOccurancesInArray}</p>
 
 	@see  IntOccurancesInArrayElegant
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IntOccurancesInArray  {
 	public static final void main(String[] ignored)  {

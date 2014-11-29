@@ -20,10 +20,10 @@ package  com.github.xbn.list;
 	import  java.util.Map;
 	import  java.util.Objects;
 /**
-	<P>Find the middle index in a collection, and functions to assist in implementing {@code contains(...)} and {@code containsAll(...)}.</P>
+	<p>Find the middle index in a collection, and functions to assist in implementing {@code contains(...)} and {@code containsAll(...)}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CollectionUtil  {
 	private CollectionUtil()  {
@@ -37,10 +37,10 @@ public class CollectionUtil  {
 		}
 	}
 	/**
-		<P>Get the middle index of a List.</P>
+		<p>Get the middle index of a List.</p>
 
 		@param  coll  May not be {@code null}.
-		@return  <CODE>{@link com.github.xbn.number.NumberUtil NumberUtil.}{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}(0, coll.size())</CODE>
+		@return  <code>{@link com.github.xbn.number.NumberUtil NumberUtil.}{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}(0, coll.size())</code>
 	 **/
 	public static final int getMiddleIndex(Collection<?> coll)  {
 		try  {
@@ -50,7 +50,7 @@ public class CollectionUtil  {
 		}
 	}
  	/**
- 		<P>Does a(n equivalent) object exist in <I>{@code this}</I> collection?.</P>
+ 		<p>Does a(n equivalent) object exist in <i>{@code this}</i> collection?.</p>
 
  		@param  objY  May not be {@code null}.
  	 **/
@@ -132,10 +132,10 @@ public class CollectionUtil  {
 		return  appendToString((new StringBuilder()), map, between).toString();
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<P>From (viewed 2/4/2014):
-		<BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/a/10120408/2736496">http://stackoverflow.com/a/10120408/2736496</A></CODE></P>
+		<p>From (viewed 2/4/2014):
+		<br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/10120408/2736496">http://stackoverflow.com/a/10120408/2736496</a></code></p>
 	 **/
 	public static final <K,V> StringBuilder appendToString(StringBuilder to_appendTo, Map<K,V> map, String between)  {
 		Iterator<Map.Entry<K, V>> iter = null;

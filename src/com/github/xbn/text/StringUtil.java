@@ -23,31 +23,31 @@ package  com.github.xbn.text;
 	import  java.util.NoSuchElementException;
 	import  org.apache.commons.io.LineIterator;
 /**
-	<P>Duplicate a str_obj, append a str_obj if a condition is met, get a &quot;visible index mask&quot;, and other str_obj-related utilities.</P>
+	<p>Duplicate a str_obj, append a str_obj if a condition is met, get a &quot;visible index mask&quot;, and other str_obj-related utilities.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class StringUtil extends StringUtilBase  {
 	private StringUtil()  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>An iterator for the characters in a str_obj.</P>
+		<p>An iterator for the characters in a str_obj.</p>
 	 **/
 	public static final Iterator<Character> getCharIterator(Object str_toPad)  {
 		return  (new CharIteratorForQ(str_toPad));
 	}
 	/**
-		<P>Get one str_obj if a condition is met, another if it's not.</P>
+		<p>Get one str_obj if a condition is met, another if it's not.</p>
 
-		@return  <CODE>{@link #appendIfTrueFalse(Appendable, Object, boolean, Object) appendIfTrueFalse}((new StringBuilder()), true_oString, condition, oString_ifFalse).toString()</CODE>
+		@return  <code>{@link #appendIfTrueFalse(Appendable, Object, boolean, Object) appendIfTrueFalse}((new StringBuilder()), true_oString, condition, oString_ifFalse).toString()</code>
 	 **/
 	public static final String getIfTrueFalse(Object true_oString, boolean condition, Object oString_ifFalse)  {
 		return  appendIfTrueFalse((new StringBuilder()), true_oString, condition, oString_ifFalse).toString();
 	}
 	/**
-		<P>Get one str_obj if a condition is met, another if it's not.</P>
+		<p>Get one str_obj if a condition is met, another if it's not.</p>
 
 		@param  to_appendTo  May not be {@code null}.
 		@param  true_oString  Returned if {@code condition} is {@code true}.
@@ -72,15 +72,15 @@ public class StringUtil extends StringUtilBase  {
 		return  to_appendTo;
 	}
 	/**
-		<P>Get one str_obj (with a prefix and postfix) if a condition is met, or another if it's not.</P>
+		<p>Get one str_obj (with a prefix and postfix) if a condition is met, or another if it's not.</p>
 
-		@return  <CODE>{@link #appendPreTruePostOrFalse(Appendable, String, Object, String, boolean, Object) appendPreTruePostOrFalse}((new StringBuilder()), prefix_ifTrue, true_oString, postfix_ifTrue, condition, oString_ifFalse).toString()</CODE>
+		@return  <code>{@link #appendPreTruePostOrFalse(Appendable, String, Object, String, boolean, Object) appendPreTruePostOrFalse}((new StringBuilder()), prefix_ifTrue, true_oString, postfix_ifTrue, condition, oString_ifFalse).toString()</code>
 	 **/
 	public static final String getPreTruePostOrFalse(String prefix_ifTrue, Object true_oString, String postfix_ifTrue, boolean condition, Object oString_ifFalse)  {
 		return  appendPreTruePostOrFalse((new StringBuilder()), prefix_ifTrue, true_oString, postfix_ifTrue, condition, oString_ifFalse).toString();
 	}
 	/**
-		<P>Append one str_obj (with a prefix and postfix) if a condition is met, or another if it's not.</P>
+		<p>Append one str_obj (with a prefix and postfix) if a condition is met, or another if it's not.</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/
@@ -107,13 +107,13 @@ public class StringUtil extends StringUtilBase  {
 		return  to_appendTo;
 	}
 	/**
-		<P>Eliminate whitespace from the left side of a str_obj.</P>
+		<p>Eliminate whitespace from the left side of a str_obj.</p>
 
-		<P>The idea for this and {@code rtrim(str_toPad)} is from
-		<BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java">http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java</A></CODE>
-		<BR>and
-		<BR> &nbsp; &nbsp; <CODE><A HREF="http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html">http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html</A></CODE>
-		<BR>(viewed 11/18/2013)</P>
+		<p>The idea for this and {@code rtrim(str_toPad)} is from
+		<br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java">http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java</a></code>
+		<br/>and
+		<br/> &nbsp; &nbsp; <code><a href="http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html">http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html</a></code>
+		<br/>(viewed 11/18/2013)</p>
 
 		@param  str_toPad  May not be {@code null}.
 		@see  #rtrim(Object) rtrim(o)
@@ -132,7 +132,7 @@ public class StringUtil extends StringUtilBase  {
 		return s.substring(i);
 	}
 	/**
-		<P>Eliminate whitespace from the right side of a str_obj.</P>
+		<p>Eliminate whitespace from the right side of a str_obj.</p>
 
 		@param  str_toPad  May not be {@code null}.
 		@see  #ltrim(Object) ltrim(o)
@@ -151,13 +151,13 @@ public class StringUtil extends StringUtilBase  {
 		return s.substring(0, (i + 1));
 	}
 	/**
-		<P>Creates a string where every element is the same character.</P>
+		<p>Creates a string where every element is the same character.</p>
 
 		@param  length  The length of the returned string.
 		@param  char_toDup  The character to duplicate.
-		@param  length_varName  Descriptive name of {@code length}. <I>Should</I> not be {@code null} or empty.
-		@return  <CODE>new String(new char[length]).java.lang.String#replace(CharSequence, CharSequence)(&quot;\0&quot;, (new Character(char_toDup)).toString())</CODE>
-		@see  <CODE><A HREF="http://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string-in-java/4903603#4903603">http://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string-in-java/4903603#4903603</A></CODE>
+		@param  length_varName  Descriptive name of {@code length}. <i>Should</i> not be {@code null} or empty.
+		@return  <code>new String(new char[length]).java.lang.String#replace(CharSequence, CharSequence)(&quot;\0&quot;, (new Character(char_toDup)).toString())</code>
+		@see  <code><a href="http://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string-in-java/4903603#4903603">http://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string-in-java/4903603#4903603</a></code>
 		@exception  NegativeArraySizeException  If {@code length} is less than zero.
 	 **/
 	public static final String getStringOfLengthAllCharsEqualTo(int length, char char_toDup, String length_varName)  {
@@ -168,15 +168,15 @@ public class StringUtil extends StringUtilBase  {
 		}
 	}
 	/**
-		<P>For visibly indicating the index or index-range of a str_obj on the immediately-above line.</P>
+		<p>For visibly indicating the index or index-range of a str_obj on the immediately-above line.</p>
 
 {@.codelet.and.out com.github.xbn.examples.text.VisibleIndexMaskXmpl%eliminateCommentBlocksAndPackageDecl()}
 
 		@param  str_toPadForLen  The str_obj to mask.
-		@param  idx_start  The mask-start index. <I>Should</I> be between 0 and
-		<BR> &nbsp; &nbsp; {@code (str_toPadForLen.toString().length() - 1)}
-		@param  idx_endX  The mask-end index. <I>Should</I> be between {@code (idx_start + 1)} and
-		<BR> &nbsp; &nbsp; {@code str_toPadForLen.toString().length()}.
+		@param  idx_start  The mask-start index. <i>Should</i> be between 0 and
+		<br/> &nbsp; &nbsp; {@code (str_toPadForLen.toString().length() - 1)}
+		@param  idx_endX  The mask-end index. <i>Should</i> be between {@code (idx_start + 1)} and
+		<br/> &nbsp; &nbsp; {@code str_toPadForLen.toString().length()}.
 	 **/
 	public static final String getVisibleIndexMask(Object str_toPadForLen, int idx_start, int idx_endX)  {
 		StringBuilder sd = new StringBuilder(getDuped(" ", idx_start));
@@ -196,21 +196,21 @@ public class StringUtil extends StringUtilBase  {
 		return  sd.toString();
 	}
 	/**
-		<P>Get a str_obj, duplicated.</P>
+		<p>Get a str_obj, duplicated.</p>
 
 		@param  str_toDup  The str_obj to duplicate. May not be {@code null} or empty.
 		@param  dup_count  The number of times to duplicate {@code str_toDup}. May not be less than zero. If zero, an empty str_obj is returned.
-		@return  <CODE>{@link #appendDuped(Appendable, Object, int) appendDuped}((new StringBuilder()), str_toDup, dup_count).toString()</CODE>
+		@return  <code>{@link #appendDuped(Appendable, Object, int) appendDuped}((new StringBuilder()), str_toDup, dup_count).toString()</code>
 	 **/
 	public static final String getDuped(Object str_toDup, int dup_count)  {
 		return  appendDuped((new StringBuilder()), str_toDup, dup_count).toString();
 	}
 	/**
-		<P>Append a str_obj, duplicated.</P>
+		<p>Append a str_obj, duplicated.</p>
 
 		@param  to_appendTo  May not be {@code null}.
-		@param  str_toDup  Descriptive name of {@code to_appendTo}. <I>Should</I> not be {@code null} or empty.
-		@param  dup_count  <I>Should</I> be greater than zero.
+		@param  str_toDup  Descriptive name of {@code to_appendTo}. <i>Should</i> not be {@code null} or empty.
+		@param  dup_count  <i>Should</i> be greater than zero.
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown.
 		@see  #getDuped(Object, int) getDuped(O,i)
 	 **/
@@ -284,7 +284,7 @@ class CharIteratorForQ implements Iterator<Character>  {
 		return  q.charAt(ix++);
 	}
 	/**
-		<P><I>Do not use.</I></P>
+		<p><i>Do not use.</i></p>
 
 		@exception  UnsupportedOperationException
 	 **/

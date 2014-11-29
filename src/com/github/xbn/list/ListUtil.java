@@ -29,16 +29,16 @@ package  com.github.xbn.list;
 	import  java.util.Objects;
 	import  org.apache.commons.lang3.StringUtils;
 /**
-	<P>Translate lists to arrays and lists of primitives, objects, and strings, and other list-related utilities.</P>
+	<p>Translate lists to arrays and lists of primitives, objects, and strings, and other list-related utilities.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListUtil  {
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		@exception  XbnIndexOutOfBoundsException  If any {@code list_ofUniqueAscIdxsToDelete} are invalid for {@code list}, or if its elements are not unique or ascending, causing subsequent indexes (that <I>were</I> valid) to not be valid.
+		@exception  XbnIndexOutOfBoundsException  If any {@code list_ofUniqueAscIdxsToDelete} are invalid for {@code list}, or if its elements are not unique or ascending, causing subsequent indexes (that <i>were</i> valid) to not be valid.
 	 **/
 	public static final void deleteElementsNotInAscUnqIndexList(List<?> list, List<Integer> list_ofUniqueAscIdxsToDelete)  {
 		int iOrigSz = -1;
@@ -64,7 +64,7 @@ public class ListUtil  {
 		}
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 	 **/
 	public static final <E> List<E> getEListCopyOrNull(Collection<E> coll, ValueCopier<E> copier, NullContainer nnull, String cntrName_forNullBad)  {
 		if(coll == null)  {
@@ -84,7 +84,7 @@ public class ListUtil  {
 		return  ve;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 	 **/
 	public static final <E> List<Object> getObjectListOrNull(Collection<E> coll, ValueCopier<E> copier, NullContainer nnull, String cntrName_forNullBad)  {
 		if(coll == null)  {
@@ -104,7 +104,7 @@ public class ListUtil  {
 		return  vo;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 	 **/
 	public static final <E> List<String> getStringListOrNull(Collection<E> coll, ValueCopier<E> copier, NullContainer nnull, String cntrName_forNullBad)  {
 		if(coll == null)  {
@@ -190,7 +190,7 @@ public class ListUtil  {
 		return  elementAry_initdToCollSize;
 	}
 	/*
-		<P>If the array or element is {@code null}, or the index is bad, crash--otherwise, <I>return</I> the causing error.</P>
+		<p>If the array or element is {@code null}, or the index is bad, crash--otherwise, <i>return</i> the causing error.</p>
 	public static final RuntimeException ciListOrElementNullBadIndexOrReturnCause(List<? extends Object> list, String list_name, int index, String idx_name, RuntimeException cause)  {
 		try  {
 			if(list.get(index) == null)  {
@@ -213,7 +213,7 @@ public class ListUtil  {
 	}
 	 */
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 
 	 **/
@@ -221,9 +221,9 @@ public class ListUtil  {
 		return  getJoinedWithDelimiter(list, String.valueOf(delimiter), idx_start, idx_endX);
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<P>The missing {@code join(...)} functions from {@link org.apache.commons.lang3.StringUtils}</P>
+		<p>The missing {@code join(...)} functions from {@link org.apache.commons.lang3.StringUtils}</p>
 	 **/
 	public static final String getJoinedWithDelimiter(List<?> list, String to_appendToelim, int idx_start, int idx_endX)  {
 		StringBuilder sd = new StringBuilder();

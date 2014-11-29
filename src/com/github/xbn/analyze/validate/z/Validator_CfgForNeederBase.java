@@ -19,10 +19,10 @@ package  com.github.xbn.analyze.validate.z;
 	import  com.github.xbn.neederneedable.AbstractNeedable;
 	import  com.github.xbn.neederneedable.Needer;
 /**
-	<P>Base class for building {@link Validator}s.</P>
+	<p>Base class for building {@link Validator}s.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class Validator_CfgForNeederBase<V extends Validator,R extends Needer> extends AbstractNeedable<V,R> implements Validator_Fieldable  {
 	public boolean           bInvert     ;
@@ -31,11 +31,11 @@ public abstract class Validator_CfgForNeederBase<V extends Validator,R extends N
 	public ValidResultFilter vrFilter    ;
 //constructors...START
 	/**
-		<P>Create a new instance with defaults.</P>
+		<p>Create a new instance with defaults.</p>
 
-		<P>This calls<OL>
-			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}xbn/chain/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</A>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</CODE></LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}xbn/chain/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</a>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</code></li>
+		</ol></p>
 	 **/
 	public Validator_CfgForNeederBase(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
 		super(is_avaliableToNeeders, is_neededUseableAtInit, needer);

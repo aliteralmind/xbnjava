@@ -20,27 +20,27 @@ package  com.github.xbn.util.matrix;
  *
  * @see BoundedMatrix#getNeighbor(int, int, com.github.xbn.util.matrix.MatrixDirection, int, com.github.xbn.util.matrix.EdgeExceeded) BoundedMatrix#getNeighbor
  * @since  0.1.4.2
- * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public enum EdgeExceeded  {
    /**
-    * <P>Throw an exception.</P>
+    * <p>Throw an exception.</p>
     *
     * @see  #WRAP
     * @see  #doCrash()
     */
    CRASH,
    /**
-    * <P>Wrap to the item on the other side, a-la Asteroids.</P>
+    * <p>Wrap to the item on the other side, a-la Asteroids.</p>
     *
     * @see  #CRASH
     * @see  #doWrap()
     */
    WRAP;
    /**
-    * <P>Is this {@code EdgeExceeded} equal to {@code CRASH}?.</P>
+    * <p>Is this {@code EdgeExceeded} equal to {@code CRASH}?.</p>
     *
-    * @return  <CODE>this == {@link #CRASH}</CODE>
+    * @return  <code>this == {@link #CRASH}</code>
     *
     * @see  #doWrap()
     */
@@ -48,18 +48,18 @@ public enum EdgeExceeded  {
       return  this == CRASH;
    }
    /**
-    * <P>Is this {@code EdgeExceeded} equal to {@code WRAP}?.</P>
+    * <p>Is this {@code EdgeExceeded} equal to {@code WRAP}?.</p>
     *
-    * @return  <CODE>this == {@link #WRAP}</CODE>
+    * @return  <code>this == {@link #WRAP}</code>
     * @see  #doCrash()
     */
    public final boolean doWrap()  {
       return  this == WRAP;
    }
    /**
-    * <P>Return {@code EdgeExceeded.CRASH} if the flag is {@code true}, or {@code WRAP} if {@code false}.</P>
+    * <p>Return {@code EdgeExceeded.CRASH} if the flag is {@code true}, or {@code WRAP} if {@code false}.</p>
     *
-    * @return  <CODE>(flag ? {@link #CRASH} : {@link #WRAP})</CODE>
+    * @return  <code>(flag ? {@link #CRASH} : {@link #WRAP})</code>
     */
    public static final EdgeExceeded getCRASHIfTrue(boolean flag)  {
       return  (flag ? CRASH : WRAP);

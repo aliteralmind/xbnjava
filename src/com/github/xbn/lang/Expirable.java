@@ -14,30 +14,30 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-   <P>For classes that do stuff, but once reaching a certain point, permanently stop doing it.</P>
+   <p>For classes that do stuff, but once reaching a certain point, permanently stop doing it.</p>
 
    @see  com.github.xbn.analyze.alter.ExpirableAlterList
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public interface Expirable  {
    /**
-   	<P>Does this object potentially expire?.</P>
+   	<p>Does this object potentially expire?.</p>
 
-   	@return  <UL>
-   		<LI>{@code true}: {@link #isExpired() isExpired}{@code ()} could at some point become {@code true}.</LI>
-   		<LI>{@code false}: {@code isExpired()} will never be {@code true}.</LI>
-   	</UL>This value never changes.
+   	@return  <ul>
+   		<li>{@code true}: {@link #isExpired() isExpired}{@code ()} could at some point become {@code true}.</li>
+   		<li>{@code false}: {@code isExpired()} will never be {@code true}.</li>
+   	</ul>This value never changes.
     **/
    boolean doesExpire();
    /**
-   	<P>Is this object expired?.</P>
+   	<p>Is this object expired?.</p>
 
-   	@return  <UL>
-   		<LI>{@code true}  The object is expired.</LI>
-   		<LI>{@code false}: If {@link #doesExpire() doesExpire}{@code ()} is {@code false}.</LI>
-   	</UL>This value may change from {@code true} to {@code false}, but never back.
+   	@return  <ul>
+   		<li>{@code true}  The object is expired.</li>
+   		<li>{@code false}: If {@link #doesExpire() doesExpire}{@code ()} is {@code false}.</li>
+   	</ul>This value may change from {@code true} to {@code false}, but never back.
     **/
    boolean isExpired();
 }

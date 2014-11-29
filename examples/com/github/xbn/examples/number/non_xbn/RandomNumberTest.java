@@ -5,7 +5,7 @@ package  com.github.xbn.examples.number.non_xbn;
   import  java.util.List;
   import  java.util.ArrayList;
 /**
-   <P>{@code java RandomNumberTest}</P>
+   <p>{@code java RandomNumberTest}</p>
  **/
 public class RandomNumberTest  {
   private static final int tryCount = 1_000_000;

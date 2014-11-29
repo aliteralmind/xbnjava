@@ -14,21 +14,21 @@
 \*license*/
 package  com.github.xbn.util.copyval;
 /**
-	<P>For types that cannot be duplicated (throws a {@code com.github.xbn.glist.NotCopyableException}).</P>
+	<p>For types that cannot be duplicated (throws a {@code com.github.xbn.glist.NotCopyableException}).</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueNotCopyable<O> extends AbstractValueCopier<O>  {
 	public static final ValueNotCopyable INSTANCE = new ValueNotCopyable();
 //constructors...	START
 	/**
-		<P>Create a new {@code ValueNotCopyable}.</P>
+		<p>Create a new {@code ValueNotCopyable}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(boolean) super}{@code (false)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(boolean) super}{@code (false)}</p>
 	 **/
 	private ValueNotCopyable()  {
 		super(false);
@@ -41,7 +41,7 @@ public class ValueNotCopyable<O> extends AbstractValueCopier<O>  {
 		throw  new NotCopyableException();
 	}
 	/**
-		<P><I>Do not use.</I></P>
+		<p><i>Do not use.</i></p>
 
 		@exception  UnsupportedOperationException
 	 **/

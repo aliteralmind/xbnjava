@@ -21,11 +21,11 @@ package  com.github.xbn.analyze.validate.z;
 	import  com.github.xbn.analyze.validate.FilterValidCounts;
 	import  com.github.xbn.neederneedable.Needer;
 /**
-	<P>For indirectly configuring a {@link FilterValidCounts}.</P>
+	<p>For indirectly configuring a {@link FilterValidCounts}.</p>
 
-	@see  <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A>
+	@see  <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a>
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extends Needer> extends AbstractNeedable<F,R> implements FilterValidCounts_Fieldable  {
 	public LengthInRange   liRange            ;
@@ -39,36 +39,36 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 	public Appendable      apblDebug          ;
 //constructors...START
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
-		<P>This calls<OL>
-			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="AbstractValidator_CfgForNeeder.html#AbstractValidator_CfgForNeeder(boolean, boolean, R)">super</A>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</CODE></LI>
-			<LI>{@link #resetVVN() resetVVN}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="AbstractValidator_CfgForNeeder.html#AbstractValidator_CfgForNeeder(boolean, boolean, R)">super</a>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</code></li>
+			<li>{@link #resetVVN() resetVVN}{@code ()}</li>
+		</ol></p>
 	 **/
 	public FilterValidCounts_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
 		super(is_avaliableToNeeders, is_neededUseableAtInit, needer);
 		resetVVN();
 	}
 	/**
-		<P>Reset all configuration so the filter does nothing.</P>
+		<p>Reset all configuration so the filter does nothing.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #resetVVN() resetVVN}{@code ()}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #resetVVN() resetVVN}{@code ()}</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> reset()  {
 		resetVVN();
 		return  this;
 	}
 	/**
-		<P>Reset configuration specific to this {@code FilterValidCounts_CfgForNeeder}.</P>
+		<p>Reset configuration specific to this {@code FilterValidCounts_CfgForNeeder}.</p>
 
-		<P>This<OL>
-			<LI>{@link #unfiltered() unfiltered}{@code ()}</LI>
-			<LI>{@link #debugTo(Appendable) debugTo}{@code (null)}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>{@link #unfiltered() unfiltered}{@code ()}</li>
+			<li>{@link #debugTo(Appendable) debugTo}{@code (null)}</li>
+		</ol></p>
 	 **/
 	protected final void resetVVN()  {
 		unfiltered();
@@ -77,36 +77,36 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 //constructors...END
 //setters...START
 	/**
-		<P>Set debugging.</P>
+		<p>Set debugging.</p>
 
 		@param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> debugTo(Appendable dest_ifNonNull)  {
 		apblDebug = dest_ifNonNull;
 		return  this;
 	}
 	/**
-		<P>Set the range that the count must conform to.</P>
+		<p>Set the range that the count must conform to.</p>
 
 		@param  range  May not be {@code null}, and its {@linkplain com.github.xbn.number.IntInRange#getMin() minimum} may not be zero. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}{@code ()}.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> range(LengthInRange range)  {
 		liRange = range;
 		return  this;
 	}
 	/**
-		<P>Do not filter at all.</P>
+		<p>Do not filter at all.</p>
 
-		<P>This calls<OL>
-			<LI><CODE>{@link #range(LengthInRange) range}({@link com.github.xbn.number.LengthInRange LengthInRange}.{@link com.github.xbn.number.LengthInRange#UNRESTRICTED UNRESTRICTED})</CODE></LI>
-			<LI>{@link #postValueAlwaysUnchanged() postValueAlwaysUnchanged}{@code ()}</LI>
-			<LI><CODE>{@link #preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction)}({@link com.github.xbn.analyze.validate.FilterPreAction FilterPreAction}.{@link com.github.xbn.analyze.validate.FilterPreAction#PROCEED PROCEED}, FilterPreAction.PROCEED, FilterPreAction.PROCEED)</CODE></LI>
-			<LI>{@link #countValid() countValid}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code>{@link #range(LengthInRange) range}({@link com.github.xbn.number.LengthInRange LengthInRange}.{@link com.github.xbn.number.LengthInRange#UNRESTRICTED UNRESTRICTED})</code></li>
+			<li>{@link #postValueAlwaysUnchanged() postValueAlwaysUnchanged}{@code ()}</li>
+			<li><code>{@link #preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction)}({@link com.github.xbn.analyze.validate.FilterPreAction FilterPreAction}.{@link com.github.xbn.analyze.validate.FilterPreAction#PROCEED PROCEED}, FilterPreAction.PROCEED, FilterPreAction.PROCEED)</code></li>
+			<li>{@link #countValid() countValid}{@code ()}</li>
+		</ol></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> unfiltered()  {
 		range(LengthInRange.UNRESTRICTED);
@@ -115,14 +115,14 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 		return  countValid();
 	}
 	/**
-		<P>If the count is above or below range, return {@code false}, otherwise return true if the <I>something</I> follows-the-rules (post inversion).</P>
+		<p>If the count is above or below range, return {@code false}, otherwise return true if the <i>something</i> follows-the-rules (post inversion).</p>
 
-		<P>This calls<OL>
-			<LI>{@link #preActionProceed_afterFalse() preActionProceed_afterFalse}{@code ()}</LI>
-			<LI>{@link #postValue_inUnchanged_outFalse() postValue_inUnchanged_outFalse}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link #preActionProceed_afterFalse() preActionProceed_afterFalse}{@code ()}</li>
+			<li>{@link #postValue_inUnchanged_outFalse() postValue_inUnchanged_outFalse}{@code ()}</li>
+		</ol></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  com.github.xbn.analyze.validate.Validator#doInvertRules()
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> inUnchangedOutFalse()  {
@@ -130,29 +130,29 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 		return  postValue_inUnchanged_outFalse();
 	}
 	/**
-		<P><B>Post-filter:</B> If the count is in range, return the follows-the-rules (post-inversion) value unchanged. If it is below or above the range, return {@code false}.</P>
+		<p><b>Post-filter:</b> If the count is in range, return the follows-the-rules (post-inversion) value unchanged. If it is below or above the range, return {@code false}.</p>
 
-		@return  <CODE>{@link #postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter}({@link com.github.xbn.analyze.validate.FilterAfterValue FilterAfterValue}.{@link com.github.xbn.analyze.validate.FilterAfterValue#FALSE FALSE}, FilterAfterValue.{@link com.github.xbn.analyze.validate.FilterAfterValue#UNCHANGED UNCHANGED}, FilterAfterValue.FALSE)</CODE>
+		@return  <code>{@link #postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter}({@link com.github.xbn.analyze.validate.FilterAfterValue FilterAfterValue}.{@link com.github.xbn.analyze.validate.FilterAfterValue#FALSE FALSE}, FilterAfterValue.{@link com.github.xbn.analyze.validate.FilterAfterValue#UNCHANGED UNCHANGED}, FilterAfterValue.FALSE)</code>
 		@see  com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() getFilterCountType()*
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> postValue_inUnchanged_outFalse()  {
 		return  postValueBelowInAfter(FilterAfterValue.FALSE, FilterAfterValue.UNCHANGED, FilterAfterValue.FALSE);
 	}
 	/**
-		<P><B>Post-filter:</B> Always pass the follows-the-rules (post-inversion) value through unchanged.</P>
+		<p><b>Post-filter:</b> Always pass the follows-the-rules (post-inversion) value through unchanged.</p>
 
-		@return  <CODE>{@link #postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter}({@link com.github.xbn.analyze.validate.FilterAfterValue FilterAfterValue}.{@link com.github.xbn.analyze.validate.FilterAfterValue#UNCHANGED UNCHANGED}, FilterAfterValue.UNCHANGED, FilterAfterValue.FALSE)</CODE>
+		@return  <code>{@link #postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter}({@link com.github.xbn.analyze.validate.FilterAfterValue FilterAfterValue}.{@link com.github.xbn.analyze.validate.FilterAfterValue#UNCHANGED UNCHANGED}, FilterAfterValue.UNCHANGED, FilterAfterValue.FALSE)</code>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> postValueAlwaysUnchanged()  {
 		return  postValueBelowInAfter(FilterAfterValue.UNCHANGED, FilterAfterValue.UNCHANGED, FilterAfterValue.UNCHANGED);
 	}
 	/**
-		<P>What should the post-filter do?.</P>
+		<p>What should the post-filter do?.</p>
 
-		@param  fpv_below  What to do when the {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() count} is below <CODE>{@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}()*.{@link com.github.xbn.number.NumberInRange#getMinNumber() getMinNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getBelowAfterValue() getBelowAfterValue}{@code ()}{@code ()}.
-		@param  fpv_in  What to do when the count is <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/number/NumberInRange.html#isValid(N)">valid</A> according to the range?
-		@param  fpv_after  What to do when the count is &quot;greater&quot; than <CODE>getRange()*.{@link com.github.xbn.number.NumberInRange#getMaxNumber() getMaxNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getAfterAfterValue() getAfterAfterValue}{@code ()}{@code ()}. <B><I>Note:</I></B> Since the filter is expired when the maximum is reached, it will never be exceeded. This is therefore, more accurately: &quot;What to do when the maximum has been reached, and this is the first (or subsequent) check <I><B>after</B></I> that?&quot;.
-		@return  <I>{@code this}</I>
+		@param  fpv_below  What to do when the {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() count} is below <code>{@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}()*.{@link com.github.xbn.number.NumberInRange#getMinNumber() getMinNumber}()</code>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getBelowAfterValue() getBelowAfterValue}{@code ()}{@code ()}.
+		@param  fpv_in  What to do when the count is <!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/number/NumberInRange.html#isValid(N)">valid</a> according to the range?
+		@param  fpv_after  What to do when the count is &quot;greater&quot; than <code>getRange()*.{@link com.github.xbn.number.NumberInRange#getMaxNumber() getMaxNumber}()</code>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getAfterAfterValue() getAfterAfterValue}{@code ()}{@code ()}. <b><i>Note:</i></b> Since the filter is expired when the maximum is reached, it will never be exceeded. This is therefore, more accurately: &quot;What to do when the maximum has been reached, and this is the first (or subsequent) check <i><b>after</b></i> that?&quot;.
+		@return  <i>{@code this}</i>
 		@see  #unfiltered()
 		@see  #inUnchangedOutFalse()
 		@see  #postValueAlwaysUnchanged()
@@ -166,20 +166,20 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 		return  this;
 	}
 	/**
-		<P><B>Pre-filter:</B> If the count is below-or-equal-to the range max, {@code PROCEED}, otherwise, return {@code false}.</P>
+		<p><b>Pre-filter:</b> If the count is below-or-equal-to the range max, {@code PROCEED}, otherwise, return {@code false}.</p>
 
-		@return  <CODE>{@link #preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction)}({@link com.github.xbn.analyze.validate.FilterPreAction FilterPreAction}.{@link com.github.xbn.analyze.validate.FilterPreAction#PROCEED PROCEED}, FilterPreAction.PROCEED, FilterPreAction.{@link com.github.xbn.analyze.validate.FilterPreAction#RETURN_FALSE RETURN_FALSE})</CODE>
+		@return  <code>{@link #preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction)}({@link com.github.xbn.analyze.validate.FilterPreAction FilterPreAction}.{@link com.github.xbn.analyze.validate.FilterPreAction#PROCEED PROCEED}, FilterPreAction.PROCEED, FilterPreAction.{@link com.github.xbn.analyze.validate.FilterPreAction#RETURN_FALSE RETURN_FALSE})</code>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> preActionProceed_afterFalse()  {
 		return  preActionBelowInAfter(FilterPreAction.PROCEED, FilterPreAction.PROCEED, FilterPreAction.RETURN_FALSE);
 	}
 	/**
-		<P>What should the post-filter do?.</P>
+		<p>What should the post-filter do?.</p>
 
-		@param  fpa_below  What to do when the {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() count} is below <CODE>{@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}()*.{@link com.github.xbn.number.NumberInRange#getMinNumber() getMinNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getBelowAfterValue() getBelowAfterValue}{@code ()}{@code ()}.
-		@param  fpa_in  What to do when the count is <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/number/NumberInRange.html#isValid(N)">valid</A> according to the range?
-		@param  fpa_after  What to do when the count is &quot;greater&quot; than <CODE>getRange()*.{@link com.github.xbn.number.NumberInRange#getMaxNumber() getMaxNumber}()</CODE>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getAfterAfterValue() getAfterAfterValue}{@code ()}{@code ()}. <B><I>Note:</I></B> Since the filter is expired when the maximum is reached, it will never be exceeded. This is therefore, more accurately: &quot;What to do when the maximum has been reached, and this is the first (or subsequent) check <I><B>after</B></I> that?&quot;.
-		@return  <I>{@code this}</I>
+		@param  fpa_below  What to do when the {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() count} is below <code>{@link com.github.xbn.analyze.validate.FilterValidCounts#getRange() getRange}()*.{@link com.github.xbn.number.NumberInRange#getMinNumber() getMinNumber}()</code>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getBelowAfterValue() getBelowAfterValue}{@code ()}{@code ()}.
+		@param  fpa_in  What to do when the count is <!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/number/NumberInRange.html#isValid(N)">valid</a> according to the range?
+		@param  fpa_after  What to do when the count is &quot;greater&quot; than <code>getRange()*.{@link com.github.xbn.number.NumberInRange#getMaxNumber() getMaxNumber}()</code>? May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.FilterValidCounts#getAfterAfterValue() getAfterAfterValue}{@code ()}{@code ()}. <b><i>Note:</i></b> Since the filter is expired when the maximum is reached, it will never be exceeded. This is therefore, more accurately: &quot;What to do when the maximum has been reached, and this is the first (or subsequent) check <i><b>after</b></i> that?&quot;.
+		@return  <i>{@code this}</i>
 		@see  #preActionProceed_afterFalse()
 		@see  #postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
 		@see  #unfiltered()
@@ -191,11 +191,11 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 		return  this;
 	}
 	/**
-		<P>Count every analysis.</P>
+		<p>Count every analysis.</p>
 
-		<P>This sets {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() getFilterCountType}{@code ()}* to <CODE>{@link com.github.xbn.analyze.validate.FilterCountType FilterCountType}.{@link com.github.xbn.analyze.validate.FilterCountType#ALL ALL}</CODE></P>
+		<p>This sets {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() getFilterCountType}{@code ()}* to <code>{@link com.github.xbn.analyze.validate.FilterCountType FilterCountType}.{@link com.github.xbn.analyze.validate.FilterCountType#ALL ALL}</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #countValid()
 		@see  #countInvalid()
 	 **/
@@ -204,11 +204,11 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 		return  this;
 	}
 	/**
-		<P>Count only when the <I>something</I> is deemed valid (post-inversion).</P>
+		<p>Count only when the <i>something</i> is deemed valid (post-inversion).</p>
 
-		<P>This sets {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() getFilterCountType}{@code ()}* to <CODE>{@link com.github.xbn.analyze.validate.FilterCountType FilterCountType}.{@link com.github.xbn.analyze.validate.FilterCountType#VALID VALID}</CODE></P>
+		<p>This sets {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() getFilterCountType}{@code ()}* to <code>{@link com.github.xbn.analyze.validate.FilterCountType FilterCountType}.{@link com.github.xbn.analyze.validate.FilterCountType#VALID VALID}</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #countAll()
 		@see  com.github.xbn.analyze.validate.Validator#doInvertRules() Validator#doInvertRules()
 	 **/
@@ -217,11 +217,11 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 		return  this;
 	}
 	/**
-		<P>Count only when the <I>something</I> is deemed invalid (post-inversion).</P>
+		<p>Count only when the <i>something</i> is deemed invalid (post-inversion).</p>
 
-		<P>This sets {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() getFilterCountType}{@code ()}* to <CODE>{@link com.github.xbn.analyze.validate.FilterCountType FilterCountType}.{@link com.github.xbn.analyze.validate.FilterCountType#INVALID INVALID}</CODE></P>
+		<p>This sets {@link com.github.xbn.analyze.validate.FilterValidCounts#getFilterCountType() getFilterCountType}{@code ()}* to <code>{@link com.github.xbn.analyze.validate.FilterCountType FilterCountType}.{@link com.github.xbn.analyze.validate.FilterCountType#INVALID INVALID}</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #countAll()
 		@see  com.github.xbn.analyze.validate.Validator#doInvertRules() Validator#doInvertRules()
 	 **/
@@ -263,9 +263,9 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 	}
 
 	/**
-		<P>Create a new {@code FilterValidCounts} as configured.</P>
+		<p>Create a new {@code FilterValidCounts} as configured.</p>
 
-		@return  <CODE>(F)(new {@link com.github.xbn.analyze.validate.FilterValidCounts#FilterValidCounts(FilterValidCounts_Fieldable) FilterValidCounts}(this))</CODE>
+		@return  <code>(F)(new {@link com.github.xbn.analyze.validate.FilterValidCounts#FilterValidCounts(FilterValidCounts_Fieldable) FilterValidCounts}(this))</code>
 	 **/
 	public F build()  {
 		@SuppressWarnings("unchecked")
@@ -273,22 +273,22 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
 		return  f;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);
 		return  this;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public FilterValidCounts_CfgForNeeder<F,R> startConfigReturnNeedable(R needer)  {
 		@SuppressWarnings("unchecked")

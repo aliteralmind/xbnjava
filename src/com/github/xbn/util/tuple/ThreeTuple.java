@@ -1,14 +1,14 @@
 //: net/mindview/util/ThreeTuple.java
 package com.github.xbn.util.tuple;
 /**
-	<P>A {@code Tuple} for three values.</P>
+	<p>A {@code Tuple} for three values.</p>
  **/
 public class ThreeTuple<A,B,C> extends TwoTuple<A,B>  {
 //config
 	private final C o3;
 //constructors...START
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
 		@param  o_3  Get with {@link #get3() get3}{@code ()}
 	 **/

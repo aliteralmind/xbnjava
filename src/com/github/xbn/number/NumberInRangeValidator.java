@@ -21,21 +21,21 @@ package  com.github.xbn.number;
 	import  com.github.xbn.number.z.NumberInRangeValidator_Fieldable;
 	import  static com.github.xbn.lang.CrashIfBase.*;
 /**
-	<P>{@code ValueValidator} for testing a number's {@code null}-ness and that it is in a {@code NumberInRange}.</P>
+	<p>{@code ValueValidator} for testing a number's {@code null}-ness and that it is in a {@code NumberInRange}.</p>
 
 	@see  NumberInRange
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class NumberInRangeValidator<N extends Number> extends NullnessValidator<N>  {
 	private final NumberInRange<N> nir;
 
 //constructors...START
 	/**
-		<P>Create a new and unrestricted instance.</P>
+		<p>Create a new and unrestricted instance.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #NumberInRangeValidator(RuleType, NumberInRangeValidator_Fieldable) this}(NumberInRangeValidator.getRuleTypeFromFieldsVNIR(filter), filter)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #NumberInRangeValidator(RuleType, NumberInRangeValidator_Fieldable) this}(NumberInRangeValidator.getRuleTypeFromFieldsVNIR(filter), filter)</code></p>
 	 **/
 	public NumberInRangeValidator(NumberInRangeValidator_Fieldable<N,? extends NumberInRange<N>> filter)  {
 		this(NumberInRangeValidator.getRuleTypeFromFieldsVNIR(filter), filter);
@@ -49,12 +49,12 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
 		}
 	}
 	/**
-		<P>Create a new {@code NumberInRangeValidator} as a duplicate of another.</P>
+		<p>Create a new {@code NumberInRangeValidator} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link NullnessValidator#NullnessValidator(ValueValidator) super}{@code (to_copy)}</LI>
-			<LI>Sets {@link #getRange() getRange}{@code ()} to <CODE>to_copy.{@link #getRange() getRange}()</CODE></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link NullnessValidator#NullnessValidator(ValueValidator) super}{@code (to_copy)}</li>
+			<li>Sets {@link #getRange() getRange}{@code ()} to <code>to_copy.{@link #getRange() getRange}()</code></li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -67,7 +67,7 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
 //constructors...END
 //getters...START
 	/**
-		<P>Get the current number-range.</P>
+		<p>Get the current number-range.</p>
 
 		@return  {@code range}, as provided to .......
 	 **/
@@ -98,9 +98,9 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
 //getters...END
 //ValueValidator...START
 	/**
-		<P>Is the number within the specified range?.</P>
+		<p>Is the number within the specified range?.</p>
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="crashIfBadValue(N, java.lang.String)">crashIfBadValue</A>(N,s)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="crashIfBadValue(N, java.lang.String)">crashIfBadValue</a>(N,s)</code>
 	 **/
 	public boolean doesFollowRulesPreInvert(N to_validate)  {
 		if(!super.doesFollowRulesPreInvert(to_validate))  {
@@ -125,10 +125,10 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
 		}
 	}
 	/**
-		<P>Get the error message needed by {@code crashIfBadValue(N,s)}.</P>
+		<p>Get the error message needed by {@code crashIfBadValue(N,s)}.</p>
 
 		@return  {@link com.github.xbn.lang.CrashIfBase#getXMsg(String, Object) getXMsg}{@code (..., xtra_errInfo)}
-		@see <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="crashIfBadValue(N, java.lang.String)">crashIfBadValue</A>(N,s)</CODE>
+		@see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="crashIfBadValue(N, java.lang.String)">crashIfBadValue</a>(N,s)</code>
 	 **/
 	public static final <N extends Number,G extends NumberInRangeValidator<N>> String getVNIRXMsg(G range, N to_validate, String val_name)  {
 		try  {

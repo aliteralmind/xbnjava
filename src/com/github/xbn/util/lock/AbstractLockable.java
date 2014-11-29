@@ -14,24 +14,24 @@
 \*license*/
 package  com.github.xbn.util.lock;
 /**
-	<P>Abstract implementation of {@code Lockable}. For classes needing to implement {@code Lockable}, but cannot extend this class, use {@link com.github.xbn.util.lock.LockableComposer LockableComposer}.</P>
+	<p>Abstract implementation of {@code Lockable}. For classes needing to implement {@code Lockable}, but cannot extend this class, use {@link com.github.xbn.util.lock.LockableComposer LockableComposer}.</p>
  **/
 public abstract class AbstractLockable implements Lockable  {
 	private LockableComposer lc = null;
 	/**
-		<P>Create a new {@code AbstractLockable}.</P>
+		<p>Create a new {@code AbstractLockable}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.lock.LockableComposer#LockableComposer(boolean) super}{@code (is_unlockable)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.util.lock.LockableComposer#LockableComposer(boolean) super}{@code (is_unlockable)}</p>
 	 **/
 	public AbstractLockable(boolean is_unlockable)  {
 		lc = new LockableComposer(is_unlockable);
 	}
 	/**
-		<P>Create a new {@code AbstractLockable} from a {@code Lockable} object.</P>
+		<p>Create a new {@code AbstractLockable} from a {@code Lockable} object.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.util.lock.LockableComposer#LockableComposer(Lockable) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.util.lock.LockableComposer#LockableComposer(Lockable) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #AbstractLockable(boolean, boolean) this(b,b)
@@ -43,13 +43,13 @@ public abstract class AbstractLockable implements Lockable  {
 		lc.forceUnlock_4prot();
 	}
 	/**
-		<P>Crash if this {@code LockableComposer} is locked.</P>
+		<p>Crash if this {@code LockableComposer} is locked.</p>
 	 **/
 	protected void ciLocked()  {
 		lc.ciLocked_4prot();
 	}
 	/**
-		<P>Crash if this {@code LockableComposer} is unlocked.</P>
+		<p>Crash if this {@code LockableComposer} is unlocked.</p>
 	 **/
 	protected void ciNotLocked()  {
 		lc.ciNotLocked_4prot();

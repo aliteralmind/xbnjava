@@ -15,94 +15,94 @@
 package  com.github.xbn.array.z;
 	import  com.github.xbn.array.XbnArrayIndexOutOfBoundsException;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring an {@link com.github.xbn.array.XbnArrayIndexOutOfBoundsException XbnArrayIndexOutOfBoundsException}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring an {@link com.github.xbn.array.XbnArrayIndexOutOfBoundsException XbnArrayIndexOutOfBoundsException}.</p>
 
-	<P><I>{@code XbnArray}{@code IndexOutOfBoundsException_Cfg} and {@code XbnString}{@code IndexOutOfBoundsException_Cfg} both derive from {@code Xbn}{@code IndexOutOfBoundsException_Cfg}. <B>Do not edit any class except {@code Xbn}{@code IndexOutOfBoundsException_Cfg}</B></I></P>
+	<p><i>{@code XbnArray}{@code IndexOutOfBoundsException_Cfg} and {@code XbnString}{@code IndexOutOfBoundsException_Cfg} both derive from {@code Xbn}{@code IndexOutOfBoundsException_Cfg}. <b>Do not edit any class except {@code Xbn}{@code IndexOutOfBoundsException_Cfg}</b></i></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class XbnArrayIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link XbnIbxBase_Cfg#XbnIbxBase_Cfg() super}()</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link XbnIbxBase_Cfg#XbnIbxBase_Cfg() super}()</code></p>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg()  {
 		super();
 	}
 //Delete in XbnStr_ingIndexOutOfBoundsException...START
 	/**
-		<P>Set the absolute length from a non-primitive array.</P>
+		<p>Set the absolute length from a non-primitive array.</p>
 
-		@return  <CODE><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><A HREF="#absMinAndArrayLength(int, E[])">absMinAndArrayLength</A>(0, array)</CODE>
+		@return  <code><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><a href="#absMinAndArrayLength(int, E[])">absMinAndArrayLength</a>(0, array)</code>
 	 **/
 	public <E> XbnArrayIndexOutOfBoundsException_Cfg absArrayLength(E[] array)  {
 		return  absMinAndArrayLength(0, array);
 	}
 	/**
-		<P>Set the absolute bounds from the length of a non-primitive array.</P>
+		<p>Set the absolute bounds from the length of a non-primitive array.</p>
 
-		@return  <CODE><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><A HREF="#absMinAndArrayLength(int, E[], java.lang.String, java.lang.String)">absMinAndArrayLength</A>(0, array, null, array_name)</CODE>
+		@return  <code><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><a href="#absMinAndArrayLength(int, E[], java.lang.String, java.lang.String)">absMinAndArrayLength</a>(0, array, null, array_name)</code>
 	 **/
 	public <E> XbnArrayIndexOutOfBoundsException_Cfg absArrayLength(E[] array, String array_name)  {
 		return  absMinAndArrayLength(0, array, null, array_name);
 	}
 	/**
-		<P>Set the absolute bounds from the length of a non-primitive array.</P>
+		<p>Set the absolute bounds from the length of a non-primitive array.</p>
 
-		@return  <CODE><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><A HREF="#absMinAndArrayLength(int, E[], java.lang.String, java.lang.String)">absMinAndArrayLength</A>(min_inclusive, array, null, null)</CODE>
+		@return  <code><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><a href="#absMinAndArrayLength(int, E[], java.lang.String, java.lang.String)">absMinAndArrayLength</a>(min_inclusive, array, null, null)</code>
 	 **/
 	public <E> XbnArrayIndexOutOfBoundsException_Cfg absMinAndArrayLength(int min_inclusive, E[] array)  {
 		return  absMinAndArrayLength(min_inclusive, array, null, null);
 	}
 	/**
-		<P>Set the absolute bounds from the length of a non-primitive array.</P>
+		<p>Set the absolute bounds from the length of a non-primitive array.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="XbnArrayIndexOutOfBoundsException_Cfg.html#setAbsMinAndArrayLength(int, E[], java.lang.String, java.lang.String)">setAbsMinAndArrayLength</A>(min_inclusive, array, min_name, array_name)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="XbnArrayIndexOutOfBoundsException_Cfg.html#setAbsMinAndArrayLength(int, E[], java.lang.String, java.lang.String)">setAbsMinAndArrayLength</a>(min_inclusive, array, min_name, array_name)*</code></p>
 
-		@return  <I>{@code this}</I>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><A HREF="#absArrayLength(E[])">absArrayLength</A>(o[])</CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><A HREF="#absArrayLength(E[], java.lang.String)">absArrayLength</A>(o[],s)</CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><A HREF="#absMinAndArrayLength(int, E[])">absMinAndArrayLength</A>(i,o[])</CODE>
+		@return  <i>{@code this}</i>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><a href="#absArrayLength(E[])">absArrayLength</a>(o[])</code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><a href="#absArrayLength(E[], java.lang.String)">absArrayLength</a>(o[],s)</code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN JAVADOC --><a href="#absMinAndArrayLength(int, E[])">absMinAndArrayLength</a>(i,o[])</code>
 	 **/
 	public <E> XbnArrayIndexOutOfBoundsException_Cfg absMinAndArrayLength(int min_inclusive, E[] array, String min_name, String array_name)  {
 		setAbsMinAndArrayLength(min_inclusive, array, min_name, array_name);
 		return  this;
 	}
 	/**
-		<P>Set the absolute length from a(n object known to be a) primitive array.</P>
+		<p>Set the absolute length from a(n object known to be a) primitive array.</p>
 
-		@return  <CODE>{@link #absMinAndPArrayLength(int, Object) absMinAndPArrayLength}(0, obj_thatIsPrimArr)</CODE>
+		@return  <code>{@link #absMinAndPArrayLength(int, Object) absMinAndPArrayLength}(0, obj_thatIsPrimArr)</code>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg absPArrayLength(Object obj_thatIsPrimArr)  {
 		return  absMinAndPArrayLength(0, obj_thatIsPrimArr);
 	}
 	/**
-		<P>Set the absolute bounds from the length of a(n object known to be a) primitive array.</P>
+		<p>Set the absolute bounds from the length of a(n object known to be a) primitive array.</p>
 
-		@return  <CODE>{@link #absMinAndPArrayLength(int, Object, String, String) absMinAndPArrayLength}(0, obj_thatIsPrimArr, null, array_name)</CODE>
+		@return  <code>{@link #absMinAndPArrayLength(int, Object, String, String) absMinAndPArrayLength}(0, obj_thatIsPrimArr, null, array_name)</code>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg absPArrayLength(Object obj_thatIsPrimArr, String array_name)  {
 		return  absMinAndPArrayLength(0, obj_thatIsPrimArr, null, array_name);
 	}
 	/**
-		<P>Set the absolute bounds from the length of a(n object known to be a) primitive array.</P>
+		<p>Set the absolute bounds from the length of a(n object known to be a) primitive array.</p>
 
-		@return  <CODE>{@link #absMinAndPArrayLength(int, Object, String, String) absMinAndPArrayLength}(min_inclusive, obj_thatIsPrimArr, null, null)</CODE>
+		@return  <code>{@link #absMinAndPArrayLength(int, Object, String, String) absMinAndPArrayLength}(min_inclusive, obj_thatIsPrimArr, null, null)</code>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg absMinAndPArrayLength(int min_inclusive, Object obj_thatIsPrimArr)  {
 		return  absMinAndPArrayLength(min_inclusive, obj_thatIsPrimArr, null, null);
 	}
 	/**
-		<P>Set the absolute bounds from the length of a(n object known to be a) primitive array.</P>
+		<p>Set the absolute bounds from the length of a(n object known to be a) primitive array.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE>{@link XbnArrayIndexOutOfBoundsException_Cfg#setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength}(min_inclusive, obj_thatIsPrimArr, min_name, array_name)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code>{@link XbnArrayIndexOutOfBoundsException_Cfg#setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength}(min_inclusive, obj_thatIsPrimArr, min_name, array_name)*</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #absPArrayLength(Object) absPArrayLength(o)
 		@see  #absPArrayLength(Object, String) absPArrayLength(o,s)
 		@see  #absMinAndPArrayLength(int, Object) absMinAndPArrayLength(i,o)
@@ -113,31 +113,31 @@ public class XbnArrayIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
 	}
 //Delete in XbnStr_ingIndexOutOfBoundsException...END
 	/**
-		<P>Set the absolute bounds.</P>
+		<p>Set the absolute bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int) setAbsoluteBounds}(min_inclusive, max_exclusive)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int) setAbsoluteBounds}(min_inclusive, max_exclusive)*</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg absBounds(int min_inclusive, int max_exclusive)  {
 		setAbsoluteBounds(min_inclusive, max_exclusive);
 		return  this;
 	}
 	/**
-		<P>Set the absolute bounds.</P>
+		<p>Set the absolute bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive, max_exclusive, min_name, max_name)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive, max_exclusive, min_name, max_name)*</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg absBounds(int min_inclusive, int max_exclusive, String min_name, String max_name)  {
 		setAbsoluteBounds(min_inclusive, max_exclusive, min_name, max_name);
 		return  this;
 	}
 	/**
-		<P>Set the absolute (exclusive) maximum.</P>
+		<p>Set the absolute (exclusive) maximum.</p>
 
 		@return  {@link #absBounds(int, int) absBounds(0, max_exclusive)}
 	 **/
@@ -145,7 +145,7 @@ public class XbnArrayIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
 		return  absBounds(0, max_exclusive);
 	}
 	/**
-		<P>Set the absolute (exclusive) maximum.</P>
+		<p>Set the absolute (exclusive) maximum.</p>
 
 		@return  {@link #absBounds(int, int, String, String) absBounds(0, max_exclusive, null, max_name)}
 	 **/
@@ -153,55 +153,55 @@ public class XbnArrayIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
 		return  absBounds(0, max_exclusive, null, max_name);
 	}
 	/**
-		<P>Set the index that violates the absolute bounds.</P>
+		<p>Set the index that violates the absolute bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadIndex(int) setBadIndex}(index)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadIndex(int) setBadIndex}(index)*</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg badIndex(int index)  {
 		setBadIndex(index);
 		return  this;
 	}
 	/**
-		<P>Set the index that violates the absolute bounds.</P>
+		<p>Set the index that violates the absolute bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadIndex(int, String) setBadIndex}(index, idx_name)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadIndex(int, String) setBadIndex}(index, idx_name)*</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg badIndex(int index, String idx_name)  {
 		setBadIndex(index, idx_name);
 		return  this;
 	}
 	/**
-		<P>Set the index-range that violates the absolute bounds.</P>
+		<p>Set the index-range that violates the absolute bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadRange(int, int) setBadRange}(min_inclusive, max_exclusive)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadRange(int, int) setBadRange}(min_inclusive, max_exclusive)*</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg badRange(int min_inclusive, int max_exclusive)  {
 		setBadRange(min_inclusive, max_exclusive);
 		return  this;
 	}
 	/**
-		<P>Set the index-range that violates the absolute bounds.</P>
+		<p>Set the index-range that violates the absolute bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadRange(int, int, String, String) setBadRange}(min_inclusive, max_exclusive, min_name, max_name)*</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnArrayIndexOutOfBoundsException_Cfg#setBadRange(int, int, String, String) setBadRange}(min_inclusive, max_exclusive, min_name, max_name)*</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public XbnArrayIndexOutOfBoundsException_Cfg badRange(int min_inclusive, int max_exclusive, String min_name, String max_name)  {
 		setBadRange(min_inclusive, max_exclusive, min_name, max_name);
 		return  this;
 	}
 	/**
-		<P>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</P>
+		<p>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</p>
 
 		@return  {@link #buildWithInfo(Object) buildWithInfo}{@code (null)}
 	 **/
@@ -209,7 +209,7 @@ public class XbnArrayIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
 		return  buildWithInfo(null);
 	}
 	/**
-		<P>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</P>
+		<p>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</p>
 
 		@return  {@link #buildWithCauseInfo(Throwable, Object) buildWithCauseInfo}{@code (null, xtra_errInfo)}
 	 **/
@@ -217,7 +217,7 @@ public class XbnArrayIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
 		return  buildWithCauseInfo(null, xtra_errInfo);
 	}
 	/**
-		<P>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</P>
+		<p>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</p>
 
 		@return  {@link #buildWithCauseInfo(Throwable, Object) buildWithCauseInfo}{@code (cause, null)}
 	 **/
@@ -225,13 +225,13 @@ public class XbnArrayIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
 		return  buildWithCauseInfo(cause, null);
 	}
 	/**
-		<P>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</P>
+		<p>Create an {@code XbnArrayIndexOutOfBoundsException} as configured.</p>
 
-		<P>This<OL>
-			<LI>Calls  <CODE><!-- FAILS AS A @link --><A HREF="XbnIbxBase.html#setExtraErrInfoCause(java.lang.Object, java.lang.Throwable)">setExtraErrInfoCause</A>(xtra_errInfo, cause)*</CODE></LI>
-			<LI><B><I>returns</I></B> a
-			<BR> &nbsp; &nbsp; <CODE>(new {@link com.github.xbn.array.XbnArrayIndexOutOfBoundsException#XbnArrayIndexOutOfBoundsException(XIbxData) XbnArrayIndexOutOfBoundsException}({@link XbnIbxBase_Cfg#xdata xdata}*))</CODE></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls  <code><!-- FAILS AS A @link --><a href="XbnIbxBase.html#setExtraErrInfoCause(java.lang.Object, java.lang.Throwable)">setExtraErrInfoCause</a>(xtra_errInfo, cause)*</code></li>
+			<li><b><i>returns</i></b> a
+			<br/> &nbsp; &nbsp; <code>(new {@link com.github.xbn.array.XbnArrayIndexOutOfBoundsException#XbnArrayIndexOutOfBoundsException(XIbxData) XbnArrayIndexOutOfBoundsException}({@link XbnIbxBase_Cfg#xdata xdata}*))</code></li>
+		</ol></p>
 
 		@see  #build()
 		@see  #buildWithInfo(Object) buildWithInfo(o)

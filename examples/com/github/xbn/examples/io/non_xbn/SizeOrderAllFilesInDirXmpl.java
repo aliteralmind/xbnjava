@@ -21,13 +21,13 @@ package  com.github.xbn.examples.io.non_xbn;
 	import  java.util.TreeMap;
 	import  org.apache.commons.io.FileUtils;
 /**
-	<P>Demonstration of listing all files in a directory, in size order, using a {@link java.util.Map} in which each item is a list of values (multiple values per key). This is an answer to (viewed 1/2/2014)
-	<BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size">http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size</A>}</P>
+	<p>Demonstration of listing all files in a directory, in size order, using a {@link java.util.Map} in which each item is a list of values (multiple values per key). This is an answer to (viewed 1/2/2014)
+	<br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size">http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size</a>}</p>
 
-	<P>java com.github.xbn.examples.io.SizeOrderAllFilesInDirXmpl</P>
+	<p>java com.github.xbn.examples.io.SizeOrderAllFilesInDirXmpl</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SizeOrderAllFilesInDirXmpl  {
 	public static final void main(String[] ignored)  {

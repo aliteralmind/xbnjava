@@ -3,7 +3,7 @@ package  com.github.xbn.testdev;
 	import  com.github.xbn.text.CrashIfString;
 
 /**
-	<P>For highly-structured testing functions that output cumulative debugging information on each problem.</P>
+	<p>For highly-structured testing functions that output cumulative debugging information on each problem.</p>
  **/
 public class BadTestDiagnostics  {
 	private Object oForTS = null;

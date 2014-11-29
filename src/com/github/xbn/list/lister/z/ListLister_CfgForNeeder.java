@@ -25,10 +25,10 @@ package  com.github.xbn.list.lister.z;
 	import  com.github.xbn.number.z.IndexInRangeValidator_Cfg;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring an {@link com.github.xbn.list.lister.ListLister ListLister}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring an {@link com.github.xbn.list.lister.ListLister ListLister}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer> extends AbstractNeedableWithSubs<L,R> implements ListLister_Fieldable<E>   {
 //state
@@ -38,34 +38,34 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 	public ValueValidator<E>          vValFltr ;
 	public String                    sBtw     ;
 	/**
-		<P>Create a new {@code zListLister_CfgForNeeder} with defaults.</P>
+		<p>Create a new {@code zListLister_CfgForNeeder} with defaults.</p>
 
-		<P>This calls<OL>
-			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}xbn/chain/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</A>(true, true, needer)</CODE>{@code (true, true, needer)}</LI>
-			<LI>{@link #resetLL() resetLL}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}xbn/chain/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</a>(true, true, needer)</code>{@code (true, true, needer)}</li>
+			<li>{@link #resetLL() resetLL}{@code ()}</li>
+		</ol></p>
 	 **/
 	public ListLister_CfgForNeeder(R needer)  {
 		super(true, true, needer);
 		resetLL();
 	}
 	/**
-		<P>Revert configuration to <I>nothing</I>.</P>
+		<p>Revert configuration to <i>nothing</i>.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #resetLL() resetLL}{@code ()}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #resetLL() resetLL}{@code ()}</p>
 	 **/
 	public void declareReset()  {
 		resetLL();
 	}
 	/**
-		<P>Revert configuration to <I>nothing</I>.</P>
+		<p>Revert configuration to <i>nothing</i>.</p>
 
-		<P>This calls<OL>
-			<LI><CODE>{@link #cfgOverall() cfgOverall}().{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#endCfg() endCfg}()</CODE></LI>;
-			<LI><CODE>{@link #cfgElement() cfgElement}().{@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#endCfg() endCfg}()</CODE></LI>;
-			<LI>{@link #commaSpaceBetween() commaSpaceBetween}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code>{@link #cfgOverall() cfgOverall}().{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#endCfg() endCfg}()</code></li>;
+			<li><code>{@link #cfgElement() cfgElement}().{@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#endCfg() endCfg}()</code></li>;
+			<li>{@link #commaSpaceBetween() commaSpaceBetween}{@code ()}</li>
+		</ol></p>
 		@see  #declareReset()
 	 **/
 	protected final void resetLL()  {
@@ -81,7 +81,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 		return  between(LINE_SEP);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public ListLister_CfgForNeeder<E,L,R> between(String text)  {
 		sBtw = text;
@@ -118,7 +118,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 		return  indexFilter(new IndexInRangeValidator_Cfg().range(NewIndexInRangeFor.length(null, max_exclusive, "max_exclusive")).build());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public ListLister_CfgForNeeder<E,L,R> indexFilter(ValueValidator<Integer> validator)  {
 		vvIdxFltr = validator;
@@ -133,7 +133,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 		return  valueFilter(vve);
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public ListLister_CfgForNeeder<E,L,R> valueFilter(ValueValidator<E> validator)  {
 		vValFltr = validator;
@@ -162,7 +162,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 		return  l;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	@SuppressWarnings("unchecked")  //See LLCfgOverall.startConfigReturnNeedable(R)
 	public ListLister_CfgForNeeder<E,L,R> startConfigReturnNeedable(R needer)  {
@@ -172,9 +172,9 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 		return  this;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());
@@ -207,7 +207,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
 		}
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public ListLister_CfgForNeeder<E,L,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);

@@ -17,10 +17,10 @@ package  com.github.xbn.array.primitive;
 	import  com.github.xbn.analyze.validate.ValueValidator;
 	import  com.github.xbn.util.itr.AbstractIsValidElementIterator;
 /**
-	<P>Iterator for primitive arrays, that returns a boolean expressing the <I>validity</I> of each primitive element.</P>
+	<p>Iterator for primitive arrays, that returns a boolean expressing the <i>validity</i> of each primitive element.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IsValidPArrayElementIterator<R> extends AbstractIsValidElementIterator<R>  {
 	private PrimitiveArrayHelper<R> pah = null;

@@ -14,30 +14,30 @@
 \*license*/
 package  com.github.xbn.neederneedable;
 /**
-	<P>{@code Chainable} supports self-returning function chains, with the ability to insert arbitrary diagnostic identifiers at any point.</P>
+	<p>{@code Chainable} supports self-returning function chains, with the ability to insert arbitrary diagnostic identifiers at any point.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface Chainable  {
 	/**
-		<P>Insert a diagnostic identifier into the chain.</P>
+		<p>Insert a diagnostic identifier into the chain.</p>
 
-		@param  id  May not be {@code null}. If a string, it <I>should</I> not be empty or invisible. Get with {@link #getChainID() getChainID}{@code ()}.
+		@param  id  May not be {@code null}. If a string, it <i>should</i> not be empty or invisible. Get with {@link #getChainID() getChainID}{@code ()}.
 		@return  The {@code Chainable} instance. This must be overridden by all concrete sub-classes.
 	 **/
 	Chainable chainID(boolean do_setStatic, Object id);
 	/**
-		<P>The chain id. Any self-returning functions that potentially throw an exception, should append the chain-ids to their message.</P>
+		<p>The chain id. Any self-returning functions that potentially throw an exception, should append the chain-ids to their message.</p>
 
-<PRE>{@literal public final ChainableClass doSomething()  {
+<pre>{@literal public final ChainableClass doSomething()  {
 	try  {
 		//do stuff
 	}  catch(RuntimeException rx)  {
 		throw  new RuntimeException("getChainID()=[" + getChainID() + "], getStaticChainID()=[" + getStaticChainID() + "]", rx);
 	}
 	return  this;
-}}</PRE>
+}}</pre>
 	 **/
 	Object getChainID();
 	Object getStaticChainID();

@@ -21,10 +21,10 @@ package  com.github.xbn.analyze;
 	import  com.github.xbn.io.SimpleDebuggable;
 	import  com.github.xbn.lang.ExtraErrInfoableComposer;
 /**
-	<P>For classes that need to implement {@code Analyzer}, that cannot extend {@code AbstractAnalyzer}.</P>
+	<p>For classes that need to implement {@code Analyzer}, that cannot extend {@code AbstractAnalyzer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class AnalyzerComposer extends SimpleDebuggable  {
@@ -34,7 +34,7 @@ public class AnalyzerComposer extends SimpleDebuggable  {
    private final ExpirableComposer ec;
    private boolean bAutoResetState;
 	/**
-		<P>Create a new {@code AnalyzerComposer}.</P>
+		<p>Create a new {@code AnalyzerComposer}.</p>
 
 		@see  #AnalyzerComposer(boolean, AnalyzerComposer) this(b,ac)
 		@see  #AnalyzerComposer(Analyzer) this(z)
@@ -50,15 +50,15 @@ public class AnalyzerComposer extends SimpleDebuggable  {
 		bAutoResetState = true;
 	}
 	/**
-		<P>Create a new {@code AnalyzerComposer} as a duplicate of another.</P>
+		<p>Create a new {@code AnalyzerComposer} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Sets<OL>
-				<LI>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</LI>
-				<LI>{@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code to_copy.wasAnalyzed()}</LI>
-			</OL></LI>
-			<LI>Calls {@link #zresetStateAB() zresetStateAB}{@code ()} &nbsp; &nbsp; <I>(as specified by  <CODE><I>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</I>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</CODE>)</I></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Sets<ol>
+				<li>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</li>
+				<li>{@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code to_copy.wasAnalyzed()}</li>
+			</ol></li>
+			<li>Calls {@link #zresetStateAB() zresetStateAB}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
+		</ol></p>
 
 		@param  ignored  Required to prevent an ambigous-invocation error, when attempting to call this or the {@link #AnalyzerComposer(Analyzer) other} copy-constructor with a class such as {@link com.github.xbn.analyze.AbstractAnalyzer AbstractAnalyzer}, which both extends this {@code AnalyzerComposer} and is an {@link com.github.xbn.analyze.Analyzer Analyzer}.
 		@see  #AnalyzerComposer()
@@ -76,15 +76,15 @@ public class AnalyzerComposer extends SimpleDebuggable  {
 		zresetStateAB();
 	}
 	/**
-		<P>Create a new {@code AnalyzerComposer} from an {@code Analyzer}.</P>
+		<p>Create a new {@code AnalyzerComposer} from an {@code Analyzer}.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.io.SimpleDebuggable#SimpleDebuggable(Debuggable) super}{@code (to_copy)}</LI>
-			<LI>Sets<OL>
-				<LI>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</LI>
-			</OL></LI>
-			<LI>Calls {@link #zresetStateAB() zresetStateAB}{@code ()}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.io.SimpleDebuggable#SimpleDebuggable(Debuggable) super}{@code (to_copy)}</li>
+			<li>Sets<ol>
+				<li>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</li>
+			</ol></li>
+			<li>Calls {@link #zresetStateAB() zresetStateAB}{@code ()}</li>
+		</ol></p>
 		@see  #AnalyzerComposer()
 	 **/
 	@CompositionConstructor
@@ -146,11 +146,11 @@ public class AnalyzerComposer extends SimpleDebuggable  {
 		return  iNlzd;
 	}
 	/**
-		<P>Declare that an analysis took place.</P>
+		<p>Declare that an analysis took place.</p>
 
-		<P>This<OL>
-			<LI>Increments {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} and sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code true}.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Increments {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} and sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code true}.</li>
+		</ol></p>
 	 **/
 	@CompositionFunction
 	public void declareAnalyzed_4prot()  {
@@ -193,10 +193,10 @@ public class AnalyzerComposer extends SimpleDebuggable  {
 	}
 //static...START
 	/**
-		<P>If this {@code Analyzer} needs its {@code stateReset()}, crash. This is useful as the first step of any analysis.</P>
+		<p>If this {@code Analyzer} needs its {@code stateReset()}, crash. This is useful as the first step of any analysis.</p>
 
 		@param  analyzer  May not be {@code null}.
-		@exception  IllegalStateException  If <CODE>analyzer.{@link com.github.xbn.analyze.Analyzer#wasAnalyzed() wasAnalyzed}()</CODE> is {@code true}.
+		@exception  IllegalStateException  If <code>analyzer.{@link com.github.xbn.analyze.Analyzer#wasAnalyzed() wasAnalyzed}()</code> is {@code true}.
 	 **/
 	public static final void autoResetStateOrCINeedTo(Analyzer analyzer)  {
 		try  {

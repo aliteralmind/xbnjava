@@ -15,10 +15,10 @@
 package  com.github.xbn.lang;
 	import  java.util.Objects;
 /**
-	<P>For classes that need to implement {@code Rulable}, that cannot extend abstract or concrete implementations.</P>
+	<p>For classes that need to implement {@code Rulable}, that cannot extend abstract or concrete implementations.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RuleableComposer  {//implements Ruleable  {
 	private final RuleType type;
@@ -34,11 +34,11 @@ public class RuleableComposer  {//implements Ruleable  {
 		this.type = type;
 	}
 	/*
-		<P>Create a new {@code RuleableComposer} as a duplicate of another.</P>
+		<p>Create a new {@code RuleableComposer} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -51,11 +51,11 @@ public class RuleableComposer  {//implements Ruleable  {
 	}
 	 */
 	/*
-		<P>Create a new {@code RuleableComposer} from a {@code Ruleable}.</P>
+		<p>Create a new {@code RuleableComposer} from a {@code Ruleable}.</p>
 
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -78,9 +78,9 @@ public class RuleableComposer  {//implements Ruleable  {
 		return  to_appendTo.append("RuleType.").append(getRuleType());
 	}
 	/*
-		<P>Duplicate this {@code RuleableComposer}.</P>
+		<p>Duplicate this {@code RuleableComposer}.</p>
 
-		@return  <CODE>(new {@link #RuleableComposer(boolean, RuleableComposer) RuleableComposer}(false, this))</CODE>
+		@return  <code>(new {@link #RuleableComposer(boolean, RuleableComposer) RuleableComposer}(false, this))</code>
 	public RuleableComposer getObjectCopy()  {
 		return  (new RuleableComposer(false, this));
 	}

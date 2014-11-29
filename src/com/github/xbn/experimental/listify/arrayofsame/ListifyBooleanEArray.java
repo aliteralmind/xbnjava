@@ -20,7 +20,7 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  com.github.xbn.experimental.listify.primitiveable.ListifyBoolable;
 	import  com.github.xbn.array.primitive.PrimitiveArrayFromWrapper;
 /**
-	<P>Listifier whose raw object is a non-primitive boolean array, and whose virtual elements are of the same type.</P>
+	<p>Listifier whose raw object is a non-primitive boolean array, and whose virtual elements are of the same type.</p>
 
 <!--
 ---nwrq input---
@@ -35,12 +35,12 @@ Character Charable Char char
 
 PRIVATE CLASS HEADERS:
 	/&#42;&#42;
-		<P><I>All these internal classes are derived from {@code ListifyBooxleanEArray}. <B>Do not edit any classes except {@code ListifyBooxleanEArray}</B>.</I></P>
+		<p><i>All these internal classes are derived from {@code ListifyBooxleanEArray}. <b>Do not edit any classes except {@code ListifyBooxleanEArray}</b>.</i></p>
 	 &#42;&#42;/
 
 FUNCTIONS:
 	/&#42;&#42;
-		<P>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</P>
+		<p>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</p>
 
 
 		&#64;return  The equivalent of {@link ListifyBooxleanEArray#ListifyBooxleanEArray(Booxlean[]) ListifyBooxleanEArray(array)}
@@ -50,9 +50,9 @@ FUNCTIONS:
 		return  (new ListifyBooleanEArray(array));
 	}
 	/&#42;&#42;
-		<P>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</P>
+		<p>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBooxlean(Booxlean[]) forBooxlean(_4TV_Booxlean[])} and {@link #forBooxlean(Booxlean[], NullHandlerForPrimitives) forBooxlean(_4TV_Booxlean[],hnvnb)}. <B>Do not edit any functions except the boolean versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBooxlean(Booxlean[]) forBooxlean(_4TV_Booxlean[])} and {@link #forBooxlean(Booxlean[], NullHandlerForPrimitives) forBooxlean(_4TV_Booxlean[],hnvnb)}. <b>Do not edit any functions except the boolean versions.</b></i></p>
 
 		&#64;return  The equivalent of {@link ListifyBooxleanEArray#ListifyBooxleanEArray(Booxlean[], NullHandlerForPrimitives) ListifyBooxleanEArray(array, hnr_nb)}
 	&#42;&#42;/
@@ -62,35 +62,35 @@ FUNCTIONS:
  -->
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListifyBooleanEArray extends AbstractListifyPWrapperEArray<Boolean> implements ListifyBoolable  {
 //constructors...START
 	/**
-		<P>Create a new {@code ListifyBooleanEArray}.</P>
+		<p>Create a new {@code ListifyBooleanEArray}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class)">super</A>(array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class)">super</a>(array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class)</code></p>
 		@see  #ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) this(B[],hnvnb)
 	 **/
 	public ListifyBooleanEArray(Boolean[] array)  {
 		super(array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class);
 	}
 	/**
-		<P>Create a new {@code ListifyBooleanEArray}.</P>
+		<p>Create a new {@code ListifyBooleanEArray}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class, NullHandlerForPrimitives)">super</A>{@code (array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class, hnr_nb)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class, NullHandlerForPrimitives)">super</a>{@code (array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class, hnr_nb)}</p>
 		@see  #ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) this(B[],hnvnb)
 	 **/
 	public ListifyBooleanEArray(Boolean[] array, NullHandlerForPrimitives<Boolean> hnr_nb)  {
 		super(array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class, hnr_nb);
 	}
 	/**
-		<P>Create a new {@code ListifyBooleanEArray} as a duplicate of another.</P>
+		<p>Create a new {@code ListifyBooleanEArray} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray#AbstractListifyPWrapperEArray(ListifyPWrapperEArray) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray#AbstractListifyPWrapperEArray(ListifyPWrapperEArray) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -100,7 +100,7 @@ public class ListifyBooleanEArray extends AbstractListifyPWrapperEArray<Boolean>
 	}
 //constructors...END
  	/**
- 		@return  <CODE>{@link com.github.xbn.array.primitive.PrimitiveArrayFromWrapper PrimitiveArrayFromWrapper.}{@link com.github.xbn.array.primitive.PrimitiveArrayFromWrapper#get(Boolean[], NullHandler, String, String) get}(<I>[{@link com.github.xbn.experimental.listify.arrayofsame.NonPrimitiveEArrayBase NonPrimitiveEArrayBase}]</I>.{@link com.github.xbn.experimental.listify.arrayofsame.NonPrimitiveEArrayBase#getRawEArray() getRawEArray}(), <I>[{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray super}]</I>.{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray#getNullHandlerForPrimitives() getNullHandlerForPrimitives}())</CODE>
+ 		@return  <code>{@link com.github.xbn.array.primitive.PrimitiveArrayFromWrapper PrimitiveArrayFromWrapper.}{@link com.github.xbn.array.primitive.PrimitiveArrayFromWrapper#get(Boolean[], NullHandler, String, String) get}(<i>[{@link com.github.xbn.experimental.listify.arrayofsame.NonPrimitiveEArrayBase NonPrimitiveEArrayBase}]</i>.{@link com.github.xbn.experimental.listify.arrayofsame.NonPrimitiveEArrayBase#getRawEArray() getRawEArray}(), <i>[{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray super}]</i>.{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray#getNullHandlerForPrimitives() getNullHandlerForPrimitives}())</code>
  	 **/
  	public final boolean[] getPArrayCopyOrNull(NullContainer nnull)  {
 		return  PrimitiveArrayFromWrapper.get(getRawEArray(), getNullHandlerForPrimitives(), nnull, "getRawEArray()");
@@ -109,9 +109,9 @@ public class ListifyBooleanEArray extends AbstractListifyPWrapperEArray<Boolean>
 		return  ListifyPrimitiveableComposer.getElementCopyCINullAndHNVCrashOrDel(this, index).booleanValue();
 	}
 	/**
-		<P>Duplicate this {@code ListifyBooleanEArray}.</P>
+		<p>Duplicate this {@code ListifyBooleanEArray}.</p>
 
-		@return  <CODE>(new {@link #ListifyBooleanEArray(ListifyBooleanEArray) ListifyBooleanEArray}(this))</CODE>
+		@return  <code>(new {@link #ListifyBooleanEArray(ListifyBooleanEArray) ListifyBooleanEArray}(this))</code>
 	 **/
 	public ListifyBooleanEArray getObjectCopy()  {
 		return  (new ListifyBooleanEArray(this));

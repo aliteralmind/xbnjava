@@ -14,12 +14,12 @@
 \*license*/
 package  com.github.xbn.examples.util.non_xbn;
 /**
-	<P>Given a 31-bit binary-int, as a string (representing an int with zero or more bit-flags, where the most-significant-bit, the &quot;sign bit&quot;, is removed), get the <I>inverted</I> index of the first one-bit (if the left-most bit is a 1, 31 is the result).</P>
+	<p>Given a 31-bit binary-int, as a string (representing an int with zero or more bit-flags, where the most-significant-bit, the &quot;sign bit&quot;, is removed), get the <i>inverted</i> index of the first one-bit (if the left-most bit is a 1, 31 is the result).</p>
 
-	<P>{@code java com.github.xbn.examples.util.non_xbn.TwoExponentHighestOneBitUsingInts}</P>
+	<p>{@code java com.github.xbn.examples.util.non_xbn.TwoExponentHighestOneBitUsingInts}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class TwoExponentHighestOneBitUsingInts  {
 	public static final int VALUE_OF_31ST_ONE_BIT = Integer.parseInt("1000000000000000000000000000000", 2);

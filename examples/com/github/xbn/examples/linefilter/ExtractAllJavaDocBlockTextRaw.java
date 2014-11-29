@@ -26,13 +26,13 @@ package  com.github.xbn.examples.linefilter;
 	import  com.github.xbn.util.IncludeJavaDoc;
 	import  java.util.Iterator;
 /**
-	<P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to strip the optional asterisk prefix from every line in JavaDoc blocks.</P>
+	<p>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to strip the optional asterisk prefix from every line in JavaDoc blocks.</p>
 
-	<P>{@code java com.github.xbn.examples.linefilter.ExtractAllJavaDocBlockTextRaw examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</P>
+	<p>{@code java com.github.xbn.examples.linefilter.ExtractAllJavaDocBlockTextRaw examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</p>
 
-	@see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block</A></CODE>
+	@see  <code><a href="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block</a></code>
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ExtractAllJavaDocBlockTextRaw  {
 	public static final void main(String[] cmd_lineParams)  {

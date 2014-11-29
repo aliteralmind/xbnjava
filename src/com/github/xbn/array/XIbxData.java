@@ -18,10 +18,10 @@ package  com.github.xbn.array;
 	import  com.github.xbn.text.StringWithNullDefault;
 	import  java.util.Collection;
 /**
-	<P>Data accessors for {@code Xbn*IndexOutOfBoundsException}-s.</P>
+	<p>Data accessors for {@code Xbn*IndexOutOfBoundsException}-s.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class XIbxData  {
 	private Throwable tCause     = null;
@@ -34,11 +34,11 @@ public abstract class XIbxData  {
 	public static final String sDEFAULT_ABS_MIN_NAME = "[absolute-min]";
 	public static final String sDEFAULT_ABS_MAXX_NAME = "[absolute-max-exclusive]";
 	/**
-		<P>Create a new instance with initialized values.</P>
+		<p>Create a new instance with initialized values.</p>
 
-		<P>This sets all non-{@code int} values to {@code null}
-		<BR> &nbsp; &nbsp; {@link #getCause() getCause}{@code ()}, {@link #getExtraErrInfo() getExtraErrInfo}{@code ()}, {@link #getAbsMinName() getAbsMinName}{@code ()}, {@link #getAbsMaxXName() getAbsMaxXName}{@code ()}
-		<BR>and the {@code int} values to {@code -1}: {@link #getAbsMin() getAbsMin}{@code ()}, {@link #getAbsMaxX() getAbsMaxX}{@code ()}</P>
+		<p>This sets all non-{@code int} values to {@code null}
+		<br/> &nbsp; &nbsp; {@link #getCause() getCause}{@code ()}, {@link #getExtraErrInfo() getExtraErrInfo}{@code ()}, {@link #getAbsMinName() getAbsMinName}{@code ()}, {@link #getAbsMaxXName() getAbsMaxXName}{@code ()}
+		<br/>and the {@code int} values to {@code -1}: {@link #getAbsMin() getAbsMin}{@code ()}, {@link #getAbsMaxX() getAbsMaxX}{@code ()}</p>
 	 **/
 	public XIbxData()  {
 		tCause     = null;
@@ -50,19 +50,19 @@ public abstract class XIbxData  {
 	}
 //setters...START
 	/**
-		<P>From a string's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
+		<p>From a string's length, set the absolute bounds that the bad index or range is supposed to conform to.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndStringLength(int, Object, String, String) setAbsMinAndStringLength}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #setAbsMinAndStringLength(int, Object, String, String) setAbsMinAndStringLength}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</code></p>
 	 **/
 	public void setAbsMinAndStringLength(int min, Object obj_forStrLen)  {
 		setAbsMinAndStringLength(min, obj_forStrLen, null, "[the-string]");
 	}
 	/**
-		<P>From a string's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
+		<p>From a string's length, set the absolute bounds that the bad index or range is supposed to conform to.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, obj_forStrLen.toString().length(), min_name, str_name + &quot;.toString().length()&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, obj_forStrLen.toString().length(), min_name, str_name + &quot;.toString().length()&quot;)</code></p>
 		@see  #setAbsMinAndStringLength(int, Object) setAbsMinAndStringLength(i,o)
 	 **/
 	public void setAbsMinAndStringLength(int min, Object obj_forStrLen, String min_name, String str_name)  {
@@ -73,19 +73,19 @@ public abstract class XIbxData  {
 		}
 	}
 	/**
-		<P>From a non-primitive array's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
+		<p>From a non-primitive array's length, set the absolute bounds that the bad index or range is supposed to conform to.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndArrayLength(int, Object[], String, String) setAbsMinAndArrayLength}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #setAbsMinAndArrayLength(int, Object[], String, String) setAbsMinAndArrayLength}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</code></p>
 	 **/
 	public <E> void setAbsMinAndArrayLength(int min, E[] array)  {
 		setAbsMinAndArrayLength(min, array, null, "[the-array]");
 	}
 	/**
-		<P>From a non-primitive array's length, set the absolute bounds that the bad index or range is supposed to conform to.</P>
+		<p>From a non-primitive array's length, set the absolute bounds that the bad index or range is supposed to conform to.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, array.length, min_name, array_name + &quot;.length&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, array.length, min_name, array_name + &quot;.length&quot;)</code></p>
 		@see  #setAbsMinAndArrayLength(int, Object[]) setAbsMinAndArrayLength(i,E[])
 	 **/
 	public <E> void setAbsMinAndArrayLength(int min, E[] array, String min_name, String array_name)  {
@@ -96,19 +96,19 @@ public abstract class XIbxData  {
 		}
 	}
 	/**
-		<P>From a collection's size, set the absolute bounds that the bad index or range is supposed to conform to.</P>
+		<p>From a collection's size, set the absolute bounds that the bad index or range is supposed to conform to.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #setAbsMinAndCollectionSize(int, Collection, String, String) setAbsMinAndCollectionSize}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #setAbsMinAndCollectionSize(int, Collection, String, String) setAbsMinAndCollectionSize}(min, obj_forStrLen, null, &quot;[the-string]&quot;)</code></p>
 	 **/
 	public void setAbsMinAndCollectionSize(int min, Collection<?> cll_forSize)  {
 		setAbsMinAndCollectionSize(min, cll_forSize, null, "[the-collection]");
 	}
 	/**
-		<P>From a collection's size, set the absolute bounds that the bad index or range is supposed to conform to.</P>
+		<p>From a collection's size, set the absolute bounds that the bad index or range is supposed to conform to.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, cll_forSize.size(), min_name, selfCmprllName + &quot;.size()&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min, cll_forSize.size(), min_name, selfCmprllName + &quot;.size()&quot;)</code></p>
 		@see  #setAbsMinAndCollectionSize(int, Collection) setAbsMinAndCollectionSize(i,cll)
 	 **/
 	public void setAbsMinAndCollectionSize(int min, Collection<?> cll_forSize, String min_name, String selfCmprllName)  {
@@ -119,19 +119,19 @@ public abstract class XIbxData  {
 		}
 	}
 	/**
-		<P>Set the absolute bounds, that the bad index or range is supposed to conform to.</P>
+		<p>Set the absolute bounds, that the bad index or range is supposed to conform to.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #setAbsoluteBounds(int, int) setAbsoluteBounds(min, max_exclusive, null, null)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #setAbsoluteBounds(int, int) setAbsoluteBounds(min, max_exclusive, null, null)}</p>
 	 **/
 	public void setAbsoluteBounds(int min, int max_exclusive)  {
 		setAbsoluteBounds(min, max_exclusive, null, null);
 	}
 	/**
-		<P>Set the absolute bounds, that the bad index or range is supposed to conform to.</P>
+		<p>Set the absolute bounds, that the bad index or range is supposed to conform to.</p>
 
-		@param  min  The minimum number, inclusive, that the indexes <I>should</I> conform to. May not be less than zero, or greater than {@code max_exclusive}. Get with {@link #getAbsMin() getAbsMin}{@code ()}.
-		@param  max_exclusive  The maximum number, exclusive, that the indexes <I>should</I> conform to. This is usually the length of something. Get with {@link #getAbsMaxX() getAbsMaxX}{@code ()}.
+		@param  min  The minimum number, inclusive, that the indexes <i>should</i> conform to. May not be less than zero, or greater than {@code max_exclusive}. Get with {@link #getAbsMin() getAbsMin}{@code ()}.
+		@param  max_exclusive  The maximum number, exclusive, that the indexes <i>should</i> conform to. This is usually the length of something. Get with {@link #getAbsMaxX() getAbsMaxX}{@code ()}.
 		@param  min_name  Descriptive name of {@code min}. If {@code null}, {@link #sDEFAULT_ABS_MIN_NAME} is used. Get with {@link #getAbsMinName() getAbsMinName}{@code ()}.
 		@param  max_name  Descriptive name of {@code max_exclusive}. If {@code null}, {@link #sDEFAULT_ABS_MAXX_NAME} is used. Get with {@link #getAbsMinName() getAbsMinName}{@code ()}.
 
@@ -154,7 +154,7 @@ public abstract class XIbxData  {
 		ciNOTBadForAbsBounds_forCfgBuild();
 	}
 	/**
-		<P>Set non-index related information.</P>
+		<p>Set non-index related information.</p>
 
 		@param  xtra_errInfo  Any extra information to append to the error message. Get with {@link #getExtraErrInfo() getExtraErrInfo}{@code ()}.
 		@param  cause  The causing error. Get with {@link #getCause() getCause}{@code ()}

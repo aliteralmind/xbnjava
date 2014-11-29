@@ -14,17 +14,17 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-	<P>Safely get a potentially-{@code null} object, or a copy of a potentially-{@code null} {@code Copyable}.</P>
+	<p>Safely get a potentially-{@code null} object, or a copy of a potentially-{@code null} {@code Copyable}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ObjectOrCrashIfNull  {
 	/**
-		<P>Safely get potentially-{@code null} objects in {@code super} or {@code this} constructor calls, where try-catch is not possible.</P>
+		<p>Safely get potentially-{@code null} objects in {@code super} or {@code this} constructor calls, where try-catch is not possible.</p>
 
 		@param  obj  The object to get. May not be {@code null}.
-		@param  obj_varName  Descriptive name of {@code obj}. <I>Should</I> not be {@code null} or empty.
+		@param  obj_varName  Descriptive name of {@code obj}. <i>Should</i> not be {@code null} or empty.
 		@return  {@code obj}  If its non-{@code null}.
 		@exception  NullPointerException  If it is.
 	 **/
@@ -35,12 +35,12 @@ public class ObjectOrCrashIfNull  {
 		return  obj;
 	}
 	/**
-		<P>Safely duplicate <CODE>Copyable</CODE> objects.</P>
+		<p>Safely duplicate <code>Copyable</code> objects.</p>
 
 		@param  to_copy  May not be {@code null}.
 		@param  to_castTo  May not be {@code null}.
-		@param  toCopy_varName  Descriptive name of {@code to_copy}. <I>Should</I> not be {@code null} or empty.
-		@return  <CODE>to_castTo.{@link java.lang.Class#cast(Object) cast}(to_copy.{@link Copyable#getObjectCopy() getObjectCopy}())</CODE>
+		@param  toCopy_varName  Descriptive name of {@code to_copy}. <i>Should</i> not be {@code null} or empty.
+		@return  <code>to_castTo.{@link java.lang.Class#cast(Object) cast}(to_copy.{@link Copyable#getObjectCopy() getObjectCopy}())</code>
 		@exception  NullPointerException  If {@code to_copy} is {@code null}.
 	 **/
 	@SuppressWarnings("unchecked")

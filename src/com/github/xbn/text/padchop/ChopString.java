@@ -23,28 +23,28 @@ package  com.github.xbn.text.padchop;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>Chop a string at a particular location (left, middle, right), and with-or-without an ellipsis.</P>
+	<p>Chop a string at a particular location (left, middle, right), and with-or-without an ellipsis.</p>
 
 {@.codelet.and.out com.github.xbn.examples.text.padchop.ChopStringXmpl%eliminateCommentBlocksAndPackageDecl()}
 
 
 {@.codelet.and.out com.github.xbn.examples.text.padchop.CharsBeforeChopXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.ChopString_Cfg ChopString_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.text.padchop.z.ChopString_Cfg ChopString_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Used by:</B> {@code <A HREF="VzblPadChop.html#cfg">VzblPadChop</A>}</LI>
-		<LI>{@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#goalLen(int) goalLen}{@code (i)}</LI>
-		<LI><B>Side:</B> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#left() left}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#right() right}{@code ()}</LI>
-		<LI><B>Ellipsis (dot-dot-dot):</B><UL>
-			<LI><B>String:</B> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#noDDD() noDDD}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#ddd() ddd}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#ddd(String) ddd}{@code (s)}</LI>
-			<LI><B>Location (chars before):</B> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#charsBefore(int) charsBefore}{@code (i)}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#inMiddle() inMiddle}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#atEnd() atEnd}{@code ()}</LI>
-			<LI><B>Overhang:</B> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#overhang(int) overhang}{@code (i)}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#noOverhang() noOverhang}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#maxOverhang() maxOverhang}{@code ()}</LI>
-		</UL></LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Used by:</b> {@code <a href="VzblPadChop.html#cfg">VzblPadChop</a>}</li>
+		<li>{@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#goalLen(int) goalLen}{@code (i)}</li>
+		<li><b>Side:</b> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#left() left}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#right() right}{@code ()}</li>
+		<li><b>Ellipsis (dot-dot-dot):</b><ul>
+			<li><b>String:</b> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#noDDD() noDDD}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#ddd() ddd}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#ddd(String) ddd}{@code (s)}</li>
+			<li><b>Location (chars before):</b> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#charsBefore(int) charsBefore}{@code (i)}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#inMiddle() inMiddle}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#atEnd() atEnd}{@code ()}</li>
+			<li><b>Overhang:</b> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#overhang(int) overhang}{@code (i)}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#noOverhang() noOverhang}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#maxOverhang() maxOverhang}{@code ()}</li>
+		</ul></li>
+	</ul></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ChopString extends PadChopBase implements Debuggable, ToStringAppendable  {
 //state
@@ -58,17 +58,17 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 	public static final int iIN_MIDDLE = -1;
 	public static final int iAT_END = -2;
 	/**
-		<P>A good test string.</P>
+		<p>A good test string.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; &quot;{@code ---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z}&quot;</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; &quot;{@code ---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z}&quot;</p>
 	 **/
 	public static final String sGOOD_TEST_STRING = "---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z";
 //constructors...START
 	/**
-		<P>Create a new {@code ChopString}.</P>
+		<p>Create a new {@code ChopString}.</p>
 
-		<P>This first calls {@link PadChopBase#PadChopBase(PadChopBase_Fieldable) super}{@code (cs_c)}, and sets <I>and validates</I> all internal variable as set into {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder ChopString_CfgForNeeder}.</P>
+		<p>This first calls {@link PadChopBase#PadChopBase(PadChopBase_Fieldable) super}{@code (cs_c)}, and sets <i>and validates</i> all internal variable as set into {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder ChopString_CfgForNeeder}.</p>
 
 		@see  #ChopString(ChopString) this(cs)
 		@see  #ChopString(ChopString, int) this(cs,i)
@@ -98,25 +98,25 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 
 	}
 	/**
-		<P>Create a new {@code ChopString} as a duplicate of another.</P>
+		<p>Create a new {@code ChopString} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, -2)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, -2)}</p>
 	 **/
 	public ChopString(ChopString to_copy)  {
 		this(to_copy, -2);
 	}
 	/**
-		<P>Create a new {@code ChopString} as a duplicate of another, with a potentially-new goal-length.</P>
+		<p>Create a new {@code ChopString} as a duplicate of another, with a potentially-new goal-length.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, new_goalLen)}</LI>
-			<LI>Sets<OL>
-				<LI>{@link #getEllipsis() getEllipsis}{@code ()} to <CODE>to_copy.{@link #getEllipsis() getEllipsis}()</CODE></LI>
-				<LI>{@link #getCharsBeforeDDD() getCharsBeforeDDD}{@code ()} to <CODE>to_copy.{@link #getCharsBeforeDDD() getCharsBeforeDDD}()</CODE> &nbsp; &nbsp; <I>(This is the value returned when it is between zero and <CODE><I>[{@link PadChopBase super}]</I>.{@link PadChopBase#getGoalLen() getGoalLen}()</CODE>, inclusive)</I></LI>
-				<LI>{@link #getOverhangCount() getOverhangCount}{@code ()} to <CODE>to_copy.{@link #getOverhangCount() getOverhangCount}()</CODE> &nbsp; &nbsp; <I>(This is the value returned when it is between zero and {@code <I>[super]</I>.getGoalLen()}, inclusive)</I></LI>
-			</OL></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, new_goalLen)}</li>
+			<li>Sets<ol>
+				<li>{@link #getEllipsis() getEllipsis}{@code ()} to <code>to_copy.{@link #getEllipsis() getEllipsis}()</code></li>
+				<li>{@link #getCharsBeforeDDD() getCharsBeforeDDD}{@code ()} to <code>to_copy.{@link #getCharsBeforeDDD() getCharsBeforeDDD}()</code> &nbsp; &nbsp; <i>(This is the value returned when it is between zero and <code><i>[{@link PadChopBase super}]</i>.{@link PadChopBase#getGoalLen() getGoalLen}()</code>, inclusive)</i></li>
+				<li>{@link #getOverhangCount() getOverhangCount}{@code ()} to <code>to_copy.{@link #getOverhangCount() getOverhangCount}()</code> &nbsp; &nbsp; <i>(This is the value returned when it is between zero and {@code <i>[super]</i>.getGoalLen()}, inclusive)</i></li>
+			</ol></li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -132,7 +132,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 //constructors...END
 //getters...START
 	/**
-		<P>The ellipsis (dot-dot-dot) that indicates the string was chopped.</P>
+		<p>The ellipsis (dot-dot-dot) that indicates the string was chopped.</p>
 
 		@return  {@code null} If there is no ellipsis.
 		@see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#ddd(String) ChopString_CfgForNeeder#ddd(s)
@@ -141,7 +141,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 		return  sDdd;
 	}
 	/**
-		<P>The ellipsis chars-before sub-setting.</P>
+		<p>The ellipsis chars-before sub-setting.</p>
 
 		@see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#charsBefore(int) ChopString_CfgForNeeder#charsBefore(i)
 	 **/
@@ -149,9 +149,9 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 		return  iChrsB4Ddd;
 	}
 	/**
-		<P>The number of characters that, at a maximum, the ellipsis can exceed the chopped string.</P>
+		<p>The number of characters that, at a maximum, the ellipsis can exceed the chopped string.</p>
 
-		@return  A number between zero and <CODE>{@link #getEllipsis() getEllipsis}().length()</CODE>, inclusive. When {@code getEllipsis()} is {@code null}, this returns zero.
+		@return  A number between zero and <code>{@link #getEllipsis() getEllipsis}().length()</code>, inclusive. When {@code getEllipsis()} is {@code null}, this returns zero.
 		@see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#overhang(int) ChopString_CfgForNeeder#overhang(i)
 	 **/
 	public final int getOverhangCount()  {
@@ -160,32 +160,32 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 //getters...END
 //other...START
 	/**
-		<P>Duplicate this {@code ChopString}.</P>
+		<p>Duplicate this {@code ChopString}.</p>
 
-		@return  <CODE>(new {@link #ChopString(ChopString) ChopString}(this))</CODE>
+		@return  <code>(new {@link #ChopString(ChopString) ChopString}(this))</code>
 	 **/
 	public ChopString getObjectCopy()  {
 		return  (new ChopString(this));
 	}
 	/**
-		<P>Duplicate this {@code ChopString}, with a new goal-length.</P>
+		<p>Duplicate this {@code ChopString}, with a new goal-length.</p>
 
 
-		@return  <CODE>(new {@link #ChopString(ChopString) ChopString}(this))</CODE>
+		@return  <code>(new {@link #ChopString(ChopString) ChopString}(this))</code>
 	 **/
 	public ChopString getCopyNewGoalLen(int goal_len)  {
 		return  (new ChopString(this, goal_len));
 	}
 	/**
-		<P>Chop the string as configured.</P>
+		<p>Chop the string as configured.</p>
 
-		@return  <CODE>{@link #getChopped(int, Object) getChopped}({@link PadChopBase#getGoalLen() getGoalLen}(), str_toPad)</CODE>
+		@return  <code>{@link #getChopped(int, Object) getChopped}({@link PadChopBase#getGoalLen() getGoalLen}(), str_toPad)</code>
 	 **/
 	public String getChopped(Object str_toPad)  {
 		return  getChopped(getGoalLen(), str_toPad);
 	}
 	/**
-		<P>Chop the string as configured, with a specific goal-length.</P>
+		<p>Chop the string as configured, with a specific goal-length.</p>
 
 		@return  {@code appendChopped((new StringBuilder()), goal_len, str_toPad).toString()}
 	 **/
@@ -193,7 +193,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 		return  appendChopped((new StringBuilder()), goal_len, str_toPad).toString();
 	}
 	/**
-		<P>Chop the string as configured.</P>
+		<p>Chop the string as configured.</p>
 
 		@return  {@link #appendChoppedX(Appendable, Object) appendChoppedX(to_appendTo, str_toPad)}
 	 **/
@@ -255,7 +255,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 		sg.debugln(message);
 	}
 	/**
-		<P>Chop the string as configured, with a specific goal-length.</P>
+		<p>Chop the string as configured, with a specific goal-length.</p>
 
 		@param  to_appendTo  May not be {@code null}.
 		@param  str_toPad  The string to chop.

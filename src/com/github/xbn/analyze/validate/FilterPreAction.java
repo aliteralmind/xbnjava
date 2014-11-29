@@ -15,16 +15,16 @@
 package  com.github.xbn.analyze.validate;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>Action taken by the {@link ValidResultFilter} <B><U>before</U></B> the <I>something</I> is ever analyzed against the rules.</P>
+	<p>Action taken by the {@link ValidResultFilter} <b><u>before</u></b> the <i>something</i> is ever analyzed against the rules.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum FilterPreAction {
 	/**
-		<P>Return true--do not validate the <I>something</I> against the rules.</P>
+		<p>Return true--do not validate the <i>something</i> against the rules.</p>
 
-		<P>This causes the validation function, such as <CODE><I>{@link ValueValidator}</I>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ValueValidator.html#isValid(O)">isValid</A>(O)</CODE>, to return {@code true} (it is never {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}) and increases the {@link com.github.xbn.analyze.Analyzer#getAnalyzedCount() analysis} and {@link com.github.xbn.analyze.validate.Validator#getValidCount() valid} counts.</P>
+		<p>This causes the validation function, such as <code><i>{@link ValueValidator}</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="ValueValidator.html#isValid(O)">isValid</a>(O)</code>, to return {@code true} (it is never {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}) and increases the {@link com.github.xbn.analyze.Analyzer#getAnalyzedCount() analysis} and {@link com.github.xbn.analyze.validate.Validator#getValidCount() valid} counts.</p>
 
 		@see  #RETURN_FALSE
 		@see  #PROCEED
@@ -32,27 +32,27 @@ public enum FilterPreAction {
 	 **/
 	RETURN_TRUE,
 	/**
-		<P>Return false--do not validate the <I>something</I> against the rules.</P>
+		<p>Return false--do not validate the <i>something</i> against the rules.</p>
 
-		<P>This causes the validation function, such as <CODE><I>{@link ValueValidator}</I>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ValueValidator.html#isValid(O)">isValid</A>(O)</CODE>, to return {@code false} (it is never {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}) and increases the {@link com.github.xbn.analyze.Analyzer#getAnalyzedCount() analysis count}.</P>
+		<p>This causes the validation function, such as <code><i>{@link ValueValidator}</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="ValueValidator.html#isValid(O)">isValid</a>(O)</code>, to return {@code false} (it is never {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}) and increases the {@link com.github.xbn.analyze.Analyzer#getAnalyzedCount() analysis count}.</p>
 
 		@see  #RETURN_TRUE
 		@see  #isReturnFalse()
 	 **/
 	RETURN_FALSE,
 	/**
-		<P>Validate the <I>something</I> against the rules.</P>
+		<p>Validate the <i>something</i> against the rules.</p>
 
-		<P>This causes the <I>something</I> to be validated against the rules, after which, the {@link FilterAfterValue post filter} decides the final return value.</P>
+		<p>This causes the <i>something</i> to be validated against the rules, after which, the {@link FilterAfterValue post filter} decides the final return value.</p>
 
 		@see  #RETURN_TRUE
 		@see  #isProceed()
 	 **/
 	PROCEED;
 	/**
-		<P>Is this {@code FilterPreAction} equal to {@code RETURN_TRUE}?.</P>
+		<p>Is this {@code FilterPreAction} equal to {@code RETURN_TRUE}?.</p>
 
-		@return  <CODE>this == {@link #RETURN_TRUE}</CODE>
+		@return  <code>this == {@link #RETURN_TRUE}</code>
 
 		@see  #isReturnFalse()
 		@see  #isProceed()
@@ -61,9 +61,9 @@ public enum FilterPreAction {
 		return  this == RETURN_TRUE;
 	}
 	/**
-		<P>Is the pre-action to return either {@code true} or {@code false}?</P>
+		<p>Is the pre-action to return either {@code true} or {@code false}?</p>
 
-		@return  <CODE>({@link #isReturnTrue() isReturnTrue}()  ||  {@link #isReturnFalse() isReturnFalse}())</CODE>
+		@return  <code>({@link #isReturnTrue() isReturnTrue}()  ||  {@link #isReturnFalse() isReturnFalse}())</code>
 		@see  #getReturnValue()
 	 **/
 	public final boolean isReturn()  {
@@ -71,12 +71,12 @@ public enum FilterPreAction {
 	}
 
 	/**
-		<P>Get the return value based on the value of this {@code FilterPreAction}.</P>
+		<p>Get the return value based on the value of this {@code FilterPreAction}.</p>
 
-		@return  <UL>
-			<LI>{@code true}: If {@link #isReturnTrue() isReturnTrue}{@code ()} is {@code true}.</LI>
-			<LI>{@code false}: If {@link #isReturnFalse() isReturnFalse}{@code ()} is {@code true}.</LI>
-		</UL>
+		@return  <ul>
+			<li>{@code true}: If {@link #isReturnTrue() isReturnTrue}{@code ()} is {@code true}.</li>
+			<li>{@code false}: If {@link #isReturnFalse() isReturnFalse}{@code ()} is {@code true}.</li>
+		</ul>
 		@exception  IllegalStateException  If this is equal to {@link #PROCEED}
 	 **/
 	public final boolean getReturnValue()  {
@@ -89,18 +89,18 @@ public enum FilterPreAction {
 		throw  new IllegalStateException("this is equal to PROCEED (isReturn() is false).");
 	}
 	/**
-		<P>Is this {@code FilterPreAction} equal to {@code RETURN_FALSE}?.</P>
+		<p>Is this {@code FilterPreAction} equal to {@code RETURN_FALSE}?.</p>
 
-		@return  <CODE>this == {@link #RETURN_FALSE}</CODE>
+		@return  <code>this == {@link #RETURN_FALSE}</code>
 		@see  #isReturnTrue()
 	 **/
 	public final boolean isReturnFalse()  {
 		return  this == RETURN_FALSE;
 	}
 	/**
-		<P>Is this {@code FilterPreAction} equal to {@code PROCEED}?.</P>
+		<p>Is this {@code FilterPreAction} equal to {@code PROCEED}?.</p>
 
-		@return  <CODE>this == {@link #PROCEED}</CODE>
+		@return  <code>this == {@link #PROCEED}</code>
 		@see  #isReturnTrue()
 		@see  #isReturnFalse()
 	 **/
@@ -108,20 +108,20 @@ public enum FilterPreAction {
 		return  this == PROCEED;
 	}
 	/**
-		<P>If an <CODE>FilterPreAction</CODE> is not a required value, crash.</P>
+		<p>If an <code>FilterPreAction</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;FilterPreAction&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;FilterPreAction&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfForbiddenValue(FilterPreAction, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(FilterPreAction rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
 	}
 	/**
-		<P>If an <CODE>FilterPreAction</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>FilterPreAction</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;FilterPreAction&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;FilterPreAction&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfNotRequiredValue(FilterPreAction, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(FilterPreAction rqd_value, String this_enumsVarName, Object xtra_errInfo)  {

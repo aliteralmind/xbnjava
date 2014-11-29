@@ -15,22 +15,22 @@
 package  com.github.xbn.analyze.validate;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>Exactly what determined the valid-result in a <CODE>Validator</CODE>?: The pre-filter, the validator's rules, or the post-filter?.</P>
+	<p>Exactly what determined the valid-result in a <code>Validator</code>?: The pre-filter, the validator's rules, or the post-filter?.</p>
 
 	@see  ValidResultFilter
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum ResultReturnedBy {
 	/**
-		<P>The valid-result was determined by the pre-filter--the <I>something</I> was never validated against the rules.</P>
+		<p>The valid-result was determined by the pre-filter--the <i>something</i> was never validated against the rules.</p>
 
 		@see  #RULES
 		@see  #isPreFilter()
 	 **/
 	PRE_FILTER,
 	/**
-		<P>The valid-result was determined by whether the <I>something</I> actually conforms to the (post-inverted) rules.</P>
+		<p>The valid-result was determined by whether the <i>something</i> actually conforms to the (post-inverted) rules.</p>
 
 		@see  #PRE_FILTER
 		@see  #POST_FILTER
@@ -39,16 +39,16 @@ public enum ResultReturnedBy {
 	 **/
 	RULES,
 	/**
-		<P>The valid-result was determined by the post-filter--although the <I>something</I> was validated against the rules, that result was ignored.</P>
+		<p>The valid-result was determined by the post-filter--although the <i>something</i> was validated against the rules, that result was ignored.</p>
 
 		@see  #RULES
 		@see  #isPostFilter()
 	 **/
 	POST_FILTER;
 	/**
-		<P>Is this {@code ResultReturnedBy} equal to {@code PRE_FILTER}?.</P>
+		<p>Is this {@code ResultReturnedBy} equal to {@code PRE_FILTER}?.</p>
 
-		@return  <CODE>this == {@link #PRE_FILTER}</CODE>
+		@return  <code>this == {@link #PRE_FILTER}</code>
 
 		@see  #isRules()
 		@see  #isPostFilter()
@@ -57,38 +57,38 @@ public enum ResultReturnedBy {
 		return  this == PRE_FILTER;
 	}
 	/**
-		<P>Is this {@code ResultReturnedBy} equal to {@code RULES}?.</P>
+		<p>Is this {@code ResultReturnedBy} equal to {@code RULES}?.</p>
 
-		@return  <CODE>this == {@link #RULES}</CODE>
+		@return  <code>this == {@link #RULES}</code>
 		@see  #isPreFilter()
 	 **/
 	public final boolean isRules()  {
 		return  this == RULES;
 	}
 	/**
-		<P>Is this {@code ResultReturnedBy} equal to {@code POST_FILTER}?.</P>
+		<p>Is this {@code ResultReturnedBy} equal to {@code POST_FILTER}?.</p>
 
-		@return  <CODE>this == {@link #POST_FILTER}</CODE>
+		@return  <code>this == {@link #POST_FILTER}</code>
 		@see  #isPreFilter()
 	 **/
 	public final boolean isPostFilter()  {
 		return  this == POST_FILTER;
 	}
 	/**
-		<P>If an <CODE>ResultReturnedBy</CODE> is not a required value, crash.</P>
+		<p>If an <code>ResultReturnedBy</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;ResultReturnedBy&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;ResultReturnedBy&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfForbiddenValue(ResultReturnedBy, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(ResultReturnedBy rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
 	}
 	/**
-		<P>If an <CODE>ResultReturnedBy</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>ResultReturnedBy</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;ResultReturnedBy&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;ResultReturnedBy&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfNotRequiredValue(ResultReturnedBy, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(ResultReturnedBy rqd_value, String this_enumsVarName, Object xtra_errInfo)  {

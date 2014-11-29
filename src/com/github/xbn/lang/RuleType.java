@@ -15,14 +15,14 @@
 package  com.github.xbn.lang;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>How restrictive is a {@code Ruleable} object?.</P>
+	<p>How restrictive is a {@code Ruleable} object?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum RuleType {
 	/**
-		<P>It is not possible to violate the rules.</P>
+		<p>It is not possible to violate the rules.</p>
 
 		@see  #RESTRICTED
 		@see  #IMPOSSIBLE
@@ -30,23 +30,23 @@ public enum RuleType {
 	 **/
 	UNRESTRICTED,
 	/**
-		<P>It is possible to either follow or violate the rules.</P>
+		<p>It is possible to either follow or violate the rules.</p>
 
 		@see  #UNRESTRICTED
 		@see  #isRestricted()
 	 **/
 	RESTRICTED,
 	/**
-		<P>It is not possible to conform to the rules.</P>
+		<p>It is not possible to conform to the rules.</p>
 
 		@see  #UNRESTRICTED
 		@see  #isImpossible()
 	 **/
 	IMPOSSIBLE;
 	/**
-		<P>Is this {@code RuleType} equal to {@code UNRESTRICTED}?.</P>
+		<p>Is this {@code RuleType} equal to {@code UNRESTRICTED}?.</p>
 
-		@return  <CODE>this == {@link #UNRESTRICTED}</CODE>
+		@return  <code>this == {@link #UNRESTRICTED}</code>
 
 		@see  #isRestricted()
 		@see  #isImpossible()
@@ -55,18 +55,18 @@ public enum RuleType {
 		return  this == UNRESTRICTED;
 	}
 	/**
-		<P>Is this {@code RuleType} equal to {@code RESTRICTED}?.</P>
+		<p>Is this {@code RuleType} equal to {@code RESTRICTED}?.</p>
 
-		@return  <CODE>this == {@link #RESTRICTED}</CODE>
+		@return  <code>this == {@link #RESTRICTED}</code>
 		@see  #isUnrestricted()
 	 **/
 	public final boolean isRestricted()  {
 		return  this == RESTRICTED;
 	}
 	/**
-		<P>Is this {@code RuleType} equal to {@code IMPOSSIBLE}?.</P>
+		<p>Is this {@code RuleType} equal to {@code IMPOSSIBLE}?.</p>
 
-		@return  <CODE>this == {@link #IMPOSSIBLE}</CODE>
+		@return  <code>this == {@link #IMPOSSIBLE}</code>
 		@see  #isUnrestricted()
 		@see  #isRestricted()
 	 **/
@@ -74,20 +74,20 @@ public enum RuleType {
 		return  this == IMPOSSIBLE;
 	}
 	/**
-		<P>If an <CODE>RuleType</CODE> is not a required value, crash.</P>
+		<p>If an <code>RuleType</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfForbiddenValue(RuleType, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(RuleType rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
 	}
 	/**
-		<P>If an <CODE>RuleType</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>RuleType</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</code></p>
 		@see  #crashIfNotRequiredValue(RuleType, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(RuleType rqd_value, String this_enumsVarName, Object xtra_errInfo)  {

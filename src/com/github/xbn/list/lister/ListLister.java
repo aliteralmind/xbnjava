@@ -31,22 +31,22 @@ package  com.github.xbn.list.lister;
 	import  org.apache.commons.lang3.StringUtils;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>Highly-configurable printing of a {@code java.util.List}.</P>
+	<p>Highly-configurable printing of a {@code java.util.List}.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.ListLister_Cfg ListLister_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.list.lister.z.ListLister_Cfg ListLister_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Sub configs:</B><UL>
-			<LI><B><A HREF="LLCfgElement.html#cfg">LLCfgElement</A>:</B> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#cfgElement() cfgElement}{@code ()}</LI>
-			<LI><B><A HREF="LLCfgOverall.html#cfg">LLCfgOverall</A>:</B> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#cfgOverall() cfgOverall}{@code ()}</LI>
-		</UL></LI>
-		<LI><B>Between:</B> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#between(String) between}{@code (s)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#commaSpaceBetween() commaSpaceBetween}{@code ()}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#newLineBetween() newLineBetween}{@code ()}</LI>
-		<LI><B>Display only valid indexes:</B> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#indexFilter(ValueValidator) indexFilter}{@code (vv)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepAllIndexes() keepAllIndexes}{@code ()}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepIndexesBelow(int) keepIndexesBelow}{@code (i)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepIndexesBetween(int, int) keepIndexesBetween}{@code (i,i)}</LI>
-		<LI><B>Display only valid values:</B> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#valueFilter(ValueValidator) valueFilter}{@code (vv)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#filterNullValues() filterNullValues}{@code ()}</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Sub configs:</b><ul>
+			<li><b><a href="LLCfgElement.html#cfg">LLCfgElement</a>:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#cfgElement() cfgElement}{@code ()}</li>
+			<li><b><a href="LLCfgOverall.html#cfg">LLCfgOverall</a>:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#cfgOverall() cfgOverall}{@code ()}</li>
+		</ul></li>
+		<li><b>Between:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#between(String) between}{@code (s)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#commaSpaceBetween() commaSpaceBetween}{@code ()}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#newLineBetween() newLineBetween}{@code ()}</li>
+		<li><b>Display only valid indexes:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#indexFilter(ValueValidator) indexFilter}{@code (vv)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepAllIndexes() keepAllIndexes}{@code ()}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepIndexesBelow(int) keepIndexesBelow}{@code (i)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepIndexesBetween(int, int) keepIndexesBetween}{@code (i,i)}</li>
+		<li><b>Display only valid values:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#valueFilter(ValueValidator) valueFilter}{@code (vv)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#filterNullValues() filterNullValues}{@code ()}</li>
+	</ul></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListLister<E> implements ToStringAppendable  {
 //state
@@ -140,7 +140,7 @@ public class ListLister<E> implements ToStringAppendable  {
 	}
 //static...START
  	/**
- 		<P>YYY</P>
+ 		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
  	 **/
@@ -152,10 +152,10 @@ public class ListLister<E> implements ToStringAppendable  {
 		}
 	}
 	/**
-<PRE>getOverallConfig()
-	getIfNull()               <I>(short circuit)</I>
-	getIfNonNull()              <I>(short circuit)</I>
-	getVVForElementLength()   <I>(short circuit)</I>
+<pre>getOverallConfig()
+	getIfNull()               <i>(short circuit)</i>
+	getIfNonNull()              <i>(short circuit)</i>
+	getVVForElementLength()   <i>(short circuit)</i>
 			  getIfElementLength()
 getIndexFilter()
 getValueFilter()
@@ -163,7 +163,7 @@ getValueFilter()
 getOverallConfig()
 	getVPCFinalOutput()
 	getPrefix()
-	getPostfix()</PRE>
+	getPostfix()</pre>
 	 **/
  	public static final <E> Appendable appendX(ListLister<E> lister, Appendable to_appendTo, List<E> list) throws IOException  {
 		LLCfgOverall<E> llco = null;
@@ -235,7 +235,7 @@ getOverallConfig()
 		return  StringWithNullDefault.append(to_appendTo, llco.getPostfix(), null);
 	}
  	/**
- 		<P>YYY</P>
+ 		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
  	 **/
@@ -247,16 +247,16 @@ getOverallConfig()
 		}
 	}
  	/**
-<PRE>getElementConfig()
-	getIfNull()            <I>(short circuit)</I>
-	getIfNonNull()           <I>(short circuit)</I>
+<pre>getElementConfig()
+	getIfNull()            <i>(short circuit)</i>
+	getIfNonNull()           <i>(short circuit)</i>
 			  getAlterIndex()
 			  getAlterValue()
 	getPrefix()
 	getPostfix()
 	getVPCFinalOutput()
 getOverallConfig()
-	getBetween()</PRE>
+	getBetween()</pre>
  	 **/
  	public static final <E> Appendable appendElementX(LLCfgElement<E> llc_e, Appendable to_appendTo, int index, E obj) throws IOException  {
 		try  {

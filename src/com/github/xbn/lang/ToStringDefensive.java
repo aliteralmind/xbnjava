@@ -16,14 +16,14 @@ package  com.github.xbn.lang;
 	import  com.github.xbn.io.RTIOException;
 	import  java.io.IOException;
 /**
-	<P>Gets the {@code toString()} of an object, handling the possibility that it throws an exception.</P>
+	<p>Gets the {@code toString()} of an object, handling the possibility that it throws an exception.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ToStringDefensive  {
 	/**
-		<P>Get an object's {@code toString()}, anticipating the possibility of it throwing an exception.</P>
+		<p>Get an object's {@code toString()}, anticipating the possibility of it throwing an exception.</p>
 
 		@return  {@link #append(Appendable, Object, String, int) append}{@code ((new StringBuilder()), obj_forToStr, objOrCntr_name, idx_ofObjInCntr)}
 	 **/
@@ -31,14 +31,14 @@ public class ToStringDefensive  {
 		return  append((new StringBuilder()), obj_forToStr, objOrCntr_name, idx_ofObjInCntr).toString();
 	}
 	/**
-		<P>Append an object's {@code toString()}, anticipating the possibility of it throwing an exception.</P>
+		<p>Append an object's {@code toString()}, anticipating the possibility of it throwing an exception.</p>
 
 		@param  obj_forToStr  The object whose {@code toString()} is needed. May not be {@code null}.
-		@param  objOrCntr_name  Descriptive name of {@code obj_forToStr}. <I>Should</I> not be {@code null} or empty.
-		@return  If {@code obj_forToStr.toString()}<UL>
-			<LI>Returns normally: {@code obj_forToStr.toString()}</LI>
-			<LI>Fails for any reason: A diagnostic string stating {@code objOrCntr_name + &quot;.toString()&quot;} failed, with the exception's toString() appended.</LI>
-		</UL>
+		@param  objOrCntr_name  Descriptive name of {@code obj_forToStr}. <i>Should</i> not be {@code null} or empty.
+		@return  If {@code obj_forToStr.toString()}<ul>
+			<li>Returns normally: {@code obj_forToStr.toString()}</li>
+			<li>Fails for any reason: A diagnostic string stating {@code objOrCntr_name + &quot;.toString()&quot;} failed, with the exception's toString() appended.</li>
+		</ul>
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/
 	public static final Appendable append(Appendable to_appendTo, Object obj_forToStr, String objOrCntr_name, int idx_ofObjInCntr)  {

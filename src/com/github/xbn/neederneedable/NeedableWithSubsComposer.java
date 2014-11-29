@@ -16,23 +16,23 @@ package  com.github.xbn.neederneedable;
 	import  com.github.xbn.testdev.CompositionConstructor;
 	import  com.github.xbn.testdev.CompositionFunction;
 /**
-	<P>For classes that need to implement <I>both</I> {@code Needable} and {@code Needer}, that cannot extend {@code AbstractNeedableWithSubs}.</P>
+	<p>For classes that need to implement <i>both</i> {@code Needable} and {@code Needer}, that cannot extend {@code AbstractNeedableWithSubs}.</p>
 
 	@see  AbstractNeedableWithSubs
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableComposer<O,R>  {//implements Needer  {
 	private final NeederComposer ndrc;
 //Created in NeedableComposer, needed by NeedableWithSubsComposer...START
 	/**
-		<P>Create a new instance and potentially start configuration--this must be implemented as {@code protected}.</P>
+		<p>Create a new instance and potentially start configuration--this must be implemented as {@code protected}.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.neederneedable.NeedableComposer#NeedableComposer(boolean, boolean) super}{@code (is_avaliableToNeeders, is_neededUseableAtInit)}</LI>
-			<LI>Creates an internal
-			<BR> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.neederneedable.NeedableComposer#NeedableComposer(boolean, boolean) super}{@code (is_avaliableToNeeders, is_neededUseableAtInit)}</li>
+			<li>Creates an internal
+			<br/> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</li>
+		</ol></p>
 	 **/
 	@CompositionConstructor
 	public NeedableWithSubsComposer(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit)  {
@@ -41,31 +41,31 @@ public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableCompos
 	}
 	//Composition implementation: NeederComposer...START
 		/**
-			@return   <CODE><I>[{@link com.github.xbn.neederneedable.NeederComposer}]</I></A>.{@link com.github.xbn.neederneedable.NeederComposer#getNeededType() getNeededType}()</CODE>
+			@return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#getNeededType() getNeededType}()</code>
 		 **/
 		@CompositionFunction
 		public Class getNeededType()  {
 			return  ndrc.getNeededType();
 		}
 		/**
-			@return   <CODE><I>[{@link com.github.xbn.neederneedable.NeederComposer}]</I></A>.{@link com.github.xbn.neederneedable.NeederComposer#isConfigActive() isConfigActive}()</CODE>
+			@return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#isConfigActive() isConfigActive}()</code>
 		 **/
 		@CompositionFunction
 		public boolean isConfigActive()  {
 			return  ndrc.isConfigActive();
 		}
 		/**
-			<P>Starts configuration for a specific class-type.</P>
+			<p>Starts configuration for a specific class-type.</p>
 
-			<P>Equal to
-			<BR> &nbsp; &nbsp; <CODE><I>[{@link com.github.xbn.neederneedable.NeederComposer}]</I></A>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</CODE></P>
+			<p>Equal to
+			<br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
 		 **/
 		@CompositionFunction
 		public void startConfig(Class<?> needed_class)  {
 			ndrc.startConfig(needed_class);
 		}
 		/**
-			@return   <CODE><I>[{@link com.github.xbn.neederneedable.NeederComposer}]</I></A>.{@link com.github.xbn.neederneedable.NeederComposer#setGetNeededEndConfig_4prot(Object) setGetNeededEndConfig_4prot}(needed_fullyConfigured)</CODE>
+			@return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#setGetNeededEndConfig_4prot(Object) setGetNeededEndConfig_4prot}(needed_fullyConfigured)</code>
 		 **/
 		@CompositionFunction
 		protected Object setGetNeededEndConfig(Object needed_fullyConfigured)  {

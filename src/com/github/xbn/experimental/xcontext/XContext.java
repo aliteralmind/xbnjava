@@ -4,7 +4,7 @@ package  com.github.xbn.experimental.xcontext;
 	import  com.github.xbn.experimental.BadInterfaceBehaviorException;
 
 /**
-	<P>Implementation of {@code ExceptionContext}.</P>
+	<p>Implementation of {@code ExceptionContext}.</p>
  **/
 public class XContext implements ExceptionContext  {
 //state
@@ -12,20 +12,20 @@ public class XContext implements ExceptionContext  {
 //internal
 //Constructors...START
 	/**
-		<P>Create a new {@code XContext}.</P>
+		<p>Create a new {@code XContext}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #XContext(Object) this}(null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #XContext(Object) this}(null)</code></p>
 	 **/
 	public XContext()  {
 		this(null);
 	}
 	/**
-		<P>Create a new {@code XContext}.</P>
+		<p>Create a new {@code XContext}.</p>
 
-		<P>This sets<OL>
-			<LI>{@link #setExtraInfo(Object) setExtraInfo(o_xtraInfo)}</LI>
-		</OL></P>
+		<p>This sets<ol>
+			<li>{@link #setExtraInfo(Object) setExtraInfo(o_xtraInfo)}</li>
+		</ol></p>
 
 		@see  #XContext() this()
 		@see  #XContext(boolean, ExceptionContext) this(b,xc)
@@ -35,13 +35,13 @@ public class XContext implements ExceptionContext  {
 		zsetExtraInfoXC(o_xtraInfo);
 	}
 	/**
-		<P>Create a new {@code XContext} from an {@code ExceptionContext}.</P>
+		<p>Create a new {@code XContext} from an {@code ExceptionContext}.</p>
 
-		<P>This sets<OL>
-			<LI>{@link #getExtraInfo() getExtraInfo}{@code ()} to {@code to_copy.getExtraInfo()} &nbsp; &nbsp; <I>(See  <CODE><I>[{@link com.github.xbn.experimental.xcontext.ExceptionContext ExceptionContext}]</I>.{@link com.github.xbn.experimental.xcontext.ExceptionContext#setExtraInfo(Object) setExtraInfo}(o)</CODE>)</I></LI>
-		</OL></P>
+		<p>This sets<ol>
+			<li>{@link #getExtraInfo() getExtraInfo}{@code ()} to {@code to_copy.getExtraInfo()} &nbsp; &nbsp; <i>(See  <code><i>[{@link com.github.xbn.experimental.xcontext.ExceptionContext ExceptionContext}]</i>.{@link com.github.xbn.experimental.xcontext.ExceptionContext#setExtraInfo(Object) setExtraInfo}(o)</code>)</i></li>
+		</ol></p>
 
-		@param  ignored  Used only distinguish this constructor signature from {@link #XContext(String) this(s)}, <I>which allows {@code null}</I>.
+		@param  ignored  Used only distinguish this constructor signature from {@link #XContext(String) this(s)}, <i>which allows {@code null}</i>.
 		@param  to_copy  May not be {@code null}.
 		@see  #XContext(String, Object) XContext(s,o)
 	 **/
@@ -58,9 +58,9 @@ public class XContext implements ExceptionContext  {
 //Constructors...END
 //Setters...START
 	/**
-		<P>Set the extra-information string, which elaborates on the error.</P>
+		<p>Set the extra-information string, which elaborates on the error.</p>
 
-		@param  o_xtraInfo  When non-{@code null}, this object's {@code toString()} is appended onto the error message. When non-{@code null}, {@code o_xtraInfo.toString()} <I>should</I> not be empty. <I>This object is untouched until {@code getExtraInfo()} is called.</I>
+		@param  o_xtraInfo  When non-{@code null}, this object's {@code toString()} is appended onto the error message. When non-{@code null}, {@code o_xtraInfo.toString()} <i>should</i> not be empty. <i>This object is untouched until {@code getExtraInfo()} is called.</i>
 	 **/
 	public void setExtraInfo(Object o_xtraInfo)  {
 		zsetExtraInfoXC(o_xtraInfo);
@@ -82,7 +82,7 @@ public class XContext implements ExceptionContext  {
 //Getters...END
 //Other...START
 	/**
-		@return  <CODE>(new {@link #XContext(boolean, XContext) XContext}(false, this)</CODE>
+		@return  <code>(new {@link #XContext(boolean, XContext) XContext}(false, this)</code>
 	 **/
 	public ExceptionContext getObjectCopy()  {
 		return  (new XContext(false, this));
@@ -109,7 +109,7 @@ public class XContext implements ExceptionContext  {
 		return  areFieldsEqual(xo);
 	}
 	/**
-		<P>Are all internal values in the provided {@code XContext} the same as in <I>{@code this}</I>?.</P>
+		<p>Are all internal values in the provided {@code XContext} the same as in <i>{@code this}</i>?.</p>
 
 		@param  xc_nx  May not be {@code null}.
 		@return  {@code true} If {@link #getExtraInfo() getExtraInfo}{@code ()} is the same value ({@code null} is okay) or the same object.
@@ -137,7 +137,7 @@ public class XContext implements ExceptionContext  {
 	}
 //Wrappers for required interface functions...START
 	/**
-		<P>Interface-function wrapper for {@code ExceptionContext}.</P>
+		<p>Interface-function wrapper for {@code ExceptionContext}.</p>
 
 		@param  xc_forIW  May not be {@code null}.
 		@return  {@code xc_theIInstance.getExtraInfo(xc_theIInstance)}

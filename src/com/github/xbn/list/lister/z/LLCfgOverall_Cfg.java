@@ -16,17 +16,17 @@ package  com.github.xbn.list.lister.z;
 	import  com.github.xbn.list.lister.LLCfgOverall;
 	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring an {@code com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring an {@code com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LLCfgOverall_Cfg<E> extends LLCfgOverall_CfgForNeeder<E,LLCfgOverall<E>,DummyForNoNeeder>   {
 	/**
-		<P>Create a new {@code zLLCfgOverall_Cfg} with defaults.</P>
+		<p>Create a new {@code zLLCfgOverall_Cfg} with defaults.</p>
 
-			<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="zLLConfigOverall_CfgForNeeder.html#zLLConfigOverall_CfgForNeeder(R)">super</A>(null)</CODE></P>
+			<p>Equal to
+		<br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="zLLConfigOverall_CfgForNeeder.html#zLLConfigOverall_CfgForNeeder(R)">super</a>(null)</code></p>
 	 **/
 	public LLCfgOverall_Cfg()  {
 		super(null);

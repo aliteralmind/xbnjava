@@ -17,26 +17,26 @@ package  com.github.xbn.array.primitive;
 	import  com.github.xbn.array.IndexableUtil;
 	import  org.apache.commons.lang3.ArrayUtils;
 /**
-   <P>Translate a primitive array to a string array.</P>
+   <p>Translate a primitive array to a string array.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class StringArrayFromPrimitive  {
 	/**
-		<P>This constructor does nothing.</P>
+		<p>This constructor does nothing.</p>
 	 **/
 	public StringArrayFromPrimitive()  {
 	}
 	/**
-		<P>Convert a primitive array <I>of any type</I> to an array of {@code java.lang.String}-s.</P>
+		<p>Convert a primitive array <i>of any type</i> to an array of {@code java.lang.String}-s.</p>
 
 		@param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
-		@return  If {@code objThatIsAPArray} is <UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>Otherwise (for example), if {@code objThatIsAPArray} is a {@code boolean} array:
-		<BR> &nbsp; &nbsp; {@link #get(boolean[], NullContainer, String) get}{@code ((b[])objThatIsAPArray)}</LI>
-		</UL>
+		@return  If {@code objThatIsAPArray} is <ul>
+			<li>{@code null}: {@code null}</li>
+			<li>Otherwise (for example), if {@code objThatIsAPArray} is a {@code boolean} array:
+		<br/> &nbsp; &nbsp; {@link #get(boolean[], NullContainer, String) get}{@code ((b[])objThatIsAPArray)}</li>
+		</ul>
 		@see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitive(Object) ObjThatIsPrimitiveArrayUtil#isPrimitive(o)
 	 **/
 	public static final String[] getFromUnknown(Object objThatIsAPArray, NullContainer nnull, String cntrName_forNullBad){
@@ -65,13 +65,13 @@ public class StringArrayFromPrimitive  {
 		}
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code boolean}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code boolean}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 
 		@see  #get(char[], NullContainer, String) get(c[], String)
 		@see  #get(byte[], NullContainer, String) getStringFromPByte(y[])
@@ -99,13 +99,13 @@ public class StringArrayFromPrimitive  {
 		return  as;
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code char}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code char}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 		@see  #get(boolean[], NullContainer, String) get(boolean[], String)
 	 **/
 	public static final String[] get(char[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
@@ -126,13 +126,13 @@ public class StringArrayFromPrimitive  {
 		return  as;
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code byte}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code byte}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 		@see  #get(boolean[], NullContainer, String) get(boolean[], String)
 	 **/
 	public static final String[] get(byte[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
@@ -153,13 +153,13 @@ public class StringArrayFromPrimitive  {
 		return  as;
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code short}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code short}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 		@see  #get(boolean[], NullContainer, String) get(boolean[], String)
 	 **/
 	public static final String[] get(short[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
@@ -180,13 +180,13 @@ public class StringArrayFromPrimitive  {
 		return  as;
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code int}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code int}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 		@see  #get(boolean[], NullContainer, String) get(boolean[], String)
 	 **/
 	public static final String[] get(int[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
@@ -207,13 +207,13 @@ public class StringArrayFromPrimitive  {
 		return  as;
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code long}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code long}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 		@see  #get(boolean[], NullContainer, String) get(boolean[], String)
 	 **/
 	public static final String[] get(long[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
@@ -234,13 +234,13 @@ public class StringArrayFromPrimitive  {
 		return  as;
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code float}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code float}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 		@see  #get(boolean[], NullContainer, String) get(boolean[], String)
 	 **/
 	public static final String[] get(float[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
@@ -261,13 +261,13 @@ public class StringArrayFromPrimitive  {
 		return  as;
 	}
 	/**
-		<P>Get a {@code java.lang.String} array from an array of {@code double}-s.</P>
+		<p>Get a {@code java.lang.String} array from an array of {@code double}-s.</p>
 
-		@return  If {@code prmtv_array} is<UL>
-			<LI>{@code null}: {@code null}</LI>
-			<LI>non-{@code null} and has no elements: <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</CODE></LI>
-			<LI>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</LI>
-		</UL>
+		@return  If {@code prmtv_array} is<ul>
+			<li>{@code null}: {@code null}</li>
+			<li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_STRING_ARRAY EMPTY_STRING_ARRAY}</code></li>
+			<li>Otherwise: A new {@code String} array containing all elements in {@code prmtv_array}.</li>
+		</ul>
 		@see  #get(boolean[], NullContainer, String) get(boolean[], String)
 	 **/
 	public static final String[] get(double[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {

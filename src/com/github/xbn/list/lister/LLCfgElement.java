@@ -4,52 +4,52 @@ package  com.github.xbn.list.lister;
 	import  com.github.xbn.analyze.alter.ValueAlterer;
 
 /**
-	<P>{@code ListLister} configuration relating to individual elements. See {@link com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</P>
+	<p>{@code ListLister} configuration relating to individual elements. See {@link com.github.xbn.list.lister.LLCfgOverall LLCfgOverall}.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCfgElement_Cfg LLCfgElement_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCfgElement_Cfg LLCfgElement_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Parent:</B> <CODE><A HREF="ListLister.html#cfg">ListLister</A></CODE></LI>
-		<LI><B>{@link #sDISPLAY_IDX_MARKER}:</B> If output by any configuration, it is replaced with the element's index.</LI>
-		<LI><B>Sub config:</B><UL>
-			<LI><B><CODE><A HREF="{@docRoot}/com/github/xbn/text/padchop/VzblPadChop.html#cfg">VzblPadChop</A></CODE>:</B> {@link com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#cfgVPCFinalOutput(int) cfgVPCFinalOutput}{@code (i)}, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#cfgVPCFinalOutput() cfgVPCFinalOutput}{@code ()}</LI>
-		</UL></LI>
-		<LI><B>Alter the index:</B> {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#indexUnaltered() indexUnaltered}{@code ()}*, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#alterIndex(ValueAlterer) alterIndex}{@code (av)}</LI>
-		<LI></LI>
-		<LI><B>Alter the value:</B> {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#valueUnaltered() valueUnaltered}{@code ()}*, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#alterValue(ValueAlterer) alterValue}{@code (av)}</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Parent:</b> <code><a href="ListLister.html#cfg">ListLister</a></code></li>
+		<li><b>{@link #sDISPLAY_IDX_MARKER}:</b> If output by any configuration, it is replaced with the element's index.</li>
+		<li><b>Sub config:</b><ul>
+			<li><b><code><a href="{@docRoot}/com/github/xbn/text/padchop/VzblPadChop.html#cfg">VzblPadChop</a></code>:</b> {@link com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#cfgVPCFinalOutput(int) cfgVPCFinalOutput}{@code (i)}, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#cfgVPCFinalOutput() cfgVPCFinalOutput}{@code ()}</li>
+		</ul></li>
+		<li><b>Alter the index:</b> {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#indexUnaltered() indexUnaltered}{@code ()}*, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#alterIndex(ValueAlterer) alterIndex}{@code (av)}</li>
+		<li></li>
+		<li><b>Alter the value:</b> {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#valueUnaltered() valueUnaltered}{@code ()}*, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#alterValue(ValueAlterer) alterValue}{@code (av)}</li>
+	</ul></p>
  **/
 public class LLCfgElement<E> extends LLConfigBase<E>  {
 	private final ValueAlterer<Integer,Integer> avIndex;
 	private final ValueAlterer<E,E>       aValue;
 	/**
-		<P>The marker that, if found in a configuration item, is replaced with the element's index. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}.</P>
+		<p>The marker that, if found in a configuration item, is replaced with the element's index. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}.</p>
 
-	<P>If the output of any configuration item (including  <CODE><I>[{@link com.github.xbn.list.lister.LLConfigBase LLConfigBase}]</I>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}()</CODE>) contains a {@link #sDISPLAY_IDX_MARKER}, it is replaced with the element's index. Only the first [left-most] marker in each item is recognized. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}. This also includes the string-value of the element itself, if and only if it is altered.</P>
+	<p>If the output of any configuration item (including  <code><i>[{@link com.github.xbn.list.lister.LLConfigBase LLConfigBase}]</i>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}()</code>) contains a {@link #sDISPLAY_IDX_MARKER}, it is replaced with the element's index. Only the first [left-most] marker in each item is recognized. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}. This also includes the string-value of the element itself, if and only if it is altered.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; &quot;{@code ~index~}&quot;</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; &quot;{@code ~index~}&quot;</p>
 	 **/
 	public static final String sDISPLAY_IDX_MARKER = "~index~";
 	/**
-		<P>Create a new {@code LLCfgElement} with defaults.</P>
+		<p>Create a new {@code LLCfgElement} with defaults.</p>
 
-		<P>If the output of any configuration item contains a {@link #sDISPLAY_IDX_MARKER}, it is replaced with the element's index. Only the first [left-most] marker in each item is recognized. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}.</P>
+		<p>If the output of any configuration item contains a {@link #sDISPLAY_IDX_MARKER}, it is replaced with the element's index. Only the first [left-most] marker in each item is recognized. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}.</p>
 
-		<H3>Short-circuit and precedence</H3>
+		<h3>Short-circuit and precedence</h3>
 
-		<P>All &quot;short-circuits&quot; configuration items, if used, causes all subsequent configuration items--including the prefix and postfix--to be ignored. The order of precedence is<OL>
-			<LI>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}{@code ()}</LI>
-			<LI>{@link com.github.xbn.list.lister.LLConfigBase#getIfNonNull() getIfNonNull}{@code ()}</LI>
-			<LI>{@link com.github.xbn.list.lister.LLConfigBase#getPrefix() getPrefix}{@code ()} and {@link com.github.xbn.list.lister.LLConfigBase#getPostfix() getPostfix}{@code ()}</LI>
-		</OL></P>
+		<p>All &quot;short-circuits&quot; configuration items, if used, causes all subsequent configuration items--including the prefix and postfix--to be ignored. The order of precedence is<ol>
+			<li>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}{@code ()}</li>
+			<li>{@link com.github.xbn.list.lister.LLConfigBase#getIfNonNull() getIfNonNull}{@code ()}</li>
+			<li>{@link com.github.xbn.list.lister.LLConfigBase#getPrefix() getPrefix}{@code ()} and {@link com.github.xbn.list.lister.LLConfigBase#getPostfix() getPostfix}{@code ()}</li>
+		</ol></p>
 
-		<P>The index alterer ({@link #getAlterIndex() getAlterIndex}{@code ()}) is never ignored.</P>
+		<p>The index alterer ({@link #getAlterIndex() getAlterIndex}{@code ()}) is never ignored.</p>
 
 		<HR ALIGN="center" WIDTH="25%"/>
 
-		<P>This constructor is equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase super}{@code ()}</P>
+		<p>This constructor is equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase super}{@code ()}</p>
 	 **/
 	public LLCfgElement(LLCfgElement_Fieldable<E> fieldable)  {
 		super(fieldable);
@@ -57,11 +57,11 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 		aValue = fieldable.getAlterValue();
 	}
 	/**
-		<P>Create a new {@code LLCfgElement} as a duplicate of another.</P>
+		<p>Create a new {@code LLCfgElement} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase(LLConfigBase) super}{@code (to_copy)}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase(LLConfigBase) super}{@code (to_copy)}</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -74,9 +74,9 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 	}
 //setters...START
 	/**
-		<P>Set the index alterer--this is only useful when the index is displayed. ..........by placing {@link #sDISPLAY_IDX_MARKER} in (the output of) at least one of the configuration items.</P>
+		<p>Set the index alterer--this is only useful when the index is displayed. ..........by placing {@link #sDISPLAY_IDX_MARKER} in (the output of) at least one of the configuration items.</p>
 
-		<P>The <I>unaltererd</I> index is analyzed by the index-filter.</P>
+		<p>The <i>unaltererd</i> index is analyzed by the index-filter.</p>
 
 		@param  av_i  If {@code null}, indexes are presented without change. Get with {@link #getAlterIndex() getAlterIndex}{@code ()}
 		@see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
@@ -84,7 +84,7 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 //setters...END
 //getters...START
 	/**
-		<P>Alters the index.</P>
+		<p>Alters the index.</p>
 
 		@return  YYY
 		@see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
@@ -93,7 +93,7 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 		return  avIndex;
 	}
 	/**
-		<P>Alters the value.</P>
+		<p>Alters the value.</p>
 
 		@return  YYY
 		@see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
@@ -104,7 +104,7 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 //getters...END
 //other...START
 	/**
-		@return  <CODE>(new {@link #LLCfgElement(LLCfgElement) LLCfgElement}&lt;E&gt;(this))</CODE>
+		@return  <code>(new {@link #LLCfgElement(LLCfgElement) LLCfgElement}&lt;E&gt;(this))</code>
 	 **/
 	public LLCfgElement<E> getObjectCopy()  {
 		return  (new LLCfgElement<E>(this));

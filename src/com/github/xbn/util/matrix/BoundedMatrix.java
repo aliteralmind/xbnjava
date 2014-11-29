@@ -23,7 +23,7 @@ package  com.github.xbn.util.matrix;
  * down-left, down-right.</p>
  * @see  MatrixElement
  * @since  0.1.4.2
- * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public class BoundedMatrix  {
 	private final MatrixElement[][] coords;
@@ -654,7 +654,7 @@ public class BoundedMatrix  {
 		return  "rows=" + getRowCount() + ", elements-in-row=" + getElementsInRowCount();
 	}
 	/**
-	 * @return  <CODE>(new {@link #BoundedMatrix(BoundedMatrix) BoundedMatrix}(this))</CODE>
+	 * @return  <code>(new {@link #BoundedMatrix(BoundedMatrix) BoundedMatrix}(this))</code>
 	 */
 	public BoundedMatrix getObjectCopy()  {
 		return  (new BoundedMatrix(this));

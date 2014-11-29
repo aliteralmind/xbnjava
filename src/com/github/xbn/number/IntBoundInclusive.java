@@ -1,23 +1,23 @@
 package  com.github.xbn.number;
 
 /**
- * <P>{@code IntBound} that may be equal to the value.</P>
+ * <p>{@code IntBound} that may be equal to the value.</p>
  **/
 public class IntBoundInclusive extends IntBound  {
 	/**
-	 * <P>Create a new {@code IntBoundInclusive}.</P>
+	 * <p>Create a new {@code IntBoundInclusive}.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp;  {@link IntBound#IntBound(Integer, boolean, String) super}{@code (num, {@link Inclusive}.{@link Inclusive#YES YES}, name)}</P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp;  {@link IntBound#IntBound(Integer, boolean, String) super}{@code (num, {@link Inclusive}.{@link Inclusive#YES YES}, name)}</p>
 	 **/
 	public IntBoundInclusive(Integer num, String name)  {
 		super(num, Inclusive.YES, name);
 	}
 	/**
-	 * <P>Create a new {@code IntBoundInclusive} as a duplicate of another.</P>
+	 * <p>Create a new {@code IntBoundInclusive} as a duplicate of another.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp; <A HREF="IntBound.html#IntBound(IntBound)">super</A>(to_copy)</CODE></P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp; <a href="IntBound.html#IntBound(IntBound)">super</a>(to_copy)</code></p>
 	 * @param  to_copy  May not be {@code null}.
 	 **/
 	public IntBoundInclusive(IntBoundInclusive to_copy)  {

@@ -23,15 +23,15 @@ package  com.github.xbn.examples.util.non_xbn;
 	import  java.util.Map;
 	import  java.util.TreeMap;
 /**
-	 <P>Sorts the <I>first</I> array in a two-dimensional array, and moves all partner elements (in the same &quot;column&quot;) in the <I>second</I> to the same sort-destination index.</P>
+	 <p>Sorts the <i>first</i> array in a two-dimensional array, and moves all partner elements (in the same &quot;column&quot;) in the <i>second</i> to the same sort-destination index.</p>
 
-	 <P>This was used as an answer to
-	 <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together">http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together</A></CODE></P>
+	 <p>This was used as an answer to
+	 <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together">http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together</a></code></p>
 
-   <P>{@code java SortOneArrayKeepSecondArrayElementsAligned}</P>
+   <p>{@code java SortOneArrayKeepSecondArrayElementsAligned}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class SortOneArrayKeepSecondArrayElementsAligned  {

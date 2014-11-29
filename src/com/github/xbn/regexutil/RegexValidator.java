@@ -21,19 +21,19 @@ package  com.github.xbn.regexutil;
 	import  com.github.xbn.text.padchop.VzblPadChop;
 	import  com.github.xbn.text.padchop.NewVzblPadChopFor;
 /**
-	<P>Validate a string against a regular expression.</P>
+	<p>Validate a string against a regular expression.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexValidator_Cfg RegexValidator_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexValidator_Cfg RegexValidator_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Find what:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#literal(String) literal}(s)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#pattern(Pattern) pattern}(p)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#regex(String) regex}(s)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#regex(String, int) regex}(s,i)</CODE></LI>
-		<LI><B>Matcher uses:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useFind() useFind}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useLookingAt() useLookingAt}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useMatches() useMatches}()</CODE></LI>
-		<LI><B>Basics:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#unfiltered() unfiltered}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#filter(ValidResultFilter) filter}(vrf)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#invert(boolean) invert}(b)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#nullOk(boolean) nullOk}(b)</CODE></LI>
-		<LI><B>Other:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#reset() reset}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Find what:</b> <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#literal(String) literal}(s)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#pattern(Pattern) pattern}(p)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#regex(String) regex}(s)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#regex(String, int) regex}(s,i)</code></li>
+		<li><b>Matcher uses:</b> <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useFind() useFind}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useLookingAt() useLookingAt}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useMatches() useMatches}()</code></li>
+		<li><b>Basics:</b> <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#unfiltered() unfiltered}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#filter(ValidResultFilter) filter}(vrf)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#invert(boolean) invert}(b)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#nullOk(boolean) nullOk}(b)</code></li>
+		<li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#reset() reset}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code></li>
+	</ul></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexValidator extends NullnessValidator<String> implements PatternHaser  {
 	private final SimplePatternHaser ptrnHsr;
@@ -42,24 +42,24 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 //internal
 	private static final VzblPadChop VPC_DBG = NewVzblPadChopFor.trimEscChopWithDDD(true, null, 30);
 	/**
-		<P>Create a new instance from a fieldable.</P>
+		<p>Create a new instance from a fieldable.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #RegexValidator(RuleType, RegexValidator_Fieldable) this}({@link com.github.xbn.lang.RuleType RuleType}.{@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}, fieldable)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #RegexValidator(RuleType, RegexValidator_Fieldable) this}({@link com.github.xbn.lang.RuleType RuleType}.{@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}, fieldable)</code></p>
 	 **/
 	public RegexValidator(RegexValidator_Fieldable fieldable)  {
 		this(RuleType.RESTRICTED, fieldable);
 	}
 	/**
-		<P>Create a new instance from a fieldable.</P>
+		<p>Create a new instance from a fieldable.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.analyze.validate.NullnessValidator#NullnessValidator(RuleType, ValueValidator_Fieldable) super}{@code (rule_type, fieldable)}</LI>
-			<LI>Sets all internal fields from {@code fieldable}.</LI>
-			<LI>Calls {@link #resetStateRV() resetStateRV}{@code ()}.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.analyze.validate.NullnessValidator#NullnessValidator(RuleType, ValueValidator_Fieldable) super}{@code (rule_type, fieldable)}</li>
+			<li>Sets all internal fields from {@code fieldable}.</li>
+			<li>Calls {@link #resetStateRV() resetStateRV}{@code ()}.</li>
+		</ol></p>
 
-		@param  fieldable  May not be {@code null}, and its fields must conform to all restrictions as documented in the <A HREF="#cfg">builder's setter functions</A>.
+		@param  fieldable  May not be {@code null}, and its fields must conform to all restrictions as documented in the <a href="#cfg">builder's setter functions</a>.
 		@see  #RegexValidator(RegexValidator_Fieldable) this(rv_f)
 		@see  #RegexValidator(RegexValidator) this(rv)
 	 **/
@@ -75,11 +75,11 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 		resetStateRV();
 	}
 	/**
-		<P>Create a new instance as a duplicate of another.</P>
+		<p>Create a new instance as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.analyze.validate.NullnessValidator#NullnessValidator(ValueValidator) super}{@code (to_copy)}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.analyze.validate.NullnessValidator#NullnessValidator(ValueValidator) super}{@code (to_copy)}</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #RegexValidator(RuleType, RegexValidator_Fieldable) this(rti,rv_f)
@@ -94,24 +94,24 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 		validStr = to_copy.getValidString();
 	}
 	/**
-		<P>Reset state in preparation for the next validation.</P>
+		<p>Reset state in preparation for the next validation.</p>
 
-		<P>This calls<OL>
-			<LI><CODE>{@link com.github.xbn.analyze.validate.NullnessValidator NullnessValidator}.{@link com.github.xbn.analyze.validate.NullnessValidator#resetState() resetState}()</CODE></LI>
-			<LI>{@link #resetStateRV() resetStateRV}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code>{@link com.github.xbn.analyze.validate.NullnessValidator NullnessValidator}.{@link com.github.xbn.analyze.validate.NullnessValidator#resetState() resetState}()</code></li>
+			<li>{@link #resetStateRV() resetStateRV}{@code ()}</li>
+		</ol></p>
 	 **/
 	public void resetState()  {
 		super.resetState();
 		resetStateRV();
 	}
 	/**
-		<P>Reset state specific to this {@code RegexValidator}.</P>
+		<p>Reset state specific to this {@code RegexValidator}.</p>
 
-		<P>This sets<OL>
-			<LI>{@link #getValidString() getValidString}{@code ()} to {@code null}</LI>
-			<LI>{@link #wasJustMatched() wasJustMatched}{@code ()} to {@code false}.</LI>
-		</OL></P>
+		<p>This sets<ol>
+			<li>{@link #getValidString() getValidString}{@code ()} to {@code null}</li>
+			<li>{@link #wasJustMatched() wasJustMatched}{@code ()} to {@code false}.</li>
+		</ol></p>
 
 		@see  #resetState()
 	 **/
@@ -120,12 +120,12 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 		ptrnHsr.declareNotMatched();
 	}
 	/**
-		<P>The most-recently analyzed string that <I>did match</I> the pattern.</P>
+		<p>The most-recently analyzed string that <i>did match</i> the pattern.</p>
 
-		@return  If {@link #wasJustMatched() wasJustMatched}{@code ()} is<UL>
-			<LI>{@code true}: The string from the most recent call to {@link #doesFollowRulesPreInvert(String) doesFollowRulesPreInvert}{@code (s)}.</LI>
-			<LI>{@code false}: {@code null}</LI>
-		</UL>
+		@return  If {@link #wasJustMatched() wasJustMatched}{@code ()} is<ul>
+			<li>{@code true}: The string from the most recent call to {@link #doesFollowRulesPreInvert(String) doesFollowRulesPreInvert}{@code (s)}.</li>
+			<li>{@code false}: {@code null}</li>
+		</ul>
 		@see  #getMatchedIndex()
 	 **/
 	public String getValidString()  {
@@ -133,7 +133,7 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 	}
 	//Composition implementation: null...START
 		/**
-			<P>The pattern a string must match, in order to be considered valid.</P>
+			<p>The pattern a string must match, in order to be considered valid.</p>
 
 			@see  com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#pattern(Pattern) RegexValidator_Cfg#pattern(p)
 		 **/
@@ -141,12 +141,12 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 			return  ptrnHsr.getPattern();
 		}
 		/**
-			<P>The index in {@code getValidString()} at which the match was found.</P>
+			<p>The index in {@code getValidString()} at which the match was found.</p>
 
-			@return  If {@link #wasJustMatched() wasJustMatched}{@code ()} is<UL>
-				<LI>{@code true}: A number zero through <CODE>({@link #getValidString() getValidString}().length() - 1)</CODE>.</LI>
-				<LI>{@code false}: {@code -1}</LI>
-			</UL>
+			@return  If {@link #wasJustMatched() wasJustMatched}{@code ()} is<ul>
+				<li>{@code true}: A number zero through <code>({@link #getValidString() getValidString}().length() - 1)</code>.</li>
+				<li>{@code false}: {@code -1}</li>
+			</ul>
 		 **/
 		public int getMatchedIndex()  {
 			return  ptrnHsr.getMatchedIndex();
@@ -155,15 +155,15 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 			return  ptrnHsr.getMatchCount();
 		}
 		/**
-			<P>Did the most-recently analyzed string match the pattern?.</P>
+			<p>Did the most-recently analyzed string match the pattern?.</p>
 
-			@return  The value as returned by the most recent call to {@link #doesFollowRulesPreInvert(String) doesFollowRulesPreInvert}{@code ()}, or {@code false} if {@link #resetState() resetState}{@code ()} was more recently called. This returns the same value as <CODE>{@link com.github.xbn.analyze.validate.AbstractValidator AbstractValidator}.{@link com.github.xbn.analyze.validate.AbstractValidator#isValid() wasValid}()</CODE>.
+			@return  The value as returned by the most recent call to {@link #doesFollowRulesPreInvert(String) doesFollowRulesPreInvert}{@code ()}, or {@code false} if {@link #resetState() resetState}{@code ()} was more recently called. This returns the same value as <code>{@link com.github.xbn.analyze.validate.AbstractValidator AbstractValidator}.{@link com.github.xbn.analyze.validate.AbstractValidator#isValid() wasValid}()</code>.
 		 **/
 		public boolean wasJustMatched()  {
 			return  ptrnHsr.wasJustMatched();
 		}
 		/**
-			<P>Should the string be matched as a whole?. Should <CODE><I>[{@link java.util.regex.Matcher}]</I>.{@link java.util.regex.Matcher#matches() matches}()</CODE> be used?.</P>
+			<p>Should the string be matched as a whole?. Should <code><i>[{@link java.util.regex.Matcher}]</i>.{@link java.util.regex.Matcher#matches() matches}()</code> be used?.</p>
 
 			@return  A non-{@code null} {@code MatcherUses} that is equal to something other than {@link com.github.xbn.regexutil.MatcherUses#CUSTOM CUSTOM}
 			@see  com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useMatches() Cfg.useMatches()
@@ -175,19 +175,19 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 		}
 	//Composition implementation: null...END
 	/**
-		<P>The matcher that searches each string. This is not affected by {@link #resetState() resetState}{@code ()}).</P>
+		<p>The matcher that searches each string. This is not affected by {@link #resetState() resetState}{@code ()}).</p>
 	 **/
 	protected Matcher getMatchedMatcher()  {
 		return  mtchr;
 	}
 	/**
-		<P>Does the string match the pattern?.</P>
+		<p>Does the string match the pattern?.</p>
 
-		@return  {@code true}: If<UL>
-			<LI>{@code to_validate} is {@code null} and that is {@link com.github.xbn.analyze.validate.NullnessValidator#isNullOkGivenInvert() okay}, or</LI>
-			<LI>it is non-{@code null} and {@link #getMatchedMatcher() matches} the {@link #getPattern() pattern} in the {@link #getMatcherUses() expected way}.</LI>
-		</UL>
-		@see  <CODE>NullnessValidator.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="doesFollowRulesPreInvert(O)">doesFollowRulesPreInvert</A>(O)</CODE></LI>
+		@return  {@code true}: If<ul>
+			<li>{@code to_validate} is {@code null} and that is {@link com.github.xbn.analyze.validate.NullnessValidator#isNullOkGivenInvert() okay}, or</li>
+			<li>it is non-{@code null} and {@link #getMatchedMatcher() matches} the {@link #getPattern() pattern} in the {@link #getMatcherUses() expected way}.</li>
+		</ul>
+		@see  <code>NullnessValidator.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="doesFollowRulesPreInvert(O)">doesFollowRulesPreInvert</a>(O)</code></li>
 		@see  #getValidString()
 		@see  #getMatchedIndex()
 		@see  #wasJustMatched()
@@ -236,7 +236,7 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 		return  false;
 	}
 	/*
-		<P>Does not change the value of {@link #getMatchedIndex}{@code ()}</P>
+		<p>Does not change the value of {@link #getMatchedIndex}{@code ()}</p>
 	public void crashIfBadValue(String to_validate, String toVldt_name)  {
 		super.crashIfBadValue(to_validate, toVldt_name);
 
@@ -267,9 +267,9 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 			append("\", flags=" + getPattern().flags() + "], MatcherUses=").append(getMatcherUses());
 	}
 	/**
-		<P>Duplicate this <CODE>RegexValidator</CODE>.</P>
+		<p>Duplicate this <code>RegexValidator</code>.</p>
 
-		@return  <CODE>(new {@link #RegexValidator(RegexValidator) RegexValidator}(this))</CODE>
+		@return  <code>(new {@link #RegexValidator(RegexValidator) RegexValidator}(this))</code>
 	 **/
 	public RegexValidator getObjectCopy()  {
 		return  (new RegexValidator(this));

@@ -18,26 +18,26 @@ package  com.github.xbn.linefilter.entity.raw.z;
 	import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
 	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity RawBlockEntity}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.linefilter.entity.raw.RawBlockEntity RawBlockEntity}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RawBlockEntity_Cfg<L> extends RawBlockEntity_CfgForNeeder<L,RawBlockEntity<L>,DummyForNoNeeder>   {
 	/**
-		<P>Create a new {@code RawBlockEntity_Cfg} with the default name.</P>
+		<p>Create a new {@code RawBlockEntity_Cfg} with the default name.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #RawBlockEntity_Cfg(String) this}(&quot;block&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #RawBlockEntity_Cfg(String) this}(&quot;block&quot;)</code></p>
 	 **/
 	public RawBlockEntity_Cfg()  {
 		this("block");
 	}
 	/**
-		<P>Create a new {@code RawBlockEntity_Cfg} for a sub-mode (which will be added to another already-existing mode).</P>
+		<p>Create a new {@code RawBlockEntity_Cfg} for a sub-mode (which will be added to another already-existing mode).</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RawBlockEntity_CfgForNeeder.html#RawBlockEntity_CfgForNeeder(R, java.lang.String)">super</A>(null, name)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawBlockEntity_CfgForNeeder.html#RawBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
 		@see  #RawBlockEntity_Cfg() this()
 	 **/
 	public RawBlockEntity_Cfg(String name)  {

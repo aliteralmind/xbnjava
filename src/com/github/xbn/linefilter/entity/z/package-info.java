@@ -1,4 +1,4 @@
 /**
-	<P>Builders for <CODE>com.github.xbn.linefilter.<A HREF="../package-summary.html">entity</A></CODE></P>
+	<p>Builders for <code>com.github.xbn.linefilter.<a href="../package-summary.html">entity</a></code></p>
  **/
 package  com.github.xbn.linefilter.entity.z;

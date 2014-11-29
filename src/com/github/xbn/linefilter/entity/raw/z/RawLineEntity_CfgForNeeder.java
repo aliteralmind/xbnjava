@@ -19,10 +19,10 @@ package  com.github.xbn.linefilter.entity.raw.z;
 	import  com.github.xbn.neederneedable.Needer;
 	import  com.github.xbn.linefilter.entity.raw.RawLineEntity;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.linefilter.entity.raw.RawLineEntity RawLineEntity}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.linefilter.entity.raw.RawLineEntity RawLineEntity}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R extends Needer> extends AbstractNeedable<M,R> implements RawLineEntity_Fieldable<L>   {
 	public String       name           ;
@@ -32,24 +32,24 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
 	public boolean      isRqd          ;
 //constructors...START
 	/**
-		<P>Create a new instance, for the root entity only.</P>
+		<p>Create a new instance, for the root entity only.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE> <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#RawLineEntity_CfgForNeeder(R, java.lang.String)">this</A>(needer, &quot;root&quot;)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code> <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, java.lang.String)">this</a>(needer, &quot;root&quot;)</code></p>
 	 **/
 	public RawLineEntity_CfgForNeeder(R needer, EntityType type)  {
 		this(needer, type, "root");
 	}
 	/**
-		<P>Create a new instance for a sub-mode.</P>
+		<p>Create a new instance for a sub-mode.</p>
 
-		<P>This<OL>
-			<LI>Calls <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/analyze/validate/ValueValidator_CfgForNeeder.html#ValueValidator_CfgForNeeder(boolean, boolean, R)">super</A>(true, true, needer)</CODE></LI>
-			<LI>Sets {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getName() getName}{@code ()}* to {@code name}.</LI>
-			<LI>Calls {@link #resetRLECFN() resetRLECFN}{@code ()}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/ValueValidator_CfgForNeeder.html#ValueValidator_CfgForNeeder(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
+			<li>Sets {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getName() getName}{@code ()}* to {@code name}.</li>
+			<li>Calls {@link #resetRLECFN() resetRLECFN}{@code ()}</li>
+		</ol></p>
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#RawLineEntity_CfgForNeeder(R, int, java.lang.String)">this</A>(R)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, int, java.lang.String)">this</a>(R)</code>
 	 **/
 	public RawLineEntity_CfgForNeeder(R needer, EntityType type, String name)  {
 		super(true, true, needer);
@@ -58,22 +58,22 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
 		resetRLECFN();
 	}
 	/**
-		<P>Reverts configuration so a line never matches.</P>
+		<p>Reverts configuration so a line never matches.</p>
 
-		<P>Equal to {@link #resetRLECFN() resetRLECFN}{@code ()}</P>
+		<p>Equal to {@link #resetRLECFN() resetRLECFN}{@code ()}</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RawLineEntity_CfgForNeeder<L,M,R> reset()  {
 		resetRLECFN();
 		return  this;
 	}
 	/**
-		<P>Reset configuration specific to this {@code RawLineEntity_CfgForNeeder}.</P>
+		<p>Reset configuration specific to this {@code RawLineEntity_CfgForNeeder}.</p>
 
-		<P>This<UL>
-			<LI>Sets </LI>
-		</UL></P>
+		<p>This<ul>
+			<li>Sets </li>
+		</ul></p>
 	 **/
 	protected final void resetRLECFN()  {
 		//Do not reset the name.

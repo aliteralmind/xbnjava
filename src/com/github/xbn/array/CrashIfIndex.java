@@ -16,15 +16,15 @@ package  com.github.xbn.array;
 	import  com.github.xbn.lang.Null;
 	import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
-	<P>Error checking related to indexes and indexed elements.</P>
+	<p>Error checking related to indexes and indexed elements.</p>
 
 	@see  com.github.xbn.lang.CrashIfObject
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfIndex  {
 	/**
-		<P>If an index is invalid given its container's length, crash. Otherwise do nothing.</P>
+		<p>If an index is invalid given its container's length, crash. Otherwise do nothing.</p>
 
 		@exception  IndexOutOfBoundsException  If {@code index} is invalid.
 	 **/
@@ -37,12 +37,12 @@ public class CrashIfIndex  {
 		}
 	}
 	/**
-		<P>If a min-max index range is invalid, given its container's length, crash. Otherwise do nothing.</P>
+		<p>If a min-max index range is invalid, given its container's length, crash. Otherwise do nothing.</p>
 
 		@param  idx_start  The range minimum to test.
 		@param  idx_endExcl  The range maximum to test.
-		@param  VALID_length  The length to compare the range agaist. This <I>really really should</I> be zero or greater.
-		@param  idxStart_name  Descriptive name of {@code idx_start}. <I>Should</I> not be {@code null} or empty
+		@param  VALID_length  The length to compare the range agaist. This <i>really really should</i> be zero or greater.
+		@param  idxStart_name  Descriptive name of {@code idx_start}. <i>Should</i> not be {@code null} or empty
 		@param  idxEnd_name  Descriptive name of {@code idx_endExcl}.
 		@param  cntr_name  Descriptive name of {@code VALID_length}.
 		@exception  IllegalArgumentStateException  If the minimum is less than zero or greater-than-or-equal-to the maximum, or if the maximum is greater than the length.
@@ -53,13 +53,13 @@ public class CrashIfIndex  {
 		}
 	}
 	/**
-		<P>If an indexed element is {@code null}, crash. Otherwise, do nothing.</P>
+		<p>If an indexed element is {@code null}, crash. Otherwise, do nothing.</p>
 
 		@param  element  The element to test.
-		@param  index  Its index, for the potential error message only. <I>Should</I> be a valid index.
+		@param  index  Its index, for the potential error message only. <i>Should</i> be a valid index.
 		@param  nullness  If {@link com.github.xbn.lang.Null#BAD BAD}, the element may not be {@code null}. If {@link com.github.xbn.lang.Null#OK OK}, this function does nothing. This parameter may not be {@code null}.
 		@param  container_name  Descriptive name of the element's container.
-		@param  index_varName  Descriptive name of the index. <I>Should</I> not be empty.
+		@param  index_varName  Descriptive name of the index. <i>Should</i> not be empty.
 	 **/
 	public static final void edElementIsNull(Object element, int index, Null nullness, String container_name, String index_varName)  {
 		if(nullness.isBad()  &&  element == null)  {

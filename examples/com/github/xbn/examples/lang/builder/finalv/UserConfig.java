@@ -15,14 +15,14 @@
 package  com.github.xbn.examples.lang.builder.finalv;
 	import  java.util.regex.Pattern;
 /**
-   <P>Information about a user -- <I>[builder: UserConfig_Cfg]</I></P>
+   <p>Information about a user -- <i>[builder: UserConfig_Cfg]</i></p>
 
-   <P>Validation of all fields occurs in this classes constructor. However, each validation requirement is document only in the builder's setter functions.</P>
+   <p>Validation of all fields occurs in this classes constructor. However, each validation requirement is document only in the builder's setter functions.</p>
 
-	<P>{@code java com.github.xbn.examples.lang.builder.finalv.UserConfig}</P>
+	<p>{@code java com.github.xbn.examples.lang.builder.finalv.UserConfig}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class UserConfig  {
@@ -30,7 +30,7 @@ public class UserConfig  {
 	private final int    iAge     ;
 	private final String sFavColor;
    /**
-   	<P>Create a new instance. This sets and validates all fields.</P>
+   	<p>Create a new instance. This sets and validates all fields.</p>
 
    	@param  fieldable  May not be {@code null}.
     **/
@@ -65,7 +65,7 @@ public class UserConfig  {
 	}
 	//getters...START
 		/**
-			<P>The user's name.</P>
+			<p>The user's name.</p>
 
 			@return  A non-{@code null}, non-empty string.
 			@see  UserConfig_Cfg#UserConfig_Cfg(String)
@@ -76,7 +76,7 @@ public class UserConfig  {
 			return  sName;
 		}
 		/**
-			<P>The user's age.</P>
+			<p>The user's age.</p>
 
 			@return  A number greater-than-or-equal-to zero.
 			@see  UserConfig_Cfg#age(int)
@@ -86,7 +86,7 @@ public class UserConfig  {
 			return  iAge;
 		}
 		/**
-			<P>The user's favorite color.</P>
+			<p>The user's favorite color.</p>
 
 			@return  A non-{@code null}, non-empty string.
 			@see  UserConfig_Cfg#age(int)

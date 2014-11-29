@@ -1,14 +1,14 @@
 //: net/mindview/util/FourTuple.java
 package com.github.xbn.util.tuple;
 /**
-	<P>A {@code Tuple} for four values.</P>
+	<p>A {@code Tuple} for four values.</p>
  **/
 public class FourTuple<A,B,C,D> extends ThreeTuple<A,B,C>  {
 //config
 	private final D o4;
 //constructors...START
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
 		@param  o_4  Get with {@link #get4() get4}{@code ()}
 	 **/

@@ -18,10 +18,10 @@ package  com.github.xbn.text;
 	import  java.io.IOException;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Get a string, or a default value when {@code null}.</P>
+   <p>Get a string, or a default value when {@code null}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class StringWithNullDefault  {
@@ -29,7 +29,7 @@ public class StringWithNullDefault  {
 		throw  new IllegalStateException("Do not instantiate.");
 	}
 	/**
-		<P>Get a string, or a default value if it's {@code null}.</P>
+		<p>Get a string, or a default value if it's {@code null}.</p>
 
 		@return  {@link #get(String, Object, String, String) get}{@code (null, stringThatMay_beNull, null, if_null)}
 	 **/
@@ -37,7 +37,7 @@ public class StringWithNullDefault  {
 		return  get(null, stringThatMay_beNull, null, if_null);
 	}
 	/**
-		<P>Get a string, or a default value if it's {@code null}.</P>
+		<p>Get a string, or a default value if it's {@code null}.</p>
 
 		@return  {@link #get(Object, String) get}{@code (null, stringThatMay_beNull, null, if_null)}
 	 **/
@@ -45,7 +45,7 @@ public class StringWithNullDefault  {
 		return  append((new StringBuilder()), prefix_ifNonNull, stringThatMay_beNull, postfix_ifNonNull, if_null).toString();
 	}
 	/**
-		<P>Append a string, or a default value if {@code null}.</P>
+		<p>Append a string, or a default value if {@code null}.</p>
 
 		@return  {@link #append(Appendable, String, Object, String, String) append}{@code (to_appendTo, null, stringThatMay_beNull, null, if_null)}
 	 **/
@@ -53,13 +53,13 @@ public class StringWithNullDefault  {
 		return  append(to_appendTo, null, stringThatMay_beNull, null, if_null);
 	}
 	/**
-		<P>Append a string, or a default value if {@code null}.</P>
+		<p>Append a string, or a default value if {@code null}.</p>
 
 		@param  to_appendTo  To append to. May not be {@code null}.
-		@param  prefix_ifNonNull  When the string is non-{@code null}, this will be displayed before it. <I>Should</I> not be empty. When {@code null}, there is no prefix.
+		@param  prefix_ifNonNull  When the string is non-{@code null}, this will be displayed before it. <i>Should</i> not be empty. When {@code null}, there is no prefix.
 		@param  stringThatMay_beNull  The string.
-		@param  postfix_ifNonNull  When the string is non-{@code null}, this will be displayed after it. <I>Should</I> not be empty. When {@code null}, there is no postfix.
-		@param  if_null  When the string is {@code null}, this is displayed in its place. If this parameter, {@code if_null} is {@code null}, then <I>nothing</I> is appended (this is the same as providing the empty-string).
+		@param  postfix_ifNonNull  When the string is non-{@code null}, this will be displayed after it. <i>Should</i> not be empty. When {@code null}, there is no postfix.
+		@param  if_null  When the string is {@code null}, this is displayed in its place. If this parameter, {@code if_null} is {@code null}, then <i>nothing</i> is appended (this is the same as providing the empty-string).
 		@return  {@code to_appendTo}
 		@see  #get(Object, String) get(O,s)
 		@see  #get(String, Object, String, String) get(s,O,s,s)

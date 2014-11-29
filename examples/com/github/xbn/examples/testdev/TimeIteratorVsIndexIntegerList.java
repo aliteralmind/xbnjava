@@ -20,14 +20,14 @@ package  com.github.xbn.examples.testdev;
 	import  java.util.Arrays;
 	import  java.util.List;
 /**
-	<P>Demonstration of {@code com.github.xbn.testdev.}{@link com.github.xbn.testdev.TimedTest TimedTest}, comparing two ways to iterating through a list: by index or iterator.</P>
+	<p>Demonstration of {@code com.github.xbn.testdev.}{@link com.github.xbn.testdev.TimedTest TimedTest}, comparing two ways to iterating through a list: by index or iterator.</p>
 
-   <P>{@code java com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList 1000000}</P>
+   <p>{@code java com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList 1000000}</p>
 
-   @see  <CODE><A HREF="http://aliteralmind.wordpress.com/2014/03/22/for_foreach/">http://aliteralmind.wordpress.com/2014/03/22/for_foreach/</A></CODE>
-   @see  <CODE><A HREF="http://stackoverflow.com/questions/180158/how-do-i-time-a-methods-execution-in-java">http://stackoverflow.com/questions/180158/how-do-i-time-a-methods-execution-in-java</A></CODE>
+   @see  <code><a href="http://aliteralmind.wordpress.com/2014/03/22/for_foreach/">http://aliteralmind.wordpress.com/2014/03/22/for_foreach/</a></code>
+   @see  <code><a href="http://stackoverflow.com/questions/180158/how-do-i-time-a-methods-execution-in-java">http://stackoverflow.com/questions/180158/how-do-i-time-a-methods-execution-in-java</a></code>
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class TimeIteratorVsIndexIntegerList  {

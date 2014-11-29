@@ -1,6 +1,6 @@
 package  com.github.xbn.examples.util.non_xbn;
    /**
-      <P>{@code java DiagonalCharsPermutations}</P>
+      <p>{@code java DiagonalCharsPermutations}</p>
     **/
    public class DiagonalCharsPermutations  {
       public static final void main(String[] ignored)  {

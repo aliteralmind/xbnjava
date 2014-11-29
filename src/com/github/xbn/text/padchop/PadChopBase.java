@@ -17,17 +17,17 @@ package  com.github.xbn.text.padchop;
 	import  com.github.xbn.lang.Copyable;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-	<P>. The base class for {@code PadString} and {@code ChopString}. See {@link com.github.xbn.text.padchop.PadString PadString} and {@link com.github.xbn.text.padchop.ChopString ChopString}.</P>
+	<p>. The base class for {@code PadString} and {@code ChopString}. See {@link com.github.xbn.text.padchop.PadString PadString} and {@link com.github.xbn.text.padchop.ChopString ChopString}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class PadChopBase implements Copyable  {
 	private final int iGoal;
 	private final boolean bSideR;
 //constructors...START
 	/**
-		<P>Create a new {@code PadChopBase} with defaults.</P>
+		<p>Create a new {@code PadChopBase} with defaults.</p>
 
 		@see  #PadChopBase(PadChopBase)
 		@see  #PadChopBase(PadChopBase, int)
@@ -43,7 +43,7 @@ public abstract class PadChopBase implements Copyable  {
 			return  goal_len;
 		}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@see  #PadChopBase(xbn.text.padchop.z.PadChopBase_Fieldable) this(fieldable)
 		@see  #PadChopBase(PadChopBase, int)
@@ -52,12 +52,12 @@ public abstract class PadChopBase implements Copyable  {
 		this(to_copy, -2);
 	}
 	/**
-		<P>Create a new {@code PadChopBase} as a duplicate of another, with a potentially-new goal-length.</P>
+		<p>Create a new {@code PadChopBase} as a duplicate of another, with a potentially-new goal-length.</p>
 
-		<P>This<OL>
-			<LI>Sets {@link #getGoalLen() getGoalLen}{@code ()} as described below.</LI>
-			<LI>Sets {@link #isSideRight() isSideRight}{@code ()} to {@code to_copy.isSideRight())}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Sets {@link #getGoalLen() getGoalLen}{@code ()} as described below.</li>
+			<li>Sets {@link #isSideRight() isSideRight}{@code ()} to {@code to_copy.isSideRight())}</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@param  new_goalLen  The new goal length. If {@code -2}, this is ignored, and {@code to_copy.getGoalLen()} is used in its place.
@@ -76,7 +76,7 @@ public abstract class PadChopBase implements Copyable  {
 //constructors...END
 //getters...START
 	/**
-		<P>Get the length to pad-or-chop to.</P>
+		<p>Get the length to pad-or-chop to.</p>
 
 		@see  PadChopBase#PadChopBase(PadChopBase_Fieldable) this(pcb_f)
 	 **/
@@ -84,7 +84,7 @@ public abstract class PadChopBase implements Copyable  {
 		return  iGoal;
 	}
 	/**
-		<P>Is the right side of the string altered?.</P>
+		<p>Is the right side of the string altered?.</p>
 
 		@see  PadChopBase#PadChopBase(PadChopBase_Fieldable) this(pcb_f)
 	 **/
@@ -102,7 +102,7 @@ public abstract class PadChopBase implements Copyable  {
 		return  goal_len;
 	}
 	/**
-		<P>Duplicate this {@code PadChopBase}, with a new goal-length.</P>
+		<p>Duplicate this {@code PadChopBase}, with a new goal-length.</p>
 	 **/
 	public abstract PadChopBase getCopyNewGoalLen(int goal_len);
 }

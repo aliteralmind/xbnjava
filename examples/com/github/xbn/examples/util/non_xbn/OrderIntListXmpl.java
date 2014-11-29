@@ -5,7 +5,7 @@ package  com.github.xbn.examples.util.non_xbn;
 /**
 http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#binarySearch(java.util.List, T)
 http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#sort(java.util.List)
-   <P>{@code java com.github.xbn.examples.util.non_xbn.OrderIntListXmpl}</P>
+   <p>{@code java com.github.xbn.examples.util.non_xbn.OrderIntListXmpl}</p>
  **/
 public class OrderIntListXmpl  {
    public static final void main(String[] ignored)  {

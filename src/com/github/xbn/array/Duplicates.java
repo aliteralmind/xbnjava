@@ -14,30 +14,30 @@
 \*license*/
 package  com.github.xbn.array;
 /**
-	<P>Are duplicate elements acceptable?.</P>
+	<p>Are duplicate elements acceptable?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum Duplicates  {
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #BAD
 		@see  #isOk()
 	 **/
 	OK,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #OK
 		@see  #isBad()
 	 **/
 	BAD;
 	/**
-		<P>Is this {@code Duplicates} equal to {@code OK}?.</P>
+		<p>Is this {@code Duplicates} equal to {@code OK}?.</p>
 
-		@return  <CODE>this == {@link #OK}</CODE>
+		@return  <code>this == {@link #OK}</code>
 
 		@see  #isBad()
 	 **/
@@ -45,18 +45,18 @@ public enum Duplicates  {
 		return  this == OK;
 	}
 	/**
-		<P>Is this {@code Duplicates} equal to {@code BAD}?.</P>
+		<p>Is this {@code Duplicates} equal to {@code BAD}?.</p>
 
-		@return  <CODE>this == {@link #BAD}</CODE>
+		@return  <code>this == {@link #BAD}</code>
 		@see  #isOk()
 	 **/
 	public final boolean isBad()  {
 		return  this == BAD;
 	}
 	/**
-		<P>Return {@code Duplicatess.OK} if the flag is {@code true}, or {@code BAD} if {@code false}.</P>
+		<p>Return {@code Duplicatess.OK} if the flag is {@code true}, or {@code BAD} if {@code false}.</p>
 
-		@return  <CODE>(flag ? {@link #OK} : {@link #BAD})</CODE>
+		@return  <code>(flag ? {@link #OK} : {@link #BAD})</code>
 	 **/
 	public static final Duplicates getForBoolean(boolean flag)  {
 		return  (flag ? OK : BAD);

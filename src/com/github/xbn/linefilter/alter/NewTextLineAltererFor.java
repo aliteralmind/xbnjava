@@ -29,24 +29,24 @@ package  com.github.xbn.linefilter.alter;
 	import  java.util.regex.Pattern;
 	import  org.apache.commons.lang3.StringEscapeUtils;
 /**
-	<P>Convenience functions for creating text-line alterers from validators and regular expressions.</P>
+	<p>Convenience functions for creating text-line alterers from validators and regular expressions.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewTextLineAltererFor  {
 	/**
-		<P>Does nothing. The input is returned without change.</P>
+		<p>Does nothing. The input is returned without change.</p>
 
-		@return  <CODE>(new {@link com.github.xbn.linefilter.alter.AlterTextLineWhen#AlterTextLineWhen() AlterTextLineWhen}()</CODE>
+		@return  <code>(new {@link com.github.xbn.linefilter.alter.AlterTextLineWhen#AlterTextLineWhen() AlterTextLineWhen}()</code>
 	 **/
 	public static final AlterTextLineWhen alwaysReturnUnchanged()  {
 		return  (new AlterTextLineWhen());
 	}
 	/**
-		<P><I><B>Deprecated</B> for {@code textValidateOnly}</I>--Identifies the line's text based on a regular expression--the line is not altered.</P>
+		<p><i><b>Deprecated</b> for {@code textValidateOnly}</i>--Identifies the line's text based on a regular expression--the line is not altered.</p>
 
-		@return  <CODE>{@link #textValidateOnly(Pattern, ValidResultFilter, Appendable) textValidateOnly}(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull)</CODE>
+		@return  <code>{@link #textValidateOnly(Pattern, ValidResultFilter, Appendable) textValidateOnly}(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull)</code>
 		@deprecated  Use {@link #textValidateOnly(ValueValidator) textValidateOnly}
 	 **/
 	@Deprecated
@@ -54,9 +54,9 @@ public class NewTextLineAltererFor  {
 		return  textValidateOnly(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull);
 	}
 	/**
-		<P><I><B>Deprecated</B> for {@code textValidateOnly}</I>--Identifies the line's text based on a regular expression--the line is not altered.</P>
+		<p><i><b>Deprecated</b> for {@code textValidateOnly}</i>--Identifies the line's text based on a regular expression--the line is not altered.</p>
 
-		@return  <CODE>{@link #textValidateOnly(ValueValidator) textValidateOnly}(string_validator)</CODE>
+		@return  <code>{@link #textValidateOnly(ValueValidator) textValidateOnly}(string_validator)</code>
 		@deprecated  Use {@link #textValidateOnly(ValueValidator) textValidateOnly}
 	 **/
 	@Deprecated
@@ -64,68 +64,68 @@ public class NewTextLineAltererFor  {
 		return  textValidateOnly(string_validator);
 	}
 	/**
-		<P><I><B>Deprecated</B> for {@code textValidateOnly}</I>--Identifies the line's text based on a regular expression--the line is not altered.</P>
+		<p><i><b>Deprecated</b> for {@code textValidateOnly}</i>--Identifies the line's text based on a regular expression--the line is not altered.</p>
 
-		@return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(Pattern, ValidResultFilter, Appendable) text}(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull))</CODE>
+		@return  <code>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(Pattern, ValidResultFilter, Appendable) text}(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull))</code>
 	 **/
 	public static final AlterTextLineWhen textValidateOnly(Pattern pattern_toFind, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
 		return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.text(pattern_toFind, filter_ifNonNull, dbgDest_ifNonNull));
 	}
 	/**
-		<P><I><B>Deprecated</B> for {@code textValidateOnly}</I>--Identifies the line's text based on a regular expression--the line is not altered.</P>
+		<p><i><b>Deprecated</b> for {@code textValidateOnly}</i>--Identifies the line's text based on a regular expression--the line is not altered.</p>
 
-		@return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(String, ValidResultFilter, Appendable) text}(literal_textToMatch, filter_ifNonNull, dbgDest_ifNonNull))</CODE>
+		@return  <code>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(String, ValidResultFilter, Appendable) text}(literal_textToMatch, filter_ifNonNull, dbgDest_ifNonNull))</code>
 	 **/
 	public static final AlterTextLineWhen textValidateOnly(String literal_textToMatch, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
 		return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.text(literal_textToMatch, filter_ifNonNull, dbgDest_ifNonNull));
 	}
 	/**
-		<P>Identifies the line's text based on some condition--the line is not altered.</P>
+		<p>Identifies the line's text based on some condition--the line is not altered.</p>
 
-		@return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(ValueValidator) text}(string_validator))</CODE>
+		@return  <code>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#text(ValueValidator) text}(string_validator))</code>
 	 **/
 	public static final AlterTextLineWhen textValidateOnly(ValueValidator<String> string_validator)  {
 		return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.text(string_validator));
 	}
 	/**
-		<P>Identifies the line's number based on some condition--the line's text is not altered.</P>
+		<p>Identifies the line's number based on some condition--the line's text is not altered.</p>
 
-		@return  <CODE>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#number(ValueValidator) number}(int_validator))</CODE>
+		@return  <code>{@link com.github.xbn.linefilter.alter.AlterTextLineWhen AlterTextLineWhen}.{@link com.github.xbn.linefilter.alter.AlterTextLineWhen#newATLWAlwaysReturnSelf(ValueValidator) newATLWAlwaysReturnSelf}{@link com.github.xbn.linefilter.NewTextLineValidatorFor NewTextLineValidatorFor}.{@link com.github.xbn.linefilter.NewTextLineValidatorFor#number(ValueValidator) number}(int_validator))</code>
 	 **/
 	public static final AlterTextLineWhen number(ValueValidator<Integer> int_validator)  {
 		return  AlterTextLineWhen.newATLWAlwaysReturnSelf(NewTextLineValidatorFor.number(int_validator));
 	}
 	/**
-		<P>Inserts the line number before each line's body.</P>
+		<p>Inserts the line number before each line's body.</p>
 
-		@param  start_lineNum  The first line number. <I>Should</I> be 1 or greater.
-		@param  btw_numAndText  The text to go between the number and body. <I>Should</I> be non-{@code null} and non-empty.
+		@param  start_lineNum  The first line number. <i>Should</i> be 1 or greater.
+		@param  btw_numAndText  The text to go between the number and body. <i>Should</i> be non-{@code null} and non-empty.
 	 **/
 	public static final TextLineAlterer prependLineNumber(int start_lineNum, String btw_numAndText)  {
 		return  (new PrependLineNumToText(start_lineNum, btw_numAndText));
 	}
 	/**
-		<P>Escape all characters for html display. Uses <CODE>org.apache.commons.lang3.{@link org.apache.commons.lang3.StringEscapeUtils}{@link org.apache.commons.lang3.StringEscapeUtils#escapeHtml4 escapeHtml4}</CODE>.</P>
+		<p>Escape all characters for html display. Uses <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.StringEscapeUtils}{@link org.apache.commons.lang3.StringEscapeUtils#escapeHtml4 escapeHtml4}</code>.</p>
 	 **/
 	public static final TextLineAlterer escapeHtml()  {
 		return  (new EscapeLineTextForHtmlDisplay());
 	}
 	/**
-		<P>Make a literal string replacement.</P>
+		<p>Make a literal string replacement.</p>
 
-		@return  <CODE>{@link #replacement(AlterationRequired, Pattern, String, ReplacedInEachInput, Appendable, ValidResultFilter) replacement}({@link com.github.xbn.regexutil.NewPatternFor#literal(String) literal}(find_what), rplc_with, rplcs_what, dbgDest_ifNonNull, filter_ifNonNull)</CODE>
+		@return  <code>{@link #replacement(AlterationRequired, Pattern, String, ReplacedInEachInput, Appendable, ValidResultFilter) replacement}({@link com.github.xbn.regexutil.NewPatternFor#literal(String) literal}(find_what), rplc_with, rplcs_what, dbgDest_ifNonNull, filter_ifNonNull)</code>
 	 **/
 	public static final TextLineAlterAdapter<StringReplacer> literalReplacement(AlterationRequired required, String find_what, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgDest_ifNonNull, ValidResultFilter filter_ifNonNull)  {
 		return  replacement(required, NewPatternFor.literal(find_what, "find_what"), rplc_with, rplcs_what, dbgDest_ifNonNull, filter_ifNonNull);
 	}
 	/**
-		<P>Makes a regular expression replacement.</P>
+		<p>Makes a regular expression replacement.</p>
 
-		@return  <CODE>{@link com.github.xbn.linefilter.AdaptRegexReplacerTo AdaptRegexReplacerTo}.{@link com.github.xbn.linefilter.AdaptRegexReplacerTo#lineReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer}(required, rr, filter_ifNonNull)</CODE>
-		<BR>Where {@code rr} is a
-		<BR> &nbsp; &nbsp; <CODE>new {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().
+		@return  <code>{@link com.github.xbn.linefilter.AdaptRegexReplacerTo AdaptRegexReplacerTo}.{@link com.github.xbn.linefilter.AdaptRegexReplacerTo#lineReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer}(required, rr, filter_ifNonNull)</code>
+		<br/>Where {@code rr} is a
+		<br/> &nbsp; &nbsp; <code>new {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().
 			{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#direct(Pattern, Object) direct}(ptrn_findWhat, rplc_with).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rplcs_what).
-			{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}();</CODE>
+			{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}();</code>
 		@see  #literalReplacement(AlterationRequired, String, String, ReplacedInEachInput, Appendable, ValidResultFilter)
 	 **/
 	public static final TextLineAlterAdapter<StringReplacer> replacement(AlterationRequired required, Pattern ptrn_findWhat, String rplc_with, ReplacedInEachInput rplcs_what, Appendable dbgDest_ifNonNull, ValidResultFilter filter_ifNonNull)  {

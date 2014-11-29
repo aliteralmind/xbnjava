@@ -21,10 +21,10 @@ package  com.github.xbn.linefilter.entity.raw;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  com.github.xbn.number.LengthInRange;
 /**
-	<P>The base class for {@code PostFilterActiveInOutRange} and {@code PostFilterSelfActiveInOutRange}.</P>
+	<p>The base class for {@code PostFilterActiveInOutRange} and {@code PostFilterSelfActiveInOutRange}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractRawPostFilterActiveInOutRange<L> implements RawOnOffEntityFilter<L>  {
 	private final LengthInRange range  ;
@@ -33,10 +33,10 @@ public abstract class AbstractRawPostFilterActiveInOutRange<L> implements RawOnO
 	private final TextAppenter  dbgAptr;
 	private final boolean       doRespondImmediate;
 	/**
-		<P>Create a new instance from an entity, range, and when-in setting.</P>
+		<p>Create a new instance from an entity, range, and when-in setting.</p>
 
 		@param  range  May not be {@code null}. Get with {@link #getRange() getRange}{@code ()}
-		@param  when_inRange  When {@link OnOffAbort#ON ON} and the {@linkplain RawEntity#getFullyActiveCount() fully-active count} is <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com.github.xbn.number.NumberInRange#isIn(N)">in the range</A>, then the entity is on. May not be {@code null}. Get with {@link #getStateForInRange() getStateForInRange}{@code ()}.
+		@param  when_inRange  When {@link OnOffAbort#ON ON} and the {@linkplain RawEntity#getFullyActiveCount() fully-active count} is <!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com.github.xbn.number.NumberInRange#isIn(N)">in the range</a>, then the entity is on. May not be {@code null}. Get with {@link #getStateForInRange() getStateForInRange}{@code ()}.
 		@param  when_outOfRange  When {@code ON} and the fully-active count is not in the range, then the entity is on. May not be {@code null}. Get with {@link #getStateForOutOfRange() getStateForOutOfRange}{@code ()}.
 	 **/
 	public AbstractRawPostFilterActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
@@ -76,13 +76,13 @@ public abstract class AbstractRawPostFilterActiveInOutRange<L> implements RawOnO
 		return  OnOffAbort.ON;
 	}
 	/**
-		@return  If the entity's {@linkplain RawEntity#getFullyActiveCount() active count} is<UL>
-			<LI><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/number/NumberInRange.html#isIn(N)">In</A> the range: {@link #getStateForInRange() getStateForInRange}{@code ()}</LI>
-			<LI>Not in range and {@link #doWaitForNextActiveLine() doWaitForNextActiveLine}{@code ()} is<UL>
-				<LI>{@code true}: {@code getStateForInRange()}</LI>
-				<LI>{@code false}: {@link #getStateForOutOfRange() getStateForOutOfRange}{@code ()}</LI>
-			</UL></LI>
-		</UL>
+		@return  If the entity's {@linkplain RawEntity#getFullyActiveCount() active count} is<ul>
+			<li><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/number/NumberInRange.html#isIn(N)">In</a> the range: {@link #getStateForInRange() getStateForInRange}{@code ()}</li>
+			<li>Not in range and {@link #doWaitForNextActiveLine() doWaitForNextActiveLine}{@code ()} is<ul>
+				<li>{@code true}: {@code getStateForInRange()}</li>
+				<li>{@code false}: {@link #getStateForOutOfRange() getStateForOutOfRange}{@code ()}</li>
+			</ul></li>
+		</ul>
 		@see  #getRange()
 	 **/
 	protected OnOffAbort getPostStateForCount(RawEntity<L> entity)  {

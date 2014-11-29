@@ -14,31 +14,31 @@
 \*license*/
 package  com.github.xbn.io;
 /**
-   <P>Should a file be appended to or overwritten?.</P>
+   <p>Should a file be appended to or overwritten?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum AppendOrOverwrite  {
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #OVERWRITE
       @see  #isAppend()
     **/
    APPEND,
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #APPEND
       @see  #isOverwrite()
     **/
    OVERWRITE;
    /**
-      <P>Is this {@code AppendOrOverwrite} equal to {@code APPEND}?.</P>
+      <p>Is this {@code AppendOrOverwrite} equal to {@code APPEND}?.</p>
 
-      @return  <CODE>this == {@link #APPEND}</CODE>
+      @return  <code>this == {@link #APPEND}</code>
 
       @see  #isOverwrite()
     **/
@@ -46,9 +46,9 @@ public enum AppendOrOverwrite  {
       return  this == APPEND;
    }
    /**
-      <P>Is this {@code AppendOrOverwrite} equal to {@code OVERWRITE}?.</P>
+      <p>Is this {@code AppendOrOverwrite} equal to {@code OVERWRITE}?.</p>
 
-      @return  <CODE>this == {@link #OVERWRITE}</CODE>
+      @return  <code>this == {@link #OVERWRITE}</code>
       @see  #isAppend()
     **/
    public final boolean isOverwrite()  {

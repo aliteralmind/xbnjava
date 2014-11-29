@@ -17,10 +17,10 @@ package  com.github.xbn.io;
 	import  java.io.IOException;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>Decorator for {@code Appendable}-s, including conditional printing. For runtime-only errors, see {@link TextAppenter}.</P>
+	<p>Decorator for {@code Appendable}-s, including conditional printing. For runtime-only errors, see {@link TextAppenter}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class TextAppender implements Appendable  {
 	private String sLineSep = null;
@@ -36,14 +36,14 @@ public abstract class TextAppender implements Appendable  {
 		}
 	}
 	/**
-		<P>Set the line separator to something other than &quot;&quot;</P>
+		<p>Set the line separator to something other than &quot;&quot;</p>
 	 **/
 	public final void setLineSeparator(String separator)  {
 		CrashIfString.nullEmpty(separator, "separator", null);
 		sLineSep = separator;
 	}
 	/**
-		<P>Get the line separator for calls to {@code appendln()}.</P>
+		<p>Get the line separator for calls to {@code appendln()}.</p>
 	 **/
 	public final String getLineSeparator()  {
 		return  sLineSep;

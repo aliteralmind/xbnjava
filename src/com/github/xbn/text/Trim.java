@@ -14,49 +14,49 @@
 \*license*/
 package  com.github.xbn.text;
 /**
-	<P>Should the string be trimmed?.</P>
+	<p>Should the string be trimmed?.</p>
 
 	@see  StringUtilBase#getChopped(Trim, Object, int, String) StringUtilBase#getChopped
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum Trim  {
 	/**
-		<P>Trim the string.</P>
+		<p>Trim the string.</p>
 
 		@see  #NO
 		@see  #isYes()
 	 **/
 	YES,
 	/**
-		<P>Do not trim the string.</P>
+		<p>Do not trim the string.</p>
 
 		@see  #YES
 		@see  #isNo()
 	 **/
 	NO;
 	/**
-		<P>Is this {@code Trim} equal to {@code YES}?.</P>
+		<p>Is this {@code Trim} equal to {@code YES}?.</p>
 
-		@return  <CODE>(this == {@link #YES})</CODE>
+		@return  <code>(this == {@link #YES})</code>
 		@see  #isNo()
 	 **/
 	public final boolean isYes()  {
 		return  (this == YES);
 	}
 	/**
-		<P>Is this {@code Trim} equal to {@code NO}?.</P>
+		<p>Is this {@code Trim} equal to {@code NO}?.</p>
 
-		@return  <CODE>(this == {@link #NO})</CODE>
+		@return  <code>(this == {@link #NO})</code>
 		@see  #isYes()
 	 **/
 	public final boolean isNo()  {
 		return  (this == NO);
 	}
 	/**
-		<P>Get a {@code Trim} from an actual boolean.</P>
+		<p>Get a {@code Trim} from an actual boolean.</p>
 
-		@return  <CODE>(b ? {@link #YES} : {@link #NO})</CODE>
+		@return  <code>(b ? {@link #YES} : {@link #NO})</code>
 	 **/
 	public static final Trim getForBoolean(boolean b)  {
 		return  (b ? YES : NO);

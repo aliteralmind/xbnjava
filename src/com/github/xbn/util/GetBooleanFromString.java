@@ -17,9 +17,9 @@ package  com.github.xbn.util;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
-   <P>Get a boolean primitive from a string, with specific strings representing true and false, and optional {@code null} and empty defaults.</P>
+   <p>Get a boolean primitive from a string, with specific strings representing true and false, and optional {@code null} and empty defaults.</p>
 
-   @author  Copyright (C) 2013 Jeff Epstein, released under the LPGL 2.1. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @author  Copyright (C) 2013 Jeff Epstein, released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class GetBooleanFromString  {
 	private String stringName;

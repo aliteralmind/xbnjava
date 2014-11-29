@@ -2,13 +2,13 @@ package  com.github.xbn.list.lister;
 	import  com.github.xbn.list.lister.z.LLCIndexableElement_Fieldable;
 	import  com.github.xbn.analyze.validate.ValueValidator;
 /**
-	<P>{@code LLCfgElement} for elements that are themselves indexable-containers (such as strings, lists, or arrays).</P>
+	<p>{@code LLCfgElement} for elements that are themselves indexable-containers (such as strings, lists, or arrays).</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCIndexableElement_Cfg LLCIndexableElement_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCIndexableElement_Cfg LLCIndexableElement_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Parent:</B> {@code <A HREF="ListLister.html#cfg">ListLister</A>}</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Parent:</b> {@code <a href="ListLister.html#cfg">ListLister</a>}</li>
+	</ul></p>
  **/
 public class LLCIndexableElement<E> extends LLCfgElement<E>  {
 	private final ValueValidator<Integer> vv4LLen;

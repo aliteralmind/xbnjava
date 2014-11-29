@@ -20,22 +20,22 @@ package  com.github.xbn.regexutil.z;
 	import  com.github.xbn.neederneedable.AbstractNeedable;
 	import  java.util.regex.Pattern;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R extends Needer> extends AbstractNeedable<X,R> implements RegexGroupExtractor_Fieldable  {
 	public Pattern      pWithGroups    ;
 	public MatcherUses mtchrUses      ;
 	public int          iRequiredGroups;
 	/**
-		<P>Create a new instance with defaults.</P>
+		<p>Create a new instance with defaults.</p>
 
-		<P>This calls<OL>
-			<LI>{@link #useFind() useFind}{@code ()}</LI>
-			<LI><CODE>{@link #requiredGroups(int) requiredGroups}(-1)</CODE></LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link #useFind() useFind}{@code ()}</li>
+			<li><code>{@link #requiredGroups(int) requiredGroups}(-1)</code></li>
+		</ol></p>
 	 **/
 	public RegexGroupExtractor_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
 		super(is_avaliableToNeeders, is_neededUseableAtInit, needer);
@@ -43,11 +43,11 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 		requiredGroups(-1);
 	}
 	/**
-		<P>Search the string-as-a-whole.</P>
+		<p>Search the string-as-a-whole.</p>
 
-		<P>This sets <CODE>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</CODE> to <CODE>{@link MatcherUses}.{@link MatcherUses#MATCHES MATCHES}</CODE>.</P>
+		<p>This sets <code>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</code> to <code>{@link MatcherUses}.{@link MatcherUses#MATCHES MATCHES}</code>.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #useFind()
 		@see  #useLookingAt()
 	 **/
@@ -56,11 +56,11 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 		return  this;
 	}
 	/**
-		<P>Search multiple sub-sequences within the string.</P>
+		<p>Search multiple sub-sequences within the string.</p>
 
-		<P>This sets <CODE>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</CODE> to <CODE>{@link MatcherUses}.{@link MatcherUses#FIND FIND}</CODE>.</P>
+		<p>This sets <code>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</code> to <code>{@link MatcherUses}.{@link MatcherUses#FIND FIND}</code>.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #useFind()
 	 **/
 	public RegexGroupExtractor_CfgForNeeder<X,R> useFind()  {
@@ -68,11 +68,11 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 		return  this;
 	}
 	/**
-		<P>Search multiple sub-sequences within the string.</P>
+		<p>Search multiple sub-sequences within the string.</p>
 
-		<P>This sets <CODE>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</CODE> to <CODE>{@link MatcherUses}.{@link MatcherUses#LOOKING_AT LOOKING_AT}</CODE>.</P>
+		<p>This sets <code>{@link RegexGroupExtractor}.{@link RegexGroupExtractor#getMatcherUses() getMatcherUses}()</code> to <code>{@link MatcherUses}.{@link MatcherUses#LOOKING_AT LOOKING_AT}</code>.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #useFind()
 	 **/
 	public RegexGroupExtractor_CfgForNeeder<X,R> useLookingAt()  {
@@ -80,10 +80,10 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 		return  this;
 	}
 	/**
-		<P>Declare a specific number of groups is required in every iteration.</P>
+		<p>Declare a specific number of groups is required in every iteration.</p>
 
-		@param  num  If {@code -1}, at least one group is required. Otherwise, must be greater than zero, and represents the exact number of groups that must be found. Get with <CODE>[PRE_LINK-file-italic].{@link RegexGroupExtractor#getRequiredGroupCount() getRequiredGroupCount}()</CODE>
-		@return  <I>{@code this}</I>
+		@param  num  If {@code -1}, at least one group is required. Otherwise, must be greater than zero, and represents the exact number of groups that must be found. Get with <code>[PRE_LINK-file-italic].{@link RegexGroupExtractor#getRequiredGroupCount() getRequiredGroupCount}()</code>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexGroupExtractor_CfgForNeeder<X,R> requiredGroups(int num)  {
 		iRequiredGroups = num;
@@ -96,7 +96,7 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 		return  pattern(NewPatternFor.regex(regex_withGroups, bit_flags, "regex_withGroups"));
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexGroupExtractor_CfgForNeeder<X,R> pattern(Pattern pattern_toFind)  {
 		pWithGroups = pattern_toFind;
@@ -114,9 +114,9 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 	}
 
 	/**
-		<P>Create a new <CODE>RegexGroupExtractor</CODE> with a pattern <I>that contains groups</I>.</P>
+		<p>Create a new <code>RegexGroupExtractor</code> with a pattern <i>that contains groups</i>.</p>
 
-		@return  <CODE>(new {@link RegexGroupExtractor#RegexGroupExtractor(RegexGroupExtractor_Fieldable) RegexGroupExtractor}(this))</CODE>
+		@return  <code>(new {@link RegexGroupExtractor#RegexGroupExtractor(RegexGroupExtractor_Fieldable) RegexGroupExtractor}(this))</code>
 	 **/
 	public X build()  {
 		@SuppressWarnings("unchecked")
@@ -124,22 +124,22 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
 		return  x;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RegexGroupExtractor_CfgForNeeder<X,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	@SuppressWarnings("unchecked")  //See LLCfgOverall.startConfigReturnNeedable(R)
 	public RegexGroupExtractor_CfgForNeeder<X,R> startConfigReturnNeedable(R needer)  {

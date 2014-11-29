@@ -19,12 +19,12 @@ package  com.github.xbn.examples.regexutil.non_xbn;
 	import  java.util.regex.Pattern;
 	import  java.util.regex.Matcher;
 /**
-   <P>Uses a negative lookahead to replace all instances of {@code "you"}, but only when not followed by an apostrophe (don't replace {@code "you'll"} or {@code you're}).</P>
+   <p>Uses a negative lookahead to replace all instances of {@code "you"}, but only when not followed by an apostrophe (don't replace {@code "you'll"} or {@code you're}).</p>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.ReplaceYouNotYouApostropheWithAtAtAt}</P>
+   <p>{@code java com.github.xbn.examples.regexutil.non_xbn.ReplaceYouNotYouApostropheWithAtAtAt}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class ReplaceYouNotYouApostropheWithAtAtAt  {

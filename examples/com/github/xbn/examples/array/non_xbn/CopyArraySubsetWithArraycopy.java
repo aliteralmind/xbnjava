@@ -15,12 +15,12 @@
 package  com.github.xbn.examples.array.non_xbn;
    import  java.util.Arrays;
 /**
-   <P>Copy a subset of an array using <CODE>{@link java.lang.System System}.{@link java.lang.System#arraycopy(Object, int, Object, int, int) arraycopy}(o,i,o,i,i)</CODE>, which is the pre JDK-7 way of copying arrays--in Java 7 use <CODE>{@link java.util.Arrays Arrays}.copyOf(...)</CODE> {@code copyOfRange(...)}</P>
+   <p>Copy a subset of an array using <code>{@link java.lang.System System}.{@link java.lang.System#arraycopy(Object, int, Object, int, int) arraycopy}(o,i,o,i,i)</code>, which is the pre JDK-7 way of copying arrays--in Java 7 use <code>{@link java.util.Arrays Arrays}.copyOf(...)</code> {@code copyOfRange(...)}</p>
 
-   <P>{@code java com.github.xbn.examples.array.non_xbn.CopyArraySubsetWithArraycopy}</P>
+   <p>{@code java com.github.xbn.examples.array.non_xbn.CopyArraySubsetWithArraycopy}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class CopyArraySubsetWithArraycopy  {

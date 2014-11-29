@@ -14,10 +14,10 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
 /**
-	<P>A {@code ValueAlterer} that always changes the object to a pre-determined value.</P>
+	<p>A {@code ValueAlterer} that always changes the object to a pre-determined value.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SetToStaticValue<V,A> extends AbstractValueAlterer<V,A>  {
 	private final A toAltrTo;
@@ -37,7 +37,7 @@ public class SetToStaticValue<V,A> extends AbstractValueAlterer<V,A>  {
 		return  toAltrTo;
 	}
 	/**
-		@return  <CODE>(new {@link #SetToStaticValue(boolean, SetToStaticValue) SetToStaticValue}&lt;V,A&gt;(false*, this))</CODE>
+		@return  <code>(new {@link #SetToStaticValue(boolean, SetToStaticValue) SetToStaticValue}&lt;V,A&gt;(false*, this))</code>
 	 **/
 	public SetToStaticValue<V,A> getObjectCopy()  {
 		return  (new SetToStaticValue<V,A>(false, this));

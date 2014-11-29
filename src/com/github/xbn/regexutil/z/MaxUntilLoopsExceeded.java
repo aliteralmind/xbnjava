@@ -14,31 +14,31 @@
 \*license*/
 package  com.github.xbn.regexutil.z;
 /**
-   <P>When making an &quot;until&quot; replacement with {@code RegexReplacer}, and the maximum number of loops is exceeded, is that okay?.</P>
+   <p>When making an &quot;until&quot; replacement with {@code RegexReplacer}, and the maximum number of loops is exceeded, is that okay?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum MaxUntilLoopsExceeded  {
    /**
-      <P>If the maximum is (about to be) exceeded, stop.</P>
+      <p>If the maximum is (about to be) exceeded, stop.</p>
 
       @see  #BAD
       @see  #isOk()
     **/
    OK,
    /**
-      <P>If the maximum is (about to be) exceeded, crash.</P>
+      <p>If the maximum is (about to be) exceeded, crash.</p>
 
       @see  #OK
       @see  #isBad()
     **/
    BAD;
    /**
-      <P>Is this {@code MaxUntilLoopsExceeded} equal to {@code OK}?.</P>
+      <p>Is this {@code MaxUntilLoopsExceeded} equal to {@code OK}?.</p>
 
-      @return  <CODE>(this == {@link #OK})</CODE>
+      @return  <code>(this == {@link #OK})</code>
 
       @see  #isBad()
     **/
@@ -46,18 +46,18 @@ public enum MaxUntilLoopsExceeded  {
       return  (this == OK);
    }
    /**
-      <P>Is this {@code MaxUntilLoopsExceeded} equal to {@code BAD}?.</P>
+      <p>Is this {@code MaxUntilLoopsExceeded} equal to {@code BAD}?.</p>
 
-      @return  <CODE>(this == {@link #BAD})</CODE>
+      @return  <code>(this == {@link #BAD})</code>
       @see  #isOk()
     **/
    public final boolean isBad()  {
       return  (this == BAD);
    }
 	/**
-		<P>Get a {@code MaxUntilLoopsExceeded} from an actual boolean.</P>
+		<p>Get a {@code MaxUntilLoopsExceeded} from an actual boolean.</p>
 
-		@return  <CODE>(b ? {@link #OK} : {@link #BAD})</CODE>
+		@return  <code>(b ? {@link #OK} : {@link #BAD})</code>
 	 **/
 	public static final MaxUntilLoopsExceeded getForBoolean(boolean b)  {
 		return  (b ? OK : BAD);

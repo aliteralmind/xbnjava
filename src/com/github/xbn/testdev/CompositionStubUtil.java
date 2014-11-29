@@ -14,15 +14,15 @@ package  com.github.xbn.testdev;
 	import  com.github.xbn.util.JavaRegexUtil;
 
 /**
-	<P>Application that creates in composition stub functions (as in <A HREF="https://www.google.com/search?q=composition+versus+inheritance+java">composition versus inheritance</A>) for all {@code @CompositionContructor}s and {@code @CompositionFunction}s annotAted methods (as most commonly found in {@code "*Composer"} classes).</P>
+	<p>Application that creates in composition stub functions (as in <a href="https://www.google.com/search?q=composition+versus+inheritance+java">composition versus inheritance</a>) for all {@code @CompositionContructor}s and {@code @CompositionFunction}s annotAted methods (as most commonly found in {@code "*Composer"} classes).</p>
 
-	<P>{@code java com.github.xbn.testdev.CompositionStubUtil R:\jeffy\programming\sandbox\xbnjava\xbn\lang\chain\ChainableComposer.java}</P>
+	<p>{@code java com.github.xbn.testdev.CompositionStubUtil R:\jeffy\programming\sandbox\xbnjava\xbn\lang\chain\ChainableComposer.java}</p>
 
-	<H3>Instructions for running this application as a tool in TextPad, on the current java file</H3>
+	<h3>Instructions for running this application as a tool in TextPad, on the current java file</h3>
 
-<PRE>Command: cmd.exe
+<pre>Command: cmd.exe
 Parameters: java xbn.testdev.CompositionStubUtil $File
-Initial directory: $FileDir</PRE>
+Initial directory: $FileDir</pre>
 
  **/
 public class CompositionStubUtil {
@@ -36,7 +36,7 @@ public class CompositionStubUtil {
 	private static final String UNDR_GEN_UNDR = "_GENERICS_";
 
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/
@@ -58,7 +58,7 @@ public class CompositionStubUtil {
 		}
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/
@@ -70,7 +70,7 @@ public class CompositionStubUtil {
 		}
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/
@@ -151,27 +151,27 @@ public class CompositionStubUtil {
 
 		to_appendTo.append("\t\t/").append("**").append(LINE_SEP);
 		if(bVoid)  {
-			to_appendTo.append("\t\t\t<P>FUNC_JD_INTRO</P>").append(LINE_SEP);
+			to_appendTo.append("\t\t\t<p>FUNC_JD_INTRO</p>").append(LINE_SEP);
 		}
 		to_appendTo.append("\t\t\t");
 
 		if(bVoid)  {
-			to_appendTo.append("<P>Equal to").append(LINE_SEP);
-			to_appendTo.append("\t\t\t<BR> &nbsp; &nbsp;");
+			to_appendTo.append("<p>Equal to").append(LINE_SEP);
+			to_appendTo.append("\t\t\t<br/> &nbsp; &nbsp;");
 		}  else  {
 			to_appendTo.append("@return  ");
 		}
 
 //		rrPARAM_Y_NM_TO_Y.setDebug(System.out, true);
 		to_appendTo.append("{@code <A HREF=\"" + sYMK + "/").
-			append(selfCmprlassName).append(".html\"><I>[").append(selfCmprlassName).
-			append("]</I></A>.<A HREF=\"" + sYMK + "/").append(selfCmprlassName).
+			append(selfCmprlassName).append(".html\"><i>[").append(selfCmprlassName).
+			append("]</i></a>.<A HREF=\"" + sYMK + "/").append(selfCmprlassName).
 			append(".html#").append(sFuncName).append("(").
 			append(rrPARAM_Y_NM_TO_Y.getReplaced(sAllParams)).
-			append(")\">").append(sFuncName).append("</A>(" + sAllParamNames + ")}");
+			append(")\">").append(sFuncName).append("</a>(" + sAllParamNames + ")}");
 
 		if(bVoid)  {
-			to_appendTo.append("</P>");
+			to_appendTo.append("</p>");
 		}
 
 		to_appendTo.append(LINE_SEP);

@@ -14,33 +14,33 @@
 \*license*/
 package  com.github.xbn.lang.reflect;
 /**
-	<P>Are declared or non-declared items wanted?.</P>
+	<p>Are declared or non-declared items wanted?.</p>
 
 	@see  ReflectRtxUtil#getConstructor(Class, Declared, Object, Class...) ReflectRtxUtil#getConstructor
 	@see  ReflectRtxUtil#getMethod(Class, String, Declared, Object, Class...) getMethod
 	@see  ReflectRtxUtil#getField(Class, String, Declared, Object)  getField
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum Declared  {
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #NO
 		@see  #isYes()
 	 **/
 	YES,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #YES
 		@see  #isNo()
 	 **/
 	NO;
 	/**
-		<P>Is this {@code Declared} equal to {@code YES}?.</P>
+		<p>Is this {@code Declared} equal to {@code YES}?.</p>
 
-		@return  <CODE>this == {@link #YES}</CODE>
+		@return  <code>this == {@link #YES}</code>
 
 		@see  #isNo()
 	 **/
@@ -48,18 +48,18 @@ public enum Declared  {
 		return  this == YES;
 	}
 	/**
-		<P>Is this {@code Declared} equal to {@code NO}?.</P>
+		<p>Is this {@code Declared} equal to {@code NO}?.</p>
 
-		@return  <CODE>this == {@link #NO}</CODE>
+		@return  <code>this == {@link #NO}</code>
 		@see  #isYes()
 	 **/
 	public final boolean isNo()  {
 		return  this == NO;
 	}
 	/**
-		<P>Return {@code Declared.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</P>
+		<p>Return {@code Declared.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
 
-		@return  <CODE>(flag ? {@link #YES} : {@link #NO})</CODE>
+		@return  <code>(flag ? {@link #YES} : {@link #NO})</code>
 	 **/
 	public static final Declared getForBoolean(boolean flag)  {
 		return  (flag ? YES : NO);

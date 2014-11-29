@@ -14,39 +14,39 @@
 \*license*/
 package  com.github.xbn.util.itr;
 /**
-	<P>In which direction should the iterator go?.</P>
+	<p>In which direction should the iterator go?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum IteratorDirection  {
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #HIGH_TO_LOW
 		@see  #isLowToHigh()
 	 **/
 	LOW_TO_HIGH,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #LOW_TO_HIGH
 		@see  #isHighToLow()
 	 **/
 	HIGH_TO_LOW;
 	/**
-		<P>Is this {@code IteratorDirection} equal to {@code LOW_TO_HIGH}?.</P>
+		<p>Is this {@code IteratorDirection} equal to {@code LOW_TO_HIGH}?.</p>
 
-		@return  <CODE>this == {@link #LOW_TO_HIGH}</CODE>
+		@return  <code>this == {@link #LOW_TO_HIGH}</code>
 		@see  #isHighToLow()
 	 **/
 	public final boolean isLowToHigh()  {
 		return  this == LOW_TO_HIGH;
 	}
 	/**
-		<P>Is this {@code IteratorDirection} equal to {@code HIGH_TO_LOW}?.</P>
+		<p>Is this {@code IteratorDirection} equal to {@code HIGH_TO_LOW}?.</p>
 
-		@return  <CODE>this == {@link #HIGH_TO_LOW}</CODE>
+		@return  <code>this == {@link #HIGH_TO_LOW}</code>
 
 		@see  #isLowToHigh()
 	 **/

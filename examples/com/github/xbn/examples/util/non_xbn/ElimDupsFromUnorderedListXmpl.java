@@ -3,7 +3,7 @@ package  com.github.xbn.examples.util.non_xbn;
 	import  java.util.ArrayList;
 
 /**
-   <P>{@code java ElimDupsFromUnorderedListXmpl}</P>
+   <p>{@code java ElimDupsFromUnorderedListXmpl}</p>
  **/
 public class ElimDupsFromUnorderedListXmpl  {
    public static final void main(String[] ignored)  {

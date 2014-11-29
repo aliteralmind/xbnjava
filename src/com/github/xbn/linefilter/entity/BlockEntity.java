@@ -23,7 +23,7 @@ package  com.github.xbn.linefilter.entity;
 	import  com.github.xbn.linefilter.entity.raw.RawBlockEntity;
 	import  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_Fieldable;
 /**
-	<P>Represents a series of lines in a text file, with a distinct start and end line, zero-or-more lines in between, and optional child entities. The start, mid, and end lines may all be optionally kept or discarded--when kept, they may be optionally modified.</P>
+	<p>Represents a series of lines in a text file, with a distinct start and end line, zero-or-more lines in between, and optional child entities. The start, mid, and end lines may all be optionally kept or discarded--when kept, they may be optionally modified.</p>
 
 <!--
 	Originates in
@@ -33,24 +33,24 @@ package  com.github.xbn.linefilter.entity;
 	...START
   -->
 
-	<P>The start and end lines in a block must exist on separate lines. {@code com.github.xbn.linefilter.*} does not understand blocks that exist entirely on one line, such as
-	<BR> &nbsp; &nbsp; <CODE>/<!--->* A valid Java comment *<!--->/</CODE>
-	<BR>nor does it distinguish between text that may exist before the start or end line's unique marker:</P>
+	<p>The start and end lines in a block must exist on separate lines. {@code com.github.xbn.linefilter.*} does not understand blocks that exist entirely on one line, such as
+	<br/> &nbsp; &nbsp; <code>/<!--->* A valid Java comment *<!--->/</code>
+	<br/>nor does it distinguish between text that may exist before the start or end line's unique marker:</p>
 
-<BLOCKQUOTE><PRE>This is part of the block /<!--->* As is this
+<blockquote><pre>This is part of the block /<!--->* As is this
 and this
-<!--->*<!--->/  and this</PRE></BLOCKQUOTE>
+<!--->*<!--->/  and this</pre></blockquote>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg BlockEntity_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg BlockEntity_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Start/mid/end:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startAlter(ValueAlterer) startAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#midAlter(ValueAlterer) midAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) endAlter}</LI>
-		<LI><B>Inclusivity:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive() startEndLinesInclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesExclusive() startEndLinesExclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive(boolean, boolean) startEndLinesInclusive}{@code (b,b)}</LI>
-		<LI><B>Keep:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepAll() keepAll}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepMidsOnly() keepMidsOnly}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepNone() keepNone}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}{@code (b,b,b)}</LI>
-		<LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}{@code (rce[])}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(TextChildEntity...) children}{@code (tce...)}</LI>
-		<LI>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</LI>
-		<LI><B>Other:</B> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#reset() reset}{@code ()}</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Start/mid/end:</b> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startAlter(ValueAlterer) startAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#midAlter(ValueAlterer) midAlter}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) endAlter}</li>
+		<li><b>Inclusivity:</b> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive() startEndLinesInclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesExclusive() startEndLinesExclusive}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startEndLinesInclusive(boolean, boolean) startEndLinesInclusive}{@code (b,b)}</li>
+		<li><b>Keep:</b> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepAll() keepAll}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepMidsOnly() keepMidsOnly}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepNone() keepNone}{@code ()}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}{@code (b,b,b)}</li>
+		<li>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}{@code (rce[])}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(TextChildEntity...) children}{@code (tce...)}</li>
+		<li>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</li>
+		<li><b>Other:</b> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#reset() reset}{@code ()}</li>
+	</ul></p>
 
 <!--
 	Originates in
@@ -61,14 +61,14 @@ and this
   -->
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BlockEntity extends RawBlockEntity<String> implements TextParentEntity  {
 	private List<TextChildEntity> childList;
 	/**
-		<P>Create a new and <I>temporarily unusable</I> instance from a fieldable.</P>
+		<p>Create a new and <i>temporarily unusable</i> instance from a fieldable.</p>
 
-		@param  fieldable  May not be {@code null}, and all its fields must conform to the restrictions as documented in the <A HREF="#cfg">setters</A>.
+		@param  fieldable  May not be {@code null}, and all its fields must conform to the restrictions as documented in the <a href="#cfg">setters</a>.
 	 **/
 	public BlockEntity(RawBlockEntity_Fieldable<String> fieldable)  {
 		super(fieldable);

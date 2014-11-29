@@ -34,11 +34,11 @@ package  com.github.xbn.io;
 	import  java.util.Arrays;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-   <P>Obtain the text from a file or web-page, wrap an {@code java.lang.Appendable} into a {@code java.io.Writer}, and other I/O utilities.</P>
+   <p>Obtain the text from a file or web-page, wrap an {@code java.lang.Appendable} into a {@code java.io.Writer}, and other I/O utilities.</p>
 
    @see  com.github.xbn.io.PlainTextFileUtil PlainTextFileUtil
    @see  com.github.xbn.util.PropertiesUtil#getPropertiesFromFile(String, String)
-   @author  Copyright (C) 2014, Jeff Epstein, with asistance by Marc Baumbach for {@code newWriterForAppendable(apbl)}. Released under the LPGL 2.1. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @author  Copyright (C) 2014, Jeff Epstein, with asistance by Marc Baumbach for {@code newWriterForAppendable(apbl)}. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IOUtil  {
 	public static final Appendable APBL_SUPPRESS_ALL = new ApblSuppressAll();
@@ -46,7 +46,7 @@ public class IOUtil  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
    /**
-      <P>A {@code Flushable} whose {@code flush()} function does nothing. This is used by {@link #newWriterForAppendable(Appendable to_appendTo) newWriterForAppendable}{@code (apbl)} as a (Java 1.5) delta.</P>
+      <p>A {@code Flushable} whose {@code flush()} function does nothing. This is used by {@link #newWriterForAppendable(Appendable to_appendTo) newWriterForAppendable}{@code (apbl)} as a (Java 1.5) delta.</p>
 
       @see  #newWriterForAppendable(Appendable) newWriterForAppendable(apbl)
     **/
@@ -55,7 +55,7 @@ public class IOUtil  {
       }
    };
    /**
-      <P>A {@code Closeable} whose {@code close()} function does nothing. This is used by {@link #newWriterForAppendable(Appendable to_appendTo) newWriterForAppendable}{@code (apbl)} as a (Java 1.5) delta.</P>
+      <p>A {@code Closeable} whose {@code close()} function does nothing. This is used by {@link #newWriterForAppendable(Appendable to_appendTo) newWriterForAppendable}{@code (apbl)} as a (Java 1.5) delta.</p>
 
       @see  #newWriterForAppendable(Appendable) newWriterForAppendable(apbl)
     **/
@@ -64,12 +64,12 @@ public class IOUtil  {
       }
    };
    /**
-      <P>Creates a new {@code java.io.Writer} that wraps around a {@code java.lang.Appendable}. It properly {@link java.io.Writer#flush() flush}es and {@link java.io.Writer#close() close}s appendables that happened to also be {@link java.io.Flushable}s and/or {@link java.io.Closeable Closeable}s. This uses {@code instanceof} only in the constructor, and a (Java 1.5) delta in {@code flush()} and {@code close()}, which avoids having to use any logic or reflection after object construction.</P>
+      <p>Creates a new {@code java.io.Writer} that wraps around a {@code java.lang.Appendable}. It properly {@link java.io.Writer#flush() flush}es and {@link java.io.Writer#close() close}s appendables that happened to also be {@link java.io.Flushable}s and/or {@link java.io.Closeable Closeable}s. This uses {@code instanceof} only in the constructor, and a (Java 1.5) delta in {@code flush()} and {@code close()}, which avoids having to use any logic or reflection after object construction.</p>
 
 {@.codelet.and.out com.github.xbn.examples.io.WriterForAppendableXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-      <P>This function is also released as a <A HREF="https://gist.github.com/aliteralmind/8494917">gist</A>. It is an example of the <A HREF="http://en.wikipedia.org/wiki/Adapter_pattern#Object_Adapter_pattern">Object Adapter pattern</A>. Thanks to <A HREF="http://stackoverflow.com/users/1211906/marc-baumbach">Marc Baumbach</A> on <A HREF="http://stackoverflow.com">{@code stackoverflow}</A> for the assistance. See (viewed 1/18/2014)
-      <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer">http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer</A></CODE></P>
+      <p>This function is also released as a <a href="https://gist.github.com/aliteralmind/8494917">gist</a>. It is an example of the <a href="http://en.wikipedia.org/wiki/Adapter_pattern#Object_Adapter_pattern">Object Adapter pattern</a>. Thanks to <a href="http://stackoverflow.com/users/1211906/marc-baumbach">Marc Baumbach</a> on <a href="http://stackoverflow.com">{@code stackoverflow}</a> for the assistance. See (viewed 1/18/2014)
+      <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer">http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer</a></code></p>
 
       @return  A new writer that uses an appendable to do its output.
       @see  #FLUSHABLE_DO_NOTHING
@@ -79,11 +79,11 @@ public class IOUtil  {
       return  (new WFA(to_appendTo));
    }
    /**
-   	<P>Get the relative path to a file, chopping off its base directory.</P>
+   	<p>Get the relative path to a file, chopping off its base directory.</p>
 
-   	@param  path  May not be {@code null}, and <I>should</I> not be empty.
-   	@param  allPossible_baseDirs  <I>Should</I> not be empty, and each element must be non-null (and <I>should</I> be non-empty).
-   	@return  <CODE>path.{@link java.lang.String#substring(int) substring}(required_baseDir.length())</CODE>
+   	@param  path  May not be {@code null}, and <i>should</i> not be empty.
+   	@param  allPossible_baseDirs  <i>Should</i> not be empty, and each element must be non-null (and <i>should</i> be non-empty).
+   	@return  <code>path.{@link java.lang.String#substring(int) substring}(required_baseDir.length())</code>
    	@exception  IllegalArgumentStateException  If {@code path} does not start with {@code required_baseDir}.
     **/
    public static final String getRelativePathCrashIfBadBaseDir(String path, String path_varName, String baseDirs_varName, String... allPossible_baseDirs)  {
@@ -103,11 +103,11 @@ public class IOUtil  {
 		throw  new IllegalArgumentStateException(path_varName + " (\"" + path + "\") does not start with any of the base directories: " + baseDirs_varName + "=" + Arrays.toString(allPossible_baseDirs));
 	}
    /**
-      <P>YYY</P>
+      <p>YYY</p>
 
 
-      <P>See
-      <BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr">http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr</A>}</P>
+      <p>See
+      <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr">http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr</a>}</p>
 
     **/
 	public static final boolean closePrintWriterCheckError(PrintWriter to_close)  {
@@ -128,7 +128,7 @@ public class IOUtil  {
 		}
 	}
    /**
-      <P>Get the source-code from a web page.</P>
+      <p>Get the source-code from a web page.</p>
 
       @return  {@link #appendWebPageSourceX(Appendable, String, String) appendWebPageSourceX}{@code ((new StringBuilder()), url, htmlRqd_atEnd)}
     **/
@@ -136,7 +136,7 @@ public class IOUtil  {
       return  appendWebPageSourceX((new StringBuilder()), url, htmlRqd_atEnd).toString();
    }
    /**
-      <P>Get the source-code from a web page, with runtime-errors only.</P>
+      <p>Get the source-code from a web page, with runtime-errors only.</p>
 
       @return  {@link #appendWebPageSource(Appendable, String, String) appendWebPageSource}{@code ((new StringBuilder()), url, htmlRqd_atEnd)}
     **/
@@ -144,7 +144,7 @@ public class IOUtil  {
       return  appendWebPageSource((new StringBuilder()), url, htmlRqd_atEnd).toString();
    }
    /**
-      <P>Append the source-code from a web page, with runtime-errors only.</P>
+      <p>Append the source-code from a web page, with runtime-errors only.</p>
 
       @return  {@link #appendWebPageSourceX(Appendable, String, String) appendWebPageSourceX}{@code (to_appendTo, url, htmlRqd_atEnd)}
       @exception  RuntimeException  Whose {@link java.lang.RuntimeException#getCause()}{@code ()} contains the original {@link java.io.IOException} or {@code java.net.MalformedURLException}.
@@ -157,9 +157,9 @@ public class IOUtil  {
       }
    }
    /**
-      <P>Append all source-code from a web page, and optionally verify the tail end of the retrieved source.</P>
+      <p>Append all source-code from a web page, and optionally verify the tail end of the retrieved source.</p>
 
-      <P><I>I got this from {@code <A HREF="http://www.davidreilly.com/java/java_network_programming/">http://www.davidreilly.com/java/java_network_programming/</A>}, item 2.3.</I></P>
+      <p><i>I got this from {@code <a href="http://www.davidreilly.com/java/java_network_programming/">http://www.davidreilly.com/java/java_network_programming/</a>}, item 2.3.</i></p>
 
       @param  to_appendTo  May not be {@code null}.
       @param  url  May not be {@code null}, and must be a valid url.
@@ -241,7 +241,7 @@ public class IOUtil  {
       }
    }
    /**
-      <P>YYY</P>
+      <p>YYY</p>
 
       @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
     **/
@@ -259,12 +259,12 @@ public class IOUtil  {
       return  to_appendTo;
    }
 	/**
-		<P>Create a new {@code PrintWriter} that writes to a file, with runtime errors only.</P>
+		<p>Create a new {@code PrintWriter} that writes to a file, with runtime errors only.</p>
 
 		@param  file  Must be non-{@code null} and writeable.
 		@param  do_append  If {@code true}, the file is appended to. Existing text is left untouched. If {@code false}, existing text is erased.
 		@param  do_autoFlush  If {@code true} output is automatically {@link java.io.PrintWriter#flush() flush}ed. If {@code false}, output must be manually flushed.
-		@return  <CODE>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(File, boolean) FileWriter}(file, do_append)), do_autoFlush))</CODE>
+		@return  <code>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(File, boolean) FileWriter}(file, do_append)), do_autoFlush))</code>
 		@exception  RTFileNotFoundException  If a {@link java.io.FileNotFoundException FileNotFoundException} is thrown
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 		@exception  SecurityException  If the file is not writable.

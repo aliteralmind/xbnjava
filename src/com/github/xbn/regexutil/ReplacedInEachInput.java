@@ -15,15 +15,15 @@
 package  com.github.xbn.regexutil;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>Broadly defines which matches, <I>within each input string</I>, should be replaced by a {@code RegexReplacer}.</P>
+	<p>Broadly defines which matches, <i>within each input string</i>, should be replaced by a {@code RegexReplacer}.</p>
 
 	@see  RegexReplacer
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum ReplacedInEachInput {
 	/**
-		<P>Replace first match only.</P>
+		<p>Replace first match only.</p>
 
 		@see  #LOOKING_AT
 		@see  #MATCHES
@@ -34,7 +34,7 @@ public enum ReplacedInEachInput {
 	 **/
 	FIRST,
 	/**
-		<P>Replace the first match only, and only if it begins at index zero.</P>
+		<p>Replace the first match only, and only if it begins at index zero.</p>
 
 		@see  #FIRST
 		@see  #isLookingAt()
@@ -42,7 +42,7 @@ public enum ReplacedInEachInput {
 	 **/
 	LOOKING_AT,
 	/**
-		<P>Replace the entire string only.</P>
+		<p>Replace the entire string only.</p>
 
 		@see  #FIRST
 		@see  #isMatches()
@@ -50,29 +50,29 @@ public enum ReplacedInEachInput {
 	 **/
 	MATCHES,
 	/**
-		<P>Replace specific matches, such as the second through fourth.</P>
+		<p>Replace specific matches, such as the second through fourth.</p>
 
 		@see  #FIRST
 	 **/
 	MATCH_NUMBERS,
 	/**
-		<P>Replace all matches.</P>
+		<p>Replace all matches.</p>
 
 		@see  #FIRST
 		@see  #isAll()
 	 **/
 	ALL,
 	/**
-		<P>Replace all matches repeatedly, until no more matches are found.</P>
+		<p>Replace all matches repeatedly, until no more matches are found.</p>
 
 		@see  #FIRST
 		@see  #isUntil()
 	 **/
 	UNTIL;
 	/**
-		<P>Is this {@code ReplacedInEachInput} equal to {@code FIRST}?.</P>
+		<p>Is this {@code ReplacedInEachInput} equal to {@code FIRST}?.</p>
 
-		@return  <CODE>this == {@link #FIRST}</CODE>
+		@return  <code>this == {@link #FIRST}</code>
 
 		@see  #isMatchNumbers()
 		@see  #isLookingAt()
@@ -84,65 +84,65 @@ public enum ReplacedInEachInput {
 		return  this == FIRST;
 	}
 	/**
-		<P>Is this {@code ReplacedInEachInput} equal to {@code MATCHES}?.</P>
+		<p>Is this {@code ReplacedInEachInput} equal to {@code MATCHES}?.</p>
 
-		@return  <CODE>this == {@link #MATCHES}</CODE>
+		@return  <code>this == {@link #MATCHES}</code>
 		@see  #isFirst()
 	 **/
 	public final boolean isMatches()  {
 		return  this == MATCHES;
 	}
 	/**
-		<P>Is this {@code ReplacedInEachInput} equal to {@code LOOKING_AT}?.</P>
+		<p>Is this {@code ReplacedInEachInput} equal to {@code LOOKING_AT}?.</p>
 
-		@return  <CODE>this == {@link #LOOKING_AT}</CODE>
+		@return  <code>this == {@link #LOOKING_AT}</code>
 		@see  #isFirst()
 	 **/
 	public final boolean isLookingAt()  {
 		return  this == LOOKING_AT;
 	}
 	/**
-		<P>Is this {@code ReplacedInEachInput} equal to {@code MATCH_NUMBERS}?.</P>
+		<p>Is this {@code ReplacedInEachInput} equal to {@code MATCH_NUMBERS}?.</p>
 
-		@return  <CODE>this == {@link #MATCH_NUMBERS}</CODE>
+		@return  <code>this == {@link #MATCH_NUMBERS}</code>
 		@see  #isFirst()
 	 **/
 	public final boolean isMatchNumbers()  {
 		return  this == MATCH_NUMBERS;
 	}
 	/**
-		<P>Is this {@code ReplacedInEachInput} equal to {@code MATCH_NUMBERS}?.</P>
+		<p>Is this {@code ReplacedInEachInput} equal to {@code MATCH_NUMBERS}?.</p>
 
-		@return  <CODE>this == {@link #ALL}</CODE>
+		@return  <code>this == {@link #ALL}</code>
 		@see  #isFirst()
 	 **/
 	public final boolean isAll()  {
 		return  this == ALL;
 	}
 	/**
-		<P>Is this {@code ReplacedInEachInput} equal to {@code UNTIL}?.</P>
+		<p>Is this {@code ReplacedInEachInput} equal to {@code UNTIL}?.</p>
 
-		@return  <CODE>this == {@link #UNTIL}</CODE>
+		@return  <code>this == {@link #UNTIL}</code>
 		@see  #isFirst()
 	 **/
 	public final boolean isUntil()  {
 		return  this == UNTIL;
 	}
 	/**
-		<P>If an <CODE>ReplacedInEachInput</CODE> is not a required value, crash.</P>
+		<p>If an <code>ReplacedInEachInput</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</code></p>
 		@see  #crashIfForbiddenValue(ReplacedInEachInput, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(ReplacedInEachInput rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
 	}
 	/**
-		<P>If an <CODE>ReplacedInEachInput</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>ReplacedInEachInput</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, bad_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, bad_value, this_enumsVarName, xtra_errInfo)</code></p>
 		@see  #crashIfNotRequiredValue(ReplacedInEachInput, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(ReplacedInEachInput bad_value, String this_enumsVarName, Object xtra_errInfo)  {

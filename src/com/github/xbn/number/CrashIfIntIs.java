@@ -16,10 +16,10 @@ package  com.github.xbn.number;
 	import  com.github.xbn.lang.IllegalArgumentStateException;
 	import  static com.github.xbn.lang.CrashIfBase.*;
 /**
-	<P>Crash if an int is less or greater than another number.</P>
+	<p>Crash if an int is less or greater than another number.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfIntIs  {//extends CrashIfObject  {
 	public static final void lessThanZero(int num, String num_name, Object xtra_errInfo)  {
@@ -37,7 +37,7 @@ public class CrashIfIntIs  {//extends CrashIfObject  {
 		}
 	}
 	/*
-		<P>If a minimum number is greater than a maximum, crash.</P>
+		<p>If a minimum number is greater than a maximum, crash.</p>
 
 		@param  num  The int to test.
 		@param  max  The maximum bound.

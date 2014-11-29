@@ -17,10 +17,10 @@ package  com.github.xbn.testdev.ant;
 	import  org.apache.tools.ant.BuildException;
 
 /**
-	<P>Within a string, replace all instances of a 'what' string with a 'with' string, placing the result into a property. This only does a single pass through.</P>
+	<p>Within a string, replace all instances of a 'what' string with a 'with' string, placing the result into a property. This only does a single pass through.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ATPropFromRplc extends Task  {
 	private String sString = null;
@@ -29,36 +29,36 @@ public class ATPropFromRplc extends Task  {
 	private String sProperty = null;
 
 	/**
-		<P>Create a ATPropFromRplc. This does nothing.</P>
+		<p>Create a ATPropFromRplc. This does nothing.</p>
 	 **/
 	public ATPropFromRplc()  {
 	}
 	/**
-		<P>Set the name of the property to put the result in.</P>
+		<p>Set the name of the property to put the result in.</p>
 	 **/
 	public void setProperty(String prop_name)  {
 		sProperty = prop_name;
 	}
 	/**
-		<P>The string in which the replacements should occur.</P>
+		<p>The string in which the replacements should occur.</p>
 	 **/
 	public void setString(String to_replace)  {
 		sString = to_replace;
 	}
 	/**
-		<P>The 'what' string to search for.</P>
+		<p>The 'what' string to search for.</p>
 	 **/
 	public void setWhat(String find_what)  {
 		sWhat = find_what;
 	}
 	/**
-		<P>The 'with' string to replace it (the 'what' string) with.</P>
+		<p>The 'with' string to replace it (the 'what' string) with.</p>
 	 **/
 	public void setWith(String rplc_with)  {
 		sWith = rplc_with;
 	}
 	/**
-		<P>Do it. Uh huh. Oh yeah.</P>
+		<p>Do it. Uh huh. Oh yeah.</p>
 	 **/
 	public void execute() throws BuildException  {
 		//This can't be dependent on any xbn code, because Ant

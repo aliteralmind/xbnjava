@@ -20,17 +20,17 @@ package  com.github.xbn.experimental.listify;
 	import  com.github.xbn.util.copyval.ValueCopier;
 	import  com.github.xbn.lang.Copyable;
 /**
-	<P>For adapting something into a {@code java.util.List} of <I>anything</I>. The primary purpose of listifiers is reusable code: Any code written for a list, can also be used by a {@code Listify}, and therefore by <I>anything</I>. The secondary purpose is for transforming the raw objects to different objects and to different types.</P>
+	<p>For adapting something into a {@code java.util.List} of <i>anything</i>. The primary purpose of listifiers is reusable code: Any code written for a list, can also be used by a {@code Listify}, and therefore by <i>anything</i>. The secondary purpose is for transforming the raw objects to different objects and to different types.</p>
  **/
 public interface Listify<E> extends Collection<E>, Copyable  {
 	/**
-		<P>The underlying, &quot;raw&quot; object. If it contains elements, they are called the &quot;raw&quot; elements.</P>
+		<p>The underlying, &quot;raw&quot; object. If it contains elements, they are called the &quot;raw&quot; elements.</p>
 
 		@see  #get(int) get(i)
 	 **/
 	Object getRawObject();
 	/**
-		<P>Can elements be added or removed from the raw object?.</P>
+		<p>Can elements be added or removed from the raw object?.</p>
 
 		@return  {@code true}  Elements may be removed or added.
  		@see  ListifyComposer#clear()
@@ -38,26 +38,26 @@ public interface Listify<E> extends Collection<E>, Copyable  {
  		@see  ListifyComposer#removeAll(Collection) ListifyComposer#removeAll(cll)
  		@see  ListifyComposer#addAll(Collection) ListifyComposer#addAll(cll)
  		@see  ListifyComposer#remove(Object) ListifyComposer#remove(o)
- 		@see   <CODE><A HREF="ListifyComposer.html"><I>[ListifyComposer]</I></A>.<!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="ListifyComposer.html#add(E)">add</A>(E)</CODE>
+ 		@see   <code><a href="ListifyComposer.html"><i>[ListifyComposer]</i></a>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="ListifyComposer.html#add(E)">add</a>(E)</code>
  	 **/
 	boolean isAddRemovable();
 	/**
-		<P>For creating initialized arrays of type {@code E}, and if {@code E} is a primitive wrapper-type, an initialized primitive array. This is required in order to create new arrays of a generic type (type {@code E}).</P>
+		<p>For creating initialized arrays of type {@code E}, and if {@code E} is a primitive wrapper-type, an initialized primitive array. This is required in order to create new arrays of a generic type (type {@code E}).</p>
 	 **/
 	ArrayHelperBase<E> getArrayHelper();
 	/**
-		<P>For duplicating virtual elements, when possible.</P>
+		<p>For duplicating virtual elements, when possible.</p>
 	 **/
 	ValueCopier<E> getValueCopier();
 	/**
-		<P>Get all virtual elements in a new array of {@code E}.</P>
+		<p>Get all virtual elements in a new array of {@code E}.</p>
 
-		@param  nnull  If the <A HREF="#getRawObject()">raw object</A> is {@code null}, and this parameter is<UL>
-			<LI>non-{@code null}: crash ({@code is_nullCntrOk} is the name of the function calling this one)</LI>
-			<LI>{@code null}: <I><B>return</B></I> {@code null}</LI>
-		</UL>.
+		@param  nnull  If the <a href="#getRawObject()">raw object</a> is {@code null}, and this parameter is<ul>
+			<li>non-{@code null}: crash ({@code is_nullCntrOk} is the name of the function calling this one)</li>
+			<li>{@code null}: <i><b>return</b></i> {@code null}</li>
+		</ul>.
 		@param  do_copy  If {@code true}, then each element is also duplicated. If {@code false} the returned array refers to the original elements.
-		@exception  IllegalStateException  If {@code do_copy} is {@code true} and <CODE>{@link #getValueCopier() getValueCopier}().{@link com.github.xbn.util.copyval.ValueCopier#isValueCopyable() isValueCopyable}()</CODE> is {@code false}.
+		@exception  IllegalStateException  If {@code do_copy} is {@code true} and <code>{@link #getValueCopier() getValueCopier}().{@link com.github.xbn.util.copyval.ValueCopier#isValueCopyable() isValueCopyable}()</code> is {@code false}.
 		@see  com.github.xbn.array.IndexableUtil#crashIfContainerIsNullAndThatIsBad(boolean, boolean) CrashIfObject#crashIfContainerIsNullAndThatIsBad(s,s)
 		@see  #getEListCopyOrNull(NullContainer, CopyElements) getEListCopyOrNull(nci,dce)
 		@see  #getObjectArrayOrNull(NullContainer, CopyElements) getObjectArrayOrNull(nci,dce)
@@ -67,44 +67,44 @@ public interface Listify<E> extends Collection<E>, Copyable  {
 	 **/
 	E[] getEArrayCopyOrNull(NullContainer nnull, CopyElements do_copy);
 	/**
-		<P>Get all virtual elements in a new list of {@code E}.</P>
+		<p>Get all virtual elements in a new list of {@code E}.</p>
 
 		@see  #getEArrayCopyOrNull(NullContainer, CopyElements) getEArrayCopyOrNull(nci,dce)
 	 **/
 	List<E> getEListCopyOrNull(NullContainer nnull, CopyElements do_copy);
 	/**
-		<P>Get all virtual elements in a new array of objects.</P>
+		<p>Get all virtual elements in a new array of objects.</p>
 
 		@see  #getEArrayCopyOrNull(NullContainer, CopyElements) getEArrayCopyOrNull(nci,dce)
 	 **/
 	Object[] getObjectArrayOrNull(NullContainer nnull, CopyElements do_copy);
 	/**
-		<P>Get all virtual elements in a new array of strings.</P>
+		<p>Get all virtual elements in a new array of strings.</p>
 
 		@see  #getEArrayCopyOrNull(NullContainer, CopyElements) getEArrayCopyOrNull(nci,dce)
 	 **/
 	String[] getStringArrayOrNull(NullContainer nnull, CopyElements do_copy);
 	/**
-		<P>Get all virtual elements in a new array of objects.</P>
+		<p>Get all virtual elements in a new array of objects.</p>
 
 		@see  #getEArrayCopyOrNull(NullContainer, CopyElements) getEArrayCopyOrNull(nci,dce)
 	 **/
 	List<Object> getObjectListOrNull(NullContainer nnull, CopyElements do_copy);
 	/**
-		<P>Get all virtual elements in a new array of strings.</P>
+		<p>Get all virtual elements in a new array of strings.</p>
 
 		@see  #getEArrayCopyOrNull(NullContainer, CopyElements) getEArrayCopyOrNull(nci,dce)
 	 **/
 	List<String> getStringListOrNull(NullContainer nnull, CopyElements do_copy);
 	/**
-		<P>The number of virtual elements in this listifier.</P>
+		<p>The number of virtual elements in this listifier.</p>
 
 		@exception  NullPointerException  If {@code getRawObject()} is {@code null}.
 	 **/
 	@Override
 	int size();
 	/**
-		<P>Get a virtual element. By definition, virtual elements are of type {@code E}. They may or may not be the same type as those in {@link #getRawObject() getRawObject}{@code ()}--assuming that the raw object is even of a type that potentially contains elements.</P>
+		<p>Get a virtual element. By definition, virtual elements are of type {@code E}. They may or may not be the same type as those in {@link #getRawObject() getRawObject}{@code ()}--assuming that the raw object is even of a type that potentially contains elements.</p>
 
 		@param  index  The index of the element to retrieve. Must be valid given {@link #size() size}{@code ()}.
 		@exception  NullPointerException  If the underlying object is {@code null}.
@@ -112,56 +112,56 @@ public interface Listify<E> extends Collection<E>, Copyable  {
 	 **/
 	E get(int index);
 	/**
-		<P>Is an element {@code null}?.</P>
+		<p>Is an element {@code null}?.</p>
 
-		@return  <CODE>({@link #get(int) get}(index) == null)</CODE>
+		@return  <code>({@link #get(int) get}(index) == null)</code>
 	 **/
 	boolean isNull(int index);
 	/**
-		<P>Duplicate an element.</P>
+		<p>Duplicate an element.</p>
 
 		@param  index  The index of the element to duplicate. Must be valid given {@link #size() size}{@code ()}.
-		@exception  IllegalStateException  If <CODE>{@link #getValueCopier() getValueCopier}().{@link com.github.xbn.util.copyval.ValueCopier#isValueCopyable() isValueCopyable}()</CODE> is {@code false}.
+		@exception  IllegalStateException  If <code>{@link #getValueCopier() getValueCopier}().{@link com.github.xbn.util.copyval.ValueCopier#isValueCopyable() isValueCopyable}()</code> is {@code false}.
 	 **/
 	E getCopy(int index);
 	/**
-		<P>Get an element as an object.</P>
+		<p>Get an element as an object.</p>
 
-		@return  <CODE>(Object){@link #get(int) get}(index)</CODE>
+		@return  <code>(Object){@link #get(int) get}(index)</code>
 	 **/
 	Object getObject(int index);
 	/**
-		<P>Get an element as a string.</P>
+		<p>Get an element as a string.</p>
 
-		@return  If <CODE>{@link #isNull(int) isNull}(index)</CODE> is<UL>
-			<LI>{@code true}: {@code null}</LI>
-			<LI>{@code false}: {@link #get(int) get}{@code (index)}</LI>
-		</UL>
+		@return  If <code>{@link #isNull(int) isNull}(index)</code> is<ul>
+			<li>{@code true}: {@code null}</li>
+			<li>{@code false}: {@link #get(int) get}{@code (index)}</li>
+		</ul>
 	 **/
 	String getString(int index);
 	/**
-		<P>Does the collection contain an equivalent object?--this considers {@code null} as equal to {@code null}.</P>
+		<p>Does the collection contain an equivalent object?--this considers {@code null} as equal to {@code null}.</p>
 
-		@return  {@code true} If<UL>
-			<LI>{@code obj} is {@code null}, and there is at least one {@code null} element in this collection.</LI>
-			<LI>{@code obj} is non-{@code null}, and there is an equivalent object in this collection, such that <CODE>obj.equals(<I>[element]</I>)</CODE> is true.</LI>
-		</UL>
+		@return  {@code true} If<ul>
+			<li>{@code obj} is {@code null}, and there is at least one {@code null} element in this collection.</li>
+			<li>{@code obj} is non-{@code null}, and there is an equivalent object in this collection, such that <code>obj.equals(<i>[element]</i>)</code> is true.</li>
+		</ul>
 		@exception  NullPointerException  If ...
 
 		@see  #containsAll_nullOk(Collection) containsAll_nullOk(cll)
 	 **/
 	boolean contains_nullOk(Object obj);
 	/**
-		<P>Is every object in a collection in <I>{@code this}</I> collection?--this considers {@code null} as equal to {@code null}.</P>
+		<p>Is every object in a collection in <i>{@code this}</i> collection?--this considers {@code null} as equal to {@code null}.</p>
 
-		<P>For each element in {@code coll}, this calls <CODE>{@link #contains_nullOk(Object) contains_nullOk}(<I>[element]</I>)</CODE></P>
+		<p>For each element in {@code coll}, this calls <code>{@link #contains_nullOk(Object) contains_nullOk}(<i>[element]</i>)</code></p>
 
 		@return  {@code true} If every call to {@code contains_nullOk(o)} is {@code true}.
 		@exception  NullPointerException  ...
 	 **/
 	boolean containsAll_nullOk(Collection<?> coll);
 	/**
-		<P>Duplicate this {@code Listify} that is a complete (full-and-deep) copy, with the exception of the {@code getRawObject()}, which is a reference to the original. See {@link #getRawObject() getRawObject}{@code ()}.</P>
+		<p>Duplicate this {@code Listify} that is a complete (full-and-deep) copy, with the exception of the {@code getRawObject()}, which is a reference to the original. See {@link #getRawObject() getRawObject}{@code ()}.</p>
 
 		@return  A non-{@code null} duplicate of this {@code Listify}.
 	 **/

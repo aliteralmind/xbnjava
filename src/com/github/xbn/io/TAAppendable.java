@@ -18,10 +18,10 @@ package  com.github.xbn.io;
 	import  java.io.PrintStream;
 	import  java.io.IOException;
 /**
-	<P>Immutable {@code TextAppender} for {@code Appendable}-s. See {@link com.github.xbn.io.TAAppendMutable TAAppendMutable}.</P>
+	<p>Immutable {@code TextAppender} for {@code Appendable}-s. See {@link com.github.xbn.io.TAAppendMutable TAAppendMutable}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class TAAppendable<A extends Appendable> extends TextAppender  {
    private final Flushable  flbl;
@@ -70,9 +70,9 @@ public class TAAppendable<A extends Appendable> extends TextAppender  {
 		return  getAppendable().toString();
 	}
 	/**
-		<P>Get a reference to this {@code TAAppendable}.</P>
+		<p>Get a reference to this {@code TAAppendable}.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public TAAppendable<A> getObjectCopy()  {
 		return  this;

@@ -15,9 +15,9 @@
 package  com.github.xbn.util.lock;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-	<P>For classes needing to implement {@code Lockable}, that cannot extend {@code AbstractLockable}.</P>
+	<p>For classes needing to implement {@code Lockable}, that cannot extend {@code AbstractLockable}.</p>
 
-	<H3>Implementation template (view source)</H3>
+	<h3>Implementation template (view source)</h3>
  **/
 public class LockableComposer  {
 	//state
@@ -25,12 +25,12 @@ public class LockableComposer  {
 		private boolean bUnlkbl = false;
 
 	/**
-		<P>Create a new {@code LockableComposer}.</P>
+		<p>Create a new {@code LockableComposer}.</p>
 
-		<P>This<OL>
-			<LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code is_unlockable}.</LI>
-			<LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code is_unlockable}.</li>
+			<li>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</li>
+		</ol></p>
 
 		@see  #LockableComposer(boolean, LockableComposer) this(b,lc)
 		@see  #LockableComposer(Lockable) LockableComposer(lkbl)
@@ -40,12 +40,12 @@ public class LockableComposer  {
 		bLkd = false;
 	}
 	/**
-		<P>Create a new {@code LockableComposer} from a {@code Lockable} object.</P>
+		<p>Create a new {@code LockableComposer} from a {@code Lockable} object.</p>
 
-		<P>This<OL>
-			<LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</LI>
-			<LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</li>
+			<li>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</li>
+		</ol></p>
 		@see  #LockableComposer(boolean) this(b)
 	 **/
 	public LockableComposer(boolean ignored, LockableComposer to_copy)  {
@@ -59,12 +59,12 @@ public class LockableComposer  {
 		zlockLB(false);
 	}
 	/**
-		<P>Create a new {@code LockableComposer} from a {@code Lockable} object.</P>
+		<p>Create a new {@code LockableComposer} from a {@code Lockable} object.</p>
 
-		<P>This<OL>
-			<LI>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</LI>
-			<LI>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</li>
+			<li>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</li>
+		</ol></p>
 		@see  #LockableComposer(boolean) this(b)
 	 **/
 	public LockableComposer(Lockable to_copy)  {
@@ -78,7 +78,7 @@ public class LockableComposer  {
 		zlockLB(false);
 	}
 	/**
-		<P>Can it be unlocked?.</P>
+		<p>Can it be unlocked?.</p>
 
 		@return  {@code true}  If it is safe to call {@link #unlock() unlock}{@code ()}
 		@see  #LockableComposer(boolean) this(b)
@@ -88,12 +88,12 @@ public class LockableComposer  {
 		return  bUnlkbl;
 	}
 	/**
-		<P>Is it locked?.</P>
+		<p>Is it locked?.</p>
 
-		@return  <UL>
-			<LI><B>{@code true}</B> If {@link #lock(boolean) lock}{@code (b)} was called (more recently than {@link #forceUnlock_4prot() forceUnlock_4prot}{@code ()}).</LI>
-			<LI><B>{@code false}</B> If otherwise.</LI>
-		</UL>
+		@return  <ul>
+			<li><b>{@code true}</b> If {@link #lock(boolean) lock}{@code (b)} was called (more recently than {@link #forceUnlock_4prot() forceUnlock_4prot}{@code ()}).</li>
+			<li><b>{@code false}</b> If otherwise.</li>
+		</ul>
 	 **/
 	public boolean isLocked()  {
 		return  bLkd;
@@ -112,13 +112,13 @@ public class LockableComposer  {
 		bLkd = do_lock;
 	}
 	/**
-		<P>Crash if this {@code LockableComposer} is locked.</P>
+		<p>Crash if this {@code LockableComposer} is locked.</p>
 
 		@exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code true}.
 
 		@see
-			<LI>{@link #ciNotLocked() ciNotLocked}{@code ()}</LI>
-		</UL>
+			<li>{@link #ciNotLocked() ciNotLocked}{@code ()}</li>
+		</ul>
 	 **/
 	public void ciLocked_4prot()  {
 		if(isLocked())  {
@@ -126,7 +126,7 @@ public class LockableComposer  {
 		}
 	}
 	/**
-		<P>Crash if this {@code LockableComposer} is unlocked.</P>
+		<p>Crash if this {@code LockableComposer} is unlocked.</p>
 
 		@exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code false}.
 		@see  #ciLocked(String) ciLocked(s)
@@ -137,9 +137,9 @@ public class LockableComposer  {
 		}
 	}
 	/**
-		<P>Forces {@code isLocked()} to be {@code false}, regardless the value of {@code isUnlockable()}.</P>
+		<p>Forces {@code isLocked()} to be {@code false}, regardless the value of {@code isUnlockable()}.</p>
 
-		<P>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</P>
+		<p>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</p>
 	 **/
 	public void forceUnlock_4prot()  {
 		bLkd = false;

@@ -17,10 +17,10 @@ package  com.github.xbn.array.helper;
 	import  java.util.Iterator;
 
 /**
-	<P>Base class for {@code ArrayHelper} and {@code PrimitiveArrayHelper}.</P>
+	<p>Base class for {@code ArrayHelper} and {@code PrimitiveArrayHelper}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface ArrayHelperBase<E>  {
 	Class<?> getStaticClass();
@@ -28,17 +28,17 @@ public interface ArrayHelperBase<E>  {
 	Object[] getObjectArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad);
 	String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad);
 	/**
-		<P>Get a new iterator to step through the array's elements.</P>
+		<p>Get a new iterator to step through the array's elements.</p>
 	 **/
 	Iterator<E> getIterator(Object obj_thatIsAnArray, String array_name);
 	/**
-		<P>Get a new array of {@code E}, where each element is {@code null}. Use this in lieu of creating generic arrays, such as {@code new E[iLength]}, which is illegal.</P>
+		<p>Get a new array of {@code E}, where each element is {@code null}. Use this in lieu of creating generic arrays, such as {@code new E[iLength]}, which is illegal.</p>
 
 		@see  #getEmpty()
 	 **/
 	E[] getInitialized(int length);
 	/**
-		<P>Get an empty array of {@code E}. This returned array is recommended to be {@code static final}.</P>
+		<p>Get an empty array of {@code E}. This returned array is recommended to be {@code static final}.</p>
 
 		@see  #getInitialized(int) getInitialized(int)
 	 **/

@@ -15,31 +15,31 @@
 package  com.github.xbn.regexutil;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Should textual-case be ignored?.</P>
+   <p>Should textual-case be ignored?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum IgnoreCase  {
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #NO
       @see  #isYes()
     **/
    YES,
    /**
-      <P>YYY.</P>
+      <p>YYY.</p>
 
       @see  #YES
       @see  #isNo()
     **/
    NO;
    /**
-      <P>Is this {@code IgnoreCase} equal to {@code YES}?.</P>
+      <p>Is this {@code IgnoreCase} equal to {@code YES}?.</p>
 
-      @return  <CODE>(this == {@link #YES})</CODE>
+      @return  <code>(this == {@link #YES})</code>
 
       @see  #isNo()
     **/
@@ -47,9 +47,9 @@ public enum IgnoreCase  {
       return  (this == YES);
    }
    /**
-      <P>Is this {@code IgnoreCase} equal to {@code NO}?.</P>
+      <p>Is this {@code IgnoreCase} equal to {@code NO}?.</p>
 
-      @return  <CODE>(this == {@link #NO})</CODE>
+      @return  <code>(this == {@link #NO})</code>
       @see  #isYes()
     **/
    public final boolean isNo()  {
@@ -70,9 +70,9 @@ public enum IgnoreCase  {
 		}
 	}
 	/**
-		<P>Return {@code IgnoreCase.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</P>
+		<p>Return {@code IgnoreCase.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
 
-		@return  <CODE>(b ? {@link #YES} : {@link #NO})</CODE>
+		@return  <code>(b ? {@link #YES} : {@link #NO})</code>
 	 **/
 	public static final IgnoreCase getForBoolean(boolean b)  {
 		return  (b ? YES : NO);

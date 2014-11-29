@@ -18,17 +18,17 @@ package  com.github.xbn.util;
 	import  com.github.xbn.lang.CrashIfObject;
 	import  java.util.Comparator;
 /**
-	<P>{@code Comparator} that uses the {@code Comparable} object itself to do the comparison.</P>
+	<p>{@code Comparator} that uses the {@code Comparable} object itself to do the comparison.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SelfComparator<M extends Comparable<? super M>> implements Comparator<M>, Copyable  {
 	private boolean bAsc = false;
 	public SelfComparator()  {
 	}
 	/**
-		<P>Create a new {@code SelfComparator}.</P>
+		<p>Create a new {@code SelfComparator}.</p>
 
 		@param  is_ascending  If {@code true}, then the comparator requires ascending order. If {@code false}, descending (see {@link #compare(M, M) compare(M,M)}). Get with {@link #isAscending() isAscending}{@code ()}.
 
@@ -38,11 +38,11 @@ public class SelfComparator<M extends Comparable<? super M>> implements Comparat
 		bAsc = is_ascending;
 	}
 	/**
-		<P>Create a new {@code SelfComparator}, as a duplicate of another.</P>
+		<p>Create a new {@code SelfComparator}, as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Sets {@link #isAscending() isAscending}{@code ()} to {@code to_copy.isAscending()}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Sets {@link #isAscending() isAscending}{@code ()} to {@code to_copy.isAscending()}</li>
+		</ol></p>
 		@see  #SelfComparator(boolean) this(b)
 	 **/
 	public SelfComparator(SelfComparator<M> to_copy)  {
@@ -55,10 +55,10 @@ public class SelfComparator<M extends Comparable<? super M>> implements Comparat
 	/**
 		@param  o_1  May not be {@code null}.
 		@param  o_2  May not be {@code null}
-		@return  If {@link #isAscending() isAscending}{@code ()} is<UL>
-			<LI>{@code true}: {@code o_1.compareTo(o_2)}</LI>
-			<LI>{@code false}: {@code (o_1.compareTo(o_2) * -1)}</LI>
-		</UL>
+		@return  If {@link #isAscending() isAscending}{@code ()} is<ul>
+			<li>{@code true}: {@code o_1.compareTo(o_2)}</li>
+			<li>{@code false}: {@code (o_1.compareTo(o_2) * -1)}</li>
+		</ul>
 	 **/
 	public int compare(M o_1, M o_2)  {
 		int icmpr = -1;
@@ -114,7 +114,7 @@ public class SelfComparator<M extends Comparable<? super M>> implements Comparat
 		return  isAscending() == selfCmpr.isAscending();
 	}
 	/**
-		<P>Should the comparison be ordered ascending?.</P>
+		<p>Should the comparison be ordered ascending?.</p>
 
 		@see  #SelfComparator(boolean) this(b)
 	 **/
@@ -122,9 +122,9 @@ public class SelfComparator<M extends Comparable<? super M>> implements Comparat
 		return  bAsc;
 	}
 	/**
-		<P>Duplicate this {@code SelfComparator}.</P>
+		<p>Duplicate this {@code SelfComparator}.</p>
 
-		@return  <CODE>(new {@link #SelfComparator(SelfComparator) SelfComparator}&lt;M&gt;(this))</CODE>
+		@return  <code>(new {@link #SelfComparator(SelfComparator) SelfComparator}&lt;M&gt;(this))</code>
 	 **/
 	public SelfComparator<M> getObjectCopy()  {
 		return  (new SelfComparator<M>(this));

@@ -19,12 +19,12 @@ package  com.github.xbn.examples.io;
 	import  java.io.PrintWriter;
 	import  com.github.xbn.io.NewPrintWriterToFile;
 /**
-   <P>Demonstration of {@code com.github.xbn.io.}{@link com.github.xbn.io.NewPrintWriterToFile}.</P>
+   <p>Demonstration of {@code com.github.xbn.io.}{@link com.github.xbn.io.NewPrintWriterToFile}.</p>
 
-   <P>{@code java com.github.xbn.examples.io.NewPrintWriterToFileXmpl NewPrintWriterToFileXmpl.txt}</P>
+   <p>{@code java com.github.xbn.examples.io.NewPrintWriterToFileXmpl NewPrintWriterToFileXmpl.txt}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class NewPrintWriterToFileXmpl  {

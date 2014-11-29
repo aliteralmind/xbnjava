@@ -20,46 +20,46 @@ package  com.github.xbn.analyze.validate;
 	import  com.github.xbn.text.Trim;
 	import  com.github.xbn.text.StringUtilBase;
 /**
-	<P>A {@code ValueValidator} that only checks for {@code null}-ness. This is useful in and of itself, but is mostly intended as a base-class for custom validators.</P>
+	<p>A {@code ValueValidator} that only checks for {@code null}-ness. This is useful in and of itself, but is mostly intended as a base-class for custom validators.</p>
 
-	<H3>Implementation</H3>
+	<h3>Implementation</h3>
 
-	<P>At a minimum, the following functions must be overridden:<UL>
-		<LI>{@link #appendRules(StringBuilder) appendRules}{@code (sd)}</LI>
-		<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#doesFollowRulesPreInvert(O)">doesFollowRulesPreInvert</A>(O)</CODE></LI>
-		<LI>{@link #getRuleTypeFromFieldsVVN(ValueValidator_Fieldable) getRuleTypeFromFieldsVVN}{@code (fieldable)}</LI>
-	</UL>Commonly, the super-version of these functions (in <I>this</I> class, {@code NullnessValidator}) will be called by sub-versions.</P>
+	<p>At a minimum, the following functions must be overridden:<ul>
+		<li>{@link #appendRules(StringBuilder) appendRules}{@code (sd)}</li>
+		<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#doesFollowRulesPreInvert(O)">doesFollowRulesPreInvert</a>(O)</code></li>
+		<li>{@link #getRuleTypeFromFieldsVVN(ValueValidator_Fieldable) getRuleTypeFromFieldsVVN}{@code (fieldable)}</li>
+	</ul>Commonly, the super-version of these functions (in <i>this</i> class, {@code NullnessValidator}) will be called by sub-versions.</p>
 
-	<P>Depending on the needs of sub-classes, it may also be necessary to override {@link #adjustForPostFilterReturnValue(boolean) adjustForPostFilterReturnValue}{@code (b)}.</P>
+	<p>Depending on the needs of sub-classes, it may also be necessary to override {@link #adjustForPostFilterReturnValue(boolean) adjustForPostFilterReturnValue}{@code (b)}.</p>
 
-	<A NAME="cfg"></A><H3>Builder configuration: {@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder configuration: {@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Convenience builders:</B> {@link com.github.xbn.analyze.validate.NewValueValidatorFor}</LI>
-		<LI><B>Basic:</B> <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#invert(boolean) invert}(b)</CODE>, <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) nullOk}(b)</CODE>, <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#reset() reset}()</CODE></LI>
-		<LI><B>Filter:</B> <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#unfiltered() unfiltered}()</CODE>, <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#filter(ValidResultFilter) filter}(vrf)</CODE></LI>
-		<LI><B>Other:</B> <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE>, <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</CODE>, <CODE>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</CODE></LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Convenience builders:</b> {@link com.github.xbn.analyze.validate.NewValueValidatorFor}</li>
+		<li><b>Basic:</b> <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#invert(boolean) invert}(b)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) nullOk}(b)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#reset() reset}()</code></li>
+		<li><b>Filter:</b> <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#unfiltered() unfiltered}()</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#filter(ValidResultFilter) filter}(vrf)</code></li>
+		<li><b>Other:</b> <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</code></li>
+	</ul></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NullnessValidator<O> extends AbstractValidator implements ValueValidator<O>  {
 	private final boolean isNullOk;
 	/**
-		<P>Create a new instance from its fieldable.</P>
+		<p>Create a new instance from its fieldable.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>this(NullnessValidator.{@link #getRuleTypeFromFieldsVVN(ValueValidator_Fieldable) getRuleTypeFromFieldsVVN}(fieldable), fieldable)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>this(NullnessValidator.{@link #getRuleTypeFromFieldsVVN(ValueValidator_Fieldable) getRuleTypeFromFieldsVVN}(fieldable), fieldable)</code></p>
 	 **/
 	public NullnessValidator(ValueValidator_Fieldable fieldable)  {
 		this(NullnessValidator.getRuleTypeFromFieldsVVN(fieldable), fieldable);
 	}
 	/**
-		<P>Create a new instance from its rule-type and fieldable.</P>
+		<p>Create a new instance from its rule-type and fieldable.</p>
 
 		@param  rule_type  Defines the restrictiveness of this instance. May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.AbstractValidator#getRuleType() getRuleType}{@code ()}*.
-		@param  fieldable  May not be {@code null}, and its fields must conform to the restrictions as documented in the <A HREF="#cfg">buider's setter functions</A>.
+		@param  fieldable  May not be {@code null}, and its fields must conform to the restrictions as documented in the <a href="#cfg">buider's setter functions</a>.
 		@see  #NullnessValidator(ValueValidator_Fieldable)
 		@see  #NullnessValidator(ValueValidator)
 	 **/
@@ -68,7 +68,7 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 		isNullOk = fieldable.isNullOk();
 	}
 	/**
-		<P>Create a new instance from a <CODE>ValueValidator</CODE>.</P>
+		<p>Create a new instance from a <code>ValueValidator</code>.</p>
 
 		@see  #NullnessValidator(RuleType, ValueValidator_Fieldable)
 	 **/
@@ -77,14 +77,14 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 		isNullOk = validator.isNullOk();
 	}
 	/**
-		<P>Is the value acceptable?.</P>
+		<p>Is the value acceptable?.</p>
 
-		<P>Steps taken:<OL>
-			<LI>If the {@link com.github.xbn.analyze.validate.ValidResultFilter#getPreAction() pre-filter} &nbsp; {@link com.github.xbn.analyze.validate.FilterPreAction#isReturn() returns a value}: This <I><B>returns</B></I> {@link FilterPreAction#getReturnValue() that value} (values returned by the filter are never {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}).</LI>
-			<LI>Otherwise, {@code to_validate} is <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#doesFollowRulesPreInvert(O)">validated</A> against the <I>un-inverted</I> rules, and that result is inverted if necessary.</LI>
-			<LI>If the {@link com.github.xbn.analyze.validate.ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-filter} leaves that value alone (because it is either {@link com.github.xbn.analyze.validate.FilterAfterValue#UNCHANGED UNCHANGED}, or equal to the follows-the-rules finding), this <I><B>returns</B></I> it.</LI>
-			<LI>Otherwise this {@link #adjustForPostFilterReturnValue(boolean) makes adjustments}, and then <I><B>returns</B></I> it (un-inverted).</LI>
-		</OL></P>
+		<p>Steps taken:<ol>
+			<li>If the {@link com.github.xbn.analyze.validate.ValidResultFilter#getPreAction() pre-filter} &nbsp; {@link com.github.xbn.analyze.validate.FilterPreAction#isReturn() returns a value}: This <i><b>returns</b></i> {@link FilterPreAction#getReturnValue() that value} (values returned by the filter are never {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}).</li>
+			<li>Otherwise, {@code to_validate} is <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#doesFollowRulesPreInvert(O)">validated</a> against the <i>un-inverted</i> rules, and that result is inverted if necessary.</li>
+			<li>If the {@link com.github.xbn.analyze.validate.ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-filter} leaves that value alone (because it is either {@link com.github.xbn.analyze.validate.FilterAfterValue#UNCHANGED UNCHANGED}, or equal to the follows-the-rules finding), this <i><b>returns</b></i> it.</li>
+			<li>Otherwise this {@link #adjustForPostFilterReturnValue(boolean) makes adjustments}, and then <i><b>returns</b></i> it (un-inverted).</li>
+		</ol></p>
 
 		@see  com.github.xbn.analyze.Analyzer#getAnalyzedCount() Analyzer#getAnalyzedCount()
 		@see  com.github.xbn.analyze.validate.Validator#getValidCount() Validator#getValidCount()
@@ -142,18 +142,18 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 		return  bPostValid;
 	}
 	/**
-		<P>Adjusts internal state when the (post-inverted) <I>does-follow-the-rules</I> finding is overridden with a <I>different</I> post-filter value. This implementation of {@code adjustForPostFilterReturnValue(b)} does nothing. It must be overriden in sub-classes.</P>
+		<p>Adjusts internal state when the (post-inverted) <i>does-follow-the-rules</i> finding is overridden with a <i>different</i> post-filter value. This implementation of {@code adjustForPostFilterReturnValue(b)} does nothing. It must be overriden in sub-classes.</p>
 
-		<H3>Example</H3>
-<PRE>   bPreInvFollowsRules = <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#doesFollowRulesPreInvert(O)">doesFollowRulesPreInvert</A>(value);
+		<h3>Example</h3>
+<pre>   bPreInvFollowsRules = <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#doesFollowRulesPreInvert(O)">doesFollowRulesPreInvert</a>(value);
    boolean bFollowsRules = ({@link com.github.xbn.analyze.validate.Validator#doInvertRules() doInvertRules}() ? !bFollowsRules : bFollowsRules);
    {@link com.github.xbn.analyze.validate.FilterAfterValue} fpv = {@link com.github.xbn.analyze.validate.Validator#getFilter() getFilter}().{@link com.github.xbn.analyze.validate.ValidResultFilter#getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules}(bFollowsRules);
    boolean bPostValid = {@link com.github.xbn.analyze.validate.ValidResultFilterUtil}.{@link com.github.xbn.analyze.validate.ValidResultFilterUtil#getPostReturnValueFromInvertedRules(FilterAfterValue, boolean) getPostReturnValueFromInvertedRules}(fpv, bFollowsRules);
 
    if(bPostValid != bFollowsRules)  {
       adjustForPostFilterReturnValue(bPostValid);
-   }</PRE>
-		@param  isValid_fromPostFilter  The value from the post filter, which is <I>different</I> than that just-returned by {@code doesFollowRulesPreInvert(O)} (post-inversion).
+   }</pre>
+		@param  isValid_fromPostFilter  The value from the post filter, which is <i>different</i> than that just-returned by {@code doesFollowRulesPreInvert(O)} (post-inversion).
 	 **/
 	public void adjustForPostFilterReturnValue(boolean isValid_fromPostFilter)  {
 	}
@@ -164,18 +164,18 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 		}
 	}
 	/**
-		<P>Given the current invert-setting, is {@code null} an acceptable value?.</P>
+		<p>Given the current invert-setting, is {@code null} an acceptable value?.</p>
 
-		@return  <CODE>NullnessValidator.{@link #isNullOkGivenInvert(ValueValidator) isNullOkGivenInvert}(this)</CODE>
+		@return  <code>NullnessValidator.{@link #isNullOkGivenInvert(ValueValidator) isNullOkGivenInvert}(this)</code>
 	 **/
 	public boolean isNullOkGivenInvert()  {
 		return  NullnessValidator.isNullOkGivenInvert(this);
 	}
 	/**
-		<P>Given the current invert-setting, is {@code null} an acceptable value?.</P>
+		<p>Given the current invert-setting, is {@code null} an acceptable value?.</p>
 
 		@param  validator  May not be {@code null}.
-		@return  <CODE>(validator.{@link com.github.xbn.analyze.validate.Validator#doInvertRules() doInvertRules}()* ? !validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}()* : validator.isNullOk())</CODE>
+		@return  <code>(validator.{@link com.github.xbn.analyze.validate.Validator#doInvertRules() doInvertRules}()* ? !validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}()* : validator.isNullOk())</code>
 		@see  #isNullOkGivenInvert()
 		@see  #isImpossibleConsideringNullInvert(ValueValidator) isImpossibleConsideringNullInvert(vv)
 	 **/
@@ -187,10 +187,10 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 		}
 	}
 	/**
-		<P>Given the current invert and {@code null} settings, is impossible for a value to be valid?.</P>
+		<p>Given the current invert and {@code null} settings, is impossible for a value to be valid?.</p>
 
 		@param  validator  May not be {@code null}.
-		@return  <CODE>(validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}() &nbsp;&amp;&amp; &nbsp;validator.{@link #doInvertRules() doInvertRules}())</CODE>
+		@return  <code>(validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}() &nbsp;&amp;&amp; &nbsp;validator.{@link #doInvertRules() doInvertRules}())</code>
 	 **/
 	public static final <O> boolean isImpossibleConsideringNullInvert(ValueValidator<O> validator)  {
 		try  {
@@ -209,11 +209,11 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 		}
 	}
 	/**
-		<P>Are the rules followed?.</P>
+		<p>Are the rules followed?.</p>
 
 		@param  to_validate  The value to validate.
 		@return  {@code true}  If {@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() null is okay}, or the value is not {@code null}.
-		@see   <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="isValid(O)">isValid</A>(O)</CODE>
+		@see   <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="isValid(O)">isValid</a>(O)</code>
 	 **/
 	public boolean doesFollowRulesPreInvert(O to_validate)  {
 		if(isNullOk())  {
@@ -230,7 +230,7 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 		return  isNullOk;
 	}
 	/**
-	 	@return  <CODE>true</CODE> If <CODE>to_compareTo</CODE> is non-<CODE>null</CODE>, a <CODE>NullnessValidator</CODE>, and <CODE><A HREF="#areFieldsEqual(xbn.lang.NullnessValidator)">areFieldsEqual</A>((NullnessValidator)to_compareTo)</CODE> is <CODE>true</CODE>. <I>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</I>
+	 	@return  <code>true</code> If <code>to_compareTo</code> is non-<code>null</code>, a <code>NullnessValidator</code>, and <code><a href="#areFieldsEqual(xbn.lang.NullnessValidator)">areFieldsEqual</a>((NullnessValidator)to_compareTo)</code> is <code>true</code>. <i>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</i>
 	 **/
 	@Override
 	public boolean equals(Object to_compareTo)  {
@@ -259,16 +259,16 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
 //other...END
 //static...START
 	/**
-		<P>Get the rule-type from the fieldable instance. This must be overridden by sub-classes, which will likely call this function ({@code super.getRuleTypeFromFieldsVVN(fieldable)}) as their first line.</P>
+		<p>Get the rule-type from the fieldable instance. This must be overridden by sub-classes, which will likely call this function ({@code super.getRuleTypeFromFieldsVVN(fieldable)}) as their first line.</p>
 
 @return
-<PRE>
+<pre>
 is_nullOk  do_invert  Returns       Description
 ----------------    ------------  --------------
  true      true     IMPOSSIBLE
  true      false    UNRESTRICTED
  false     true     RESTRICTED    Non-null bad, null okay
- false     false    RESTRICTED    Non-null okay, null bad</PRE>
+ false     false    RESTRICTED    Non-null okay, null bad</pre>
  		@see  #NullnessValidator(ValueValidator_Fieldable) this(vv_f)
 	 **/
 	public static final RuleType getRuleTypeFromFieldsVVN(ValueValidator_Fieldable fieldable)  {
@@ -277,9 +277,9 @@ is_nullOk  do_invert  Returns       Description
 			:  RuleType.RESTRICTED);
 	}
 	/**
-		<P>Duplicate this <CODE>NullnessValidator</CODE>.</P>
+		<p>Duplicate this <code>NullnessValidator</code>.</p>
 
-		@return  <CODE>(new <A HREF="#NullnessValidator(NullnessValidator)">NullnessValidator</A>&lt;O&gt;(this))</CODE>
+		@return  <code>(new <a href="#NullnessValidator(NullnessValidator)">NullnessValidator</a>&lt;O&gt;(this))</code>
 	 **/
 	public NullnessValidator<O> getObjectCopy()  {
 		return  (new NullnessValidator<O>(this));

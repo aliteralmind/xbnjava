@@ -1,36 +1,36 @@
 package  com.github.xbn.examples.lang.composition;
 /**
-   <P>Analyzes something.</P>
+   <p>Analyzes something.</p>
    **/
 interface Analyzer  {
    boolean wasAnalyzed();
    int getAnalyzedCount();
    /**
-      <P>Sets {@code wasAnalyzed()} to {@code false}</P>
+      <p>Sets {@code wasAnalyzed()} to {@code false}</p>
       **/
    void resetState();
    /**
-      <P>Sets {@code getAnalyzedCount()} to {@code 0}</P>
+      <p>Sets {@code getAnalyzedCount()} to {@code 0}</p>
       **/
    void resetCounts();
 }
 /**
-   <P>Determines if <I>something</I> is valid or invalid.</P>
+   <p>Determines if <i>something</i> is valid or invalid.</p>
    **/
 interface Validator extends Analyzer  {
    boolean isValid();
    int getValidCount();
    /**
-      <P>Calls {@code super.resetState()}, and sets {@code isValid()} to {@code false}</P>
+      <p>Calls {@code super.resetState()}, and sets {@code isValid()} to {@code false}</p>
       **/
    void resetState();
    /**
-      <P>Calls {@code super.resetCounts()}, and sets {@code getValidCount()} to {@code 0}</P>
+      <p>Calls {@code super.resetCounts()}, and sets {@code getValidCount()} to {@code 0}</p>
       **/
    void resetCounts();
 }
 /**
-   <P>A {@code Validator} for a single object.</P>
+   <p>A {@code Validator} for a single object.</p>
    **/
 interface ValueValidator<O> extends Validator  {
    boolean isValid(O to_validate);
@@ -67,7 +67,7 @@ abstract class AbstractAnalyzer implements Analyzer  {
    }
 }
 /**
-  <P>Boolean enum</P>
+  <p>Boolean enum</p>
  **/
 enum Null {  OK, BAD;  };
 
@@ -111,7 +111,7 @@ abstract class AbstractValidator extends AbstractAnalyzer implements Validator  
 }
 
 /**
-   <P>A {@code ValueValidator} that only checks for {@code null}-ness.</P>
+   <p>A {@code ValueValidator} that only checks for {@code null}-ness.</p>
    **/
 class NullnessValidator<O> extends AbstractValidator implements ValueValidator<O>  {
    public NullnessValidator(Null nnull)  {

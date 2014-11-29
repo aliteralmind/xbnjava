@@ -20,21 +20,21 @@ package  com.github.xbn.text.padchop;
 	import  com.github.xbn.text.StringUtil;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>Pad a string on a either side with a specific pad-character.</P>
+	<p>Pad a string on a either side with a specific pad-character.</p>
 
 {@.codelet.and.out com.github.xbn.examples.text.padchop.PadStringXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.text.padchop.z.PadString_Cfg PadString_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.text.padchop.z.PadString_Cfg PadString_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Used by:</B> {@code <A HREF="VzblPadChop.html#cfg">VzblPadChop</A>}</LI>
-		<LI>{@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#goalLen(int) goalLen}{@code (i)}</LI>
-		<LI><B>Side:</B> {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#left() left}{@code ()}, {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#right() right}{@code ()}</LI>
-		<LI><B>Character to pad with:</B> {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#withSpace() withSpace}{@code ()}, {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#with(char) with}{@code (c)}</LI>
-	</UL>
+	<p><ul>
+		<li><b>Used by:</b> {@code <a href="VzblPadChop.html#cfg">VzblPadChop</a>}</li>
+		<li>{@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#goalLen(int) goalLen}{@code (i)}</li>
+		<li><b>Side:</b> {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#left() left}{@code ()}, {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#right() right}{@code ()}</li>
+		<li><b>Character to pad with:</b> {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#withSpace() withSpace}{@code ()}, {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#with(char) with}{@code (c)}</li>
+	</ul>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PadString extends PadChopBase  {
 	private final char cPad;
@@ -44,21 +44,21 @@ public class PadString extends PadChopBase  {
 		cPad = fieldable.getPadChar();
 	}
 	/**
-		<P>Create a new {@code PadString} as a duplicate of another.</P>
+		<p>Create a new {@code PadString} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.text.padchop.PadString#PadString(PadString, int) super}{@code (to_copy, -2)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.text.padchop.PadString#PadString(PadString, int) super}{@code (to_copy, -2)}</p>
 	 **/
 	public PadString(PadString to_copy)  {
 		this(to_copy, -2);
 	}
 	/**
-		<P>Create a new {@code PadString} as a duplicate of another.</P>
+		<p>Create a new {@code PadString} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.text.padchop.PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, new_goalLen)}</LI>
-			<LI>Sets {@link #getPadChar() getPadChar}{@code ()} to <CODE>to_copy.{@link #getPadChar() getPadChar}()</CODE></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.text.padchop.PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, new_goalLen)}</li>
+			<li>Sets {@link #getPadChar() getPadChar}{@code ()} to <code>to_copy.{@link #getPadChar() getPadChar}()</code></li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -72,7 +72,7 @@ public class PadString extends PadChopBase  {
 //constructors...END
 //getters...START
 	/**
-		<P>GetYYY.</P>
+		<p>GetYYY.</p>
 
 		@return  {@code pad_char}, as provided to ..............
 	 **/
@@ -82,15 +82,15 @@ public class PadString extends PadChopBase  {
 //getters...END
 //other...START
 	/**
-		<P>Chop the string as configured.</P>
+		<p>Chop the string as configured.</p>
 
-		@return  <CODE>{@link #getPadded(int, Object) getPadded}({@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}(), str_toPad)</CODE>
+		@return  <code>{@link #getPadded(int, Object) getPadded}({@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}(), str_toPad)</code>
 	 **/
 	public String getPadded(Object str_toPad)  {
 		return  getPadded(getGoalLen(), str_toPad);
 	}
 	/**
-		<P>Chop the string as configured, with a specific goal-length.</P>
+		<p>Chop the string as configured, with a specific goal-length.</p>
 
 		@return  {@link #appendPadded(Appendable, int, Object) appendPadded}{@code (new StringBuilder()), goal_len, str_toPad).toString()}
 	 **/
@@ -98,7 +98,7 @@ public class PadString extends PadChopBase  {
 		return  appendPadded((new StringBuilder()), goal_len, str_toPad).toString();
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@return  {@code appendPaddedX(to_appendTo, str_toPad)}
 	 **/
@@ -110,7 +110,7 @@ public class PadString extends PadChopBase  {
 		}
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@return  {@link #appendPaddedX(Appendable, int, Object)}{@code (to_appendTo, goal_len, str_toPad)}
 	 **/
@@ -122,7 +122,7 @@ public class PadString extends PadChopBase  {
 		}
 	}
 	/**
-		<P>Chop the string as configured.</P>
+		<p>Chop the string as configured.</p>
 
 		@return  {@link #appendPaddedX(Appendable, int, Object) appendPaddedX}(to_appendTo, {@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}(), str_toPad)
 	 **/
@@ -163,7 +163,7 @@ public class PadString extends PadChopBase  {
 		return  PadString.appendPaddedX(this, to_appendTo, goal_len, str_toPad);
 	}
 	/**
-		<P>Chop the string as configured, with a specific goal-length.</P>
+		<p>Chop the string as configured, with a specific goal-length.</p>
 
 		@param  padder  May not be {@code null}.
 		@param  to_appendTo  May not be {@code null}.
@@ -207,15 +207,15 @@ public class PadString extends PadChopBase  {
 		return  super.toString() + ", getPadChar()='" + getPadChar() + '\'';
 	}
 	/**
-		@return  <CODE>(new {@link #PadString(PadString) PadString}(this))</CODE>
+		@return  <code>(new {@link #PadString(PadString) PadString}(this))</code>
 	 **/
 	public PadString getObjectCopy()  {
 		return  (new PadString(this));
 	}
 	/**
-		<P>Duplicate this {@code PadString}, with a new goal-length.</P>
+		<p>Duplicate this {@code PadString}, with a new goal-length.</p>
 
-		@return  <CODE>(new {@link #PadString(PadString) PadString}(this))</CODE>
+		@return  <code>(new {@link #PadString(PadString) PadString}(this))</code>
 	 **/
 	public PadString getCopyNewGoalLen(int goal_len)  {
 		return  (new PadString(this, goal_len));

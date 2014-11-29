@@ -18,10 +18,10 @@
 package  com.github.xbn.analyze.validate;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-   <P>Convenience functions for {@code ValidResultFilter}s.</P>
+   <p>Convenience functions for {@code ValidResultFilter}s.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class ValidResultFilterUtil  {
@@ -29,15 +29,15 @@ public class ValidResultFilterUtil  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>Get the final is-valid value from the filter and post-inverted follows-rules boolean.</P>
+		<p>Get the final is-valid value from the filter and post-inverted follows-rules boolean.</p>
 
-		<P>This calls<OL>
-			<LI><CODE>filter.{@link ValidResultFilter#getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules}(are_postInvertRulesFollowed)</CODE></LI>
-			<LI><CODE>getPostReturnValueFromInvertedRules(<I>[return-value-from-step-1]</I>, are_postInvertRulesFollowed)</CODE></LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code>filter.{@link ValidResultFilter#getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules}(are_postInvertRulesFollowed)</code></li>
+			<li><code>getPostReturnValueFromInvertedRules(<i>[return-value-from-step-1]</i>, are_postInvertRulesFollowed)</code></li>
+		</ol></p>
 
 		@param  filter  May not be {@code null}.
-		@param  are_postInvertRulesFollowed  Does the <I>something</I> follow the rules (post-{@link com.github.xbn.analyze.validate.Validator#doInvertRules() inversion})?
+		@param  are_postInvertRulesFollowed  Does the <i>something</i> follow the rules (post-{@link com.github.xbn.analyze.validate.Validator#doInvertRules() inversion})?
 		@see  #getPostReturnValueFromInvertedRules(FilterAfterValue, boolean) getPostReturnValueFromInvertedRules(fpv,b)
 	 **/
 	public static final boolean getPostReturnValueFromInvertedRules(ValidResultFilter filter, boolean are_postInvertRulesFollowed)  {
@@ -50,9 +50,9 @@ public class ValidResultFilterUtil  {
 		return  getPostReturnValueFromInvertedRules(fpv, are_postInvertRulesFollowed);
 	}
 	/**
-		<P>Get the final is-valid value from the post-inverted rules.</P>
+		<p>Get the final is-valid value from the post-inverted rules.</p>
 
-		@return  <CODE>(fp_v.{@link FilterAfterValue#isUnchanged() isUnchanged}() ? are_postInvertRulesFollowed : fp_v.{@link FilterAfterValue#isTrue() isTrue}())</CODE>
+		@return  <code>(fp_v.{@link FilterAfterValue#isUnchanged() isUnchanged}() ? are_postInvertRulesFollowed : fp_v.{@link FilterAfterValue#isTrue() isTrue}())</code>
 		@see  #getPostReturnValueFromInvertedRules(ValidResultFilter, boolean) getPostReturnValueFromInvertedRules(vrf,b)
 	 **/
 	public static final boolean getPostReturnValueFromInvertedRules(FilterAfterValue fp_v, boolean are_postInvertRulesFollowed)  {

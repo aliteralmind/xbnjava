@@ -1,2 +1,2 @@
-<P><B>Output:</B></P>
-<BLOCKQUOTE><PRE style="background-color:#EEEEEE;">%body%</PRE></BLOCKQUOTE>
+<p><b>Output:</b></p>
+<blockquote><pre style="background-color:#EEEEEE;">%body%</pre></blockquote>

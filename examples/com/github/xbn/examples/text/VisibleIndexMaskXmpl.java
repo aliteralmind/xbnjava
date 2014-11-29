@@ -18,12 +18,12 @@
 package  com.github.xbn.examples.text;
 	import  com.github.xbn.text.StringUtil;
 /**
-   <P>Demonstrates {@link com.github.xbn.text.StringUtil#getVisibleIndexMask(Object, int, int) getVisibleIndexMask}{@code O,i,i}.</P>
+   <p>Demonstrates {@link com.github.xbn.text.StringUtil#getVisibleIndexMask(Object, int, int) getVisibleIndexMask}{@code O,i,i}.</p>
 
-   <H4>{@code java com.github.xbn.examples.text.VisibleIndexMaskXmpl}</H4>
+   <h4>{@code java com.github.xbn.examples.text.VisibleIndexMaskXmpl}</h4>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class VisibleIndexMaskXmpl  {

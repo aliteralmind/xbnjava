@@ -14,18 +14,18 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-	<P>{@code Copyable} objects may be safely duplicated.</P>
+	<p>{@code Copyable} objects may be safely duplicated.</p>
 
-	@see  <CODE><A HREF="http://stackoverflow.com/questions/21388479/how-to-rectify-both-define-getobjectcopy-but-with-unrelated-return-types">http://stackoverflow.com/questions/21388479/how-to-rectify-both-define-getobjectcopy-but-with-unrelated-return-types</A></CODE>
-	@see  <CODE><A HREF="http://stackoverflow.com/questions/21421576/how-to-justify-why-an-unchecked-cast-is-okay-regarding-copyable-getobjectcopy">http://stackoverflow.com/questions/21421576/how-to-justify-why-an-unchecked-cast-is-okay-regarding-copyable-getobjectcopy</A></CODE>
-	@see  <CODE><A HREF="http://stackoverflow.com/questions/21471663/linear-inheritance-structure-not-working-b-c-of-root-interface-copyablec-exten">http://stackoverflow.com/questions/21471663/linear-inheritance-structure-not-working-b-c-of-root-interface-copyablec-exten</A></CODE>
+	@see  <code><a href="http://stackoverflow.com/questions/21388479/how-to-rectify-both-define-getobjectcopy-but-with-unrelated-return-types">http://stackoverflow.com/questions/21388479/how-to-rectify-both-define-getobjectcopy-but-with-unrelated-return-types</a></code>
+	@see  <code><a href="http://stackoverflow.com/questions/21421576/how-to-justify-why-an-unchecked-cast-is-okay-regarding-copyable-getobjectcopy">http://stackoverflow.com/questions/21421576/how-to-justify-why-an-unchecked-cast-is-okay-regarding-copyable-getobjectcopy</a></code>
+	@see  <code><a href="http://stackoverflow.com/questions/21471663/linear-inheritance-structure-not-working-b-c-of-root-interface-copyablec-exten">http://stackoverflow.com/questions/21471663/linear-inheritance-structure-not-working-b-c-of-root-interface-copyablec-exten</a></code>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface Copyable  {
 	/**
-		<P>Get a deep-as-possible duplicate of this {@code Copyable}--when copyable, this function contains a description of exactly what is and is not copied. In most cases, this calls the copy construtor--a one-parameter constructor, where the parameter is the same type as the class itself. In rare cases, this may be a reference to the original object.</P>
+		<p>Get a deep-as-possible duplicate of this {@code Copyable}--when copyable, this function contains a description of exactly what is and is not copied. In most cases, this calls the copy construtor--a one-parameter constructor, where the parameter is the same type as the class itself. In rare cases, this may be a reference to the original object.</p>
 
 		@return A non-{@code null} copy of this {@code Copyable}.
 	 **/

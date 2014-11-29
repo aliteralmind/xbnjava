@@ -17,45 +17,45 @@ package  com.github.xbn.text.padchop.z;
 	import  com.github.xbn.neederneedable.Needer;
 	import  com.github.xbn.neederneedable.AbstractNeedable;
 /**
-	<P>YYY</P>
+	<p>YYY</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 /**
-	<P>. The base class for {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder PadString_CfgForNeeder} and {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder PadString_CfgForNeeder}.</P>
+	<p>. The base class for {@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder PadString_CfgForNeeder} and {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder PadString_CfgForNeeder}.</p>
  **/
 public abstract class PadChopBase_CfgForNeeder<P extends PadChopBase,R extends Needer> extends AbstractNeedable<P,R> implements PadChopBase_Fieldable  {
 	public int iGoalLen = -1;
 	public boolean bSideRight = false;
 	/**
-		<P>Create a new {@code PadChopBase_CfgForNeeder} with defaults.</P>
+		<p>Create a new {@code PadChopBase_CfgForNeeder} with defaults.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#PadChopBase_CfgForNeeder(R, int)">this</A>(needer, -1)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#PadChopBase_CfgForNeeder(R, int)">this</a>(needer, -1)</code></p>
 
 	 **/
 	public PadChopBase_CfgForNeeder(R needer)  {
 		this(needer, -1);
 	}
 	/**
-		<P>Create a new {@code PadChopBase_CfgForNeeder} with defaults, but a specific goal length.</P>
+		<p>Create a new {@code PadChopBase_CfgForNeeder} with defaults, but a specific goal length.</p>
 
-			<P>This calls<OL>
-			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/chain/AbstractNeedable.html#AbstractNeedable(boolean, boolean, R)">super</A>(true, true, needer)</CODE></LI>
-		</OL></P>
+			<p>This calls<ol>
+			<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/chain/AbstractNeedable.html#AbstractNeedable(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
+		</ol></p>
 
-		@see <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#PadChopBase_CfgForNeeder(R)">this</A>(R)</CODE>
+		@see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#PadChopBase_CfgForNeeder(R)">this</a>(R)</code>
 	 **/
 	public PadChopBase_CfgForNeeder(R needer, int goal_len)  {
 		super(true, true, needer);
 		iGoalLen = goal_len;
 	}
 	/**
-		<P>Declare which side of the string should be padded or chopped.</P>
+		<p>Declare which side of the string should be padded or chopped.</p>
 
-		@return  <I>{@code this}</I>
-		@see <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#PadChopBase_CfgForNeeder(int, R)">this</A>(-1, needer)</CODE>
+		@return  <i>{@code this}</i>
+		@see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#PadChopBase_CfgForNeeder(int, R)">this</a>(-1, needer)</code>
 	 **/
 	public PadChopBase_CfgForNeeder<P,R> startConfigReturnNeedable(R needer, Class<P> expected_type)  {
 		startConfig(needer, expected_type);

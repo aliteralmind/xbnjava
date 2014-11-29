@@ -14,9 +14,9 @@
 \*license*/
 package  com.github.xbn.experimental.listify;
 /**
-	<P>Thrown when a modify operation (such as remove, add, or set) is made on a {@code Listify} whose raw object is unmodifiable.</P>
+	<p>Thrown when a modify operation (such as remove, add, or set) is made on a {@code Listify} whose raw object is unmodifiable.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <CODE><A HREF="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</A></CODE>, <A HREF="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</A>}
+	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code>, <a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a>}
  **/
 public class ListifiedNotAddRemovableException extends IllegalStateException  {
 /**

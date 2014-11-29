@@ -17,10 +17,10 @@ package  com.github.xbn.util.itr;
 	import  com.github.xbn.array.CrashIfIndex;
 	import  java.util.Iterator;
 /**
-	<P>Assists in building iterators over objects of a <I>known quantity</I> of indexable elements, such as arrays and collections--where the start and end indexes can be provided to the constructor, and do not change.</P>
+	<p>Assists in building iterators over objects of a <i>known quantity</i> of indexable elements, such as arrays and collections--where the start and end indexes can be provided to the constructor, and do not change.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class UnchangingIndexesIterator<E> extends AbstractIterator<E> implements Iterator<E>  {
 //state
@@ -71,7 +71,7 @@ public abstract class UnchangingIndexesIterator<E> extends AbstractIterator<E> i
 		incDecFnctr.resetIndex();
 	}
 	/**
-		<P>Must be abstract, because setIndexes optionally uses this.</P>
+		<p>Must be abstract, because setIndexes optionally uses this.</p>
 	 **/
 	public abstract int getTotalElementCount();
 /*stub functions for implements compile...START

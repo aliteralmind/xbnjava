@@ -15,13 +15,13 @@
 package  com.github.xbn.examples.lang.non_xbn;
 	import java.util.*;
 /**
-	<P>Demonstrates the use of test-data in an application requiring user-input at the console, preventing the need for user-input during development. This is an answer to
-	<BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/21584988/looping-with-different-variables">http://stackoverflow.com/questions/21584988/looping-with-different-variables</A></CODE></P>
+	<p>Demonstrates the use of test-data in an application requiring user-input at the console, preventing the need for user-input during development. This is an answer to
+	<br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21584988/looping-with-different-variables">http://stackoverflow.com/questions/21584988/looping-with-different-variables</a></code></p>
 
-	<P>{@code java com.github.xbn.examples.lang.non_xbn.IgnoreUserInputDuringDevelopmentWTestData2of2}</P>
+	<p>{@code java com.github.xbn.examples.lang.non_xbn.IgnoreUserInputDuringDevelopmentWTestData2of2}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IgnoreUserInputDuringDevelopmentWTestData2of2  {
 

@@ -19,32 +19,32 @@ package  com.github.xbn.number;
 	import  static com.github.xbn.lang.CrashIfBase.*;
 
 /**
-	<P>Determines if an index is within an {@code IndexRange}.</P>
+	<p>Determines if an index is within an {@code IndexRange}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IndexInRange extends IntInRange implements IndexRange  {
 //public
 	/**
-		<P>An {@code IndexInRange} with no bounds.</P>
+		<p>An {@code IndexInRange} with no bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>new {@link #IndexInRange() IndexInRange}()</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>new {@link #IndexInRange() IndexInRange}()</code></p>
 	 */
 	public static final IndexInRange UNRESTRICTED = new IndexInRange();
 	/**
-		<P>An {@code IndexInRange} with no members.</P>
+		<p>An {@code IndexInRange} with no members.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>new {@link #IndexInRange(Invert, com.github.xbn.number.IntBoundInclusive, com.github.xbn.number.IntBoundExclusive) IndexInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>new {@link #IndexInRange(Invert, com.github.xbn.number.IntBoundInclusive, com.github.xbn.number.IntBoundExclusive) IndexInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null</code></p>
 	 */
 	public static final IndexInRange IMPOSSIBLE = new IndexInRange(Invert.YES, new IntBoundInclusive(0, null), null);
 	/**
-		<P>Create a new instance with no bounds.</P>
+		<p>Create a new instance with no bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #IndexInRange(com.github.xbn.number.IntBoundInclusive, com.github.xbn.number.IntBoundExclusive) this}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #IndexInRange(com.github.xbn.number.IntBoundInclusive, com.github.xbn.number.IntBoundExclusive) this}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(0, null), null)</code></p>
 
 		@see  #UNRESTRICTED
 	 */
@@ -52,59 +52,59 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 		this(new IntBoundInclusive(0, null), null);
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
+		<p>Create a new instance with bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(new IntBoundInclusive(min, null), new IntBoundExclusive(max, null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(new IntBoundInclusive(min, null), new IntBoundExclusive(max, null)</code></p>
 	 */
 	public IndexInRange(int min, int max)  {
 		super(new IntBoundInclusive(min, null), new IntBoundExclusive(max, null));
 	}
 	/**
-	 * <P>Create a new instance with bounds.</P>
+	 * <p>Create a new instance with bounds.</p>
 	 *
-	 * <P>Equal to
+	 * <p>Equal to
 	 * <blockquote><pre>{@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(new IntBoundInclusive(min, min_name),
-	 *    new IntBoundExclusive(max, max_name))</pre></blockquote></P>
+	 *    new IntBoundExclusive(max, max_name))</pre></blockquote></p>
 	 */
 	public IndexInRange(int min, int max, String min_name, String max_name)  {
 		super(new IntBoundInclusive(min, min_name),
 			new IntBoundExclusive(max, max_name));
 	}
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}{@code (min_bound, max_bound)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link IntInRange#IntInRange(com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}{@code (min_bound, max_bound)}</p>
 	 */
 	public IndexInRange(IntBoundInclusive min_bound, IntBoundExclusive max_bound)  {
 		super(min_bound, max_bound);
 	}
 	/**
-		<P>Create a new instance with bounds.</P>
+		<p>Create a new instance with bounds.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link IntInRange#IntInRange(com.github.xbn.lang.Invert, com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(invert, new IntBoundInclusive(min, null), new IntBoundExclusive(max, null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link IntInRange#IntInRange(com.github.xbn.lang.Invert, com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(invert, new IntBoundInclusive(min, null), new IntBoundExclusive(max, null)</code></p>
 	 */
 	public IndexInRange(Invert invert, int min, int max)  {
 		super(invert, new IntBoundInclusive(min, null), new IntBoundExclusive(max, null));
 	}
 	/**
-		* <P>Create a new instance with bounds.</P>
+		* <p>Create a new instance with bounds.</p>
 		*
-		* <P>Equal to
+		* <p>Equal to
 		* <blockquote><pre>{@link IntInRange#IntInRange(com.github.xbn.lang.Invert, com.github.xbn.number.IntBound, com.github.xbn.number.IntBound) super}(invert, new IntBoundInclusive(min, min_name),
-		*    new IntBoundExclusive(max, max_name))</pre></blockquote></P>
+		*    new IntBoundExclusive(max, max_name))</pre></blockquote></p>
 	 */
 	public IndexInRange(Invert invert, int min, int max, String min_name, String max_name)  {
 		super(invert, new IntBoundInclusive(min, min_name),
 			new IntBoundExclusive(max, max_name));
 	}
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link IntInRange#IntInRange(com.github.xbn.lang.Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link IntInRange#IntInRange(com.github.xbn.lang.Invert, IntBound, IntBound) super}{@code (invert, min_bound, max_bound)}</p>
 
 		@see  #IndexInRange()
 		@see  #IndexInRange(int, int) IndexInRange(i,i)
@@ -116,10 +116,10 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 		super(invert, min_bound, max_bound);
 	}
 	/**
-		<P>If the bounds of this {@code IndexInRange} are invalid, crash.</P>
+		<p>If the bounds of this {@code IndexInRange} are invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>IntInRange.{@link #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength}({@link com.github.xbn.number.NumberInRange#getMinBound() getMinBound}(), {@link com.github.xbn.number.NumberInRange#getMaxBound() getMaxBound}, &quot;getMinBound()&quot;, &quot;getMaxBound()&quot;, {@link com.github.xbn.lang.ExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}())</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength}({@link com.github.xbn.number.NumberInRange#getMinBound() getMinBound}(), {@link com.github.xbn.number.NumberInRange#getMaxBound() getMaxBound}, &quot;getMinBound()&quot;, &quot;getMaxBound()&quot;, {@link com.github.xbn.lang.ExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}())</code></p>
 	 */
 	public void crashIfBadBoundsForCnstr()  {
 		IntInRange.crashIfBadBoundsForLength(getMinBound(), getMaxBound(), "getMinBound()", "getMaxBound()", getExtraErrInfo());
@@ -140,19 +140,19 @@ public class IndexInRange extends IntInRange implements IndexRange  {
 		crashIfBadIndexObject(index, idx_name);
 	}
 	/**
-		<P>If a standalone-index is invalid, crash.</P>
+		<p>If a standalone-index is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>IndexInRange.{@link #crashIfBadIndexObject(IndexInRange, Integer, String, Object) crashIfBadIndexObject}(this, index, idx_name, {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>IndexInRange.{@link #crashIfBadIndexObject(IndexInRange, Integer, String, Object) crashIfBadIndexObject}(this, index, idx_name, {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</code></p>
 	 */
 	public void crashIfBadIndexObject(int index, String idx_name)  {
 		IndexInRange.crashIfBadIndexObject(this, index, idx_name, getExtraErrInfo());
 	}
 	/**
-		<P>If an index (as contained by an object) <I>that is an element of a larger object</I> is invalid, crash.</P>
+		<p>If an index (as contained by an object) <i>that is an element of a larger object</i> is invalid, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #crashIfBadIndexElement(IndexInRange, Integer, String, int, Object) crashIfBadIndexElement}(this, index, cntr_name, int idx_inCntr, {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #crashIfBadIndexElement(IndexInRange, Integer, String, int, Object) crashIfBadIndexElement}(this, index, cntr_name, int idx_inCntr, {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</code></p>
 	 */
 	public void crashIfBadIndexElement(int index, String cntr_name, int idx_inCntr)  {
 		crashIfBadIndexElement(this, index, cntr_name, idx_inCntr, getExtraErrInfo());

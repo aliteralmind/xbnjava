@@ -18,11 +18,11 @@ package  com.github.xbn.experimental;
    import  java.util.ArrayList;
       import  java.util.NoSuchElementException;
 /**
-	<P>Iterator tailored for {@code IterationOdometer}, with additional debugging functions. Returns a ArrayList of type T, containing as many elements, equal to the amount of times {@link IterationOdometer}{@code .add*()} was called.</P>
+	<p>Iterator tailored for {@code IterationOdometer}, with additional debugging functions. Returns a ArrayList of type T, containing as many elements, equal to the amount of times {@link IterationOdometer}{@code .add*()} was called.</p>
 
-	<P>The function {@link #nextString() nextAsStr}{@code ()} is useful for diagnostics and testing. It joins the {@code toString()} of all ArrayList elements together, into a single string. It is used by all the {@code IterationOdometer.test_get1stIdxIfNot*()} functions.</P>
+	<p>The function {@link #nextString() nextAsStr}{@code ()} is useful for diagnostics and testing. It joins the {@code toString()} of all ArrayList elements together, into a single string. It is used by all the {@code IterationOdometer.test_get1stIdxIfNot*()} functions.</p>
 
-	<P>The {@code hasNext()} function in this class was one of the more challenging programming exercises I've encountered.</P>
+	<p>The {@code hasNext()} function in this class was one of the more challenging programming exercises I've encountered.</p>
  **/
 public class IteratorIOD<T> implements Iterator<ArrayList<T>>  {
 //	private int iodColCount = -1;
@@ -187,7 +187,7 @@ public class IteratorIOD<T> implements Iterator<ArrayList<T>>  {
 	}
 
 	/**
-		<P>Joins the {@code toString()} value for all columns into a single string. Use for testing.</P>
+		<p>Joins the {@code toString()} value for all columns into a single string. Use for testing.</p>
 	 **/
 	public final String getNextAsStr(ArrayList<T> v_t)  {
 		if(v_t == null)  {

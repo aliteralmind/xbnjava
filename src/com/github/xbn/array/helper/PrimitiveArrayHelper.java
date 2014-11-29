@@ -15,26 +15,26 @@
 package  com.github.xbn.array.helper;
 	import  com.github.xbn.array.NullContainer;
 /**
-	<P>Creates initialized primitive arrays and non-primitive arrays of its wrapper-type, and provides basic access and conversion for objects-that-are-actually-primitive-arrays.</P>
+	<p>Creates initialized primitive arrays and non-primitive arrays of its wrapper-type, and provides basic access and conversion for objects-that-are-actually-primitive-arrays.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface PrimitiveArrayHelper<E> extends ArrayHelperBase<E>  {
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 	 **/
 	Object getPrimitiveArray(Object obj_thatIsPrimArr, NullContainer nnull, String cntrName_forNullBad);
 	Object getPArrayCopyOrNull(Object obj_thatIsPrimArr, NullContainer nnull, String cntrName_forNullBad);
 	/**
 		@param  obj_thatIsPrimArr  May not be {@code null}, and must be a primitive array whose wrapper-type is {@code E}.
-		@param  array_name  Descriptive name of {@code obj_thatIsPrimArr}. <I>Should</I> not be {@code null} or empty.
-		@return  <CODE>{@link #getPrimitiveArray(Object, NullContainer, String) getPrimitiveArray}(obj_thatIsPrimArr, {@link com.github.xbn.array.NullContainer NullContainer}.{@link com.github.xbn.array.NullContainer#BAD BAD}, array_name).length</CODE>
+		@param  array_name  Descriptive name of {@code obj_thatIsPrimArr}. <i>Should</i> not be {@code null} or empty.
+		@return  <code>{@link #getPrimitiveArray(Object, NullContainer, String) getPrimitiveArray}(obj_thatIsPrimArr, {@link com.github.xbn.array.NullContainer NullContainer}.{@link com.github.xbn.array.NullContainer#BAD BAD}, array_name).length</code>
 	 **/
 	int getLength(Object obj_thatIsPrimArr, String array_name);
 	/**
 		@param  obj_thatIsPrimArr  May not be {@code null}, and must be a primitive array whose wrapper-type is {@code E}.
-		@param  array_name  Descriptive name of {@code obj_thatIsPrimArr}. <I>Should</I> not be {@code null} or empty.
+		@param  array_name  Descriptive name of {@code obj_thatIsPrimArr}. <i>Should</i> not be {@code null} or empty.
 	 **/
 	E getWrapper(Object obj_thatIsPrimArr, int index, String array_name);
 	E[] getWrapperArrayOrNull(Object obj_thatIsPrimArr, NullContainer nnull, String cntrName_forNullBad);

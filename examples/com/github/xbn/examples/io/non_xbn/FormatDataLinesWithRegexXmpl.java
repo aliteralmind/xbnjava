@@ -17,13 +17,13 @@ package  com.github.xbn.examples.io.non_xbn;
 	import  java.util.ArrayList;
 	import  java.util.regex.Pattern;
 /**
-	<P>Demonstrates using regex to parse multi-line input, where parts of the input is only on some lines, and  must be redundantly used on other lines. This is an answer to
-	<BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/21341455/conditional-regular-expression">http://stackoverflow.com/questions/21341455/conditional-regular-expression</A></CODE></P>
+	<p>Demonstrates using regex to parse multi-line input, where parts of the input is only on some lines, and  must be redundantly used on other lines. This is an answer to
+	<br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21341455/conditional-regular-expression">http://stackoverflow.com/questions/21341455/conditional-regular-expression</a></code></p>
 
-	<P>{@code java com.github.xbn.examples.io.non_xbn.FormatDataLinesWithRegexXmpl}</P>
+	<p>{@code java com.github.xbn.examples.io.non_xbn.FormatDataLinesWithRegexXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FormatDataLinesWithRegexXmpl  {
 	public static final void main(String[] ignored)  {

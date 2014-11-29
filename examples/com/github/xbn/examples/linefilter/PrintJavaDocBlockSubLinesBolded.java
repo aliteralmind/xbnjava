@@ -31,13 +31,13 @@ package  com.github.xbn.examples.linefilter;
 	import  java.util.Iterator;
 	import  java.util.regex.Pattern;
 /**
-	<P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to modify the lines in a sub-block: a block that is a child of another block.</P>
+	<p>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to modify the lines in a sub-block: a block that is a child of another block.</p>
 
-	<P>{@code java com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocksWithSub_input.txt}</P>
+	<p>{@code java com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocksWithSub_input.txt}</p>
 
-	@see  <CODE><A HREF="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block</A></CODE>
+	@see  <code><a href="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_sub_block</a></code>
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PrintJavaDocBlockSubLinesBolded  {
 	public static final void main(String[] cmd_lineParams)  {
@@ -53,17 +53,17 @@ public class PrintJavaDocBlockSubLinesBolded  {
 		//Sub-entity
 			TextLineAlterer midAlterer = NewTextLineAltererFor.replacement(
 				AlterationRequired.YES,
-				Pattern.compile("^([ \\t]*)(.*)"), "$1<B>$2</B>", ReplacedInEachInput.FIRST,
+				Pattern.compile("^([ \\t]*)(.*)"), "$1<b>$2</b>", ReplacedInEachInput.FIRST,
 				null,       //dbgDest (on:System.out, off:null)
 				null);
 
 			BlockEntity subBlock = NewBlockEntityFor.lineRangeWithReplace(
 				"jdsub", KeepMatched.YES, EntityRequired.YES,
-				Pattern.compile(subModePre + "START\\E$"), "<B>$1</B>",
+				Pattern.compile(subModePre + "START\\E$"), "<b>$1</b>",
 					ReplacedInEachInput.FIRST, null,
 					null,    //dbgStart
 				midAlterer,
-				Pattern.compile(subModePre + "END\\E$"), "<B>$1</B>",
+				Pattern.compile(subModePre + "END\\E$"), "<b>$1</b>",
 					ReplacedInEachInput.FIRST, null,
 					null,    //dbgEnd
 				null,       //on-off filter

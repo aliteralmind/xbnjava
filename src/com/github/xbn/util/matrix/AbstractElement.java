@@ -22,7 +22,7 @@ package  com.github.xbn.util.matrix;
  * <p>An element's coordinates in a two-dimensional array.</p>
  *
  * @since  0.1.4.2
- * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public abstract class AbstractElement implements Copyable  {
 	private final int row_idx;
@@ -73,7 +73,7 @@ public abstract class AbstractElement implements Copyable  {
 		return  bldr;
 	}
 	/**
-	 * @return  <CODE>true</CODE> If {@code to_compareTo} is non-{@code null},
+	 * @return  <code>true</code> If {@code to_compareTo} is non-{@code null},
 	 * {2:n} {@code AbstractElement}, and all its fields {@linkplain #areFieldsEqual(AbstractElement)
 	 * are equal}. This is implemented as suggested by Joshua Bloch in
 	 * &quot;Effective Java&quot; (2nd ed, item 8, page 46).
@@ -98,7 +98,7 @@ public abstract class AbstractElement implements Copyable  {
 		return  areFieldsEqual(o);
 	}
 	/**
-	 * <P>Are all relevant fields equal?.</P>
+	 * <p>Are all relevant fields equal?.</p>
 	 * param  to_compareTo  May not be {@code null}.
 	 **/
 	public boolean areFieldsEqual(AbstractElement to_compareTo)  {

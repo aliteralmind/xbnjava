@@ -19,10 +19,10 @@ package  com.github.xbn.linefilter.entity.raw.z;
 	import  com.github.xbn.neederneedable.Needer;
 	import  com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity RawStealthBlockEntity}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity RawStealthBlockEntity}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthBlockEntity<L>,R extends Needer> extends RawLineEntity_CfgForNeeder<L,M,R> implements RawStealthBlockEntity_Fieldable<L>  {
 	public ValueValidator<L> startValidator;
@@ -30,35 +30,35 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 	public boolean           doKeep        ;
 //constructors...START
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
-		<P>This calls<OL>
-			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="RawLineEntity_CfgForNeeder.html#RawLineEntity_CfgForNeeder(R, com.github.xbn.linefilter.entity.EntityType, java.lang.String)">super</A>(needer, {@link com.github.xbn.linefilter.entity.EntityType}.{@link com.github.xbn.linefilter.entity.EntityType#STEALTH_BLOCK STEALTH_BLOCK}, name)</CODE></LI>
-			<LI>{@link #resetRSBECFN() resetRSBECFN}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawLineEntity_CfgForNeeder.html#RawLineEntity_CfgForNeeder(R, com.github.xbn.linefilter.entity.EntityType, java.lang.String)">super</a>(needer, {@link com.github.xbn.linefilter.entity.EntityType}.{@link com.github.xbn.linefilter.entity.EntityType#STEALTH_BLOCK STEALTH_BLOCK}, name)</code></li>
+			<li>{@link #resetRSBECFN() resetRSBECFN}{@code ()}</li>
+		</ol></p>
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder(R needer, String name)  {
 		super(needer, EntityType.STEALTH_BLOCK, name);
 		resetRSBECFN();
 	}
 	/**
-		<P>Reverts configuration so a line never matches.</P>
+		<p>Reverts configuration so a line never matches.</p>
 
-		<P>Equal to {@link #resetRSBECFN() resetRSBECFN}{@code ()}</P>
+		<p>Equal to {@link #resetRSBECFN() resetRSBECFN}{@code ()}</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> reset()  {
 		resetRSBECFN();
 		return  this;
 	}
 	/**
-		<P>Reset configuration specific to this {@code RawStealthBlockEntity_CfgForNeeder}.</P>
+		<p>Reset configuration specific to this {@code RawStealthBlockEntity_CfgForNeeder}.</p>
 
-		<P>This calls<UL>
-			<LI><CODE>{@link #startValidator(ValueValidator) startValidator}(null)</CODE></LI>
-			<LI><CODE>{@link #endValidator(ValueValidator) endValidator}(null)</CODE></LI>
-		</UL></P>
+		<p>This calls<ul>
+			<li><code>{@link #startValidator(ValueValidator) startValidator}(null)</code></li>
+			<li><code>{@link #endValidator(ValueValidator) endValidator}(null)</code></li>
+		</ul></p>
 
 		@see  #reset()
 	 **/
@@ -68,20 +68,20 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 	}
 //self-returning setters...START
 	/**
-		<P>Output the line number of each start and end line in block.</P>
+		<p>Output the line number of each start and end line in block.</p>
 
 		@param  dest_ifNonNull  When non-{@code null}, this is used to write debugging output. Get with {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getDebugAptrLineNumbers() getDebugAptrLineNumbers}{@code ()}*.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> debugLineNumbers(Appendable dest_ifNonNull)  {
 		dbgApblLineNums = dest_ifNonNull;
 		return  this;
 	}
 	/**
-		<P>Set the validator that detects the start line.</P>
+		<p>Set the validator that detects the start line.</p>
 
-		@param  start_validator  May not be {@code null}, and <CODE>start_validator.{@link com.github.xbn.lang.Ruleable#getRuleType() getRuleType}()</CODE> must be {@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#getStartValidator() getStartValidator}{@code ()}*
-		@return  <I>{@code this}</I>
+		@param  start_validator  May not be {@code null}, and <code>start_validator.{@link com.github.xbn.lang.Ruleable#getRuleType() getRuleType}()</code> must be {@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#getStartValidator() getStartValidator}{@code ()}*
+		@return  <i>{@code this}</i>
 		@see  #endValidator(ValueValidator) endValidator
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> startValidator(ValueValidator<L> start_validator)  {
@@ -89,10 +89,10 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  this;
 	}
 	/**
-		<P>Set the validator that detects the end line.</P>
+		<p>Set the validator that detects the end line.</p>
 
-		@param  end_validator  May not be {@code null}, and <CODE>end_validator.{@link com.github.xbn.lang.Ruleable#getRuleType() getRuleType}()</CODE> must be {@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#getEndValidator() getEndValidator}{@code ()}*
-		@return  <I>{@code this}</I>
+		@param  end_validator  May not be {@code null}, and <code>end_validator.{@link com.github.xbn.lang.Ruleable#getRuleType() getRuleType}()</code> must be {@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#getEndValidator() getEndValidator}{@code ()}*
+		@return  <i>{@code this}</i>
 		@see  #endValidator(ValueValidator) endValidator
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> endValidator(ValueValidator<L> end_validator)  {
@@ -100,17 +100,17 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  this;
 	}
 	/**
-		<P>Set the on-off filter.</P>
+		<p>Set the on-off filter.</p>
 
 		@param  filter  May not be {@code null}. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawLineEntity#getFilter() getFilter}{@code ()}*.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> filter(RawOnOffEntityFilter<L> filter)  {
 		filterIfNonNull = filter;
 		return  this;
 	}
 	/**
-		<P>Keep all matched lines.</P>
+		<p>Keep all matched lines.</p>
 
 		@return  {@link #keepLines(boolean) keepLines}{@code (true)}
 	 **/
@@ -118,7 +118,7 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  keepLines(true);
 	}
 	/**
-		<P>Discard all matched lines.</P>
+		<p>Discard all matched lines.</p>
 
 		@return  {@link #keepLines(boolean) keepLines}{@code (false)}
 	 **/
@@ -126,10 +126,10 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  keepLines(false);
 	}
 	/**
-		<P>Should matched lines be kept or discarded.</P>
+		<p>Should matched lines be kept or discarded.</p>
 
 		@param  b  If {@code true}, lines are kept. Get with {@link com.github.xbn.linefilter.entity.raw.RawStealthBlockEntity#doKeepJustAnalyzed() doKeepJustAnalyzed}{@code ()}*.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #keepLines()
 		@see  #discardLines()
 	 **/
@@ -138,10 +138,10 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  this;
 	}
 	/**
-		<P>Is it required that this entity be found somewhere in the input?.</P>
+		<p>Is it required that this entity be found somewhere in the input?.</p>
 
 		@param  b  If {@code true}, then this entity must exist at least once in the input. If {@code false}, it's optional. Get with {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#isRequired() isRequired}{@code ()}*.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  com.github.xbn.linefilter.entity.raw.RawEntity#declareEndOfInput()
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> required(boolean b)  {
@@ -149,7 +149,7 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);
@@ -160,9 +160,9 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  super.toString() + ", getStartValidator()=" + getStartValidator() + ", getEndValidator()=" + getEndValidator();
 	}
 	/**
-		<P>Create a new {@code RawStealthBlockEntity} as configured.</P>
+		<p>Create a new {@code RawStealthBlockEntity} as configured.</p>
 
-		@return  <CODE>(M)(new xbn.text.line.RawStealthBlockEntity#RawStealthBlockEntity(RawStealthBlockEntity_Fieldable)&lt;O,L&gt;(this))</CODE>
+		@return  <code>(M)(new xbn.text.line.RawStealthBlockEntity#RawStealthBlockEntity(RawStealthBlockEntity_Fieldable)&lt;O,L&gt;(this))</code>
 	 **/
 	public M build()  {
 		@SuppressWarnings("unchecked")
@@ -170,7 +170,7 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  m;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> startConfigReturnNeedable(R needer)  {
 		@SuppressWarnings("unchecked")  //See xbn.neederneedable.Needer.startConfig(Class)
@@ -179,16 +179,16 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public RawStealthBlockEntity_CfgForNeeder<L,M,R> startConfigReturnNeedable(R needer, Class<M> needed_class)  {
 		startConfigReturnNeedable(needer, needed_class);
 		return  this;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());

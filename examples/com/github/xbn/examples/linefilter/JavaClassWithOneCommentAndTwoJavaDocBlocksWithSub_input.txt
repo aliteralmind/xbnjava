@@ -7,26 +7,26 @@
  */
 package  fully.qualified.package.name;
 /**
-	<P>A JavaDoc block</P>
+	<p>A JavaDoc block</p>
  */
 public class StayClassy  {
    /**
-      <P>Another JavaDoc block</P>
+      <p>Another JavaDoc block</p>
 
-      <P>info</P>        //sub-mode...START
+      <p>info</p>        //sub-mode...START
 
-      <P>info</P>
+      <p>info</p>
 
-      <P>info</P>        //sub-mode...END
+      <p>info</p>        //sub-mode...END
 
-      <P>info</P>
+      <p>info</p>
 
     */
    public StayClassy()  {
       //Do stuff
    }
    /**
-   	<P>Does stuff.</P>
+   	<p>Does stuff.</p>
     */
    public void doStuff()  {
    }

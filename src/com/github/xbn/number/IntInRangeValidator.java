@@ -17,9 +17,9 @@ package  com.github.xbn.number;
 	import  com.github.xbn.number.IntInRange;
 	import  com.github.xbn.lang.RuleType;
 /**
-	<P>{@code ValueValidator} for testing an integer's {@code null}-ness and that it is in an {@code IntInRange}.</P>
+	<p>{@code ValueValidator} for testing an integer's {@code null}-ness and that it is in an {@code IntInRange}.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.number.z.IntInRangeValidator_Cfg IntInRangeValidator_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.number.z.IntInRangeValidator_Cfg IntInRangeValidator_Cfg}</h3>
 
 	public IntInRangeValidator_CfgForNeeder<G,V,R> extraErrInfo(Object info)  {
 	public IntInRangeValidator_CfgForNeeder<G,V,R> range(G range)  {
@@ -32,7 +32,7 @@ package  com.github.xbn.number;
 
 	@see  IntInRange
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IntInRangeValidator extends NumberInRangeValidator<Integer>  {
 //constructors...START
@@ -43,10 +43,10 @@ public class IntInRangeValidator extends NumberInRangeValidator<Integer>  {
 		super(type, fieldable);
 	}
 	/**
-		<P>Create a new {@code IntInRangeValidator} as a duplicate of another.</P>
+		<p>Create a new {@code IntInRangeValidator} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link NumberInRangeValidator#NumberInRangeValidator(NumberInRangeValidator) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link NumberInRangeValidator#NumberInRangeValidator(NumberInRangeValidator) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -61,7 +61,7 @@ public class IntInRangeValidator extends NumberInRangeValidator<Integer>  {
 		return  (IntInRange)super.getRange();
 	}
 	/**
-		@return  <CODE>(new {@link #IntInRangeValidator(IntInRangeValidator) IntInRangeValidator}(this))</CODE>
+		@return  <code>(new {@link #IntInRangeValidator(IntInRangeValidator) IntInRangeValidator}(this))</code>
 	 **/
 	public IntInRangeValidator getObjectCopy()  {
 		return  (new IntInRangeValidator(this));

@@ -18,7 +18,7 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  com.github.xbn.experimental.listify.primitiveable.ListifyBoolable;
 	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
 /**
-	<P>Listifier whose raw object is a primitive boolean array, and whose virtual elements are {@code java.lang.Boolean}-s.</P>
+	<p>Listifier whose raw object is a primitive boolean array, and whose virtual elements are {@code java.lang.Boolean}-s.</p>
 
 <!--
 ---nwrq input---
@@ -32,7 +32,7 @@ Byte Byteable PByte byte
 Character Charable Char char
 
 	/&#42;&#42;
-		<P>Create a new {@code ListifyBoolable}</P>
+		<p>Create a new {@code ListifyBoolable}</p>
 
 		&#64;return  {@code (new }{@link com.github.xbn.experimental.listify.arrayofsame.ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}{@code (prim_array))}
 	 &#42;&#42;/
@@ -42,21 +42,21 @@ Character Charable Char char
 
 Use this header (Change Booxl to Bool when done--BUT NOT IN THIS HTML COMMENT!)
 / **
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBooxlEArray}. <B>Do not edit any class except {@code ListifyBooxlEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBooxlEArray}. <b>Do not edit any class except {@code ListifyBooxlEArray}.</b></i></p>
  ** /
  -->
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 		@see  #forBooxl(boolean[]) forBooxl(b[])
  **/
 public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> implements ListifyBoolable  {
 //constructors...START
 	/**
-		<P>Create a new {@code ListifyBoolEArray}.</P>
+		<p>Create a new {@code ListifyBoolEArray}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(Object, ValueCopier) super}(obj_thatIsPrimArr, (new {@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}()), (new {@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#OneParamCnstrValueCopier(Class) OneParamCnstrValueCopier}&lt;Boolean&gt;(Boolean.class)))</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(Object, ValueCopier) super}(obj_thatIsPrimArr, (new {@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}()), (new {@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#OneParamCnstrValueCopier(Class) OneParamCnstrValueCopier}&lt;Boolean&gt;(Boolean.class)))</code></p>
 
 		@see  #ListifyBoolEArray(boolean[]) ListifyBoolEArray(pah)
 	 **/
@@ -64,10 +64,10 @@ public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> i
 		super(obj_thatIsPrimArr, NewPrimitiveArrayHelper.forBoolean(), (new OneParamCnstrValueCopier<Boolean>(Boolean.class)));
 	}
 	/**
-		<P>Create a new {@code ListifyBoolEArray} as a duplicate of another.</P>
+		<p>Create a new {@code ListifyBoolEArray} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(AbstractListifyPrimitiveEArray) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(AbstractListifyPrimitiveEArray) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -78,7 +78,7 @@ public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> i
 	}
 //constructors...END
 	/**
-		@return   <CODE>(boolean[])<I>[{@link com.github.xbn.experimental.listify.ListifyEArrayComposer ListifyEArrayComposer}]</I>.{@link com.github.xbn.experimental.listify.ListifyEArrayComposer#getRawObject() getRawObject}()</CODE>
+		@return   <code>(boolean[])<i>[{@link com.github.xbn.experimental.listify.ListifyEArrayComposer ListifyEArrayComposer}]</i>.{@link com.github.xbn.experimental.listify.ListifyEArrayComposer#getRawObject() getRawObject}()</code>
 	 **/
 	public final boolean[] getRawPArray()  {
 		return  (boolean[])getRawObject();
@@ -98,7 +98,7 @@ public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> i
 		}
 	}
 	/**
-		@return  <CODE>(new {@link #ListifyBoolEArray(ListifyBoolEArray) ListifyBoolEArray}(this))</CODE>
+		@return  <code>(new {@link #ListifyBoolEArray(ListifyBoolEArray) ListifyBoolEArray}(this))</code>
 	 **/
 	public ListifyBoolEArray getObjectCopy()  {
 		return  (new ListifyBoolEArray(this));

@@ -21,10 +21,10 @@ package  com.github.xbn.linefilter.alter;
 	import  com.github.xbn.analyze.validate.ValueValidator;
 	import  com.github.xbn.analyze.alter.AlterValueWhen;
 /**
-	<P>An {@code AlterRawLineWhen} for text lines.</P>
+	<p>An {@code AlterRawLineWhen} for text lines.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class AlterTextLineWhen extends AlterValueWhen<String,String> implements TextLineAlterer  {
 	public AlterTextLineWhen()  {

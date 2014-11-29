@@ -24,19 +24,19 @@ package  com.github.xbn.list;
 	import  java.util.Map;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>Make the list values in a map immutable and/or sorted, and pretty-printing.</P>
+	<p>Make the list values in a map immutable and/or sorted, and pretty-printing.</p>
 
-	<H4>Iterating through a map via its entry-set</H4>
+	<h4>Iterating through a map via its entry-set</h4>
 
-<BLOCKQUOTE><PRE>for (Map.Entry<KeyType,ValueType> entry : map.entrySet())  {
+<blockquote><pre>for (Map.Entry<KeyType,ValueType> entry : map.entrySet())  {
 	KeyType k = entry.getKey();
 	ValueType v = entry.getValue();
 	...
-}</PRE></BLOCKQUOTE>
+}</pre></blockquote>
 
-	<P><I>From <CODE><A HREF="http://stackoverflow.com/questions/46898/how-do-i-iterate-over-each-entry-in-a-map/46908#46908">http://stackoverflow.com/questions/46898/how-do-i-iterate-over-each-entry-in-a-map/46908#46908</A></CODE> (downloaded 5/28/2014)</I></P>
+	<p><i>From <code><a href="http://stackoverflow.com/questions/46898/how-do-i-iterate-over-each-entry-in-a-map/46908#46908">http://stackoverflow.com/questions/46898/how-do-i-iterate-over-each-entry-in-a-map/46908#46908</a></code> (downloaded 5/28/2014)</i></p>
 
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <CODE><A HREF="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</A></CODE>, <CODE><A HREF="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</A></CODE>
+	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
  **/
 public class MapUtil  {
 	public static final <K,V> String toString(Map<K,V> map, ValueFilter<Map.Entry<K,V>> entryFilter_ifNonNull)  {
@@ -73,7 +73,7 @@ public class MapUtil  {
 		return to_appendTo;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
    	@exception  UnsupportedOperationException  If {@code put} is unsupported by {@code map_withMutableListValues}.
 	 **/
@@ -164,7 +164,7 @@ public class MapUtil  {
 		return  value;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
    	@exception  UnsupportedOperationException  If {@code put} is unsupported by {@code to_addTo}.
 	 **/

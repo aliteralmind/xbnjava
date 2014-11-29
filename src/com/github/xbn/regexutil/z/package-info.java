@@ -1,4 +1,4 @@
 /**
-	<P>Builders for <CODE><A HREF="../package-summary.html">xbn.regexutil.*</A></CODE></P>
+	<p>Builders for <code><a href="../package-summary.html">xbn.regexutil.*</a></code></p>
  **/
 package  com.github.xbn.regexutil.z;

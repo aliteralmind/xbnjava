@@ -17,21 +17,21 @@ package  com.github.xbn.linefilter.entity.raw;
 	import  com.github.xbn.linefilter.entity.OnOffAbort;
 	import  com.github.xbn.number.LengthInRange;
 /**
-	<P>A {@code RawOnOffEntityFilter} that is dependant on the <I>being filtered</I> entity's {@linkplain RawEntity#getFullyActiveCount() fully-active count} being in a range.</P>
+	<p>A {@code RawOnOffEntityFilter} that is dependant on the <i>being filtered</i> entity's {@linkplain RawEntity#getFullyActiveCount() fully-active count} being in a range.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RawPostFilterSelfActiveInOutRange<L> extends AbstractRawPostFilterActiveInOutRange<L>  {
 	/**
-		<P>Create a new instance from a range and when-in setting.</P>
+		<p>Create a new instance from a range and when-in setting.</p>
 
 	 **/
 	public RawPostFilterSelfActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
 		super(range, when_inRange, when_outOfRange, response, debug_ifNonNull);
 	}
 	/**
-		@return  <CODE>{@link AbstractRawPostFilterActiveInOutRange#getPostStateForCount(RawEntity) getStateForCount}(entity_beingFiltered))</CODE>
+		@return  <code>{@link AbstractRawPostFilterActiveInOutRange#getPostStateForCount(RawEntity) getStateForCount}(entity_beingFiltered))</code>
 	 **/
 	public OnOffAbort getPostState(RawEntity<L> entity_beingFiltered, int ignored, L ignored3)  {
 		return  getPostStateForCount(entity_beingFiltered);

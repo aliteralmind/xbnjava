@@ -19,10 +19,10 @@ package  com.github.xbn.list.lister.z;
 	import  com.github.xbn.analyze.alter.ValueAlterer;
 	import  com.github.xbn.neederneedable.Needer;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring an {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring an {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Needer> extends LLConfigBase_CfgForNeeder<E,C,R> implements LLCfgElement_Fieldable<E>  {
 	public ValueAlterer<Integer,Integer> avIndex;
@@ -30,13 +30,13 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 //public
 //constructors...START
 	/**
-		<P>Create a new {@code LLCfgElement_CfgForNeeder} with defaults.</P>
+		<p>Create a new {@code LLCfgElement_CfgForNeeder} with defaults.</p>
 
-		<P>This<OL>
-			<LI>Calls <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</A>(needer)</CODE></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</a>(needer)</code></li>
+		</ol></p>
 
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</A>(R)</CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</a>(R)</code>
 	 **/
 	public LLCfgElement_CfgForNeeder(R needer)  {
 		super(needer);
@@ -49,7 +49,7 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 		return  alterIndex(new ReturnValueUnchanged<Integer,Integer>());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgElement_CfgForNeeder<E,C,R> alterIndex(ValueAlterer<Integer,Integer> alterer)  {
 		CrashIfObject.nnull(alterer, "alterer", getChainIDForXMsg(null));
@@ -60,7 +60,7 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 		return  alterIndex(new ReturnValueUnchanged<Integer,Integer>());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgElement_CfgForNeeder<E,C,R> alterValue(ValueAlterer<E,E> alterer)  {
 		CrashIfObject.nnull(alterer, "alterer", getChainIDForXMsg(null));
@@ -76,9 +76,9 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 		return  aValue;
 	}
 	/**
-		<P>Create a new {@code LLCfgElement} from the configuration.</P>
+		<p>Create a new {@code LLCfgElement} from the configuration.</p>
 
-		@return  <CODE>(new {@link com.github.xbn.list.lister.LLCfgElement#LLCfgElement(LLCfgElement_Fieldable) LLCfgElement}(this))</CODE>
+		@return  <code>(new {@link com.github.xbn.list.lister.LLCfgElement#LLCfgElement(LLCfgElement_Fieldable) LLCfgElement}(this))</code>
 		@see  #endCfg()
 	 **/
 	public C build()  {
@@ -89,11 +89,11 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 		return  l;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp;  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</A>(needer, (Class&lt;LLCfgElement&lt;E&gt;&gt;)((Class)LLCfgElement.class))</CODE></P>
-		@return  <I>{@code this}</I>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</a>(needer, (Class&lt;LLCfgElement&lt;E&gt;&gt;)((Class)LLCfgElement.class))</code></p>
+		@return  <i>{@code this}</i>
 		@see  com.github.xbn.neederneedable.Needer#startConfig(Class)
 	 **/
 	@SuppressWarnings("unchecked")  //See above
@@ -102,15 +102,15 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 		return  this;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public LLCfgElement_CfgForNeeder<E,C,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);

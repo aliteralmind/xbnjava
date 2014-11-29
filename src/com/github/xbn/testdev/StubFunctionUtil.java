@@ -29,14 +29,14 @@ package  com.github.xbn.testdev;
 	import  com.github.xbn.util.JavaRegexes;
 	import  com.github.xbn.util.JavaRegexUtil;
 /**
-	<P>Application that generates stub functions in an existing java file, containing a {@code /}{@code *stub...stub*}{@code /} block, which contains a series of function signature lines (through-and-including the open curly-brace: '&#123;').</P>
+	<p>Application that generates stub functions in an existing java file, containing a {@code /}{@code *stub...stub*}{@code /} block, which contains a series of function signature lines (through-and-including the open curly-brace: '&#123;').</p>
 
-	<P>{@code java com.github.xbn.testdev.StubFunctionUtil}</P>
+	<p>{@code java com.github.xbn.testdev.StubFunctionUtil}</p>
 
-	<P>{@code <A HREF="http://stackoverflow.com/questions/2690118/java-easy-way-to-get-method-stub-out-of-class-files-within-a-jar-file-reflecti">http://stackoverflow.com/questions/2690118/java-easy-way-to-get-method-stub-out-of-class-files-within-a-jar-file-reflecti</A>}</P>
+	<p>{@code <a href="http://stackoverflow.com/questions/2690118/java-easy-way-to-get-method-stub-out-of-class-files-within-a-jar-file-reflecti">http://stackoverflow.com/questions/2690118/java-easy-way-to-get-method-stub-out-of-class-files-within-a-jar-file-reflecti</a>}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class StubFunctionUtil  {
 	private StubFunctionUtil()  {
@@ -51,7 +51,7 @@ System.out.println("FIX: Allow only one stub function.");
 System.out.println("FIX: Allow interface sigs");
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/
@@ -63,7 +63,7 @@ System.out.println("FIX: Allow interface sigs");
 		}
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/
@@ -116,7 +116,7 @@ System.out.println("FIX: Allow interface sigs");
 		return  to_appendTo;
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 		@exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
 	 **/

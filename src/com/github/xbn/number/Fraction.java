@@ -4,24 +4,24 @@ package  com.github.xbn.number;
 	import  java.util.regex.Pattern;
 	import  java.util.regex.Matcher;
 /**
-  <P>Represents a fraction in reduced and mixed-number form, with some mathematical functionality.</P>
+  <p>Represents a fraction in reduced and mixed-number form, with some mathematical functionality.</p>
 
 {&#64;.codelet.and.out com.github.xbn.examples.number.FractionXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-  <P>Originally {@code EDU.oswego.cs.dl.util.concurrent.misc.Fraction.java}, with some minor edits, and the addition of mixed numbers, testing function, and string-constructor, by Jeff Epstein.</P>
+  <p>Originally {@code EDU.oswego.cs.dl.util.concurrent.misc.Fraction.java}, with some minor edits, and the addition of mixed numbers, testing function, and string-constructor, by Jeff Epstein.</p>
 
-  <P>Originally written by Doug Lea and released into the public domain.
+  <p>Originally written by Doug Lea and released into the public domain.
   This may be used for any purposes whatsoever without acknowledgment.
   Thanks for the assistance and support of Sun Microsystems Labs,
-  and everyone contributing, testing, and using this code.</P>
+  and everyone contributing, testing, and using this code.</p>
 
-  <P><I>Original description:</I> An immutable class representing fractions as pairs of longs. Fractions are always maintained in reduced form.</P>
+  <p><i>Original description:</i> An immutable class representing fractions as pairs of longs. Fractions are always maintained in reduced form.</p>
 
-<PRE>  History:
+<pre>  History:
   Date       Who              What
   7Jul1998   dl               Create public version
   11Oct1999  dl               add hashCode
-  201011     je               Added mixed-numbers and testing function</PRE>
+  201011     je               Added mixed-numbers and testing function</pre>
 **/
 public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
 /**
@@ -44,11 +44,11 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
 	private long numerator;
 	private long denominator;
 	/**
-		<P>Create a Fraction in 'mixed number form' (such as {@code '3 1/2'}). See <a href="http://en.wikipedia.org/wiki/Fraction_%28mathematics%29#Mixed_numbers">Fractions:Mixed Numbers </a> on Wikipedia.</P>
+		<p>Create a Fraction in 'mixed number form' (such as {@code '3 1/2'}). See <a href="http://en.wikipedia.org/wiki/Fraction_%28mathematics%29#Mixed_numbers">Fractions:Mixed Numbers </a> on Wikipedia.</p>
 
-		<P>This is the same as (using the example {@code 3 1/2})</P>
+		<p>This is the same as (using the example {@code 3 1/2})</p>
 
-<PRE>	long lWhole = (new Integer(mixed_whole)).longValue();       //3
+<pre>	long lWhole = (new Integer(mixed_whole)).longValue();       //3
 	long lNumerator = (new Integer(mixed_numerator)).longValue();      //1
 	long lDenominator = (new Integer(demoninator)).longValue();  //2
 
@@ -56,29 +56,29 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
 		((lWhole / lDenominator) + lNumerator),
 		lDenominator)
 
-	System.out.println(f.{@link #toString() toString}());     //<B>7/2</B></PRE>
-	System.out.println(f.{@link #getMixedWholeString() getMixedWholeString}());     //<B>'3 1/2'</B></PRE>
+	System.out.println(f.{@link #toString() toString}());     //<b>7/2</b></pre>
+	System.out.println(f.{@link #getMixedWholeString() getMixedWholeString}());     //<b>'3 1/2'</b></pre>
 	**/
 	public Fraction(long mixed_whole, long mixed_numerator, long mixed_denominator) {
 		setFraction(mixed_whole, mixed_numerator, mixed_denominator);
 	}
 	/**
-		<P>Create a Fraction where the denominator is 1.</P>
+		<p>Create a Fraction where the denominator is 1.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@code this(whole_number, 1)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@code this(whole_number, 1)}</p>
 	 **/
 	public Fraction(long whole_number) {
 		this(whole_number, 1);
 	}
 	/**
-		<P>Create a Fraction from a string in 'mixed number form' (such as {@code '3 1/2'}). See <a href="http://en.wikipedia.org/wiki/Fraction_%28mathematics%29#Mixed_numbers">Fractions:Mixed Numbers </a> on Wikipedia.</P>
+		<p>Create a Fraction from a string in 'mixed number form' (such as {@code '3 1/2'}). See <a href="http://en.wikipedia.org/wiki/Fraction_%28mathematics%29#Mixed_numbers">Fractions:Mixed Numbers </a> on Wikipedia.</p>
 
-		@param  frac_str  A string representation of a fraction, in one of the following forms:<UL>
-			<LI><B>{@code 'whole-number'}</B>, such as {@code 3}, which is translated to {@code 3/1}.</LI>
-			<LI><B>{@code 'numerator/denominator'}</B>, such as {@code 1/2}.</LI>
-			<LI><B>{@code 'whole-number numerator/denominator'}</B>, such as {@code '3 1/2'}, translated to {@code 7/2}.</LI>
-		</UL>
+		@param  frac_str  A string representation of a fraction, in one of the following forms:<ul>
+			<li><b>{@code 'whole-number'}</b>, such as {@code 3}, which is translated to {@code 3/1}.</li>
+			<li><b>{@code 'numerator/denominator'}</b>, such as {@code 1/2}.</li>
+			<li><b>{@code 'whole-number numerator/denominator'}</b>, such as {@code '3 1/2'}, translated to {@code 7/2}.</li>
+		</ul>
 		May not be {@code null}. Must have whitespace only (spaces or tabs) between the whole-number and numerator. No other whitespace allowed.
 		@see  #Fraction(long, long, long) Fraction(l,l,l)
 	 **/
@@ -166,10 +166,10 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   public final long getDenominator() { return  denominator; }
 
 	/**
-		<P>Get the whole-number from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 1}.</P>
+		<p>Get the whole-number from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 1}.</p>
 
-		@return  If {@link #getNumerator() getNumerator}{@code ()} is greater-than-or-equal-to {@link #getDenominator() getDenominator}{@code ()}:  {@code <B>(getNumerator() / getDenominator())</B>}
-		<BR>Otherwise: <B>{@code 0}</B>
+		@return  If {@link #getNumerator() getNumerator}{@code ()} is greater-than-or-equal-to {@link #getDenominator() getDenominator}{@code ()}:  {@code <b>(getNumerator() / getDenominator())</b>}
+		<br/>Otherwise: <b>{@code 0}</b>
 		@see  #getMixedNumerator()
 		@see  #getMixedDenominator()
 	 **/
@@ -179,10 +179,10 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
 			:  0);
 	}
 	/**
-		<P>Get the numerator from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 2}.</P>
+		<p>Get the numerator from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 2}.</p>
 
-		@return  If {@code getMixedWhole()} is greater than zero:   <CODE><B>(getNumerator() - ({@link #getMixedWhole() getMixedWhole}() * getDenominator()))</B></CODE>
-		<BR>Otherwise: <B>{@code getNumerator()}</B>
+		@return  If {@code getMixedWhole()} is greater than zero:   <code><b>(getNumerator() - ({@link #getMixedWhole() getMixedWhole}() * getDenominator()))</b></code>
+		<br/>Otherwise: <b>{@code getNumerator()}</b>
 		@see  #getMixedDenominator()
 	 **/
 	public final long getMixedNumerator() {
@@ -192,7 +192,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
 			:  getNumerator());
 	}
 	/**
-		<P>Get the denominator from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 3}.</P>
+		<p>Get the denominator from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 3}.</p>
 
 		@return  {@link #getDenominator() getDenominator}{@code ()}
 		@see  #getMixedDenominator()
@@ -201,41 +201,41 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
 		return  getDenominator();
 	}
  	/**
-  		<P>Return the numerator as a string.</P>
+  		<p>Return the numerator as a string.</p>
 
-  		@return  <CODE>(new Long({@link #getNumerator() getNumerator}())).toString()</CODE>
+  		@return  <code>(new Long({@link #getNumerator() getNumerator}())).toString()</code>
   	 **/
 	public final String getNumeratorString()  {
 		return  (new Long(getNumerator())).toString();
 	}
  	/**
-  		<P>Return the denominator as a string.</P>
+  		<p>Return the denominator as a string.</p>
 
-  		@return  <CODE>(new Long({@link #getDenominator() getDenominator}())).toString()</CODE>
+  		@return  <code>(new Long({@link #getDenominator() getDenominator}())).toString()</code>
   	 **/
 	public final String getDenominatorString()  {
 		return  (new Long(getDenominator())).toString();
 	}
  	/**
-  		<P>Return the mixed-number integer as a string.</P>
+  		<p>Return the mixed-number integer as a string.</p>
 
-  		@return  <CODE>(new Long({@link #getMixedWhole() getMixedWhole}())).toString()</CODE>
+  		@return  <code>(new Long({@link #getMixedWhole() getMixedWhole}())).toString()</code>
   	 **/
 	public final String getMixedWholeString()  {
 		return  (new Long(getMixedWhole())).toString();
 	}
  	/**
-  		<P>Return the mixed-number numerator as a string.</P>
+  		<p>Return the mixed-number numerator as a string.</p>
 
-  		@return  <CODE>(new Long({@link #getMixedNumerator() getMixedNumerator}())).toString()</CODE>
+  		@return  <code>(new Long({@link #getMixedNumerator() getMixedNumerator}())).toString()</code>
   	 **/
 	public final String getMixedNumeratorString()  {
 		return  (new Long(getMixedNumerator())).toString();
 	}
  	/**
-  		<P>Return the mixed-number denominator as a string.</P>
+  		<p>Return the mixed-number denominator as a string.</p>
 
-  		@return  <CODE>(new Long({@link #getMixedDenominator() getMixedDenominator}())).toString()</CODE>
+  		@return  <code>(new Long({@link #getMixedDenominator() getMixedDenominator}())).toString()</code>
   	 **/
 	public final String getMixedDenominatorString()  {
 		return  (new Long(getMixedDenominator())).toString();
@@ -304,30 +304,30 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   }
 
 	/**
-  		<P>return  a Fraction representing this Fraction plus num</P>
+  		<p>return  a Fraction representing this Fraction plus num</p>
 	 **/
   public Fraction plus(int num) {
 	  return  plus((new Integer(num)).longValue());
   }
 
 	/**
-		<P>Assuming this fraction represents a musical duration, add to it, as made necessary by its 'dots'.</P>
+		<p>Assuming this fraction represents a musical duration, add to it, as made necessary by its 'dots'.</p>
 
-		<P>For example: Dotted quarter note</P>
+		<p>For example: Dotted quarter note</p>
 
-<PRE>	Fraction fDuration = new Fraction(1, 4);
+<pre>	Fraction fDuration = new Fraction(1, 4);
 	Fraction durationW1Dot = fDuration.plusDurationDots(1);
 	System.out.println(durationW1Dot);
-		//1/4 + (1/4 * 1/2) = 1/4 + 1/8 = 2/8 + 1/8 = <B>3/8</B></PRE>
+		//1/4 + (1/4 * 1/2) = 1/4 + 1/8 = 2/8 + 1/8 = <b>3/8</b></pre>
 
-		<P>Or: Doubly-dotted quarter note.</P>
+		<p>Or: Doubly-dotted quarter note.</p>
 
-<PRE>	Fraction durationFrac2 = new Fraction(1, 4);
+<pre>	Fraction durationFrac2 = new Fraction(1, 4);
 	Fraction durationW2Dots = durationFrac2.plusDurationDots(2);
 	System.out.println(durationW2Dots);
 		//1/4 + (1/4 * 1/2) + ((1/4 * 1/2) * 1/2) =
 		//   1/4 + 1/8 + (1/8 * 1/2) = 1/4 + 1/8 + 1/16 =
-		//   4/16 + 2/16 + 1/16 = <B>7/16</B></PRE>
+		//   4/16 + 2/16 + 1/16 = <b>7/16</b></pre>
 
 		@param  dot_count  The number of dots following the duration. May not be less than zero.
 	**/

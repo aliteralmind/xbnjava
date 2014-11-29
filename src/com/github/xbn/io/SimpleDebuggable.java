@@ -17,9 +17,9 @@ package  com.github.xbn.io;
 	import  com.github.xbn.io.z.GetDebugApbl_Fieldable;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-	<P>Basic implementation of {@code Debuggable}.</P>
+	<p>Basic implementation of {@code Debuggable}.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein. Released under the LPGL 2.1. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 **/
 public class SimpleDebuggable implements Debuggable  {
 	private TextAppenter xpnt = null;
@@ -27,12 +27,12 @@ public class SimpleDebuggable implements Debuggable  {
 
 //constructors...START
 	/**
-		<P>Create a new {@code SimpleDebuggable}.</P>
+		<p>Create a new {@code SimpleDebuggable}.</p>
 
-		<P>This calls<OL>
-			<LI>Sets {@link #getDebugAptr() getDebugAptr}{@code ()} to {@code null}.</LI>
-			<LI>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code false}.</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>Sets {@link #getDebugAptr() getDebugAptr}{@code ()} to {@code null}.</li>
+			<li>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code false}.</li>
+		</ol></p>
 
 		@see  #SimpleDebuggable(GetDebugApbl_Fieldable) this(gda_f)
 	 **/
@@ -49,13 +49,13 @@ public class SimpleDebuggable implements Debuggable  {
 	}
 
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
 
-		<P>This calls<OL>
-			<LI>Sets {@link #getDebugAptr() getDebugAptr}{@code ()} to {@code to_copy.getDebugAptr()}.</LI>
-			<LI>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code to_copy.isDebugOn()}.</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>Sets {@link #getDebugAptr() getDebugAptr}{@code ()} to {@code to_copy.getDebugAptr()}.</li>
+			<li>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code to_copy.isDebugOn()}.</li>
+		</ol></p>
 		@see  #SimpleDebuggable() this()
 	 **/
 	public SimpleDebuggable(Debuggable to_copy)  {
@@ -126,9 +126,9 @@ public class SimpleDebuggable implements Debuggable  {
 		return  to_appendTo.append("<Debug to ").append(getDebugApbl().getClass().getName()).append(">");
 	}
 	/**
-		<P>Duplicate this {@code SimpleDebuggable}</P>
+		<p>Duplicate this {@code SimpleDebuggable}</p>
 
-		@return  <CODE>(new {@link #SimpleDebuggable(Debuggable) SimpleDebuggable}(this)</CODE>
+		@return  <code>(new {@link #SimpleDebuggable(Debuggable) SimpleDebuggable}(this)</code>
 	 **/
 	public SimpleDebuggable getObjectCopy()  {
 		return  (new SimpleDebuggable(this));

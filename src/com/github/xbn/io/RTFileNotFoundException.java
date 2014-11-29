@@ -14,10 +14,10 @@
 \*license*/
 package  com.github.xbn.io;
 /**
-	<P>Runtime-wrapper for {@code java.io.FileNotFoundException}-s.</P>
+	<p>Runtime-wrapper for {@code java.io.FileNotFoundException}-s.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RTFileNotFoundException extends RTIOException  {
 
@@ -26,24 +26,24 @@ public class RTFileNotFoundException extends RTIOException  {
 	 */
 	private static final long serialVersionUID = 9178680229899979369L;
 	/**
-		<P>Create an RTFileNotFoundException with no error message.</P>
+		<p>Create an RTFileNotFoundException with no error message.</p>
 	 **/
 	public RTFileNotFoundException()  {
 	}
 	/**
-		<P>Create an RTFileNotFoundException.</P>
+		<p>Create an RTFileNotFoundException.</p>
 	 **/
 	public RTFileNotFoundException(String message)  {
 		super(message);
 	}
 	/**
-		<P>Create an RTFileNotFoundException with no error message.</P>
+		<p>Create an RTFileNotFoundException with no error message.</p>
 	 **/
 	public RTFileNotFoundException(Throwable cause)  {
 		super(cause);
 	}
 	/**
-		<P>Create an RTFileNotFoundException.</P>
+		<p>Create an RTFileNotFoundException.</p>
 	 **/
 	public RTFileNotFoundException(String message, Throwable cause)  {
 		super(message, cause);

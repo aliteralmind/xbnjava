@@ -17,13 +17,13 @@
 
 package  com.github.xbn.examples.lang.functor;
 /**
-	<P>Implementing a <A HREF="http://stackoverflow.com/questions/7369460/help-with-understanding-a-function-object-or-functor-in-java/22163940#22163940">functor</A> with an Enum.</P>
+	<p>Implementing a <a href="http://stackoverflow.com/questions/7369460/help-with-understanding-a-function-object-or-functor-in-java/22163940#22163940">functor</a> with an Enum.</p>
 
-	<P>{@code java com.github.xbn.examples.lang.functor.FunctorAsEnum1of2}</P>
+	<p>{@code java com.github.xbn.examples.lang.functor.FunctorAsEnum1of2}</p>
 
 	@see  com.github.xbn.examples.lang.functor.FunctorAsEnum2of2
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FunctorAsEnum1of2  {
    public static final void main(String[] ignored)  {

@@ -14,28 +14,28 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
 /**
-	<P>When using a series of alterers, should the <I>thing being altered</I> be altered by all of them, cumulatively, or by one-at-the-most?.</P>
+	<p>When using a series of alterers, should the <i>thing being altered</i> be altered by all of them, cumulatively, or by one-at-the-most?.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum MultiAlterType {
 	/**
-		<P>Once an alteration is made on the <I>thing</I> by any element, stop.</P>
+		<p>Once an alteration is made on the <i>thing</i> by any element, stop.</p>
 
 		@see  #CUMULATIVE
 	 **/
 	SHORT_CIRCUIT,
 	/**
-		<P>All alter-elements may make alterations on the <I>thing</I>, cumulatively.</P>
+		<p>All alter-elements may make alterations on the <i>thing</i>, cumulatively.</p>
 
 		@see  #SHORT_CIRCUIT
 	 **/
 	CUMULATIVE;
 	/**
-		<P>Is this {@code ExpireListType} equal to {@code SHORT_CIRCUIT}?.</P>
+		<p>Is this {@code ExpireListType} equal to {@code SHORT_CIRCUIT}?.</p>
 
-		@return  <CODE>this == {@link #SHORT_CIRCUIT}</CODE>
+		@return  <code>this == {@link #SHORT_CIRCUIT}</code>
 
 		@see  #isCumulative()
 	 **/
@@ -43,9 +43,9 @@ public enum MultiAlterType {
 		return  this == SHORT_CIRCUIT;
 	}
 	/**
-		<P>Is this {@code ExpireListType} equal to {@code CUMULATIVE}?.</P>
+		<p>Is this {@code ExpireListType} equal to {@code CUMULATIVE}?.</p>
 
-		@return  <CODE>this == {@link #CUMULATIVE}</CODE>
+		@return  <code>this == {@link #CUMULATIVE}</code>
 		@see  #isShortCircuit()
 	 **/
 	public final boolean isCumulative()  {

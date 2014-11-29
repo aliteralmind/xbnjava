@@ -21,12 +21,12 @@ package  com.github.xbn.examples.io.non_xbn;
 	import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
 
 /**
-   <P>A demonstration of a static utility function that reads in all plain text from a file</P>
+   <p>A demonstration of a static utility function that reads in all plain text from a file</p>
 
-   <P>{@code java com.github.xbn.examples.io.non_xbn.ManualReadAllPlainTextFromFile PATH_TO_FILE}</P>
+   <p>{@code java com.github.xbn.examples.io.non_xbn.ManualReadAllPlainTextFromFile PATH_TO_FILE}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class ManualReadAllPlainTextFromFile  {
@@ -36,9 +36,9 @@ public class ManualReadAllPlainTextFromFile  {
 		System.out.println(appendFileText((new StringBuilder()), path).toString());
 	}
    /*
-      <P>Read all text in from a file and append it onto a StringBuilder. No parsing is done, this is just a blind file read. Note: This function is useful, not efficient (?).</P>
+      <p>Read all text in from a file and append it onto a StringBuilder. No parsing is done, this is just a blind file read. Note: This function is useful, not efficient (?).</p>
 
-      <P><I>Finally, I have figured out how to read in <B>exactly</B> the contents of the file, even if it does not end with a newline  {@code :'  )}</I></P>
+      <p><i>Finally, I have figured out how to read in <b>exactly</b> the contents of the file, even if it does not end with a newline  {@code :'  )}</i></p>
 
       @param  path  The full path and name of the file to be read. Must point to an existing and readable file.
       @exception RuntimeException  Thrown when {@code path} is invalid.

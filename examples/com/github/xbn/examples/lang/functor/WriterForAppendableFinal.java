@@ -21,11 +21,11 @@ package  com.github.xbn.examples.lang.functor;
    import  java.io.IOException;
    import  java.io.Writer;
 /**
-   <P>Wrap an {@code java.lang.Appendable} into a {@code java.io.Writer}.</P>
+   <p>Wrap an {@code java.lang.Appendable} into a {@code java.io.Writer}.</p>
 
-   <P>{@code java com.github.xbn.examples.lang.functor.WriterForAppendableFinal}</P>
+   <p>{@code java com.github.xbn.examples.lang.functor.WriterForAppendableFinal}</p>
 
-   @author  Copyright (C) 2014, Jeff Epstein, with asistance by Marc Baumbach. Released under the LPGL 2.1. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+   @author  Copyright (C) 2014, Jeff Epstein, with asistance by Marc Baumbach. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class WriterForAppendableFinal extends Writer  {
 	public static final void main(String[] ignored)  {

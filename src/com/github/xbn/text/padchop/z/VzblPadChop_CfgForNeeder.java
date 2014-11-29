@@ -22,11 +22,11 @@ package  com.github.xbn.text.padchop.z;
 	import  com.github.xbn.neederneedable.AbstractNeedableWithSubs;
 	import  com.github.xbn.neederneedable.Needer;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}.</p>
 
-	@see  <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">Definition: indirectly</A>
+	@see  <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">Definition: indirectly</a>
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> extends AbstractNeedableWithSubs<VzblPadChop,R> implements VzblPadChop_Fieldable  {
 	public boolean      bTrimRight;
@@ -68,24 +68,24 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 	}
 //constructors...START
 	/**
-		<P>Create a new {@code VzblPadChop_CfgForNeeder} with no goal-length.</P>
+		<p>Create a new {@code VzblPadChop_CfgForNeeder} with no goal-length.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#VzblPadChop_CfgForNeeder(R, int)">this</A>(needer, -1)</CODE></P>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#VzblPadChop_CfgForNeeder(R, int)">this</A>(R,i)</CODE>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#VzblPadChop_CfgForNeeder(R, int)">this</a>(needer, -1)</code></p>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#VzblPadChop_CfgForNeeder(R, int)">this</a>(R,i)</code>
 	 **/
 	public VzblPadChop_CfgForNeeder(R needer)  {
 		this(needer, -1);
 	}
 	/**
-		<P>Create a new {@code VzblPadChop_CfgForNeeder} with a default goal-length.</P>
+		<p>Create a new {@code VzblPadChop_CfgForNeeder} with a default goal-length.</p>
 
-			<P>This<OL>
-			<LI>Calls <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="{@docRoot}/com/github/xbn/chain/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</A>(true, true, needer)</CODE></LI>
-			<LI>Calls {@link #reset(int) reset(goal_len)}</LI>
-		</OL></P>
+			<p>This<ol>
+			<li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/chain/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
+			<li>Calls {@link #reset(int) reset(goal_len)}</li>
+		</ol></p>
 
-		@see <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#VzblPadChop_CfgForNeeder(R)">this</A>(R)</CODE>
+		@see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#VzblPadChop_CfgForNeeder(R)">this</a>(R)</code>
 	 **/
 	public VzblPadChop_CfgForNeeder(R needer, int goal_len)  {
 		super(true, true, needer);
@@ -94,7 +94,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 //constructors...END
 //setters...START
 	/**
-		<P>Revert all configuration to <I>nothing</I>.</P>
+		<p>Revert all configuration to <i>nothing</i>.</p>
 
 		@return  {@link #reset(int) reset}{@code (-1)}
 	 **/
@@ -102,17 +102,17 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  reset(-1);
 	}
 	/**
-		<P>Declare a goal-length, but otherwise revert all configuration to <I>nothing</I>.</P>
+		<p>Declare a goal-length, but otherwise revert all configuration to <i>nothing</i>.</p>
 
-			<P>This calls<OL>
-			<LI>{@link #trim(boolean, boolean) trim(false, false)}</LI>
-			<LI>{@link #noEscape() noEscape}{@code ()}</LI>
-			<LI>{@link #cfgPad(boolean, int) cfgPad}{@code (false, goal_len).}{@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#endCfg}{@code ()}</LI>
-			<LI>{@link #cfgChop(boolean, int)}{@code (false, goal_len).}{@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#endCfg}{@code ()}</LI>
-			<LI>{@link #padFirst() padFirst}{@code ()}</LI>
-		</OL></P>
+			<p>This calls<ol>
+			<li>{@link #trim(boolean, boolean) trim(false, false)}</li>
+			<li>{@link #noEscape() noEscape}{@code ()}</li>
+			<li>{@link #cfgPad(boolean, int) cfgPad}{@code (false, goal_len).}{@link com.github.xbn.text.padchop.z.PadString_CfgForNeeder#endCfg}{@code ()}</li>
+			<li>{@link #cfgChop(boolean, int)}{@code (false, goal_len).}{@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#endCfg}{@code ()}</li>
+			<li>{@link #padFirst() padFirst}{@code ()}</li>
+		</ol></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #reset()
 		@see  #goalLen(int) goalLen(i)
 	 **/
@@ -132,14 +132,14 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		}
 	}
 	/**
-		<P>Set the desired length for the output.</P>
+		<p>Set the desired length for the output.</p>
 
-		<P>This sets<OL>
-			<LI>The internal {@link PadString} to <CODE><I>[the internal PadString]</I>.{@link com.github.xbn.text.padchop.PadChopBase#getCopyNewGoalLen(int) getCopyNewGoalLen}(length)</CODE></LI>
-			<LI>The internal {@link ChopString} to <CODE><I>[the internal ChopString]</I>.getCopyNewGoalLen(length)</CODE></LI>
-		</OL></P>
+		<p>This sets<ol>
+			<li>The internal {@link PadString} to <code><i>[the internal PadString]</i>.{@link com.github.xbn.text.padchop.PadChopBase#getCopyNewGoalLen(int) getCopyNewGoalLen}(length)</code></li>
+			<li>The internal {@link ChopString} to <code><i>[the internal ChopString]</i>.getCopyNewGoalLen(length)</code></li>
+		</ol></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #reset(int) reset(i)
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> goalLen(int length)  {
@@ -152,7 +152,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  this;
 	}
 	/**
-		<P>Trim the left side of the string.</P>
+		<p>Trim the left side of the string.</p>
 
 		@return  {@link #trim(boolean, boolean) trim(true, false)}
 	 **/
@@ -160,7 +160,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  trim(true, false);
 	}
 	/**
-		<P>Trim the right side of the string.</P>
+		<p>Trim the right side of the string.</p>
 
 		@return  {@link #trim(boolean, boolean) trim(false, true)}
 	 **/
@@ -168,7 +168,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  trim(false, true);
 	}
 	/**
-		<P>Trim both sides of the string.</P>
+		<p>Trim both sides of the string.</p>
 
 		@return  {@link #trim(boolean, boolean) trim(true, true)}
 	 **/
@@ -176,15 +176,15 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  trim(true, true);
 	}
 	/**
-		<P>Declare which sides of the string should be trimmed.</P>
+		<p>Declare which sides of the string should be trimmed.</p>
 
-			<P><I><B>See:</B></I><UL>
-			<LI><I>{@link #trimLeft() trimLeft}{@code ()}, {@link #trimRight() trimRight}{@code ()}, {@link #trim() trim}{@code ()}</I></LI>
-			</UL></P>
+			<p><i><b>See:</b></i><ul>
+			<li><i>{@link #trimLeft() trimLeft}{@code ()}, {@link #trimRight() trimRight}{@code ()}, {@link #trim() trim}{@code ()}</i></li>
+			</ul></p>
 
-		@param  do_left  If {@code true}, the left side of the string is trimmed. Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doTrimLeft() doTrimLeft}()</CODE>.
-		@param  do_right  If {@code true}, the right side of the string is trimmed. Get with  <CODE><I>[VzblPadChop]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doTrimRight() doTrimRight}()</CODE>.
-		@return  <I>{@code this}</I>
+		@param  do_left  If {@code true}, the left side of the string is trimmed. Get with  <code><i>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#doTrimLeft() doTrimLeft}()</code>.
+		@param  do_right  If {@code true}, the right side of the string is trimmed. Get with  <code><i>[VzblPadChop]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#doTrimRight() doTrimRight}()</code>.
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> trim(boolean do_left, boolean do_right)  {
 		bTrimLeft = do_left;
@@ -192,11 +192,11 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  this;
 	}
 	/**
-		<P>Leave control characters alone.</P>
+		<p>Leave control characters alone.</p>
 
-		<P>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <CODE>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#NOTHING NOTHING}</CODE></P>
+		<p>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <code>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#NOTHING NOTHING}</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #unescape()
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> noEscape()  {
@@ -204,11 +204,11 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  this;
 	}
 	/**
-		<P>Unescape control characters.</P>
+		<p>Unescape control characters.</p>
 
-		<P>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <CODE>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#UNESCAPE UNESCAPE}</CODE></P>
+		<p>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <code>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#UNESCAPE UNESCAPE}</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #noEscape()
 		@see  #escape()
 	 **/
@@ -217,11 +217,11 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  this;
 	}
 	/**
-		<P>EscapeAction control characters.</P>
+		<p>EscapeAction control characters.</p>
 
-		<P>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <CODE>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#ESCAPE ESCAPE}</CODE></P>
+		<p>This sets {@link VzblPadChop#getEscapeAction() getEscapeAction}{@code ()} to <code>{@link com.github.xbn.text.padchop.EscapeAction EscapeAction}.{@link com.github.xbn.text.padchop.EscapeAction#ESCAPE ESCAPE}</code></p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #unescape()
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> escape()  {
@@ -229,7 +229,7 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> escapeNothingIfNull(EscapeAction action)  {
 		esc = ((action == null) ? EscapeAction.NOTHING : action);
@@ -237,18 +237,18 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 	}
 
 	/**
-		<P>Turn padding on or off.</P>
+		<p>Turn padding on or off.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> pad(boolean is_on)  {
 		bPad = is_on;
 		return  this;
 	}
 	/**
-		<P>Turn chopping on or off.</P>
+		<p>Turn chopping on or off.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> chop(boolean is_on)  {
 		bChop = is_on;
@@ -270,19 +270,19 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  cfgChop(is_on, chopString.getGoalLen());
 	}
 	/**
-		<P>Define chopping configuration.</P>
+		<p>Define chopping configuration.</p>
 
-			<P><I><B>See:</B></I><UL>
-			<LI><I>{@link #chop(boolean) chop(b)}</I></LI>
-			</UL></P>
+			<p><i><b>See:</b></i><ul>
+			<li><i>{@link #chop(boolean) chop(b)}</i></li>
+			</ul></p>
 
-		<P>.............May not be {@code null}, and if {@code is_on} is {@code true}, {@code chpr.getGoalLen()} must be zero or greater. Get with  <CODE><I>[VzblPadChop]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#getChop() getChop}()</CODE>. If
-		<BR> &nbsp; &nbsp; <CODE>chpr.{@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}()</CODE>
-		<BR>is different than
-		<BR> &nbsp; &nbsp;  <CODE><I>[the currently-set {@link com.github.xbn.text.padchop.PadString PadString}]</I>.getGoalLen()</CODE>
-		<BR>Then the {@code DifferentGoalLengths} parameter in the {@code VzblPadChop} {@link com.github.xbn.text.padchop.VzblPadChop#VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) constructor} dictates the action taken.</P>
+		<p>.............May not be {@code null}, and if {@code is_on} is {@code true}, {@code chpr.getGoalLen()} must be zero or greater. Get with  <code><i>[VzblPadChop]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#getChop() getChop}()</code>. If
+		<br/> &nbsp; &nbsp; <code>chpr.{@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}()</code>
+		<br/>is different than
+		<br/> &nbsp; &nbsp;  <code><i>[the currently-set {@link com.github.xbn.text.padchop.PadString PadString}]</i>.getGoalLen()</code>
+		<br/>Then the {@code DifferentGoalLengths} parameter in the {@code VzblPadChop} {@link com.github.xbn.text.padchop.VzblPadChop#VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) constructor} dictates the action taken.</p>
 
-		@param  is_on  If {@code true} padding is active. Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doPad() doPad}()</CODE>
+		@param  is_on  If {@code true} padding is active. Get with  <code><i>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#doPad() doPad}()</code>
 	 **/
 	public ChopString_CfgForNeeder<ChopString,VzblPadChop_CfgForNeeder<V,R>> cfgChop(boolean is_on, int goal_len)  {
 		bChop = is_on;
@@ -292,43 +292,43 @@ public class VzblPadChop_CfgForNeeder<V extends VzblPadChop,R extends Needer> ex
 		return  cfgPad(is_on, padString.getGoalLen());
 	}
 	/**
-		<P>Define padding configuration.</P>
+		<p>Define padding configuration.</p>
 
-			<P><I><B>See:</B></I><UL>
-			<LI><I>{@link #pad(boolean) pad(b)}</I></LI>
-			</UL></P>
+			<p><i><b>See:</b></i><ul>
+			<li><i>{@link #pad(boolean) pad(b)}</i></li>
+			</ul></p>
 
-		<P>May not be {@code null}, and if {@code is_on} is {@code true}, {@code padr.getGoalLen()} must be zero or greater. Get with  <CODE><I>[VzblPadChop]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#getPad() getPad}()</CODE>. If
-		<BR> &nbsp; &nbsp; <CODE>padr.{@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}()</CODE>
-		<BR>is different than
-		<BR> &nbsp; &nbsp;  <CODE><I>[the currently-set {@link com.github.xbn.text.padchop.ChopString ChopString}]</I>.getGoalLen()</CODE>
-		<BR>Then the {@code DifferentGoalLengths} parameter in the {@code VzblPadChop} {@link com.github.xbn.text.padchop.VzblPadChop#VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) constructor} dictates the action taken.</P>
+		<p>May not be {@code null}, and if {@code is_on} is {@code true}, {@code padr.getGoalLen()} must be zero or greater. Get with  <code><i>[VzblPadChop]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#getPad() getPad}()</code>. If
+		<br/> &nbsp; &nbsp; <code>padr.{@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}()</code>
+		<br/>is different than
+		<br/> &nbsp; &nbsp;  <code><i>[the currently-set {@link com.github.xbn.text.padchop.ChopString ChopString}]</i>.getGoalLen()</code>
+		<br/>Then the {@code DifferentGoalLengths} parameter in the {@code VzblPadChop} {@link com.github.xbn.text.padchop.VzblPadChop#VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) constructor} dictates the action taken.</p>
 
-		@param  is_on  If {@code true} padding is active. Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doPad() doPad}()</CODE>
+		@param  is_on  If {@code true} padding is active. Get with  <code><i>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#doPad() doPad}()</code>
 	 **/
 	public PadString_CfgForNeeder<PadString,VzblPadChop_CfgForNeeder<V,R>> cfgPad(boolean is_on, int goal_len)  {
 		bPad = is_on;
 		return  (new PadString_CfgForNeeder<PadString,VzblPadChop_CfgForNeeder<V,R>>(this, goal_len));
 	}
 	/**
-		<P>Pad the string before chopping it.</P>
+		<p>Pad the string before chopping it.</p>
 
-			<P><I><B>See:</B></I><UL>
-			<LI><I>{@link #chopFirst() chopFirst}{@code ()}</I></LI>
-			</UL></P>
-Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doPadFirst() doPadFirst}()</CODE>. This is ignored when either padding or chopping is off.
-		@return  <I>{@code this}</I>
+			<p><i><b>See:</b></i><ul>
+			<li><i>{@link #chopFirst() chopFirst}{@code ()}</i></li>
+			</ul></p>
+Get with  <code><i>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#doPadFirst() doPadFirst}()</code>. This is ignored when either padding or chopping is off.
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> padFirst()  {
 		bPadFirst = true;
 		return  this;
 	}
 	/**
-		<P>Chop the string before padding it.</P>
+		<p>Chop the string before padding it.</p>
 
-		<P>Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</I>.{@link com.github.xbn.text.padchop.VzblPadChop#doPadFirst() doPadFirst}()</CODE>. This is ignored when either padding or chopping is off.</P>
+		<p>Get with  <code><i>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]</i>.{@link com.github.xbn.text.padchop.VzblPadChop#doPadFirst() doPadFirst}()</code>. This is ignored when either padding or chopping is off.</p>
 
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 		@see  #padFirst()
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> chopFirst()  {
@@ -336,10 +336,10 @@ Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]
 		return  this;
 	}
 	/**
-		<P>Set debugging.</P>
+		<p>Set debugging.</p>
 
 		@param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> debugTo(Appendable dest_ifNonNull)  {
 		apblDebug = dest_ifNonNull;
@@ -347,17 +347,17 @@ Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]
 	}
 //setters...END
 	/**
-		<P>Create a new {@code VzblPadChop} as configured.</P>
+		<p>Create a new {@code VzblPadChop} as configured.</p>
 
-		@return  <CODE>{@link #build(DifferentGoalLengths) build}({@link com.github.xbn.text.padchop.DifferentGoalLengths DifferentGoalLengths}.{@link com.github.xbn.text.padchop.DifferentGoalLengths#IGNORE IGNORE})</CODE></P>
+		@return  <code>{@link #build(DifferentGoalLengths) build}({@link com.github.xbn.text.padchop.DifferentGoalLengths DifferentGoalLengths}.{@link com.github.xbn.text.padchop.DifferentGoalLengths#IGNORE IGNORE})</code></p>
 	 **/
 	public V build()  {
 		return  build(DifferentGoalLengths.IGNORE);
 	}
 	/**
-		<P>Create a new {@code VzblPadChop} as configured.</P>
+		<p>Create a new {@code VzblPadChop} as configured.</p>
 
-		@return  <CODE>(V)new {@link com.github.xbn.text.padchop.VzblPadChop#VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) VzblPadChop}(id_gl, this)</CODE>
+		@return  <code>(V)new {@link com.github.xbn.text.padchop.VzblPadChop#VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) VzblPadChop}(id_gl, this)</code>
 		@see  #build()
 	 **/
 	public V build(DifferentGoalLengths id_gl)  {
@@ -366,23 +366,23 @@ Get with  <CODE><I>[{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}]
 		return  v;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> startConfigReturnNeedable(R needer)  {
 		startConfig(needer, VzblPadChop.class);
 		return  this;
 	}
 	/**
-		@return  <I>{@code this}</I>
+		@return  <i>{@code this}</i>
 	 **/
 	public VzblPadChop_CfgForNeeder<V,R> chainID(boolean do_setStatic, Object id)  {
 		setChainID(do_setStatic, id);
 		return  this;
 	}
 	/**
-		<P>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</P>
+		<p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-		@return  <CODE>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</CODE>
+		@return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
 	 **/
 	public R endCfg()  {
 		return  endCfgWithNeededReturnNeeder(build());

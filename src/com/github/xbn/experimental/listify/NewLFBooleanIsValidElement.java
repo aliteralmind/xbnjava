@@ -28,10 +28,10 @@ package  com.github.xbn.experimental.listify;
 	import  java.util.Iterator;
 	import  java.util.List;
 /**
-   <P>Convenience functions for creating listifiers whose virtual elements are <I>booleans that express the validity</I> of the elements in the raw object.</P>
+   <p>Convenience functions for creating listifiers whose virtual elements are <i>booleans that express the validity</i> of the elements in the raw object.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewLFBooleanIsValidElement  {
    private NewLFBooleanIsValidElement()  {
@@ -112,7 +112,7 @@ public class NewLFBooleanIsValidElement  {
 	}
 }
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 <!--
 char Character Char
 double Double PDouble

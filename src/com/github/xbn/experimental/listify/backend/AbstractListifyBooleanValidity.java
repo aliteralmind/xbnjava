@@ -18,33 +18,33 @@ package  com.github.xbn.experimental.listify.backend;
 	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 	import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable;
 /**
-	<P>For building listifiers whose virtual elements express the <I>validity</I> of its raw elements.</P>
+	<p>For building listifiers whose virtual elements express the <i>validity</i> of its raw elements.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyBoolable  {
 	private ValueValidator<R> vvre = null;
 //constructors...START
 	/**
-		<P>Create a new {@code ListifyBooleanValidity}.</P>
+		<p>Create a new {@code ListifyBooleanValidity}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object) super}{@code (raw_obj)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object) super}{@code (raw_obj)}</p>
 	 **/
 	public AbstractListifyBooleanValidity(Object raw_obj, ValueValidator<R> raw_elementVldtr)  {
 		super(raw_obj);
 		setVVRE(raw_elementVldtr);
 	}
 	/**
-		<P>Create a new {@code ListifyBooleanValidity}.</P>
+		<p>Create a new {@code ListifyBooleanValidity}.</p>
 
 		YYY
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object, NullHandlerForPrimitives) super}{@code (raw_obj, null_handler)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object, NullHandlerForPrimitives) super}{@code (raw_obj, null_handler)}</p>
 	 **/
 	public AbstractListifyBooleanValidity(Object raw_obj, ValueValidator<R> raw_elementVldtr, NullHandlerForPrimitives<Boolean> null_handler)  {
 		super(raw_obj, null_handler);
@@ -57,12 +57,12 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
 			vvre = raw_elementVldtr;
 		}
 	/**
-		<P>Create a new {@code AbstractListifyBooleanValidity} as a duplicate of another.</P>
+		<p>Create a new {@code AbstractListifyBooleanValidity} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(AbstractListifyBoolable) super}{@code (to_copy)}</LI>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(AbstractListifyBoolable) super}{@code (to_copy)}</li>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()

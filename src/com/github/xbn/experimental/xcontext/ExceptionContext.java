@@ -2,26 +2,26 @@ package  com.github.xbn.experimental.xcontext;
 	import  com.github.xbn.lang.Copyable;
 //	import  com.github.xbn.experimental.xcontext.XContextable;
 /**
-	<P>Information related to a potential error.</P>
+	<p>Information related to a potential error.</p>
  **/
 public interface ExceptionContext extends Copyable  {
 	/**
-		<P>Update the extra-information.</P>
+		<p>Update the extra-information.</p>
 
 		@param  info  If {@code null}, there is no extra information. Get with {@link #getExtraInfo() getExtraInfo}{@code ()}.
 	 **/
 	void setExtraInfo(Object info);
 	/**
-		<P>Extra information to append to the error message.</P>
+		<p>Extra information to append to the error message.</p>
 
-		@return  Is there extra information?<UL>
-			<LI>No: {@code &quot;&quot;}</LI>
-			<LI>Yes: A non-{@code null}, non-empty string.</LI>
-		</UL>
+		@return  Is there extra information?<ul>
+			<li>No: {@code &quot;&quot;}</li>
+			<li>Yes: A non-{@code null}, non-empty string.</li>
+		</ul>
 	 **/
 	String getExtraInfo();
 	/**
-		<P>Get a copy of this {@code ExceptionContext} in which all fields are duplicated, except {@code getExtraInfo()}, which is a reference to the original.</P>
+		<p>Get a copy of this {@code ExceptionContext} in which all fields are duplicated, except {@code getExtraInfo()}, which is a reference to the original.</p>
 
 		@return  A non-{@code null} duplicate of this {@code ExceptionContext}.
 	 **/

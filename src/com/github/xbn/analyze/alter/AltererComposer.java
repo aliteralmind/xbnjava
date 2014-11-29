@@ -18,10 +18,10 @@ package  com.github.xbn.analyze.alter;
 	import  com.github.xbn.analyze.Analyzer;
 	import  com.github.xbn.analyze.AnalyzerComposer;
 /**
-	<P>For classes needing to implement {@code Alterer}, that cannot extend {@code AbstractAlterer}. See {@link com.github.xbn.analyze.alter.AbstractAlterer AbstractAlterer}.</P>
+	<p>For classes needing to implement {@code Alterer}, that cannot extend {@code AbstractAlterer}. See {@link com.github.xbn.analyze.alter.AbstractAlterer AbstractAlterer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class AltererComposer extends AnalyzerComposer  {
 	private final boolean isRequired;
@@ -33,19 +33,19 @@ public class AltererComposer extends AnalyzerComposer  {
 //internal
 //constructor...START
 	/**
-		<P>Create a new instance that is required to make an alteration.</P>
+		<p>Create a new instance that is required to make an alteration.</p>
 	 **/
 	public AltererComposer()  {
 		this(AlterationRequired.YES);
 	}
 	/**
-		<P>Create a new instance with the required setting.</P>
+		<p>Create a new instance with the required setting.</p>
 
-		<P>This calls<OL>
-			<LI>{@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer() super}{@code ()}</LI>
-			<LI>{@link #zresetStateAC() zresetStateAC}{@code ()}</LI>
-			<LI>{@link #zresetCountsAC() zresetCountsAC}{@code ()}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer() super}{@code ()}</li>
+			<li>{@link #zresetStateAC() zresetStateAC}{@code ()}</li>
+			<li>{@link #zresetCountsAC() zresetCountsAC}{@code ()}</li>
+		</ol></p>
 
 		@see  #AltererComposer(boolean, AltererComposer) this(b,ab)
 		@see  #AltererComposer(Alterer) this(ltr)
@@ -61,17 +61,17 @@ public class AltererComposer extends AnalyzerComposer  {
 		zresetCountsAC();
 	}
 	/**
-		<P>Create a new {@code AltererComposer} as a duplicate of another.</P>
+		<p>Create a new {@code AltererComposer} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(boolean, AnalyzerComposer) super}{@code (ignored, to_copy)}</LI>
-			<LI>Sets<OL>
-				<LI>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</LI>
-				<LI>{@link #getAlteredCount() getAlteredCount}{@code ()} to {@code to_copy.getAlteredCount()}</LI>
-				<LI>{@link #getDeletedCount() getDeletedCount}{@code ()} to {@code to_copy.getDeletedCount()}</LI>
-			</OL></LI>
-			<LI>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <I>(as specified by  <CODE><I>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</I>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</CODE>)</I></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(boolean, AnalyzerComposer) super}{@code (ignored, to_copy)}</li>
+			<li>Sets<ol>
+				<li>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</li>
+				<li>{@link #getAlteredCount() getAlteredCount}{@code ()} to {@code to_copy.getAlteredCount()}</li>
+				<li>{@link #getDeletedCount() getDeletedCount}{@code ()} to {@code to_copy.getDeletedCount()}</li>
+			</ol></li>
+			<li>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
+		</ol></p>
 		@param  to_copy  May not be {@code null}
 		@see  #getObjectCopy()
 		@see  #AltererComposer() this()
@@ -84,17 +84,17 @@ public class AltererComposer extends AnalyzerComposer  {
 		zresetStateAC();
 	}
 	/**
-		<P>Create a new {@code AltererComposer} from an {@code Alterer}.</P>
+		<p>Create a new {@code AltererComposer} from an {@code Alterer}.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (to_copy)}</LI>
-			<LI>Sets<OL>
-				<LI>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</LI>
-				<LI>{@link #getAlteredCount() getAlteredCount}{@code ()} to {@code to_copy.getAlteredCount()}</LI>
-				<LI>{@link #getDeletedCount() getDeletedCount}{@code ()} to {@code to_copy.getDeletedCount()}</LI>
-			</OL></LI>
-			<LI>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <I>(as specified by  <CODE><I>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</I>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</CODE>)</I></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (to_copy)}</li>
+			<li>Sets<ol>
+				<li>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</li>
+				<li>{@link #getAlteredCount() getAlteredCount}{@code ()} to {@code to_copy.getAlteredCount()}</li>
+				<li>{@link #getDeletedCount() getDeletedCount}{@code ()} to {@code to_copy.getDeletedCount()}</li>
+			</ol></li>
+			<li>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
+		</ol></p>
 		@param  to_copy  May not be {@code null}
 		@see  #AltererComposer() this()
 	 **/
@@ -108,45 +108,45 @@ public class AltererComposer extends AnalyzerComposer  {
 //constructor...END
 //setters...START
 	/**
-		<P>Reset non-count state.</P>
+		<p>Reset non-count state.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #zresetStateAC() zresetStateAC}{@code ()}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #zresetStateAC() zresetStateAC}{@code ()}</p>
 	 **/
 	public void resetState()  {
 		super.resetState();
 		zresetStateAC();
 	}
 	/**
-		<P>Reset non-count state specific to this {@code AltererComposer}.</P>
+		<p>Reset non-count state specific to this {@code AltererComposer}.</p>
 
-		<P>This sets<UL>
-			<LI>{@link #wasAltered() wasAltered}{@code ()},</LI>
-			<LI>{@link #needsToBeDeleted() needsToBeDeleted}{@code ()}</LI>
-		</UL>to {@code false}</P>
+		<p>This sets<ul>
+			<li>{@link #wasAltered() wasAltered}{@code ()},</li>
+			<li>{@link #needsToBeDeleted() needsToBeDeleted}{@code ()}</li>
+		</ul>to {@code false}</p>
 	 **/
 	protected final void zresetStateAC()  {
 		bWLtrd = false;
 		bNtbDel = false;
 	}
 	/**
-		<P>Reset counters to zero.</P>
+		<p>Reset counters to zero.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link #zresetCountsAC() zresetCountsAC}{@code ()}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link #zresetCountsAC() zresetCountsAC}{@code ()}</p>
 	 **/
 	public void resetCounts()  {
 		super.resetCounts();
 		zresetCountsAC();
 	}
 	/**
-		<P>Reset counters specific to this {@code AltererComposer}.</P>
+		<p>Reset counters specific to this {@code AltererComposer}.</p>
 
-		<P>Sets<UL>
-			<LI>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()},</LI>
-			<LI>{@link #getAlteredCount() getAlteredCount}{@code ()}, and</LI>
-			<LI>{@link #getDeletedCount() getDeletedCount}{@code ()}</LI>
-		</UL>to zero.</P>
+		<p>Sets<ul>
+			<li>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()},</li>
+			<li>{@link #getAlteredCount() getAlteredCount}{@code ()}, and</li>
+			<li>{@link #getDeletedCount() getDeletedCount}{@code ()}</li>
+		</ul>to zero.</p>
 	 **/
 	protected final void zresetCountsAC()  {
 		iLtrd = 0;
@@ -159,12 +159,12 @@ public class AltererComposer extends AnalyzerComposer  {
 		bDnDl = may_del;
 	}
 	/**
-		<P>YYY</P>
-		<P>This<OL>
-			<LI>Calls  <CODE><I>[{@link com.github.xbn.analyze.AnalyzerComposer super}]</I>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</CODE></LI>
-			<LI>Sets {@link #wasAltered() wasAltered}{@code ()} to {@code false}</LI>
-			<LI>Sets {@link #needsToBeDeleted() needsToBeDeleted}{@code ()} to {@code true}</LI>
-		</OL></P>
+		<p>YYY</p>
+		<p>This<ol>
+			<li>Calls  <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer super}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</code></li>
+			<li>Sets {@link #wasAltered() wasAltered}{@code ()} to {@code false}</li>
+			<li>Sets {@link #needsToBeDeleted() needsToBeDeleted}{@code ()} to {@code true}</li>
+		</ol></p>
 	 **/
 	public void declareAltered_4prot(Altered altered, NeedsToBeDeleted deleted)  {
 		try  {
@@ -217,13 +217,13 @@ public class AltererComposer extends AnalyzerComposer  {
 		bDnDl = true;
 	}
 	/**
-		@return  <CODE>(({@link #getAlteredCount() getAlteredCount}() != 0))</CODE>
+		@return  <code>(({@link #getAlteredCount() getAlteredCount}() != 0))</code>
 	 **/
 	public boolean isComplete()  {
 		return  (getAlteredCount() != 0);
 	}
 	/**
-		@return  <CODE>{@link #appendToString(StringBuilder) appendToString}(to_appendTo)</CODE>
+		@return  <code>{@link #appendToString(StringBuilder) appendToString}(to_appendTo)</code>
 	 **/
 	public StringBuilder appendIncompleteInfo(StringBuilder to_appendTo)  {
 		if(isComplete())  {
@@ -266,7 +266,7 @@ public class AltererComposer extends AnalyzerComposer  {
 		return  to_appendTo;
 	}
 	/**
-		<P><I>Do not use--override if a copy is needed.</I></P>
+		<p><i>Do not use--override if a copy is needed.</i></p>
 
 		@exception  UnsupportedOperationException
 	 **/

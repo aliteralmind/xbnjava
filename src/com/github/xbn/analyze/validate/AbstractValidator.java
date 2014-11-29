@@ -18,26 +18,26 @@ package  com.github.xbn.analyze.validate;
 	import  com.github.xbn.io.TextAppenter;
 	import  com.github.xbn.lang.RuleType;
 /**
-	<P>Abstract implementation of {@code Validator}. For classes needing to implement {@code Validator}, that cannot extend this class, see {@code ValidatorComposer}.</P>
+	<p>Abstract implementation of {@code Validator}. For classes needing to implement {@code Validator}, that cannot extend this class, see {@code ValidatorComposer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public abstract class AbstractValidator implements Validator  {
 	private ValidatorComposer vc = null;
 	/**
-		<P>Create a new {@code AbstractValidator}.</P>
+		<p>Create a new {@code AbstractValidator}.</p>
 	 **/
 	protected AbstractValidator(RuleType type, Validator_Fieldable filter)  {
 		vc = new ValidatorComposer(type, filter);
 	}
 	/**
-		<P>Create a new {@code AbstractValidator} as a duplicate of another.</P>
+		<p>Create a new {@code AbstractValidator} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -133,7 +133,7 @@ public abstract class AbstractValidator implements Validator  {
 		return  vc.appendToString(to_appendTo).append(", getRules()=").append(getRules());
 	}
 	/**
-		@return  <CODE>true</CODE> If <CODE>to_compareTo</CODE> is non-<CODE>null</CODE>, an <CODE>AbstractValidator</CODE>, and <CODE><A HREF="#areFieldsEqual(xbn.lang.AbstractValidator)">areFieldsEqual</A>((AbstractValidator)to_compareTo)</CODE> is <CODE>true</CODE>. <I>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</I>
+		@return  <code>true</code> If <code>to_compareTo</code> is non-<code>null</code>, an <code>AbstractValidator</code>, and <code><a href="#areFieldsEqual(xbn.lang.AbstractValidator)">areFieldsEqual</a>((AbstractValidator)to_compareTo)</code> is <code>true</code>. <i>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</i>
 	 **/
 	@Override
 	public boolean equals(Object to_compareTo)  {
@@ -159,17 +159,17 @@ public abstract class AbstractValidator implements Validator  {
 		return  ValidatorComposer.areValidatorFieldsEqual(this, to_compareTo);
 	}
 	/*
-		<P>FUNC_JD_INTRO</P>
-		<P>Equal to
-		<BR> &nbsp; &nbsp;{@code <A HREF="YYY/ValidatorComposer.html"><I>[ValidatorComposer]</I></A>.<A HREF="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType)">setERuleType_4prot</A>(type)}</P>
+		<p>FUNC_JD_INTRO</p>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType)">setERuleType_4prot</a>(type)}</p>
 	protected void setERuleType(RuleType type)  {
 		vc.setERuleType_4prot(type);
 	}
 	 */
 	/*
-		<P>FUNC_JD_INTRO</P>
-		<P>Equal to
-		<BR> &nbsp; &nbsp;{@code <A HREF="YYY/ValidatorComposer.html"><I>[ValidatorComposer]</I></A>.<A HREF="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType, String)">setERuleType_4prot</A>(type, type_name)}</P>
+		<p>FUNC_JD_INTRO</p>
+		<p>Equal to
+		<br/> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType, String)">setERuleType_4prot</a>(type, type_name)}</p>
 	protected void setERuleType(RuleType type, String type_name)  {
 		vc.setERuleType_4prot(type, type_name);
 	}

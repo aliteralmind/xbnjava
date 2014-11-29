@@ -22,13 +22,13 @@ package  com.github.xbn.examples.linefilter;
 	import  com.github.xbn.text.StringUtil;
 	import  java.util.Iterator;
 /**
-	<P>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to iterate altered lines instead of kept lines.</P>
+	<p>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to iterate altered lines instead of kept lines.</p>
 
-	<P>{@code java com.github.xbn.examples.linefilter.IterateActiveLines}</P>
+	<p>{@code java com.github.xbn.examples.linefilter.IterateActiveLines}</p>
 
 	@see  com.github.xbn.linefilter.entity.raw.RawEntity#doKeepJustAnalyzed()
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IterateActiveLines  {
 	public static final void main(String[] ignored)  {

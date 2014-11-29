@@ -1,8 +1,8 @@
 package  com.github.xbn.examples.testdev;
 /**
-	<P>Required by {@link UnitTestAppOutputContainsXmpl}.</P>
+	<p>Required by {@link UnitTestAppOutputContainsXmpl}.</p>
 
-   <P>{@code java com.github.xbn.examples.testdev.HelloWorld}</P>
+   <p>{@code java com.github.xbn.examples.testdev.HelloWorld}</p>
  **/
 public class HelloWorld  {
    public static final void main(String[] ignored)  {

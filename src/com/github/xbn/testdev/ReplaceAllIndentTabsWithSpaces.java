@@ -31,12 +31,12 @@ package  com.github.xbn.testdev;
 	import  java.util.Objects;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>Change tab-indentation in a file or directory of files, to spaces.</P>
+	<p>Change tab-indentation in a file or directory of files, to spaces.</p>
 
 {@.codelet com.github.xbn.examples.testdev.ReplaceAllIndentTabsWithSpacesXmpl%lineRange(1, false, "allFileTypesKeepFilter =", 1, false, "new ReplaceAllIndentTabsWithSpaces", "^      ")}
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReplaceAllIndentTabsWithSpaces  {
 	private final TextAppenter debug;
@@ -44,26 +44,26 @@ public class ReplaceAllIndentTabsWithSpaces  {
 	private final TabToSpaceDebugLevel dbgLevel;
 	private static final DecimalFormat DEC_FMT = new DecimalFormat("#.###");
 	/**
-		<P>Create a new instance from space-count and optional debugging.</P>
+		<p>Create a new instance from space-count and optional debugging.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel) this}(space_count, debug_ifNonNull, {@link TabToSpaceDebugLevel}.{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY})</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel) this}(space_count, debug_ifNonNull, {@link TabToSpaceDebugLevel}.{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY})</code></p>
 	 **/
 	public ReplaceAllIndentTabsWithSpaces(int space_count, Appendable debug_ifNonNull)  {
 		this(space_count, debug_ifNonNull, TabToSpaceDebugLevel.ALL_SUMMARY_ONLY);
 	}
 	/**
-		<P>Create a new instance from space-count and optional debugging.</P>
+		<p>Create a new instance from space-count and optional debugging.</p>
 
 		@param  space_count  The number of spaces to replace each tab with. If zero, indentation is eliminated. May not be less than zero. Get with {@link #getSpaces() getSpaces}{@code ()}
 		@param  debug_ifNonNull  Get with {@link #getDebugAptr() getDebugAptr}{@code ()}.
-		@param  debug_level  If {@code debug_ifNonNull} is non-{@code null}, this may not be {@code null}. Get with {@link #getDebugLevel() getDebugLevel}{@code ()}. If<UL>
-			<LI>{@link TabToSpaceDebugLevel#OFF OFF}: Nothing is debugged.</LI>
-			<LI>{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY}: A single summary after all files are processed.</LI>
-			<LI>{@link TabToSpaceDebugLevel#FILE_SUMMARIES FILE_SUMMARIES}: In addition to the all-summary, a single dot is printed for every file.</LI>
-			<LI>{@link TabToSpaceDebugLevel#FILE_DOTS FILE_DOTS}: In addition to the all-summary, a summary is printed for every file.</LI>
-			<LI>{@link TabToSpaceDebugLevel#LINE_COUNTS LINE_COUNTS}: In addition to the above, this also outputs a single character for every line, representing the number of tabs replaced in it (when one or greater). This uses <CODE>{@link com.github.xbn.number.NumberUtil}.{@link com.github.xbn.number.NumberUtil#CHAR_LIST_FOR_NUMBERS_0_THROUGH_62 CHAR_LIST_FOR_NUMBERS_0_THROUGH_62}</CODE>.</LI>
-		</UL>
+		@param  debug_level  If {@code debug_ifNonNull} is non-{@code null}, this may not be {@code null}. Get with {@link #getDebugLevel() getDebugLevel}{@code ()}. If<ul>
+			<li>{@link TabToSpaceDebugLevel#OFF OFF}: Nothing is debugged.</li>
+			<li>{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY}: A single summary after all files are processed.</li>
+			<li>{@link TabToSpaceDebugLevel#FILE_SUMMARIES FILE_SUMMARIES}: In addition to the all-summary, a single dot is printed for every file.</li>
+			<li>{@link TabToSpaceDebugLevel#FILE_DOTS FILE_DOTS}: In addition to the all-summary, a summary is printed for every file.</li>
+			<li>{@link TabToSpaceDebugLevel#LINE_COUNTS LINE_COUNTS}: In addition to the above, this also outputs a single character for every line, representing the number of tabs replaced in it (when one or greater). This uses <code>{@link com.github.xbn.number.NumberUtil}.{@link com.github.xbn.number.NumberUtil#CHAR_LIST_FOR_NUMBERS_0_THROUGH_62 CHAR_LIST_FOR_NUMBERS_0_THROUGH_62}</code>.</li>
+		</ul>
 		@exception  NegativeArraySizeException  If {@code space_count} is less than zero.
 		@see  #ReplaceAllIndentTabsWithSpaces(int, Appendable)
 	 **/
@@ -78,7 +78,7 @@ public class ReplaceAllIndentTabsWithSpaces  {
 		}
 	}
 	/**
-		<P>The string-of-spaces, which replaces a single tab.</P>
+		<p>The string-of-spaces, which replaces a single tab.</p>
 
 		@see  #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel)
 	 **/
@@ -86,7 +86,7 @@ public class ReplaceAllIndentTabsWithSpaces  {
 		return  spaces;
 	}
 	/**
-		<P>The debugging appenter.</P>
+		<p>The debugging appenter.</p>
 
 		@see  #getDebugLevel()
 		@see  #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel)
@@ -98,10 +98,10 @@ public class ReplaceAllIndentTabsWithSpaces  {
 		return  dbgLevel;
 	}
 	/**
-		<P>Replace all indentation tabs for all files in a directory, with runtime errors only--<I>this overwrites the files</I>.</P>
+		<p>Replace all indentation tabs for all files in a directory, with runtime errors only--<i>this overwrites the files</i>.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #overwriteDirectoryX(Iterator) overwriteDirectoryX}(file_itr)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #overwriteDirectoryX(Iterator) overwriteDirectoryX}(file_itr)</code></p>
 
 		@exception  RTIOException  If a {@code java.io.IOException} is thrown for any reason.
 	 **/
@@ -113,15 +113,15 @@ public class ReplaceAllIndentTabsWithSpaces  {
 		}
 	}
 	/**
-		<P>Replace all indentation tabs for all files in a directory--<I>this overwrites the files</I>.</P>
+		<p>Replace all indentation tabs for all files in a directory--<i>this overwrites the files</i>.</p>
 
-		<P>For each file, this<OL>
-			<LI>{@linkplain com.github.xbn.io.PlainTextFileUtil#getText(File, String) Reads in} the text,</LI>
-			<LI>Creates a {@linkplain com.github.xbn.text.StringUtil#getLineIterator(Object) line-iterator} to it,</LI>
-			<LI>Opens a {@linkplain com.github.xbn.io.NewPrintWriterToFile print-writer} to the <I>original file</I> (with overwrite and auto-flush), and</LI>
-			<LI>calls
-			<BR> &nbsp; &nbsp; <CODE>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(<I>[line-iterator]</I>, <I>[print-writer]</I>)</CODE></LI>
-		</OL></P>
+		<p>For each file, this<ol>
+			<li>{@linkplain com.github.xbn.io.PlainTextFileUtil#getText(File, String) Reads in} the text,</li>
+			<li>Creates a {@linkplain com.github.xbn.text.StringUtil#getLineIterator(Object) line-iterator} to it,</li>
+			<li>Opens a {@linkplain com.github.xbn.io.NewPrintWriterToFile print-writer} to the <i>original file</i> (with overwrite and auto-flush), and</li>
+			<li>calls
+			<br/> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(<i>[line-iterator]</i>, <i>[print-writer]</i>)</code></li>
+		</ol></p>
 
 		@param  file_itr  May not be {@code null}.
 		@return  A four-tuple containing, in order, the total number of lines in all files, the total lines containing at least one tab, the total tabs replaced, and the number of files processed.
@@ -182,10 +182,10 @@ public class ReplaceAllIndentTabsWithSpaces  {
 		return  new FourTuple<Long,Long,Long,Integer>(totalLines, tabLines, tabsReplaced, totalFiles);
 	}
 	/**
-		<P>Replace all indentation tabs in a single file, with runtime errors only.</P>
+		<p>Replace all indentation tabs in a single file, with runtime errors only.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(line_itr, output)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(line_itr, output)</code></p>
 
 		@exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
 	 **/
@@ -197,7 +197,7 @@ public class ReplaceAllIndentTabsWithSpaces  {
 		}
 	}
 	/**
-		<P>Replace all indentation tabs in a single file.</P>
+		<p>Replace all indentation tabs in a single file.</p>
 
 		@param  line_itr  May not be {@code null}.
 		@param  to_appendTo  Where output should be written. May not be {@code null}.

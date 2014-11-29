@@ -14,41 +14,41 @@
 \*license*/
 package  com.github.xbn.array;
 /**
-	<P>{@code IndexOutOfBoundsException} with accessors to relevant databuilder, and accessors.</P>
+	<p>{@code IndexOutOfBoundsException} with accessors to relevant databuilder, and accessors.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg XbnStringIndexOutOfBoundsException_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg XbnStringIndexOutOfBoundsException_Cfg}</h3>
 
-	<P><OL>
-		<LI><B>Bad index/index-range:</B> <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badIndex(int) badIndex}(i)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badIndex(int, String) badIndex}(i,s)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badRange(int, int) badRange}(i,i)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badRange(int, int, String, String) badRange}(i,i,s,s)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
-		<LI><B>Absolute bounds:</B><UL>
+	<p><ol>
+		<li><b>Bad index/index-range:</b> <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badIndex(int) badIndex}(i)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badIndex(int, String) badIndex}(i,s)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badRange(int, int) badRange}(i,i)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#badRange(int, int, String, String) badRange}(i,i,s,s)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#chainID(boolean, Object) chainID}(b,o)</code></li>
+		<li><b>Absolute bounds:</b><ul>
 		<!-- //Delete in XbnArr_ayIndexOutOfBoundsException...START -->
-			<LI><B>Strings:</B> <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absStringLength(Object) absStringLength}(o)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absStringLength(Object, String) absStringLength}(o,s)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMinAndStringLength(int, Object) absMinAndStringLength}(i,o)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMinAndStringLength(int, Object, String, String) absMinAndStringLength}(i,o,s,s)</CODE></LI>
+			<li><b>Strings:</b> <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absStringLength(Object) absStringLength}(o)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absStringLength(Object, String) absStringLength}(o,s)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMinAndStringLength(int, Object) absMinAndStringLength}(i,o)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMinAndStringLength(int, Object, String, String) absMinAndStringLength}(i,o,s,s)</code></li>
 		<!-- //Delete in XbnArr_ayIndexOutOfBoundsException...END -->
-			<LI><B>Integers:</B> <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absBounds(int, int) absBounds}(i,i)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absBounds(int, int, String, String) absBounds}(i,i,s,s)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMaxX(int) absMaxX}(i)</CODE>, <CODE>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMaxX(int, String) absMaxX}(i,s)</CODE></LI>
-		</UL></LI>
-	</OL></P>
+			<li><b>Integers:</b> <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absBounds(int, int) absBounds}(i,i)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absBounds(int, int, String, String) absBounds}(i,i,s,s)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMaxX(int) absMaxX}(i)</code>, <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#absMaxX(int, String) absMaxX}(i,s)</code></li>
+		</ul></li>
+	</ol></p>
 
-	<P><I>{@code XbnArray}{@code IndexOutOfBoundsException} and {@code XbnString}{@code IndexOutOfBoundsException} both derive from {@code Xbn}{@code IndexOutOfBoundsException}. <B>Do not edit any class except {@code Xbn}{@code IndexOutOfBoundsException}</B></I></P>
+	<p><i>{@code XbnArray}{@code IndexOutOfBoundsException} and {@code XbnString}{@code IndexOutOfBoundsException} both derive from {@code Xbn}{@code IndexOutOfBoundsException}. <b>Do not edit any class except {@code Xbn}{@code IndexOutOfBoundsException}</b></i></p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class XbnStringIndexOutOfBoundsException extends XbnIbxBase  {
 //constructors...START
 	/**
-		<P>Create a new {@code XbnStringIndexOutOfBoundsException}.</P>
+		<p>Create a new {@code XbnStringIndexOutOfBoundsException}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XIbxData) super}{@code (x_data)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XIbxData) super}{@code (x_data)}</p>
 	 **/
 	public XbnStringIndexOutOfBoundsException(XIbxData x_data)  {
 		super(x_data);
 	}
 	/**
-		<P>Create a new {@code XbnStringIndexOutOfBoundsException}.</P>
+		<p>Create a new {@code XbnStringIndexOutOfBoundsException}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XbnIbxBase) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XbnIbxBase) super}{@code (to_copy)}</p>
 	 **/
 	public XbnStringIndexOutOfBoundsException(XbnIbxBase to_copy)  {
 		super(to_copy);

@@ -3,25 +3,25 @@ package  com.github.xbn.list.lister;
 	import  com.github.xbn.analyze.validate.ValueValidator;
 	import  java.util.List;
 /**
-	<P>{@code ListLister} configuration relating to the list as a whole--not its elements. Elements are configured by {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</P>
+	<p>{@code ListLister} configuration relating to the list as a whole--not its elements. Elements are configured by {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCfgOverall_Cfg LLCfgOverall_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.list.lister.z.LLCfgOverall_Cfg LLCfgOverall_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Parent:</B> {@code <A HREF="ListLister.html#cfg">ListLister</A>}</LI>
-		<LI><B>{@link com.github.xbn.list.lister.LLCfgForLengthItems#sDISPLAY_SIZE_MARKER}:</B> If output by any configuration, it is replaced with the list's size.</LI>
-		<LI><B>Sub configs:</B><UL>
-			<LI><B>{@code <A HREF="../../text/padchop/VzblPadChop.html#cfg">VzblPadChop</A>}:</B> {@link com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#cfgVPCFinalOutput() cfgVPCFinalOutput}{@code ()}, {@link com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#cfgVPCFinalOutput(int) cfgVPCFinalOutput}{@code (i)}</LI>
-		</UL></LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#noAltForElementLength() noAltForElementLength}{@code ()}</LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifElementLength(ValueValidator, String) ifElementLength}{@code (vv,s)}</LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNoElements(String) ifNoElements}{@code (s)}</LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#finalOutputUnaltered() finalOutputUnaltered}{@code ()}</LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#reset() reset}{@code ()}</LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNull(String) ifNull}{@code (s)}</LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNonNull(String) ifNonNull}{@code (s)}</LI>
-		<LI>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#prePost(String, String) prePost}{@code (s,s)}</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Parent:</b> {@code <a href="ListLister.html#cfg">ListLister</a>}</li>
+		<li><b>{@link com.github.xbn.list.lister.LLCfgForLengthItems#sDISPLAY_SIZE_MARKER}:</b> If output by any configuration, it is replaced with the list's size.</li>
+		<li><b>Sub configs:</b><ul>
+			<li><b>{@code <a href="../../text/padchop/VzblPadChop.html#cfg">VzblPadChop</a>}:</b> {@link com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#cfgVPCFinalOutput() cfgVPCFinalOutput}{@code ()}, {@link com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#cfgVPCFinalOutput(int) cfgVPCFinalOutput}{@code (i)}</li>
+		</ul></li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#noAltForElementLength() noAltForElementLength}{@code ()}</li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifElementLength(ValueValidator, String) ifElementLength}{@code (vv,s)}</li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNoElements(String) ifNoElements}{@code (s)}</li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#finalOutputUnaltered() finalOutputUnaltered}{@code ()}</li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#reset() reset}{@code ()}</li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNull(String) ifNull}{@code (s)}</li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNonNull(String) ifNonNull}{@code (s)}</li>
+		<li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#prePost(String, String) prePost}{@code (s,s)}</li>
+	</ul></p>
 
 	@param  E  The type of element in the {@code List}.
  **/

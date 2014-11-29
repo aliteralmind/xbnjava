@@ -14,10 +14,10 @@
 \*license*/
 package  com.github.xbn.keyed;
 /**
-	<P>Implementation of {@code Keyed}.</P>
+	<p>Implementation of {@code Keyed}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleKeyed<K> implements Keyed<K>  {
 //state
@@ -36,12 +36,12 @@ public class SimpleKeyed<K> implements Keyed<K>  {
 	}
  */
 	/*
-		<P>Create a new {@code SimpleKeyed} as a duplicate of another.</P>
+		<p>Create a new {@code SimpleKeyed} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.util.lock.AbstractOneWayLockable#AbstractOneWayLockable(AbstractOneWayLockable) super}{@code (_toCopy)}</LI>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.util.lock.AbstractOneWayLockable#AbstractOneWayLockable(AbstractOneWayLockable) super}{@code (_toCopy)}</li>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -77,9 +77,9 @@ public class SimpleKeyed<K> implements Keyed<K>  {
 		return  "key=[" + getKey() + "]";
 	}
 	/**
-		<P>Duplicate this {@code SimpleKeyed}.</P>
+		<p>Duplicate this {@code SimpleKeyed}.</p>
 
-		@return  <CODE>(new {@link #SimpleKeyed(Keyed) SimpleKeyed}&lt;K&gt;(this))</CODE>
+		@return  <code>(new {@link #SimpleKeyed(Keyed) SimpleKeyed}&lt;K&gt;(this))</code>
 	public SimpleKeyed<K> getObjectCopy()  {
 		return  (new SimpleKeyed<K>(this));
 	}

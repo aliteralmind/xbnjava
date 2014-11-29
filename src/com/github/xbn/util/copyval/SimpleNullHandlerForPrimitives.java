@@ -14,10 +14,10 @@
 \*license*/
 package  com.github.xbn.util.copyval;
 /**
-	<P>Implementation of {@code GetValueForNull} using an {@code com.github.xbn.analyze.alter.ValueAlterer&lt;O&gt;}.</P>
+	<p>Implementation of {@code GetValueForNull} using an {@code com.github.xbn.analyze.alter.ValueAlterer&lt;O&gt;}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleNullHandlerForPrimitives<O> extends SimpleNullHandler<O> implements NullHandlerForPrimitives<O>  {
 	@SuppressWarnings("unchecked")
@@ -35,12 +35,12 @@ public class SimpleNullHandlerForPrimitives<O> extends SimpleNullHandler<O> impl
 		}
 	}
 	/**
-		<P>Create a new {@code SimpleNullHandlerForPrimitives} as a duplicate of another.</P>
+		<p>Create a new {@code SimpleNullHandlerForPrimitives} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.util.copyval.SimpleNullHandler#SimpleNullHandler(SimpleNullHandler) super}{@code (to_copy)}</LI>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.util.copyval.SimpleNullHandler#SimpleNullHandler(SimpleNullHandler) super}{@code (to_copy)}</li>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -51,9 +51,9 @@ public class SimpleNullHandlerForPrimitives<O> extends SimpleNullHandler<O> impl
 //constructors...END
 //other...START
 	/**
-		<P>Duplicate this {@code SimpleNullHandlerForPrimitives}.</P>
+		<p>Duplicate this {@code SimpleNullHandlerForPrimitives}.</p>
 
-		@return  <CODE>(new {@link #SimpleNullHandlerForPrimitives(SimpleNullHandlerForPrimitives) SimpleNullHandlerForPrimitives}&lt;O&gt;(this))</CODE>
+		@return  <code>(new {@link #SimpleNullHandlerForPrimitives(SimpleNullHandlerForPrimitives) SimpleNullHandlerForPrimitives}&lt;O&gt;(this))</code>
 	 **/
 	public NullHandler<O> getObjectCopy()  {
 		return  (new SimpleNullHandlerForPrimitives<O>(this));

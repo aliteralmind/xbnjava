@@ -23,18 +23,18 @@ package  com.github.xbn.experimental.listify.primitiveable;
 	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
 /**
-	<P>For classes that need to implement {@code ListifyPrimitiveable}, that cannot extend {@code AbstractListifyPrimitiveable}</P>
+	<p>For classes that need to implement {@code ListifyPrimitiveable}, that cannot extend {@code AbstractListifyPrimitiveable}</p>
 
 	@see  ListifyPrimitiveable
 	@see  AbstractListifyPrimitiveable
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//implements ListifyPrimitiveable<E>  {
 	private NullHandlerForPrimitives<E> hnvnb = null;
 //constructors...START
 	/**
-		<P>Create a new {@code ListifyPrimitiveableComposer}.</P>
+		<p>Create a new {@code ListifyPrimitiveableComposer}.</p>
 
 		YYY
 
@@ -52,14 +52,14 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
 		hnvnb = null_handler;
 	}
 	/**
-		<P>Create a new {@code ListifyPrimitiveableComposer} as a duplicate of another.</P>
+		<p>Create a new {@code ListifyPrimitiveableComposer} as a duplicate of another.</p>
 
 		YYY
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(boolean, ListifyComposer) super}{@code (ignored, to_copy)}</LI>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(boolean, ListifyComposer) super}{@code (ignored, to_copy)}</li>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -73,14 +73,14 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
 		hnvnb = hnvnb2;
 	}
 	/**
-		<P>Create a new {@code ListifyPrimitiveableComposer} from a {@code ListifyPrimitiveable}.</P>
+		<p>Create a new {@code ListifyPrimitiveableComposer} from a {@code ListifyPrimitiveable}.</p>
 
 		YYY
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</LI>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</li>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -111,7 +111,7 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
 		}
 	}
 	/**
-		<P>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</P>
+		<p>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</p>
 	 **/
 	public static final <E> void ciActionCrashOrDel(ListifyPrimitiveable<E> listifier, int index)  {
 		try  {

@@ -21,58 +21,58 @@ package  com.github.xbn.array;
 	import  com.github.xbn.lang.LengthLessThanRequiredException;
 	import  java.util.Objects;
 /**
-	<P>If a non-primitive array is bad, crash. Otherwise, do nothing.</P>
+	<p>If a non-primitive array is bad, crash. Otherwise, do nothing.</p>
 
 	@see  com.github.xbn.lang.CrashIfObject
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfArray  {
 	/**
-		<P>If an array is {@code null} or empty, crash. Otherwise, do nothing.</P>
+		<p>If an array is {@code null} or empty, crash. Otherwise, do nothing.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#empty(E[], java.lang.String, com.github.xbn.array.NullContainer)">empty</A>(array, array_name, {@link NullContainer}.{@link NullContainer#BAD BAD})</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#empty(E[], java.lang.String, com.github.xbn.array.NullContainer)">empty</a>(array, array_name, {@link NullContainer}.{@link NullContainer#BAD BAD})</code></p>
 	 **/
 	public static final <E> void nullEmpty(E[] array, String array_name)  {
 		empty(array, array_name, NullContainer.BAD);
 	}
 	/**
-		<P>If an array has no elements, crash. Otherwise, do nothing.</P>
+		<p>If an array has no elements, crash. Otherwise, do nothing.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, int, java.lang.String, com.github.xbn.array.Duplicates)">bad</A>(array, array_name, null_list, 1, null, {@link NullElement}.{@link NullElement#OK OK}, 0, null, {@link Duplicates}.{@link Duplicates#OK OK})</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, int, java.lang.String, com.github.xbn.array.Duplicates)">bad</a>(array, array_name, null_list, 1, null, {@link NullElement}.{@link NullElement#OK OK}, 0, null, {@link Duplicates}.{@link Duplicates#OK OK})</code></p>
 	 **/
 	public static final <E> void empty(E[] array, String array_name, NullContainer null_list)  {
 		bad(array, array_name, null_list, 1, null, NullElement.OK, 0, null, Duplicates.OK);
 	}
 	/**
-		<P>If an array's length is less than a number, crash. Otherwise, do nothing.</P>
+		<p>If an array's length is less than a number, crash. Otherwise, do nothing.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, int, java.lang.String, com.github.xbn.array.Duplicates)">bad</A>(array, array_name, null_list, min_allowedLength, min_varName, {@link NullElement}.{@link NullElement#OK OK}, 0, null, {@link Duplicates}.{@link Duplicates#OK OK})</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, int, java.lang.String, com.github.xbn.array.Duplicates)">bad</a>(array, array_name, null_list, min_allowedLength, min_varName, {@link NullElement}.{@link NullElement#OK OK}, 0, null, {@link Duplicates}.{@link Duplicates#OK OK})</code></p>
 	 **/
 	public static final <E> void lengthLessThan(E[] array, String array_name, NullContainer null_list, int min_allowedLength, String min_varName)  {
 		bad(array, array_name, null_list, min_allowedLength, min_varName, NullElement.OK, 0, null, Duplicates.OK);
 	}
 	/**
-		<P>If a non-primitive array is bad, crash. Otherwise, do nothing.</P>
+		<p>If a non-primitive array is bad, crash. Otherwise, do nothing.</p>
 
 		@param  array  The array to test.
-		@param  array_name  Descriptive name of {@code array}. <I>Should</I> not be {@code null} or empty.
+		@param  array_name  Descriptive name of {@code array}. <i>Should</i> not be {@code null} or empty.
 		@param  null_array  If {@link NullContainer#BAD BAD}, the array may not be {@code null}. This parameter may not be {@code null}.
-		@param  min_allowedLength  The minimum allowable length. <I>Should</I> not be less than zero.
-		@param  min_varName  Descriptive name of {@code min_allowedLength}. <I>Should</I> not be {@code null} or empty.
+		@param  min_allowedLength  The minimum allowable length. <i>Should</i> not be less than zero.
+		@param  min_varName  Descriptive name of {@code min_allowedLength}. <i>Should</i> not be {@code null} or empty.
 		@param  null_element  If {@link NullElement#BAD BAD}, elements may not be {@code null}. This parameter may not be {@code null}.
-		@param  min_allowedElementLen  The minimum allowable length for each element's {@code toString()}. <I>Should</I> be zero or greater. Intended for string arrays.
+		@param  min_allowedElementLen  The minimum allowable length for each element's {@code toString()}. <i>Should</i> be zero or greater. Intended for string arrays.
 		@param  minElementLen_name  Descriptive name of {@code min_allowedElementLen}.
 		@param  duplicates  If {@link Duplicates#BAD BAD}, elements must be unique. This parameter may not be {@code null}.
 		@exception  NullPointerException  If the array is {@code null} and {@code null_array.BAD}, or an element is {@code null} and {@code null_element.BAD}.
 		@exception  LengthLessThanRequiredException  If the array's length is less than {@code min_allowedLength}, or the element('s {@code toString()}) length is less than {@code min_allowedElementLen}.
 		@exception  BadDuplicateException  If two elements are equal and {@code duplicates.BAD}.
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#nullEmpty(E[], String)">nullEmpty</A></CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#empty(E[], String, NullContainer)">empty</A></CODE>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#lengthLessThan(E[], String, NullContainer, int, String)">lengthLessThan</A></CODE>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#nullEmpty(E[], String)">nullEmpty</a></code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#empty(E[], String, NullContainer)">empty</a></code>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#lengthLessThan(E[], String, NullContainer, int, String)">lengthLessThan</a></code>
 		@see  com.github.xbn.list.CrashIfCollection#bad(Collection, String, NullContainer, int, String, NullElement, int, String) CrashIfCollection#bad
 		@see  com.github.xbn.list.CrashIfList#bad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) CrashIfList#bad
 	 **/
@@ -237,12 +237,12 @@ public class CrashIfArray  {
 		}
 	}
 	/*
-		<P>If a string array is bad, crash. Otherwise, do nothing. This treats each element's {@code toString()} as &quot;the element&quot;.</P>
+		<p>If a string array is bad, crash. Otherwise, do nothing. This treats each element's {@code toString()} as &quot;the element&quot;.</p>
 
-		<P>This first calls
-		<BR> &nbsp; &nbsp; <CODE><A HREF="#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, int, java.lang.String, com.github.xbn.array.Duplicates)">bad</A>(array_ofStrsOrToStrs, array_name, null_array, min_allowedLength, min_varName, null_element, duplicates)</CODE></P>
+		<p>This first calls
+		<br/> &nbsp; &nbsp; <code><a href="#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, int, java.lang.String, com.github.xbn.array.Duplicates)">bad</a>(array_ofStrsOrToStrs, array_name, null_array, min_allowedLength, min_varName, null_element, duplicates)</code></p>
 
-		@param  min_allowedElementLen  The minimum allowable length for each element's {@code toString()}. <I>Should</I> be zero or greater. Intended for arrays of strings.
+		@param  min_allowedElementLen  The minimum allowable length for each element's {@code toString()}. <i>Should</i> be zero or greater. Intended for arrays of strings.
 		@param  minElementLen_name  Descriptive name of {@code min_allowedElementLen}.
 		@exception  LengthLessThanRequiredException  If an element's length is less than {@code min_allowedElementLen}.
 		@see  com.github.xbn.text.CrashIfString

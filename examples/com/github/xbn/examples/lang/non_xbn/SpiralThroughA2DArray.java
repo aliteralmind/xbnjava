@@ -15,9 +15,9 @@
 package  com.github.xbn.examples.lang.non_xbn;
 	import  java.util.NoSuchElementException;
 /**
-	<P>Uses an iterator-like object to move through a two-dimensional array, starting from the top, left-to-right, down, right-to-left, down, left-to-right, ...</P>
+	<p>Uses an iterator-like object to move through a two-dimensional array, starting from the top, left-to-right, down, right-to-left, down, left-to-right, ...</p>
 
-	<P>{@code java com.github.xbn.examples.lang.non_xbn.SpiralThroughA2DArray}</P>
+	<p>{@code java com.github.xbn.examples.lang.non_xbn.SpiralThroughA2DArray}</p>
  **/
 public class SpiralThroughA2DArray  {
 	public static final void main(String[] ignored)  {

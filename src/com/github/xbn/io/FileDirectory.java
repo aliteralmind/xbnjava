@@ -15,15 +15,15 @@
 package  com.github.xbn.io;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>Must a {@code java.nio.file.Path} be a directory, a regular file, or can it be either?.</P>
+	<p>Must a {@code java.nio.file.Path} be a directory, a regular file, or can it be either?.</p>
 
 	@see  PathMustBe#fileOrDirectory(FileDirectory)
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum FileDirectory  {
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #DIRECTORY
 		@see  #EITHER
@@ -31,23 +31,23 @@ public enum FileDirectory  {
 	 **/
 	REGULAR_FILE,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #REGULAR_FILE
 		@see  #isDirectory()
 	 **/
 	DIRECTORY,
 	/**
-		<P>YYY.</P>
+		<p>YYY.</p>
 
 		@see  #REGULAR_FILE
 		@see  #isEither()
 	 **/
 	EITHER;
 	/**
-		<P>Is this {@code FileDirectory} equal to {@code REGULAR_FILE}?.</P>
+		<p>Is this {@code FileDirectory} equal to {@code REGULAR_FILE}?.</p>
 
-		@return  <CODE>this == {@link #REGULAR_FILE}</CODE>
+		@return  <code>this == {@link #REGULAR_FILE}</code>
 
 		@see  #isDirectory()
 		@see  #isEither()
@@ -56,38 +56,38 @@ public enum FileDirectory  {
 		return  this == REGULAR_FILE;
 	}
 	/**
-		<P>Is this {@code FileDirectory} equal to {@code DIRECTORY}?.</P>
+		<p>Is this {@code FileDirectory} equal to {@code DIRECTORY}?.</p>
 
-		@return  <CODE>this == {@link #DIRECTORY}</CODE>
+		@return  <code>this == {@link #DIRECTORY}</code>
 		@see  #isRegularFile()
 	 **/
 	public final boolean isDirectory()  {
 		return  this == DIRECTORY;
 	}
 	/**
-		<P>Is this {@code FileDirectory} equal to {@code EITHER}?.</P>
+		<p>Is this {@code FileDirectory} equal to {@code EITHER}?.</p>
 
-		@return  <CODE>this == {@link #EITHER}</CODE>
+		@return  <code>this == {@link #EITHER}</code>
 		@see  #isRegularFile()
 	 **/
 	public final boolean isEither()  {
 		return  this == EITHER;
 	}
 	/**
-		<P>If an <CODE>FileDirectory</CODE> is not a required value, crash.</P>
+		<p>If an <code>FileDirectory</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfForbiddenValue(FileDirectory, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(FileDirectory e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
 	}
 	/**
-		<P>If an <CODE>FileDirectory</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>FileDirectory</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 		@see  #crashIfNotRequiredValue(FileDirectory, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(FileDirectory e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

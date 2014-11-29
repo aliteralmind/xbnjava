@@ -20,16 +20,16 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  java.util.Iterator;
 	import  com.github.xbn.array.helper.ArrayHelperBase;
 /**
-	<P>For classes that need to implement {@code ListifyEArray}, that cannot extend {@code AbstractListifyEArray}.</P>
+	<p>For classes that need to implement {@code ListifyEArray}, that cannot extend {@code AbstractListifyEArray}.</p>
 
 	@see  ListifyEArray
 	@see  AbstractListifyEArray
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListifyEArrayComposer<E> extends ListifyComposer<E>  {//implements Listify<E>  {
 	/**
-		<P>Create a new {@code ListifyEArrayComposer}.</P>
+		<p>Create a new {@code ListifyEArrayComposer}.</p>
 
 		@param  obj_thatIsArray  The primitive or non-primitive array.
 	 **/
@@ -37,12 +37,12 @@ public class ListifyEArrayComposer<E> extends ListifyComposer<E>  {//implements 
 		super(obj_thatIsArray, AddRemovable.NO, array_helper, get_valCopy);
 	}
 	/**
-		<P>Create a new {@code ListifyEArrayComposer} as a duplicate of another.</P>
+		<p>Create a new {@code ListifyEArrayComposer} as a duplicate of another.</p>
 
-		<P>This calls<OL>
-			<LI>{@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(ListifyComposer) super}{@code (to_copy)}</LI>
-			<LI>{@code (to_copy.getRawObject())}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(ListifyComposer) super}{@code (to_copy)}</li>
+			<li>{@code (to_copy.getRawObject())}</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -50,12 +50,12 @@ public class ListifyEArrayComposer<E> extends ListifyComposer<E>  {//implements 
 		super(ignored, to_copy);
 	}
 	/**
-		<P>Create a new {@code ListifyEArrayComposer} XXX.</P>
+		<p>Create a new {@code ListifyEArrayComposer} XXX.</p>
 
-		<P>This calls<OL>
-			<LI>{@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</LI>
-			<LI>{@code (to_copy.getRawObject())}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</li>
+			<li>{@code (to_copy.getRawObject())}</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/

@@ -21,12 +21,12 @@ package  com.github.xbn.examples.regexutil.non_xbn;
 	import  java.util.regex.Matcher;
 	import  java.util.regex.Pattern;
 /**
-	<P>Takes an input string such as {@code "(1.0,2.0) (2,7.6) (2.1,3.0)"}, and translates each parenthesized set of numbers to an array of doubles.</P>
+	<p>Takes an input string such as {@code "(1.0,2.0) (2,7.6) (2.1,3.0)"}, and translates each parenthesized set of numbers to an array of doubles.</p>
 
-	<P>{@code java com.github.xbn.examples.regexutil.non_xbn.DoublesInParenStringsToArrays}</P>
+	<p>{@code java com.github.xbn.examples.regexutil.non_xbn.DoublesInParenStringsToArrays}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class DoublesInParenStringsToArrays  {

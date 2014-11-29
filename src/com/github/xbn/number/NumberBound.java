@@ -5,7 +5,7 @@ package  com.github.xbn.number;
 	import  com.github.xbn.text.CrashIfString;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
- * <P>Minimum or maximum extreme of a range.</P>
+ * <p>Minimum or maximum extreme of a range.</p>
  **/
 public abstract class NumberBound<N extends Number> implements Named  {
 	private final N num;
@@ -19,7 +19,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
 		this(num, Inclusive.getForBoolean(is_inclusive), name);
 	}
 	/**
-	 * <P>Create a new {@code NumberBound}.</P>
+	 * <p>Create a new {@code NumberBound}.</p>
 	 * @param  num  May not be <code>null</code>. Get with {@link #get()}{@code ()}.
 	 * @param  incl May not be <code>null</code>. Get with {@link #isInclusive()}{@code ()}.
 	 * @param  name Descriptive name. Get with {@link #getName()}{@code ()}.
@@ -33,11 +33,11 @@ public abstract class NumberBound<N extends Number> implements Named  {
 		this.name = name;
 	}
 	/**
-	 * <P>Create a new {@code NumberBound} as a duplicate of another.</P>
+	 * <p>Create a new {@code NumberBound} as a duplicate of another.</p>
 	 *
-	 * <P>This<OL>
-	 *    <LI>YYY</LI>
-	 * </OL></P>
+	 * <p>This<ol>
+	 *    <li>YYY</li>
+	 * </ol></p>
 	 * @param  to_copy  May not be {@code null}.
 	 **/
 	public NumberBound(NumberBound<N> to_copy)  {
@@ -58,7 +58,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
 		return  name;
 	}
 	/**
-	 * <P>Get the bound number.</P>
+	 * <p>Get the bound number.</p>
 	 * @see #NumberBound(N, com.github.xbn.number.Inclusive, String)
 	 * @see #getGivenIncl(com.github.xbn.number.BoundSide)
 	 **/
@@ -88,11 +88,11 @@ public abstract class NumberBound<N extends Number> implements Named  {
 	 */
 	public abstract N getInclComparedTo(BoundSide min_orMax, N num);
 	/**
-	 * <P>Is this bound considered inclusive?.</P>
-	 * @return  <UL>
-	 *    <LI>{@code true} This bound is inclusive (meaning--if a minimum--a number must be greater-than-or-equal-to it).</LI>
-	 *    <LI>{@code false}: Exclusive (a number must be greater than it).</LI>
-	 * </UL>
+	 * <p>Is this bound considered inclusive?.</p>
+	 * @return  <ul>
+	 *    <li>{@code true} This bound is inclusive (meaning--if a minimum--a number must be greater-than-or-equal-to it).</li>
+	 *    <li>{@code false}: Exclusive (a number must be greater than it).</li>
+	 * </ul>
 	 * @see #NumberBound(N, com.github.xbn.number.Inclusive, String)
 	 **/
 	public final boolean isInclusive()  {
@@ -126,7 +126,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
 		return  areFieldsEqual(o);
 	}
 	/**
-	 * <P>Are all relevant fields equal?.</P>
+	 * <p>Are all relevant fields equal?.</p>
 	 * @param  to_compareTo  May not be {@code null}.
 	 **/
 	public boolean areFieldsEqual(NumberBound<?> to_compareTo)  {

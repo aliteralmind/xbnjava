@@ -15,68 +15,68 @@
 package  com.github.xbn.experimental;
 	import  static com.github.xbn.lang.CrashIfBase.*;
 /**
-	<P>Defines the legal positioning within an ordered collection--where an element <I>could</I> be.</P>
+	<p>Defines the legal positioning within an ordered collection--where an element <i>could</i> be.</p>
 
-	<H3>Positions in an ordered collection (such as a List or sequence)</H3>
+	<h3>Positions in an ordered collection (such as a List or sequence)</h3>
 
-	<P><UL>
-		<LI><B>First-not-last:</B> <I>Could</I> be the first element in an ordered collection, but not the last.</LI>
-		<LI><B>Middle:</B> Could be neither the first nor the last.</LI>
-		<LI><B>Last-not-first:</B> Could be the last element, but not the first.</LI>
-		<LI><B>Only:</B> Could be the first-and-last element in the sequence.</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>First-not-last:</b> <i>Could</i> be the first element in an ordered collection, but not the last.</li>
+		<li><b>Middle:</b> Could be neither the first nor the last.</li>
+		<li><b>Last-not-first:</b> Could be the last element, but not the first.</li>
+		<li><b>Only:</b> Could be the first-and-last element in the sequence.</li>
+	</ul></p>
 
-	<P>For example:</P>
+	<p>For example:</p>
 
-<PRE>   new LegalFMLfl(true, false, true, true)</PRE>
+<pre>   new LegalFMLfl(true, false, true, true)</pre>
 
-	<P><UL>
-		<LI><B>Parameter 1 (true):</B> This object could be the first-but not the last</LI>
-		<LI><B>Parameter 2 (false):</B> If it were somewhere in the middle (neither the first or last elemnt), that would be bad.</LI>
-		<LI><B>Parameter 3 (true):</B> It could be the last element.</LI>
-		<LI><B>Parameter 4 (true):</B> It could be the only element.</LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Parameter 1 (true):</b> This object could be the first-but not the last</li>
+		<li><b>Parameter 2 (false):</b> If it were somewhere in the middle (neither the first or last elemnt), that would be bad.</li>
+		<li><b>Parameter 3 (true):</b> It could be the last element.</li>
+		<li><b>Parameter 4 (true):</b> It could be the only element.</li>
+	</ul></p>
 
 
-	<H3>Different flavors of the same thing</H3>
+	<h3>Different flavors of the same thing</h3>
 
-	<P>Internally, a {@code LegalFMLfl} stores four booleans: {@link #isFirstOnly() isFirstOnly}{@code ()}, {@link #isMiddle() isMiddle}{@code ()}, {@link #isLastOnly() isLastOnly}{@code ()} and {@link #isFirstLast() isFirstLast}{@code ()}.</P>
+	<p>Internally, a {@code LegalFMLfl} stores four booleans: {@link #isFirstOnly() isFirstOnly}{@code ()}, {@link #isMiddle() isMiddle}{@code ()}, {@link #isLastOnly() isLastOnly}{@code ()} and {@link #isFirstLast() isFirstLast}{@code ()}.</p>
 
-	<P>A string of boolean-initials could be provided instead, as a much-shorter alternative.</P>
+	<p>A string of boolean-initials could be provided instead, as a much-shorter alternative.</p>
 
-<PRE>   //true, false, true, true
-   LegalFMLfl lfmlfl = new LegalFMLfl("tftt");</PRE>
+<pre>   //true, false, true, true
+   LegalFMLfl lfmlfl = new LegalFMLfl("tftt");</pre>
 
-	<H4>Beginability and endability: {@code com.github.xbn.experimental.MustOptOrForb}</H4>
+	<h4>Beginability and endability: {@code com.github.xbn.experimental.MustOptOrForb}</h4>
 
-	<P><CODE>An {@link com.github.xbn.lang.MustOptOrForb MustOptOrForb} object</CODE> may also be used to define legal positinos in a more relaxed, zen-like state of <B>beginability</B> and <B>endability</B>. For example:</P>
+	<p><code>An {@link com.github.xbn.lang.MustOptOrForb MustOptOrForb} object</code> may also be used to define legal positinos in a more relaxed, zen-like state of <b>beginability</b> and <b>endability</b>. For example:</p>
 
-<PRE>   LegalFMLfl lfmlfl = new LegalFMLfl(MustOptOrForb.OPTIONAL, MustOptOrForb.MUST)
+<pre>   LegalFMLfl lfmlfl = new LegalFMLfl(MustOptOrForb.OPTIONAL, MustOptOrForb.MUST)
    System.out.println(lfmlfl.isFirstOnly());
    System.out.println(lfmlfl.isMiddle());
    System.out.println(lfmlfl.isLastOnly());
-   System.out.println(lfmlfl.isFirstLast());</PRE>
+   System.out.println(lfmlfl.isFirstLast());</pre>
 
-	<P>Output:</P>
+	<p>Output:</p>
 
-<PRE>   true
+<pre>   true
    false
    true
-   true</PRE>
+   true</pre>
 
-	<P><UL>
-		<LI>If it is beginable.OPTIONAL, then it <I>could</I> be first-but-not-last.</LI>
-		<LI>Since it is endable-MUST, it could <I>not</I> be middle (neither first-nor-last).</LI>
-		<LI>It could be last-only--not beginable, but still endable.</LI>
-		<LI>It could be first-last, since beginable is OPTIONAL.</LI>
-	</UL></P>
+	<p><ul>
+		<li>If it is beginable.OPTIONAL, then it <i>could</i> be first-but-not-last.</li>
+		<li>Since it is endable-MUST, it could <i>not</i> be middle (neither first-nor-last).</li>
+		<li>It could be last-only--not beginable, but still endable.</li>
+		<li>It could be first-last, since beginable is OPTIONAL.</li>
+	</ul></p>
 
-	<H3>{@code com.github.xbn.txol.SubSnip}</H3>
+	<h3>{@code com.github.xbn.txol.SubSnip}</h3>
 
-	<P>This class was originally created for use by {@code <a href="../txol/SubSnip.html">SubSnip</a>}.</P>
+	<p>This class was originally created for use by {@code <a href="../txol/SubSnip.html">SubSnip</a>}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LegalFMLfl  {
 	private String sFMLflBoolInits = null;
@@ -88,16 +88,16 @@ public class LegalFMLfl  {
 	private boolean bFirstLast = false;
 
 	/**
-		<P>Create a new LegalFMLfl.</P>
+		<p>Create a new LegalFMLfl.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@code this(true, true, true, true)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@code this(true, true, true, true)}</p>
 	 **/
 	public LegalFMLfl()  {
 		this(true, true, true, true);
 	}
 	/**
-		<P>Create a new LegalFMLfl.</P>
+		<p>Create a new LegalFMLfl.</p>
 
 		@param  is_1stOnlyOk  Could it be first-but-not-last? Get with {@link #isFirstOnly() isFirstOnly}{@code ()}.
 		@param  is_middleOk  Could it be middle (not first or last)? Get with {@link #isMiddle() isMiddle}{@code ()}.
@@ -111,9 +111,9 @@ public class LegalFMLfl  {
 		bFirstLast = is_1stLastOkay;
 	}
 	/**
-		<P>Create a new LegalFMLfl with a boolean-initial string.</P>
+		<p>Create a new LegalFMLfl with a boolean-initial string.</p>
 
-		@param  initial_strLengthFourTtFf  Four boolean initials, as described at the top of this class. Must be non-null, and contain exactly four characters, where each is either {@code '<B>t</B>'} or {@code 'T'}, or {@code 'f'} or {@code 'F'}. Get with {@link #getFMLflBoolInits() getFMLflBoolInits}{@code ()}.
+		@param  initial_strLengthFourTtFf  Four boolean initials, as described at the top of this class. Must be non-null, and contain exactly four characters, where each is either {@code '<b>t</b>'} or {@code 'T'}, or {@code 'f'} or {@code 'F'}. Get with {@link #getFMLflBoolInits() getFMLflBoolInits}{@code ()}.
 	 **/
 	public LegalFMLfl(String initial_strLengthFourTtFf)  {
 		if(initial_strLengthFourTtFf == null)  {
@@ -130,7 +130,7 @@ public class LegalFMLfl  {
 		bFirstLast = getBoolean(3, initial_strLengthFourTtFf);
 	}
 	/**
-		<P>Create a new LegalFMLfl with beginability. See the top of this class for details.</P>
+		<p>Create a new LegalFMLfl with beginability. See the top of this class for details.</p>
 
 		@param  beginability  Beginability. May not be {@code null}.
 		@param  endability  Endability. May not be {@code null}.
@@ -149,39 +149,39 @@ public class LegalFMLfl  {
 		bFirstLast = (bFirstOnly  &&  bLastOnly);
 	}
 	/**
-		<P>Is first-but-not-last a legal position?.</P>
+		<p>Is first-but-not-last a legal position?.</p>
 
-		@return  <B>{@code is_1stOnlyOk}</B>, as provided to the constructor.
+		@return  <b>{@code is_1stOnlyOk}</b>, as provided to the constructor.
 	 **/
 	public boolean isFirstOnly()  {
 		return  bFirstOnly;
 	}
 	/**
-		<P>Is neither-first-nor-last a legal position?.</P>
+		<p>Is neither-first-nor-last a legal position?.</p>
 
-		@return  <B>{@code is_middleOk}</B>, as provided to the constructor.
+		@return  <b>{@code is_middleOk}</b>, as provided to the constructor.
 	 **/
 	public boolean isMiddle()  {
 		return  bMiddle;
 	}
 	/**
-		<P>Is last-but-not-first a legal position?.</P>
+		<p>Is last-but-not-first a legal position?.</p>
 
-		@return  <B>{@code is_lastOnlyOk}</B>, as provided to the constructor.
+		@return  <b>{@code is_lastOnlyOk}</b>, as provided to the constructor.
 	 **/
 	public boolean isLastOnly()  {
 		return  bLastOnly;
 	}
 	/**
-		<P>Is first-and-last a legal position?.</P>
+		<p>Is first-and-last a legal position?.</p>
 
-		@return  <B>{@code is_1stLastOkay}</B>, as provided to the constructor.
+		@return  <b>{@code is_1stLastOkay}</b>, as provided to the constructor.
 	 **/
 	public boolean isFirstLast()  {
 		return  bFirstLast;
 	}
 	/**
-		<P>Does the actual position conform to the legal positions?.</P>
+		<p>Does the actual position conform to the legal positions?.</p>
 
 		@return  {@code isValidActualLocation(is_first, is_last, true, null)}
 	 **/
@@ -189,15 +189,15 @@ public class LegalFMLfl  {
 		return  isValidActualLocation(is_first, is_last, true, null);
 	}
 	/**
-		<P>Does the actual position conform to the legal positions?.</P>
+		<p>Does the actual position conform to the legal positions?.</p>
 
 		@param  is_actuallyFirst  Is the element actually first in the sequence?
 		@param  is_actuallyEnd  Is the element actually last in the sequence?
-		@return  <B>{@code false}</B>  If <UL>
-			<LI>{@code is_actuallyFirst} is true, but {@link #isBeginable() beginability} is not legal, or</LI>
-			<LI>{@code is_actuallyEnd} is true, but {@link #isEndable() endability} is not legal.</LI>
-		</UL>
-		<BR><B>{@code true}</B> If otherwise.
+		@return  <b>{@code false}</b>  If <ul>
+			<li>{@code is_actuallyFirst} is true, but {@link #isBeginable() beginability} is not legal, or</li>
+			<li>{@code is_actuallyEnd} is true, but {@link #isEndable() endability} is not legal.</li>
+		</ul>
+		<br/><b>{@code true}</b> If otherwise.
 	 **/
 	public boolean isValidActualLocation(boolean is_actuallyFirst, boolean is_actuallyEnd, boolean do_returnIfFalse, Object xtra_errInfo)  {
 		if((is_actuallyFirst  &&  !isBeginable())  ||
@@ -216,7 +216,7 @@ public class LegalFMLfl  {
 		return  true;
 	}
 	/**
-		<P>Get an enum representing beginability.</P>
+		<p>Get an enum representing beginability.</p>
 
 		@return  {@code MustOptOrForb.MUST}, {@code MustOptOrForb.OPTIONAL} or {@code MustOptOrForb.FORBIDDEN}, as described at the top of this class.
 		@see  #getEndability()
@@ -240,7 +240,7 @@ public class LegalFMLfl  {
 		return  emofBegin;
 	}
 	/**
-		<P>Get an enum representing endability.</P>
+		<p>Get an enum representing endability.</p>
 
 		@return  {@code MustOptOrForb.MUST}, {@code MustOptOrForb.OPTIONAL} or {@code MustOptOrForb.FORBIDDEN}, as described at the top of this class.
 		@see  #getBeginability()
@@ -263,89 +263,89 @@ public class LegalFMLfl  {
 		return  emofEnd;
 	}
 	/**
-		<P>Can this element be beginable?.</P>
+		<p>Can this element be beginable?.</p>
 
-		@return  <CODE>(!{@link #isBeginableForbidden() isBeginableForbidden}())</CODE>
+		@return  <code>(!{@link #isBeginableForbidden() isBeginableForbidden}())</code>
 	 **/
 	public final boolean isBeginable()  {
 		return  (!isBeginableForbidden());
 	}
 	/**
-		<P>Is beginability set to MUST?.</P>
+		<p>Is beginability set to MUST?.</p>
 
-		@return  <CODE>{@link #getBeginability}{@code ()}.{@link MustOptOrForb#isMust() isMust}()</CODE>
+		@return  <code>{@link #getBeginability}{@code ()}.{@link MustOptOrForb#isMust() isMust}()</code>
 	 **/
 	public final boolean isBeginableMust()  {
 		return  getBeginability().isMust();
 	}
 	/**
-		<P>Is beginability set to OPTIONAL?.</P>
+		<p>Is beginability set to OPTIONAL?.</p>
 
-		@return  <CODE>{@link #getBeginability}{@code ()}.{@link MustOptOrForb#isOptional() isOptional}()</CODE>
+		@return  <code>{@link #getBeginability}{@code ()}.{@link MustOptOrForb#isOptional() isOptional}()</code>
 	 **/
 	public final boolean isBeginableOptional()  {
 		return  getBeginability().isOptional();
 	}
 	/**
-		<P>Is beginability set to FORBIDDEN?.</P>
+		<p>Is beginability set to FORBIDDEN?.</p>
 
-		@return  <CODE>{@link #getBeginability}{@code ()}.{@link MustOptOrForb#isForbidden() isForbidden}()</CODE>
+		@return  <code>{@link #getBeginability}{@code ()}.{@link MustOptOrForb#isForbidden() isForbidden}()</code>
 	 **/
 	public final boolean isBeginableForbidden()  {
 		return  getBeginability().isForbidden();
 	}
 	/**
-		<P>Can this element be endable?.</P>
+		<p>Can this element be endable?.</p>
 
-		@return  <CODE>(!{@link #isEndableForbidden() isEndableForbidden}())</CODE>
+		@return  <code>(!{@link #isEndableForbidden() isEndableForbidden}())</code>
 	 **/
 	public final boolean isEndable()  {
 		return  (!isEndableForbidden());
 	}
 	/**
-		<P>Is endability set to MUST?.</P>
+		<p>Is endability set to MUST?.</p>
 
-		@return  <CODE>{@link #getEndability}{@code ()}.{@link MustOptOrForb#isMust() isMust}()</CODE>
+		@return  <code>{@link #getEndability}{@code ()}.{@link MustOptOrForb#isMust() isMust}()</code>
 	 **/
 	public final boolean isEndableMust()  {
 		return  getEndability().isMust();
 	}
 	/**
-		<P>Is endability set to OPTIONAL?.</P>
+		<p>Is endability set to OPTIONAL?.</p>
 
-		@return  <CODE>{@link #getEndability}{@code ()}.{@link MustOptOrForb#isOptional() isOptional}()</CODE>
+		@return  <code>{@link #getEndability}{@code ()}.{@link MustOptOrForb#isOptional() isOptional}()</code>
 	 **/
 	public final boolean isEndableOptional()  {
 		return  getEndability().isOptional();
 	}
 	/**
-		<P>Is endability set to FORBIDDEN?.</P>
+		<p>Is endability set to FORBIDDEN?.</p>
 
-		@return  <CODE>{@link #getEndability}{@code ()}.{@link MustOptOrForb#isForbidden() isForbidden}()</CODE>
+		@return  <code>{@link #getEndability}{@code ()}.{@link MustOptOrForb#isForbidden() isForbidden}()</code>
 	 **/
 	public final boolean isEndableForbidden()  {
 		return  getEndability().isForbidden();
 	}
 	/**
-		<P>Is it legal for another element to go before this one?.</P>
+		<p>Is it legal for another element to go before this one?.</p>
 
-		@return  <CODE>(!}{@link #isBeginableMust() isBeginableMust}())</CODE>
+		@return  <code>(!}{@link #isBeginableMust() isBeginableMust}())</code>
 	 **/
 	public final boolean isPrecedable()  {
 		return  (!isBeginableMust());
 	}
 	/**
-		<P>Is it legal for another element to be after this one?.</P>
+		<p>Is it legal for another element to be after this one?.</p>
 
-		@return  <CODE>(!}{@link #isEndableMust() isEndableMust}())</CODE>
+		@return  <code>(!}{@link #isEndableMust() isEndableMust}())</code>
 	 **/
 	public final boolean isFollowable()  {
 		return  (!isEndableMust());
 	}
 	/**
-		<P>Get a long representation of this class. Each position, if-and-only if true, is fully spelled out. For example:</P>
+		<p>Get a long representation of this class. Each position, if-and-only if true, is fully spelled out. For example:</p>
 
-		<P>{@code FIRST-ONLY, FIRST-LAST}</P>
+		<p>{@code FIRST-ONLY, FIRST-LAST}</p>
 	 **/
 	public final String getDiagnostics()  {
 		StringBuilder sb = new StringBuilder();
@@ -377,7 +377,7 @@ public class LegalFMLfl  {
 		}
 	}
 	/**
-		<P>Get the boolean-initial string for this {@code LegalFMLfl}.</P>
+		<p>Get the boolean-initial string for this {@code LegalFMLfl}.</p>
 
 		@return  A string in the format as described at the top of this class.
 		@see  #getFMLflBoolInits(boolean, boolean, boolean, boolean) getFMLflBoolInits(b,b,b,b)
@@ -391,9 +391,9 @@ public class LegalFMLfl  {
 		return  sFMLflBoolInits;
 	}
 	/**
-		<P>Utility function to create a boolean initail string, usable in the {@code LegalLFMfl} constructor.</P>
+		<p>Utility function to create a boolean initail string, usable in the {@code LegalLFMfl} constructor.</p>
 
-		@return  A string in the format as described at the top of this class, representing these parameter-values, <I>not</I> the internally-held booleans.
+		@return  A string in the format as described at the top of this class, representing these parameter-values, <i>not</i> the internally-held booleans.
 		@see  #getFMLflBoolInits()
 		@see  #getBoolean(int, String) getBoolean(i,s)
 	 **/
@@ -404,7 +404,7 @@ public class LegalFMLfl  {
 			(is_1stLastOkay  ?  "T"  :  "F");
 	}
 	/**
-		<P>Utility function to get a particular boolean value from a boolean-initial string.</P>
+		<p>Utility function to get a particular boolean value from a boolean-initial string.</p>
 
 		@param index  The char-index of the boolean you want, within {@code initial_strLengthFourTtFf}.
 		@param  initial_strLengthFourTtFf  The boolean-initial string, as discussed at the top of this class.
@@ -427,7 +427,7 @@ public class LegalFMLfl  {
 		throw  new IllegalArgumentException("initial_strLengthFourTtFf (currently '" + initial_strLengthFourTtFf + "') must be exactly four characters, and each must be a t, T, f or F.");
 	}
 	/**
-		@return  <B>{@link #getFMLflBoolInits() getFMLflBoolInits}{@code ()}</B>
+		@return  <b>{@link #getFMLflBoolInits() getFMLflBoolInits}{@code ()}</b>
 	 **/
 	public final String toString()  {
 		return  getFMLflBoolInits();

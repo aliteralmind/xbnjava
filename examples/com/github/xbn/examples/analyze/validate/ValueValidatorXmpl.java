@@ -19,12 +19,12 @@ package  com.github.xbn.examples.analyze.validate;
 	import  com.github.xbn.analyze.validate.z.ValueValidator_Cfg;
 	import  com.github.xbn.analyze.validate.NewValueValidatorFor;
 /**
-	<P>Simple custom {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.ValueValidator ValueValidator} for integers (must be non-{@code null} and equal to 3), and also demonstrates {@link com.github.xbn.analyze.validate.NullnessValidator NullnessValidator}.</P>
+	<p>Simple custom {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.ValueValidator ValueValidator} for integers (must be non-{@code null} and equal to 3), and also demonstrates {@link com.github.xbn.analyze.validate.NullnessValidator NullnessValidator}.</p>
 
-	<P>{@code java com.github.xbn.examples.analyze.validate.ValueValidatorXmpl}</P>
+	<p>{@code java com.github.xbn.examples.analyze.validate.ValueValidatorXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueValidatorXmpl  {
 	public static final void main(String[] ignored)  {

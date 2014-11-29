@@ -31,35 +31,35 @@ package  com.github.xbn.linefilter;
 	import  com.github.xbn.regexutil.z.RegexValidator_Cfg;
 	import  java.util.regex.Pattern;
 /**
-	<P>Convenience functions for creating text-line validators with line-number validators, string validators, and regular expressions (which only identify the line), and RegexReplacers (which also alter them).</P>
+	<p>Convenience functions for creating text-line validators with line-number validators, string validators, and regular expressions (which only identify the line), and RegexReplacers (which also alter them).</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewTextLineValidatorFor  {
 	private NewTextLineValidatorFor()  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>A new text-line validator that identifies the line's text based on a regular expression.</P>
+		<p>A new text-line validator that identifies the line's text based on a regular expression.</p>
 	 **/
 	public static final TextLineValidatorAdapter<ValueValidator<String>> text(String literal_text, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
 		return  text(new RegexValidator_Cfg().literal(literal_text).useFind().filter(filter_ifNonNull).debugTo(dbgDest_ifNonNull).build());
 	}
 	/**
-		<P>A new text-line validator that identifies the line's text based on a regular expression.</P>
+		<p>A new text-line validator that identifies the line's text based on a regular expression.</p>
 	 **/
 	public static final TextLineValidatorAdapter<ValueValidator<String>> text(Pattern find_what, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
 		return  text(new RegexValidator_Cfg().pattern(find_what).useFind().filter(filter_ifNonNull).debugTo(dbgDest_ifNonNull).build());
 	}
 	/**
-		<P>A new text-line validator that identifies the line's text based on a regular expression.</P>
+		<p>A new text-line validator that identifies the line's text based on a regular expression.</p>
 	 **/
 	public static final TextLineValidatorAdapter<ValueValidator<String>> text(RegexValidator validator)  {
 		return  new TLVForStringV(validator, "validator");
 	}
 	/**
-		<P>A new text-line validator that identifies the line's text based on a condition.</P>
+		<p>A new text-line validator that identifies the line's text based on a condition.</p>
 
 		@param  string_validator  The validator to decorate. May not be {@code null}. Get with {@code getAdapted()}
 		@return  A new {@code TextLineValidator} that does not alter valid lines.
@@ -68,7 +68,7 @@ public class NewTextLineValidatorFor  {
 		return  new TLVForStringV(string_validator, "string_validator");
 	}
 	/**
-		<P>A new text-line validator that identifies the line's number based on a condition--the line's text is ignored.</P>
+		<p>A new text-line validator that identifies the line's number based on a condition--the line's text is ignored.</p>
 
 		@param  int_validator  The validator to decorate. May not be {@code null}. Get with {@code getAdapted()}
 		@return  A new {@code TextLineValidator} that does not alter valid lines.
@@ -77,13 +77,13 @@ public class NewTextLineValidatorFor  {
 		return  new TLVForIntV(int_validator, "int_validator");
 	}
 	/**
-		<P>A new text-line validator that identifies <I>and replaces</I> the line's text based on a regular expression.</P>
+		<p>A new text-line validator that identifies <i>and replaces</i> the line's text based on a regular expression.</p>
 	 **/
 	public static final TextLineValidatorAdapter<StringValidatorReplacer> textReplacer(RegexReplacer replacer, ValidResultFilter filter_ifNonNull)  {
 		return  new TLVForSVR(new StringValidatorReplacer(replacer, filter_ifNonNull));
 	}
 	/**
-		<P>A new text-line validator that identifies <I>and replaces</I> the line's text based on a regular expression.</P>
+		<p>A new text-line validator that identifies <i>and replaces</i> the line's text based on a regular expression.</p>
 	 **/
 	public static final TextLineValidatorAdapter<StringValidatorReplacer> textReplacer(AlterationRequired required, Pattern find_what, String rplcWith_direct, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
 		return  new TLVForSVR(AdaptRegexReplacerTo.stringValidator(required, find_what, rplcWith_direct, ReplacedInEachInput.MATCHES, filter_ifNonNull, dbgDest_ifNonNull));

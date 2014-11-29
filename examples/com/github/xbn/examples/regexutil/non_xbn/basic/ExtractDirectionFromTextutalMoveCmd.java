@@ -16,12 +16,12 @@ package  com.github.xbn.examples.regexutil.non_xbn.basic;
    import  java.util.regex.Matcher;
    import  java.util.regex.Pattern;
 /**
-	<P>Read in a {@code "MOVE"} command for a text-based game, where the only legal values after {@code MOVE} are {@code 'N'}, {@code 'E'}, {@code 'W'}, or {@code 'S'}.</P>
+	<p>Read in a {@code "MOVE"} command for a text-based game, where the only legal values after {@code MOVE} are {@code 'N'}, {@code 'E'}, {@code 'W'}, or {@code 'S'}.</p>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ExtractDirectionFromTextutalMoveCmd}</P>
+   <p>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ExtractDirectionFromTextutalMoveCmd}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ExtractDirectionFromTextutalMoveCmd  {
   //Create a matcher with a dummy-string, so it can be reused (reset).

@@ -2,19 +2,19 @@ package  com.github.xbn.experimental.xcontext;
 	import  com.github.xbn.text.CrashIfString;
 
 /**
-	<P>Implementation of {@code ExceptionContextElement}.</P>
+	<p>Implementation of {@code ExceptionContextElement}.</p>
  **/
 public class XCElement extends XCObject implements ExceptionContextElement  {
 	//state
 		private int ix = -1;
 //Constructors...START
 	/**
-		<P>Create a new {@code XCElement}.</P>
+		<p>Create a new {@code XCElement}.</p>
 
-		<P>This calls<OL>
-			<LI>{@link com.github.xbn.experimental.xcontext.XCObject#XCObject(String) super}{@code (cntr_name)}</LI>
-			<LI>{@link #setIndex(int) setIndex(index)}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link com.github.xbn.experimental.xcontext.XCObject#XCObject(String) super}{@code (cntr_name)}</li>
+			<li>{@link #setIndex(int) setIndex(index)}</li>
+		</ol></p>
 
 		@see  #XCElement(ExceptionContextElement) this(xce)
 	 **/
@@ -23,12 +23,12 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
 		setIndex(index);
 	}
 	/**
-		<P>Create a new {@code XCElement} from an {@code ExceptionContextElement}.</P>
+		<p>Create a new {@code XCElement} from an {@code ExceptionContextElement}.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(ExceptionContextObject) super}{@code (to_copy)}</LI>
-			<LI><CODE>{@link #setIndex(int) setIndex}(to_copy.{@link #getIndex() getIndex}())</CODE></LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(ExceptionContextObject) super}{@code (to_copy)}</li>
+			<li><code>{@link #setIndex(int) setIndex}(to_copy.{@link #getIndex() getIndex}())</code></li>
+		</ol></p>
 		@see  #getObjectCopy()
 		@see  #XCElement(ExceptionContext, String, int) XCElement(xc,s,i)
 	 **/
@@ -39,7 +39,7 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
 //Constructors...END
 //Setters...START
 	/**
-		<P>Set the just-called function in which the error happened (may happen).</P>
+		<p>Set the just-called function in which the error happened (may happen).</p>
 
 		@param  index  May not be {@code null} or empty. Get with {@link #getIndex() getIndex}{@code ()}.
 	 **/
@@ -61,7 +61,7 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
 //Getters...END
 //Other...START
 	/**
-		@return  <CODE>(new {@link #XCElement(XCElement) XCElement}(this)</CODE>
+		@return  <code>(new {@link #XCElement(XCElement) XCElement}(this)</code>
 	 **/
 	public XCElement getObjectCopy()  {
 		return  (new XCElement(this));
@@ -88,9 +88,9 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
 		return  areFieldsEqual(xce);
 	}
 	/**
-		<P>Are all internal values in the provided {@code XCElement} the same as in <I>{@code this}</I>?.</P>
+		<p>Are all internal values in the provided {@code XCElement} the same as in <i>{@code this}</i>?.</p>
 
-		@return  <CODE>({@link com.github.xbn.experimental.xcontext.XCObject super}.{@link com.github.xbn.experimental.xcontext.XCObject#areFieldsEqual(XCObject) areFieldsEqual}(SUPER_CLASS_ABBREVIATION) &nbsp;&amp;&amp; &nbsp; {@link #getIndex() getIndex}() == xc_e.getIndex())</CODE>
+		@return  <code>({@link com.github.xbn.experimental.xcontext.XCObject super}.{@link com.github.xbn.experimental.xcontext.XCObject#areFieldsEqual(XCObject) areFieldsEqual}(SUPER_CLASS_ABBREVIATION) &nbsp;&amp;&amp; &nbsp; {@link #getIndex() getIndex}() == xc_e.getIndex())</code>
 	 **/
 	public boolean areFieldsEqual(XCElement xc_e)  {
 		return  (super.areFieldsEqual(xc_e)  &&  getIndex() == xc_e.getIndex());

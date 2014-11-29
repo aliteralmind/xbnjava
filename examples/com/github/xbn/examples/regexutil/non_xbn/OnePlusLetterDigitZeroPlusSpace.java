@@ -16,13 +16,13 @@ package  com.github.xbn.examples.regexutil.non_xbn;
 	import  java.util.regex.Matcher;
 	import  java.util.regex.Pattern;
 /**
-   <P>Uses two regular expressions to confirm a string has one-or-more characters <I>and</I> zero-or-more spaces. This is an answer to
-   <BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string">http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string</A></CODE></P>
+   <p>Uses two regular expressions to confirm a string has one-or-more characters <i>and</i> zero-or-more spaces. This is an answer to
+   <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string">http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string</a></code></p>
 
-   <P>{@code java com.github.xbn.examples.regexutil.non_xbn.OnePlusLetterDigitZeroPlusSpace}</P>
+   <p>{@code java com.github.xbn.examples.regexutil.non_xbn.OnePlusLetterDigitZeroPlusSpace}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class OnePlusLetterDigitZeroPlusSpace  {

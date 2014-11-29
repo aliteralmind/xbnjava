@@ -1,5 +1,5 @@
 /**
-	<P>Regular expression utilities featuring &quot;indirect&quot; replacements, tokenization, &quot;group extraction&quot;, and convenience functions for creating <CODE>java.util.regex.Patterns</CODE>.</P>
+	<p>Regular expression utilities featuring &quot;indirect&quot; replacements, tokenization, &quot;group extraction&quot;, and convenience functions for creating <code>java.util.regex.Patterns</code>.</p>
 
 	@see  com.github.aliteralmind.codelet.AdaptRegexReplacerTo
  **/

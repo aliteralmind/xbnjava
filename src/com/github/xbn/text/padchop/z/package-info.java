@@ -1,4 +1,4 @@
 /**
-	<P>Builders for <CODE><A HREF="../package-summary.html">xbn.text.padchop.*</A></CODE></P>
+	<p>Builders for <code><a href="../package-summary.html">xbn.text.padchop.*</a></code></p>
  **/
 package  com.github.xbn.text.padchop.z;

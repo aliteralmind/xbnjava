@@ -16,12 +16,12 @@ package  com.github.xbn.examples.regexutil;
 	import  com.github.xbn.regexutil.z.MaxUntilLoopsExceeded;
 	import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
 /**
-	<P>Uses a {@code com.github.xbn.regexutil.RegexReplacer}, to replace specific terms: all, first, &quot;match numbers&quot;, until, or via {@code java.util.regex.}{@code java.util.regex.Matcher#matches() Matcher#matches()} or {@code java.util.regex.}{@code java.util.regex.Matcher#lookingAt() Matcher#lookingAt()}.</P>
+	<p>Uses a {@code com.github.xbn.regexutil.RegexReplacer}, to replace specific terms: all, first, &quot;match numbers&quot;, until, or via {@code java.util.regex.}{@code java.util.regex.Matcher#matches() Matcher#matches()} or {@code java.util.regex.}{@code java.util.regex.Matcher#lookingAt() Matcher#lookingAt()}.</p>
 
-	<P>{@code java com.github.xbn.examples.regexutil.RegexReplacerSpcfcTermsXmpl}</P>
+	<p>{@code java com.github.xbn.examples.regexutil.RegexReplacerSpcfcTermsXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexReplacerSpcfcTermsXmpl  {
 	public static void main(String[] ignored)  {

@@ -16,30 +16,30 @@ package  com.github.xbn.text.padchop.z;
 	import  com.github.xbn.text.padchop.VzblPadChop;
 	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 /**
-	<P>. For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link VzblPadChop}.</P>
+	<p>. For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link VzblPadChop}.</p>
  **/
 public class VzblPadChop_Cfg extends VzblPadChop_CfgForNeeder<VzblPadChop,DummyForNoNeeder>   {
 	/**
-		<P>Create a new {@code zVzblPadChop_Cfg} with defaults.</P>
+		<p>Create a new {@code zVzblPadChop_Cfg} with defaults.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#VzblPadChop_CfgForNeeder(R)">this</A>(null)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#VzblPadChop_CfgForNeeder(R)">this</a>(null)</code></p>
 		@see  #VzblPadChop_Cfg(int) this(i)
 	 **/
 	public VzblPadChop_Cfg()  {
 		super(null);
 	}
 	/**
-		<P>Create a new {@code zVzblPadChop_Cfg} with defaults, but a specific goal length.</P>
+		<p>Create a new {@code zVzblPadChop_Cfg} with defaults, but a specific goal length.</p>
 
-			<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="VzblPadChop_CfgForNeeder.html#VzblPadChop_CfgForNeeder(R, int)">super</A>(goal_len, null)</CODE></P>
+			<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="VzblPadChop_CfgForNeeder.html#VzblPadChop_CfgForNeeder(R, int)">super</a>(goal_len, null)</code></p>
 
 		@see  #VzblPadChop_Cfg() this()
 	 **/

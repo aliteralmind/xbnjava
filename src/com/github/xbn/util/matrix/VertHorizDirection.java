@@ -23,11 +23,11 @@ package  com.github.xbn.util.matrix;
  * @see MatrixDirection#getLongestVHForDiagonal(MatrixElement)
  * @see BoundedMatrix#getHVNeighborCount(int, int, com.github.xbn.util.matrix.VertHorizDirection) BoundedMatrix#getHVNeighborCount
  * @since  0.1.4.2
- * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public enum VertHorizDirection  {
 	/**
-	 * <P>Towards the top (zero-th index).</P>
+	 * <p>Towards the top (zero-th index).</p>
 	 *
 	 * <p>Sets <ul>
 	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 0}</li>
@@ -41,7 +41,7 @@ public enum VertHorizDirection  {
 	 */
 	UP(0, -1),
 	/**
-	 * <P>Towards the bottom (<code>(length - 1)</code> index).</P>
+	 * <p>Towards the bottom (<code>(length - 1)</code> index).</p>
 	 *
 	 * <p>Sets <ul>
 	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 1}</li>
@@ -54,7 +54,7 @@ public enum VertHorizDirection  {
 	 */
 	DOWN(1, 0),
 	/**
-	 * <P>Towards the left side (zero-th index).</P>
+	 * <p>Towards the left side (zero-th index).</p>
 	 *
 	 * <p>Sets <ul>
 	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 0}</li>
@@ -67,7 +67,7 @@ public enum VertHorizDirection  {
 	 */
 	LEFT(0, -1),
 	/**
-	 * <P>Towards the right side (<code>(length - 1)</code> index).</P>
+	 * <p>Towards the right side (<code>(length - 1)</code> index).</p>
 	 *
 	 * <p>Sets <ul>
 	 *    <li>{@link #getVertIncrement()}{@code ()} to {@code 0}</li>
@@ -110,9 +110,9 @@ public enum VertHorizDirection  {
 		return  horizInc;
 	}
 	/**
-	 * <P>Is this {@code VertHorizDirection} equal to {@code UP}?.</P>
+	 * <p>Is this {@code VertHorizDirection} equal to {@code UP}?.</p>
 	 *
-	 * @return  <CODE>this == {@link #UP}</CODE>
+	 * @return  <code>this == {@link #UP}</code>
 	 *
 	 * @see  #isDown()
 	 * @see  #isLeft()
@@ -126,27 +126,27 @@ public enum VertHorizDirection  {
 		return  this == UP;
 	}
 	/**
-	 * <P>Is this {@code VertHorizDirection} equal to {@code DOWN}?.</P>
+	 * <p>Is this {@code VertHorizDirection} equal to {@code DOWN}?.</p>
 	 *
-	 * @return  <CODE>this == {@link #DOWN}</CODE>
+	 * @return  <code>this == {@link #DOWN}</code>
 	 * @see  #isUp()
 	 */
 	public final boolean isDown()  {
 		return  this == DOWN;
 	}
 	/**
-	 * <P>Is this {@code VertHorizDirection} equal to {@code LEFT}?.</P>
+	 * <p>Is this {@code VertHorizDirection} equal to {@code LEFT}?.</p>
 	 *
-	 * @return  <CODE>this == {@link #LEFT}</CODE>
+	 * @return  <code>this == {@link #LEFT}</code>
 	 * @see  #isUp()
 	 */
 	public final boolean isLeft()  {
 		return  this == LEFT;
 	}
 	/**
-	 * <P>Is this {@code Right} equal to {@code RIGHT}?.</P>
+	 * <p>Is this {@code Right} equal to {@code RIGHT}?.</p>
 	 *
-	 * @return  <CODE>this == {@link #RIGHT}</CODE>
+	 * @return  <code>this == {@link #RIGHT}</code>
 	 * @see  #isUp()
 	 * @see  #isHorizontal()
 	 **/
@@ -202,20 +202,20 @@ public enum VertHorizDirection  {
 		}
 	}
 	/**
-	 * <P>If an <CODE>VertHorizDirection</CODE> is not a required value, crash.</P>
+	 * <p>If an <code>VertHorizDirection</code> is not a required value, crash.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 	 * @see  #crashIfForbiddenValue(VertHorizDirection, String, Object) crashIfForbiddenValue(ert,s,o)
 	 */
 	public void crashIfNotRequiredValue(VertHorizDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
 			EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
 	}
 	/**
-	 * <P>If an <CODE>VertHorizDirection</CODE> is a forbidden value, crash.</P>
+	 * <p>If an <code>VertHorizDirection</code> is a forbidden value, crash.</p>
 	 *
-	 * <P>Equal to
-	 * <BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</CODE></P>
+	 * <p>Equal to
+	 * <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
 	 * @see  #crashIfNotRequiredValue(VertHorizDirection, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 */
 	public void crashIfForbiddenValue(VertHorizDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

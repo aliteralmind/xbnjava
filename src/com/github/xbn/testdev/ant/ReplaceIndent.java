@@ -24,12 +24,12 @@ package  com.github.xbn.testdev.ant;
 		import  java.io.IOException;
 
 /**
-	<P>Replace tab indents of all Java code existing in a directory with a replacement string. This is slow and rudimentary. No files can be excluded, for instance. But it works.</P>
+	<p>Replace tab indents of all Java code existing in a directory with a replacement string. This is slow and rudimentary. No files can be excluded, for instance. But it works.</p>
 
-	<P>Copied xbn.util.Utility.appendText.</P>
+	<p>Copied xbn.util.Utility.appendText.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReplaceIndent extends Task  {
 	private String sSrcDir = null;
@@ -39,24 +39,24 @@ public class ReplaceIndent extends Task  {
 
 
 	/**
-		<P>Create a new ReplaceIndent. This does nothing.</P>
+		<p>Create a new ReplaceIndent. This does nothing.</p>
 	 **/
 	public ReplaceIndent()  {
 	}
 	/**
-		<P>Set the directory to change Java code in.</P>
+		<p>Set the directory to change Java code in.</p>
 	 **/
 	public void setSrcDir(String source_dir)  {
 		sSrcDir = source_dir;
 	}
 	/**
-		<P>The 'with' string to replace it (the 'what' string) with.</P>
+		<p>The 'with' string to replace it (the 'what' string) with.</p>
 	 **/
 	public void setTabRplc(String indent)  {
 		sTabRplc = indent;
 	}
 	/**
-		<P>Do it. Uh huh. Oh yeah.</P>
+		<p>Do it. Uh huh. Oh yeah.</p>
 	 **/
 	public void execute() throws BuildException  {
 		//This can't be dependent on any xbn code, because Ant

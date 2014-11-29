@@ -1,4 +1,4 @@
 /**
-	<P>Highly-configurable printing of <CODE>java.util.List</CODE>-s.</P>
+	<p>Highly-configurable printing of <code>java.util.List</code>-s.</p>
  **/
 package  com.github.xbn.list.lister;

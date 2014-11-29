@@ -15,32 +15,32 @@
 package  com.github.xbn.analyze.alter;
 	import  com.github.xbn.util.EnumUtil;
 /**
-	<P>Is it required that the elements in an {@code ExpirableAlterList} are expirable?.</P>
+	<p>Is it required that the elements in an {@code ExpirableAlterList} are expirable?.</p>
 
 	@see  ExpirableAlterList
 	@see  com.github.xbn.lang.Expirable#doesExpire()
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum ExpirableElements  {
 	/**
-		<P>Allow non-expirable elements.</P>
+		<p>Allow non-expirable elements.</p>
 
 		@see  #REQUIRED
 		@see  #isOptional()
 	 **/
 	OPTIONAL,
 	/**
-		<P>Do not allow.</P>
+		<p>Do not allow.</p>
 
 		@see  #OPTIONAL
 		@see  #isRequired()
 	 **/
 	REQUIRED;
 	/**
-		<P>Is this {@code ExpirableElements} equal to {@code OPTIONAL}?.</P>
+		<p>Is this {@code ExpirableElements} equal to {@code OPTIONAL}?.</p>
 
-		@return  <CODE>this == {@link #OPTIONAL}</CODE>
+		@return  <code>this == {@link #OPTIONAL}</code>
 
 		@see  #isRequired()
 	 **/
@@ -48,29 +48,29 @@ public enum ExpirableElements  {
 		return  this == OPTIONAL;
 	}
 	/**
-		<P>Is this {@code ExpirableElements} equal to {@code REQUIRED}?.</P>
+		<p>Is this {@code ExpirableElements} equal to {@code REQUIRED}?.</p>
 
-		@return  <CODE>this == {@link #REQUIRED}</CODE>
+		@return  <code>this == {@link #REQUIRED}</code>
 		@see  #isOptional()
 	 **/
 	public final boolean isRequired()  {
 		return  this == REQUIRED;
 	}
 	/**
-		<P>If an <CODE>ExpirableElements</CODE> is not a required value, crash.</P>
+		<p>If an <code>ExpirableElements</code> is not a required value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</code></p>
 		@see  #crashIfForbiddenValue(ExpirableElements, String, Object) crashIfForbiddenValue(ert,s,o)
 	 **/
 	public void crashIfNotRequiredValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
 		EnumUtil.crashIfNotRequiredValue(this, rqd_value, this_enumsVarName, xtra_errInfo);
 	}
 	/**
-		<P>If an <CODE>ExpirableElements</CODE> is a forbidden value, crash.</P>
+		<p>If an <code>ExpirableElements</code> is a forbidden value, crash.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</code></p>
 		@see  #crashIfNotRequiredValue(ExpirableElements, String, Object) crashIfNotRequiredValue(ert,s,o)
 	 **/
 	public void crashIfForbiddenValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {

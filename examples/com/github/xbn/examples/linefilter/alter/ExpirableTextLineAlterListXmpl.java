@@ -25,12 +25,12 @@ package  com.github.xbn.examples.linefilter.alter;
 	import  com.github.xbn.regexutil.StringReplacer;
 	import  java.util.regex.Pattern;
 /**
-	<P>Demonstrates {@code com.github.xbn.analyze.alter.}{@link com.github.xbn.linefilter.alter.ExpirableTextLineAlterList ExpirableTextLineAlterList}: Alter some duplicate names, and once the alteration-limit for each name is met, expire its alterer.</P>
+	<p>Demonstrates {@code com.github.xbn.analyze.alter.}{@link com.github.xbn.linefilter.alter.ExpirableTextLineAlterList ExpirableTextLineAlterList}: Alter some duplicate names, and once the alteration-limit for each name is met, expire its alterer.</p>
 
-	<P>{@code java com.github.xbn.examples.linefilter.alter.ExpirableTextLineAlterListXmpl}</P>
+	<p>{@code java com.github.xbn.examples.linefilter.alter.ExpirableTextLineAlterListXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ExpirableTextLineAlterListXmpl  {
 	public static final void main(String[] ignored)  {

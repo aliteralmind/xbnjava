@@ -15,10 +15,10 @@
 package  com.github.xbn.util;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>Determine if a bit-flag-integer has a particular flag, and some debugging utilities.</P>
+	<p>Determine if a bit-flag-integer has a particular flag, and some debugging utilities.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BitBinaryUtil  {
 	public static final int VALUE_OF_31ST_ONE_BIT = Integer.parseInt("1000000000000000000000000000000", 2);
@@ -46,19 +46,19 @@ public class BitBinaryUtil  {
 		return  ((all_flags  &  flag_toFind) != 0);
 	}
 	/**
-		<P>Gets the binary representation of a signed integer, with the &quot;sign bit&quot; removed (31 bits, with the most significant bit, the 32nd, removed).</P>
+		<p>Gets the binary representation of a signed integer, with the &quot;sign bit&quot; removed (31 bits, with the most significant bit, the 32nd, removed).</p>
 
 {@.codelet.and.out com.github.xbn.examples.util.GetIntAsZeroPadded31BitStringNoSignDemo%eliminateCommentBlocksAndPackageDecl()}
 
-		@return  <CODE>{@link #getIntAsZeroPaddedBinaryStringToLength(int, int) getIntAsZeroPaddedBinaryStringToLength}(num, 32).substring(1, 32)</CODE>
+		@return  <code>{@link #getIntAsZeroPaddedBinaryStringToLength(int, int) getIntAsZeroPaddedBinaryStringToLength}(num, 32).substring(1, 32)</code>
 	 **/
 	public static final String getIntAsZeroPadded31BitStringNoSign(int num)  {
 		return  getIntAsZeroPaddedBinaryStringToLength(num, 32).substring(1, 32);
 	}
 	/**
-		<P>Gets the binary representation of an integer, as a string and with zero padding.</P>
+		<p>Gets the binary representation of an integer, as a string and with zero padding.</p>
 
-		@return  <CODE>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Integer#toBinaryString(int) toBinaryString}(num)).replace(' ', '0')</CODE>
+		@return  <code>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Integer#toBinaryString(int) toBinaryString}(num)).replace(' ', '0')</code>
 		@see  #getLongAsZeroPaddedBinaryStringToLength(long, int)
 		@see  #getIntAsZeroPadded31BitStringNoSign(int)
 	 **/
@@ -66,11 +66,11 @@ public class BitBinaryUtil  {
 		return  String.format("%" + bit_length + "s", Integer.toBinaryString(num)).replace(' ', '0');
 	}
 	/**
-		<P>Gets the binary representation of a long, as a string and with zero padding.</P>
+		<p>Gets the binary representation of a long, as a string and with zero padding.</p>
 
 {@.codelet.and.out com.github.xbn.examples.util.GetZeroPaddedBinaryStringToLengthDemo%eliminateCommentBlocksAndPackageDecl()}
 
-		@return  <CODE>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Long#toBinaryString(long) toBinaryString}(num)).replace(' ', '0')</CODE>
+		@return  <code>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Long#toBinaryString(long) toBinaryString}(num)).replace(' ', '0')</code>
 		@see  #getIntAsZeroPaddedBinaryStringToLength(int, int)
 	 **/
 	public static final String getLongAsZeroPaddedBinaryStringToLength(long num, int bit_length)  {

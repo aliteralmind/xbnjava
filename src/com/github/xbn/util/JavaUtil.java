@@ -17,26 +17,26 @@ package  com.github.xbn.util;
 	import  static com.github.xbn.lang.XbnConstants.*;
 	import  java.util.regex.Pattern;
 /**
-	<P>Get the non-fully-qualified class name of an object, and transform a Java source-code path to its fully qualified class-name.</P>
+	<p>Get the non-fully-qualified class name of an object, and transform a Java source-code path to its fully qualified class-name.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class JavaUtil  {
 	protected JavaUtil()  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>The default value for a boolean is {@code false}.</P>
+		<p>The default value for a boolean is {@code false}.</p>
 
-		<P>Viewed 1/21/2014
-		<BR><CODE><A HREF="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</A></CODE>:</P>
+		<p>Viewed 1/21/2014
+		<br/><code><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</a></code>:</p>
 
-		<P><B>Default Values:</B> </P>
+		<p><b>Default Values:</b> </p>
 
-		<P>It's not always necessary to assign a value when a field is declared. Fields that are declared but not initialized will be set to a reasonable default by the compiler. Generally speaking, this default will be zero or null, depending on the data type. Relying on such default values, however, is generally considered bad programming style. The following chart summarizes the default values for the above data types.</P>
+		<p>It's not always necessary to assign a value when a field is declared. Fields that are declared but not initialized will be set to a reasonable default by the compiler. Generally speaking, this default will be zero or null, depending on the data type. Relying on such default values, however, is generally considered bad programming style. The following chart summarizes the default values for the above data types.</p>
 
-<PRE>{@literal
+<pre>{@literal
 Data Type	Default Value (for fields)
 --------------------------------------
 byte                       0
@@ -47,7 +47,7 @@ float                      0.0f
 double                     0.0d
 char                       '\u0000'
 String (or any object)     null
-boolean                    false}</PRE>
+boolean                    false}</pre>
 
 {@.codelet.and.out com.github.xbn.examples.util.JavaUtilInitializedValuesXmpl%eliminateCommentBlocksAndPackageDecl()}
 
@@ -62,43 +62,43 @@ boolean                    false}</PRE>
 	 **/
 	public static final boolean DEFAULT_BOOLEAN = false;
 	/**
-		<P>The default value for a char {@code '\u0000'}.</P>
+		<p>The default value for a char {@code '\u0000'}.</p>
 
 		@see  #DEFAULT_BOOLEAN
 	 **/
 	public static final char DEFAULT_CHAR = '\u0000';
 	/**
-		<P>The default value for a byte is {@code 0}.</P>
+		<p>The default value for a byte is {@code 0}.</p>
 
 		@see  #DEFAULT_BOOLEAN
 	 **/
 	public static final byte DEFAULT_BYTE = 0;
 	/**
-		<P>The default value for a short is {@code 0}.</P>
+		<p>The default value for a short is {@code 0}.</p>
 
 		@see  #DEFAULT_BOOLEAN
 	 **/
 	public static final short DEFAULT_SHORT = 0;
 	/**
-		<P>The default value for a int is {@code 0}.</P>
+		<p>The default value for a int is {@code 0}.</p>
 
 		@see  #DEFAULT_BOOLEAN
 	 **/
 	public static final int DEFAULT_INT = 0;
 	/**
-		<P>The default value for a long is {@code 0L}.</P>
+		<p>The default value for a long is {@code 0L}.</p>
 
 		@see  #DEFAULT_BOOLEAN
 	 **/
 	public static final long DEFAULT_LONG = 0L;
 	/**
-		<P>The default value for a float {@code 0.0f}.</P>
+		<p>The default value for a float {@code 0.0f}.</p>
 
 		@see  #DEFAULT_BOOLEAN
 	 **/
 	public static final float DEFAULT_FLOAT = 0.0f;
 	/**
-		<P>The default value for a double {@code 0.0d}.</P>
+		<p>The default value for a double {@code 0.0d}.</p>
 
 		@see  #DEFAULT_BOOLEAN
 	 **/
@@ -127,7 +127,7 @@ boolean                    false}</PRE>
 		return  path_toJavaSource.replaceAll(Pattern.quote(FILE_SEP), ".");
 	}
 	/**
-		<P>Get an object's non-fully-qualified class-name.</P>
+		<p>Get an object's non-fully-qualified class-name.</p>
 
 		@param  object  May not be {@code null}.
 		@return  For example, if {@code object} is of type {@code java.lang.Integer}, this returns {@code Integer}.
@@ -148,10 +148,10 @@ boolean                    false}</PRE>
 			: sfqcn.substring((ixLastDot + 1), sfqcn.length()));
 	}
 	/**
-		<P>Get an object containing an initialized value for the static class-type.</P>
+		<p>Get an object containing an initialized value for the static class-type.</p>
 
 		@param  cls_static  May not be {@code null}.
-		@return  <CODE>{@link #getInitializedObjectForClassName(String) getInitializedObjectForClassName}(cls_static.getName())</CODE>
+		@return  <code>{@link #getInitializedObjectForClassName(String) getInitializedObjectForClassName}(cls_static.getName())</code>
 	 **/
 	public static final Object getInitializedObjectForClass(Class cls_static)  {
 		try  {
@@ -161,26 +161,26 @@ boolean                    false}</PRE>
 			}
 	}
 	/**
-		<P>Get an object containing an initialized value for the type whose name is in a string.</P>
+		<p>Get an object containing an initialized value for the type whose name is in a string.</p>
 
-		<P>Idea from (viewed 1/2/2014)
-		<BR> &nbsp; &nbsp; <CODE><A HREF="http://stackoverflow.com/a/2892067/2736496">http://stackoverflow.com/a/2892067/2736496</A></CODE></P>
+		<p>Idea from (viewed 1/2/2014)
+		<br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/2892067/2736496">http://stackoverflow.com/a/2892067/2736496</a></code></p>
 
 		@param  type_name  May not be {@code null}.
-		@return  If {@code type_name} is equal to<UL>
-			<LI>{@code "boolean"}: {@link #DEFAULT_BOOLEAN}</LI>
-			<LI>{@code "char"}: {@link #DEFAULT_CHAR}</LI>
-			<LI>{@code "byte"}: {@link #DEFAULT_BYTE}</LI>
-			<LI>{@code "short"}: {@link #DEFAULT_SHORT}</LI>
-			<LI>{@code "int"}: {@link #DEFAULT_INT}</LI>
-			<LI>{@code "long"}: {@link #DEFAULT_LONG}</LI>
-			<LI>{@code "float"}: {@link #DEFAULT_FLOAT}</LI>
-			<LI>{@code "double"}: {@link #DEFAULT_DOUBLE}</LI>
-			<LI><I>anything else</I>: {@code null}</LI>
-		</UL>
+		@return  If {@code type_name} is equal to<ul>
+			<li>{@code "boolean"}: {@link #DEFAULT_BOOLEAN}</li>
+			<li>{@code "char"}: {@link #DEFAULT_CHAR}</li>
+			<li>{@code "byte"}: {@link #DEFAULT_BYTE}</li>
+			<li>{@code "short"}: {@link #DEFAULT_SHORT}</li>
+			<li>{@code "int"}: {@link #DEFAULT_INT}</li>
+			<li>{@code "long"}: {@link #DEFAULT_LONG}</li>
+			<li>{@code "float"}: {@link #DEFAULT_FLOAT}</li>
+			<li>{@code "double"}: {@link #DEFAULT_DOUBLE}</li>
+			<li><i>anything else</i>: {@code null}</li>
+		</ul>
 		@see  #getInitializedObjectForClass(Class) getInitializedObjectForClass(cls)
-		@see  <A HREF="https://gist.github.com/aliteralmind/8544406">This function as a Gist</A>
-		@see  <A HREF="http://stackoverflow.com/a/21265154/2736496">This function in answer to the above stackoverflow question</A>
+		@see  <a href="https://gist.github.com/aliteralmind/8544406">This function as a Gist</a>
+		@see  <a href="http://stackoverflow.com/a/21265154/2736496">This function in answer to the above stackoverflow question</a>
 	 **/
 	public static final Object getInitializedObjectForClassName(String type_name)  {
 		try  {

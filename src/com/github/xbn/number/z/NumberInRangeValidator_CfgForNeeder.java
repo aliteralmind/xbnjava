@@ -18,17 +18,17 @@ package  com.github.xbn.number.z;
 	import  com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder;
 	import  com.github.xbn.neederneedable.Needer;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</A> configuring a {@link com.github.xbn.number.NumberInRangeValidator}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.number.NumberInRangeValidator}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NumberInRangeValidator_CfgForNeeder<N extends Number,G extends NumberInRange<N>,V extends NumberInRangeValidator<N>, R extends Needer> extends ValueValidator_CfgForNeeder<N,V,R> implements NumberInRangeValidator_Fieldable<N,G>  {
 	public G nir = null;
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-			<LI><CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="NumberInRangeValidator_CfgForNeeder.html#NumberInRangeValidator_CfgForNeeder(boolean, boolean, R)">super</A>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</CODE></LI>
+			<li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberInRangeValidator_CfgForNeeder.html#NumberInRangeValidator_CfgForNeeder(boolean, boolean, R)">super</a>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</code></li>
 
 	 **/
 	public NumberInRangeValidator_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {

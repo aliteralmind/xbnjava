@@ -15,12 +15,12 @@
 package  com.github.xbn.examples.util;
 	import  com.github.xbn.util.BitBinaryUtil;
 /**
-	<P>Demonstration of <CODE>{@link com.github.xbn.util.BitBinaryUtil BitBinaryUtil}.{@link com.github.xbn.util.BitBinaryUtil#getIntAsZeroPadded31BitStringNoSign(int) getIntAsZeroPadded31BitStringNoSign}</CODE></P>
+	<p>Demonstration of <code>{@link com.github.xbn.util.BitBinaryUtil BitBinaryUtil}.{@link com.github.xbn.util.BitBinaryUtil#getIntAsZeroPadded31BitStringNoSign(int) getIntAsZeroPadded31BitStringNoSign}</code></p>
 
-	<P>{@code java com.github.xbn.examples.util.GetIntAsZeroPadded31BitStringNoSignDemo}</P>
+	<p>{@code java com.github.xbn.examples.util.GetIntAsZeroPadded31BitStringNoSignDemo}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class GetIntAsZeroPadded31BitStringNoSignDemo  {
 	public static final void main(String[] ignored)  {

@@ -25,38 +25,38 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
 /**
-	<P>For building listifiers whose raw object is a primitive array, and whose virtual elemens are their wrapper-types. Such as a raw object that is an {@code int[]}, and whose virtual elements are {@code java.lang.Integer}-s.</P>
+	<p>For building listifiers whose raw object is a primitive array, and whose virtual elemens are their wrapper-types. Such as a raw object that is an {@code int[]}, and whose virtual elements are {@code java.lang.Integer}-s.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyPWrapperEArray<E> extends AbstractListifyEArray<E> implements ListifyPWrapperEArray<E>  {
 	private ListifyPrimitiveableComposer<E> lpb = null;
 //constructors...START
 	/**
-		<P>Create a new {@code AbstractListifyPWrapperEArray}.</P>
+		<p>Create a new {@code AbstractListifyPWrapperEArray}.</p>
 	 **/
 	@SuppressWarnings("unchecked")
 	public AbstractListifyPWrapperEArray(E[] objects, PrimitiveArrayHelper<E> pa_helper, Class<E> cls_element)  {
 		this(objects, pa_helper, cls_element, SimpleNullHandlerForPrimitives.CRASH);
 	}
 	/**
-		<P>Create a new {@code AbstractListifyPWrapperEArray}.</P>
+		<p>Create a new {@code AbstractListifyPWrapperEArray}.</p>
 	 **/
 	public AbstractListifyPWrapperEArray(E[] objects, PrimitiveArrayHelper<E> pa_helper, Class<E> cls_element, NullHandlerForPrimitives<E> hnr_nb)  {
 		super(objects, pa_helper, (new OneParamCnstrValueCopier<E>(cls_element)));
 		lpb = new ListifyPrimitiveableComposer<E>(objects, AddRemovable.NO, pa_helper, getValueCopier(), hnr_nb);
 	}
 	/**
-		<P>Create a new {@code AbstractListifyPWrapperEArray} as a duplicate of another.</P>
+		<p>Create a new {@code AbstractListifyPWrapperEArray} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyEArray#AbstractListifyEArray(ListifyEArray) super}{@code (to_copy)}</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyEArray#AbstractListifyEArray(ListifyEArray) super}{@code (to_copy)}</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
-		@see   <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#AbstractListifyPWrapperEArray(E[], xbn.array.PrimitiveArrayHelper, java.lang.Class)">this</A>(E[],pah,cls,copyval)</CODE>
-		@see   <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#AbstractListifyPWrapperEArray(E[], xbn.array.PrimitiveArrayHelper, java.lang.Class, xbn.util.copyval.NullHandlerForPrimitives)">this</A>(E[],pah,cls,hnvnb)</CODE>
+		@see   <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#AbstractListifyPWrapperEArray(E[], xbn.array.PrimitiveArrayHelper, java.lang.Class)">this</a>(E[],pah,cls,copyval)</code>
+		@see   <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#AbstractListifyPWrapperEArray(E[], xbn.array.PrimitiveArrayHelper, java.lang.Class, xbn.util.copyval.NullHandlerForPrimitives)">this</a>(E[],pah,cls,hnvnb)</code>
 	 **/
 	public AbstractListifyPWrapperEArray(ListifyPWrapperEArray<E> to_copy)  {
 		super(to_copy);

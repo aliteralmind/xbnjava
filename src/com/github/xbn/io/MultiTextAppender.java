@@ -18,9 +18,9 @@ package  com.github.xbn.io;
 	import  java.io.IOException;
 	import  static com.github.xbn.lang.XbnConstants.*;
 /**
-	<P>{@code TextAppender} that writes to two or more destinations.</P>
+	<p>{@code TextAppender} that writes to two or more destinations.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for detapndrils. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for detapndrils. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class MultiTextAppender extends TextAppender  {
 	private final TextAppender[] tappenders;
@@ -64,7 +64,7 @@ public class MultiTextAppender extends TextAppender  {
 		}
 	}
 	/**
-		@return  <CODE>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</CODE>
+		@return  <code>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</code>
 	 **/
 	public String toString()  {
 		return  appendToString(new StringBuilder()).toString();

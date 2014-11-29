@@ -15,10 +15,10 @@
 package  com.github.xbn.util.copyval;
 	import  com.github.xbn.lang.CrashIfObject;
 /**
-	<P>Implementation of {@code GetValueForNull}.</P>
+	<p>Implementation of {@code GetValueForNull}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleNullHandler<O> implements NullHandler<O>  {
 //state
@@ -32,11 +32,11 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 		this(ActionForNull.USE_NON_NULL, non_nullReplacement);
 	}
 	/**
-		<P>Create a new {@code SimpleNullHandler}.</P>
+		<p>Create a new {@code SimpleNullHandler}.</p>
 
-		<P>This calls<OL>
-		</OL></P>
-		@see  <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#SimpleNullHandler(O)">this</A>(O)</CODE>
+		<p>This calls<ol>
+		</ol></p>
+		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#SimpleNullHandler(O)">this</a>(O)</code>
 	 **/
 	public SimpleNullHandler(ActionForNull action, O non_nullReplacement)  {
 		if(action == null)  {
@@ -53,11 +53,11 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 		oNNull = non_nullReplacement;
 	}
 	/**
-		<P>Create a new {@code SimpleNullHandler} as a duplicate of another.</P>
+		<p>Create a new {@code SimpleNullHandler} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -69,38 +69,38 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 //constructors...END
 //main functionality...START
 	/**
-		@see  # <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#setAction(ActionForNull, O)">setAction</A>(ehnva,O)</CODE>
+		@see  # <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#setAction(ActionForNull, O)">setAction</a>(ehnva,O)</code>
 	 **/
 	public ActionForNull getAction()  {
 		return  ea;
 	}
 	/**
-		@return  <CODE>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.USE_NULL)</CODE>.
+		@return  <code>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.USE_NULL)</code>.
 	 **/
 	public boolean doUseNull()  {
 		return  (getAction() ==  ActionForNull.USE_NULL);
 	}
 	/**
-		@return  <CODE>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.CRASH)</CODE>.
+		@return  <code>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.CRASH)</code>.
 	 **/
 	public boolean doCrash()  {
 		return  (getAction() ==  ActionForNull.CRASH);
 	}
 	/**
-		@return  <CODE>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.DELETE)</CODE>.
+		@return  <code>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.DELETE)</code>.
 	 **/
 	public boolean doDelete()  {
 		return  (getAction() ==  ActionForNull.DELETE);
 	}
 	/**
-		@return  <CODE>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.USE_NON_NULL)</CODE>.
+		@return  <code>({@link #getAction() getAction}() ==  {@link com.github.xbn.util.copyval.ActionForNull ActionForNull}.USE_NON_NULL)</code>.
 	 **/
 	public boolean doUseNonNull()  {
 		return  (getAction() ==  ActionForNull.USE_NON_NULL);
 	}
 	/**
 		@exception  IllegalStateException  If {@link #doUseNonNull() doUseNonNull}{@code ()} is {@code false}.
-		@see   <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#setAction(boolean, O)">#setAction</A>(b,O)</CODE>
+		@see   <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#setAction(boolean, O)">#setAction</a>(b,O)</code>
 	 **/
 	public O getNonNull()  {
 		if(!doUseNonNull())  {
@@ -111,9 +111,9 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 //main functionality...END
 //other...START
 	/**
-		<P>Duplicate this {@code SimpleNullHandler}.</P>
+		<p>Duplicate this {@code SimpleNullHandler}.</p>
 
-		@return  <CODE>(new {@link #SimpleNullHandler(SimpleNullHandler) SimpleNullHandler}&lt;O&gt;(this))</CODE>
+		@return  <code>(new {@link #SimpleNullHandler(SimpleNullHandler) SimpleNullHandler}&lt;O&gt;(this))</code>
 	 **/
 	public NullHandler<O> getObjectCopy()  {
 		return  (new SimpleNullHandler<O>(this));
@@ -139,7 +139,7 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 		return  null_handler.getNonNull();
 	}
 	/**
-		<P>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</P>
+		<p>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</p>
 	 **/
 	public static final <O> void ciActionCrash(NullHandler<O> null_handler, boolean do_crashIfActionIsDel)  {
 		try  {
@@ -158,7 +158,7 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 		ciActionCrash(null_handler);
 		return  null_handler.getNonNull();
 	}
-		<P>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</P>
+		<p>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</p>
 	public static final <O> void ciActionCrash(NullHandler<O> null_handler)  {
 		try  {
 			if(null_handler.doCrash())  {

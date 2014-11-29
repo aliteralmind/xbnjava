@@ -23,31 +23,31 @@ package  com.github.xbn.regexutil;
 	import  java.util.regex.Matcher;
 	import  java.util.regex.Pattern;
 /**
-	<P>Splits a string based on a regular-expression separator, returning the matches, &quot;betweens&quot;, or both.</P>
+	<p>Splits a string based on a regular-expression separator, returning the matches, &quot;betweens&quot;, or both.</p>
 
-	<P><I>Derived from {@code RETokenize}: <a href="http://www.exampledepot.com/egs/java.util.regex/Tokenize.html">{@code http://www.exampledepot.com/egs/java.util.regex/Tokenize.html}</a>, downloaded 8/13/2010.</I></P>
+	<p><i>Derived from {@code RETokenize}: <a href="http://www.exampledepot.com/egs/java.util.regex/Tokenize.html">{@code http://www.exampledepot.com/egs/java.util.regex/Tokenize.html}</a>, downloaded 8/13/2010.</i></p>
 
-	<A NAME="cfg"></A><H3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexTokenizer_Cfg RegexTokenizer_Cfg}</H3>
+	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.regexutil.z.RegexTokenizer_Cfg RegexTokenizer_Cfg}</h3>
 
-	<P><UL>
-		<LI><B>Regex separator:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(Pattern) separator}(p)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String, int) separator}(s,i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String) separator}(s)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separatorLiteral(String) separatorLiteral}(s)</CODE></LI>
-		<LI><B>What to return:</B><UL>
-			<LI><B>Only:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#allBetweensOnly() allBetweensOnly}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#nonEmptyBetweensOnly() nonEmptyBetweensOnly}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separatorsOnly() separatorsOnly}()</CODE></LI>
-			<LI><B>Non-only:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separators() separators}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#emptyBetweens() emptyBetweens}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#nonEmptyBetweens() nonEmptyBetweens}()</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#allBetweens() allBetweens}()</CODE></LI>
-		</UL></LI>
-		<LI><B>Other:</B> <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#toTokenize(Object) toTokenize}(o)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#lineNumber(int) lineNumber}(i)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</CODE>, <CODE>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</CODE></LI>
-	</UL></P>
+	<p><ul>
+		<li><b>Regex separator:</b> <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(Pattern) separator}(p)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String, int) separator}(s,i)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separator(String) separator}(s)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separatorLiteral(String) separatorLiteral}(s)</code></li>
+		<li><b>What to return:</b><ul>
+			<li><b>Only:</b> <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#allBetweensOnly() allBetweensOnly}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#nonEmptyBetweensOnly() nonEmptyBetweensOnly}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separatorsOnly() separatorsOnly}()</code></li>
+			<li><b>Non-only:</b> <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separators() separators}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#emptyBetweens() emptyBetweens}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#nonEmptyBetweens() nonEmptyBetweens}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#allBetweens() allBetweens}()</code></li>
+		</ul></li>
+		<li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#toTokenize(Object) toTokenize}(o)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#lineNumber(int) lineNumber}(i)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code></li>
+	</ul></p>
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.TemplateTokenizer%eliminateCommentBlocksAndPackageDecl()}
 
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-<P>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
-<BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</A>}</P>
+<p>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
+<br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</a>}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexTokenizer extends SimpleDebuggable implements Iterator<TokenizerElement>, Copyable, PatternHaser  {
 //config: immutable
@@ -69,7 +69,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 //state...END
 //internal
 	/**
-		<P>Create a new regex tokenizer, where every match is manipulated before returned by {@code next()}.</P>
+		<p>Create a new regex tokenizer, where every match is manipulated before returned by {@code next()}.</p>
 
 		@param  fieldable  May not be {@code null}.
 	 **/
@@ -116,7 +116,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 	}
 
 	/**
-		<P>Create a new {@code RegexTokenizer} as a duplicate of another, but for a new search-string. This leaves debugging on, if it is already on in the original. This goes against the "exception".......................</P>
+		<p>Create a new {@code RegexTokenizer} as a duplicate of another, but for a new search-string. This leaves debugging on, if it is already on in the original. This goes against the "exception".......................</p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -189,7 +189,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 			return  sph.wasJustMatched();
 		}
 		/**
-			<P>Should the string be matched as a whole?. Should <CODE><I>[{@link java.util.regex.Matcher}]</I>.{@link java.util.regex.Matcher#matches() matches}()</CODE> be used?.</P>
+			<p>Should the string be matched as a whole?. Should <code><i>[{@link java.util.regex.Matcher}]</i>.{@link java.util.regex.Matcher#matches() matches}()</code> be used?.</p>
 
 			@return  {@code true}  The string is matched as a whole.
 			@see  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg#useMatches() Cfg.useMatches()
@@ -201,35 +201,35 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 		}
 	//Composition implementation: null...END
 	/**
-		<P>Get the original string-to-tokenize.</P>
+		<p>Get the original string-to-tokenize.</p>
 
-		@return  <B>{@code string_toSearch}</B>, as provided to the constructor.
+		@return  <b>{@code string_toSearch}</b>, as provided to the constructor.
 	 **/
 	public final String getOriginal()  {
 		return  sOrig;
 	}
 	/**
-		<P>Are regex-separators retrieved?.</P>
+		<p>Are regex-separators retrieved?.</p>
 	 **/
 	public final boolean doReturnSeparators()  {
 		return  bRtnSep;
 	}
 	/**
-		<P>Are betweens retrieved?.</P>
+		<p>Are betweens retrieved?.</p>
 	 **/
 	public final boolean doReturnNonEmptyBetweens()  {
 		return  bRtnNEBtw;
 	}
 	/**
-		<P>Are empty-string betweens retrieved?.</P>
+		<p>Are empty-string betweens retrieved?.</p>
 	 **/
 	public final boolean doReturnEmptyBetweens()  {
 		return  bRtnEBtw;
 	}
 	/**
-		<P>Is there another token (match) or between to get?.</P>
+		<p>Is there another token (match) or between to get?.</p>
 
-		@return  <B>{@code true}</B>  If there is another match or between remaining in the {@link #getOriginal() string-to-tokenize}, and it is wanted.
+		@return  <b>{@code true}</b>  If there is another match or between remaining in the {@link #getOriginal() string-to-tokenize}, and it is wanted.
 	 **/
 	public final boolean hasNext() {
 		if (rteNextBetween != null  ||  rteNextSeparator != null) {
@@ -271,7 +271,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 		return  !(rteNextBetween == null  &&  rteNextSeparator == null);
 	}
 	/**
-		<P>Get the next regex-match or between.</P>
+		<p>Get the next regex-match or between.</p>
 
 		@exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is false.
 		@see  #isNextASeparator()
@@ -295,7 +295,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 		return  rte;
 	}
 	/**
-		<P>Is the next token a regex-match?.</P>
+		<p>Is the next token a regex-match?.</p>
 		@see  #next()
 		@see  #isNextABetween()
 	 **/
@@ -303,7 +303,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 		return  (rteNextBetween == null  &&  rteNextSeparator != null);
 	}
 	/**
-		<P>Is the next token a between?.</P>
+		<p>Is the next token a between?.</p>
 		@see  #next()
 		@see  #isNextASeparator()
 	 **/
@@ -315,7 +315,7 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 		return  "doReturnSeparators()=" + doReturnSeparators() + ", doReturnNonEmptyBetweens()=" + doReturnNonEmptyBetweens() + ", doReturnEmptyBetweens()=" + doReturnEmptyBetweens();
 	}
 	/**
-		<P>Unsupported.</P>
+		<p>Unsupported.</p>
 
 		@exception  UnsupportedOperationException
 	 **/
@@ -323,9 +323,9 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
 		throw  new UnsupportedOperationException("remove");
 	}
 	/**
-		<P>Duplicate this <CODE>RegexTokenizer</CODE>.</P>
+		<p>Duplicate this <code>RegexTokenizer</code>.</p>
 
-		@return  <CODE>(new <A HREF="#RegexTokenizer(RegexTokenizer)">RegexTokenizer</A>(this))</CODE>
+		@return  <code>(new <a href="#RegexTokenizer(RegexTokenizer)">RegexTokenizer</a>(this))</code>
 	 **/
 	public RegexTokenizer getObjectCopy()  {
 		return  (new RegexTokenizer(this));

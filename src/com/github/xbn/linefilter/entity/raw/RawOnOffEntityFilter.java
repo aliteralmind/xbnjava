@@ -16,24 +16,24 @@ package  com.github.xbn.linefilter.entity.raw;
 	import  com.github.xbn.linefilter.entity.OnOffAbort;
 	import  com.github.xbn.lang.Copyable;
 /**
-	<P>Determines when an entity is on, based on some conditions--The three possible states are on, off, and <I>stop the {@code FilteredIterator} right now</I> (abort). When off, lines are never analyzed, meaning it is not possible for it to be {@linkplain RawEntity#isActive() active}.</P>
+	<p>Determines when an entity is on, based on some conditions--The three possible states are on, off, and <i>stop the {@code FilteredIterator} right now</i> (abort). When off, lines are never analyzed, meaning it is not possible for it to be {@linkplain RawEntity#isActive() active}.</p>
 
 	@see  RawChildEntity#getFilter()
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface RawOnOffEntityFilter<L> extends Copyable  {
 	/**
-		<P>Determines the on-off state before the line is ever analyzed by the entity.</P>
+		<p>Determines the on-off state before the line is ever analyzed by the entity.</p>
 
-		@param  entity_beingFiltered  The entity whose {@linkplain RawChildEntity#getFilter() filter} is <I>this</I> object.
+		@param  entity_beingFiltered  The entity whose {@linkplain RawChildEntity#getFilter() filter} is <i>this</i> object.
 		@param  line_num  The number of theh line that will be analyzed by the entity (assuming this function returns {@link OnOffAbort#ON ON}).
 		@param  body_toAlter  The line body that will potentially be altered.
 	 **/
 	OnOffAbort getPreState(RawEntity<L> entity_beingFiltered, int line_num, L body_toAlter);
 	/**
-		<P>Determines the on-off state after the line has been analyzed by the entity (whether it was determined to be {@linkplain RawEntity#isActive() active} or not).</P>
-		@param  entity_beingFiltered  The entity whose {@linkplain RawEntity#getFilter() filter} is <I>this</I> object.
+		<p>Determines the on-off state after the line has been analyzed by the entity (whether it was determined to be {@linkplain RawEntity#isActive() active} or not).</p>
+		@param  entity_beingFiltered  The entity whose {@linkplain RawEntity#getFilter() filter} is <i>this</i> object.
 		@param  potentially_alteredBody  The line body that was potentially altered by the entity.
 	 **/
 	OnOffAbort getPostState(RawEntity<L> entity_beingFiltered, int line_num, L potentially_alteredBody);

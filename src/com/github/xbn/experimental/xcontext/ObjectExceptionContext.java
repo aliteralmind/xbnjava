@@ -1,18 +1,18 @@
 package  com.github.xbn.experimental.xcontext;
 
 /**
-	<P>{@code ExceptionContext} for errors caused by (that may be caused by) a specific object.</P>
+	<p>{@code ExceptionContext} for errors caused by (that may be caused by) a specific object.</p>
  **/
 public interface ObjectExceptionContext extends ExceptionContext  {
 	/**
-		<P>Information on the object that caused (may cause) the error.</P>
+		<p>Information on the object that caused (may cause) the error.</p>
 
 		@return  A non-{@code null} {@code ExceptionContextObject}.
 	 **/
 	ExceptionContextObject getXCObject();
 
 	/**
-		<P>Shortcut for {@code getXCObject().getName()}.</P>
+		<p>Shortcut for {@code getXCObject().getName()}.</p>
 	 **/
 	String getObjectName();
 	void setObjectName(String obj_name);

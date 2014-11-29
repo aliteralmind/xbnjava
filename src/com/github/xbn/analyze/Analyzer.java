@@ -20,21 +20,21 @@ package  com.github.xbn.analyze;
 		import  com.github.xbn.io.Debuggable;
 
 /**
-	<P>Base class for {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.Validator Validator} and {@code com.github.xbn.analyze.alter.}{@link com.github.xbn.analyze.alter.Alterer Alterer}.</P>
+	<p>Base class for {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.Validator Validator} and {@code com.github.xbn.analyze.alter.}{@link com.github.xbn.analyze.alter.Alterer Alterer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public interface Analyzer extends Copyable, Debuggable, ExtraErrInfoable, Expirable, ToStringAppendable  {
 	/**
-		<P>Reset state to defaults. This does not affect configuration or counts.</P>
+		<p>Reset state to defaults. This does not affect configuration or counts.</p>
 
-		<P>This<OL>
-			<LI>Sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code false}.</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code false}.</li>
+		</ol></p>
 
-		<P>Resets all internal state except counts. This does not change any user-configuration.</P>
+		<p>Resets all internal state except counts. This does not change any user-configuration.</p>
 
 		@see  #resetCounts()
 		@see  #doAutoResetState()
@@ -42,40 +42,40 @@ public interface Analyzer extends Copyable, Debuggable, ExtraErrInfoable, Expira
 	void resetState();
 
 	/**
-		<P>Is state automatically reset before each analysis?.</P>
+		<p>Is state automatically reset before each analysis?.</p>
 
-		@return  {@code true}  <A HREF="#resetState()">State</A> is automatically reset.
+		@return  {@code true}  <a href="#resetState()">State</a> is automatically reset.
 	 **/
 	boolean doAutoResetState();
 	/**
-		<P>Reset all counts to zero.</P>
+		<p>Reset all counts to zero.</p>
 
-		<P>Sets {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to zero.</P>
+		<p>Sets {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to zero.</p>
 		@see  #resetState()
 	 **/
 	void resetCounts();
 
 	/**
-		<P>How many times has something been analyzed?.</P>
+		<p>How many times has something been analyzed?.</p>
 		@see  #resetCounts()
 	 **/
 	int getAnalyzedCount();
 
 	/**
-		<P>Was something just analyzed?.</P>
+		<p>Was something just analyzed?.</p>
 		@see  #resetState() reset()
 	 **/
 	boolean wasAnalyzed();
 
 	/**
-		<P>Duplicate this {@code Analyzer} that, by default, has the same configuration (state and counts are reset).</P>
+		<p>Duplicate this {@code Analyzer} that, by default, has the same configuration (state and counts are reset).</p>
 
 		@return  A non-{@code null} duplicate of this {@code Analyzer}.
 	 **/
 	@Override
 	Analyzer getObjectCopy();
 	/**
-		<P>Returns {@code true} if another {@code Analyzer} has the same configuration as this one--state and counts are ignored.</P>
+		<p>Returns {@code true} if another {@code Analyzer} has the same configuration as this one--state and counts are ignored.</p>
 
 		@see  #resetState()
 		@see  #resetCounts()

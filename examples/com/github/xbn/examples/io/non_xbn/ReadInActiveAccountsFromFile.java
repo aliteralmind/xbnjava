@@ -18,12 +18,12 @@ package  com.github.xbn.examples.io.non_xbn;
 	import  java.io.IOException;
 	import  org.apache.commons.io.FileUtils;
 /**
-	<P>Read a text file where each line is a space-separated username, password, account-active boolean.</P>
+	<p>Read a text file where each line is a space-separated username, password, account-active boolean.</p>
 
-	<P>{@code java com.github.xbn.examples.io.non_xbn.ReadInActiveAccountsFromFile xbn\examples\io\non_xbn\\username_password_active.txt}</P>
+	<p>{@code java com.github.xbn.examples.io.non_xbn.ReadInActiveAccountsFromFile xbn\examples\io\non_xbn\\username_password_active.txt}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReadInActiveAccountsFromFile  {
 	public static final void main(String[] rqdInputPathInStrArray)  {

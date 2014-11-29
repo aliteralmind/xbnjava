@@ -18,12 +18,12 @@ package  com.github.xbn.examples.neederneedable;
 	import  com.github.xbn.neederneedable.AbstractNeedable;
 	import  com.github.xbn.neederneedable.AbstractNeeder;
 /**
-	<P>Demonstration of {@code com.github.xbn.neederneedable.}{@link com.github.xbn.neederneedable.Needer} and {@link com.github.xbn.neederneedable.Needable}.</P>
+	<p>Demonstration of {@code com.github.xbn.neederneedable.}{@link com.github.xbn.neederneedable.Needer} and {@link com.github.xbn.neederneedable.Needable}.</p>
 
-	<P>{@code java com.github.xbn.examples.neederneedable.NeedableNeederXmpl}</P>
+	<p>{@code java com.github.xbn.examples.neederneedable.NeedableNeederXmpl}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NeedableNeederXmpl  {
 	public static final void main(String[] ignored)  {
@@ -44,7 +44,7 @@ public class NeedableNeederXmpl  {
 
 
 /**
-	<P>The main needer-class.</P>
+	<p>The main needer-class.</p>
  **/
 class UserSettings extends AbstractNeeder  {
 	public static final int iDEFAULT_FAV = 8;
@@ -77,7 +77,7 @@ class UserSettings extends AbstractNeeder  {
 
 
 /**
-	<P>Empty needable class-wrapper, for using the needable's chain directly.</P>
+	<p>Empty needable class-wrapper, for using the needable's chain directly.</p>
  **/
 class FavNumConfigurator extends FavNumConfigurator4Ndr<DummyForNoNeeder>  {
 	public FavNumConfigurator()  {
@@ -85,7 +85,7 @@ class FavNumConfigurator extends FavNumConfigurator4Ndr<DummyForNoNeeder>  {
 	}
 }
 /**
-	<P>The needable</P>
+	<p>The needable</p>
  **/
 class FavNumConfigurator4Ndr<R extends Needer> extends AbstractNeedable<Integer,R>  {
 	private int iFav = -1;

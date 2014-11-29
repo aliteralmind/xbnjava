@@ -18,17 +18,17 @@ package  com.github.xbn.linefilter.entity.z;
 	import  com.github.xbn.linefilter.entity.BlockEntity;
 	import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<P>For <A HREF="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</A> configuring a {@link com.github.xbn.linefilter.entity.BlockEntity BlockEntity}.</P>
+	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.linefilter.entity.BlockEntity BlockEntity}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BlockEntity_Cfg extends BlockEntity_CfgForNeeder<BlockEntity,DummyForNoNeeder>  {
 	/**
-		<P>Create a new block.</P>
+		<p>Create a new block.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; <CODE><!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="BlockEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</A>(null, name_ifNonNull)</CODE></P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="BlockEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name_ifNonNull)</code></p>
 
 		@param  name_ifNonNull  Descriptive name of this block. If {@code null}, defaults to {@code "block"}.
 	 **/

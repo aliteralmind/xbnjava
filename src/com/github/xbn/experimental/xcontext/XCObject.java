@@ -1,18 +1,18 @@
 package  com.github.xbn.experimental.xcontext;
 	import  com.github.xbn.text.CrashIfString;
 /**
-	<P>Implementation of {@code ExceptionContextObject}.</P>
+	<p>Implementation of {@code ExceptionContextObject}.</p>
  **/
 public class XCObject implements ExceptionContextObject  {
 	//state
 		private String sONm = null;
 //Constructors...START
 	/**
-		<P>Create a new {@code XCObject}.</P>
+		<p>Create a new {@code XCObject}.</p>
 
-		<P>This calls<OL>
-			<LI>{@link #setName(String) setName(obj_name)}</LI>
-		</OL></P>
+		<p>This calls<ol>
+			<li>{@link #setName(String) setName(obj_name)}</li>
+		</ol></p>
 
 		@see  #XCObject(ExceptionContextObject) this(xco)
 	 **/
@@ -20,11 +20,11 @@ public class XCObject implements ExceptionContextObject  {
 		setName(obj_name);
 	}
 	/**
-		<P>Create a new {@code XCObject} as a duplicate of an {@code ExceptionContextObject}.</P>
+		<p>Create a new {@code XCObject} as a duplicate of an {@code ExceptionContextObject}.</p>
 
-		<P>This<OL>
-			<LI><CODE>{@link #setName(String) setName}(to_copy.{@link #getName() getName}())</CODE></LI>
-		</OL></P>
+		<p>This<ol>
+			<li><code>{@link #setName(String) setName}(to_copy.{@link #getName() getName}())</code></li>
+		</ol></p>
 		@see  #getObjectCopy()
 		@see  #XCObject(ExceptionContext, String) this(xc,s)
 	 **/
@@ -34,7 +34,7 @@ public class XCObject implements ExceptionContextObject  {
 //Constructors...END
 //Setters...START
 	/**
-		<P>Set the just-called function in which the error happened (may happen).</P>
+		<p>Set the just-called function in which the error happened (may happen).</p>
 
 		@param  obj_name  May not be {@code null} or empty. Get with {@link #getName() getName}{@code ()}.
 	 **/
@@ -53,9 +53,9 @@ public class XCObject implements ExceptionContextObject  {
 //Getters...END
 //Other...START
 	/**
-		<P>Duplicate this {@code XCObject}</P>
+		<p>Duplicate this {@code XCObject}</p>
 
-		@return  <CODE>(new {@link #XCObject(ExceptionContextObject) XCObject}(this)</CODE>
+		@return  <code>(new {@link #XCObject(ExceptionContextObject) XCObject}(this)</code>
 	 **/
 	public XCObject getObjectCopy()  {
 		return  (new XCObject(this));
@@ -82,7 +82,7 @@ public class XCObject implements ExceptionContextObject  {
 		return  areFieldsEqual(xco);
 	}
 	/**
-		<P>Are all internal values in the provided {@code XCObject} the same as in <I>{@code this}</I>?.</P>
+		<p>Are all internal values in the provided {@code XCObject} the same as in <i>{@code this}</i>?.</p>
 
 		@param  xc_o  May not be {@code null}.
 		@return  {@link #getName() getName}{@code ().equals(xc_o.getName())}

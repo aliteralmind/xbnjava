@@ -14,16 +14,16 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
 /**
-	<P>For classes that need to implement {@code AltererComposer}, that cannot extend {@code AbstractAlterer}.</P>
+	<p>For classes that need to implement {@code AltererComposer}, that cannot extend {@code AbstractAlterer}.</p>
 
 	@see  AbstractAlterer
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueAltererComposer<V,A> extends AltererComposer  {
 //constructors...START
 	/**
-		<P>Create a new {@code ValueAltererComposer}.</P>
+		<p>Create a new {@code ValueAltererComposer}.</p>
 
 		YYY
 	 **/
@@ -37,10 +37,10 @@ public class ValueAltererComposer<V,A> extends AltererComposer  {
 		super(ignored, to_copy);
 	}
 	/**
-		<P>Create a new {@code ValueAltererComposer} as a duplicate of another.</P>
+		<p>Create a new {@code ValueAltererComposer} as a duplicate of another.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 	 **/
@@ -55,10 +55,10 @@ public class ValueAltererComposer<V,A> extends AltererComposer  {
 			:  prim_array.getAltered(to_validate, to_alter));
 	}
 	/**
-		<P>YYY</P>
+		<p>YYY</p>
 
-		<H1>//MOVE INTERNAL CHECKS LIKE BELOW TO IW...//MOVE INTERNAL CHECKS LIKE BELOW TO IW...</H1>
-	public static final <P> P getDeclareSameTypeSubAltered_selfIfSubNull(ValueAltererComposer<P> avb_containsSub, ValueAlterer<P> av_sub, P to_alter)  {
+		<h1>//MOVE INTERNAL CHECKS LIKE BELOW TO IW...//MOVE INTERNAL CHECKS LIKE BELOW TO IW...</h1>
+	public static final <p> P getDeclareSameTypeSubAltered_selfIfSubNull(ValueAltererComposer<p> avb_containsSub, ValueAlterer<p> av_sub, P to_alter)  {
 		P o = getAltered_selfIfAltererNull(av_sub, to_alter);
 		boolean bNtbd = av_sub.needsToBeDeleted();
 

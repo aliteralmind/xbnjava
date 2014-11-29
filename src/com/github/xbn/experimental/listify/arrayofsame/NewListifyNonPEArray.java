@@ -20,19 +20,19 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  com.github.xbn.util.copyval.ValueNotCopyable;
 	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
 /**
-	<P>Convenience functions for creating listifiers whose raw object is a non-primitive array, and whose virtual elements are of the same type.</P>
+	<p>Convenience functions for creating listifiers whose raw object is a non-primitive array, and whose virtual elements are of the same type.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewListifyNonPEArray  {
    private NewListifyNonPEArray()  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>Create a new {@code NonPrimitiveEArrayBase} for an array of objects.</P>
+		<p>Create a new {@code NonPrimitiveEArrayBase} for an array of objects.</p>
 
-		@return  <CODE>(new <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#NonPrimitiveEArrayBase(E[], ArrayHelper, ValueCopier)">this</A>&lt;Object&gt;(array, false, (new ObjectArrayHelper()), ({@link com.github.xbn.util.copyval.ValueCopier ValueCopier}&lt;Object&gt;){@link com.github.xbn.util.copyval.ValueNotCopyable ValueNotCopyable}.INSTANCE))</CODE>
+		@return  <code>(new <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#NonPrimitiveEArrayBase(E[], ArrayHelper, ValueCopier)">this</a>&lt;Object&gt;(array, false, (new ObjectArrayHelper()), ({@link com.github.xbn.util.copyval.ValueCopier ValueCopier}&lt;Object&gt;){@link com.github.xbn.util.copyval.ValueNotCopyable ValueNotCopyable}.INSTANCE))</code>
 
 		@see  #forString(String[]) forString(s[])
 		@see  #stringBuilder(StringBuilder[]) stringBuilder(sd[])
@@ -43,18 +43,18 @@ public class NewListifyNonPEArray  {
 		return  (new NonPrimitiveEArrayBase<Object>(array, (new ObjectArrayHelper()), (ValueCopier<Object>)ValueNotCopyable.INSTANCE));
 	}
 	/**
-		<P>Create a new {@code NonPrimitiveEArrayBase} for an array of strings.</P>
+		<p>Create a new {@code NonPrimitiveEArrayBase} for an array of strings.</p>
 
-		@return  <CODE>(new <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#NonPrimitiveEArrayBase(E[], ArrayHelper, ValueCopier)">this</A>&lt;String&gt;(array, (new {@link com.github.xbn.array.helper.StringArrayHelper#StringArrayHelper() StringArrayHelper}()), OneParamCnstrValueCopier.STRING))</CODE>
+		@return  <code>(new <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#NonPrimitiveEArrayBase(E[], ArrayHelper, ValueCopier)">this</a>&lt;String&gt;(array, (new {@link com.github.xbn.array.helper.StringArrayHelper#StringArrayHelper() StringArrayHelper}()), OneParamCnstrValueCopier.STRING))</code>
 		@see  #forObject(Object[]) forObject(o[])
 	 **/
 	public static final NonPrimitiveEArrayBase<String> forString(String[] array)  {
 		return  (new NonPrimitiveEArrayBase<String>(array, (new StringArrayHelper()), OneParamCnstrValueCopier.STRING));
 	}
 	/**
-		<P>Create a new {@code NonPrimitiveEArrayBase} for an array of string-builders.</P>
+		<p>Create a new {@code NonPrimitiveEArrayBase} for an array of string-builders.</p>
 
-		@return  <CODE>(new <!-- GENERIC PARAMETERS FAIL IN @link --><A HREF="#NonPrimitiveEArrayBase(E[], ArrayHelper, ValueCopier)">this</A>&lt;StringBuilder&gt;(array, (new {@link com.github.xbn.array.helper.StringBuilderArrayHelper#StringBuilderArrayHelper() StringBuilderArrayHelper}()), OneParamCnstrValueCopier.STRING_BUILDER))</CODE>
+		@return  <code>(new <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#NonPrimitiveEArrayBase(E[], ArrayHelper, ValueCopier)">this</a>&lt;StringBuilder&gt;(array, (new {@link com.github.xbn.array.helper.StringBuilderArrayHelper#StringBuilderArrayHelper() StringBuilderArrayHelper}()), OneParamCnstrValueCopier.STRING_BUILDER))</code>
 		@see  #forObject(Object[]) forObject(o[])
 	 **/
 	public static final NonPrimitiveEArrayBase<StringBuilder> stringBuilder(StringBuilder[] array)  {

@@ -17,19 +17,19 @@
 
 package  com.github.xbn.examples.util.non_xbn;
 /**
-   <P>Function that returns true if a string has exactly four (or however many) unique characters--uniqueness is detected with a {@code Map<Character,Object>}, where the value is always {@code null}.</P>
+   <p>Function that returns true if a string has exactly four (or however many) unique characters--uniqueness is detected with a {@code Map<Character,Object>}, where the value is always {@code null}.</p>
 
-   <P>{@code java com.github.xbn.examples.util.non_xbn.FirstDifferentCharIndex}</P>
+   <p>{@code java com.github.xbn.examples.util.non_xbn.FirstDifferentCharIndex}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 	import  java.util.Map;
 	import  java.util.TreeMap;
 
    /**
-      <P>{@code java ExactlyFourDiffChars}</P>
+      <p>{@code java ExactlyFourDiffChars}</p>
     **/
    public class ExactlyFourDiffChars  {
       public static final void main(String[] ignored)  {

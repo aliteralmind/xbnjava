@@ -28,17 +28,17 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
 	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-	<P>Convenience functions for creating listifiers whose raw object is a primitive array, and whose virtual elements are of its wrapper-type (such as {@code int[]} and {@code java.lang.Integer}).</P>
+	<p>Convenience functions for creating listifiers whose raw object is a primitive array, and whose virtual elements are of its wrapper-type (such as {@code int[]} and {@code java.lang.Integer}).</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewListifyPableArray  {
    private NewListifyPableArray()  {
 		throw  new IllegalStateException("Do not instantiate");
 	}
 	/**
-		<P>Create a new {@code ListifyBoolable}</P>
+		<p>Create a new {@code ListifyBoolable}</p>
 
 		@see  #forBoolean(boolean[]) forBoolean(b[])
 
@@ -48,78 +48,78 @@ public class NewListifyPableArray  {
 		return  (new ListifyBoolEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyCharable}</P>
+		<p>Create a new {@code ListifyCharable}</p>
 
-		<P><I>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <B>Do not change any function except {@code forBoolean(b[])}</B></I></P>
+		<p><i>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <b>Do not change any function except {@code forBoolean(b[])}</b></i></p>
 
-		@return  A class equivalent to <CODE>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</CODE>
+		@return  A class equivalent to <code>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</code>
 	 **/
 	public static final ListifyCharable forCharacter(char[] prim_array)  {
 		return  (new ListifyCharEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyByteable}</P>
+		<p>Create a new {@code ListifyByteable}</p>
 
-		<P><I>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <B>Do not change any function except {@code forBoolean(b[])}</B></I></P>
+		<p><i>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <b>Do not change any function except {@code forBoolean(b[])}</b></i></p>
 
-		@return  A class equivalent to <CODE>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</CODE>
+		@return  A class equivalent to <code>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</code>
 	 **/
 	public static final ListifyByteable forByte(byte[] prim_array)  {
 		return  (new ListifyPByteEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyShortable}</P>
+		<p>Create a new {@code ListifyShortable}</p>
 
-		<P><I>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <B>Do not change any function except {@code forBoolean(b[])}</B></I></P>
+		<p><i>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <b>Do not change any function except {@code forBoolean(b[])}</b></i></p>
 
-		@return  A class equivalent to <CODE>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</CODE>
+		@return  A class equivalent to <code>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</code>
 	 **/
 	public static final ListifyShortable forShort(short[] prim_array)  {
 		return  (new ListifyPShortEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyIntable}</P>
+		<p>Create a new {@code ListifyIntable}</p>
 
-		<P><I>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <B>Do not change any function except {@code forBoolean(b[])}</B></I></P>
+		<p><i>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <b>Do not change any function except {@code forBoolean(b[])}</b></i></p>
 
-		@return  A class equivalent to <CODE>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</CODE>
+		@return  A class equivalent to <code>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</code>
 	 **/
 	public static final ListifyIntable forInteger(int[] prim_array)  {
 		return  (new ListifyIntEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyLongable}</P>
+		<p>Create a new {@code ListifyLongable}</p>
 
-		<P><I>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <B>Do not change any function except {@code forBoolean(b[])}</B></I></P>
+		<p><i>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <b>Do not change any function except {@code forBoolean(b[])}</b></i></p>
 
-		@return  A class equivalent to <CODE>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</CODE>
+		@return  A class equivalent to <code>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</code>
 	 **/
 	public static final ListifyLongable forLong(long[] prim_array)  {
 		return  (new ListifyPLongEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyFloatable}</P>
+		<p>Create a new {@code ListifyFloatable}</p>
 
-		<P><I>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <B>Do not change any function except {@code forBoolean(b[])}</B></I></P>
+		<p><i>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <b>Do not change any function except {@code forBoolean(b[])}</b></i></p>
 
-		@return  A class equivalent to <CODE>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</CODE>
+		@return  A class equivalent to <code>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</code>
 	 **/
 	public static final ListifyFloatable forFloat(float[] prim_array)  {
 		return  (new ListifyPFloatEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyDoubleable}</P>
+		<p>Create a new {@code ListifyDoubleable}</p>
 
-		<P><I>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <B>Do not change any function except {@code forBoolean(b[])}</B></I></P>
+		<p><i>All {@code for[Type](x[])} are derived from {@link #forBoolean(boolean[]) forBoolean(b[])}. <b>Do not change any function except {@code forBoolean(b[])}</b></i></p>
 
-		@return  A class equivalent to <CODE>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</CODE>
+		@return  A class equivalent to <code>(new {@link ListifyBoolEArray#ListifyBoolEArray(boolean[]) ListifyBoolEArray}(prim_array))</code>
 
 	 **/
 	public static final ListifyDoubleable forDouble(double[] prim_array)  {
 		return  (new ListifyPDoubleEArray(prim_array));
 	}
 	/**
-		<P>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</P>
+		<p>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</p>
 
 		@see  #forBoolean(Boolean[]) forBoolean(B[])
 
@@ -129,7 +129,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyBooleanEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</P>
+		<p>Create a new {@code ListifyBoolable} for an array of {@code java.lang.Boolean}-s.</p>
 
 		@return  {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 
@@ -139,7 +139,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyBooleanEArray(array, hnr_nb));
 	}
 	/**
-		<P>Create a new {@code ListifyCharable} for an array of {@code java.lang.Character}-s.</P>
+		<p>Create a new {@code ListifyCharable} for an array of {@code java.lang.Character}-s.</p>
 
 		@see  #forCharacter(Character[]) forCharacter(C[])
 
@@ -149,9 +149,9 @@ public class NewListifyPableArray  {
 		return  (new ListifyCharacterEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyCharable} for an array of {@code java.lang.Character}-s.</P>
+		<p>Create a new {@code ListifyCharable} for an array of {@code java.lang.Character}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <B>Do not edit any function except the char versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <b>Do not edit any function except the char versions.</b></i></p>
 
 		@return  The equivalent of {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 	 **/
@@ -159,7 +159,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyCharacterEArray(array, hnr_nb));
 	}
 	/**
-		<P>Create a new {@code ListifyByteable} for an array of {@code java.lang.Byte}-s.</P>
+		<p>Create a new {@code ListifyByteable} for an array of {@code java.lang.Byte}-s.</p>
 
 		@see  #forByte(Byte[]) forByte(Y[])
 
@@ -169,9 +169,9 @@ public class NewListifyPableArray  {
 		return  (new ListifyByteEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyByteable} for an array of {@code java.lang.Byte}-s.</P>
+		<p>Create a new {@code ListifyByteable} for an array of {@code java.lang.Byte}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <B>Do not edit any function except the byte versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <b>Do not edit any function except the byte versions.</b></i></p>
 
 		@return  The equivalent of {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 	 **/
@@ -179,7 +179,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyByteEArray(array, hnr_nb));
 	}
 	/**
-		<P>Create a new {@code ListifyShortable} for an array of {@code java.lang.Short}-s.</P>
+		<p>Create a new {@code ListifyShortable} for an array of {@code java.lang.Short}-s.</p>
 
 		@see  #forShort(Short[]) forShort(H[])
 
@@ -189,9 +189,9 @@ public class NewListifyPableArray  {
 		return  (new ListifyShortEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyShortable} for an array of {@code java.lang.Short}-s.</P>
+		<p>Create a new {@code ListifyShortable} for an array of {@code java.lang.Short}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <B>Do not edit any function except the short versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <b>Do not edit any function except the short versions.</b></i></p>
 
 		@return  The equivalent of {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 	 **/
@@ -199,7 +199,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyShortEArray(array, hnr_nb));
 	}
 	/**
-		<P>Create a new {@code ListifyIntable} for an array of {@code java.lang.Integer}-s.</P>
+		<p>Create a new {@code ListifyIntable} for an array of {@code java.lang.Integer}-s.</p>
 
 		@see  #forInteger(Integer[]) forInteger(I[])
 
@@ -209,9 +209,9 @@ public class NewListifyPableArray  {
 		return  (new ListifyIntegerEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyIntable} for an array of {@code java.lang.Integer}-s.</P>
+		<p>Create a new {@code ListifyIntable} for an array of {@code java.lang.Integer}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <B>Do not edit any function except the int versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <b>Do not edit any function except the int versions.</b></i></p>
 
 		@return  The equivalent of {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 	 **/
@@ -219,7 +219,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyIntegerEArray(array, hnr_nb));
 	}
 	/**
-		<P>Create a new {@code ListifyLongable} for an array of {@code java.lang.Long}-s.</P>
+		<p>Create a new {@code ListifyLongable} for an array of {@code java.lang.Long}-s.</p>
 
 		@see  #forLong(Long[]) forLong(L[])
 
@@ -229,9 +229,9 @@ public class NewListifyPableArray  {
 		return  (new ListifyLongEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyLongable} for an array of {@code java.lang.Long}-s.</P>
+		<p>Create a new {@code ListifyLongable} for an array of {@code java.lang.Long}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <B>Do not edit any function except the long versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <b>Do not edit any function except the long versions.</b></i></p>
 
 		@return  The equivalent of {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 	 **/
@@ -239,7 +239,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyLongEArray(array, hnr_nb));
 	}
 	/**
-		<P>Create a new {@code ListifyFloatable} for an array of {@code java.lang.Float}-s.</P>
+		<p>Create a new {@code ListifyFloatable} for an array of {@code java.lang.Float}-s.</p>
 
 		@see  #forFloat(Float[]) forFloat(F[])
 
@@ -249,9 +249,9 @@ public class NewListifyPableArray  {
 		return  (new ListifyFloatEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyFloatable} for an array of {@code java.lang.Float}-s.</P>
+		<p>Create a new {@code ListifyFloatable} for an array of {@code java.lang.Float}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <B>Do not edit any function except the float versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <b>Do not edit any function except the float versions.</b></i></p>
 
 		@return  The equivalent of {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 	 **/
@@ -259,7 +259,7 @@ public class NewListifyPableArray  {
 		return  (new ListifyFloatEArray(array, hnr_nb));
 	}
 	/**
-		<P>Create a new {@code ListifyDoubleable} for an array of {@code java.lang.Double}-s.</P>
+		<p>Create a new {@code ListifyDoubleable} for an array of {@code java.lang.Double}-s.</p>
 
 		@see  #forDouble(Double[]) forDouble(D[])
 
@@ -269,9 +269,9 @@ public class NewListifyPableArray  {
 		return  (new ListifyDoubleEArray(array));
 	}
 	/**
-		<P>Create a new {@code ListifyDoubleable} for an array of {@code java.lang.Double}-s.</P>
+		<p>Create a new {@code ListifyDoubleable} for an array of {@code java.lang.Double}-s.</p>
 
-		<P><I>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <B>Do not edit any function except the double versions.</B></I></P>
+		<p><i>All {@code for[Type](x[])} and {@code for[Type](x[],hnvnb)} functions are derived from {@link #forBoolean(Boolean[]) forBoolean(B[])} and {@link #forBoolean(Boolean[], NullHandlerForPrimitives) forBoolean(B[],hnvnb)}. <b>Do not edit any function except the double versions.</b></i></p>
 
 		@return  The equivalent of {@link com.github.xbn.experimental.listify.arrayofsame.ListifyBooleanEArray#ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) ListifyBooleanEArray(array, hnr_nb)}
 	 **/
@@ -280,7 +280,7 @@ public class NewListifyPableArray  {
 	}
 }
 /**
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBoolEArray}. <B>Do not edit any class except {@code ListifyBoolEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBoolEArray}. <b>Do not edit any class except {@code ListifyBoolEArray}.</b></i></p>
  **/
 class ListifyCharEArray extends AbstractListifyPrimitiveEArray<Character> implements ListifyCharable  {
 	public ListifyCharEArray(char[] obj_thatIsPrimArr)  {
@@ -308,7 +308,7 @@ class ListifyCharEArray extends AbstractListifyPrimitiveEArray<Character> implem
 	}
 }
 /**
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBoolEArray}. <B>Do not edit any class except {@code ListifyBoolEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBoolEArray}. <b>Do not edit any class except {@code ListifyBoolEArray}.</b></i></p>
  **/
 class ListifyPByteEArray extends AbstractListifyPrimitiveEArray<Byte> implements ListifyByteable  {
 	public ListifyPByteEArray(byte[] obj_thatIsPrimArr)  {
@@ -336,7 +336,7 @@ class ListifyPByteEArray extends AbstractListifyPrimitiveEArray<Byte> implements
 	}
 }
 /**
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBoolEArray}. <B>Do not edit any class except {@code ListifyBoolEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBoolEArray}. <b>Do not edit any class except {@code ListifyBoolEArray}.</b></i></p>
  **/
 class ListifyPShortEArray extends AbstractListifyPrimitiveEArray<Short> implements ListifyShortable  {
 	public ListifyPShortEArray(short[] obj_thatIsPrimArr)  {
@@ -364,7 +364,7 @@ class ListifyPShortEArray extends AbstractListifyPrimitiveEArray<Short> implemen
 	}
 }
 /**
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBoolEArray}. <B>Do not edit any class except {@code ListifyBoolEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBoolEArray}. <b>Do not edit any class except {@code ListifyBoolEArray}.</b></i></p>
  **/
 class ListifyIntEArray extends AbstractListifyPrimitiveEArray<Integer> implements ListifyIntable  {
 	public ListifyIntEArray(int[] obj_thatIsPrimArr)  {
@@ -392,7 +392,7 @@ class ListifyIntEArray extends AbstractListifyPrimitiveEArray<Integer> implement
 	}
 }
 /**
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBoolEArray}. <B>Do not edit any class except {@code ListifyBoolEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBoolEArray}. <b>Do not edit any class except {@code ListifyBoolEArray}.</b></i></p>
  **/
 class ListifyPLongEArray extends AbstractListifyPrimitiveEArray<Long> implements ListifyLongable  {
 	public ListifyPLongEArray(long[] obj_thatIsPrimArr)  {
@@ -420,7 +420,7 @@ class ListifyPLongEArray extends AbstractListifyPrimitiveEArray<Long> implements
 	}
 }
 /**
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBoolEArray}. <B>Do not edit any class except {@code ListifyBoolEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBoolEArray}. <b>Do not edit any class except {@code ListifyBoolEArray}.</b></i></p>
  **/
 class ListifyPFloatEArray extends AbstractListifyPrimitiveEArray<Float> implements ListifyFloatable  {
 	public ListifyPFloatEArray(float[] obj_thatIsPrimArr)  {
@@ -448,7 +448,7 @@ class ListifyPFloatEArray extends AbstractListifyPrimitiveEArray<Float> implemen
 	}
 }
 /**
-	<P><I>All {@code Listify<I>[Type]</I>Array} classes are derived from {@link ListifyBoolEArray}. <B>Do not edit any class except {@code ListifyBoolEArray}.</B></I></P>
+	<p><i>All {@code Listify<i>[Type]</i>Array} classes are derived from {@link ListifyBoolEArray}. <b>Do not edit any class except {@code ListifyBoolEArray}.</b></i></p>
  **/
 class ListifyPDoubleEArray extends AbstractListifyPrimitiveEArray<Double> implements ListifyDoubleable  {
 	public ListifyPDoubleEArray(double[] obj_thatIsPrimArr)  {
@@ -476,7 +476,7 @@ class ListifyPDoubleEArray extends AbstractListifyPrimitiveEArray<Double> implem
 	}
 }
 /**
-	<P><I>All these internal classes are derived from {@code ListifyBooleanEArray}. <B>Do not edit any classes except {@code ListifyBooleanEArray}</B>.</I></P>
+	<p><i>All these internal classes are derived from {@code ListifyBooleanEArray}. <b>Do not edit any classes except {@code ListifyBooleanEArray}</b>.</i></p>
  **/
 class ListifyCharacterEArray extends AbstractListifyPWrapperEArray<Character> implements ListifyCharable  {
 	public ListifyCharacterEArray(Character[] array)  {
@@ -499,7 +499,7 @@ class ListifyCharacterEArray extends AbstractListifyPWrapperEArray<Character> im
 	}
 }
 /**
-	<P><I>All these internal classes are derived from {@code ListifyBooleanEArray}. <B>Do not edit any classes except {@code ListifyBooleanEArray}</B>.</I></P>
+	<p><i>All these internal classes are derived from {@code ListifyBooleanEArray}. <b>Do not edit any classes except {@code ListifyBooleanEArray}</b>.</i></p>
  **/
 class ListifyByteEArray extends AbstractListifyPWrapperEArray<Byte> implements ListifyByteable  {
 	public ListifyByteEArray(Byte[] array)  {
@@ -522,7 +522,7 @@ class ListifyByteEArray extends AbstractListifyPWrapperEArray<Byte> implements L
 	}
 }
 /**
-	<P><I>All these internal classes are derived from {@code ListifyBooleanEArray}. <B>Do not edit any classes except {@code ListifyBooleanEArray}</B>.</I></P>
+	<p><i>All these internal classes are derived from {@code ListifyBooleanEArray}. <b>Do not edit any classes except {@code ListifyBooleanEArray}</b>.</i></p>
  **/
 class ListifyShortEArray extends AbstractListifyPWrapperEArray<Short> implements ListifyShortable  {
 	public ListifyShortEArray(Short[] array)  {
@@ -545,7 +545,7 @@ class ListifyShortEArray extends AbstractListifyPWrapperEArray<Short> implements
 	}
 }
 /**
-	<P><I>All these internal classes are derived from {@code ListifyBooleanEArray}. <B>Do not edit any classes except {@code ListifyBooleanEArray}</B>.</I></P>
+	<p><i>All these internal classes are derived from {@code ListifyBooleanEArray}. <b>Do not edit any classes except {@code ListifyBooleanEArray}</b>.</i></p>
  **/
 class ListifyIntegerEArray extends AbstractListifyPWrapperEArray<Integer> implements ListifyIntable  {
 	public ListifyIntegerEArray(Integer[] array)  {
@@ -568,7 +568,7 @@ class ListifyIntegerEArray extends AbstractListifyPWrapperEArray<Integer> implem
 	}
 }
 /**
-	<P><I>All these internal classes are derived from {@code ListifyBooleanEArray}. <B>Do not edit any classes except {@code ListifyBooleanEArray}</B>.</I></P>
+	<p><i>All these internal classes are derived from {@code ListifyBooleanEArray}. <b>Do not edit any classes except {@code ListifyBooleanEArray}</b>.</i></p>
  **/
 class ListifyLongEArray extends AbstractListifyPWrapperEArray<Long> implements ListifyLongable  {
 	public ListifyLongEArray(Long[] array)  {
@@ -591,7 +591,7 @@ class ListifyLongEArray extends AbstractListifyPWrapperEArray<Long> implements L
 	}
 }
 /**
-	<P><I>All these internal classes are derived from {@code ListifyBooleanEArray}. <B>Do not edit any classes except {@code ListifyBooleanEArray}</B>.</I></P>
+	<p><i>All these internal classes are derived from {@code ListifyBooleanEArray}. <b>Do not edit any classes except {@code ListifyBooleanEArray}</b>.</i></p>
  **/
 class ListifyFloatEArray extends AbstractListifyPWrapperEArray<Float> implements ListifyFloatable  {
 	public ListifyFloatEArray(Float[] array)  {
@@ -614,7 +614,7 @@ class ListifyFloatEArray extends AbstractListifyPWrapperEArray<Float> implements
 	}
 }
 /**
-	<P><I>All these internal classes are derived from {@code ListifyBooleanEArray}. <B>Do not edit any classes except {@code ListifyBooleanEArray}</B>.</I></P>
+	<p><i>All these internal classes are derived from {@code ListifyBooleanEArray}. <b>Do not edit any classes except {@code ListifyBooleanEArray}</b>.</i></p>
  **/
 class ListifyDoubleEArray extends AbstractListifyPWrapperEArray<Double> implements ListifyDoubleable  {
 	public ListifyDoubleEArray(Double[] array)  {

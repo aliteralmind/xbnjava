@@ -15,13 +15,13 @@
 package  com.github.xbn.util.copyval;
 	import  java.lang.reflect.InvocationTargetException;
 /**
-	<P>Duplicates the original value by passing it to the <I>one-parameter</I> constructor of the same type, via reflection--such as {@code (new Integer(<I>original-integer</I>))}</P>
+	<p>Duplicates the original value by passing it to the <i>one-parameter</i> constructor of the same type, via reflection--such as {@code (new Integer(<i>original-integer</i>))}</p>
 
-	<P>The idea for this comes from
-	<BR> &nbsp; &nbsp; {@code <A HREF="http://stackoverflow.com/questions/6094575/creating-an-instance-using-the-class-name-and-calling-constructor">http://stackoverflow.com/questions/6094575/creating-an-instance-using-the-class-name-and-calling-constructor</A>}</P>
+	<p>The idea for this comes from
+	<br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/6094575/creating-an-instance-using-the-class-name-and-calling-constructor">http://stackoverflow.com/questions/6094575/creating-an-instance-using-the-class-name-and-calling-constructor</a>}</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
 	private Class<O> cls = null;
@@ -37,7 +37,7 @@ public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
 	public static final OneParamCnstrValueCopier<Double> DOUBLE = new OneParamCnstrValueCopier<Double>(Double.class);
 //internal
 	/**
-		<P>Create a new {@code OneParamCnstrValueCopier}.</P>
+		<p>Create a new {@code OneParamCnstrValueCopier}.</p>
 
 		@param  cls  The class of type {@code O} (if {@code O} is {@code java.lang.Integer}, this should be {@code Integer.class}). May not be {@code null} and must be a type that has a constructor of {@code new TYPE(TYPE original_value)} (such as {@code new Integer(Integer I_original)}). Get with {@link #getClass() getEClass}{@code ()}.
 
@@ -51,12 +51,12 @@ public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
 		this.cls = cls;
 	}
 	/**
-		<P>Create a new {@code OneParamCnstrValueCopier} as a duplicate of another.</P>
+		<p>Create a new {@code OneParamCnstrValueCopier} as a duplicate of another.</p>
 
-		<P>This<OL>
-			<LI>Calls {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(AbstractValueCopier) super}{@code (to_copy)}</LI>
-			<LI>YYY</LI>
-		</OL></P>
+		<p>This<ol>
+			<li>Calls {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(AbstractValueCopier) super}{@code (to_copy)}</li>
+			<li>YYY</li>
+		</ol></p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -74,8 +74,8 @@ public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
 	}
 	/**
 		@return  {@link #getEClass() getEClass}{@code ().getConstructor(getEClass()).newInstance}{@code (new Object[] { original_value })}
-		<BR>(&quot;newInstance() is a varargs method (just as GetConstructor()), there's no need for explicit Object-array creation. &quot;–  Joachim Sauer May 23 '11 at 8:28
-		<BR>&quot;@Joachim: I know it's varargs, but as it can get tricky when you have an Object[] argument, I prefer to create the array explicitly in this case.&quot; –  Jon Skeet May 23 '11 at 8:32)</I>
+		<br/>(&quot;newInstance() is a varargs method (just as GetConstructor()), there's no need for explicit Object-array creation. &quot;–  Joachim Sauer May 23 '11 at 8:28
+		<br/>&quot;@Joachim: I know it's varargs, but as it can get tricky when you have an Object[] argument, I prefer to create the array explicitly in this case.&quot; –  Jon Skeet May 23 '11 at 8:32)</i>
 		@exception  InvocationTargetException  If getEClass is not a type that has a constructor like {@code new TYPE(TYPE original_value)} (such as {@code new Integer(Integer I_original)}).
 	 **/
 	protected O getCopyOfNonNullOrig(O non_nullOrig, String orig_name)  {
@@ -96,9 +96,9 @@ public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
 		throw  new RuntimeException("Attempting getEClass().getConstructor(getEClass()).newInstance(new Object[] { non_nullOrig }), getEClass().getName()=" + getEClass().getName(), tbl);
 	}
 	/**
-		<P>Get a complete copy of this {@code OneParamCnstrValueCopier}.</P>
+		<p>Get a complete copy of this {@code OneParamCnstrValueCopier}.</p>
 
-		@return  <CODE>(new {@link #OneParamCnstrValueCopier(OneParamCnstrValueCopier) OneParamCnstrValueCopier}&lt;O&gt;(this))</CODE>.
+		@return  <code>(new {@link #OneParamCnstrValueCopier(OneParamCnstrValueCopier) OneParamCnstrValueCopier}&lt;O&gt;(this))</code>.
 	 **/
 	public ValueCopier<O> getObjectCopy()  {
 		return  (new OneParamCnstrValueCopier<O>(this));

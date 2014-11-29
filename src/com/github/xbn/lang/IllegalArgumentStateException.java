@@ -15,10 +15,10 @@
 package  com.github.xbn.lang;
 
 /**
-	<P>Thrown when parameters are (potentially) individually valid, but taken together are invalid.</P>
+	<p>Thrown when parameters are (potentially) individually valid, but taken together are invalid.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IllegalArgumentStateException extends IllegalArgumentException  {
 	/**
@@ -26,25 +26,25 @@ public class IllegalArgumentStateException extends IllegalArgumentException  {
 	 */
 	private static final long serialVersionUID = 1827662705643375426L;
 	/**
-		<P>Create a IllegalArgumentStateException with no error message.</P>
+		<p>Create a IllegalArgumentStateException with no error message.</p>
 	 **/
 	public IllegalArgumentStateException()  {
 		super();
 	}
 	/**
-		<P>Create a IllegalArgumentStateException.</P>
+		<p>Create a IllegalArgumentStateException.</p>
 	 **/
 	public IllegalArgumentStateException(String message)  {
 		super(message);
 	}
 	/**
-		<P>Create a IllegalArgumentStateException with no error message.</P>
+		<p>Create a IllegalArgumentStateException with no error message.</p>
 	 **/
 	public IllegalArgumentStateException(Throwable cause)  {
 		super(cause);
 	}
 	/**
-		<P>Create a IllegalArgumentStateException.</P>
+		<p>Create a IllegalArgumentStateException.</p>
 	 **/
 	public IllegalArgumentStateException(String message, Throwable cause)  {
 		super(message, cause);

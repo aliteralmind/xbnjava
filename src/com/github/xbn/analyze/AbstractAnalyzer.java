@@ -15,20 +15,20 @@
 package  com.github.xbn.analyze;
 	import  com.github.xbn.io.TextAppenter;
 /**
-	<P>Abstract implementation of {@code Analyzer}. For classes needing to implement {@code Analyzer}, that cannot extend {@code AbstractAnalyzer}, see {@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}.</P>
+	<p>Abstract implementation of {@code Analyzer}. For classes needing to implement {@code Analyzer}, that cannot extend {@code AbstractAnalyzer}, see {@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public abstract class AbstractAnalyzer implements Analyzer  {
 	private final AnalyzerComposer zc;
 //constructors...START
 	/**
-		<P>Create a new {@code AbstractAnalyzer}.</P>
+		<p>Create a new {@code AbstractAnalyzer}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer super}{@code ()}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer super}{@code ()}</p>
 
 		@see  #AbstractAnalyzer(Analyzer) AbstractAnalyzer(z)
 	 **/
@@ -36,10 +36,10 @@ public abstract class AbstractAnalyzer implements Analyzer  {
 		zc = new AnalyzerComposer();
 	}
 	/**
-		<P>Create a new {@code AbstractAnalyzer} from an {@code Analyzer}.</P>
+		<p>Create a new {@code AbstractAnalyzer} from an {@code Analyzer}.</p>
 
-		<P>Equal to
-		<BR> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (to_copy)}</P>
+		<p>Equal to
+		<br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (to_copy)}</p>
 
 		@param  to_copy  May not be {@code null}.
 		@see  #getObjectCopy()
@@ -51,40 +51,40 @@ public abstract class AbstractAnalyzer implements Analyzer  {
 //constructors...END
 	//Composition implementation: AnalyzerComposer...START
 		/**
-			<P>Reset non-count state.</P>
+			<p>Reset non-count state.</p>
 
-			<P>Equal to
-			<BR> &nbsp; &nbsp; <CODE><I>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</I>.{@link com.github.xbn.analyze.AnalyzerComposer#resetState() resetState}()</CODE></P>
+			<p>Equal to
+			<br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#resetState() resetState}()</code></p>
 		 **/
 		public void resetState()  {
 			zc.resetState();
 		}
 		/**
-			<P>Reset counts to zero.</P>
+			<p>Reset counts to zero.</p>
 
-			<P>Equal to
-			<BR> &nbsp; &nbsp; <CODE><I>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</I>.{@link com.github.xbn.analyze.AnalyzerComposer#resetCounts() resetCounts}()</CODE></P>
+			<p>Equal to
+			<br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#resetCounts() resetCounts}()</code></p>
 		 **/
 		public void resetCounts()  {
 			zc.resetCounts();
 		}
 		/**
-			@return   <CODE><I>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</I>.{@link com.github.xbn.analyze.AnalyzerComposer#getAnalyzedCount() getAnalyzedCount}()</CODE>
+			@return   <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#getAnalyzedCount() getAnalyzedCount}()</code>
 		 **/
 		public int getAnalyzedCount()  {
 			return  zc.getAnalyzedCount();
 		}
 		/**
-			<P>Declare an analysis occured.</P>
+			<p>Declare an analysis occured.</p>
 
-			<P>Equal to
-			<BR> &nbsp; &nbsp; <CODE><I>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</I>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</CODE></P>
+			<p>Equal to
+			<br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</code></p>
 		 **/
 		protected void declareAnalyzed()  {
 			zc.declareAnalyzed_4prot();
 		}
 		/**
-			@return   <CODE><I>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</I>.{@link com.github.xbn.analyze.AnalyzerComposer#wasAnalyzed() wasAnalyzed}()</CODE>
+			@return   <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#wasAnalyzed() wasAnalyzed}()</code>
 		 **/
 		public boolean wasAnalyzed()  {
 			return  zc.wasAnalyzed();

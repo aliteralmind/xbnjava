@@ -14,10 +14,10 @@
 \*license*/
 package  com.github.xbn.experimental;
 /**
-	<P>Thrown when an interface has done something obviously incorrect.</P>
+	<p>Thrown when an interface has done something obviously incorrect.</p>
 
 	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <A HREF="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</A>, <A HREF="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</A>
+	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BadInterfaceBehaviorException extends RuntimeException  {
 
@@ -26,12 +26,12 @@ public class BadInterfaceBehaviorException extends RuntimeException  {
 	 */
 	private static final long serialVersionUID = 662435855718670622L;
 	/**
-		<P>Create an BadInterfaceBehaviorException with no error message.</P>
+		<p>Create an BadInterfaceBehaviorException with no error message.</p>
 	 **/
 	public BadInterfaceBehaviorException()  {
 	}
 	/**
-		<P>Create an BadInterfaceBehaviorException.</P>
+		<p>Create an BadInterfaceBehaviorException.</p>
 	 **/
 	public BadInterfaceBehaviorException(String message)  {
 		super(message);

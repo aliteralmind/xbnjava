@@ -1,7 +1,7 @@
 //: net/mindview/util/TwoTuple.java
 package com.github.xbn.util.tuple;
 /**
-	<P>A {@code Tuple} for two values.</P>
+	<p>A {@code Tuple} for two values.</p>
  **/
 public class TwoTuple<A,B> {
 //config
@@ -9,7 +9,7 @@ public class TwoTuple<A,B> {
 	private final B o2;
 //constructors...START
 	/**
-		<P>Create a new instance.</P>
+		<p>Create a new instance.</p>
 
 		@param  o_1  Get with {@link #get1() get1}{@code ()}
 		@param  o_2  Get with {@link #get2() get2}{@code ()}
