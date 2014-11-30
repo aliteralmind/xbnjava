@@ -1,40 +1,40 @@
 <project name="compile_main" basedir=".">
 
-	<target name="compilebuild" description="For starting compilation in the middle of the list, when needed.">
-		<javac srcdir="${dir_sandbox_bldfiles}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
-			includes="CreateTempBuildAndCodeletPropsForPublish.java"/>
-	</target>
+   <target name="compilebuild" description="For starting compilation in the middle of the list, when needed.">
+      <javac srcdir="${dir_sandbox_bldfiles}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
+         includes="CreateTempBuildAndCodeletPropsForPublish.java"/>
+   </target>
 
-	<target name="jar">
-		<delete file="${project_all_jar}"/>
-		<delete file="${dir_build_download}${project_name_with_version}.jar"/>
-		<jar destfile="${project_all_jar}"
-			basedir="${build.class.dir}"
-			includes="${com_github_xbn}**/*.class"
-		/>
-		<jar destfile="${dir_build_download}${project_name_with_version}.jar"
-			basedir="${build.class.dir}"
-			includes="${com_github_xbn}**/*.class"
-			excludes="${com_github_xbn}examples/**/*.class,${com_github_xbn}test/**/*.class"
-		/>
-	</target>
+   <target name="jar">
+      <delete file="${project_all_jar}"/>
+      <delete file="${dir_build_download}${project_name_with_version}.jar"/>
+      <jar destfile="${project_all_jar}"
+         basedir="${build.class.dir}"
+         includes="${com_github_xbn}**/*.class"
+      />
+      <jar destfile="${dir_build_download}${project_name_with_version}.jar"
+         basedir="${build.class.dir}"
+         includes="${com_github_xbn}**/*.class"
+         excludes="${com_github_xbn}examples/**/*.class,${com_github_xbn}test/**/*.class"
+      />
+   </target>
 
-	<target name="compilehelp" description="Documentation on 'compileproper1by1b'">
+   <target name="compilehelp" description="Documentation on 'compileproper1by1b'">
 <echo>To avoid circular file-dependencies, compilation is optionally done
 one-file-at-a-time. To compile all classes at once, un-comment the
 'compile.as.a.whole' variable in build.properties. The 'compileproper1by1'
 list originates in
-	XBN-Java/z_build/ant_sub_files/compile.xml
+   XBN-Java/z_build/ant_sub_files/compile.xml
 and is required by
-	Template Featherweight/z_build/ant_sub_files/compile.xml
+   Template Featherweight/z_build/ant_sub_files/compile.xml
 
 Any changes to this list must be duplicated to Template Featherweight.</echo>
-	</target>
+   </target>
 
  <target name="compilepostcodelet" description="Compiles all classes that depend on Codelet (custom customizers), and re-builds the jar file.">
-		<!-- <antcall target="-autocopycodeletjars"/> -->
-		<javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
-			includes="text/regex/zCodeletCustomizers.java"/>
-		<antcall target="jar"/>
-	</target>
+      <!-- <antcall target="-autocopycodeletjars"/> -->
+      <javac srcdir="${dir_src_xbn}" destdir="${build.class.dir}" classpathref="project_classpath_id" listfiles="true" includeantruntime="true"
+         includes="text/regex/zCodeletCustomizers.java"/>
+      <antcall target="jar"/>
+   </target>
 </project>

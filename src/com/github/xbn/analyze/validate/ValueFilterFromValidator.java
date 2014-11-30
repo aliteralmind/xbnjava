@@ -13,21 +13,21 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate;
-	import  com.github.xbn.lang.SimpleAdapter;
+   import  com.github.xbn.lang.SimpleAdapter;
 /**
-	<p>Adapts a validator into a filter.</p>
+   <p>Adapts a validator into a filter.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueFilterFromValidator<O> extends SimpleAdapter<ValueValidator<O>>  {
-	public ValueFilterFromValidator(ValueValidator<O> validator)  {
-		super(validator);
-	}
-	/**
-		@return  <code>{@link com.github.xbn.lang.SimpleAdapter#getAdapted() getAdapted}().<!-- GENERIC PARAMETERS FAIL IN @link --><a href="ValueValidator.html#isValid(O)">isValid</a>(value)</code>
-	 **/
-	public boolean doAccept(O value)  {
-		return  getAdapted().isValid(value);
-	}
+   public ValueFilterFromValidator(ValueValidator<O> validator)  {
+      super(validator);
+   }
+   /**
+      @return  <code>{@link com.github.xbn.lang.SimpleAdapter#getAdapted() getAdapted}().<!-- GENERIC PARAMETERS FAIL IN @link --><a href="ValueValidator.html#isValid(O)">isValid</a>(value)</code>
+    **/
+   public boolean doAccept(O value)  {
+      return  getAdapted().isValid(value);
+   }
 }

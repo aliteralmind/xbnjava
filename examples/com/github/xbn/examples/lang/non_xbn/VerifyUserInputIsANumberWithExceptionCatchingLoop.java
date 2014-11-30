@@ -13,33 +13,33 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package com.github.xbn.examples.lang.non_xbn;
-		import  java.util.Scanner;
+      import  java.util.Scanner;
 /**
-	<p>Confirm a user-input number is a valid number by reading a string and attempting to convert it to a number--this loops until this conversion <i>does not crash</i>.</p>
+   <p>Confirm a user-input number is a valid number by reading a string and attempting to convert it to a number--this loops until this conversion <i>does not crash</i>.</p>
 
-	<p>{@code java com.github.xbn.examples.lang.non_xbn.VerifyUserInputIsANumberWithExceptionCatchingLoop}</p>
+   <p>{@code java com.github.xbn.examples.lang.non_xbn.VerifyUserInputIsANumberWithExceptionCatchingLoop}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 **/
 public class VerifyUserInputIsANumberWithExceptionCatchingLoop  {
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
 
-		int num = -1;
+      int num = -1;
 
-		NumberFormatException nfx2 = null;
-		do  {
-				nfx2 = null;
-				System.out.print("Number please: ");
-				String strInput = (new Scanner(System.in)).next();
-				try  {
-					num = Integer.parseInt(strInput);
-				}  catch(NumberFormatException nfx)  {
-					nfx2 = nfx;
-					System.out.println(strInput + " is not a number. Try again.");
-				}
-			}  while(nfx2 != null);
+      NumberFormatException nfx2 = null;
+      do  {
+            nfx2 = null;
+            System.out.print("Number please: ");
+            String strInput = (new Scanner(System.in)).next();
+            try  {
+               num = Integer.parseInt(strInput);
+            }  catch(NumberFormatException nfx)  {
+               nfx2 = nfx;
+               System.out.println(strInput + " is not a number. Try again.");
+            }
+         }  while(nfx2 != null);
 
-		System.out.println("Number: " + num);
-	}
+      System.out.println("Number: " + num);
+   }
 }

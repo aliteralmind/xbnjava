@@ -13,31 +13,31 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util;
-	import  com.github.xbn.regexutil.IgnoreCase;
-	import  com.github.xbn.util.EnumUtil;
+   import  com.github.xbn.regexutil.IgnoreCase;
+   import  com.github.xbn.util.EnumUtil;
 /**
-	<p>Demonstration of <code>{@link com.github.xbn.util.EnumUtil}.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/util/EnumUtil.html#getFromExplicitStringValues(T, java.lang.String, java.lang.String, com.github.xbn.regexutil.IgnoreCase, java.lang.String...)">getFromExplicitStringValues</a></code></p>
+   <p>Demonstration of <code>{@link com.github.xbn.util.EnumUtil}.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/util/EnumUtil.html#getFromExplicitStringValues(T, java.lang.String, java.lang.String, com.github.xbn.regexutil.IgnoreCase, java.lang.String...)">getFromExplicitStringValues</a></code></p>
 
-	<p>{@code java com.github.xbn.examples.util.GetFromExplicitStringValuesExample}</p>
+   <p>{@code java com.github.xbn.examples.util.GetFromExplicitStringValuesExample}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class GetFromExplicitStringValuesExample  {
 
-	private enum Happy {
-		MANIC, ECSTATIC, VERY,
-		MODERATE, NOT_SO_MUCH,
-		CLINICALLY_DEPRESSED, CONSIDERING_MURDER_SUICIDE;};
+   private enum Happy {
+      MANIC, ECSTATIC, VERY,
+      MODERATE, NOT_SO_MUCH,
+      CLINICALLY_DEPRESSED, CONSIDERING_MURDER_SUICIDE;};
 
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
 
-		String happinessStringValue = "moderatelyhappy";
+      String happinessStringValue = "moderatelyhappy";
 
-		Happy h = EnumUtil.getFromExplicitStringValues(Happy.VERY,
-			happinessStringValue, "happinessStringValue", IgnoreCase.YES,
-			new String[]{null, null, "veryhappy", "moderatelyhappy", "notsohappy", null, null});
+      Happy h = EnumUtil.getFromExplicitStringValues(Happy.VERY,
+         happinessStringValue, "happinessStringValue", IgnoreCase.YES,
+         new String[]{null, null, "veryhappy", "moderatelyhappy", "notsohappy", null, null});
 
-		System.out.println(h);
-	}
+      System.out.println(h);
+   }
 }

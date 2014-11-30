@@ -13,27 +13,27 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.primitive;
-	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
-	import  com.github.xbn.util.itr.AbstractElementTSLengthIterator;
+   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
+   import  com.github.xbn.util.itr.AbstractElementTSLengthIterator;
 /**
-	<p>Iterator that returns the <i>digit count</i> for elements in numeric primitive arrays (ints, longs, floats, etcetera). This is a simple casting of the element to a string, and then retrieving its length. Therefore, the negative and decimal symbols are each counted as one.</p>
+   <p>Iterator that returns the <i>digit count</i> for elements in numeric primitive arrays (ints, longs, floats, etcetera). This is a simple casting of the element to a string, and then retrieving its length. Therefore, the negative and decimal symbols are each counted as one.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PrimitiveArrayTSLengthIterator<R> extends AbstractElementTSLengthIterator<R>  {
-	private PrimitiveArrayHelper<R> pah = null;
-	public PrimitiveArrayTSLengthIterator(Object obj_thatIsPrimArr, PrimitiveArrayHelper<R> array_helper)  {
-		super(obj_thatIsPrimArr);
-		if(array_helper == null)  {
-			throw  new NullPointerException("array_helper");
-		}
-		pah = array_helper;
-	}
-	protected R getRawElementRTXOkay(int index)  {
-		return  pah.getWrapper(getContainer(), index, XBL_CNTR_OF_R_NAME);
-	}
-	public int getTotalElementCount()  {
-		return  pah.getLength(getContainer(), XBL_CNTR_OF_R_NAME);
-	}
+   private PrimitiveArrayHelper<R> pah = null;
+   public PrimitiveArrayTSLengthIterator(Object obj_thatIsPrimArr, PrimitiveArrayHelper<R> array_helper)  {
+      super(obj_thatIsPrimArr);
+      if(array_helper == null)  {
+         throw  new NullPointerException("array_helper");
+      }
+      pah = array_helper;
+   }
+   protected R getRawElementRTXOkay(int index)  {
+      return  pah.getWrapper(getContainer(), index, XBL_CNTR_OF_R_NAME);
+   }
+   public int getTotalElementCount()  {
+      return  pah.getLength(getContainer(), XBL_CNTR_OF_R_NAME);
+   }
 }

@@ -14,52 +14,52 @@
 \*license*/
 package  com.github.xbn.neederneedable;
 /**
-	<p>Abstract implementation of {@code Needer}. For classes needing to implement {@code Needer}, that cannot extend {@code AbstractNeeder}, see {@link com.github.xbn.neederneedable.NeederComposer NeederComposer}.</p>
+   <p>Abstract implementation of {@code Needer}. For classes needing to implement {@code Needer}, that cannot extend {@code AbstractNeeder}, see {@link com.github.xbn.neederneedable.NeederComposer NeederComposer}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractNeeder implements Needer  {
-	private final NeederComposer ndrc;
-	/**
-		<p>Create a new instance.</p>
+   private final NeederComposer ndrc;
+   /**
+      <p>Create a new instance.</p>
 
-		<p>This creates an internal
-		<br/> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</p>
-	 **/
-	public AbstractNeeder()  {
-		ndrc = new NeederComposer();
-	}
-	/**
-		@return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#getNeededType() getNeededType}()</code>
-	 **/
-	public Class getNeededType()  {
+      <p>This creates an internal
+      <br/> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</p>
+    **/
+   public AbstractNeeder()  {
+      ndrc = new NeederComposer();
+   }
+   /**
+      @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#getNeededType() getNeededType}()</code>
+    **/
+   public Class getNeededType()  {
 //	public <O> Class<O> getNeededType()  {
-		return  ndrc.getNeededType();
-	}
-	/**
-		@return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#isConfigActive() isConfigActive}()</code>
-	 **/
-	public boolean isConfigActive()  {
-		return  ndrc.isConfigActive();
-	}
-	/**
-		<p>Starts configuration for a specific type of object.</p>
+      return  ndrc.getNeededType();
+   }
+   /**
+      @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#isConfigActive() isConfigActive}()</code>
+    **/
+   public boolean isConfigActive()  {
+      return  ndrc.isConfigActive();
+   }
+   /**
+      <p>Starts configuration for a specific type of object.</p>
 
-		<p>Equal to
-		<br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
-	 **/
-	public void startConfig(Class<?> needed_class)  {
-		ndrc.startConfig(needed_class);
-	}
-	/**
-		@return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#setGetNeededEndConfig_4prot(Object) setGetNeededEndConfig_4prot}(needed_fullyConfigured)</code>
-	 **/
-	protected Object setGetNeededEndConfig(Object needed_fullyConfigured)  {
-		return  ndrc.setGetNeededEndConfig_4prot(needed_fullyConfigured);
-	}
+      <p>Equal to
+      <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
+    **/
+   public void startConfig(Class<?> needed_class)  {
+      ndrc.startConfig(needed_class);
+   }
+   /**
+      @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#setGetNeededEndConfig_4prot(Object) setGetNeededEndConfig_4prot}(needed_fullyConfigured)</code>
+    **/
+   protected Object setGetNeededEndConfig(Object needed_fullyConfigured)  {
+      return  ndrc.setGetNeededEndConfig_4prot(needed_fullyConfigured);
+   }
 /*stub functions for non-abstract compile...START
-	public void neeadableSetsNeeded(Object fully_configured)  {
-	}
+   public void neeadableSetsNeeded(Object fully_configured)  {
+   }
  stub functions for non-abstract compile...END*/
 }

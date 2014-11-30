@@ -13,54 +13,54 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.testdev;
-	import  com.github.xbn.io.PathMustBe;
-	import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
-	import  com.github.xbn.testdev.ReplaceAllIndentTabsWithSpaces;
-	import  com.github.xbn.testdev.TabToSpaceDebugLevel;
-	import  java.io.File;
-	import  java.nio.file.Path;
-	import  java.util.Iterator;
-	import  java.util.Scanner;
-	import  org.apache.commons.io.FileUtils;
-	import  org.apache.commons.io.filefilter.FileFilterUtils;
-	import  org.apache.commons.io.filefilter.IOFileFilter;
+   import  com.github.xbn.io.PathMustBe;
+   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
+   import  com.github.xbn.testdev.ReplaceAllIndentTabsWithSpaces;
+   import  com.github.xbn.testdev.TabToSpaceDebugLevel;
+   import  java.io.File;
+   import  java.nio.file.Path;
+   import  java.util.Iterator;
+   import  java.util.Scanner;
+   import  org.apache.commons.io.FileUtils;
+   import  org.apache.commons.io.filefilter.FileFilterUtils;
+   import  org.apache.commons.io.filefilter.IOFileFilter;
 /**
-	<p>Demonstration of {@code com.github.xbn.util.}{@link com.github.xbn.testdev.ReplaceAllIndentTabsWithSpaces}.{@link com.github.xbn.testdev.ReplaceAllIndentTabsWithSpaces#overwriteDirectory(Iterator) overwriteDirectory}--<i>this overwrites the files in the provided directory.</i>.</p>
+   <p>Demonstration of {@code com.github.xbn.util.}{@link com.github.xbn.testdev.ReplaceAllIndentTabsWithSpaces}.{@link com.github.xbn.testdev.ReplaceAllIndentTabsWithSpaces#overwriteDirectory(Iterator) overwriteDirectory}--<i>this overwrites the files in the provided directory.</i>.</p>
 
-	<p>{@code java com.github.xbn.examples.util.ReplaceAllIndentTabsWithSpacesXmpl C:\java_code\project_name\}</p>
+   <p>{@code java com.github.xbn.examples.util.ReplaceAllIndentTabsWithSpacesXmpl C:\java_code\project_name\}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReplaceAllIndentTabsWithSpacesXmpl  {
-	public static final void main(String[] directoryRoot_paramIdxZero)  {
-		//Setup and protection
-			String dirRoot = GetFromCommandLineAtIndex.text(
-				directoryRoot_paramIdxZero, 0, "directoryRoot_paramIdxZero", null);
+   public static final void main(String[] directoryRoot_paramIdxZero)  {
+      //Setup and protection
+         String dirRoot = GetFromCommandLineAtIndex.text(
+            directoryRoot_paramIdxZero, 0, "directoryRoot_paramIdxZero", null);
 
-			System.out.println("This example code will overwrite the files in \"" + dirRoot + "\". Enter the number 1234567890 to proceed.");
-			if(!new Scanner(System.in).nextLine().equals("1234567890"))  {
-				System.out.println("Abort.");
-				return;
-			}
+         System.out.println("This example code will overwrite the files in \"" + dirRoot + "\". Enter the number 1234567890 to proceed.");
+         if(!new Scanner(System.in).nextLine().equals("1234567890"))  {
+            System.out.println("Abort.");
+            return;
+         }
 
-			Path dirPath = new PathMustBe().existing().writable().
-				directory().noFollowLinks().
-				getOrCrashIfBad(dirRoot, "directoryRoot_paramIdxZero[0]");
+         Path dirPath = new PathMustBe().existing().writable().
+            directory().noFollowLinks().
+            getOrCrashIfBad(dirRoot, "directoryRoot_paramIdxZero[0]");
 
-			File fileRootDir = new File(dirRoot);
+         File fileRootDir = new File(dirRoot);
 
-		//Go
+      //Go
 
-		IOFileFilter allFileTypesKeepFilter = FileFilterUtils.and(
-			FileFilterUtils.suffixFileFilter(".java"),
-			FileFilterUtils.suffixFileFilter(".html"));
+      IOFileFilter allFileTypesKeepFilter = FileFilterUtils.and(
+         FileFilterUtils.suffixFileFilter(".java"),
+         FileFilterUtils.suffixFileFilter(".html"));
 
-		Iterator<File> fileItr = FileUtils.iterateFiles(fileRootDir,
-			allFileTypesKeepFilter, null);
+      Iterator<File> fileItr = FileUtils.iterateFiles(fileRootDir,
+         allFileTypesKeepFilter, null);
 
-		new ReplaceAllIndentTabsWithSpaces(3, System.out,
-			TabToSpaceDebugLevel.FILE_SUMMARIES).
-			overwriteDirectory(fileItr);
-	}
+      new ReplaceAllIndentTabsWithSpaces(3, System.out,
+         TabToSpaceDebugLevel.FILE_SUMMARIES).
+         overwriteDirectory(fileItr);
+   }
 }

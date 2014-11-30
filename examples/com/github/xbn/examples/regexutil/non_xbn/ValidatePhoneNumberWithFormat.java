@@ -13,57 +13,57 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
-	import  java.util.regex.Matcher;
-	import  java.util.regex.Pattern;
+   import  java.util.regex.Matcher;
+   import  java.util.regex.Pattern;
 /**
-	<p>Validate a phone number, with accomodation for an initial plus-sign.</p>
+   <p>Validate a phone number, with accomodation for an initial plus-sign.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.non_xbn.ValidatePhoneNumberWithFormat}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.non_xbn.ValidatePhoneNumberWithFormat}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValidatePhoneNumberWithFormat  {
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
 
-		String sOptionalDashSlash = "(?:[-/])?";
-		String sOneOrMoreDigitsCAPTURED = "(\\d+)";
+      String sOptionalDashSlash = "(?:[-/])?";
+      String sOneOrMoreDigitsCAPTURED = "(\\d+)";
 
-		String sREPhone = "" +
-			"^(?:[+(])?" +			//+ or (				 [start of line, then optional]
-			sOneOrMoreDigitsCAPTURED +
-			"(?:\\))?" +			  //Closing )			 [optional]
-			sOptionalDashSlash +
-			sOneOrMoreDigitsCAPTURED +
-			sOptionalDashSlash +
-			sOneOrMoreDigitsCAPTURED +
-			sOptionalDashSlash +
-			"(\\d*)$";				 //one-or-more digits [optional, then end of line]
+      String sREPhone = "" +
+         "^(?:[+(])?" +			//+ or (				 [start of line, then optional]
+         sOneOrMoreDigitsCAPTURED +
+         "(?:\\))?" +			  //Closing )			 [optional]
+         sOptionalDashSlash +
+         sOneOrMoreDigitsCAPTURED +
+         sOptionalDashSlash +
+         sOneOrMoreDigitsCAPTURED +
+         sOptionalDashSlash +
+         "(\\d*)$";				 //one-or-more digits [optional, then end of line]
 
-			//Equivalent to:
-			//String sREPhone = "" +
-			//	"^(?:[+(])?" +		//+ or (				 [start of line, then optional]
-			//	"(\\d+)" +			 //one-or-more digits CAPTURED
-			//	"(?:\\))?" +		  //Closing )			 [optional]
-			//	"(?:[-/])?" +		 //- or /				 [optional]
-			//	"(\\d+)" +			 //one-or-more digits CAPTURED
-			//	"(?:[-/])?" +		 //- or /				 [optional]
-			//	"(\\d+)" +			 //one-or-more digits CAPTURED
-			//	"(?:[-/])?" +		 //- or /				 [optional]
-			//	"(\\d*)$";			 //one-or-more digits CAPTURED [optional, then end of line]
+         //Equivalent to:
+         //String sREPhone = "" +
+         //	"^(?:[+(])?" +		//+ or (				 [start of line, then optional]
+         //	"(\\d+)" +			 //one-or-more digits CAPTURED
+         //	"(?:\\))?" +		  //Closing )			 [optional]
+         //	"(?:[-/])?" +		 //- or /				 [optional]
+         //	"(\\d+)" +			 //one-or-more digits CAPTURED
+         //	"(?:[-/])?" +		 //- or /				 [optional]
+         //	"(\\d+)" +			 //one-or-more digits CAPTURED
+         //	"(?:[-/])?" +		 //- or /				 [optional]
+         //	"(\\d*)$";			 //one-or-more digits CAPTURED [optional, then end of line]
 
-		//Create matcher with unused string, so it can be reused in test(m,s)
-		Matcher m = Pattern.compile(sREPhone).matcher("");
+      //Create matcher with unused string, so it can be reused in test(m,s)
+      Matcher m = Pattern.compile(sREPhone).matcher("");
 
-		test(m, "123-431-123/23");  //true
-		test(m, "+312-31-32-53");	//true
-		test(m, "(123)456-7890");	//true
-		test(m, "000-132+23");		//false
-		test(m, "000()312");		  //false
-		test(m, "122--231");		  //false
-	}
-	private static final void test(Matcher method, String to_test)  {
-		method.reset(to_test);
-		System.out.println(to_test + "  -->  " + method.matches());
-	}
+      test(m, "123-431-123/23");  //true
+      test(m, "+312-31-32-53");	//true
+      test(m, "(123)456-7890");	//true
+      test(m, "000-132+23");		//false
+      test(m, "000()312");		  //false
+      test(m, "122--231");		  //false
+   }
+   private static final void test(Matcher method, String to_test)  {
+      method.reset(to_test);
+      System.out.println(to_test + "  -->  " + method.matches());
+   }
 }

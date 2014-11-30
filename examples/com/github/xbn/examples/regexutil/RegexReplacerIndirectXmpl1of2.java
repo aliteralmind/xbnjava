@@ -13,27 +13,27 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil;
-	import  com.github.xbn.regexutil.IndirectRegexReplacer;
-	import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
+   import  com.github.xbn.regexutil.IndirectRegexReplacer;
+   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
 /**
-	<p>Demonstrates an <a href="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#indirect">indirect replacement</a> using {@code com.github.xbn.regexutil.RegexReplacer}.</p>
+   <p>Demonstrates an <a href="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#indirect">indirect replacement</a> using {@code com.github.xbn.regexutil.RegexReplacer}.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl1of2}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl1of2}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexReplacerIndirectXmpl1of2  {
-	public static void main(String[] ignored)  {
+   public static void main(String[] ignored)  {
 
-		System.out.println("Replace terms 2-3 with uppercase, surrounded by square-brackets:");
-		String sFindWhat = "\\b(\\w+)\\b";
-		String sToSearch = "one two three four five";
-		IndirectRegexReplacer rri = new IndirectRegexReplacer(new RegexReplacer_Cfg().findWhat(sFindWhat).matchRange(2, 3))  {
-			public String getIndirectReplacement()  {
-				return  "[" + getGroup(1).toUpperCase() + "]";
-			}
-		};
-		System.out.println(rri.getReplaced(sToSearch));
-	}
+      System.out.println("Replace terms 2-3 with uppercase, surrounded by square-brackets:");
+      String sFindWhat = "\\b(\\w+)\\b";
+      String sToSearch = "one two three four five";
+      IndirectRegexReplacer rri = new IndirectRegexReplacer(new RegexReplacer_Cfg().findWhat(sFindWhat).matchRange(2, 3))  {
+         public String getIndirectReplacement()  {
+            return  "[" + getGroup(1).toUpperCase() + "]";
+         }
+      };
+      System.out.println(rri.getReplaced(sToSearch));
+   }
 }

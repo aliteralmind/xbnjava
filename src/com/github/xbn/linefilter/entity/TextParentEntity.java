@@ -14,19 +14,19 @@
 \*license*/
 
 package  com.github.xbn.linefilter.entity;
-	import  java.util.List;
-	import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
+   import  java.util.List;
+   import  com.github.xbn.linefilter.entity.raw.RawParentEntity;
 /**
-	<p>A textual entity that may contain zero or more child entities. One entity is always the root.</p>
+   <p>A textual entity that may contain zero or more child entities. One entity is always the root.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface TextParentEntity extends RawParentEntity<String>, TextChildEntity  {
-	/**
-		<p>An immutable list of all child entities.</p>
+   /**
+      <p>An immutable list of all child entities.</p>
 
-		@return  A non-{@code null} list. <i>While the list itself is immutable, the elements are not.</i> Making any changes to an element (for example, by resetting its {@linkplain com.github.xbn.analyze.alter.Alterer#resetState() state} or {@linkplain com.github.xbn.analyze.alter.Alterer#resetCounts() counts}, or by directly calling <code><i>[an-entity]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ValueAlterer.html#getAltered(V,A)">getAltered</a></code>) will cause unpredictable behavior.
-	 **/
-	List<TextChildEntity> getChildList();
+      @return  A non-{@code null} list. <i>While the list itself is immutable, the elements are not.</i> Making any changes to an element (for example, by resetting its {@linkplain com.github.xbn.analyze.alter.Alterer#resetState() state} or {@linkplain com.github.xbn.analyze.alter.Alterer#resetCounts() counts}, or by directly calling <code><i>[an-entity]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ValueAlterer.html#getAltered(V,A)">getAltered</a></code>) will cause unpredictable behavior.
+    **/
+   List<TextChildEntity> getChildList();
 }

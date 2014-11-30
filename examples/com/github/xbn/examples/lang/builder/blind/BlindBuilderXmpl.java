@@ -16,78 +16,78 @@ package  com.github.xbn.examples.lang.builder.blind;
 /**
    <p>Demonstrates a Blind Builder.</p>
 
-	<p>{@code java com.github.xbn.examples.lang.builder.blind.BlindBuilderXmpl}</p>
+   <p>{@code java com.github.xbn.examples.lang.builder.blind.BlindBuilderXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class BlindBuilderXmpl  {
-	public static final void main(String[] ignored)  {
-		UserConfig uc = new UserConfig_Cfg("Kermit").age(50).favoriteColor("green").build();
-		System.out.println(uc);
-	}
+   public static final void main(String[] ignored)  {
+      UserConfig uc = new UserConfig_Cfg("Kermit").age(50).favoriteColor("green").build();
+      System.out.println(uc);
+   }
 }
 
 //CLASS TO BUILD
 class UserConfig  {
-	private final String sName    ;
-	private final int    iAge     ;
-	private final String sFavColor;
+   private final String sName    ;
+   private final int    iAge     ;
+   private final String sFavColor;
    public UserConfig(UserConfig_Fieldable fieldable)  {
-		//transfer
-			try  {
-				sName  = fieldable.getName();
-			}  catch(NullPointerException rx)  {
-				throw  new NullPointerException("fieldable");
-			}
-			iAge      = fieldable.getAge();
-			sFavColor = fieldable.getFavoriteColor();
+      //transfer
+         try  {
+            sName  = fieldable.getName();
+         }  catch(NullPointerException rx)  {
+            throw  new NullPointerException("fieldable");
+         }
+         iAge      = fieldable.getAge();
+         sFavColor = fieldable.getFavoriteColor();
 
-		//Validate all fields here
-	}
-	public String toString()  {
-		return  "name=" + sName + ", age=" + iAge + ", sFavColor=" + sFavColor;
-	}
+      //Validate all fields here
+   }
+   public String toString()  {
+      return  "name=" + sName + ", age=" + iAge + ", sFavColor=" + sFavColor;
+   }
 }
 
 //FIELDABLE
 interface UserConfig_Fieldable  {
-	String getName();
-	int getAge();
-	String getFavoriteColor();
+   String getName();
+   int getAge();
+   String getFavoriteColor();
 }
 
 //BUILDER
 class UserConfig_Cfg implements UserConfig_Fieldable  {
-	public String sName    ;
-	public int    iAge     ;
-	public String sFavColor;
-	public UserConfig_Cfg(String name)  {
-		sName = name;
-	}
-	//self-returning setters...START
-		public UserConfig_Cfg age(int years)  {
-			iAge = years;
-			return  this;
-		}
-		public UserConfig_Cfg favoriteColor(String color)  {
-			sFavColor = color;
-			return  this;
-		}
-	//self-returning setters...END
-	//getters...START
-		public String getName()  {
-			return  sName;
-		}
-		public int getAge()  {
-			return  iAge;
-		}
-		public String getFavoriteColor()  {
-			return  sFavColor;
-		}
-	//getters...END
-	public UserConfig build()  {
-		return  (new UserConfig(this));
-	}
+   public String sName    ;
+   public int    iAge     ;
+   public String sFavColor;
+   public UserConfig_Cfg(String name)  {
+      sName = name;
+   }
+   //self-returning setters...START
+      public UserConfig_Cfg age(int years)  {
+         iAge = years;
+         return  this;
+      }
+      public UserConfig_Cfg favoriteColor(String color)  {
+         sFavColor = color;
+         return  this;
+      }
+   //self-returning setters...END
+   //getters...START
+      public String getName()  {
+         return  sName;
+      }
+      public int getAge()  {
+         return  iAge;
+      }
+      public String getFavoriteColor()  {
+         return  sFavColor;
+      }
+   //getters...END
+   public UserConfig build()  {
+      return  (new UserConfig(this));
+   }
 }

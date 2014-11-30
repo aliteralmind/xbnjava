@@ -13,40 +13,40 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.analyze.alter;
-	import  com.github.xbn.analyze.alter.Altered;
-	import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
-	import  com.github.xbn.analyze.alter.AbstractValueAlterer;
+   import  com.github.xbn.analyze.alter.Altered;
+   import  com.github.xbn.analyze.alter.NeedsToBeDeleted;
+   import  com.github.xbn.analyze.alter.AbstractValueAlterer;
 /**
-	<p>Simple custom <code>xbn.analyze.alter.{@link com.github.xbn.analyze.alter.ValueAlterer ValueAlterer}&lt;String&gt;</code> that converts the string to uppercase.</p>
+   <p>Simple custom <code>xbn.analyze.alter.{@link com.github.xbn.analyze.alter.ValueAlterer ValueAlterer}&lt;String&gt;</code> that converts the string to uppercase.</p>
 
-	<p>{@code java com.github.xbn.examples.analyze.alter.ValueAltererXmpl}</p>
+   <p>{@code java com.github.xbn.examples.analyze.alter.ValueAltererXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueAltererXmpl  {
-	public static final void main(String[] ignored)  {
-		AVUpperCase avuc = new AVUpperCase();
-		System.out.println(avuc.getAltered(null, "Hello there."));
-		System.out.println(avuc.getAltered(null, "Goodbye."));
-	}
+   public static final void main(String[] ignored)  {
+      AVUpperCase avuc = new AVUpperCase();
+      System.out.println(avuc.getAltered(null, "Hello there."));
+      System.out.println(avuc.getAltered(null, "Goodbye."));
+   }
 }
 class AVUpperCase extends AbstractValueAlterer<String,String>  {
-	public AVUpperCase()  {
-		super();
-	}
-	public AVUpperCase(AVUpperCase to_copy)  {
-		super(to_copy);
-	}
-	public final String getAlteredPostResetCheck(String ignored, String to_alter)  {
-		declareAltered(Altered.YES, NeedsToBeDeleted.NO);
-		try  {
-			return  to_alter.toUpperCase();
-		}  catch(NullPointerException npx)  {
-			throw  new NullPointerException("to_alter");
-		}
-	}
-	public AVUpperCase getObjectCopy()  {
-		return  (new AVUpperCase(this));
-	}
+   public AVUpperCase()  {
+      super();
+   }
+   public AVUpperCase(AVUpperCase to_copy)  {
+      super(to_copy);
+   }
+   public final String getAlteredPostResetCheck(String ignored, String to_alter)  {
+      declareAltered(Altered.YES, NeedsToBeDeleted.NO);
+      try  {
+         return  to_alter.toUpperCase();
+      }  catch(NullPointerException npx)  {
+         throw  new NullPointerException("to_alter");
+      }
+   }
+   public AVUpperCase getObjectCopy()  {
+      return  (new AVUpperCase(this));
+   }
 }

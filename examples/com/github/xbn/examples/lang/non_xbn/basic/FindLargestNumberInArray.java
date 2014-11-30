@@ -13,31 +13,31 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn.basic;
-	import  java.util.Arrays;
+   import  java.util.Arrays;
 /**
-	<p>Find the largest number in an int array, using <code>java.lang.{@link java.lang.Integer}.{@link java.lang.Integer#MIN_VALUE MIN_VALUE}</code> as the initial &quot;biggest&quot; value.</p>
+   <p>Find the largest number in an int array, using <code>java.lang.{@link java.lang.Integer}.{@link java.lang.Integer#MIN_VALUE MIN_VALUE}</code> as the initial &quot;biggest&quot; value.</p>
 
-	<p>{@code java com.github.xbn.examples.lang.non_xbn.basic.FindLargestNumberInArray}</p>
+   <p>{@code java com.github.xbn.examples.lang.non_xbn.basic.FindLargestNumberInArray}</p>
 
-	@see  FindSmallestNumberInArray
+   @see  FindSmallestNumberInArray
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FindLargestNumberInArray  {
-	public static final void main(String[] ignored)  {
-		int[] ai = new int[]{3, 2, 874, -2, 14};
+   public static final void main(String[] ignored)  {
+      int[] ai = new int[]{3, 2, 874, -2, 14};
 
-		System.out.println("Finding lowest value in " + Arrays.toString(ai));
+      System.out.println("Finding lowest value in " + Arrays.toString(ai));
 
-		int idxOfBiggestNum = -1;
-		int iBiggestNum = Integer.MIN_VALUE;
-		for(int i = 0; i < ai.length; i++)  {
-			if(ai[i] > iBiggestNum)  {
-				idxOfBiggestNum = i;
-				iBiggestNum = ai[i];
-			}
-			System.out.println("Index " + idxOfBiggestNum + "=" + ai[idxOfBiggestNum]);
-		}
-	}
+      int idxOfBiggestNum = -1;
+      int iBiggestNum = Integer.MIN_VALUE;
+      for(int i = 0; i < ai.length; i++)  {
+         if(ai[i] > iBiggestNum)  {
+            idxOfBiggestNum = i;
+            iBiggestNum = ai[i];
+         }
+         System.out.println("Index " + idxOfBiggestNum + "=" + ai[idxOfBiggestNum]);
+      }
+   }
 }

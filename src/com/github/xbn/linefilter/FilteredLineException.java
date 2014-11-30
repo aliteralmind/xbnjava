@@ -14,46 +14,46 @@
 \*license*/
 package  com.github.xbn.linefilter;
 /**
-	<p>Indicates a problem with a line being filtered.</p>
+   <p>Indicates a problem with a line being filtered.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://codelet.aliteralmind.com">{@code http://codelet.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/codelet">{@code https://github.com/aliteralmind/codelet}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://codelet.aliteralmind.com">{@code http://codelet.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/codelet">{@code https://github.com/aliteralmind/codelet}</a>
 
  **/
 public class FilteredLineException extends IllegalArgumentException  {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -466381548710281347L;
-	private final int lineNum;
-	private final Object line;
-	public FilteredLineException(int line_num, Object line, String message)  {
-		super(FilteredLineException.getErrorMessage(line_num, line, message));
-		lineNum = line_num;
-		this.line = line;
-	}
-	public FilteredLineException(int line_num, Object line)  {
-		super((line == null) ? null : line.toString());
-		lineNum = line_num;
-		this.line = line;
-	}
-	public FilteredLineException(int line_num, Object line, String message, Throwable cause)  {
-		super(FilteredLineException.getErrorMessage(line_num, line, message), cause);
-		lineNum = line_num;
-		this.line = line;
-	}
-	public FilteredLineException(int line_num, Object line, Throwable cause)  {
-		super((line == null) ? null : line.toString(), cause);
-		lineNum = line_num;
-		this.line = line;
-	}
-	public int getLineNumber()  {
-		return  lineNum;
-	}
-	public Object getLineObject()  {
-		return  line;
-	}
-	public static final String getErrorMessage(int line_num, Object line, String message)  {
-		return  "[line " + line_num + "] " + ((line != null) ? line + ", " : "") + message;
-	}
+   /**
+    * 
+    */
+   private static final long serialVersionUID = -466381548710281347L;
+   private final int lineNum;
+   private final Object line;
+   public FilteredLineException(int line_num, Object line, String message)  {
+      super(FilteredLineException.getErrorMessage(line_num, line, message));
+      lineNum = line_num;
+      this.line = line;
+   }
+   public FilteredLineException(int line_num, Object line)  {
+      super((line == null) ? null : line.toString());
+      lineNum = line_num;
+      this.line = line;
+   }
+   public FilteredLineException(int line_num, Object line, String message, Throwable cause)  {
+      super(FilteredLineException.getErrorMessage(line_num, line, message), cause);
+      lineNum = line_num;
+      this.line = line;
+   }
+   public FilteredLineException(int line_num, Object line, Throwable cause)  {
+      super((line == null) ? null : line.toString(), cause);
+      lineNum = line_num;
+      this.line = line;
+   }
+   public int getLineNumber()  {
+      return  lineNum;
+   }
+   public Object getLineObject()  {
+      return  line;
+   }
+   public static final String getErrorMessage(int line_num, Object line, String message)  {
+      return  "[line " + line_num + "] " + ((line != null) ? line + ", " : "") + message;
+   }
 }

@@ -13,29 +13,29 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn.basic;
-	import  java.util.regex.Pattern;
+   import  java.util.regex.Pattern;
 /**
-	<p>Check that a string contains only letters and spaces.</p>
+   <p>Check that a string contains only letters and spaces.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.LettersSpacesOnly}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.LettersSpacesOnly}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LettersSpacesOnly  {
-	public static final void main(String[] ignored)  {
-		Pattern pLettersOnly = Pattern.compile("[A-Za-z ]+");
-		test(pLettersOnly, "Obama");
-		test(pLettersOnly, "Kermit The Frog");
-		test(pLettersOnly, "The QuIcK brown FOx JUMPED over the lazy DOg");
-		test(pLettersOnly, "23874298374");
-	}
-	private static final void test(Pattern pattern_toFind, String type_name)  {
-		System.out.print(type_name + "...");
-		if(pattern_toFind.matcher(type_name).matches())  {
-			System.out.println("Contains only letters and spaces. Good.");
-		}  else  {
-			System.out.println("ERROR: Must contain letters and spaces only.");
-		}
-	}
+   public static final void main(String[] ignored)  {
+      Pattern pLettersOnly = Pattern.compile("[A-Za-z ]+");
+      test(pLettersOnly, "Obama");
+      test(pLettersOnly, "Kermit The Frog");
+      test(pLettersOnly, "The QuIcK brown FOx JUMPED over the lazy DOg");
+      test(pLettersOnly, "23874298374");
+   }
+   private static final void test(Pattern pattern_toFind, String type_name)  {
+      System.out.print(type_name + "...");
+      if(pattern_toFind.matcher(type_name).matches())  {
+         System.out.println("Contains only letters and spaces. Good.");
+      }  else  {
+         System.out.println("ERROR: Must contain letters and spaces only.");
+      }
+   }
 }

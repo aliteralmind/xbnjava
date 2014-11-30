@@ -13,22 +13,22 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity;
-	import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
-	import  com.github.xbn.linefilter.entity.raw.RawPostFilterSelfActiveInOutRange;
-	import  com.github.xbn.linefilter.entity.OnOffAbort;
-	import  com.github.xbn.number.LengthInRange;
+   import  com.github.xbn.linefilter.entity.OutOfRangeResponseWhen;
+   import  com.github.xbn.linefilter.entity.raw.RawPostFilterSelfActiveInOutRange;
+   import  com.github.xbn.linefilter.entity.OnOffAbort;
+   import  com.github.xbn.number.LengthInRange;
 /**
-	<p>A {@code RawOnOffEntityFilter} that is dependant on the <i>being filtered</i> entity's {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#getFullyActiveCount() fully-active count} being in a range.</p>
+   <p>A {@code RawOnOffEntityFilter} that is dependant on the <i>being filtered</i> entity's {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#getFullyActiveCount() fully-active count} being in a range.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PostFilterSelfActiveInOutRange extends RawPostFilterSelfActiveInOutRange<String>  {
-	/**
-		<p>Create a new instance from a range and when-in setting.</p>
+   /**
+      <p>Create a new instance from a range and when-in setting.</p>
 
-	 **/
-	public PostFilterSelfActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
-		super(range, when_inRange, when_outOfRange, response, debug_ifNonNull);
-	}
+    **/
+   public PostFilterSelfActiveInOutRange(LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
+      super(range, when_inRange, when_outOfRange, response, debug_ifNonNull);
+   }
 }

@@ -13,58 +13,59 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number;
-	import  com.github.xbn.number.z.IntInRangeValidator_Fieldable;
-	import  com.github.xbn.number.IntInRange;
-	import  com.github.xbn.lang.RuleType;
+   import  com.github.xbn.number.z.IntInRangeValidator_Fieldable;
+   import  com.github.xbn.number.IntInRange;
+   import  com.github.xbn.lang.RuleType;
 /**
-	<p>{@code ValueValidator} for testing an integer's {@code null}-ness and that it is in an {@code IntInRange}.</p>
+   <p>{@code ValueValidator} for testing an integer's {@code null}-ness and that it is in an {@code IntInRange}.</p>
 
-	<A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.number.z.IntInRangeValidator_Cfg IntInRangeValidator_Cfg}</h3>
+   <A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.number.z.IntInRangeValidator_Cfg IntInRangeValidator_Cfg}</h3>
 
-	public IntInRangeValidator_CfgForNeeder<G,V,R> extraErrInfo(Object info)  {
-	public IntInRangeValidator_CfgForNeeder<G,V,R> range(G range)  {
-	public IntInRangeValidator_CfgForNeeder<G,V,R> nullOk(boolean b_b)  {
-	public IntInRangeValidator_CfgForNeeder<G,V,R> invert(boolean b_b)  {
-	public IntInRangeValidator_CfgForNeeder<G,V,R> unfiltered()  {
-	public IntInRangeValidator_CfgForNeeder<G,V,R> filter(ValidResultFilter filter_offIfNull)  {
-	public IntInRangeValidator_CfgForNeeder<G,V,R> debugTo(Appendable dest_ifNonNull)  {
-	public IntInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> extraErrInfo(Object info)  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> range(G range)  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> nullOk(boolean b_b)  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> invert(boolean b_b)  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> unfiltered()  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> filter(ValidResultFilter filter_offIfNull)  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> debugTo(Appendable dest_ifNonNull)  {
+   public IntInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
 
-	@see  IntInRange
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @see  IntInRange
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IntInRangeValidator extends NumberInRangeValidator<Integer>  {
 //constructors...START
-	public IntInRangeValidator(IntInRangeValidator_Fieldable<? extends IntInRange> fieldable)  {
-		super(fieldable);
-	}
-	protected IntInRangeValidator(RuleType type, IntInRangeValidator_Fieldable<? extends IntInRange> fieldable)  {
-		super(type, fieldable);
-	}
-	/**
-		<p>Create a new {@code IntInRangeValidator} as a duplicate of another.</p>
+   public IntInRangeValidator(IntInRangeValidator_Fieldable<? extends IntInRange> fieldable)  {
+      super(fieldable);
+   }
+   protected IntInRangeValidator(RuleType type, IntInRangeValidator_Fieldable<? extends IntInRange> fieldable)  {
+      super(type, fieldable);
+   }
+   /**
+      <p>Create a new {@code IntInRangeValidator} as a duplicate of another.</p>
 
-		<p>Equal to
-		<br/> &nbsp; &nbsp; {@link NumberInRangeValidator#NumberInRangeValidator(NumberInRangeValidator) super}{@code (to_copy)}</p>
+      <p>Equal to
+      <br/> &nbsp; &nbsp; {@link NumberInRangeValidator#NumberInRangeValidator(NumberInRangeValidator) super}{@code (to_copy)}</p>
 
-		@param  to_copy  May not be {@code null}.
-		@see  #getObjectCopy()
-		@see  #IntInRangeValidator(RuleType, IntInRangeValidator_Fieldable) this(rti,viir_f)
-	 **/
-	public IntInRangeValidator(IntInRangeValidator to_copy)  {
-		super(to_copy);
-	}
+      @param  to_copy  May not be {@code null}.
+      @see  #getObjectCopy()
+      @see  #IntInRangeValidator(RuleType, IntInRangeValidator_Fieldable) this(rti,viir_f)
+    **/
+   public IntInRangeValidator(IntInRangeValidator to_copy)  {
+      super(to_copy);
+   }
 //constructors...END
 //other...START
-	public IntInRange getRange()  {
-		return  (IntInRange)super.getRange();
-	}
-	/**
-		@return  <code>(new {@link #IntInRangeValidator(IntInRangeValidator) IntInRangeValidator}(this))</code>
-	 **/
-	public IntInRangeValidator getObjectCopy()  {
-		return  (new IntInRangeValidator(this));
-	}
+   public IntInRange getRange()  {
+      return  (IntInRange)super.getRange();
+   }
+   /**
+    * <p>Get a duplicate of this object.</p>
+      @return  <code>(new {@link #IntInRangeValidator(IntInRangeValidator) IntInRangeValidator}(this))</code>
+    **/
+   public IntInRangeValidator getObjectCopy()  {
+      return  (new IntInRangeValidator(this));
+   }
 //other...END
 }

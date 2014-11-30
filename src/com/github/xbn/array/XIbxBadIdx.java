@@ -13,52 +13,52 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array;
-	import  com.github.xbn.text.StringWithNullDefault;
-	import  com.github.xbn.lang.IllegalArgumentStateException;
-	import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.text.StringWithNullDefault;
+   import  com.github.xbn.lang.IllegalArgumentStateException;
+   import  com.github.xbn.lang.CrashIfObject;
 /**
-	<p>Data related to an {@code XbnIndexOutOfBoundsException} when a single <i>index</i> is bad.</p>
+   <p>Data related to an {@code XbnIndexOutOfBoundsException} when a single <i>index</i> is bad.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class XIbxBadIdx extends XIbxData  {
-	private int    iBadIdx   = -1  ;
-	private String sBadIdxNm = null;
-	public XIbxBadIdx(int index)  {
-		this(index, null);
-	}
-	public XIbxBadIdx(int index, String idx_name)  {
-		super();
-		iBadIdx   = index;
-		sBadIdxNm = idx_name;
-	}
-	public int getBadIndex()  {
-		return  iBadIdx;
-	}
-	public String getBadIndexName()  {
-		return  sBadIdxNm;
-	}
-	public void ciNOTBadForAbsBounds_forCfgBuild()  {
-		XIbxBadIdx.ciNOTBadForAbsBounds_forCfgBuild(this);
-	}
-	public static final void ciNOTBadForAbsBounds_forCfgBuild(XIbxBadIdx bad_idx)  {
-		try  {
-			if(bad_idx.getBadIndex() >= bad_idx.getAbsMin()  &&
-					bad_idx.getBadIndex() < bad_idx.getAbsMaxX())  {
-				throw  new IllegalArgumentStateException("The 'bad' index is not bad! getBadIndex()=" + bad_idx.getBadIndex() + ", getAbsMin()=" + bad_idx.getAbsMin() + ", getAbsMaxX()=" + bad_idx.getAbsMaxX());
-			}
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(bad_idx, "bad_idx", null, rx);
-		}
-	}
-	public String toString()  {
-		return  appendToString(new StringBuilder()).toString();
-	}
-	public StringBuilder appendToString(StringBuilder to_appendTo)  {
-		super.appendToString(to_appendTo).append(", ");
-		StringWithNullDefault.append(to_appendTo, getBadIndexName(), "[bad-index]");
+   private int    iBadIdx   = -1  ;
+   private String sBadIdxNm = null;
+   public XIbxBadIdx(int index)  {
+      this(index, null);
+   }
+   public XIbxBadIdx(int index, String idx_name)  {
+      super();
+      iBadIdx   = index;
+      sBadIdxNm = idx_name;
+   }
+   public int getBadIndex()  {
+      return  iBadIdx;
+   }
+   public String getBadIndexName()  {
+      return  sBadIdxNm;
+   }
+   public void ciNOTBadForAbsBounds_forCfgBuild()  {
+      XIbxBadIdx.ciNOTBadForAbsBounds_forCfgBuild(this);
+   }
+   public static final void ciNOTBadForAbsBounds_forCfgBuild(XIbxBadIdx bad_idx)  {
+      try  {
+         if(bad_idx.getBadIndex() >= bad_idx.getAbsMin()  &&
+               bad_idx.getBadIndex() < bad_idx.getAbsMaxX())  {
+            throw  new IllegalArgumentStateException("The 'bad' index is not bad! getBadIndex()=" + bad_idx.getBadIndex() + ", getAbsMin()=" + bad_idx.getAbsMin() + ", getAbsMaxX()=" + bad_idx.getAbsMaxX());
+         }
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(bad_idx, "bad_idx", null, rx);
+      }
+   }
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      super.appendToString(to_appendTo).append(", ");
+      StringWithNullDefault.append(to_appendTo, getBadIndexName(), "[bad-index]");
 
-		return  to_appendTo.append("=").append(getBadIndex());
-	}
+      return  to_appendTo.append("=").append(getBadIndex());
+   }
 }

@@ -19,32 +19,32 @@ package  com.github.xbn.number;
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public enum BoundSide {
-	/**
-	 * <p>The minimum bound side.</p>
-	 * @see  #MAX
-	 * @see  #isMin()
-	 */
-	MIN,
-	/**
-	 * <p>The maximum bound-side.</p>
-	 * @see  #MIN
-	 * @see  #isMax()
-	 */
-	MAX;
-	/**
-	 * <p>Is this {@code BoundSide} equal to {@code MIN}?.</p>
-	 * @return  <code>this == {@link #MIN}</code>
-	 * @see  #isMax()
-	 */
-	public final boolean isMin()  {
-		return  this == MIN;
-	}
-	/**
-	 * <p>Is this {@code BoundSide} equal to {@code MAX}?.</p>
-	 * @return  <code>this == {@link #MAX}</code>
-	 * @see  #isMin()
-	 */
-	public final boolean isMax()  {
-		return  this == MAX;
-	}
+   /**
+    * <p>The minimum bound side.</p>
+    * @see  #MAX
+    * @see  #isMin()
+    */
+   MIN,
+   /**
+    * <p>The maximum bound-side.</p>
+    * @see  #MIN
+    * @see  #isMax()
+    */
+   MAX;
+   /**
+    * <p>Is this {@code BoundSide} equal to {@code MIN}?.</p>
+    * @return  <code>this == {@link #MIN}</code>
+    * @see  #isMax()
+    */
+   public final boolean isMin()  {
+      return  this == MIN;
+   }
+   /**
+    * <p>Is this {@code BoundSide} equal to {@code MAX}?.</p>
+    * @return  <code>this == {@link #MAX}</code>
+    * @see  #isMin()
+    */
+   public final boolean isMax()  {
+      return  this == MAX;
+   }
 };

@@ -13,18 +13,18 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util.non_xbn;
-	import  java.io.*;
-	import  java.io.IOException;
-	import  java.util.zip.ZipEntry;
-	import  java.util.zip.ZipInputStream;
+   import  java.io.*;
+   import  java.io.IOException;
+   import  java.util.zip.ZipEntry;
+   import  java.util.zip.ZipInputStream;
 /**
-	<p>List all items in a zip file. From (viewed 4/26/2012):
-	<br/> &nbsp; &nbsp; <code><a href="http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html">http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html</a></code></p>
+   <p>List all items in a zip file. From (viewed 4/26/2012):
+   <br/> &nbsp; &nbsp; <code><a href="http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html">http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html</a></code></p>
 
-	<code>{@code java com.github.xbn.examples.util.non_xbn.ZipEntryDemo xbnjava_20120425152952_8hours.zip}</code>
+   <code>{@code java com.github.xbn.examples.util.non_xbn.ZipEntryDemo xbnjava_20120425152952_8hours.zip}</code>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ZipEntryDemo {
   public static void main(String[] args) throws IOException {

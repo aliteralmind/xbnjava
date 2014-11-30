@@ -13,26 +13,26 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util;
-	import  com.github.xbn.number.NumberUtil;
+   import  com.github.xbn.number.NumberUtil;
 /**
-	<p>Get a random boolean.</p>
+   <p>Get a random boolean.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BooleanUtil  {
-	private BooleanUtil()  {
-		throw  new IllegalStateException("Do not instantiate");
-	}
-	/**
-		<p>Get a random boolean.</p>
+   private BooleanUtil()  {
+      throw  new IllegalStateException("Do not instantiate");
+   }
+   /**
+      <p>Get a random boolean.</p>
 
-		@return  <code>({@link com.github.xbn.number.NumberUtil#getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive}(0, 1) == 1)</code>
-	 **/
-	public static final boolean getRandomBoolean()  {
-		return  (NumberUtil.getRandomIntBetweenInclusive(0, 1) == 1);
-	}
-	public static final String toUpperCase(boolean b)  {
-		return  new Boolean(b).toString().toUpperCase();
-	}
+      @return  <code>({@link com.github.xbn.number.NumberUtil#getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive}(0, 1) == 1)</code>
+    **/
+   public static final boolean getRandomBoolean()  {
+      return  (NumberUtil.getRandomIntBetweenInclusive(0, 1) == 1);
+   }
+   public static final String toUpperCase(boolean b)  {
+      return  new Boolean(b).toString().toUpperCase();
+   }
 }

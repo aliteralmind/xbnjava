@@ -16,31 +16,31 @@ package  com.github.xbn.lang;
 /**
    <p>Abstract implementation of <code>Expirable</code>. For classes needing to implement <code>Expirable</code>, that cannot extend <code>AbstractExpirable</code>, see <code><a href="ExpirableComposer.html">ExpirableComposer</a></code>.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class AbstractExpirable implements Expirable  {
    private final ExpirableComposer ec;
    public AbstractExpirable(boolean is_expirable)  {
-		ec = new ExpirableComposer(is_expirable);
-	}
-	public AbstractExpirable(Expirable xpr_bl)  {
-		ec = new ExpirableComposer(xpr_bl);
-	}
-	public boolean doesExpire()  {
-		return  ec.doesExpire();
-	}
-	protected void declareExpired()  {
-		ec.declareExpired_4prot();
-	}
-	public boolean isExpired()  {
-		return  ec.isExpired();
-	}
-	public String toString()  {
-		return  appendToString(new StringBuilder()).toString();
-	}
-	public StringBuilder appendToString(StringBuilder to_appendTo)  {
-		return  ec.appendToString(to_appendTo);
-	}
+      ec = new ExpirableComposer(is_expirable);
+   }
+   public AbstractExpirable(Expirable xpr_bl)  {
+      ec = new ExpirableComposer(xpr_bl);
+   }
+   public boolean doesExpire()  {
+      return  ec.doesExpire();
+   }
+   protected void declareExpired()  {
+      ec.declareExpired_4prot();
+   }
+   public boolean isExpired()  {
+      return  ec.isExpired();
+   }
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      return  ec.appendToString(to_appendTo);
+   }
 }

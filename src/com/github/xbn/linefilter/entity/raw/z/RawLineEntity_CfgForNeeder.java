@@ -13,92 +13,92 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw.z;
-	import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
-	import  com.github.xbn.linefilter.entity.EntityType;
-	import  com.github.xbn.neederneedable.AbstractNeedable;
-	import  com.github.xbn.neederneedable.Needer;
-	import  com.github.xbn.linefilter.entity.raw.RawLineEntity;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
+   import  com.github.xbn.linefilter.entity.EntityType;
+   import  com.github.xbn.neederneedable.AbstractNeedable;
+   import  com.github.xbn.neederneedable.Needer;
+   import  com.github.xbn.linefilter.entity.raw.RawLineEntity;
 /**
-	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.linefilter.entity.raw.RawLineEntity RawLineEntity}.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.linefilter.entity.raw.RawLineEntity RawLineEntity}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R extends Needer> extends AbstractNeedable<M,R> implements RawLineEntity_Fieldable<L>   {
-	public String       name           ;
-	public Appendable   dbgApblLineNums;
-	public EntityType   type           ;
-	public RawOnOffEntityFilter<L> filterIfNonNull;
-	public boolean      isRqd          ;
+   public String       name           ;
+   public Appendable   dbgApblLineNums;
+   public EntityType   type           ;
+   public RawOnOffEntityFilter<L> filterIfNonNull;
+   public boolean      isRqd          ;
 //constructors...START
-	/**
-		<p>Create a new instance, for the root entity only.</p>
+   /**
+      <p>Create a new instance, for the root entity only.</p>
 
-		<p>Equal to
-		<br/> &nbsp; &nbsp; <code> <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, java.lang.String)">this</a>(needer, &quot;root&quot;)</code></p>
-	 **/
-	public RawLineEntity_CfgForNeeder(R needer, EntityType type)  {
-		this(needer, type, "root");
-	}
-	/**
-		<p>Create a new instance for a sub-mode.</p>
+      <p>Equal to
+      <br/> &nbsp; &nbsp; <code> <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, java.lang.String)">this</a>(needer, &quot;root&quot;)</code></p>
+    **/
+   public RawLineEntity_CfgForNeeder(R needer, EntityType type)  {
+      this(needer, type, "root");
+   }
+   /**
+      <p>Create a new instance for a sub-mode.</p>
 
-		<p>This<ol>
-			<li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/ValueValidator_CfgForNeeder.html#ValueValidator_CfgForNeeder(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
-			<li>Sets {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getName() getName}{@code ()}* to {@code name}.</li>
-			<li>Calls {@link #resetRLECFN() resetRLECFN}{@code ()}</li>
-		</ol></p>
+      <p>This<ol>
+         <li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/ValueValidator_CfgForNeeder.html#ValueValidator_CfgForNeeder(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
+         <li>Sets {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getName() getName}{@code ()}* to {@code name}.</li>
+         <li>Calls {@link #resetRLECFN() resetRLECFN}{@code ()}</li>
+      </ol></p>
 
-		@see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, int, java.lang.String)">this</a>(R)</code>
-	 **/
-	public RawLineEntity_CfgForNeeder(R needer, EntityType type, String name)  {
-		super(true, true, needer);
-		this.name = name;
-		this.type = type;
-		resetRLECFN();
-	}
-	/**
-		<p>Reverts configuration so a line never matches.</p>
+      @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, int, java.lang.String)">this</a>(R)</code>
+    **/
+   public RawLineEntity_CfgForNeeder(R needer, EntityType type, String name)  {
+      super(true, true, needer);
+      this.name = name;
+      this.type = type;
+      resetRLECFN();
+   }
+   /**
+      <p>Reverts configuration so a line never matches.</p>
 
-		<p>Equal to {@link #resetRLECFN() resetRLECFN}{@code ()}</p>
+      <p>Equal to {@link #resetRLECFN() resetRLECFN}{@code ()}</p>
 
-		@return  <i>{@code this}</i>
-	 **/
-	public RawLineEntity_CfgForNeeder<L,M,R> reset()  {
-		resetRLECFN();
-		return  this;
-	}
-	/**
-		<p>Reset configuration specific to this {@code RawLineEntity_CfgForNeeder}.</p>
+      @return  <i>{@code this}</i>
+    **/
+   public RawLineEntity_CfgForNeeder<L,M,R> reset()  {
+      resetRLECFN();
+      return  this;
+   }
+   /**
+      <p>Reset configuration specific to this {@code RawLineEntity_CfgForNeeder}.</p>
 
-		<p>This<ul>
-			<li>Sets </li>
-		</ul></p>
-	 **/
-	protected final void resetRLECFN()  {
-		//Do not reset the name.
-		dbgApblLineNums = null;
-		filterIfNonNull = null;
-		isRqd = false;
-	}
-	public String toString()  {
-		return  super.toString() + ", getName()=" + getName() + ", getDebugApblLineNumbers()=" + getDebugApblLineNumbers();
-	}
+      <p>This<ul>
+         <li>Sets </li>
+      </ul></p>
+    **/
+   protected final void resetRLECFN()  {
+      //Do not reset the name.
+      dbgApblLineNums = null;
+      filterIfNonNull = null;
+      isRqd = false;
+   }
+   public String toString()  {
+      return  super.toString() + ", getName()=" + getName() + ", getDebugApblLineNumbers()=" + getDebugApblLineNumbers();
+   }
 //getters...START
-	public String getName()  {
-		return  name;
-	}
-	public Appendable getDebugApblLineNumbers()  {
-		return  dbgApblLineNums;
-	}
-	public EntityType getType()  {
-		return  type;
-	}
-	public RawOnOffEntityFilter<L> getFilterIfNonNull()  {
-		return  filterIfNonNull;
-	}
-	public boolean isRequired()  {
-		return  isRqd;
-	}
+   public String getName()  {
+      return  name;
+   }
+   public Appendable getDebugApblLineNumbers()  {
+      return  dbgApblLineNums;
+   }
+   public EntityType getType()  {
+      return  type;
+   }
+   public RawOnOffEntityFilter<L> getFilterIfNonNull()  {
+      return  filterIfNonNull;
+   }
+   public boolean isRequired()  {
+      return  isRqd;
+   }
 //getters...END
 }

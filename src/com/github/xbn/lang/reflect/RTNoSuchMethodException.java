@@ -14,25 +14,25 @@
 \*license*/
 package  com.github.xbn.lang.reflect;
 /**
-	<p>A runtime replacement for {@link java.lang.NoSuchMethodException}.</p>
+   <p>A runtime replacement for {@link java.lang.NoSuchMethodException}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RTNoSuchMethodException extends IllegalArgumentException  {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3118690392705332312L;
-	public RTNoSuchMethodException(String message)  {
-		super(message);
-	}
-	public RTNoSuchMethodException()  {
-	}
-	public RTNoSuchMethodException(String message, Throwable cause)  {
-		super(message, cause);
-	}
-	public RTNoSuchMethodException(Throwable cause)  {
-		super(cause);
-	}
+   /**
+    * 
+    */
+   private static final long serialVersionUID = 3118690392705332312L;
+   public RTNoSuchMethodException(String message)  {
+      super(message);
+   }
+   public RTNoSuchMethodException()  {
+   }
+   public RTNoSuchMethodException(String message, Throwable cause)  {
+      super(message, cause);
+   }
+   public RTNoSuchMethodException(Throwable cause)  {
+      super(cause);
+   }
 }

@@ -14,50 +14,50 @@
 \*license*/
 package  com.github.xbn.testdev;
 /**
-	<p>Should the example code's output, when {@linkplain com.github.xbn.testdev.VerifyApplicationOutput#assertWithParameters(DisplayOutputToConsole, String, Class, String[], String...) unit tested}, also be displayed to the console?.</p>
+   <p>Should the example code's output, when {@linkplain com.github.xbn.testdev.VerifyApplicationOutput#assertWithParameters(DisplayOutputToConsole, String, Class, String[], String...) unit tested}, also be displayed to the console?.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
+   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
  **/
 public enum DisplayOutputToConsole  {
-	/**
-		<p>YYY.</p>
+   /**
+      <p>YYY.</p>
 
-		@see  #NO
-		@see  #isYes()
-	 **/
-	YES,
-	/**
-		<p>YYY.</p>
+      @see  #NO
+      @see  #isYes()
+    **/
+   YES,
+   /**
+      <p>YYY.</p>
 
-		@see  #YES
-		@see  #isNo()
-	 **/
-	NO;
-	/**
-		<p>Is this {@code DisplayOutputToConsole} equal to {@code YES}?.</p>
+      @see  #YES
+      @see  #isNo()
+    **/
+   NO;
+   /**
+      <p>Is this {@code DisplayOutputToConsole} equal to {@code YES}?.</p>
 
-		@return  <code>this == {@link #YES}</code>
+      @return  <code>this == {@link #YES}</code>
 
-		@see  #isNo()
-	 **/
-	public final boolean isYes()  {
-		return  this == YES;
-	}
-	/**
-		<p>Is this {@code DisplayOutputToConsole} equal to {@code NO}?.</p>
+      @see  #isNo()
+    **/
+   public final boolean isYes()  {
+      return  this == YES;
+   }
+   /**
+      <p>Is this {@code DisplayOutputToConsole} equal to {@code NO}?.</p>
 
-		@return  <code>this == {@link #NO}</code>
-		@see  #isYes()
-	 **/
-	public final boolean isNo()  {
-		return  this == NO;
-	}
-	/**
-		<p>Return {@code DisplayOutputToConsole.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
+      @return  <code>this == {@link #NO}</code>
+      @see  #isYes()
+    **/
+   public final boolean isNo()  {
+      return  this == NO;
+   }
+   /**
+      <p>Return {@code DisplayOutputToConsole.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
 
-		@return  <code>(flag ? {@link #YES} : {@link #NO})</code>
-	 **/
-	public static final DisplayOutputToConsole getForBoolean(boolean flag)  {
-		return  (flag ? YES : NO);
-	}
+      @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
+    **/
+   public static final DisplayOutputToConsole getForBoolean(boolean flag)  {
+      return  (flag ? YES : NO);
+   }
 };

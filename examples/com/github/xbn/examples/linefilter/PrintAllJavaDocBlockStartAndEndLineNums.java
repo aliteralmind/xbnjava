@@ -13,67 +13,67 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-	import  com.github.xbn.linefilter.entity.KeepMatched;
-	import  com.github.xbn.linefilter.entity.EntityRequired;
-	import  com.github.xbn.linefilter.FilteredLineIterator;
-	import  com.github.xbn.linefilter.KeepUnmatched;
-	import  com.github.xbn.linefilter.Returns;
-	import  com.github.xbn.linefilter.entity.BlockEntity;
-	import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
-	import  com.github.xbn.linefilter.entity.NewStealthBlockEntityFor;
-	import  com.github.xbn.linefilter.entity.StealthBlockEntity;
-	import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
-	import  com.github.xbn.util.IncludeJavaDoc;
-	import  java.util.Iterator;
+   import  com.github.xbn.linefilter.entity.KeepMatched;
+   import  com.github.xbn.linefilter.entity.EntityRequired;
+   import  com.github.xbn.linefilter.FilteredLineIterator;
+   import  com.github.xbn.linefilter.KeepUnmatched;
+   import  com.github.xbn.linefilter.Returns;
+   import  com.github.xbn.linefilter.entity.BlockEntity;
+   import  com.github.xbn.linefilter.entity.NewBlockEntityFor;
+   import  com.github.xbn.linefilter.entity.NewStealthBlockEntityFor;
+   import  com.github.xbn.linefilter.entity.StealthBlockEntity;
+   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
+   import  com.github.xbn.util.IncludeJavaDoc;
+   import  java.util.Iterator;
 /**
-	<p>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to manually print the start and end line numbers of all JavaDoc blocks in a source code.</p>
+   <p>Demonstrates using {@link com.github.xbn.linefilter.FilteredLineIterator} to manually print the start and end line numbers of all JavaDoc blocks in a source code.</p>
 
-	<p>{@code java com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</p>
+   <p>{@code java com.github.xbn.examples.linefilter.PrintAllJavaDocBlockStartAndEndLineNums examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocks_input.txt}</p>
 
-	@see  <code><a href="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_jd_block_lines">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_jd_block_lines</a></code>
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @see  <code><a href="{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_jd_block_lines">{@docRoot}/com/github/xbn/linefilter/package-summary.html#xmpl_jd_block_lines</a></code>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PrintAllJavaDocBlockStartAndEndLineNums  {
-	public static final void main(String[] cmd_lineParams)  {
-		//Example setup
-			Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
-				cmd_lineParams, 0,
-				null);     //debugPath
+   public static final void main(String[] cmd_lineParams)  {
+      //Example setup
+         Iterator<String> rawInputLineItr = GetFromCommandLineAtIndex.fileLineIterator(
+            cmd_lineParams, 0,
+            null);     //debugPath
 
-		//Example proper:
+      //Example proper:
 
-		StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.javaComment(
-			"comment", KeepMatched.YES, EntityRequired.YES, IncludeJavaDoc.NO,
-				null,      //dbgStart (on:System.out, off:null)
-				null,      //dbgEnd
-			null,         //on-off filter
-				null);     //dbgLineNums
+      StealthBlockEntity javaMlcStealth = NewStealthBlockEntityFor.javaComment(
+         "comment", KeepMatched.YES, EntityRequired.YES, IncludeJavaDoc.NO,
+            null,      //dbgStart (on:System.out, off:null)
+            null,      //dbgEnd
+         null,         //on-off filter
+            null);     //dbgLineNums
 
-		BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
-			"doccomment", EntityRequired.YES,
-				null,      //dbgStart
-				null,      //dbgEnd
-			null,         //on-off filter
-				null).     //dbgLineNums
-			keepAll().build();
+      BlockEntity javaDocBlock = NewBlockEntityFor.javaDocComment_Cfg(
+         "doccomment", EntityRequired.YES,
+            null,      //dbgStart
+            null,      //dbgEnd
+         null,         //on-off filter
+            null).     //dbgLineNums
+         keepAll().build();
 
-		FilteredLineIterator filteredItr = new FilteredLineIterator(
-			rawInputLineItr, Returns.KEPT, KeepUnmatched.NO,
-			null, null,    //dbgEveryLine and its line-range
-			javaMlcStealth, javaDocBlock);
+      FilteredLineIterator filteredItr = new FilteredLineIterator(
+         rawInputLineItr, Returns.KEPT, KeepUnmatched.NO,
+         null, null,    //dbgEveryLine and its line-range
+         javaMlcStealth, javaDocBlock);
 
-		while(filteredItr.hasNext())  {
-			filteredItr.next();
+      while(filteredItr.hasNext())  {
+         filteredItr.next();
 
-			if(filteredItr.getActiveChildType().isBlock()  &&
-					filteredItr.getActiveChildBlock().isStartLine())  {
-				System.out.print("Block: " + filteredItr.getNextLineNum() + "..");
+         if(filteredItr.getActiveChildType().isBlock()  &&
+               filteredItr.getActiveChildBlock().isStartLine())  {
+            System.out.print("Block: " + filteredItr.getNextLineNum() + "..");
 
-			}  else if(filteredItr.getActiveChildType().isBlock()  &&
-					filteredItr.getActiveChildBlock().isEndLine())  {
-				System.out.println(filteredItr.getNextLineNum());
-			}
-		}  //End snippet
-	}
+         }  else if(filteredItr.getActiveChildType().isBlock()  &&
+               filteredItr.getActiveChildBlock().isEndLine())  {
+            System.out.println(filteredItr.getNextLineNum());
+         }
+      }  //End snippet
+   }
 }

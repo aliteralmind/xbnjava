@@ -14,27 +14,27 @@
 \*license*/
 package  com.github.xbn.neederneedable;
 /**
-	<p>A {@code Needer} that needs nothing--this is required when using {@code Needable}-s directly. See {@link com.github.xbn.neederneedable.Needable#isAvailableToNeeder() isAvailableToNeeder}{@code ()}.</p>
+   <p>A {@code Needer} that needs nothing--this is required when using {@code Needable}-s directly. See {@link com.github.xbn.neederneedable.Needable#isAvailableToNeeder() isAvailableToNeeder}{@code ()}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class DummyForNoNeeder extends AbstractNeeder  {
-	/**
-		<p>Create a new instance that does nothing.</p>
-	 **/
-	public DummyForNoNeeder()  {
-	}
-	/**
-		<p>Required by interface, but never called.</p>
-	 **/
-	public final void startConfig()  {
-		startConfig(void.class);
-	}
+   /**
+      <p>Create a new instance that does nothing.</p>
+    **/
+   public DummyForNoNeeder()  {
+   }
+   /**
+      <p>Required by interface, but never called.</p>
+    **/
+   public final void startConfig()  {
+      startConfig(void.class);
+   }
 
-	/**
-		<p>Required by interface, but never called.</p>
-	 **/
-	public void neeadableSetsNeeded(Object ignored)  {
-	}
+   /**
+      <p>Required by interface, but never called.</p>
+    **/
+   public void neeadableSetsNeeded(Object ignored)  {
+   }
 }

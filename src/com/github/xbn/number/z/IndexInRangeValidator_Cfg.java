@@ -13,17 +13,17 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.number.z;
-	import  com.github.xbn.number.IndexInRange;
-	import  com.github.xbn.number.IndexInRangeValidator;
-	import  com.github.xbn.neederneedable.DummyForNoNeeder;
+   import  com.github.xbn.number.IndexInRange;
+   import  com.github.xbn.number.IndexInRangeValidator;
+   import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.number.IndexInRangeValidator IndexInRangeValidator}.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.number.IndexInRangeValidator IndexInRangeValidator}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IndexInRangeValidator_Cfg extends IndexInRangeValidator_CfgForNeeder<IndexInRange,IndexInRangeValidator,DummyForNoNeeder>  {
-	public IndexInRangeValidator_Cfg()  {
-		super(false, true, null);
-	}
+   public IndexInRangeValidator_Cfg()  {
+      super(false, true, null);
+   }
 }

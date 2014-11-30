@@ -13,82 +13,82 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list;
-	import  com.github.xbn.util.EnumUtil;
+   import  com.github.xbn.util.EnumUtil;
 /**
-	<p>Should the map's list values be sorted?.</p>
+   <p>Should the map's list values be sorted?.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
+   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
  **/
 public enum SortListValues  {
-	/**
-		<p>YYY.</p>
+   /**
+      <p>YYY.</p>
 
-		@see  #DUPLICATE
-		@see  #UNSORTED
-		@see  #doSortOriginal()
-	 **/
-	ORIGINAL,
-	/**
-		<p>YYY.</p>
+      @see  #DUPLICATE
+      @see  #UNSORTED
+      @see  #doSortOriginal()
+    **/
+   ORIGINAL,
+   /**
+      <p>YYY.</p>
 
-		@see  #ORIGINAL
-		@see  #doSortDuplicate()
-	 **/
-	DUPLICATE,
-	/**
-		<p>YYY.</p>
+      @see  #ORIGINAL
+      @see  #doSortDuplicate()
+    **/
+   DUPLICATE,
+   /**
+      <p>YYY.</p>
 
-		@see  #ORIGINAL
-		@see  #doNotSort()
-	 **/
-	UNSORTED;
-	/**
-		<p>Is this {@code SortListValues} equal to {@code ORIGINAL}?.</p>
+      @see  #ORIGINAL
+      @see  #doNotSort()
+    **/
+   UNSORTED;
+   /**
+      <p>Is this {@code SortListValues} equal to {@code ORIGINAL}?.</p>
 
-		@return  <code>this == {@link #ORIGINAL}</code>
+      @return  <code>this == {@link #ORIGINAL}</code>
 
-		@see  #doSortDuplicate()
-		@see  #doNotSort()
-	 **/
-	public final boolean doSortOriginal()  {
-		return  this == ORIGINAL;
-	}
-	/**
-		<p>Is this {@code SortListValues} equal to {@code DUPLICATE}?.</p>
+      @see  #doSortDuplicate()
+      @see  #doNotSort()
+    **/
+   public final boolean doSortOriginal()  {
+      return  this == ORIGINAL;
+   }
+   /**
+      <p>Is this {@code SortListValues} equal to {@code DUPLICATE}?.</p>
 
-		@return  <code>this == {@link #DUPLICATE}</code>
-		@see  #doSortOriginal()
-	 **/
-	public final boolean doSortDuplicate()  {
-		return  this == DUPLICATE;
-	}
-	/**
-		<p>Is this {@code SortListValues} equal to {@code UNSORTED}?.</p>
+      @return  <code>this == {@link #DUPLICATE}</code>
+      @see  #doSortOriginal()
+    **/
+   public final boolean doSortDuplicate()  {
+      return  this == DUPLICATE;
+   }
+   /**
+      <p>Is this {@code SortListValues} equal to {@code UNSORTED}?.</p>
 
-		@return  <code>this == {@link #UNSORTED}</code>
-		@see  #doSortOriginal()
-	 **/
-	public final boolean doNotSort()  {
-		return  this == UNSORTED;
-	}
-	/**
-		<p>If an <code>SortListValues</code> is not a required value, crash.</p>
+      @return  <code>this == {@link #UNSORTED}</code>
+      @see  #doSortOriginal()
+    **/
+   public final boolean doNotSort()  {
+      return  this == UNSORTED;
+   }
+   /**
+      <p>If an <code>SortListValues</code> is not a required value, crash.</p>
 
-		<p>Equal to
-		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-		@see  #crashIfForbiddenValue(SortListValues, String, Object) crashIfForbiddenValue(ert,s,o)
-	 **/
-	public void crashIfNotRequiredValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
-		EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
-	}
-	/**
-		<p>If an <code>SortListValues</code> is a forbidden value, crash.</p>
+      <p>Equal to
+      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+      @see  #crashIfForbiddenValue(SortListValues, String, Object) crashIfForbiddenValue(ert,s,o)
+    **/
+   public void crashIfNotRequiredValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
+      EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
+   }
+   /**
+      <p>If an <code>SortListValues</code> is a forbidden value, crash.</p>
 
-		<p>Equal to
-		<br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-		@see  #crashIfNotRequiredValue(SortListValues, String, Object) crashIfNotRequiredValue(ert,s,o)
-	 **/
-	public void crashIfForbiddenValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
-		EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
-	}
+      <p>Equal to
+      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+      @see  #crashIfNotRequiredValue(SortListValues, String, Object) crashIfNotRequiredValue(ert,s,o)
+    **/
+   public void crashIfForbiddenValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
+      EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
+   }
 };

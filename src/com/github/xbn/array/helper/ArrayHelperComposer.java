@@ -13,78 +13,78 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.helper;
-	import  com.github.xbn.array.NullContainer;
-	import  com.github.xbn.lang.CrashIfObject;
-	import  com.github.xbn.array.ArrayUtil;
-	import  java.util.Iterator;
+   import  com.github.xbn.array.NullContainer;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.array.ArrayUtil;
+   import  java.util.Iterator;
 /**
-	<p>For classes that need to implement {@code ArrayHelper}, that cannot extend {@code AbstractArrayHelper}.</p>
+   <p>For classes that need to implement {@code ArrayHelper}, that cannot extend {@code AbstractArrayHelper}.</p>
 
-	@see  AbstractArrayHelper
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @see  AbstractArrayHelper
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ArrayHelperComposer<E> extends ArrayHelperBaseComposer<E>  {//implements ArrayHelper<E>  {
 //constructors...START
-	public ArrayHelperComposer(Class<E[]> cls_dotClassStatic)  {
-		super(cls_dotClassStatic);
-	}
+   public ArrayHelperComposer(Class<E[]> cls_dotClassStatic)  {
+      super(cls_dotClassStatic);
+   }
 //constructors...END
-	public Class<E[]> getStaticClass()  {
+   public Class<E[]> getStaticClass()  {
 
-		//The super-class is <?>, to conform to both primitive and
-		//non-primitive types. This classes constructor is <E[]>.
-		@SuppressWarnings("unchecked")
-		Class<E[]> clse = (Class<E[]>)super.getStaticClass();
+      //The super-class is <?>, to conform to both primitive and
+      //non-primitive types. This classes constructor is <E[]>.
+      @SuppressWarnings("unchecked")
+      Class<E[]> clse = (Class<E[]>)super.getStaticClass();
 
-		return  clse;
-	}
-	public Iterator<E> getIterator(E[] array, String array_name)  {
-		return  super.getIterator(array, array_name);
-	}
-	public final int getLength(E[] array, String array_name)  {
-		try  {
-			return  array.length;
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(array, array_name, null, rx);
-		}
-	}
-	@SuppressWarnings("unchecked")
-	public final int getLength(Object obj_thatIsAnArray, String array_name)  {
-		try  {
-			return  getLength((E[])obj_thatIsAnArray, array_name);
-		}  catch(ClassCastException ccx)  {
-			throw  new ClassCastException("Attempting getLength((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad): " + ccx);
-		}
-	}
-	public final Object[] getObjectArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
-		return  ArrayUtil.getObjectArrayOrNull(array,  null, null_ok, cntrName_forNullBad);
-	}
-	public final String[] getStringArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
-		return  ArrayUtil.getStringArrayOrNull(array, null_ok, cntrName_forNullBad);
-	}
-	@SuppressWarnings("unchecked")
-	public final Object[] getObjectArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
-		try  {
-			return  getObjectArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad);
-		}  catch(ClassCastException ccx)  {
-			throw  new ClassCastException("Attempting getObjectArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad): " + ccx);
-		}
-	}
-	@SuppressWarnings("unchecked")
-	public final String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
-		try  {
-			return  getStringArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad);
-		}  catch(ClassCastException ccx)  {
-			throw  new ClassCastException("Attempting getStringArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad): " + ccx);
-		}
-	}
+      return  clse;
+   }
+   public Iterator<E> getIterator(E[] array, String array_name)  {
+      return  super.getIterator(array, array_name);
+   }
+   public final int getLength(E[] array, String array_name)  {
+      try  {
+         return  array.length;
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(array, array_name, null, rx);
+      }
+   }
+   @SuppressWarnings("unchecked")
+   public final int getLength(Object obj_thatIsAnArray, String array_name)  {
+      try  {
+         return  getLength((E[])obj_thatIsAnArray, array_name);
+      }  catch(ClassCastException ccx)  {
+         throw  new ClassCastException("Attempting getLength((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad): " + ccx);
+      }
+   }
+   public final Object[] getObjectArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
+      return  ArrayUtil.getObjectArrayOrNull(array,  null, null_ok, cntrName_forNullBad);
+   }
+   public final String[] getStringArrayOrNull(E[] array, NullContainer null_ok, String cntrName_forNullBad)  {
+      return  ArrayUtil.getStringArrayOrNull(array, null_ok, cntrName_forNullBad);
+   }
+   @SuppressWarnings("unchecked")
+   public final Object[] getObjectArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
+      try  {
+         return  getObjectArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad);
+      }  catch(ClassCastException ccx)  {
+         throw  new ClassCastException("Attempting getObjectArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad): " + ccx);
+      }
+   }
+   @SuppressWarnings("unchecked")
+   public final String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad)  {
+      try  {
+         return  getStringArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad);
+      }  catch(ClassCastException ccx)  {
+         throw  new ClassCastException("Attempting getStringArrayOrNull((E[])obj_thatIsAnArray, null_ok, cntrName_forNullBad): " + ccx);
+      }
+   }
 /*stub functions for implements compile...START
  	public final E[] getInitialized(int length)  {
-		return  null;
-	}
+      return  null;
+   }
  	public final E[] getEmpty()  {
-		return  null;
-	}
+      return  null;
+   }
  stub functions for implements compile...END*/
 }

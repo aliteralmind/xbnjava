@@ -13,12 +13,12 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
-	import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.lang.CrashIfObject;
 /**
    <p>Should textual-case be ignored?.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum IgnoreCase  {
@@ -56,25 +56,25 @@ public enum IgnoreCase  {
       return  (this == NO);
    }
    public String toUpperCaseIfYes(String text, String text_varName)  {
-		try  {
-			return  (isYes() ? text.toUpperCase() : text);
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(text, text_varName, null, rx);
-		}
-	}
+      try  {
+         return  (isYes() ? text.toUpperCase() : text);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(text, text_varName, null, rx);
+      }
+   }
    public String toLowerCaseIfYes(String text, String text_varName)  {
-		try  {
-			return  (isYes() ? text.toLowerCase() : text);
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(text, text_varName, null, rx);
-		}
-	}
-	/**
-		<p>Return {@code IgnoreCase.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
+      try  {
+         return  (isYes() ? text.toLowerCase() : text);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(text, text_varName, null, rx);
+      }
+   }
+   /**
+      <p>Return {@code IgnoreCase.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
 
-		@return  <code>(b ? {@link #YES} : {@link #NO})</code>
-	 **/
-	public static final IgnoreCase getForBoolean(boolean b)  {
-		return  (b ? YES : NO);
-	}
+      @return  <code>(b ? {@link #YES} : {@link #NO})</code>
+    **/
+   public static final IgnoreCase getForBoolean(boolean b)  {
+      return  (b ? YES : NO);
+   }
 };

@@ -13,90 +13,90 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.lang.builder.finalv;
-	import  java.util.regex.Pattern;
+   import  java.util.regex.Pattern;
 /**
    <p>Information about a user -- <i>[builder: UserConfig_Cfg]</i></p>
 
    <p>Validation of all fields occurs in this classes constructor. However, each validation requirement is document only in the builder's setter functions.</p>
 
-	<p>{@code java com.github.xbn.examples.lang.builder.finalv.UserConfig}</p>
+   <p>{@code java com.github.xbn.examples.lang.builder.finalv.UserConfig}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class UserConfig  {
-	private final String sName    ;
-	private final int    iAge     ;
-	private final String sFavColor;
+   private final String sName    ;
+   private final int    iAge     ;
+   private final String sFavColor;
    /**
    	<p>Create a new instance. This sets and validates all fields.</p>
 
    	@param  fieldable  May not be {@code null}.
     **/
    public UserConfig(UserConfig_Fieldable fieldable)  {
-		//transfer
-			try  {
-				sName  = fieldable.getName();
-			}  catch(NullPointerException rx)  {
-				throw  new NullPointerException("fieldable");
-			}
-			iAge      = fieldable.getAge();
-			sFavColor = fieldable.getFavoriteColor();
+      //transfer
+         try  {
+            sName  = fieldable.getName();
+         }  catch(NullPointerException rx)  {
+            throw  new NullPointerException("fieldable");
+         }
+         iAge      = fieldable.getAge();
+         sFavColor = fieldable.getFavoriteColor();
 
-		//validate
-			try  {
-				if(!Pattern.compile("\\w+").matcher(sName).matches())  {
-					throw  new IllegalArgumentException("fieldable.getName() (\"" + sName + "\") may not be empty, and must contain only letters digits and underscores.");
-				}
-			}  catch(NullPointerException rx)  {
-				throw  new NullPointerException("fieldable.getName()");
-			}
-			if(iAge < 0)  {
-				throw  new IllegalArgumentException("fieldable.getAge() (" + iAge + ") is less than zero.");
-			}
-			try  {
-				if(!Pattern.compile("(?:red|blue|green|hot pink)").matcher(sFavColor).matches())  {
-					throw  new IllegalArgumentException("fieldable.getFavoriteColor() (\"" + fieldable.getFavoriteColor() + "\") is not red, blue, green, or hot pink.");
-				}
-			}  catch(NullPointerException rx)  {
-				throw  new NullPointerException("fieldable.getFavoriteColor()");
-			}
-	}
-	//getters...START
-		/**
-			<p>The user's name.</p>
+      //validate
+         try  {
+            if(!Pattern.compile("\\w+").matcher(sName).matches())  {
+               throw  new IllegalArgumentException("fieldable.getName() (\"" + sName + "\") may not be empty, and must contain only letters digits and underscores.");
+            }
+         }  catch(NullPointerException rx)  {
+            throw  new NullPointerException("fieldable.getName()");
+         }
+         if(iAge < 0)  {
+            throw  new IllegalArgumentException("fieldable.getAge() (" + iAge + ") is less than zero.");
+         }
+         try  {
+            if(!Pattern.compile("(?:red|blue|green|hot pink)").matcher(sFavColor).matches())  {
+               throw  new IllegalArgumentException("fieldable.getFavoriteColor() (\"" + fieldable.getFavoriteColor() + "\") is not red, blue, green, or hot pink.");
+            }
+         }  catch(NullPointerException rx)  {
+            throw  new NullPointerException("fieldable.getFavoriteColor()");
+         }
+   }
+   //getters...START
+      /**
+         <p>The user's name.</p>
 
-			@return  A non-{@code null}, non-empty string.
-			@see  UserConfig_Cfg#UserConfig_Cfg(String)
-			@see  #getAge()
-			@see  #getFavoriteColor()
-		 **/
-		public String getName()  {
-			return  sName;
-		}
-		/**
-			<p>The user's age.</p>
+         @return  A non-{@code null}, non-empty string.
+         @see  UserConfig_Cfg#UserConfig_Cfg(String)
+         @see  #getAge()
+         @see  #getFavoriteColor()
+       **/
+      public String getName()  {
+         return  sName;
+      }
+      /**
+         <p>The user's age.</p>
 
-			@return  A number greater-than-or-equal-to zero.
-			@see  UserConfig_Cfg#age(int)
-			@see  #getName()
-		 **/
-		public int getAge()  {
-			return  iAge;
-		}
-		/**
-			<p>The user's favorite color.</p>
+         @return  A number greater-than-or-equal-to zero.
+         @see  UserConfig_Cfg#age(int)
+         @see  #getName()
+       **/
+      public int getAge()  {
+         return  iAge;
+      }
+      /**
+         <p>The user's favorite color.</p>
 
-			@return  A non-{@code null}, non-empty string.
-			@see  UserConfig_Cfg#age(int)
-			@see  #getName()
-		 **/
-		public String getFavoriteColor()  {
-			return  sFavColor;
-		}
-	//getters...END
-	public String toString()  {
-		return  "getName()=" + getName() + ", getAge()=" + getAge() + ", getFavoriteColor()=" + getFavoriteColor();
-	}
+         @return  A non-{@code null}, non-empty string.
+         @see  UserConfig_Cfg#age(int)
+         @see  #getName()
+       **/
+      public String getFavoriteColor()  {
+         return  sFavColor;
+      }
+   //getters...END
+   public String toString()  {
+      return  "getName()=" + getName() + ", getAge()=" + getAge() + ", getFavoriteColor()=" + getFavoriteColor();
+   }
 }

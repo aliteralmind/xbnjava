@@ -13,71 +13,71 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.testdev.ant;
-	import  java.io.FileNotFoundException;
-	import  java.io.IOException;
-	import  java.io.InputStream;
-	import  java.net.MalformedURLException;
-	import  java.net.URL;
-	import  java.net.UnknownHostException;
-	import  org.apache.tools.ant.BuildException;
-	import  org.apache.tools.ant.Task;
+   import  java.io.FileNotFoundException;
+   import  java.io.IOException;
+   import  java.io.InputStream;
+   import  java.net.MalformedURLException;
+   import  java.net.URL;
+   import  java.net.UnknownHostException;
+   import  org.apache.tools.ant.BuildException;
+   import  org.apache.tools.ant.Task;
 /**
-	<p>Detect if the internet is available, determined by the ability to reach a specific url.</p>
+   <p>Detect if the internet is available, determined by the ability to reach a specific url.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ATDetectInternet extends Task  {
-	private String sUrl = null;
-	private String sProperty = null;
+   private String sUrl = null;
+   private String sProperty = null;
 
-	/**
-		<p>Create an ATDetectInternet. This does nothing.</p>
-	 **/
-	public ATDetectInternet()  {
-	}
-	/**
-		<p>Set the url to reach.</p>
+   /**
+      <p>Create an ATDetectInternet. This does nothing.</p>
+    **/
+   public ATDetectInternet()  {
+   }
+   /**
+      <p>Set the url to reach.</p>
 
-		@param  url  The url. May not be null or empty.
-	 **/
-	public void setUrl(String url)  {
-		sUrl = url;
-	}
-	/**
-		<p>The property which should be set only if the url can be reached. It is either set to true (if the url can be reached) or not set at all.</p>
+      @param  url  The url. May not be null or empty.
+    **/
+   public void setUrl(String url)  {
+      sUrl = url;
+   }
+   /**
+      <p>The property which should be set only if the url can be reached. It is either set to true (if the url can be reached) or not set at all.</p>
 
-		@param  prop_name  The property name. May not be null or empty.
-	 **/
-	public void setProperty(String prop_name)  {
-		sProperty = prop_name;
-	}
-	/**
-		<p>Do it. Uh huh. Oh yeah.</p>
-	 **/
-	public void execute() throws BuildException  {
-		if(sUrl == null  ||  sUrl.length() == 0)  {
-			throw  new BuildException("Parameter url ('" + sUrl + "') is null or empty.");
-		}
+      @param  prop_name  The property name. May not be null or empty.
+    **/
+   public void setProperty(String prop_name)  {
+      sProperty = prop_name;
+   }
+   /**
+      <p>Do it. Uh huh. Oh yeah.</p>
+    **/
+   public void execute() throws BuildException  {
+      if(sUrl == null  ||  sUrl.length() == 0)  {
+         throw  new BuildException("Parameter url ('" + sUrl + "') is null or empty.");
+      }
 
-		if(sProperty == null  ||  sProperty.length() == 0)  {
-			throw  new BuildException("Parameter property ('" + sProperty + "') is null or empty.");
-		}
+      if(sProperty == null  ||  sProperty.length() == 0)  {
+         throw  new BuildException("Parameter property ('" + sProperty + "') is null or empty.");
+      }
 
-		//Copied from xbn.util.Utility.appendWebPageSource
+      //Copied from xbn.util.Utility.appendWebPageSource
 
-		try  {
-			URL url = new URL(sUrl);
-			InputStream isUNUSED = url.openStream();
-			getProject().setProperty(sProperty, "true");
-		}  catch(UnknownHostException uhx)  {
-			System.out.println("INTERNET IS NOT AVAILABLE, or provided host is invalid. " + uhx.toString());
-		}  catch(MalformedURLException mux)  {
-			throw  new BuildException("Parameter url ('" + sUrl + "') is a malformed url. " + mux.toString() + ". (It does seem that we are connected to the internet, otherwise a uhx would have been thrown.)");
-		}  catch(FileNotFoundException fnfx)  {
-			throw  new BuildException("Parameter url ('" + sUrl + "') is invalid. " + fnfx.toString() + ". (It does seem that we are connected to the internet, otherwise a uhx would have been thrown.)");
-		}  catch(IOException iox)  {
-			System.out.println("INTERNET IS NOT AVAILABLE. " + iox.toString());
-		}
-	}
+      try  {
+         URL url = new URL(sUrl);
+         InputStream isUNUSED = url.openStream();
+         getProject().setProperty(sProperty, "true");
+      }  catch(UnknownHostException uhx)  {
+         System.out.println("INTERNET IS NOT AVAILABLE, or provided host is invalid. " + uhx.toString());
+      }  catch(MalformedURLException mux)  {
+         throw  new BuildException("Parameter url ('" + sUrl + "') is a malformed url. " + mux.toString() + ". (It does seem that we are connected to the internet, otherwise a uhx would have been thrown.)");
+      }  catch(FileNotFoundException fnfx)  {
+         throw  new BuildException("Parameter url ('" + sUrl + "') is invalid. " + fnfx.toString() + ". (It does seem that we are connected to the internet, otherwise a uhx would have been thrown.)");
+      }  catch(IOException iox)  {
+         System.out.println("INTERNET IS NOT AVAILABLE. " + iox.toString());
+      }
+   }
 }

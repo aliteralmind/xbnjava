@@ -14,25 +14,25 @@
 \*license*/
 package  com.github.xbn.lang.reflect;
 /**
-	<p>A runtime replacement for {@link java.lang.NoSuchFieldException}.</p>
+   <p>A runtime replacement for {@link java.lang.NoSuchFieldException}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RTNoSuchFieldException extends IllegalArgumentException  {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6064360695348771603L;
-	public RTNoSuchFieldException(String message)  {
-		super(message);
-	}
-	public RTNoSuchFieldException()  {
-	}
-	public RTNoSuchFieldException(String message, Throwable cause)  {
-		super(message, cause);
-	}
-	public RTNoSuchFieldException(Throwable cause)  {
-		super(cause);
-	}
+   /**
+    * 
+    */
+   private static final long serialVersionUID = 6064360695348771603L;
+   public RTNoSuchFieldException(String message)  {
+      super(message);
+   }
+   public RTNoSuchFieldException()  {
+   }
+   public RTNoSuchFieldException(String message, Throwable cause)  {
+      super(message, cause);
+   }
+   public RTNoSuchFieldException(Throwable cause)  {
+      super(cause);
+   }
 }

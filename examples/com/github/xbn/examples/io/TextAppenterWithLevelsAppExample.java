@@ -13,43 +13,43 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.io;
-	import  com.github.xbn.regexutil.IgnoreCase;
-	import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
-	import  com.github.xbn.io.DebugLevel;
-	import  com.github.xbn.io.TextAppenter;
+   import  com.github.xbn.regexutil.IgnoreCase;
+   import  com.github.xbn.testdev.GetFromCommandLineAtIndex;
+   import  com.github.xbn.io.DebugLevel;
+   import  com.github.xbn.io.TextAppenter;
 /**
-	<p>Basic demonstration of {@code TextAppenter}</p>
+   <p>Basic demonstration of {@code TextAppenter}</p>
 
-	<p>{@code java com.github.xbn.examples.io.TextAppenterWithLevelsAppExample debugoff}
+   <p>{@code java com.github.xbn.examples.io.TextAppenterWithLevelsAppExample debugoff}
 <br/>{@code java com.github.xbn.examples.io.TextAppenterWithLevelsAppExample debugminimal}
 <br/>{@code java com.github.xbn.examples.io.TextAppenterWithLevelsAppExample debugverbose}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class TextAppenterWithLevelsAppExample  {
-	private static final int DEBUG_LEVEL_PARAM_IDX = 0;
-	public static final void main(String[] params)  {
-		DebugLevel dbgLvl = GetFromCommandLineAtIndex.
-			enumValue(params, DEBUG_LEVEL_PARAM_IDX,
-				DebugLevel.OFF, IgnoreCase.YES, null,
-				"debugoff", "debugminimal", "debugverbose", null, null, null);
+   private static final int DEBUG_LEVEL_PARAM_IDX = 0;
+   public static final void main(String[] params)  {
+      DebugLevel dbgLvl = GetFromCommandLineAtIndex.
+         enumValue(params, DEBUG_LEVEL_PARAM_IDX,
+            DebugLevel.OFF, IgnoreCase.YES, null,
+            "debugoff", "debugminimal", "debugverbose", null, null, null);
 
-		TextAppenter dbgAptrMin = (dbgLvl.isOff()
-			?  TextAppenter.UNUSABLE
-			:  TextAppenter.CONSOLE);
-		TextAppenter dbgAptrVerbose = (dbgLvl.isOnAndAtLeast(2)
-			?  TextAppenter.CONSOLE
-			:  TextAppenter.UNUSABLE);
+      TextAppenter dbgAptrMin = (dbgLvl.isOff()
+         ?  TextAppenter.UNUSABLE
+         :  TextAppenter.CONSOLE);
+      TextAppenter dbgAptrVerbose = (dbgLvl.isOnAndAtLeast(2)
+         ?  TextAppenter.CONSOLE
+         :  TextAppenter.UNUSABLE);
 
-		if(dbgAptrMin.isUseable())  {
-			dbgAptrMin.appentln(params[DEBUG_LEVEL_PARAM_IDX] +
-				" --> DebugLevel." + dbgLvl);
-			dbgAptrMin.appentln("Minimally-important debugging information goes here...");
-		}
+      if(dbgAptrMin.isUseable())  {
+         dbgAptrMin.appentln(params[DEBUG_LEVEL_PARAM_IDX] +
+            " --> DebugLevel." + dbgLvl);
+         dbgAptrMin.appentln("Minimally-important debugging information goes here...");
+      }
 
-		if(dbgAptrVerbose.isUseable())  {
-			dbgAptrVerbose.appentln("Very very verbose and highly-important debugging information...");
-		}
-	}
+      if(dbgAptrVerbose.isUseable())  {
+         dbgAptrVerbose.appentln("Very very verbose and highly-important debugging information...");
+      }
+   }
 }

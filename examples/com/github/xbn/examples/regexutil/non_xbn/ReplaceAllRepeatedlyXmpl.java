@@ -13,28 +13,28 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
-	import  java.util.regex.Pattern;
-	import  java.util.regex.Matcher;
+   import  java.util.regex.Pattern;
+   import  java.util.regex.Matcher;
 /**
-	<p>Replace all text repeatedly, until no more matches are found.</p>
+   <p>Replace all text repeatedly, until no more matches are found.</p>
 
-	<p>{@code java  com.github.xbn.examples.regexutil.non_xbn.ReplaceAllRepeatedlyXmpl}</p>
+   <p>{@code java  com.github.xbn.examples.regexutil.non_xbn.ReplaceAllRepeatedlyXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReplaceAllRepeatedlyXmpl  {
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
   String sToSearch = "xxxxxxxxxxxxxxx";
   Pattern pFindWhat = Pattern.compile("xxx");
   String sRplcWith = "x";
 
   String sResult = appendReplaceUntil((new StringBuffer()), pFindWhat, sRplcWith, sToSearch).toString();
   System.out.println(sResult);
-	}
+   }
 
-	//Replace all matches repeatedly, until no more are found
-	public static final StringBuffer appendReplaceUntil(StringBuffer to_appendTo, Pattern find_whatPtrn, String rplc_with, String to_search)  {
+   //Replace all matches repeatedly, until no more are found
+   public static final StringBuffer appendReplaceUntil(StringBuffer to_appendTo, Pattern find_whatPtrn, String rplc_with, String to_search)  {
 
   int iMaxUntil = 5;
 
@@ -44,32 +44,32 @@ public class ReplaceAllRepeatedlyXmpl  {
   boolean bFound = false;
   int iUntilLoops = 0;
   while(true)  {
-	  bFound = false;
-	  iUntilLoops++;
+     bFound = false;
+     iUntilLoops++;
 
-	  while(m.find())  {
-		  bFound = true;
-		  m.appendReplacement(sdTemp, rplc_with);
-	  }
-	  m.appendTail(sdTemp);
+     while(m.find())  {
+        bFound = true;
+        m.appendReplacement(sdTemp, rplc_with);
+     }
+     m.appendTail(sdTemp);
 
-	  if(iUntilLoops >= iMaxUntil)  {
-		  //The NEXT "while(m.find())" loop would exceed the maximum.
+     if(iUntilLoops >= iMaxUntil)  {
+        //The NEXT "while(m.find())" loop would exceed the maximum.
 
-		  throw  new IllegalStateException("Maximum number of 'until' loops reached.");
-	  }
+        throw  new IllegalStateException("Maximum number of 'until' loops reached.");
+     }
 
-	  if(!bFound)  {
-		  //No matches were found at all during this iteration
-		  to_appendTo.append(sdTemp);
-		  break;
-	  }
+     if(!bFound)  {
+        //No matches were found at all during this iteration
+        to_appendTo.append(sdTemp);
+        break;
+     }
 
-	  m.reset(sdTemp.toString());
+     m.reset(sdTemp.toString());
 
-	  sdTemp.setLength(0);
+     sdTemp.setLength(0);
   }
   return  to_appendTo;
-	}
+   }
 }
 

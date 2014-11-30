@@ -13,29 +13,29 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util;
-	import  com.github.xbn.util.JavaUtil;
+   import  com.github.xbn.util.JavaUtil;
 /**
-	<p>Uses <code>xbn.util.{@link com.github.xbn.util.JavaUtil}.{@link com.github.xbn.util.JavaUtil#getInitializedObjectForClassName(String) getInitializedObjectForClassName}(s)</code> to obtain the default value for each primitive type.</p>
+   <p>Uses <code>xbn.util.{@link com.github.xbn.util.JavaUtil}.{@link com.github.xbn.util.JavaUtil#getInitializedObjectForClassName(String) getInitializedObjectForClassName}(s)</code> to obtain the default value for each primitive type.</p>
 
-	<p>{@code java com.github.xbn.examples.util.JavaUtilInitializedValuesXmpl}</p>
+   <p>{@code java com.github.xbn.examples.util.JavaUtilInitializedValuesXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class JavaUtilInitializedValuesXmpl  {
-	public static final void main(String[] ignored)  {
-		printDefault("boolean");
-		printDefault("char");
-		printDefault("byte");
-		printDefault("short");
-		printDefault("int");
-		printDefault("long");
-		printDefault("float");
-		printDefault("double");
-		printDefault("java.lang.AnythingAndEverythingElse");
-	}
-	private static final void printDefault(String type)  {
-		Object oDflt = JavaUtil.getInitializedObjectForClassName(type);
-		System.out.println(type + " default is \"" + oDflt + "\"");
-	}
+   public static final void main(String[] ignored)  {
+      printDefault("boolean");
+      printDefault("char");
+      printDefault("byte");
+      printDefault("short");
+      printDefault("int");
+      printDefault("long");
+      printDefault("float");
+      printDefault("double");
+      printDefault("java.lang.AnythingAndEverythingElse");
+   }
+   private static final void printDefault(String type)  {
+      Object oDflt = JavaUtil.getInitializedObjectForClassName(type);
+      System.out.println(type + " default is \"" + oDflt + "\"");
+   }
 }

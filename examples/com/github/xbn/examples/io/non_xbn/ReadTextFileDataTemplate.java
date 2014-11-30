@@ -13,46 +13,46 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.io.non_xbn;
-	import java.io.File;
-	import java.io.IOException;
-	import java.util.Scanner;
+   import java.io.File;
+   import java.io.IOException;
+   import java.util.Scanner;
 /**
-	<p>Fill in an array from the data in a text file, via {@code java.util.}{@link java.util.Scanner Scanner}.</p>
+   <p>Fill in an array from the data in a text file, via {@code java.util.}{@link java.util.Scanner Scanner}.</p>
 
-	<p>{@code java com.github.xbn.examples.io.non_xbn.ReadTextFileDataTemplate xbn\examples\io\non_xbn\Project1Input_baseball.txt}</p>
+   <p>{@code java com.github.xbn.examples.io.non_xbn.ReadTextFileDataTemplate xbn\examples\io\non_xbn\Project1Input_baseball.txt}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
  public class ReadTextFileDataTemplate  {
-	 /**
-	 * @param args the command line arguments
-	 * @throws java.io.IOException
-	 */
-	public static void main(String[] args) throws IOException {
-		 try  {
-			 fillArray(args[0]);
-		 }  catch(RuntimeException rx)  {
-			 if(args.length == 0)  {
-				 throw  new IllegalArgumentException("Missing one required parameter: Path to input file");
-			 }
-		 }  catch(IOException iox)  {
-			 throw  new RuntimeException(iox);
-		 }
-	}
+    /**
+    * @param args the command line arguments
+    * @throws java.io.IOException
+    */
+   public static void main(String[] args) throws IOException {
+       try  {
+          fillArray(args[0]);
+       }  catch(RuntimeException rx)  {
+          if(args.length == 0)  {
+             throw  new IllegalArgumentException("Missing one required parameter: Path to input file");
+          }
+       }  catch(IOException iox)  {
+          throw  new RuntimeException(iox);
+       }
+   }
 
-	public static void fillArray(String inputFile) throws IOException {
-		 Scanner teamList = new Scanner(new File(inputFile));
-		 String[] teamName = new String[35];
-		 int[] teamRank = new int[35];
-		 double[] teamWinPercentage = new double[35];
-		 int i = 0;
-		 while (teamList.hasNext()) {
-			  teamRank[i] = teamList.nextInt();
-			  teamName[i] = teamList.next();
-			  teamWinPercentage[i] = teamList.nextDouble();
-			  i++;
-		 }
-	}
+   public static void fillArray(String inputFile) throws IOException {
+       Scanner teamList = new Scanner(new File(inputFile));
+       String[] teamName = new String[35];
+       int[] teamRank = new int[35];
+       double[] teamWinPercentage = new double[35];
+       int i = 0;
+       while (teamList.hasNext()) {
+           teamRank[i] = teamList.nextInt();
+           teamName[i] = teamList.next();
+           teamWinPercentage[i] = teamList.nextDouble();
+           i++;
+       }
+   }
 
 }

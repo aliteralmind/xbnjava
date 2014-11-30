@@ -13,43 +13,43 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.io;
-	import  com.github.xbn.io.z.GetDebugApbl_Fieldable;
+   import  com.github.xbn.io.z.GetDebugApbl_Fieldable;
 /**
-	<p>{@code Debuggable}-s provide optional run-time diagnostics.</p>
+   <p>{@code Debuggable}-s provide optional run-time diagnostics.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @author  Copyright (C) 2014, Jeff Epstein. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface Debuggable extends GetDebugApbl_Fieldable  {
 //setters......START
-	/**
-		<p>Set the writer for debugging output.</p>
+   /**
+      <p>Set the writer for debugging output.</p>
 
-		@param  destination  If {@code null}, this also calls {@link #setDebugOn(boolean) setDebugOn(false)}. Get with {@link #getDebugAptr() getDebugAptr}{@code ()}.
-	 **/
-	void setDebug(Appendable destination, boolean is_on);
-	/**
-		<p>Turn debugging on or off.</p>
+      @param  destination  If {@code null}, this also calls {@link #setDebugOn(boolean) setDebugOn(false)}. Get with {@link #getDebugAptr() getDebugAptr}{@code ()}.
+    **/
+   void setDebug(Appendable destination, boolean is_on);
+   /**
+      <p>Turn debugging on or off.</p>
 
-		@param  is_on  If {@code true}, debugging is turned on. Get with {@link #isDebugOn() isDebugOn}{@code ()}.
-		@exception  IllegalStateException  If {@link #getDebugAptr() getDebugAptr}{@code ()} is {@code null}.
-	 **/
-	void setDebugOn(boolean is_on);
+      @param  is_on  If {@code true}, debugging is turned on. Get with {@link #isDebugOn() isDebugOn}{@code ()}.
+      @exception  IllegalStateException  If {@link #getDebugAptr() getDebugAptr}{@code ()} is {@code null}.
+    **/
+   void setDebugOn(boolean is_on);
 //setters......END
 //getters...START
-	/**
-		<p>Is debugging active?.</p>
+   /**
+      <p>Is debugging active?.</p>
 
-		@see  #setDebugOn(boolean)
-	 **/
-	boolean isDebugOn();
-	/**
-		<p>Get the current debug-writer, <i>which throws {@code RuntimeException}-s only</i>.</p>
+      @see  #setDebugOn(boolean)
+    **/
+   boolean isDebugOn();
+   /**
+      <p>Get the current debug-writer, <i>which throws {@code RuntimeException}-s only</i>.</p>
 
-		@see  #setDebug(Appendable, boolean)
-	 **/
-	TextAppenter getDebugAptr();
-	Appendable getDebugApbl();
-	TextAppenter debug(Object message);
-	void debugln(Object message);
+      @see  #setDebug(Appendable, boolean)
+    **/
+   TextAppenter getDebugAptr();
+   Appendable getDebugApbl();
+   TextAppenter debug(Object message);
+   void debugln(Object message);
 //getters...END
 }

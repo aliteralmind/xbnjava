@@ -13,45 +13,45 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.testdev.ant;
-	import  java.io.File;
-	import  org.apache.tools.ant.BuildException;
-	import  org.apache.tools.ant.Task;
+   import  java.io.File;
+   import  org.apache.tools.ant.BuildException;
+   import  org.apache.tools.ant.Task;
 /**
-	<p>How many kilobytes in size is the provided file?. The value is returned in a property, and is rounded up to the nearest kilobyte.</p>
+   <p>How many kilobytes in size is the provided file?. The value is returned in a property, and is rounded up to the nearest kilobyte.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ATFileKB extends Task  {
-	private String sFile = null;
-	private String sProperty = null;
+   private String sFile = null;
+   private String sProperty = null;
 
-	/**
-		<p>Create an ATFileKB. This does nothing.</p>
-	 **/
-	public ATFileKB()  {
-	}
-	/**
-		<p>Set the name of the property to put the result in.</p>
-	 **/
-	public void setProperty(String prop_name)  {
-		sProperty = prop_name;
-	}
-	/**
-		<p>The string in which the replacements should occur.</p>
-	 **/
-	public void setFile(String file_name)  {
-		sFile = file_name;
-	}
-	/**
-		<p>Do it. Uh huh. Oh yeah.</p>
-	 **/
-	public void execute() throws BuildException  {
-		long l = (new File(sFile)).length();
-		if(l == 0L)  {
-			throw  new BuildException("The file does not exist:  '" + sFile + "'.");
-		}
+   /**
+      <p>Create an ATFileKB. This does nothing.</p>
+    **/
+   public ATFileKB()  {
+   }
+   /**
+      <p>Set the name of the property to put the result in.</p>
+    **/
+   public void setProperty(String prop_name)  {
+      sProperty = prop_name;
+   }
+   /**
+      <p>The string in which the replacements should occur.</p>
+    **/
+   public void setFile(String file_name)  {
+      sFile = file_name;
+   }
+   /**
+      <p>Do it. Uh huh. Oh yeah.</p>
+    **/
+   public void execute() throws BuildException  {
+      long l = (new File(sFile)).length();
+      if(l == 0L)  {
+         throw  new BuildException("The file does not exist:  '" + sFile + "'.");
+      }
 
-		getProject().setProperty(sProperty, (new Long(l/1024)).toString());
-	}
+      getProject().setProperty(sProperty, (new Long(l/1024)).toString());
+   }
 }

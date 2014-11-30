@@ -14,34 +14,34 @@
 \*license*/
 package  com.github.xbn.util.tuple;
 /**
-	<p>Holds five objects.</p>
+   <p>Holds five objects.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FiveTSObjects extends FourTSObjects  {
-	private Object o5;
+   private Object o5;
 //constructors...START
-	public FiveTSObjects(Object o_1, Object o_2, Object o_3, Object o_4, Object o_5)  {
-		this("FiveTSObjects", o_1, o_2, o_3, o_4, o_5);
-	}
-	protected FiveTSObjects(String this_classesNonFQClsNmForErrMsg, Object o_1, Object o_2, Object o_3, Object o_4, Object o_5)  {
-		super(this_classesNonFQClsNmForErrMsg, o_1, o_2, o_3);
-		set5(o_5);
-	}
+   public FiveTSObjects(Object o_1, Object o_2, Object o_3, Object o_4, Object o_5)  {
+      this("FiveTSObjects", o_1, o_2, o_3, o_4, o_5);
+   }
+   protected FiveTSObjects(String this_classesNonFQClsNmForErrMsg, Object o_1, Object o_2, Object o_3, Object o_4, Object o_5)  {
+      super(this_classesNonFQClsNmForErrMsg, o_1, o_2, o_3);
+      set5(o_5);
+   }
 //constructors...END
-	public Object get5()  {
-		return  o5;
-	}
-	public FiveTSObjects set5(Object o_5)  {
-		o5 = o_5;
-		return  this;
-	}
-	public FiveTSObjects set(Object o_1, Object o_2, Object o_3, Object o_4, Object o_5)  {
-		set(o_1, o_2, o_3, o_4);
-		return  set5(o_5);
-	}
-	public String getJoined()  {
-		return  appendJoined(new StringBuilder(), get3(), get4(), get5()).toString();
-	}
+   public Object get5()  {
+      return  o5;
+   }
+   public FiveTSObjects set5(Object o_5)  {
+      o5 = o_5;
+      return  this;
+   }
+   public FiveTSObjects set(Object o_1, Object o_2, Object o_3, Object o_4, Object o_5)  {
+      set(o_1, o_2, o_3, o_4);
+      return  set5(o_5);
+   }
+   public String getJoined()  {
+      return  appendJoined(new StringBuilder(), get3(), get4(), get5()).toString();
+   }
 }

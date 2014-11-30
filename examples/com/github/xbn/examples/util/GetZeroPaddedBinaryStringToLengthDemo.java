@@ -13,27 +13,27 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util;
-	import  com.github.xbn.util.BitBinaryUtil;
+   import  com.github.xbn.util.BitBinaryUtil;
 /**
-	<p>Demonstration of <code>{@link com.github.xbn.util.BitBinaryUtil BitBinaryUtil}.{@link com.github.xbn.util.BitBinaryUtil#getIntAsZeroPaddedBinaryStringToLength(int, int) getIntAsZeroPaddedBinaryStringToLength}</code></p>
+   <p>Demonstration of <code>{@link com.github.xbn.util.BitBinaryUtil BitBinaryUtil}.{@link com.github.xbn.util.BitBinaryUtil#getIntAsZeroPaddedBinaryStringToLength(int, int) getIntAsZeroPaddedBinaryStringToLength}</code></p>
 
-	<p>{@code java com.github.xbn.examples.util.GetZeroPaddedBinaryStringToLengthDemo}</p>
+   <p>{@code java com.github.xbn.examples.util.GetZeroPaddedBinaryStringToLengthDemo}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class GetZeroPaddedBinaryStringToLengthDemo  {
-	public static final void main(String[] ignored)  {
-		test(Integer.MIN_VALUE);
-		test(-1000);
-		test(0);
-		test(1000);
-		test(Integer.MAX_VALUE);
-	}
-	private static final void test(int num)  {
-		System.out.println(num + ":");
-		System.out.println(BitBinaryUtil.getIntAsZeroPaddedBinaryStringToLength((int)num, 32));
+   public static final void main(String[] ignored)  {
+      test(Integer.MIN_VALUE);
+      test(-1000);
+      test(0);
+      test(1000);
+      test(Integer.MAX_VALUE);
+   }
+   private static final void test(int num)  {
+      System.out.println(num + ":");
+      System.out.println(BitBinaryUtil.getIntAsZeroPaddedBinaryStringToLength((int)num, 32));
 
-	}
+   }
 }
 

@@ -14,19 +14,19 @@
 \*license*/
 
 package  com.github.xbn.linefilter.entity.raw.z;
-	import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
-	import  com.github.xbn.linefilter.entity.EntityType;
+   import  com.github.xbn.linefilter.entity.raw.RawOnOffEntityFilter;
+   import  com.github.xbn.linefilter.entity.EntityType;
 /**
-	<p>YYY</p>
+   <p>YYY</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface RawLineEntity_Fieldable<L>  {
-	String getName();
+   String getName();
 //	int getParentCount();
-	Appendable getDebugApblLineNumbers();
-	EntityType getType();
-	RawOnOffEntityFilter<L> getFilterIfNonNull();
-	boolean isRequired();
+   Appendable getDebugApblLineNumbers();
+   EntityType getType();
+   RawOnOffEntityFilter<L> getFilterIfNonNull();
+   boolean isRequired();
 }

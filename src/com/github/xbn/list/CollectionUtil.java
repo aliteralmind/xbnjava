@@ -13,152 +13,152 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list;
-	import  com.github.xbn.lang.CrashIfObject;
-	import  com.github.xbn.number.NumberUtil;
-	import  java.util.Collection;
-	import  java.util.Iterator;
-	import  java.util.Map;
-	import  java.util.Objects;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.number.NumberUtil;
+   import  java.util.Collection;
+   import  java.util.Iterator;
+   import  java.util.Map;
+   import  java.util.Objects;
 /**
-	<p>Find the middle index in a collection, and functions to assist in implementing {@code contains(...)} and {@code containsAll(...)}.</p>
+   <p>Find the middle index in a collection, and functions to assist in implementing {@code contains(...)} and {@code containsAll(...)}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CollectionUtil  {
-	private CollectionUtil()  {
-		throw  new IllegalStateException("Do not instantiate");
-	}
-	public static final int getSizeCrashIfNull(Collection<?> coll, String coll_name)  {
-		try  {
-			return  coll.size();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(coll, coll_name, null, rx);
-		}
-	}
-	/**
-		<p>Get the middle index of a List.</p>
+   private CollectionUtil()  {
+      throw  new IllegalStateException("Do not instantiate");
+   }
+   public static final int getSizeCrashIfNull(Collection<?> coll, String coll_name)  {
+      try  {
+         return  coll.size();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(coll, coll_name, null, rx);
+      }
+   }
+   /**
+      <p>Get the middle index of a List.</p>
 
-		@param  coll  May not be {@code null}.
-		@return  <code>{@link com.github.xbn.number.NumberUtil NumberUtil.}{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}(0, coll.size())</code>
-	 **/
-	public static final int getMiddleIndex(Collection<?> coll)  {
-		try  {
-			return  NumberUtil.getMiddleInt(0, coll.size());
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(coll, "coll", null, rx);
-		}
-	}
+      @param  coll  May not be {@code null}.
+      @return  <code>{@link com.github.xbn.number.NumberUtil NumberUtil.}{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}(0, coll.size())</code>
+    **/
+   public static final int getMiddleIndex(Collection<?> coll)  {
+      try  {
+         return  NumberUtil.getMiddleInt(0, coll.size());
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(coll, "coll", null, rx);
+      }
+   }
  	/**
  		<p>Does a(n equivalent) object exist in <i>{@code this}</i> collection?.</p>
 
  		@param  objY  May not be {@code null}.
  	 **/
  	public static final boolean xItrContainsY(Iterator<?> itr_forCollX, Object objY)  {
-		int i = 0;
-		while(itr_forCollX.hasNext())  {
-			Object o = itr_forCollX.next();
-			try  {
-				if(objY.equals(o))  {
-					return true;
-				}
-			}  catch(RuntimeException rx)  {
-				Objects.requireNonNull(objY, "objY");
-				throw  CrashIfObject.nullOrReturnCause(o, "[the " + i + "-th call to <iterator()>.next()]", null, rx);
-			}
-			i++;
-		}
-		return false;
-	}
+      int i = 0;
+      while(itr_forCollX.hasNext())  {
+         Object o = itr_forCollX.next();
+         try  {
+            if(objY.equals(o))  {
+               return true;
+            }
+         }  catch(RuntimeException rx)  {
+            Objects.requireNonNull(objY, "objY");
+            throw  CrashIfObject.nullOrReturnCause(o, "[the " + i + "-th call to <iterator()>.next()]", null, rx);
+         }
+         i++;
+      }
+      return false;
+   }
  	/**
  		@exception  NullPointerException  If {@link #isNull() isNull}{@code ()} is {@code true}.
  	 **/
  	public static final boolean xItrContainsAllY(Iterator<?> itr_forCollX, Collection<?> collY)  {
-		Iterator<?> itr = null;
-		try  {
-			itr = collY.iterator();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(collY, "collY", null, rx);
-		}
+      Iterator<?> itr = null;
+      try  {
+         itr = collY.iterator();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(collY, "collY", null, rx);
+      }
 
-		while(itr.hasNext())  {
-			try  {
-				if(!xItrContainsY(itr_forCollX, itr.next()))  {
-					return false;
-				}
-			}  catch(RuntimeException rx)  {
-				throw  CrashIfObject.nullOrReturnCause(itr_forCollX, "itr_forCollX", null, rx);
-			}
-		}
-		return true;
-	}
+      while(itr.hasNext())  {
+         try  {
+            if(!xItrContainsY(itr_forCollX, itr.next()))  {
+               return false;
+            }
+         }  catch(RuntimeException rx)  {
+            throw  CrashIfObject.nullOrReturnCause(itr_forCollX, "itr_forCollX", null, rx);
+         }
+      }
+      return true;
+   }
  	public static final boolean xItrContainsY_nullOk(Iterator<?> itr_forCollX, Object objY)  {
-		int i = 0;
-		try  {
-			while(itr_forCollX.hasNext())  {
-				Object o = itr_forCollX.next();
-				try  {
-					if(Objects.equals(objY, o))  {  //null is equal to null
-						return true;
-					}
-				}  catch(RuntimeException rx)  {
-					Objects.requireNonNull(objY, "objY");
-					throw  CrashIfObject.nullOrReturnCause(o, "[the " + i + "-th call to <getCollection().iterator()>.next()]", null, rx);
-				}
-				i++;
-			}
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(itr_forCollX, "itr_forCollX", null, rx);
-		}
-		return false;
-	}
+      int i = 0;
+      try  {
+         while(itr_forCollX.hasNext())  {
+            Object o = itr_forCollX.next();
+            try  {
+               if(Objects.equals(objY, o))  {  //null is equal to null
+                  return true;
+               }
+            }  catch(RuntimeException rx)  {
+               Objects.requireNonNull(objY, "objY");
+               throw  CrashIfObject.nullOrReturnCause(o, "[the " + i + "-th call to <getCollection().iterator()>.next()]", null, rx);
+            }
+            i++;
+         }
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(itr_forCollX, "itr_forCollX", null, rx);
+      }
+      return false;
+   }
  	public static final boolean xItrContainsAllY_nullOk(Iterator<?> itr_forCollX, Collection<?> collY)  {
-		Iterator<?> itr = null;
-		try  {
-			itr = collY.iterator();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(collY, "collY", null, rx);
-		}
+      Iterator<?> itr = null;
+      try  {
+         itr = collY.iterator();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(collY, "collY", null, rx);
+      }
 
-		while(itr.hasNext())  {
-			if(!xItrContainsY_nullOk(itr_forCollX, itr.next()))  {
-				return false;
-			}
-		}
-		return true;
-	}
+      while(itr.hasNext())  {
+         if(!xItrContainsY_nullOk(itr_forCollX, itr.next()))  {
+            return false;
+         }
+      }
+      return true;
+   }
 
-	public static final <K,V> String toString(Map<K,V> map, String between)  {
-		return  appendToString((new StringBuilder()), map, between).toString();
-	}
-	/**
-		<p>YYY</p>
+   public static final <K,V> String toString(Map<K,V> map, String between)  {
+      return  appendToString((new StringBuilder()), map, between).toString();
+   }
+   /**
+      <p>YYY</p>
 
-		<p>From (viewed 2/4/2014):
-		<br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/10120408/2736496">http://stackoverflow.com/a/10120408/2736496</a></code></p>
-	 **/
-	public static final <K,V> StringBuilder appendToString(StringBuilder to_appendTo, Map<K,V> map, String between)  {
-		Iterator<Map.Entry<K, V>> iter = null;
-		try  {
-			iter = map.entrySet().iterator();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(map, "map", null, rx);
-		}
-		between = ((between == null) ? ", " : between);
-		while (iter.hasNext()) {
-			Map.Entry<K, V> entry = iter.next();
-			try  {
-				to_appendTo.append(entry.getKey());
-			}  catch(RuntimeException rx)  {
-				throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
-			}
-			to_appendTo.append("=\"");
-			to_appendTo.append(entry.getValue());
-			to_appendTo.append("\"");
-			if (iter.hasNext()) {
-				to_appendTo.append(between);
-			}
-		}
-		return  to_appendTo;
-	}
+      <p>From (viewed 2/4/2014):
+      <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/10120408/2736496">http://stackoverflow.com/a/10120408/2736496</a></code></p>
+    **/
+   public static final <K,V> StringBuilder appendToString(StringBuilder to_appendTo, Map<K,V> map, String between)  {
+      Iterator<Map.Entry<K, V>> iter = null;
+      try  {
+         iter = map.entrySet().iterator();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(map, "map", null, rx);
+      }
+      between = ((between == null) ? ", " : between);
+      while (iter.hasNext()) {
+         Map.Entry<K, V> entry = iter.next();
+         try  {
+            to_appendTo.append(entry.getKey());
+         }  catch(RuntimeException rx)  {
+            throw  CrashIfObject.nullOrReturnCause(to_appendTo, "to_appendTo", null, rx);
+         }
+         to_appendTo.append("=\"");
+         to_appendTo.append(entry.getValue());
+         to_appendTo.append("\"");
+         if (iter.hasNext()) {
+            to_appendTo.append(between);
+         }
+      }
+      return  to_appendTo;
+   }
 }

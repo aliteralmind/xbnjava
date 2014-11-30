@@ -14,43 +14,43 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
 /**
-	<p>In {@code ReturnValueUnchanged} only, after each call to <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</a>(V,A)</code>, what should its {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#wasAltered() wasAltered}{@code ()} flag be set to?.</p>
+   <p>In {@code ReturnValueUnchanged} only, after each call to <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</a>(V,A)</code>, what should its {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#wasAltered() wasAltered}{@code ()} flag be set to?.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum SetWasAlteredToWhenInRange {
-	/**
-		<p>Set {@code wasAltered()} to {@code false}.</p>
+   /**
+      <p>Set {@code wasAltered()} to {@code false}.</p>
 
-		@see  #FALSE
-		@see  #isTrue()
-	 **/
-	TRUE,
-	/**
-		<p>Set {@code wasAltered()} to {@code true}.</p>
+      @see  #FALSE
+      @see  #isTrue()
+    **/
+   TRUE,
+   /**
+      <p>Set {@code wasAltered()} to {@code true}.</p>
 
-		@see  #TRUE
-		@see  #isFalse()
-	 **/
-	FALSE;
-	/**
-		<p>Is this {@code SetWasAlteredToWhenInRange} equal to {@code TRUE}?.</p>
+      @see  #TRUE
+      @see  #isFalse()
+    **/
+   FALSE;
+   /**
+      <p>Is this {@code SetWasAlteredToWhenInRange} equal to {@code TRUE}?.</p>
 
-		@return  <code>this == {@link #TRUE}</code>
+      @return  <code>this == {@link #TRUE}</code>
 
-		@see  #isFalse()
-	 **/
-	public final boolean isTrue()  {
-		return  this == TRUE;
-	}
-	/**
-		<p>Is this {@code SetWasAlteredToWhenInRange} equal to {@code FALSE}?.</p>
+      @see  #isFalse()
+    **/
+   public final boolean isTrue()  {
+      return  this == TRUE;
+   }
+   /**
+      <p>Is this {@code SetWasAlteredToWhenInRange} equal to {@code FALSE}?.</p>
 
-		@return  <code>this == {@link #FALSE}</code>
-		@see  #isTrue()
-	 **/
-	public final boolean isFalse()  {
-		return  this == FALSE;
-	}
+      @return  <code>this == {@link #FALSE}</code>
+      @see  #isTrue()
+    **/
+   public final boolean isFalse()  {
+      return  this == FALSE;
+   }
 };

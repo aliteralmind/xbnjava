@@ -13,49 +13,49 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util.itr;
-	import  java.util.List;
-	import  java.util.Arrays;
-	import  com.github.xbn.util.itr.IteratorUtil;
-	import  java.util.Iterator;
+   import  java.util.List;
+   import  java.util.Arrays;
+   import  com.github.xbn.util.itr.IteratorUtil;
+   import  java.util.Iterator;
 /**
-	<p>Demonstrates a double-for-loop using iterators, featuring <code>{@link com.github.xbn.util.itr.IteratorUtil}.{@link com.github.xbn.util.itr.IteratorUtil#newIteratorStartingAtIndex(int, Iterable) newIteratorStartingAtIndex}</code></p>
+   <p>Demonstrates a double-for-loop using iterators, featuring <code>{@link com.github.xbn.util.itr.IteratorUtil}.{@link com.github.xbn.util.itr.IteratorUtil#newIteratorStartingAtIndex(int, Iterable) newIteratorStartingAtIndex}</code></p>
 
-	<p>{@code java com.github.xbn.examples.util.itr.DetectDupsWithIterators}</p>
+   <p>{@code java com.github.xbn.examples.util.itr.DetectDupsWithIterators}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class DetectDupsWithIterators  {
-	public static final void main(String[] ignored)  {
-		test("a", "b", "c", "d", "e");
-		test("a", "b", "c", "b", "d");
-	}
-	private static final void test(String... strings)  {
-		List<String> list = Arrays.asList(strings);
+   public static final void main(String[] ignored)  {
+      test("a", "b", "c", "d", "e");
+      test("a", "b", "c", "b", "d");
+   }
+   private static final void test(String... strings)  {
+      List<String> list = Arrays.asList(strings);
 
-		int idx1 = 0;
-		Iterator<String> itr1 = list.iterator();
-		while(itr1.hasNext())  {
+      int idx1 = 0;
+      Iterator<String> itr1 = list.iterator();
+      while(itr1.hasNext())  {
 
-			String one = itr1.next();
-			int idx2 = idx1 + 1;
-			Iterator<String> itr2 = IteratorUtil.newIteratorStartingAtIndex(idx2, list);
+         String one = itr1.next();
+         int idx2 = idx1 + 1;
+         Iterator<String> itr2 = IteratorUtil.newIteratorStartingAtIndex(idx2, list);
 
-			while(itr2.hasNext())  {
+         while(itr2.hasNext())  {
 
-				String two = itr2.next();
-				System.out.println("Comparing indexes " + idx1 + " (\"" + one +
-					"\") and " + idx2 + " (\"" + two + "\")");
+            String two = itr2.next();
+            System.out.println("Comparing indexes " + idx1 + " (\"" + one +
+               "\") and " + idx2 + " (\"" + two + "\")");
 
-				if(one.equals(two))  {
-					System.out.println("Duplicate found: \"" + one + "\"");
-					return;
-				}
-				idx2++;
-			}
-			idx1++;
-		}
+            if(one.equals(two))  {
+               System.out.println("Duplicate found: \"" + one + "\"");
+               return;
+            }
+            idx2++;
+         }
+         idx1++;
+      }
 
-		System.out.println("No duplicates");
-	}
+      System.out.println("No duplicates");
+   }
 }

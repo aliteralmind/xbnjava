@@ -13,23 +13,23 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.text.padchop;
-	import  com.github.xbn.text.padchop.PadString;
-	import  com.github.xbn.text.padchop.z.PadString_Cfg;
+   import  com.github.xbn.text.padchop.PadString;
+   import  com.github.xbn.text.padchop.z.PadString_Cfg;
 /**
-	<p>Demonstration of {@code com.github.xbn.text.padchop.}{@link com.github.xbn.text.padchop.PadString PadString}.</p>
+   <p>Demonstration of {@code com.github.xbn.text.padchop.}{@link com.github.xbn.text.padchop.PadString PadString}.</p>
 
-	<p>{@code java com.github.xbn.examples.text.padchop.PadStringXmpl}</p>
+   <p>{@code java com.github.xbn.examples.text.padchop.PadStringXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PadStringXmpl  {
-	public static final void main(String[] cmd_lineParams)  {
+   public static final void main(String[] cmd_lineParams)  {
 
-		System.out.println("--Pad to 20:");
-			PadString padr = new PadString_Cfg(20).build();
-			System.out.println('[' + padr.getPadded("Hi Ho") + "]");
-			System.out.println('[' + padr.getPadded("Hi Ho! Kermit The") + "]");
-			System.out.println('[' + padr.getPadded("Hi Ho! Kermit The Frog here.") + "]");
-	}
+      System.out.println("--Pad to 20:");
+         PadString padr = new PadString_Cfg(20).build();
+         System.out.println('[' + padr.getPadded("Hi Ho") + "]");
+         System.out.println('[' + padr.getPadded("Hi Ho! Kermit The") + "]");
+         System.out.println('[' + padr.getPadded("Hi Ho! Kermit The Frog here.") + "]");
+   }
 }

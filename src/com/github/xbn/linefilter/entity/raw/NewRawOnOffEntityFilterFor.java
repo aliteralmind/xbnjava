@@ -13,58 +13,58 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity.raw;
-	import  java.util.Objects;
-	import  com.github.xbn.linefilter.entity.OnOffAbort;
-	import  com.github.xbn.lang.CrashIfObject;
+   import  java.util.Objects;
+   import  com.github.xbn.linefilter.entity.OnOffAbort;
+   import  com.github.xbn.lang.CrashIfObject;
 /**
-	<p>Convenience functions for creating {@code RawOnOffEntityFilter}s.</p>
+   <p>Convenience functions for creating {@code RawOnOffEntityFilter}s.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewRawOnOffEntityFilterFor  {
-	public static final <L> RawOnOffEntityFilter<L> alwaysForPrePost(OnOffAbort pre_state, OnOffAbort post_state)  {
-		return  new FilterAlways<L>(pre_state, post_state);
-	}
-	private NewRawOnOffEntityFilterFor()  {
-		throw  new IllegalStateException("Do not instantiate.");
-	}
+   public static final <L> RawOnOffEntityFilter<L> alwaysForPrePost(OnOffAbort pre_state, OnOffAbort post_state)  {
+      return  new FilterAlways<L>(pre_state, post_state);
+   }
+   private NewRawOnOffEntityFilterFor()  {
+      throw  new IllegalStateException("Do not instantiate.");
+   }
 }
 class FilterAlways<L> implements RawOnOffEntityFilter<L>  {
-	private final OnOffAbort pre;
-	private final OnOffAbort post;
-	public FilterAlways(OnOffAbort pre_state, OnOffAbort post_state)  {
-		Objects.requireNonNull(pre_state, "pre_state");
-		Objects.requireNonNull(post_state, "post_state");
-		pre = pre_state;
-		post = post_state;
-	}
-	public FilterAlways(FilterAlways<L> to_copy)  {
-		try  {
-			pre = to_copy.pre;
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-		}
-		post = to_copy.post;
-	}
-	public OnOffAbort getPreState(RawEntity<L> ignored, int ignored2, L ignored3)  {
-		return  getPreState();
-	}
-	public OnOffAbort getPostState(RawEntity<L> ignored, int ignored2, L ignored3)  {
-		return  getPostState();
-	}
-	public RawOnOffEntityFilter<L> getObjectCopy()  {
-		return  new FilterAlways<L>(this);
-	}
-	public OnOffAbort getPreState()  {
-		return  pre;
-	}
-	public OnOffAbort getPostState()  {
-		return  pre;
-	}
-	public String toString()  {
-		return  "NewRawOnOffEntityFilterFor.alwaysPrePost(OnOffAbort." + getPreState() + ", OnOffAbort." + getPostState() + ")";
-	}
-	public void resetState()  {
-	}
+   private final OnOffAbort pre;
+   private final OnOffAbort post;
+   public FilterAlways(OnOffAbort pre_state, OnOffAbort post_state)  {
+      Objects.requireNonNull(pre_state, "pre_state");
+      Objects.requireNonNull(post_state, "post_state");
+      pre = pre_state;
+      post = post_state;
+   }
+   public FilterAlways(FilterAlways<L> to_copy)  {
+      try  {
+         pre = to_copy.pre;
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+      }
+      post = to_copy.post;
+   }
+   public OnOffAbort getPreState(RawEntity<L> ignored, int ignored2, L ignored3)  {
+      return  getPreState();
+   }
+   public OnOffAbort getPostState(RawEntity<L> ignored, int ignored2, L ignored3)  {
+      return  getPostState();
+   }
+   public RawOnOffEntityFilter<L> getObjectCopy()  {
+      return  new FilterAlways<L>(this);
+   }
+   public OnOffAbort getPreState()  {
+      return  pre;
+   }
+   public OnOffAbort getPostState()  {
+      return  pre;
+   }
+   public String toString()  {
+      return  "NewRawOnOffEntityFilterFor.alwaysPrePost(OnOffAbort." + getPreState() + ", OnOffAbort." + getPostState() + ")";
+   }
+   public void resetState()  {
+   }
 }

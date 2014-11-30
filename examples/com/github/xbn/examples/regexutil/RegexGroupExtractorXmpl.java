@@ -13,55 +13,55 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil;
-	import  java.util.List;
-	import  com.github.xbn.regexutil.RegexGroupExtractor;
-	import  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg;
+   import  java.util.List;
+   import  com.github.xbn.regexutil.RegexGroupExtractor;
+   import  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg;
 /**
-	<p>Uses {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor} to extract the return-type, function-name, and all parameters from a series of function signature lines.</p>
+   <p>Uses {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexGroupExtractor RegexGroupExtractor} to extract the return-type, function-name, and all parameters from a series of function signature lines.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.RegexGroupExtractorXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexGroupExtractorXmpl  {
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
 
-		//Setup
-			String LINE_SEP = System.getProperty("line.separator", "\\n");
+      //Setup
+         String LINE_SEP = System.getProperty("line.separator", "\\n");
 
-			String sToSearch = (new StringBuilder()).
-				append("public class SetGetInt  {"     ).append(LINE_SEP).
-				append("   private int i = -1;"        ).append(LINE_SEP).
-				append("   public SetGetInt(int i_i, boolean b_anotherParam)  {").append(LINE_SEP).
-				append("      set(i_i);"               ).append(LINE_SEP).
-				append("   }"                          ).append(LINE_SEP).
-				append("   public void set(int i_i)  {").append(LINE_SEP).
-				append("      i = i_i;"                ).append(LINE_SEP).
-				append("   }"                          ).append(LINE_SEP).
-				append("   public int get()  {"        ).append(LINE_SEP).
-				append("      return  i;"              ).append(LINE_SEP).
-				append("   }"                          ).append(LINE_SEP).
-				append("}"                             ).append(LINE_SEP).toString();
+         String sToSearch = (new StringBuilder()).
+            append("public class SetGetInt  {"     ).append(LINE_SEP).
+            append("   private int i = -1;"        ).append(LINE_SEP).
+            append("   public SetGetInt(int i_i, boolean b_anotherParam)  {").append(LINE_SEP).
+            append("      set(i_i);"               ).append(LINE_SEP).
+            append("   }"                          ).append(LINE_SEP).
+            append("   public void set(int i_i)  {").append(LINE_SEP).
+            append("      i = i_i;"                ).append(LINE_SEP).
+            append("   }"                          ).append(LINE_SEP).
+            append("   public int get()  {"        ).append(LINE_SEP).
+            append("      return  i;"              ).append(LINE_SEP).
+            append("   }"                          ).append(LINE_SEP).
+            append("}"                             ).append(LINE_SEP).toString();
 
-		String sRegexFuncRetTypNmAllParams = (new StringBuilder()).
-			append("\\s+\\b"               ).
-			append("([\\w.]+)"             ). //Return type
-			append("\\b(?:<[^>]+>)?\\s+\\b").
-			append("([\\w.]+)"             ). //Function name
-			append("\\b\\("                ).
-			append("([^\\)\\n\\r]*)"       ). //All parameters
-			append("\\)"                   ).toString();
+      String sRegexFuncRetTypNmAllParams = (new StringBuilder()).
+         append("\\s+\\b"               ).
+         append("([\\w.]+)"             ). //Return type
+         append("\\b(?:<[^>]+>)?\\s+\\b").
+         append("([\\w.]+)"             ). //Function name
+         append("\\b\\("                ).
+         append("([^\\)\\n\\r]*)"       ). //All parameters
+         append("\\)"                   ).toString();
 
-		RegexGroupExtractor rgxFuncRetNamParams = new RegexGroupExtractor_Cfg().
-			pattern(sRegexFuncRetTypNmAllParams).
-			build().search(sToSearch);
+      RegexGroupExtractor rgxFuncRetNamParams = new RegexGroupExtractor_Cfg().
+         pattern(sRegexFuncRetTypNmAllParams).
+         build().search(sToSearch);
 
-		System.out.println("Return type  |  Function name  |  All parameters");
-		System.out.println("------------------------------------------------");
-		while(rgxFuncRetNamParams.hasNext())  {
-			List<String> ls = rgxFuncRetNamParams.next();
-			System.out.println(ls.get(0) + "  |  " + ls.get(1) + "  |  " + ls.get(2));
-		}
-	}
+      System.out.println("Return type  |  Function name  |  All parameters");
+      System.out.println("------------------------------------------------");
+      while(rgxFuncRetNamParams.hasNext())  {
+         List<String> ls = rgxFuncRetNamParams.next();
+         System.out.println(ls.get(0) + "  |  " + ls.get(1) + "  |  " + ls.get(2));
+      }
+   }
 }

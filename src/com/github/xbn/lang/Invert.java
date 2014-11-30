@@ -19,45 +19,45 @@ package  com.github.xbn.lang;
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum Invert  {
-	/**
-	 * <p>Invert the rules.</p>
-	 *
-	 * @see  #NO
-	 * @see  #isYes()
-	 **/
-	YES,
-	/**
-	 * <p>Do not invert the rules.</p>
-	 *
-	 * @see  #YES
-	 * @see  #isNo()
-	 **/
-	NO;
-	/**
-	 * <p>Is this {@code Invert} equal to {@code YES}?.</p>
-	 *
-	 * @return  <code>this == {@link #YES}</code>
-	 *
-	 * @see  #isNo()
-	 **/
-	public final boolean isYes()  {
-		return  this == YES;
-	}
-	/**
-	 * <p>Is this {@code Invert} equal to {@code NO}?.</p>
-	 *
-	 * @return  <code>this == {@link #NO}</code>
-	 * @see  #isYes()
-	 **/
-	public final boolean isNo()  {
-		return  this == NO;
-	}
-	/**
-	 * <p>Return {@code Invert.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
-	 *
-	 * @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
-	 **/
-	public static final Invert getForBoolean(boolean flag)  {
-		return  (flag ? YES : NO);
-	}
+   /**
+    * <p>Invert the rules.</p>
+    *
+    * @see  #NO
+    * @see  #isYes()
+    **/
+   YES,
+   /**
+    * <p>Do not invert the rules.</p>
+    *
+    * @see  #YES
+    * @see  #isNo()
+    **/
+   NO;
+   /**
+    * <p>Is this {@code Invert} equal to {@code YES}?.</p>
+    *
+    * @return  <code>this == {@link #YES}</code>
+    *
+    * @see  #isNo()
+    **/
+   public final boolean isYes()  {
+      return  this == YES;
+   }
+   /**
+    * <p>Is this {@code Invert} equal to {@code NO}?.</p>
+    *
+    * @return  <code>this == {@link #NO}</code>
+    * @see  #isYes()
+    **/
+   public final boolean isNo()  {
+      return  this == NO;
+   }
+   /**
+    * <p>Return {@code Invert.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
+    *
+    * @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
+    **/
+   public static final Invert getForBoolean(boolean flag)  {
+      return  (flag ? YES : NO);
+   }
 };

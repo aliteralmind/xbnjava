@@ -13,29 +13,29 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array.helper;
-	import  com.github.xbn.number.CrashIfIntIs;
-	import  org.apache.commons.lang3.ArrayUtils;
+   import  com.github.xbn.number.CrashIfIntIs;
+   import  org.apache.commons.lang3.ArrayUtils;
 /**
-	<p>{@code ArrayHelper} for strings.</p>
+   <p>{@code ArrayHelper} for strings.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class StringArrayHelper extends AbstractArrayHelper<String>  {
-	public StringArrayHelper()  {
-		super(String[].class);
-	}
-	public String[] getInitialized(int length)  {
-		if(length == 0)  {
-			return  getEmpty();
-		}
-		try  {
-			return  (new String[length]);
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfIntIs.lessThanZeroOrReturnCause(length, "length", null, rx);
-		}
-	}
-	public String[] getEmpty()  {
-		return  ArrayUtils.EMPTY_STRING_ARRAY;
-	}
+   public StringArrayHelper()  {
+      super(String[].class);
+   }
+   public String[] getInitialized(int length)  {
+      if(length == 0)  {
+         return  getEmpty();
+      }
+      try  {
+         return  (new String[length]);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfIntIs.lessThanZeroOrReturnCause(length, "length", null, rx);
+      }
+   }
+   public String[] getEmpty()  {
+      return  ArrayUtils.EMPTY_STRING_ARRAY;
+   }
 }

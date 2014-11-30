@@ -14,60 +14,60 @@
 \*license*/
 package  com.github.xbn.analyze.alter;
 /**
-	<p>For classes that need to implement {@code AltererComposer}, that cannot extend {@code AbstractAlterer}.</p>
+   <p>For classes that need to implement {@code AltererComposer}, that cannot extend {@code AbstractAlterer}.</p>
 
-	@see  AbstractAlterer
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @see  AbstractAlterer
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueAltererComposer<V,A> extends AltererComposer  {
 //constructors...START
-	/**
-		<p>Create a new {@code ValueAltererComposer}.</p>
+   /**
+      <p>Create a new {@code ValueAltererComposer}.</p>
 
-		YYY
-	 **/
-	public ValueAltererComposer()  {
-		super();
-	}
-	public ValueAltererComposer(AlterationRequired required)  {
-		super(required);
-	}
-	public ValueAltererComposer(boolean ignored, ValueAltererComposer to_copy)  {
-		super(ignored, to_copy);
-	}
-	/**
-		<p>Create a new {@code ValueAltererComposer} as a duplicate of another.</p>
+      YYY
+    **/
+   public ValueAltererComposer()  {
+      super();
+   }
+   public ValueAltererComposer(AlterationRequired required)  {
+      super(required);
+   }
+   public ValueAltererComposer(boolean ignored, ValueAltererComposer to_copy)  {
+      super(ignored, to_copy);
+   }
+   /**
+      <p>Create a new {@code ValueAltererComposer} as a duplicate of another.</p>
 
-		<p>Equal to
-		<br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
+      <p>Equal to
+      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
 
-		@param  to_copy  May not be {@code null}.
-	 **/
-	public ValueAltererComposer(ValueAlterer<V,A> to_copy)  {
-		super(to_copy);
-	}
+      @param  to_copy  May not be {@code null}.
+    **/
+   public ValueAltererComposer(ValueAlterer<V,A> to_copy)  {
+      super(to_copy);
+   }
 
 //static...START
-	public static final <V,A> A getAltered_selfIfAltererNull(ValueAlterer<V,A> prim_array, V to_validate, A to_alter)  {
-		return  ((prim_array == null)
-			?  to_alter
-			:  prim_array.getAltered(to_validate, to_alter));
-	}
-	/**
-		<p>YYY</p>
+   public static final <V,A> A getAltered_selfIfAltererNull(ValueAlterer<V,A> prim_array, V to_validate, A to_alter)  {
+      return  ((prim_array == null)
+         ?  to_alter
+         :  prim_array.getAltered(to_validate, to_alter));
+   }
+   /**
+      <p>YYY</p>
 
-		<h1>//MOVE INTERNAL CHECKS LIKE BELOW TO IW...//MOVE INTERNAL CHECKS LIKE BELOW TO IW...</h1>
-	public static final <p> P getDeclareSameTypeSubAltered_selfIfSubNull(ValueAltererComposer<p> avb_containsSub, ValueAlterer<p> av_sub, P to_alter)  {
-		P o = getAltered_selfIfAltererNull(av_sub, to_alter);
-		boolean bNtbd = av_sub.needsToBeDeleted();
+      <h1>//MOVE INTERNAL CHECKS LIKE BELOW TO IW...//MOVE INTERNAL CHECKS LIKE BELOW TO IW...</h1>
+   public static final <p> P getDeclareSameTypeSubAltered_selfIfSubNull(ValueAltererComposer<p> avb_containsSub, ValueAlterer<p> av_sub, P to_alter)  {
+      P o = getAltered_selfIfAltererNull(av_sub, to_alter);
+      boolean bNtbd = av_sub.needsToBeDeleted();
 
-		if(bNtbd  &&  o != null)  {
-			throw  new IllegalStateException("av_sub.needsToBeDeleted() is true, but av_sub.getAltered(to_alter) returned something non-null: [" + o + "]");
-		}
+      if(bNtbd  &&  o != null)  {
+         throw  new IllegalStateException("av_sub.needsToBeDeleted() is true, but av_sub.getAltered(to_alter) returned something non-null: [" + o + "]");
+      }
 
-		return  avb_containsSub.declareThenReturnAltered_4prot(bNtbd, o);
-	}
-	 **/
+      return  avb_containsSub.declareThenReturnAltered_4prot(bNtbd, o);
+   }
+    **/
 //static...END
 }

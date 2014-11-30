@@ -13,22 +13,22 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.list.lister.z;
-	import  com.github.xbn.list.lister.LLCIndexableElement;
-	import  com.github.xbn.neederneedable.DummyForNoNeeder;
+   import  com.github.xbn.list.lister.LLCIndexableElement;
+   import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring an {@code com.github.xbn.list.lister.LLCIndexableElement LLCIndexableElement}.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring an {@code com.github.xbn.list.lister.LLCIndexableElement LLCIndexableElement}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LLCIndexableElement_Cfg<E> extends LLCIndexableElement_CfgForNeeder<E,LLCIndexableElement<E>,DummyForNoNeeder>   {
-	/**
-		<p>Create a new {@code zLLCIndexableElement_Cfg} with defaults.</p>
+   /**
+      <p>Create a new {@code zLLCIndexableElement_Cfg} with defaults.</p>
 
-			<p>Equal to
-		<br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCIndexableElement_CfgForNeeder#LLCIndexableElement_CfgForNeeder(R)">super</a>(null)</code></p>
-	 **/
-	public LLCIndexableElement_Cfg()  {
-		super(null);
-	}
+         <p>Equal to
+      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCIndexableElement_CfgForNeeder#LLCIndexableElement_CfgForNeeder(R)">super</a>(null)</code></p>
+    **/
+   public LLCIndexableElement_Cfg()  {
+      super(null);
+   }
 }

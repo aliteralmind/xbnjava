@@ -14,34 +14,34 @@
 \*license*/
 package  com.github.xbn.util.tuple;
 /**
-	<p>Holds three objects.</p>
+   <p>Holds three objects.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ThreeTSObjects extends TwoTSObjects  {
-	private Object o3;
+   private Object o3;
 //constructors...START
-	public ThreeTSObjects(Object o_1, Object o_2, Object o_3)  {
-		this("ThreeTSObjects", o_1, o_2, o_3);
-	}
-	protected ThreeTSObjects(String this_classesNonFQClsNmForErrMsg, Object o_1, Object o_2, Object o_3)  {
-		super(this_classesNonFQClsNmForErrMsg, o_1, o_2);
-		set3(o_3);
-	}
+   public ThreeTSObjects(Object o_1, Object o_2, Object o_3)  {
+      this("ThreeTSObjects", o_1, o_2, o_3);
+   }
+   protected ThreeTSObjects(String this_classesNonFQClsNmForErrMsg, Object o_1, Object o_2, Object o_3)  {
+      super(this_classesNonFQClsNmForErrMsg, o_1, o_2);
+      set3(o_3);
+   }
 //constructors...END
-	public Object get3()  {
-		return  o3;
-	}
-	public ThreeTSObjects set3(Object o_3)  {
-		o3 = o_3;
-		return  this;
-	}
-	public ThreeTSObjects set(Object o_1, Object o_2, Object o_3)  {
-		set(o_1, o_2);
-		return  set3(o_3);
-	}
-	public String getJoined()  {
-		return  appendJoined(new StringBuilder(), get3()).toString();
-	}
+   public Object get3()  {
+      return  o3;
+   }
+   public ThreeTSObjects set3(Object o_3)  {
+      o3 = o_3;
+      return  this;
+   }
+   public ThreeTSObjects set(Object o_1, Object o_2, Object o_3)  {
+      set(o_1, o_2);
+      return  set3(o_3);
+   }
+   public String getJoined()  {
+      return  appendJoined(new StringBuilder(), get3()).toString();
+   }
 }

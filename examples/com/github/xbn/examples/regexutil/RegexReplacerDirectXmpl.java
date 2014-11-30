@@ -13,26 +13,26 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil;
-	import  com.github.xbn.regexutil.RegexReplacer;
-	import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
+   import  com.github.xbn.regexutil.RegexReplacer;
+   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
 /**
-	<p>Demonstrates a <a href="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#indirect">direct replacement</a> using {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexReplacer RegexReplacer}.</p>
+   <p>Demonstrates a <a href="{@docRoot}/com/github/xbn/text/regex/RegexReplacer.html#indirect">direct replacement</a> using {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexReplacer RegexReplacer}.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.RegexReplacerDirectXmpl}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.RegexReplacerDirectXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexReplacerDirectXmpl  {
-	public static void main(String[] ignored)  {
+   public static void main(String[] ignored)  {
 
-		String sToSearch = "one two three four five";
-		String sFindWhat = "\\b(\\w+)\\b";
-		String sRplcWith = "[$1]";
+      String sToSearch = "one two three four five";
+      String sFindWhat = "\\b(\\w+)\\b";
+      String sRplcWith = "[$1]";
 
-		System.out.println("Surrounding first only with square brackets:");
+      System.out.println("Surrounding first only with square brackets:");
 
-		RegexReplacer rr = new RegexReplacer_Cfg().first().direct(sFindWhat, sRplcWith).build();
-		System.out.println(rr.getReplaced(sToSearch));
-	}
+      RegexReplacer rr = new RegexReplacer_Cfg().first().direct(sFindWhat, sRplcWith).build();
+      System.out.println(rr.getReplaced(sToSearch));
+   }
 }

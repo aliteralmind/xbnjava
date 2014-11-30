@@ -15,30 +15,30 @@
 package  com.github.xbn.examples.lang.non_xbn;
   import  java.util.Scanner;
 /**
-	<p>Demonstrates the use of test-data in an application requiring user-input at the console, preventing the need for user-input during development.</p>
+   <p>Demonstrates the use of test-data in an application requiring user-input at the console, preventing the need for user-input during development.</p>
 
-	<p>{@code java com.github.xbn.examples.lang.non_xbn.IgnoreUserInputDuringDevelopmentWTestData1of2}</p>
+   <p>{@code java com.github.xbn.examples.lang.non_xbn.IgnoreUserInputDuringDevelopmentWTestData1of2}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IgnoreUserInputDuringDevelopmentWTestData1of2  {
-	public static void main(String[] ignored) {
+   public static void main(String[] ignored) {
   //Exactly one of the following lines must be commented out
   //printUserPromptData();
   printTestData();
-	}
-	private static final void printTestData()  {
+   }
+   private static final void printTestData()  {
   printGrid(0, 0, 4);
   printGrid(5, 3, 9);
   printGrid(1, 1, 1);
-	}
+   }
 
-	private static final void printGrid(int x_pos, int y_pos, int length)  {
-		System.out.println("Print grid HERE: x_pos=" + x_pos + ", y_pos=" + y_pos + ", length=" + length);
-	}
+   private static final void printGrid(int x_pos, int y_pos, int length)  {
+      System.out.println("Print grid HERE: x_pos=" + x_pos + ", y_pos=" + y_pos + ", length=" + length);
+   }
 
-	private static final void printUserPromptData()  {
+   private static final void printUserPromptData()  {
   Scanner scnr = new Scanner(System.in);
   System.out.print("Position in x:");
   int positionInX = Integer.parseInt(scnr.nextLine());
@@ -50,5 +50,5 @@ public class IgnoreUserInputDuringDevelopmentWTestData1of2  {
   int lengthOfSquare = Integer.parseInt(scnr.nextLine());
 
   printGrid(positionInX, positionInY, lengthOfSquare);
-	}
+   }
 }

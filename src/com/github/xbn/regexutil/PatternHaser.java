@@ -13,20 +13,20 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.regexutil;
-	import  com.github.xbn.regexutil.z.PatternHaser_Fieldable;
-	import  java.util.regex.Pattern;
+   import  com.github.xbn.regexutil.z.PatternHaser_Fieldable;
+   import  java.util.regex.Pattern;
 /**
-	<p>Has a pattern. This interface is intended to take advantage of <code>{@link com.github.xbn.regexutil.RegexUtil RegexUtil}.{@link com.github.xbn.regexutil.RegexUtil#getPatternCrashIfHaserNull(PatternHaser, String) getPatternCrashIfHaserNull}</code> and <code>{@link RegexUtil}.{@link RegexUtil#getPatternCopy(PatternHaser, String) getPatternCopy}</code>.</p>
+   <p>Has a pattern. This interface is intended to take advantage of <code>{@link com.github.xbn.regexutil.RegexUtil RegexUtil}.{@link com.github.xbn.regexutil.RegexUtil#getPatternCrashIfHaserNull(PatternHaser, String) getPatternCrashIfHaserNull}</code> and <code>{@link RegexUtil}.{@link RegexUtil#getPatternCopy(PatternHaser, String) getPatternCopy}</code>.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface PatternHaser extends PatternHaser_Fieldable  {
-	int getMatchedIndex();
-	int getMatchCount();
-	boolean wasJustMatched();
-	@Override
-	Pattern getPattern();
-	@Override
-	MatcherUses getMatcherUses();
+   int getMatchedIndex();
+   int getMatchCount();
+   boolean wasJustMatched();
+   @Override
+   Pattern getPattern();
+   @Override
+   MatcherUses getMatcherUses();
 }

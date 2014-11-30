@@ -13,49 +13,49 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.backend;
-	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
-	import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyIntable;
-	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
-	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
-	import  com.github.xbn.util.copyval.SimpleNullHandler;
+   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
+   import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyIntable;
+   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+   import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
+   import  com.github.xbn.util.copyval.SimpleNullHandler;
 /**
-	<p>For building listifiers whose raw object is a numeric primitive array, and whose virtual elements is the <i>length</i> of those numbers.</p>
+   <p>For building listifiers whose raw object is a numeric primitive array, and whose virtual elements is the <i>length</i> of those numbers.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyPArrayDigitLengths<R> extends AbstractListifyIntable  {
-	private PrimitiveArrayHelper<R> pahr = null;
+   private PrimitiveArrayHelper<R> pahr = null;
 //constructors...START
-	@SuppressWarnings("unchecked")
-	public AbstractListifyPArrayDigitLengths(Object obj_thatIsPrimArr, PrimitiveArrayHelper<R> array_helper)  {
-		this(obj_thatIsPrimArr, array_helper, SimpleNullHandlerForPrimitives.CRASH);
-	}
-	public AbstractListifyPArrayDigitLengths(Object obj_thatIsPrimArr, PrimitiveArrayHelper<R> pah_forRawArrayType, NullHandlerForPrimitives<Integer> null_handler)  {
-		super(obj_thatIsPrimArr, null_handler);
-		if(pah_forRawArrayType == null)  {
-			throw  new NullPointerException("pah_forRawArrayType");
-		}
-		pahr = pah_forRawArrayType;
-	}
-	public AbstractListifyPArrayDigitLengths(AbstractListifyPArrayDigitLengths<R> to_copy)  {
-		super(to_copy);
-	}
+   @SuppressWarnings("unchecked")
+   public AbstractListifyPArrayDigitLengths(Object obj_thatIsPrimArr, PrimitiveArrayHelper<R> array_helper)  {
+      this(obj_thatIsPrimArr, array_helper, SimpleNullHandlerForPrimitives.CRASH);
+   }
+   public AbstractListifyPArrayDigitLengths(Object obj_thatIsPrimArr, PrimitiveArrayHelper<R> pah_forRawArrayType, NullHandlerForPrimitives<Integer> null_handler)  {
+      super(obj_thatIsPrimArr, null_handler);
+      if(pah_forRawArrayType == null)  {
+         throw  new NullPointerException("pah_forRawArrayType");
+      }
+      pahr = pah_forRawArrayType;
+   }
+   public AbstractListifyPArrayDigitLengths(AbstractListifyPArrayDigitLengths<R> to_copy)  {
+      super(to_copy);
+   }
 //constructors...END
-	public PrimitiveArrayHelper<R> getPAHelperForRaw()  {
-		return  pahr;
-	}
-	public final int getInt(int index)  {
-		R e = getPAHelperForRaw().getWrapper(getRawObject(), index, "getRawObject()");
-		Integer I = ((e == null) ? null : e.toString().length());
-		return  SimpleNullHandler.getCopyCIOrigNullAndActionCrashOrDel(getNullHandlerForPrimitives(), I);
-	}
-	public final int getSizeNPXOkay()  {
-		return  getPAHelperForRaw().getLength(getRawObject(), "getRawObject()");
-	}
+   public PrimitiveArrayHelper<R> getPAHelperForRaw()  {
+      return  pahr;
+   }
+   public final int getInt(int index)  {
+      R e = getPAHelperForRaw().getWrapper(getRawObject(), index, "getRawObject()");
+      Integer I = ((e == null) ? null : e.toString().length());
+      return  SimpleNullHandler.getCopyCIOrigNullAndActionCrashOrDel(getNullHandlerForPrimitives(), I);
+   }
+   public final int getSizeNPXOkay()  {
+      return  getPAHelperForRaw().getLength(getRawObject(), "getRawObject()");
+   }
 /*stub functions for non-abstract compile...START
-	public final Iterator<Integer> iterator()  {
-		return  null;
-	}
+   public final Iterator<Integer> iterator()  {
+      return  null;
+   }
  stub functions for non-abstract compile...END*/
 }

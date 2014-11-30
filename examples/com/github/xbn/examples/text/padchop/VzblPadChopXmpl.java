@@ -13,32 +13,32 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.text.padchop;
-	import  com.github.xbn.text.padchop.VzblPadChop;
-	import  com.github.xbn.text.padchop.z.VzblPadChop_Cfg;
+   import  com.github.xbn.text.padchop.VzblPadChop;
+   import  com.github.xbn.text.padchop.z.VzblPadChop_Cfg;
 /**
-	<p>Uses {@code com.github.xbn.text.padchop.}{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop} to trim, pad, and chop a string.</p>
+   <p>Uses {@code com.github.xbn.text.padchop.}{@link com.github.xbn.text.padchop.VzblPadChop VzblPadChop} to trim, pad, and chop a string.</p>
 
-	<p>{@code java com.github.xbn.examples.text.padchop.VzblPadChopXmpl}</p>
+   <p>{@code java com.github.xbn.examples.text.padchop.VzblPadChopXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class VzblPadChopXmpl  {
-	public static final void main(String[] ignored)  {
-		String s = "Hi Ho! Kermit The Frog here.";
+   public static final void main(String[] ignored)  {
+      String s = "Hi Ho! Kermit The Frog here.";
 
-		System.out.println("Chop right to 15, then pad left to 30");
-			VzblPadChop padchop = new VzblPadChop_Cfg().
-				cfgPad(true, 30).left().endCfg().
-				cfgChop(true, 15).ddd().endCfg().
-				chopFirst().trimLeft().build();
-			System.out.println("[" + padchop.get(s) + "]");
-			System.out.println();
+      System.out.println("Chop right to 15, then pad left to 30");
+         VzblPadChop padchop = new VzblPadChop_Cfg().
+            cfgPad(true, 30).left().endCfg().
+            cfgChop(true, 15).ddd().endCfg().
+            chopFirst().trimLeft().build();
+         System.out.println("[" + padchop.get(s) + "]");
+         System.out.println();
 
-		System.out.println("Pad right to 30, chop left to 15");
-			new VzblPadChop_Cfg().padFirst().  //debugTo(System.out).
-					cfgPad(30).endCfg().
-					cfgChop(15).left().endCfg().build().
-				appendlns(1, System.out, "[", s, "]");
-	}
+      System.out.println("Pad right to 30, chop left to 15");
+         new VzblPadChop_Cfg().padFirst().  //debugTo(System.out).
+               cfgPad(30).endCfg().
+               cfgChop(15).left().endCfg().build().
+            appendlns(1, System.out, "[", s, "]");
+   }
 }

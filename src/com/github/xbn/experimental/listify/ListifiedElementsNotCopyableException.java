@@ -14,27 +14,27 @@
 \*license*/
 package  com.github.xbn.experimental.listify;
 /**
-	<p>Thrown when a copy-attempt is made against an un-duplicate-able {@code Listify} element.</p>
+   <p>Thrown when a copy-attempt is made against an un-duplicate-able {@code Listify} element.</p>
 
-	@author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code>, <a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a>}
+   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code>, <a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a>}
  **/
 public class ListifiedElementsNotCopyableException extends IllegalStateException  {
 /**
-	 * 
-	 */
-	private static final long serialVersionUID = -5744363226603933182L;
-	//constructors...START
-	public ListifiedElementsNotCopyableException()  {
-		super();
-	}
-	public ListifiedElementsNotCopyableException(String message)  {
-		super(message);
-	}
-	public ListifiedElementsNotCopyableException(Throwable cause)  {
-		super(cause);
-	}
-	public ListifiedElementsNotCopyableException(String message, Throwable cause)  {
-		super(message, cause);
-	}
+    * 
+    */
+   private static final long serialVersionUID = -5744363226603933182L;
+   //constructors...START
+   public ListifiedElementsNotCopyableException()  {
+      super();
+   }
+   public ListifiedElementsNotCopyableException(String message)  {
+      super(message);
+   }
+   public ListifiedElementsNotCopyableException(Throwable cause)  {
+      super(cause);
+   }
+   public ListifiedElementsNotCopyableException(String message, Throwable cause)  {
+      super(message, cause);
+   }
 //constructors...END
 }

@@ -14,34 +14,34 @@
 \*license*/
 package  com.github.xbn.util.tuple;
 /**
-	<p>Holds four objects.</p>
+   <p>Holds four objects.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FourTSObjects extends ThreeTSObjects  {
-	private Object o4;
+   private Object o4;
 //constructors...START
-	public FourTSObjects(Object o_1, Object o_2, Object o_3, Object o_4)  {
-		this("FourTSObjects", o_1, o_2, o_3, o_4);
-	}
-	protected FourTSObjects(String this_classesNonFQClsNmForErrMsg, Object o_1, Object o_2, Object o_3, Object o_4)  {
-		super(this_classesNonFQClsNmForErrMsg, o_1, o_2, o_3);
-		set4(o_4);
-	}
+   public FourTSObjects(Object o_1, Object o_2, Object o_3, Object o_4)  {
+      this("FourTSObjects", o_1, o_2, o_3, o_4);
+   }
+   protected FourTSObjects(String this_classesNonFQClsNmForErrMsg, Object o_1, Object o_2, Object o_3, Object o_4)  {
+      super(this_classesNonFQClsNmForErrMsg, o_1, o_2, o_3);
+      set4(o_4);
+   }
 //constructors...END
-	public Object get4()  {
-		return  o4;
-	}
-	public FourTSObjects set4(Object o_4)  {
-		o4 = o_4;
-		return  this;
-	}
-	public FourTSObjects set(Object o_1, Object o_2, Object o_3, Object o_4)  {
-		set(o_1, o_2, o_3);
-		return  set4(o_4);
-	}
-	public String getJoined()  {
-		return  appendJoined(new StringBuilder(), get3(), get4()).toString();
-	}
+   public Object get4()  {
+      return  o4;
+   }
+   public FourTSObjects set4(Object o_4)  {
+      o4 = o_4;
+      return  this;
+   }
+   public FourTSObjects set(Object o_1, Object o_2, Object o_3, Object o_4)  {
+      set(o_1, o_2, o_3);
+      return  set4(o_4);
+   }
+   public String getJoined()  {
+      return  appendJoined(new StringBuilder(), get3(), get4()).toString();
+   }
 }

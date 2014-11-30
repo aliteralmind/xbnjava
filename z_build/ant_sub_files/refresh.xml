@@ -1,6 +1,5 @@
 <project name="xbnjava_refresh" default="help" basedir=".">
 <!-- Clean targets...START -->
-
       <target name="delete_build"
             description="Delete the entire build directory (not ${dir_classes_xbn})">
          <delete dir="${dir_build}" includeemptydirs="true" quiet="false"/>
@@ -44,8 +43,8 @@
 
       <target name="cleansandbox"
             description="Deletes temporary files from the sandbox">
-			<delete file="${pom_xml_dest}"/><!-- Originates in task preppoms. Needed by task clean -->
-			<delete file="${dir_sandbox}temp.txt"/>
+         <delete file="${pom_xml_dest}"/><!-- Originates in task preppoms. Needed by task clean -->
+         <delete file="${dir_sandbox}temp.txt"/>
       </target>
 
       <target name="clean"

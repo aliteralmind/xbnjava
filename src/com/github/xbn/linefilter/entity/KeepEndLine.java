@@ -13,60 +13,60 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.linefilter.entity;
-	import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.lang.CrashIfObject;
 /**
-	<p>Should the end line in a block entity be kept?.</p>
+   <p>Should the end line in a block entity be kept?.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum KeepEndLine  {
-	/**
-		<p>YYY.</p>
+   /**
+      <p>YYY.</p>
 
-		@see  #NO
-		@see  #isYes()
-	 **/
-	YES,
-	/**
-		<p>YYY.</p>
+      @see  #NO
+      @see  #isYes()
+    **/
+   YES,
+   /**
+      <p>YYY.</p>
 
-		@see  #YES
-		@see  #isNo()
-	 **/
-	NO;
-	/**
-		<p>Is this {@code KeepEndLine} equal to {@code YES}?.</p>
+      @see  #YES
+      @see  #isNo()
+    **/
+   NO;
+   /**
+      <p>Is this {@code KeepEndLine} equal to {@code YES}?.</p>
 
-		@return  <code>this == {@link #YES}</code>
+      @return  <code>this == {@link #YES}</code>
 
-		@see  #isNo()
-	 **/
-	public final boolean isYes()  {
-		return  this == YES;
-	}
-	/**
-		<p>Is this {@code KeepEndLine} equal to {@code NO}?.</p>
+      @see  #isNo()
+    **/
+   public final boolean isYes()  {
+      return  this == YES;
+   }
+   /**
+      <p>Is this {@code KeepEndLine} equal to {@code NO}?.</p>
 
-		@return  <code>this == {@link #NO}</code>
-		@see  #isYes()
-	 **/
-	public final boolean isNo()  {
-		return  this == NO;
-	}
-	/**
-		<p>Return {@code KeepEndLine.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
+      @return  <code>this == {@link #NO}</code>
+      @see  #isYes()
+    **/
+   public final boolean isNo()  {
+      return  this == NO;
+   }
+   /**
+      <p>Return {@code KeepEndLine.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
 
-		@return  <code>(flag ? {@link #YES} : {@link #NO})</code>
-	 **/
-	public static final KeepEndLine getForBoolean(boolean flag)  {
-		return  (flag ? YES : NO);
-	}
-	public static final KeepEndLine getForKeepMatched(KeepMatched matched, String kam_varName)  {
-		try  {
-			return  (matched.isYes() ? YES : NO);
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(matched, kam_varName, null, rx);
-		}
-	}
+      @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
+    **/
+   public static final KeepEndLine getForBoolean(boolean flag)  {
+      return  (flag ? YES : NO);
+   }
+   public static final KeepEndLine getForKeepMatched(KeepMatched matched, String kam_varName)  {
+      try  {
+         return  (matched.isYes() ? YES : NO);
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(matched, kam_varName, null, rx);
+      }
+   }
 };

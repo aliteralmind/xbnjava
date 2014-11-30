@@ -13,40 +13,40 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil;
-	import  com.github.xbn.regexutil.RegexTokenizer;
-	import  com.github.xbn.regexutil.z.RegexTokenizer_Cfg;
+   import  com.github.xbn.regexutil.RegexTokenizer;
+   import  com.github.xbn.regexutil.z.RegexTokenizer_Cfg;
 /**
-	<p>Uses a {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexTokenizer RegexTokenizer} to split a string on a regex, optionally returning the regex-separators and/or the &quot;betweens&quot;.</p>
+   <p>Uses a {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.RegexTokenizer RegexTokenizer} to split a string on a regex, optionally returning the regex-separators and/or the &quot;betweens&quot;.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.RegexTokenizerXmpl}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.RegexTokenizerXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexTokenizerXmpl  {
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
 
-		String sRENumCommaNum = "(\\b\\d+,\\d+\\b)";
-		String sREBetweens = "((?:\\),\\()|(?:(?<!,)\\()|(?:\\)(?!,)))";
-		String sToSearch = "(1,2),(3,4),(5,6)";
+      String sRENumCommaNum = "(\\b\\d+,\\d+\\b)";
+      String sREBetweens = "((?:\\),\\()|(?:(?<!,)\\()|(?:\\)(?!,)))";
+      String sToSearch = "(1,2),(3,4),(5,6)";
 
-		System.out.println("Searching: \"" + sToSearch + "\"");
+      System.out.println("Searching: \"" + sToSearch + "\"");
 
-		System.out.println("Numbers:");
-			RegexTokenizer rt = new RegexTokenizer_Cfg(sRENumCommaNum).
-				separators().toTokenize(sToSearch).
-				//debugTo(System.out).
-				build();
-			while(rt.hasNext())  {
-				System.out.println(rt.next().getText());
-			}
+      System.out.println("Numbers:");
+         RegexTokenizer rt = new RegexTokenizer_Cfg(sRENumCommaNum).
+            separators().toTokenize(sToSearch).
+            //debugTo(System.out).
+            build();
+         while(rt.hasNext())  {
+            System.out.println(rt.next().getText());
+         }
 
-		System.out.println("Betweens:");
-			rt.setNewSearch(sREBetweens, sToSearch, -1);
-			while(rt.hasNext())  {
-				System.out.println(rt.next().getText());
-			}
-	}
+      System.out.println("Betweens:");
+         rt.setNewSearch(sREBetweens, sToSearch, -1);
+         while(rt.hasNext())  {
+            System.out.println(rt.next().getText());
+         }
+   }
 }
 
 

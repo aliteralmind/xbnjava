@@ -13,76 +13,76 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.lang;
-	import  java.util.Objects;
+   import  java.util.Objects;
 /**
-	<p>For classes that need to implement {@code Rulable}, that cannot extend abstract or concrete implementations.</p>
+   <p>For classes that need to implement {@code Rulable}, that cannot extend abstract or concrete implementations.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RuleableComposer  {//implements Ruleable  {
-	private final RuleType type;
+   private final RuleType type;
 //constructors...START
-	public RuleableComposer()  {
-		this(RuleType.UNRESTRICTED);
-	}
-	public RuleableComposer(RuleType type)  {
-		this(type, "type");
-	}
-	public RuleableComposer(RuleType type, String type_name)  {
-		Objects.requireNonNull(type, type_name);
-		this.type = type;
-	}
-	/*
-		<p>Create a new {@code RuleableComposer} as a duplicate of another.</p>
+   public RuleableComposer()  {
+      this(RuleType.UNRESTRICTED);
+   }
+   public RuleableComposer(RuleType type)  {
+      this(type, "type");
+   }
+   public RuleableComposer(RuleType type, String type_name)  {
+      Objects.requireNonNull(type, type_name);
+      this.type = type;
+   }
+   /*
+      <p>Create a new {@code RuleableComposer} as a duplicate of another.</p>
 
-		<p>This<ol>
-			<li>YYY</li>
-		</ol></p>
+      <p>This<ol>
+         <li>YYY</li>
+      </ol></p>
 
-		@param  to_copy  May not be {@code null}.
-		@see  #getObjectCopy()
-	public RuleableComposer(boolean ignored, RuleableComposer to_copy)  {
-		try  {
-			this.type = to_copy.getRuleType();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-		}
-	}
-	 */
-	/*
-		<p>Create a new {@code RuleableComposer} from a {@code Ruleable}.</p>
+      @param  to_copy  May not be {@code null}.
+      @see  #getObjectCopy()
+   public RuleableComposer(boolean ignored, RuleableComposer to_copy)  {
+      try  {
+         this.type = to_copy.getRuleType();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+      }
+   }
+    */
+   /*
+      <p>Create a new {@code RuleableComposer} from a {@code Ruleable}.</p>
 
-		<p>This<ol>
-			<li>YYY</li>
-		</ol></p>
+      <p>This<ol>
+         <li>YYY</li>
+      </ol></p>
 
-		@param  to_copy  May not be {@code null}.
-		@see  #getObjectCopy()
-	public RuleableComposer(Ruleable to_copy)  {
-		try  {
-			this.type = to_copy.getRuleType();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-		}
-	}
-	 */
+      @param  to_copy  May not be {@code null}.
+      @see  #getObjectCopy()
+   public RuleableComposer(Ruleable to_copy)  {
+      try  {
+         this.type = to_copy.getRuleType();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+      }
+   }
+    */
 //constructors...END
-	public RuleType getRuleType()  {
-		return  type;
-	}
-	public String toString()  {
-		return  appendToString(new StringBuilder()).toString();
-	}
-	public StringBuilder appendToString(StringBuilder to_appendTo)  {
-		return  to_appendTo.append("RuleType.").append(getRuleType());
-	}
-	/*
-		<p>Duplicate this {@code RuleableComposer}.</p>
+   public RuleType getRuleType()  {
+      return  type;
+   }
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      return  to_appendTo.append("RuleType.").append(getRuleType());
+   }
+   /*
+      <p>Duplicate this {@code RuleableComposer}.</p>
 
-		@return  <code>(new {@link #RuleableComposer(boolean, RuleableComposer) RuleableComposer}(false, this))</code>
-	public RuleableComposer getObjectCopy()  {
-		return  (new RuleableComposer(false, this));
-	}
-	 */
+      @return  <code>(new {@link #RuleableComposer(boolean, RuleableComposer) RuleableComposer}(false, this))</code>
+   public RuleableComposer getObjectCopy()  {
+      return  (new RuleableComposer(false, this));
+   }
+    */
 }

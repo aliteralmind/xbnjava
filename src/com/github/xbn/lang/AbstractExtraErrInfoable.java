@@ -14,23 +14,23 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-	<p>Abstract implementation of {@code ExtraErrInfoable}.</p>
+   <p>Abstract implementation of {@code ExtraErrInfoable}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractExtraErrInfoable implements ExtraErrInfoable  {
-	private final ExtraErrInfoableComposer cfxic;
-	public AbstractExtraErrInfoable()  {
-		cfxic = new ExtraErrInfoableComposer();
-	}
-	public AbstractExtraErrInfoable(ExtraErrInfoable to_copy)  {
-		cfxic = new ExtraErrInfoableComposer(to_copy);
-	}
-	public Object getExtraErrInfo()  {
-		return  cfxic.getExtraErrInfo();
-	}
-	public void setExtraErrInfo(Object info)  {
-		cfxic.setExtraErrInfo(info);
-	}
+   private final ExtraErrInfoableComposer cfxic;
+   public AbstractExtraErrInfoable()  {
+      cfxic = new ExtraErrInfoableComposer();
+   }
+   public AbstractExtraErrInfoable(ExtraErrInfoable to_copy)  {
+      cfxic = new ExtraErrInfoableComposer(to_copy);
+   }
+   public Object getExtraErrInfo()  {
+      return  cfxic.getExtraErrInfo();
+   }
+   public void setExtraErrInfo(Object info)  {
+      cfxic.setExtraErrInfo(info);
+   }
 }

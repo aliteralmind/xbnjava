@@ -14,13 +14,13 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-	<p>For classes with an {@code appendToString(sd)} function.</p>
+   <p>For classes with an {@code appendToString(sd)} function.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface ToStringAppendable  {
-	StringBuilder appendToString(StringBuilder to_appendTo);
+   StringBuilder appendToString(StringBuilder to_appendTo);
    /**
    	@return  <code>appendToString(new StringBuilder()).toString()</code>
     **/

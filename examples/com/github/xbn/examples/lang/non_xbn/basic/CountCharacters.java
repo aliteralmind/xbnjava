@@ -14,32 +14,32 @@
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn.basic;
 /**
-	<p>Find the number of uppercase characters and '<code>a</code>'s (both lower and uppercase) in a string.</p>
+   <p>Find the number of uppercase characters and '<code>a</code>'s (both lower and uppercase) in a string.</p>
 
-	<p>{@code java com.github.xbn.examples.lang.non_xbn.basic.CountCharacters}</p>
+   <p>{@code java com.github.xbn.examples.lang.non_xbn.basic.CountCharacters}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CountCharacters {
-	public static void main(String[] ignored) {
-	charCount("How many UPPER CASE letters, a's, and 0-9 digits are there in this String?");
-	}
+   public static void main(String[] ignored) {
+   charCount("How many UPPER CASE letters, a's, and 0-9 digits are there in this String?");
+   }
 
 public static void charCount(String b) {
-	int upper = 0;
-	int a = 0;
-	for (int i = 0; i < b.length(); i++) {
-		char v = b.charAt(i);
-		if(v == 'a'  ||  v == 'A')  {
-			a++;
-		}
-		if(Character.isUpperCase(v))  {
-			upper++;
-		}
-	}
-	System.out.println("There are " + upper + " upper case letters, and " + a + " lower case a's in the String");
+   int upper = 0;
+   int a = 0;
+   for (int i = 0; i < b.length(); i++) {
+      char v = b.charAt(i);
+      if(v == 'a'  ||  v == 'A')  {
+         a++;
+      }
+      if(Character.isUpperCase(v))  {
+         upper++;
+      }
+   }
+   System.out.println("There are " + upper + " upper case letters, and " + a + " lower case a's in the String");
 
 
-	}
+   }
 }

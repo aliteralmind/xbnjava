@@ -13,43 +13,43 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.array;
-	import  java.util.Arrays;
-	import  com.github.xbn.array.BinarySearcher;
+   import  java.util.Arrays;
+   import  com.github.xbn.array.BinarySearcher;
 /**
    <p>Use {@code com.github.xbn.array.}{@link com.github.xbn.array.BinarySearcher BinarySearcher} to find the index at which a string exists in an ordered array (or where to insert it).</p>
 
    <p>{@code java com.github.xbn.examples.array.BinarySearcherXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class BinarySearcherXmpl  {
-	public static final void main(String[] ignored)  {
-		test("abc");
-		test("abcd");
-		test("ghi");
-		test("kl");
-	}
-	private static final void test(String searching_for)  {
-		String[] asToSearch = {"abc", "def", "ghi", "jkl", "mno"};
+   public static final void main(String[] ignored)  {
+      test("abc");
+      test("abcd");
+      test("ghi");
+      test("kl");
+   }
+   private static final void test(String searching_for)  {
+      String[] asToSearch = {"abc", "def", "ghi", "jkl", "mno"};
 
-		System.out.println("Searching for \"" + searching_for + "\" in " + Arrays.toString(asToSearch));
+      System.out.println("Searching for \"" + searching_for + "\" in " + Arrays.toString(asToSearch));
 
-		BinarySearcher bs = new BinarySearcher(true).containerLength(asToSearch.length);
+      BinarySearcher bs = new BinarySearcher(true).containerLength(asToSearch.length);
 
-		while(!bs.isDone())  {
-			String sPossibility = asToSearch[bs.getIndexMiddle()];
+      while(!bs.isDone())  {
+         String sPossibility = asToSearch[bs.getIndexMiddle()];
 
-			int iCompare = searching_for.compareTo(sPossibility);
-			if(iCompare == 0)  {
-				System.out.println("   Found at index " + bs.getIndexMiddle());
-				return;
-			}
+         int iCompare = searching_for.compareTo(sPossibility);
+         if(iCompare == 0)  {
+            System.out.println("   Found at index " + bs.getIndexMiddle());
+            return;
+         }
 
-			bs.resetIteration(iCompare < 0);
-		}
+         bs.resetIteration(iCompare < 0);
+      }
 
-		System.out.println("   Not found. Can be INSERTED at index " + bs.getIndexInsertAt() + ".");
-	}
+      System.out.println("   Not found. Can be INSERTED at index " + bs.getIndexInsertAt() + ".");
+   }
 }

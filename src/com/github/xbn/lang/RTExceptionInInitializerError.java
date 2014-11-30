@@ -14,25 +14,25 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-	<p>A runtime replacement for {@link java.lang.ExceptionInInitializerError}.</p>
+   <p>A runtime replacement for {@link java.lang.ExceptionInInitializerError}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RTExceptionInInitializerError extends IllegalStateException  {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6489240504633233622L;
-	public RTExceptionInInitializerError(String message)  {
-		super(message);
-	}
-	public RTExceptionInInitializerError()  {
-	}
-	public RTExceptionInInitializerError(String message, Throwable cause)  {
-		super(message, cause);
-	}
-	public RTExceptionInInitializerError(Throwable cause)  {
-		super(cause);
-	}
+   /**
+    * 
+    */
+   private static final long serialVersionUID = -6489240504633233622L;
+   public RTExceptionInInitializerError(String message)  {
+      super(message);
+   }
+   public RTExceptionInInitializerError()  {
+   }
+   public RTExceptionInInitializerError(String message, Throwable cause)  {
+      super(message, cause);
+   }
+   public RTExceptionInInitializerError(Throwable cause)  {
+      super(cause);
+   }
 }

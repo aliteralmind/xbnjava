@@ -13,39 +13,39 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.linefilter;
-	import  com.github.xbn.analyze.alter.AlterationRequired;
-	import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
-	import  com.github.xbn.analyze.validate.ValidResultFilter;
-	import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
-	import  com.github.xbn.regexutil.ReplacedInEachInput;
-	import  com.github.xbn.regexutil.StringValidatorReplacer;
-	import  java.util.regex.Pattern;
+   import  com.github.xbn.analyze.alter.AlterationRequired;
+   import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
+   import  com.github.xbn.analyze.validate.ValidResultFilter;
+   import  com.github.xbn.linefilter.AdaptRegexReplacerTo;
+   import  com.github.xbn.regexutil.ReplacedInEachInput;
+   import  com.github.xbn.regexutil.StringValidatorReplacer;
+   import  java.util.regex.Pattern;
 /**
-	<p>Uses a {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.StringValidatorReplacer StringValidatorReplacer} and {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.FilterValidCounts FilterValidCounts} to replace the second-through-fourth occurances of a string.</p>
+   <p>Uses a {@code com.github.xbn.regexutil.}{@link com.github.xbn.regexutil.StringValidatorReplacer StringValidatorReplacer} and {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.FilterValidCounts FilterValidCounts} to replace the second-through-fourth occurances of a string.</p>
 
-	<p>{@code java com.github.xbn.examples.linefilter.StringValidatorReplacerXmpl}</p>
+   <p>{@code java com.github.xbn.examples.linefilter.StringValidatorReplacerXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class StringValidatorReplacerXmpl  {
-	public static final void main(String[] ignored)  {
-		System.out.println("Replacing 2nd-through-4th \"T.\" with \"The\"");
+   public static final void main(String[] ignored)  {
+      System.out.println("Replacing 2nd-through-4th \"T.\" with \"The\"");
 
-		ValidResultFilter vrf = NewValidResultFilterFor.inUnchangedOutFalse(2, 4, null, null,
-			null);     //<--Debug filter: System.out. No debug: null
+      ValidResultFilter vrf = NewValidResultFilterFor.inUnchangedOutFalse(2, 4, null, null,
+         null);     //<--Debug filter: System.out. No debug: null
 
-		StringValidatorReplacer svrTDotToThe234 = AdaptRegexReplacerTo.stringValidator(
-			AlterationRequired.YES, Pattern.compile("T.", Pattern.LITERAL),
-			"The", ReplacedInEachInput.FIRST, vrf,
-				null);  //<--Debug
+      StringValidatorReplacer svrTDotToThe234 = AdaptRegexReplacerTo.stringValidator(
+         AlterationRequired.YES, Pattern.compile("T.", Pattern.LITERAL),
+         "The", ReplacedInEachInput.FIRST, vrf,
+            null);  //<--Debug
 
-		for(int i = 0; i < 10; i++)  {
-			String sKTF = "Kermit T. Frog";
-			if(svrTDotToThe234.isValid(sKTF))  {
-				sKTF = svrTDotToThe234.getMostRecent();
-			}
-			System.out.println(sKTF);
-		}
-	}
+      for(int i = 0; i < 10; i++)  {
+         String sKTF = "Kermit T. Frog";
+         if(svrTDotToThe234.isValid(sKTF))  {
+            sKTF = svrTDotToThe234.getMostRecent();
+         }
+         System.out.println(sKTF);
+      }
+   }
 }

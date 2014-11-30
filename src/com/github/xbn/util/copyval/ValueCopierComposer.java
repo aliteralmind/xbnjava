@@ -13,61 +13,61 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.copyval;
-	import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.lang.CrashIfObject;
 /**
-	<p>For classes that need to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}.</p>
+   <p>For classes that need to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}.</p>
 
-	@see  ValueCopier
-	@see  AbstractValueCopier
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @see  ValueCopier
+   @see  AbstractValueCopier
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueCopierComposer<O> {
-	private final boolean bCpybl;
+   private final boolean bCpybl;
 
-	public ValueCopierComposer(boolean is_copyable)  {
-		bCpybl = is_copyable;
-	}
-	/**
-		<p>Create a new {@code ValueCopierComposer} as a duplicate of another.</p>
+   public ValueCopierComposer(boolean is_copyable)  {
+      bCpybl = is_copyable;
+   }
+   /**
+      <p>Create a new {@code ValueCopierComposer} as a duplicate of another.</p>
 
-		<p>This<ol>
-			<li>YYY</li>
-		</ol></p>
+      <p>This<ol>
+         <li>YYY</li>
+      </ol></p>
 
-		@param  to_copy  May not be {@code null}.
-	 **/
-	public ValueCopierComposer(boolean ignored, ValueCopierComposer<O> to_copy)  {
-		bCpybl = to_copy.isValueCopyable();
-	}
-	public ValueCopierComposer(ValueCopier<O> to_copy)  {
-		bCpybl = to_copy.isValueCopyable();
-	}
+      @param  to_copy  May not be {@code null}.
+    **/
+   public ValueCopierComposer(boolean ignored, ValueCopierComposer<O> to_copy)  {
+      bCpybl = to_copy.isValueCopyable();
+   }
+   public ValueCopierComposer(ValueCopier<O> to_copy)  {
+      bCpybl = to_copy.isValueCopyable();
+   }
 
 
-	public final boolean isValueCopyable()  {
-		return  bCpybl;
-	}
-	public String toString()  {
-		return  appendToString(new StringBuilder()).toString();
-	}
-	public StringBuilder appendToString(StringBuilder to_appendTo)  {
-		return  to_appendTo.append("isValueCopyable()=").append(isValueCopyable());
-	}
+   public final boolean isValueCopyable()  {
+      return  bCpybl;
+   }
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      return  to_appendTo.append("isValueCopyable()=").append(isValueCopyable());
+   }
 //static...START
-	public static final <O> boolean isValueCopyable(ValueCopier<O> get_valCopy)  {
-		try  {
-			return  get_valCopy.isValueCopyable();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(get_valCopy, "get_valCopy", null, rx);
-		}
-	}
+   public static final <O> boolean isValueCopyable(ValueCopier<O> get_valCopy)  {
+      try  {
+         return  get_valCopy.isValueCopyable();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(get_valCopy, "get_valCopy", null, rx);
+      }
+   }
 
 //static...END
 /*stub functions for implements compile...START
  	public final O getValueCopy(O original)  {
-		return  null;
-	}
+      return  null;
+   }
  stub functions for implements compile...END*/
 }
 

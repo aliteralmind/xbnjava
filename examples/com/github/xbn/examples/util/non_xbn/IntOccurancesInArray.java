@@ -13,49 +13,49 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.util.non_xbn;
-	import  java.util.Iterator;
-	import  java.util.Map;
-	import  java.util.Set;
-	import  java.util.TreeMap;
+   import  java.util.Iterator;
+   import  java.util.Map;
+   import  java.util.Set;
+   import  java.util.TreeMap;
 /**
-	<p>Collection-based solution to finding the number of occurances of each number in an int-array.</p>
+   <p>Collection-based solution to finding the number of occurances of each number in an int-array.</p>
 
-	<p>{@code java com.github.xbn.examples.util.non_xbn.IntOccurancesInArray}</p>
+   <p>{@code java com.github.xbn.examples.util.non_xbn.IntOccurancesInArray}</p>
 
-	@see  IntOccurancesInArrayElegant
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @see  IntOccurancesInArrayElegant
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IntOccurancesInArray  {
-	public static final void main(String[] ignored)  {
-		int[] ai = new int[]{52, 67, 32, 43, 32, 21, 12, 5, 0, 3, 2, 0, 0};
-		Map<Integer,Integer> mpNumWHits = new TreeMap<Integer,Integer>();
-		for(int i = 0; i < ai.length; i++)  {
-			int iValue = ai[i];
-			if(!mpNumWHits.containsKey(iValue))  {
-				mpNumWHits.put(iValue, 1);
-			}  else  {
-				mpNumWHits.put(iValue, (mpNumWHits.get(iValue) + 1));
-			}
-		}
+   public static final void main(String[] ignored)  {
+      int[] ai = new int[]{52, 67, 32, 43, 32, 21, 12, 5, 0, 3, 2, 0, 0};
+      Map<Integer,Integer> mpNumWHits = new TreeMap<Integer,Integer>();
+      for(int i = 0; i < ai.length; i++)  {
+         int iValue = ai[i];
+         if(!mpNumWHits.containsKey(iValue))  {
+            mpNumWHits.put(iValue, 1);
+         }  else  {
+            mpNumWHits.put(iValue, (mpNumWHits.get(iValue) + 1));
+         }
+      }
 
-		Set<Integer> stInts = mpNumWHits.keySet();
-		Iterator<Integer> itrInts = stInts.iterator();
+      Set<Integer> stInts = mpNumWHits.keySet();
+      Iterator<Integer> itrInts = stInts.iterator();
 
-		int[] ai100 = new int[100];
+      int[] ai100 = new int[100];
 
 //		int i = 0;
-		while(itrInts.hasNext())  {
-			int iValue = itrInts.next();
-			int iHits = mpNumWHits.get(iValue);
-			System.out.println(iValue + " found " + iHits + " times");
-			ai100[iValue] = iHits;
-		}
+      while(itrInts.hasNext())  {
+         int iValue = itrInts.next();
+         int iHits = mpNumWHits.get(iValue);
+         System.out.println(iValue + " found " + iHits + " times");
+         ai100[iValue] = iHits;
+      }
 
-		for(int j = 0; j < ai100.length; j++)  {
-			if(ai100[j] > 0)  {
-				System.out.println("ai100[" + j + "]=" + ai100[j]);
-			}
-		}
-	}
+      for(int j = 0; j < ai100.length; j++)  {
+         if(ai100[j] > 0)  {
+            System.out.println("ai100[" + j + "]=" + ai100[j]);
+         }
+      }
+   }
 }

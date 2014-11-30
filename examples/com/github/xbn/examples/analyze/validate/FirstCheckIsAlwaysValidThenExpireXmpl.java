@@ -13,31 +13,31 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.analyze.validate;
-	import  com.github.xbn.analyze.validate.ValidResultFilter;
-	import  com.github.xbn.analyze.validate.ValueValidator;
-	import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
-	import  com.github.xbn.analyze.validate.NewValueValidatorFor;
+   import  com.github.xbn.analyze.validate.ValidResultFilter;
+   import  com.github.xbn.analyze.validate.ValueValidator;
+   import  com.github.xbn.analyze.validate.NewValidResultFilterFor;
+   import  com.github.xbn.analyze.validate.NewValueValidatorFor;
 /**
    <p>Blindly determine that the first <i>something</i> is valid, and then expire the validator, making all subsequent items invalid.</p>
 
-	<p>{@code java com.github.xbn.examples.analyze.validate.FirstCheckIsAlwaysValidThenExpireXmpl}</p>
+   <p>{@code java com.github.xbn.examples.analyze.validate.FirstCheckIsAlwaysValidThenExpireXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class FirstCheckIsAlwaysValidThenExpireXmpl  {
    public static final void main(String[] ignored)  {
 
-		//Set the valid-filter range to be min 1, max 1.
-		ValidResultFilter vrf = NewValidResultFilterFor.inUnchangedOutFalse(1, 1, null, null,
-			null);  //Debug on: System.out, Off: null
+      //Set the valid-filter range to be min 1, max 1.
+      ValidResultFilter vrf = NewValidResultFilterFor.inUnchangedOutFalse(1, 1, null, null,
+         null);  //Debug on: System.out, Off: null
 
-		ValueValidator<Object> vvo = NewValueValidatorFor.<Object>unrestricted(vrf,
-			null);  //Debug
+      ValueValidator<Object> vvo = NewValueValidatorFor.<Object>unrestricted(vrf,
+         null);  //Debug
 
-		for(int i = 1; i <= 10; i++)  {
-			System.out.println(i + " " + vvo.isValid("anything"));
-		}
-	}
+      for(int i = 1; i <= 10; i++)  {
+         System.out.println(i + " " + vvo.isValid("anything"));
+      }
+   }
 }

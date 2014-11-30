@@ -14,60 +14,60 @@
 \*license*/
 package  com.github.xbn.experimental;
 /**
-	<p>Declares if something <i>must</i>, <i>may</i>, or <i>must-not</i> meet a condition.</p>
+   <p>Declares if something <i>must</i>, <i>may</i>, or <i>must-not</i> meet a condition.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum MustOptOrForb  {
-	/**
-		<p>The condition must be met.</p>
+   /**
+      <p>The condition must be met.</p>
 
-		@see  #OPTIONAL
-		@see  #FORBIDDEN
-		@see  #isMust()
-	 **/
-	MUST,
-	/**
-		<p>The condition may or may not be met.</p>
+      @see  #OPTIONAL
+      @see  #FORBIDDEN
+      @see  #isMust()
+    **/
+   MUST,
+   /**
+      <p>The condition may or may not be met.</p>
 
-		@see  #MUST
-		@see  #isOptional()
-	 **/
-	OPTIONAL,
-	/**
-		<p>The condition may not be met.</p>
+      @see  #MUST
+      @see  #isOptional()
+    **/
+   OPTIONAL,
+   /**
+      <p>The condition may not be met.</p>
 
-		@see  #MUST
-		@see  #isForbidden()
-	 **/
-	FORBIDDEN;
-	/**
-		<p>Is this {@code MustOptOrForb} equal to {@code MUST}?.</p>
+      @see  #MUST
+      @see  #isForbidden()
+    **/
+   FORBIDDEN;
+   /**
+      <p>Is this {@code MustOptOrForb} equal to {@code MUST}?.</p>
 
-		@return  <code>this == {@link #MUST}</code>
-		@see  #isOptional()
-		@see  #isForbidden()
-	 **/
-	public final boolean isMust()  {
-		return  this == MUST;
-	}
-	/**
-		<p>Is this {@code MustOptOrForb} equal to {@code OPTIONAL}?.</p>
+      @return  <code>this == {@link #MUST}</code>
+      @see  #isOptional()
+      @see  #isForbidden()
+    **/
+   public final boolean isMust()  {
+      return  this == MUST;
+   }
+   /**
+      <p>Is this {@code MustOptOrForb} equal to {@code OPTIONAL}?.</p>
 
-		@return  <code>this == {@link #OPTIONAL}</code>
-		@see  #isMust()
-	 **/
-	public final boolean isOptional()  {
-		return  this == OPTIONAL;
-	}
-	/**
-		<p>Is this {@code MustOptOrForb} equal to {@code FORBIDDEN}?.</p>
+      @return  <code>this == {@link #OPTIONAL}</code>
+      @see  #isMust()
+    **/
+   public final boolean isOptional()  {
+      return  this == OPTIONAL;
+   }
+   /**
+      <p>Is this {@code MustOptOrForb} equal to {@code FORBIDDEN}?.</p>
 
-		@return  <code>this == {@link #FORBIDDEN}</code>
-		@see  #isMust()
-	 **/
-	public final boolean isForbidden()  {
-		return  this == FORBIDDEN;
-	}
+      @return  <code>this == {@link #FORBIDDEN}</code>
+      @see  #isMust()
+    **/
+   public final boolean isForbidden()  {
+      return  this == FORBIDDEN;
+   }
 };

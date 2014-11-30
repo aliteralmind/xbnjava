@@ -13,120 +13,120 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util;
-	import  java.util.Objects;
-	import  com.github.xbn.lang.Copyable;
-	import  com.github.xbn.lang.CrashIfObject;
-	import  java.util.Comparator;
+   import  java.util.Objects;
+   import  com.github.xbn.lang.Copyable;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  java.util.Comparator;
 /**
-	<p>{@code Comparator} that uses the {@code Comparable} object itself to do the comparison.</p>
+   <p>{@code Comparator} that uses the {@code Comparable} object itself to do the comparison.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SelfComparator<M extends Comparable<? super M>> implements Comparator<M>, Copyable  {
-	private boolean bAsc = false;
-	public SelfComparator()  {
-	}
-	/**
-		<p>Create a new {@code SelfComparator}.</p>
+   private boolean bAsc = false;
+   public SelfComparator()  {
+   }
+   /**
+      <p>Create a new {@code SelfComparator}.</p>
 
-		@param  is_ascending  If {@code true}, then the comparator requires ascending order. If {@code false}, descending (see {@link #compare(M, M) compare(M,M)}). Get with {@link #isAscending() isAscending}{@code ()}.
+      @param  is_ascending  If {@code true}, then the comparator requires ascending order. If {@code false}, descending (see {@link #compare(M, M) compare(M,M)}). Get with {@link #isAscending() isAscending}{@code ()}.
 
-		@see  #SelfComparator(SelfComparator) this(sc)
-	 **/
-	public SelfComparator(boolean is_ascending)  {
-		bAsc = is_ascending;
-	}
-	/**
-		<p>Create a new {@code SelfComparator}, as a duplicate of another.</p>
+      @see  #SelfComparator(SelfComparator) this(sc)
+    **/
+   public SelfComparator(boolean is_ascending)  {
+      bAsc = is_ascending;
+   }
+   /**
+      <p>Create a new {@code SelfComparator}, as a duplicate of another.</p>
 
-		<p>This<ol>
-			<li>Sets {@link #isAscending() isAscending}{@code ()} to {@code to_copy.isAscending()}</li>
-		</ol></p>
-		@see  #SelfComparator(boolean) this(b)
-	 **/
-	public SelfComparator(SelfComparator<M> to_copy)  {
-		try  {
-			bAsc = to_copy.isAscending();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-		}
-	}
-	/**
-		@param  o_1  May not be {@code null}.
-		@param  o_2  May not be {@code null}
-		@return  If {@link #isAscending() isAscending}{@code ()} is<ul>
-			<li>{@code true}: {@code o_1.compareTo(o_2)}</li>
-			<li>{@code false}: {@code (o_1.compareTo(o_2) * -1)}</li>
-		</ul>
-	 **/
-	public int compare(M o_1, M o_2)  {
-		int icmpr = -1;
-		try  {
-			icmpr = o_1.compareTo(o_2);
-		}  catch(RuntimeException rx)  {
-			Objects.requireNonNull(o_1, "o_1");
-			throw  CrashIfObject.nullOrReturnCause(o_2, "o_2", null, rx);
-		}
+      <p>This<ol>
+         <li>Sets {@link #isAscending() isAscending}{@code ()} to {@code to_copy.isAscending()}</li>
+      </ol></p>
+      @see  #SelfComparator(boolean) this(b)
+    **/
+   public SelfComparator(SelfComparator<M> to_copy)  {
+      try  {
+         bAsc = to_copy.isAscending();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+      }
+   }
+   /**
+      @param  o_1  May not be {@code null}.
+      @param  o_2  May not be {@code null}
+      @return  If {@link #isAscending() isAscending}{@code ()} is<ul>
+         <li>{@code true}: {@code o_1.compareTo(o_2)}</li>
+         <li>{@code false}: {@code (o_1.compareTo(o_2) * -1)}</li>
+      </ul>
+    **/
+   public int compare(M o_1, M o_2)  {
+      int icmpr = -1;
+      try  {
+         icmpr = o_1.compareTo(o_2);
+      }  catch(RuntimeException rx)  {
+         Objects.requireNonNull(o_1, "o_1");
+         throw  CrashIfObject.nullOrReturnCause(o_2, "o_2", null, rx);
+      }
 
-		if(!isAscending())  {
-			return  (icmpr * -1);
-		}
-		return  icmpr;
-	}
-	@Override public int hashCode()  {
-		return  27;
-	}
-	/**
-		@param  to_compareTo  May not be {@code null}.
-	 **/
-	@Override public boolean equals(Object to_compareTo)  {
-		if(to_compareTo == null)  {
-			throw  new NullPointerException("to_compareTo");
-		}
-		if(this == to_compareTo)  {
-			return  true;
-		}
+      if(!isAscending())  {
+         return  (icmpr * -1);
+      }
+      return  icmpr;
+   }
+   @Override public int hashCode()  {
+      return  27;
+   }
+   /**
+      @param  to_compareTo  May not be {@code null}.
+    **/
+   @Override public boolean equals(Object to_compareTo)  {
+      if(to_compareTo == null)  {
+         throw  new NullPointerException("to_compareTo");
+      }
+      if(this == to_compareTo)  {
+         return  true;
+      }
 
-		/**
-			http://www.javapractices.com/topic/TopicAction.do?Id=17
-			downloaded 10/14/2010
-			use instanceof instead of getClass here for two reasons
-			1. if need be, it can match any supertype, and not just one class;
-			2. it renders an explict check for "that == null" redundant, since
-			it does the check for null already - "null instanceof [type]" always
-			returns false. (See Effective Java by Joshua Bloch.)
+      /**
+         http://www.javapractices.com/topic/TopicAction.do?Id=17
+         downloaded 10/14/2010
+         use instanceof instead of getClass here for two reasons
+         1. if need be, it can match any supertype, and not just one class;
+         2. it renders an explict check for "that == null" redundant, since
+         it does the check for null already - "null instanceof [type]" always
+         returns false. (See Effective Java by Joshua Bloch.)
 
-			[[[
-				Item two is wrong. When the parameter is null, it should throw an npx instead of throwing false:
-				See: xbnjava\z_build\answers\is-it-a-bad-idea-if-equalsnull-throws-nullpointerexception-instead.txt
-			]]]
-		 **/
-		if(!(to_compareTo instanceof SelfComparator))  {
-			return  false;
-		}
+         [[[
+            Item two is wrong. When the parameter is null, it should throw an npx instead of throwing false:
+            See: xbnjava\z_build\answers\is-it-a-bad-idea-if-equalsnull-throws-nullpointerexception-instead.txt
+         ]]]
+       **/
+      if(!(to_compareTo instanceof SelfComparator))  {
+         return  false;
+      }
 
-		//Safe to cast
-		@SuppressWarnings("unchecked")  //instanceof does not recognize generics
-		SelfComparator<M> selfCmpr = (SelfComparator<M>)to_compareTo;
+      //Safe to cast
+      @SuppressWarnings("unchecked")  //instanceof does not recognize generics
+      SelfComparator<M> selfCmpr = (SelfComparator<M>)to_compareTo;
 
-		//Field-by-field comparison
-		return  isAscending() == selfCmpr.isAscending();
-	}
-	/**
-		<p>Should the comparison be ordered ascending?.</p>
+      //Field-by-field comparison
+      return  isAscending() == selfCmpr.isAscending();
+   }
+   /**
+      <p>Should the comparison be ordered ascending?.</p>
 
-		@see  #SelfComparator(boolean) this(b)
-	 **/
-	public final boolean isAscending()  {
-		return  bAsc;
-	}
-	/**
-		<p>Duplicate this {@code SelfComparator}.</p>
+      @see  #SelfComparator(boolean) this(b)
+    **/
+   public final boolean isAscending()  {
+      return  bAsc;
+   }
+   /**
+      <p>Duplicate this {@code SelfComparator}.</p>
 
-		@return  <code>(new {@link #SelfComparator(SelfComparator) SelfComparator}&lt;M&gt;(this))</code>
-	 **/
-	public SelfComparator<M> getObjectCopy()  {
-		return  (new SelfComparator<M>(this));
-	}
+      @return  <code>(new {@link #SelfComparator(SelfComparator) SelfComparator}&lt;M&gt;(this))</code>
+    **/
+   public SelfComparator<M> getObjectCopy()  {
+      return  (new SelfComparator<M>(this));
+   }
 }

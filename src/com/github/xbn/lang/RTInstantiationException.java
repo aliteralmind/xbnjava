@@ -14,25 +14,25 @@
 \*license*/
 package  com.github.xbn.lang;
 /**
-	<p>A runtime replacement for {@link java.lang.InstantiationException}.</p>
+   <p>A runtime replacement for {@link java.lang.InstantiationException}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RTInstantiationException extends IllegalStateException  {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7322980225012623340L;
-	public RTInstantiationException(String message)  {
-		super(message);
-	}
-	public RTInstantiationException()  {
-	}
-	public RTInstantiationException(String message, Throwable cause)  {
-		super(message, cause);
-	}
-	public RTInstantiationException(Throwable cause)  {
-		super(cause);
-	}
+   /**
+    * 
+    */
+   private static final long serialVersionUID = -7322980225012623340L;
+   public RTInstantiationException(String message)  {
+      super(message);
+   }
+   public RTInstantiationException()  {
+   }
+   public RTInstantiationException(String message, Throwable cause)  {
+      super(message, cause);
+   }
+   public RTInstantiationException(Throwable cause)  {
+      super(cause);
+   }
 }

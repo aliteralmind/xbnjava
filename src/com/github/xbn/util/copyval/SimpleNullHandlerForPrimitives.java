@@ -14,49 +14,49 @@
 \*license*/
 package  com.github.xbn.util.copyval;
 /**
-	<p>Implementation of {@code GetValueForNull} using an {@code com.github.xbn.analyze.alter.ValueAlterer&lt;O&gt;}.</p>
+   <p>Implementation of {@code GetValueForNull} using an {@code com.github.xbn.analyze.alter.ValueAlterer&lt;O&gt;}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleNullHandlerForPrimitives<O> extends SimpleNullHandler<O> implements NullHandlerForPrimitives<O>  {
-	@SuppressWarnings("unchecked")
-	public static final NullHandlerForPrimitives CRASH = new SimpleNullHandlerForPrimitives(ActionForNull.CRASH, null);
-	@SuppressWarnings("unchecked")
-	public static final NullHandlerForPrimitives DELETE = new SimpleNullHandlerForPrimitives(ActionForNull.DELETE, null);
+   @SuppressWarnings("unchecked")
+   public static final NullHandlerForPrimitives CRASH = new SimpleNullHandlerForPrimitives(ActionForNull.CRASH, null);
+   @SuppressWarnings("unchecked")
+   public static final NullHandlerForPrimitives DELETE = new SimpleNullHandlerForPrimitives(ActionForNull.DELETE, null);
 //constructors...START
-	public SimpleNullHandlerForPrimitives(O non_nullReplacement)  {
-		super(non_nullReplacement);
-	}
-	public SimpleNullHandlerForPrimitives(ActionForNull action, O non_nullReplacement)  {
-		super(action, non_nullReplacement);
-		if(action == ActionForNull.USE_NULL)  {
-			throw  new IllegalArgumentException("action is equal to ActionForNull.USE_NULL.");
-		}
-	}
-	/**
-		<p>Create a new {@code SimpleNullHandlerForPrimitives} as a duplicate of another.</p>
+   public SimpleNullHandlerForPrimitives(O non_nullReplacement)  {
+      super(non_nullReplacement);
+   }
+   public SimpleNullHandlerForPrimitives(ActionForNull action, O non_nullReplacement)  {
+      super(action, non_nullReplacement);
+      if(action == ActionForNull.USE_NULL)  {
+         throw  new IllegalArgumentException("action is equal to ActionForNull.USE_NULL.");
+      }
+   }
+   /**
+      <p>Create a new {@code SimpleNullHandlerForPrimitives} as a duplicate of another.</p>
 
-		<p>This<ol>
-			<li>Calls {@link com.github.xbn.util.copyval.SimpleNullHandler#SimpleNullHandler(SimpleNullHandler) super}{@code (to_copy)}</li>
-			<li>YYY</li>
-		</ol></p>
+      <p>This<ol>
+         <li>Calls {@link com.github.xbn.util.copyval.SimpleNullHandler#SimpleNullHandler(SimpleNullHandler) super}{@code (to_copy)}</li>
+         <li>YYY</li>
+      </ol></p>
 
-		@param  to_copy  May not be {@code null}.
-		@see  #getObjectCopy()
-	 **/
-	public SimpleNullHandlerForPrimitives(SimpleNullHandlerForPrimitives<O> to_copy)  {
-		super(to_copy);
-	}
+      @param  to_copy  May not be {@code null}.
+      @see  #getObjectCopy()
+    **/
+   public SimpleNullHandlerForPrimitives(SimpleNullHandlerForPrimitives<O> to_copy)  {
+      super(to_copy);
+   }
 //constructors...END
 //other...START
-	/**
-		<p>Duplicate this {@code SimpleNullHandlerForPrimitives}.</p>
+   /**
+      <p>Duplicate this {@code SimpleNullHandlerForPrimitives}.</p>
 
-		@return  <code>(new {@link #SimpleNullHandlerForPrimitives(SimpleNullHandlerForPrimitives) SimpleNullHandlerForPrimitives}&lt;O&gt;(this))</code>
-	 **/
-	public NullHandler<O> getObjectCopy()  {
-		return  (new SimpleNullHandlerForPrimitives<O>(this));
-	}
+      @return  <code>(new {@link #SimpleNullHandlerForPrimitives(SimpleNullHandlerForPrimitives) SimpleNullHandlerForPrimitives}&lt;O&gt;(this))</code>
+    **/
+   public NullHandler<O> getObjectCopy()  {
+      return  (new SimpleNullHandlerForPrimitives<O>(this));
+   }
 //other...END
 }

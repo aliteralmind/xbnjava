@@ -7,7 +7,7 @@
  */
 package  fully.qualified.package.name;
 /**
-	<p>A JavaDoc block</p>
+   <p>A JavaDoc block</p>
  */
 public class StayClassy  {
    /**

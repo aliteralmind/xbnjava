@@ -16,36 +16,36 @@ package  com.github.xbn.lang;
 /**
    <p>Basic implementation of {@code Adapter}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class SimpleAdapter<D> implements Adapter<D>  {
    private final D oAdptd;
    public SimpleAdapter(D to_adapt)  {
-		this(to_adapt, "to_adapt");
-	}
+      this(to_adapt, "to_adapt");
+   }
    public SimpleAdapter(D to_adapt, String toAdapt_name)  {
-		if(to_adapt == null)  {
-			throw  new NullPointerException(toAdapt_name);
-		}
-		oAdptd = to_adapt;
-	}
-	public SimpleAdapter(SimpleAdapter<D> to_copy)  {
-		try  {
-			oAdptd = to_copy.getAdapted();
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
-		}
-	}
-	public D getAdapted()  {
-		return  oAdptd;
-	}
-	public String toString()  {
-		return  appendToString(new StringBuilder()).toString();
-	}
-	public StringBuilder appendToString(StringBuilder to_appendTo)  {
-		return  to_appendTo.append("getAdapted()=<<").append(getAdapted()).append(">>");
-	}
+      if(to_adapt == null)  {
+         throw  new NullPointerException(toAdapt_name);
+      }
+      oAdptd = to_adapt;
+   }
+   public SimpleAdapter(SimpleAdapter<D> to_copy)  {
+      try  {
+         oAdptd = to_copy.getAdapted();
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(to_copy, "to_copy", null, rx);
+      }
+   }
+   public D getAdapted()  {
+      return  oAdptd;
+   }
+   public String toString()  {
+      return  appendToString(new StringBuilder()).toString();
+   }
+   public StringBuilder appendToString(StringBuilder to_appendTo)  {
+      return  to_appendTo.append("getAdapted()=<<").append(getAdapted()).append(">>");
+   }
 
 }

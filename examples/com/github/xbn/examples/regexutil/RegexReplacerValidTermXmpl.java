@@ -13,24 +13,24 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil;
-	import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
+   import  com.github.xbn.regexutil.z.RegexReplacer_Cfg;
 /**
-	<p>Uses a {@code com.github.xbn.regexutil.RegexReplacer} to replace the second and third matches only.</p>
+   <p>Uses a {@code com.github.xbn.regexutil.RegexReplacer} to replace the second and third matches only.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.RegexReplacerValidTermXmpl}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.RegexReplacerValidTermXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexReplacerValidTermXmpl  {
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
 
-		String sToSearch = "one two three four five";
-		String sFindWhat = "\\b(\\w+)\\b";
-		String sRplcWithDirect = "[$1]";
+      String sToSearch = "one two three four five";
+      String sFindWhat = "\\b(\\w+)\\b";
+      String sRplcWithDirect = "[$1]";
 
-		System.out.println("Uppercase terms 2 and 3 only:");
-			new RegexReplacer_Cfg().matchRange(2, 3).direct(sFindWhat, sRplcWithDirect).build().
-				appendReplacedln(System.out, sToSearch);
-	}
+      System.out.println("Uppercase terms 2 and 3 only:");
+         new RegexReplacer_Cfg().matchRange(2, 3).direct(sFindWhat, sRplcWithDirect).build().
+            appendReplacedln(System.out, sToSearch);
+   }
 }

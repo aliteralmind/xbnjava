@@ -13,43 +13,43 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.backend;
-	import  java.util.Iterator;
-	import  java.util.List;
-	import  com.github.xbn.list.ListUtil;
-	import  com.github.xbn.analyze.validate.ValueValidator;
-	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+   import  java.util.Iterator;
+   import  java.util.List;
+   import  com.github.xbn.list.ListUtil;
+   import  com.github.xbn.analyze.validate.ValueValidator;
+   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-	<p>Listifier whose virtual elements are booleans expressing the <i>validity</i> of its raw elements.</p>
+   <p>Listifier whose virtual elements are booleans expressing the <i>validity</i> of its raw elements.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LFListElementsValidity<R> extends AbstractListifyBooleanValidity<R>  {
 //constructors...START
-	public LFListElementsValidity(List<R> list, ValueValidator<R> raw_elementVldtr)  {
-		super(list, raw_elementVldtr);
-	}
-	public LFListElementsValidity(List<R> list, ValueValidator<R> raw_elementVldtr, NullHandlerForPrimitives<Boolean> null_handler)  {
-		super(list, raw_elementVldtr, null_handler);
-	}
-	public LFListElementsValidity(LFListElementsValidity<R> to_copy)  {
-		super(to_copy);
-	}
+   public LFListElementsValidity(List<R> list, ValueValidator<R> raw_elementVldtr)  {
+      super(list, raw_elementVldtr);
+   }
+   public LFListElementsValidity(List<R> list, ValueValidator<R> raw_elementVldtr, NullHandlerForPrimitives<Boolean> null_handler)  {
+      super(list, raw_elementVldtr, null_handler);
+   }
+   public LFListElementsValidity(LFListElementsValidity<R> to_copy)  {
+      super(to_copy);
+   }
 //constructors...END
-	@SuppressWarnings("unchecked")
-	public final List<R> getRawList()  {
-		return  (List<R>)getRawObject();
-	}
-	public final Iterator<Boolean> iterator()  {
-		return  ListUtil.newIteratorForIsElementValid(getRawList(), getVVRawElement());
-	}
-	protected final R getRawElementRTXOkay(int index)  {
-		return  getRawList().get(index);
-	}
-	protected final int getSizeNPXOkay()  {
-		return  getRawList().size();
-	}
-	public LFListElementsValidity<R> getObjectCopy()  {
-		return  (new LFListElementsValidity<R>(this));
-	}
+   @SuppressWarnings("unchecked")
+   public final List<R> getRawList()  {
+      return  (List<R>)getRawObject();
+   }
+   public final Iterator<Boolean> iterator()  {
+      return  ListUtil.newIteratorForIsElementValid(getRawList(), getVVRawElement());
+   }
+   protected final R getRawElementRTXOkay(int index)  {
+      return  getRawList().get(index);
+   }
+   protected final int getSizeNPXOkay()  {
+      return  getRawList().size();
+   }
+   public LFListElementsValidity<R> getObjectCopy()  {
+      return  (new LFListElementsValidity<R>(this));
+   }
 }

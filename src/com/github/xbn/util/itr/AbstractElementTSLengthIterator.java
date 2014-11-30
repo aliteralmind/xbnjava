@@ -13,54 +13,54 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util.itr;
-	import  com.github.xbn.util.itr.IteratorDirection;
-	import  com.github.xbn.array.CrashIfIndex;
+   import  com.github.xbn.util.itr.IteratorDirection;
+   import  com.github.xbn.array.CrashIfIndex;
 /**
-	<p>For building iterators that return, for each element in an indexable container, the <i>length</i> of its {@code toString()}.</p>
+   <p>For building iterators that return, for each element in an indexable container, the <i>length</i> of its {@code toString()}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractElementTSLengthIterator<R> extends AbstractIndexableIterator<R,Integer>  {
 //constructors...START
-	public AbstractElementTSLengthIterator(Object indexable_cntrOfR)  {
-		this(indexable_cntrOfR, 0, -1, IteratorDirection.LOW_TO_HIGH);
-	}
-	public AbstractElementTSLengthIterator(Object indexable_cntrOfR, IteratorDirection direction)  {
-		this(indexable_cntrOfR, 0, -1, direction);
-	}
-	/**
-		<p>Create a new {@code AbstractIsValidElementIterator}.</p>
+   public AbstractElementTSLengthIterator(Object indexable_cntrOfR)  {
+      this(indexable_cntrOfR, 0, -1, IteratorDirection.LOW_TO_HIGH);
+   }
+   public AbstractElementTSLengthIterator(Object indexable_cntrOfR, IteratorDirection direction)  {
+      this(indexable_cntrOfR, 0, -1, direction);
+   }
+   /**
+      <p>Create a new {@code AbstractIsValidElementIterator}.</p>
 
-		YYY
+      YYY
 
-		<p>Equal to
-		<br/> &nbsp; &nbsp; {@link com.github.xbn.util.itr.AbstractIndexableIterator#AbstractIndexableIterator(Object, int, int) super}{@code (indexable_cntrOfR, idx_start, idx_endX)}</p>
-	 **/
-	public AbstractElementTSLengthIterator(Object indexable_cntrOfR, int idx_start, int idx_endX)  {
-		super(indexable_cntrOfR, idx_start, idx_endX, IteratorDirection.LOW_TO_HIGH);
-	}
-	public AbstractElementTSLengthIterator(Object indexable_cntrOfR, int idx_start, int idx_endX, IteratorDirection direction)  {
-		super(indexable_cntrOfR, idx_start, idx_endX, direction);
-	}
+      <p>Equal to
+      <br/> &nbsp; &nbsp; {@link com.github.xbn.util.itr.AbstractIndexableIterator#AbstractIndexableIterator(Object, int, int) super}{@code (indexable_cntrOfR, idx_start, idx_endX)}</p>
+    **/
+   public AbstractElementTSLengthIterator(Object indexable_cntrOfR, int idx_start, int idx_endX)  {
+      super(indexable_cntrOfR, idx_start, idx_endX, IteratorDirection.LOW_TO_HIGH);
+   }
+   public AbstractElementTSLengthIterator(Object indexable_cntrOfR, int idx_start, int idx_endX, IteratorDirection direction)  {
+      super(indexable_cntrOfR, idx_start, idx_endX, direction);
+   }
 //constructors...END
-	public final Integer next()  {
-		R r = null;
-		try  {
-			r = getRawElementRTXOkay(getIndex());
-		}  catch(RuntimeException rx)  {
-			CrashIfIndex.badForLength(getIndex(), getTotalElementCount(), "index", XBL_CNTR_OF_R_NAME);
-			throw  rx;
-		}
-		moveIndexToNext();
-		return  ((r == null) ? null : r.toString().length());
-	}
+   public final Integer next()  {
+      R r = null;
+      try  {
+         r = getRawElementRTXOkay(getIndex());
+      }  catch(RuntimeException rx)  {
+         CrashIfIndex.badForLength(getIndex(), getTotalElementCount(), "index", XBL_CNTR_OF_R_NAME);
+         throw  rx;
+      }
+      moveIndexToNext();
+      return  ((r == null) ? null : r.toString().length());
+   }
 /*stub functions for non-abstract compile...START
-	protected R getRawElementRTXOkay(int index)  {
-		return  null;
-	}
-	public int getTotalElementCount()  {
-		return  -1;
-	}
+   protected R getRawElementRTXOkay(int index)  {
+      return  null;
+   }
+   public int getTotalElementCount()  {
+      return  -1;
+   }
  stub functions for non-abstract compile...END*/
 }

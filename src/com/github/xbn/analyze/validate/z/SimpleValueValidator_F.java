@@ -13,24 +13,24 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate.z;
-	import  com.github.xbn.analyze.validate.ValidResultFilter;
+   import  com.github.xbn.analyze.validate.ValidResultFilter;
 /**
-	<p>YYY</p>
+   <p>YYY</p>
 
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleValueValidator_F extends SimpleValidator_F implements ValueValidator_Fieldable  {
-	public boolean bNullOk;
-	public SimpleValueValidator_F(boolean is_nullOk, boolean do_invert, ValidResultFilter filter, Appendable dbgDest_ifNonNull, Object xtra_errInfo)  {
-		super(do_invert, filter, dbgDest_ifNonNull, xtra_errInfo);
-		bNullOk = is_nullOk;
-	}
-	public boolean isNullOk()  {
-		return  bNullOk;
-	}
-	public String toString()  {
-		return  super.toString() + ", isNullOk()=" + isNullOk();
-	}
+   public boolean bNullOk;
+   public SimpleValueValidator_F(boolean is_nullOk, boolean do_invert, ValidResultFilter filter, Appendable dbgDest_ifNonNull, Object xtra_errInfo)  {
+      super(do_invert, filter, dbgDest_ifNonNull, xtra_errInfo);
+      bNullOk = is_nullOk;
+   }
+   public boolean isNullOk()  {
+      return  bNullOk;
+   }
+   public String toString()  {
+      return  super.toString() + ", isNullOk()=" + isNullOk();
+   }
 }

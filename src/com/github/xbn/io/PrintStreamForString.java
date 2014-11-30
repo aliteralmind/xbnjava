@@ -13,58 +13,58 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.io;
-	import  com.github.xbn.text.CrashIfString;
-	import  java.io.PrintStream;
-	import  java.io.ByteArrayOutputStream;
-	import  java.io.UnsupportedEncodingException;
+   import  com.github.xbn.text.CrashIfString;
+   import  java.io.PrintStream;
+   import  java.io.ByteArrayOutputStream;
+   import  java.io.UnsupportedEncodingException;
 /**
    <p>Temporarily redirects console output into a string--useful for capturing output from another Java application.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class PrintStreamForString  {
-	public String sCharSetName = null;
-	public ByteArrayOutputStream baos = null;
-	public PrintStream psNew = null;
-	public PrintStream psOrig = null;
+   public String sCharSetName = null;
+   public ByteArrayOutputStream baos = null;
+   public PrintStream psNew = null;
+   public PrintStream psOrig = null;
 
-	public PrintStreamForString()  {
-		this("US-ASCII");
-	}
-	public PrintStreamForString(String selfCmprharSetName)  {
-		baos = new ByteArrayOutputStream();
-		psNew = new PrintStream(baos);
-		CrashIfString.nullEmpty(selfCmprharSetName, "selfCmprharSetName", null);
-		sCharSetName = selfCmprharSetName;
-	}
+   public PrintStreamForString()  {
+      this("US-ASCII");
+   }
+   public PrintStreamForString(String selfCmprharSetName)  {
+      baos = new ByteArrayOutputStream();
+      psNew = new PrintStream(baos);
+      CrashIfString.nullEmpty(selfCmprharSetName, "selfCmprharSetName", null);
+      sCharSetName = selfCmprharSetName;
+   }
 
-	public PrintStreamForString setSystemOutTo()  {
-		psOrig = System.out;
-		System.setOut(psNew);
-		return  this;
-	}
-	public void resetSystemOut()  {
-		if(psOrig == null)  {
-			throw  new NullPointerException("psOrig (must first setSystemOutTo())");
-		}
-		System.setOut(psOrig);
-		psOrig = null;
-	}
-	public String getStringAndReset()  {
-		String s = toString();
-		baos.reset();
-		resetSystemOut();
-		return  s;
-	}
-	public String toString()  {
-		try  {
-			return  baos.toString(sCharSetName);
-		}  catch(UnsupportedEncodingException uex)  {
-			throw  new RuntimeException("sCharSetName=\"" + sCharSetName + "\"", uex);
-		}
+   public PrintStreamForString setSystemOutTo()  {
+      psOrig = System.out;
+      System.setOut(psNew);
+      return  this;
+   }
+   public void resetSystemOut()  {
+      if(psOrig == null)  {
+         throw  new NullPointerException("psOrig (must first setSystemOutTo())");
+      }
+      System.setOut(psOrig);
+      psOrig = null;
+   }
+   public String getStringAndReset()  {
+      String s = toString();
+      baos.reset();
+      resetSystemOut();
+      return  s;
+   }
+   public String toString()  {
+      try  {
+         return  baos.toString(sCharSetName);
+      }  catch(UnsupportedEncodingException uex)  {
+         throw  new RuntimeException("sCharSetName=\"" + sCharSetName + "\"", uex);
+      }
 
-	}
+   }
 
 }

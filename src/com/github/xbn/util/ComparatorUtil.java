@@ -13,43 +13,43 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.util;
-	import  com.github.xbn.lang.CrashIfObject;
-	import  java.util.Objects;
-	import  java.util.Comparator;
-	import  com.github.xbn.lang.IllegalArgumentStateException;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  java.util.Objects;
+   import  java.util.Comparator;
+   import  com.github.xbn.lang.IllegalArgumentStateException;
 /**
-	<p>If a set of comparable objects are not ascending, crash.</p>
+   <p>If a set of comparable objects are not ascending, crash.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ComparatorUtil  {
-	private ComparatorUtil()  {
-		throw  new IllegalStateException("Do not instantiate");
-	}
-	@SuppressWarnings({"unchecked", "varargs"})
-	public static final <O> void ciNotAscending(Comparator<O> cmp_rtr, boolean ignored, O... objects)  {
-		ciNotAscending(cmp_rtr, objects);
-	}
-	public static final <O> void ciNotAscending(Comparator<O> cmp_rtr, O[] objects)  {
-		int iLen = -1;
-		try  {
-			iLen = objects.length;
-		}  catch(NullPointerException npx)  {
-			throw  new NullPointerException("objects");
-		}
+   private ComparatorUtil()  {
+      throw  new IllegalStateException("Do not instantiate");
+   }
+   @SuppressWarnings({"unchecked", "varargs"})
+   public static final <O> void ciNotAscending(Comparator<O> cmp_rtr, boolean ignored, O... objects)  {
+      ciNotAscending(cmp_rtr, objects);
+   }
+   public static final <O> void ciNotAscending(Comparator<O> cmp_rtr, O[] objects)  {
+      int iLen = -1;
+      try  {
+         iLen = objects.length;
+      }  catch(NullPointerException npx)  {
+         throw  new NullPointerException("objects");
+      }
 
-		for(int i = 0; i < (iLen - 1); i++)  {
-			try  {
-				if(cmp_rtr.compare(objects[i], objects[i+1]) > 0)  {
-					throw  new IllegalArgumentStateException("objects[" + i + "] and objects[" + (i + 1) + "] are not in ascending order. -- objects[" + i + "]=<" + objects[i] + ">, objects[" + (i + 1) + "]=<" + " + objects[i+1] + " + ">");
-				}
-			}  catch(RuntimeException rx)  {
-				Objects.requireNonNull(cmp_rtr, "cmp_rtr");
-				Objects.requireNonNull(objects[i], "objects[" + i + "]");
-				String sXi = "Attempting cmp_rtr.compare(objects[" + i + "], objects[" + (i+1) + "]). -- objects[" + i + "]=<" + objects[i] + "> and objects[" + (i + 1) + "]=<" + " + objects[i+1] + " + ">, cmp_rtr=[" + cmp_rtr + "]";
-				throw  CrashIfObject.nullOrReturnCause(objects[i+1], "objects[" + (i+1) + "]", sXi, rx);
-			}
-		}
-	}
+      for(int i = 0; i < (iLen - 1); i++)  {
+         try  {
+            if(cmp_rtr.compare(objects[i], objects[i+1]) > 0)  {
+               throw  new IllegalArgumentStateException("objects[" + i + "] and objects[" + (i + 1) + "] are not in ascending order. -- objects[" + i + "]=<" + objects[i] + ">, objects[" + (i + 1) + "]=<" + " + objects[i+1] + " + ">");
+            }
+         }  catch(RuntimeException rx)  {
+            Objects.requireNonNull(cmp_rtr, "cmp_rtr");
+            Objects.requireNonNull(objects[i], "objects[" + i + "]");
+            String sXi = "Attempting cmp_rtr.compare(objects[" + i + "], objects[" + (i+1) + "]). -- objects[" + i + "]=<" + objects[i] + "> and objects[" + (i + 1) + "]=<" + " + objects[i+1] + " + ">, cmp_rtr=[" + cmp_rtr + "]";
+            throw  CrashIfObject.nullOrReturnCause(objects[i+1], "objects[" + (i+1) + "]", sXi, rx);
+         }
+      }
+   }
 }

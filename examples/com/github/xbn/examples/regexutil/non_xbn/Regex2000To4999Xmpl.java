@@ -13,27 +13,27 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn;
-	import  java.util.regex.Pattern;
+   import  java.util.regex.Pattern;
 /**
-	<p>Regex demonstration: Match digits iterspersed throughout an input string that, when joined together, are between 2000 and 4999.</p>
+   <p>Regex demonstration: Match digits iterspersed throughout an input string that, when joined together, are between 2000 and 4999.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.non_xbn.Regex2000To4999Xmpl}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.non_xbn.Regex2000To4999Xmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class Regex2000To4999Xmpl  {
-	public static final void main(String[] ignored)  {
+   public static final void main(String[] ignored)  {
 
-		Pattern p = Pattern.compile("^([2-4])\\.\\s+(\\d\\d\\d)\\s+ae$");
+      Pattern p = Pattern.compile("^([2-4])\\.\\s+(\\d\\d\\d)\\s+ae$");
 
-		String sD1d2 = "$1$2";
+      String sD1d2 = "$1$2";
 
-		replace(p, "5. 282 ae", sD1d2);
-		replace(p, "3. 278 ae", sD1d2);
-		replace(p, "4. 113 ae", sD1d2);
-	}
-	public static final void replace(Pattern to_findPtrn, String text_toSearch, String rplc_with)  {
-		System.out.println(to_findPtrn.matcher(text_toSearch).replaceFirst(rplc_with));
-	}
+      replace(p, "5. 282 ae", sD1d2);
+      replace(p, "3. 278 ae", sD1d2);
+      replace(p, "4. 113 ae", sD1d2);
+   }
+   public static final void replace(Pattern to_findPtrn, String text_toSearch, String rplc_with)  {
+      System.out.println(to_findPtrn.matcher(text_toSearch).replaceFirst(rplc_with));
+   }
 }

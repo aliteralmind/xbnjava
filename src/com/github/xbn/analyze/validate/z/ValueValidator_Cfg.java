@@ -13,27 +13,27 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.analyze.validate.z;
-	import  com.github.xbn.lang.CrashIfObject;
-	import  com.github.xbn.analyze.validate.ValueValidator;
-	import  com.github.xbn.analyze.validate.NullnessValidator;
-	import  com.github.xbn.neederneedable.DummyForNoNeeder;
+   import  com.github.xbn.lang.CrashIfObject;
+   import  com.github.xbn.analyze.validate.ValueValidator;
+   import  com.github.xbn.analyze.validate.NullnessValidator;
+   import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-	<p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring {@code com.github.xbn.analyze.validate.ValueValidator ValueValidator}s that only check null-ness.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring {@code com.github.xbn.analyze.validate.ValueValidator ValueValidator}s that only check null-ness.</p>
 
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueValidator_Cfg<O> extends ValueValidator_CfgForNeeder<O,NullnessValidator<O>,DummyForNoNeeder>  {
-	public ValueValidator_Cfg()  {
-		super(false, true, null);
-	}
-	@SuppressWarnings("unchecked")
-	public static final <O> ValueValidator_CfgForNeeder<O,NullnessValidator<O>,DummyForNoNeeder> newSameFieldsAs(ValueValidator<O> validator)  {
-		try  {
-			return  new ValueValidator_Cfg<O>().nullOk(validator.isNullOk()).invert(validator.doInvertRules()).extraErrInfo(validator.getExtraErrInfo()).filter(validator.getFilter()).debugTo(validator.getDebugAptr().getAppendable());
-		}  catch(RuntimeException rx)  {
-			throw  CrashIfObject.nullOrReturnCause(validator, "validator", null, rx);
-		}
-	}
+   public ValueValidator_Cfg()  {
+      super(false, true, null);
+   }
+   @SuppressWarnings("unchecked")
+   public static final <O> ValueValidator_CfgForNeeder<O,NullnessValidator<O>,DummyForNoNeeder> newSameFieldsAs(ValueValidator<O> validator)  {
+      try  {
+         return  new ValueValidator_Cfg<O>().nullOk(validator.isNullOk()).invert(validator.doInvertRules()).extraErrInfo(validator.getExtraErrInfo()).filter(validator.getFilter()).debugTo(validator.getDebugAptr().getAppendable());
+      }  catch(RuntimeException rx)  {
+         throw  CrashIfObject.nullOrReturnCause(validator, "validator", null, rx);
+      }
+   }
 }

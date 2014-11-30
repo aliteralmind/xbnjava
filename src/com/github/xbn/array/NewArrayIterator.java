@@ -13,28 +13,28 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.array;
-	import  com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator;
-	import  com.github.xbn.array.primitive.IsValidPArrayElementIterator;
-	import  java.util.Iterator;
-	import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
-	import  com.github.xbn.array.helper.PrimitiveArrayHelper;
-	import  com.github.xbn.analyze.validate.ValueValidator;
-	import  com.github.xbn.util.itr.AbstractIsValidElementIterator;
-	import  com.github.xbn.util.itr.AbstractElementTSLengthIterator;
+   import  com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator;
+   import  com.github.xbn.array.primitive.IsValidPArrayElementIterator;
+   import  java.util.Iterator;
+   import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
+   import  com.github.xbn.array.helper.PrimitiveArrayHelper;
+   import  com.github.xbn.analyze.validate.ValueValidator;
+   import  com.github.xbn.util.itr.AbstractIsValidElementIterator;
+   import  com.github.xbn.util.itr.AbstractElementTSLengthIterator;
 /**
-	<p>Convenience functions for creating array-iterators that obtain each element's <i>validity</i> or {@code toString()} length.</p>
+   <p>Convenience functions for creating array-iterators that obtain each element's <i>validity</i> or {@code toString()} length.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewArrayIterator  {
    private NewArrayIterator()  {
-		throw  new IllegalStateException("Do not instantiate");
-	}
-	/**
-		<p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
+      throw  new IllegalStateException("Do not instantiate");
+   }
+   /**
+      <p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
 
-		<!-- MAIN FUNCTION -->
+      <!-- MAIN FUNCTION -->
 <!--
 char Character Char
 double Double Double
@@ -45,80 +45,80 @@ short Short Short
 byte Byte Byte
  -->
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Character&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forCharacter()))</code>
+      @return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Character&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forCharacter()))</code>
 
-		@see  #forIsElementValid(byte[], ValueValidator) forIsElementValid(y[],vv)
-		@see  #forIsElementValid(short[], ValueValidator) forIsElementValid(h[],vv)
-		@see  #forIsElementValid(int[], ValueValidator) forIsElementValid(int[],vv)
-		@see  #forIsElementValid(long[], ValueValidator) forIsElementValid(l[],vv)
-		@see  #forIsElementValid(float[], ValueValidator) forIsElementValid(f[],vv)
-		@see  #forIsElementValid(double[], ValueValidator) forIsElementValid(d[],vv)
-		@see  #forDigitTSLength(byte[]) forDigitTSLength(y[])
-		@see  #forDigitTSLength(short[]) forDigitTSLength(h[])
-		@see  #forDigitTSLength(int[]) forDigitTSLength(int[])
-		@see  #forDigitTSLength(long[]) forDigitTSLength(l[])
-		@see  #forDigitTSLength(float[]) forDigitTSLength(f[])
-		@see  #forDigitTSLength(double[]) forDigitTSLength(d[])
-	 **/
-	public static final Iterator<Boolean> forIsElementValid(char[] prim_array, ValueValidator<Character> element_vldtr)  {
-		return  (new IsValidPArrayElementIterator<Character>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forCharacter()));
-	}
-	/**
-		<p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
+      @see  #forIsElementValid(byte[], ValueValidator) forIsElementValid(y[],vv)
+      @see  #forIsElementValid(short[], ValueValidator) forIsElementValid(h[],vv)
+      @see  #forIsElementValid(int[], ValueValidator) forIsElementValid(int[],vv)
+      @see  #forIsElementValid(long[], ValueValidator) forIsElementValid(l[],vv)
+      @see  #forIsElementValid(float[], ValueValidator) forIsElementValid(f[],vv)
+      @see  #forIsElementValid(double[], ValueValidator) forIsElementValid(d[],vv)
+      @see  #forDigitTSLength(byte[]) forDigitTSLength(y[])
+      @see  #forDigitTSLength(short[]) forDigitTSLength(h[])
+      @see  #forDigitTSLength(int[]) forDigitTSLength(int[])
+      @see  #forDigitTSLength(long[]) forDigitTSLength(l[])
+      @see  #forDigitTSLength(float[]) forDigitTSLength(f[])
+      @see  #forDigitTSLength(double[]) forDigitTSLength(d[])
+    **/
+   public static final Iterator<Boolean> forIsElementValid(char[] prim_array, ValueValidator<Character> element_vldtr)  {
+      return  (new IsValidPArrayElementIterator<Character>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forCharacter()));
+   }
+   /**
+      <p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Byte&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forByte()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Boolean> forIsElementValid(byte[] prim_array, ValueValidator<Byte> element_vldtr)  {
-		return  (new IsValidPArrayElementIterator<Byte>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forByte()));
-	}
-	/**
-		<p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Byte&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forByte()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Boolean> forIsElementValid(byte[] prim_array, ValueValidator<Byte> element_vldtr)  {
+      return  (new IsValidPArrayElementIterator<Byte>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forByte()));
+   }
+   /**
+      <p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Short&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forShort()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Boolean> forIsElementValid(short[] prim_array, ValueValidator<Short> element_vldtr)  {
-		return  (new IsValidPArrayElementIterator<Short>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forShort()));
-	}
-	/**
-		<p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Short&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forShort()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Boolean> forIsElementValid(short[] prim_array, ValueValidator<Short> element_vldtr)  {
+      return  (new IsValidPArrayElementIterator<Short>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forShort()));
+   }
+   /**
+      <p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Integer&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forIntegereger()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Boolean> forIsElementValid(int[] prim_array, ValueValidator<Integer> element_vldtr)  {
-		return  (new IsValidPArrayElementIterator<Integer>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forInteger()));
-	}
-	/**
-		<p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Integer&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forIntegereger()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Boolean> forIsElementValid(int[] prim_array, ValueValidator<Integer> element_vldtr)  {
+      return  (new IsValidPArrayElementIterator<Integer>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forInteger()));
+   }
+   /**
+      <p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Long&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forLong()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Boolean> forIsElementValid(long[] prim_array, ValueValidator<Long> element_vldtr)  {
-		return  (new IsValidPArrayElementIterator<Long>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forLong()));
-	}
-	/**
-		<p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Long&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forLong()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Boolean> forIsElementValid(long[] prim_array, ValueValidator<Long> element_vldtr)  {
+      return  (new IsValidPArrayElementIterator<Long>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forLong()));
+   }
+   /**
+      <p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Float&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forFloat()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Boolean> forIsElementValid(float[] prim_array, ValueValidator<Float> element_vldtr)  {
-		return  (new IsValidPArrayElementIterator<Float>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forFloat()));
-	}
-	/**
-		<p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Float&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forFloat()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Boolean> forIsElementValid(float[] prim_array, ValueValidator<Float> element_vldtr)  {
+      return  (new IsValidPArrayElementIterator<Float>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forFloat()));
+   }
+   /**
+      <p>Get an iterator that states whether each element in a primitive array is &quot;good&quot; or &quot;bad&quot;.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Double&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forDouble()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Boolean> forIsElementValid(double[] prim_array, ValueValidator<Double> element_vldtr)  {
-		return  (new IsValidPArrayElementIterator<Double>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forDouble()));
-	}
-	/**
-		<p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.IsValidPArrayElementIterator#IsValidPArrayElementIterator(Object, ValueValidator, PrimitiveArrayHelper) IsValidPArrayElementIterator}&lt;Double&gt;(prim_array, element_vldtr, NewPrimitiveArrayHelper.forDouble()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Boolean> forIsElementValid(double[] prim_array, ValueValidator<Double> element_vldtr)  {
+      return  (new IsValidPArrayElementIterator<Double>(prim_array, element_vldtr, NewPrimitiveArrayHelper.forDouble()));
+   }
+   /**
+      <p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
 <!--
 byte Byte Byte
 double Double Double
@@ -127,93 +127,93 @@ long Long Long
 int Integer Int
 short Short Short
 
-		&#64;see  #forIsElementValid(chaxr[], ValueValidator) forIsElementValid(cx[],vv)
+      &#64;see  #forIsElementValid(chaxr[], ValueValidator) forIsElementValid(cx[],vv)
  -->
-		@return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Byte&gt;(prim_array, NewPrimitiveArrayHelper.forByte()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Integer> forDigitTSLength(byte[] prim_array)  {
-		return  (new PrimitiveArrayTSLengthIterator<Byte>(prim_array, NewPrimitiveArrayHelper.forByte()));
-	}
-	/**
-		<p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Byte&gt;(prim_array, NewPrimitiveArrayHelper.forByte()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Integer> forDigitTSLength(byte[] prim_array)  {
+      return  (new PrimitiveArrayTSLengthIterator<Byte>(prim_array, NewPrimitiveArrayHelper.forByte()));
+   }
+   /**
+      <p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Short&gt;(prim_array, NewPrimitiveArrayHelper.forShort()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Integer> forDigitTSLength(short[] prim_array)  {
-		return  (new PrimitiveArrayTSLengthIterator<Short>(prim_array, NewPrimitiveArrayHelper.forShort()));
-	}
-	/**
-		<p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Short&gt;(prim_array, NewPrimitiveArrayHelper.forShort()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Integer> forDigitTSLength(short[] prim_array)  {
+      return  (new PrimitiveArrayTSLengthIterator<Short>(prim_array, NewPrimitiveArrayHelper.forShort()));
+   }
+   /**
+      <p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Integer&gt;(prim_array, NewPrimitiveArrayHelper.forIntegereger()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Integer> forDigitTSLength(int[] prim_array)  {
-		return  (new PrimitiveArrayTSLengthIterator<Integer>(prim_array, NewPrimitiveArrayHelper.forInteger()));
-	}
-	/**
-		<p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Integer&gt;(prim_array, NewPrimitiveArrayHelper.forIntegereger()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Integer> forDigitTSLength(int[] prim_array)  {
+      return  (new PrimitiveArrayTSLengthIterator<Integer>(prim_array, NewPrimitiveArrayHelper.forInteger()));
+   }
+   /**
+      <p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Long&gt;(prim_array, NewPrimitiveArrayHelper.forLong()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Integer> forDigitTSLength(long[] prim_array)  {
-		return  (new PrimitiveArrayTSLengthIterator<Long>(prim_array, NewPrimitiveArrayHelper.forLong()));
-	}
-	/**
-		<p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Long&gt;(prim_array, NewPrimitiveArrayHelper.forLong()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Integer> forDigitTSLength(long[] prim_array)  {
+      return  (new PrimitiveArrayTSLengthIterator<Long>(prim_array, NewPrimitiveArrayHelper.forLong()));
+   }
+   /**
+      <p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Float&gt;(prim_array, NewPrimitiveArrayHelper.forFloat()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Integer> forDigitTSLength(float[] prim_array)  {
-		return  (new PrimitiveArrayTSLengthIterator<Float>(prim_array, NewPrimitiveArrayHelper.forFloat()));
-	}
-	/**
-		<p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
+      @return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Float&gt;(prim_array, NewPrimitiveArrayHelper.forFloat()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Integer> forDigitTSLength(float[] prim_array)  {
+      return  (new PrimitiveArrayTSLengthIterator<Float>(prim_array, NewPrimitiveArrayHelper.forFloat()));
+   }
+   /**
+      <p>Get an iterator that returns the length (of the {@code toString()}) for each numeric element in a primitive array.</p>
 
-		@return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Double&gt;(prim_array, NewPrimitiveArrayHelper.forDouble()))</code>
-		@see  #forIsElementValid(char[], ValueValidator)
-	 **/
-	public static final Iterator<Integer> forDigitTSLength(double[] prim_array)  {
-		return  (new PrimitiveArrayTSLengthIterator<Double>(prim_array, NewPrimitiveArrayHelper.forDouble()));
-	}
-	public static final <E> Iterator<Integer> getNonPArrayElementTSLengthIterator(E[] array)  {
-		return  (new NonPArrayElementTSLengthIterator<E>(array));
-	}
-	public static final <R> Iterator<Boolean> forIsElementValid(R[] array, ValueValidator<R> element_vldtr)  {
-		return  (new IsValidNonPArrayEElementIterator<R>(array, element_vldtr));
-	}
+      @return  <code>(new {@link com.github.xbn.array.primitive.PrimitiveArrayTSLengthIterator#PrimitiveArrayTSLengthIterator(Object, PrimitiveArrayHelper) PrimitiveArrayTSLengthIterator}&lt;Double&gt;(prim_array, NewPrimitiveArrayHelper.forDouble()))</code>
+      @see  #forIsElementValid(char[], ValueValidator)
+    **/
+   public static final Iterator<Integer> forDigitTSLength(double[] prim_array)  {
+      return  (new PrimitiveArrayTSLengthIterator<Double>(prim_array, NewPrimitiveArrayHelper.forDouble()));
+   }
+   public static final <E> Iterator<Integer> getNonPArrayElementTSLengthIterator(E[] array)  {
+      return  (new NonPArrayElementTSLengthIterator<E>(array));
+   }
+   public static final <R> Iterator<Boolean> forIsElementValid(R[] array, ValueValidator<R> element_vldtr)  {
+      return  (new IsValidNonPArrayEElementIterator<R>(array, element_vldtr));
+   }
 }
 class IsValidNonPArrayEElementIterator<R> extends AbstractIsValidElementIterator<R>  {
-	public IsValidNonPArrayEElementIterator(R[] array, ValueValidator<R> element_vldtr)  {
-		super(array, element_vldtr);
-	}
-	protected R getRawElementRTXOkay(int index)  {
-		return  getRawArray()[index];
-	}
-	@SuppressWarnings("unchecked")
-	protected R[] getRawArray()  {
-		return  ((R[])getContainer());
-	}
-	public int getTotalElementCount()  {
-		return  getRawArray().length;
-	}
+   public IsValidNonPArrayEElementIterator(R[] array, ValueValidator<R> element_vldtr)  {
+      super(array, element_vldtr);
+   }
+   protected R getRawElementRTXOkay(int index)  {
+      return  getRawArray()[index];
+   }
+   @SuppressWarnings("unchecked")
+   protected R[] getRawArray()  {
+      return  ((R[])getContainer());
+   }
+   public int getTotalElementCount()  {
+      return  getRawArray().length;
+   }
 }
 class NonPArrayElementTSLengthIterator<R> extends AbstractElementTSLengthIterator<R>  {
-	public NonPArrayElementTSLengthIterator(R[] prim_array)  {
-		super(prim_array);
-	}
-	@SuppressWarnings("unchecked")
-	protected R[] getRawArray()  {
-		return  (R[])getContainer();
-	}
-	protected R getRawElementRTXOkay(int index)  {
-		return  getRawArray()[index];
-	}
-	public int getTotalElementCount()  {
-		return  getRawArray().length;
-	}
+   public NonPArrayElementTSLengthIterator(R[] prim_array)  {
+      super(prim_array);
+   }
+   @SuppressWarnings("unchecked")
+   protected R[] getRawArray()  {
+      return  (R[])getContainer();
+   }
+   protected R getRawElementRTXOkay(int index)  {
+      return  getRawArray()[index];
+   }
+   public int getTotalElementCount()  {
+      return  getRawArray().length;
+   }
 }

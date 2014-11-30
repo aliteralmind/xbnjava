@@ -13,32 +13,32 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.regexutil.non_xbn.basic;
-		import  java.util.regex.Pattern;
+      import  java.util.regex.Pattern;
 /**
-	<p>Replace all dots in a valid email to pipes: {@code '|'}.</p>
+   <p>Replace all dots in a valid email to pipes: {@code '|'}.</p>
 
-	<p>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ReplaceDotsInValidEmailToPipes}</p>
+   <p>{@code java com.github.xbn.examples.regexutil.non_xbn.basic.ReplaceDotsInValidEmailToPipes}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReplaceDotsInValidEmailToPipes  {
-	public static final void main(String[] ignored)  {
-		Pattern pEmail = Pattern.compile("^\\S+@\\S+.\\S+$");
-		test(pEmail, "obama@whitehouse.com");
-		test(pEmail, "barack.obama@whitehouse.com");
-		test(pEmail, "barack.obama@whitehouse.com.gov.nsa");
-		test(pEmail, "barack.obama_BOGUS_whitehouse.com.gov.nsa");
-	}
-	private static final void test(Pattern pattern_toFind, String potentialEmail_wDots)  {
-		System.out.print(potentialEmail_wDots + "	 -->	");
+   public static final void main(String[] ignored)  {
+      Pattern pEmail = Pattern.compile("^\\S+@\\S+.\\S+$");
+      test(pEmail, "obama@whitehouse.com");
+      test(pEmail, "barack.obama@whitehouse.com");
+      test(pEmail, "barack.obama@whitehouse.com.gov.nsa");
+      test(pEmail, "barack.obama_BOGUS_whitehouse.com.gov.nsa");
+   }
+   private static final void test(Pattern pattern_toFind, String potentialEmail_wDots)  {
+      System.out.print(potentialEmail_wDots + "	 -->	");
 
-		String sRplcd = null;
-		if(pattern_toFind.matcher(potentialEmail_wDots).matches())  {
-			sRplcd = potentialEmail_wDots.replaceAll("\\.", "|");
-		}  else  {
-			sRplcd = "Not an email";
-		}
-		System.out.println(sRplcd);
-	}
+      String sRplcd = null;
+      if(pattern_toFind.matcher(potentialEmail_wDots).matches())  {
+         sRplcd = potentialEmail_wDots.replaceAll("\\.", "|");
+      }  else  {
+         sRplcd = "Not an email";
+      }
+      System.out.println(sRplcd);
+   }
 }

@@ -13,22 +13,22 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.examples.io;
-	import  java.io.IOException;
-	import  com.github.xbn.io.IOUtil;
+   import  java.io.IOException;
+   import  com.github.xbn.io.IOUtil;
 /**
-	<p>Adapt a {@code java.lang.}{@link java.lang.Appendable Appendable} into a {@code java.io.}{@link java.io.Writer Writer}, using <code>xbn.io.{@link com.github.xbn.io.IOUtil IOUtil}.{@link com.github.xbn.io.IOUtil#newWriterForAppendable(Appendable) newWriterForAppendable}(apbl)</code></p>
+   <p>Adapt a {@code java.lang.}{@link java.lang.Appendable Appendable} into a {@code java.io.}{@link java.io.Writer Writer}, using <code>xbn.io.{@link com.github.xbn.io.IOUtil IOUtil}.{@link com.github.xbn.io.IOUtil#newWriterForAppendable(Appendable) newWriterForAppendable}(apbl)</code></p>
 
-	<p>{@code java com.github.xbn.examples.io.WriterForAppendableXmpl}</p>
+   <p>{@code java com.github.xbn.examples.io.WriterForAppendableXmpl}</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class WriterForAppendableXmpl  {
-	public static final void main(String[] ignored)  {
-		try  {
-			IOUtil.newWriterForAppendable(System.out).write("hello");
-		}  catch(IOException iox)  {
-			throw  new RuntimeException("WriterForAppendableXmpl", iox);
-		}
-	}
+   public static final void main(String[] ignored)  {
+      try  {
+         IOUtil.newWriterForAppendable(System.out).write("hello");
+      }  catch(IOException iox)  {
+         throw  new RuntimeException("WriterForAppendableXmpl", iox);
+      }
+   }
 }

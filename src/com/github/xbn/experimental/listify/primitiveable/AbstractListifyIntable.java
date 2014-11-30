@@ -13,65 +13,65 @@
    - ASL 2.0: http://www.apache.org/licenses/LICENSE-2.0.txt
 \*license*/
 package  com.github.xbn.experimental.listify.primitiveable;
-	import  com.github.xbn.experimental.listify.AddRemovable;
-	import  com.github.xbn.experimental.listify.CopyElements;
-	import  com.github.xbn.array.IndexableUtil;
-	import  com.github.xbn.array.NullContainer;
-	import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
-	import  com.github.xbn.experimental.listify.primitiveable.ListifyIntable;
-	import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyPrimitiveable;
-	import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
-	import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
-	import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
+   import  com.github.xbn.experimental.listify.AddRemovable;
+   import  com.github.xbn.experimental.listify.CopyElements;
+   import  com.github.xbn.array.IndexableUtil;
+   import  com.github.xbn.array.NullContainer;
+   import  com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives;
+   import  com.github.xbn.experimental.listify.primitiveable.ListifyIntable;
+   import  com.github.xbn.experimental.listify.primitiveable.AbstractListifyPrimitiveable;
+   import  com.github.xbn.array.helper.NewPrimitiveArrayHelper;
+   import  com.github.xbn.util.copyval.OneParamCnstrValueCopier;
+   import  com.github.xbn.util.copyval.NullHandlerForPrimitives;
 /**
-	<p>Abstract implementation of {@code ListifyIntable}.</p>
+   <p>Abstract implementation of {@code ListifyIntable}.</p>
 
-	@since  0.1.0
-	@author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+   @since  0.1.0
+   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyIntable extends AbstractListifyPrimitiveable<Integer> implements ListifyIntable  {
 //constructors...START
-	@SuppressWarnings("unchecked")
-	public AbstractListifyIntable(Object raw_obj)  {
-		this(raw_obj, SimpleNullHandlerForPrimitives.CRASH);
-	}
-	public AbstractListifyIntable(Object raw_obj, NullHandlerForPrimitives<Integer> null_handler)  {
-		super(raw_obj, AddRemovable.NO, NewPrimitiveArrayHelper.forInteger(), (new OneParamCnstrValueCopier<Integer>(Integer.class)), null_handler);
-	}
+   @SuppressWarnings("unchecked")
+   public AbstractListifyIntable(Object raw_obj)  {
+      this(raw_obj, SimpleNullHandlerForPrimitives.CRASH);
+   }
+   public AbstractListifyIntable(Object raw_obj, NullHandlerForPrimitives<Integer> null_handler)  {
+      super(raw_obj, AddRemovable.NO, NewPrimitiveArrayHelper.forInteger(), (new OneParamCnstrValueCopier<Integer>(Integer.class)), null_handler);
+   }
 //constructors...END
-	public final int[] getPArrayCopyOrNull(NullContainer nnull)  {
-		if(getRawObject() == null)  {
-			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
-			return  null;
-		}
-		int[] ai = new int[size()];
-		int j = 0;
-		for(int i : this)  {
-			ai[j++] = i;
-		}
-		return  ai;
-	}
-	public final Integer[] getEArrayCopyOrNull(NullContainer nnull, CopyElements copy_elements)  {
-		if(getRawObject() == null)  {
-			IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
-			return  null;
-		}
-		Integer[] ao = new Integer[size()];
-		int j = 0;
-		for(Integer I : this)  {
-			ao[j++] = I;
-		}
-		return  ao;
-	}
-	protected final Integer getElementRTXOkay(int index)  {
-		return  getInt(index);
-	}
+   public final int[] getPArrayCopyOrNull(NullContainer nnull)  {
+      if(getRawObject() == null)  {
+         IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
+         return  null;
+      }
+      int[] ai = new int[size()];
+      int j = 0;
+      for(int i : this)  {
+         ai[j++] = i;
+      }
+      return  ai;
+   }
+   public final Integer[] getEArrayCopyOrNull(NullContainer nnull, CopyElements copy_elements)  {
+      if(getRawObject() == null)  {
+         IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, "getRawObject()");
+         return  null;
+      }
+      Integer[] ao = new Integer[size()];
+      int j = 0;
+      for(Integer I : this)  {
+         ao[j++] = I;
+      }
+      return  ao;
+   }
+   protected final Integer getElementRTXOkay(int index)  {
+      return  getInt(index);
+   }
 /*stub functions for non-abstract compile...START
-	public final java.util.Iterator<Integer> iterator()  {
-		return  null;
-	}
-	public final int getInt(int index)  {
-		return  -1;
-	}
+   public final java.util.Iterator<Integer> iterator()  {
+      return  null;
+   }
+   public final int getInt(int index)  {
+      return  -1;
+   }
  stub functions for non-abstract compile...END*/
 }
