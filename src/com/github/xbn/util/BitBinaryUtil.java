@@ -17,8 +17,8 @@ package  com.github.xbn.util;
 /**
    <p>Determine if a bit-flag-integer has a particular flag, and some debugging utilities.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BitBinaryUtil  {
    public static final int VALUE_OF_31ST_ONE_BIT = Integer.parseInt("1000000000000000000000000000000", 2);
@@ -50,18 +50,18 @@ public class BitBinaryUtil  {
 
 {@.codelet.and.out com.github.xbn.examples.util.GetIntAsZeroPadded31BitStringNoSignDemo%eliminateCommentBlocksAndPackageDecl()}
 
-      @return  <code>{@link #getIntAsZeroPaddedBinaryStringToLength(int, int) getIntAsZeroPaddedBinaryStringToLength}(num, 32).substring(1, 32)</code>
-    **/
+    * @return  <code>{@link #getIntAsZeroPaddedBinaryStringToLength(int, int) getIntAsZeroPaddedBinaryStringToLength}(num, 32).substring(1, 32)</code>
+    */
    public static final String getIntAsZeroPadded31BitStringNoSign(int num)  {
       return  getIntAsZeroPaddedBinaryStringToLength(num, 32).substring(1, 32);
    }
    /**
       <p>Gets the binary representation of an integer, as a string and with zero padding.</p>
 
-      @return  <code>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Integer#toBinaryString(int) toBinaryString}(num)).replace(' ', '0')</code>
-      @see  #getLongAsZeroPaddedBinaryStringToLength(long, int)
-      @see  #getIntAsZeroPadded31BitStringNoSign(int)
-    **/
+    * @return  <code>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Integer#toBinaryString(int) toBinaryString}(num)).replace(' ', '0')</code>
+    * @see  #getLongAsZeroPaddedBinaryStringToLength(long, int)
+    * @see  #getIntAsZeroPadded31BitStringNoSign(int)
+    */
    public static final String getIntAsZeroPaddedBinaryStringToLength(int num, int bit_length)  {
       return  String.format("%" + bit_length + "s", Integer.toBinaryString(num)).replace(' ', '0');
    }
@@ -70,9 +70,9 @@ public class BitBinaryUtil  {
 
 {@.codelet.and.out com.github.xbn.examples.util.GetZeroPaddedBinaryStringToLengthDemo%eliminateCommentBlocksAndPackageDecl()}
 
-      @return  <code>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Long#toBinaryString(long) toBinaryString}(num)).replace(' ', '0')</code>
-      @see  #getIntAsZeroPaddedBinaryStringToLength(int, int)
-    **/
+    * @return  <code>String.{@link java.lang.String#format(String, Object...) format}(&quot;%&quot; + bit_length + &quot;s&quot;, {@link java.lang.Long#toBinaryString(long) toBinaryString}(num)).replace(' ', '0')</code>
+    * @see  #getIntAsZeroPaddedBinaryStringToLength(int, int)
+    */
    public static final String getLongAsZeroPaddedBinaryStringToLength(long num, int bit_length)  {
       return  String.format("%" + bit_length + "s", Long.toBinaryString(num)).replace(' ', '0');
    }

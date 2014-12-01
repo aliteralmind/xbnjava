@@ -23,8 +23,8 @@ package  com.github.xbn.analyze.validate;
 /**
    <p>Validate all elements in a collection<h1> or array</h1></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class ValidateElementsUtil  {
@@ -34,12 +34,12 @@ public class ValidateElementsUtil  {
    /**
       <p>Are all elements in a collection valid?.</p>
 
-      @param  to_validate  May not be {@code null}.
-      @param  element_validator  The rules to validate for. May not be {@code null}.
+    * @param  to_validate  May not be {@code null}.
+    * @param  element_validator  The rules to validate for. May not be {@code null}.
 
-      @see  #getValidElements(Collection, ValueValidator) getValidElements(cll,vv)
-      @see  #getInvalidElements(Collection, ValueValidator) getInvalidElements(cll,vv)
-    **/
+    * @see  #getValidElements(Collection, ValueValidator) getValidElements(cll,vv)
+    * @see  #getInvalidElements(Collection, ValueValidator) getInvalidElements(cll,vv)
+    */
    @SuppressWarnings("unchecked")
    public static final <E> boolean areElementsValid(Collection<E> to_validate, ValueValidator<E> element_validator)  {
       Iterator<E> itr = null;
@@ -63,16 +63,16 @@ public class ValidateElementsUtil  {
    /**
       <p>Get a new collection of all good elements.</p>
 
-      @return  {@link #getValidInvalidElements(boolean, Collection, ValueValidator) getValidInvalidElements(true, to_validate, element_validator)}
-    **/
+    * @return  {@link #getValidInvalidElements(boolean, Collection, ValueValidator) getValidInvalidElements(true, to_validate, element_validator)}
+    */
    public static final <E> Collection<E> getValidElements(Collection<E> to_validate, ValueValidator<E> element_validator)  {
       return  getValidInvalidElements(true, to_validate, element_validator);
    }
    /**
       <p>Get a new collection of all bad elements.</p>
 
-      @return  {@link #getValidInvalidElements(boolean, Collection, ValueValidator) getValidInvalidElements(false, to_validate, element_validator)}
-    **/
+    * @return  {@link #getValidInvalidElements(boolean, Collection, ValueValidator) getValidInvalidElements(false, to_validate, element_validator)}
+    */
    public static final <E> Collection<E> getInvalidElements(Collection<E> to_validate, ValueValidator<E> element_validator)  {
       return  getValidInvalidElements(false, to_validate, element_validator);
    }
@@ -80,14 +80,14 @@ public class ValidateElementsUtil  {
    /**
       <p>Get a new collection of all good/bad elements.</p>
 
-      @param  do_getValid  If {@code true}, then the first valid element-index is return. If {@code false}, the first invalid.
-      @param  to_validate  May not be {@code null}.
-      @param  element_validator  May not be {@code null}.
+    * @param  do_getValid  If {@code true}, then the first valid element-index is return. If {@code false}, the first invalid.
+    * @param  to_validate  May not be {@code null}.
+    * @param  element_validator  May not be {@code null}.
 
-      @see
+    * @see
          <li>{@link #getValidElements(Collection, ValueValidator) getValidElements(cll,vv)}, {@link #getInvalidElements(Collection, ValueValidator) getInvalidElements(cll,vv)}</li>
       </ul>
-    **/
+    */
    @SuppressWarnings("unchecked")
    static final <E> Collection<E> getValidInvalidElements(boolean do_getValid, Collection<E> to_validate, ValueValidator<E> element_validator)  {
       Iterator<E> itr = null;
@@ -114,16 +114,16 @@ public class ValidateElementsUtil  {
    /**
       <p>Get a new list containing the indexes of all good/bad elements.</p>
 
-      @return  {@link #getValidInvalidElementIndexes(boolean, List, ValueValidator) getValidInvalidElementIndexes(true, to_validate, element_validator)}
-    **/
+    * @return  {@link #getValidInvalidElementIndexes(boolean, List, ValueValidator) getValidInvalidElementIndexes(true, to_validate, element_validator)}
+    */
    public static final <E> List<Integer> getValidElementIndexes(List<E> to_validate, ValueValidator<E> element_validator)  {
       return  getValidInvalidElementIndexes(true, to_validate, element_validator);
    }
    /**
       <p>Get a new list containing the indexes of all good/bad elements.</p>
 
-      @return  {@link #getValidInvalidElementIndexes(boolean, List, ValueValidator) getValidInvalidElementIndexes(false, to_validate, element_validator)}
-    **/
+    * @return  {@link #getValidInvalidElementIndexes(boolean, List, ValueValidator) getValidInvalidElementIndexes(false, to_validate, element_validator)}
+    */
    public static final <E> List<Integer> getInvalidElementIndexes(List<E> to_validate, ValueValidator<E> element_validator)  {
       return  getValidInvalidElementIndexes(false, to_validate, element_validator);
    }
@@ -131,13 +131,13 @@ public class ValidateElementsUtil  {
    /**
       <p>Get a new list containing the indexes of all good/bad elements.</p>
 
-      @param  do_getValid  If {@code true}, then the first valid element-index is return. If {@code false}, the first invalid.
-      @param  to_validate  May not be {@code null}.
-      @param  element_validator  May not be {@code null}.
+    * @param  do_getValid  If {@code true}, then the first valid element-index is return. If {@code false}, the first invalid.
+    * @param  to_validate  May not be {@code null}.
+    * @param  element_validator  May not be {@code null}.
 
-      @see  #getValidElementIndexes(List, ValueValidator) getValidElementIndexes(lst,vv)
-      @see  #getInvalidElementIndexes(List, ValueValidator) getInvalidElementIndexes(lst,vv)
-    **/
+    * @see  #getValidElementIndexes(List, ValueValidator) getValidElementIndexes(lst,vv)
+    * @see  #getInvalidElementIndexes(List, ValueValidator) getInvalidElementIndexes(lst,vv)
+    */
    @SuppressWarnings("unchecked")
    static final <E> List<Integer> getValidInvalidElementIndexes(boolean do_getValid, List<E> to_validate, ValueValidator<E> element_validator)  {
       Iterator<E> itr = null;
@@ -165,10 +165,10 @@ public class ValidateElementsUtil  {
    /**
       <p>Get the number of good elements.</p>
 
-      @param  to_validate  May not be {@code null}.
-      @param  element_validator  May not be {@code null}.
-      @see  #areElementsValid(Collection, ValueValidator) areElementsValid(cll,vv)
-    **/
+    * @param  to_validate  May not be {@code null}.
+    * @param  element_validator  May not be {@code null}.
+    * @see  #areElementsValid(Collection, ValueValidator) areElementsValid(cll,vv)
+    */
    @SuppressWarnings("unchecked")
    public static final <E> int getValidElementCount(Collection<E> to_validate, ValueValidator<E> element_validator)  {
       Iterator<E> itr = null;
@@ -195,9 +195,9 @@ public class ValidateElementsUtil  {
    /**
       <p>Get the number of bad elements.</p>
 
-      @return   <code>to_validate.size() - {@link #getValidElementCount(Collection, ValueValidator) getValidElementCount}(to_validate, element_validator)</code>
-      @see  #areElementsValid(Collection, ValueValidator) areElementsValid(cll,vv)
-    **/
+    * @return   <code>to_validate.size() - {@link #getValidElementCount(Collection, ValueValidator) getValidElementCount}(to_validate, element_validator)</code>
+    * @see  #areElementsValid(Collection, ValueValidator) areElementsValid(cll,vv)
+    */
    public static final <E> int getInvalidElementCount(Collection<E> to_validate, ValueValidator<E> element_validator)  {
       int iValid = getValidElementCount(to_validate, element_validator);
       //iwc set to to_validate in getValidElementCount()
@@ -206,16 +206,16 @@ public class ValidateElementsUtil  {
    /**
       <p>Get the index of the first bad element.</p>
 
-      @return  {@link #getIndexFirstValidInvalid(boolean, List, ValueValidator) getIndexFirstValidInvalid(false, to_validate, element_validator)}
-    **/
+    * @return  {@link #getIndexFirstValidInvalid(boolean, List, ValueValidator) getIndexFirstValidInvalid(false, to_validate, element_validator)}
+    */
    public static final <E> int getIndexFirstInvalid(List<E> to_validate, ValueValidator<E> element_validator)  {
       return  getIndexFirstValidInvalid(false, to_validate, element_validator);
    }
    /**
       <p>Get the index of the first good element.</p>
 
-      @return  {@link #getIndexFirstValidInvalid(boolean, List, ValueValidator) getIndexFirstValidInvalid(true, to_validate, element_validator)}
-    **/
+    * @return  {@link #getIndexFirstValidInvalid(boolean, List, ValueValidator) getIndexFirstValidInvalid(true, to_validate, element_validator)}
+    */
    public static final <E> int getIndexFirstValid(List<E> to_validate, ValueValidator<E> element_validator)  {
       return  getIndexFirstValidInvalid(true, to_validate, element_validator);
    }
@@ -223,15 +223,15 @@ public class ValidateElementsUtil  {
       <p>Get the index of the first good/bad element in the list.</p>
 
 
-      @param  do_getValid  If {@code true}, then the first valid element-index is return. If {@code false}, the first invalid.
-      @param  to_validate  May not be {@code null}.
-      @param  element_validator  May not be {@code null}.
-      @return  {@code -1} if there are no elements, or no element is valid/invalid.
+    * @param  do_getValid  If {@code true}, then the first valid element-index is return. If {@code false}, the first invalid.
+    * @param  to_validate  May not be {@code null}.
+    * @param  element_validator  May not be {@code null}.
+    * @return  {@code -1} if there are no elements, or no element is valid/invalid.
 
-      @see
+    * @see
          <li>{@link #getIndexFirstValid(List, ValueValidator) getIndexFirstValid(lst,vv)}, {@link #getIndexFirstInvalid(List, ValueValidator) getIndexFirstInvalid(lst,vv)}</li>
       </ul>
-    **/
+    */
    @SuppressWarnings("unchecked")
    static final <E> int getIndexFirstValidInvalid(boolean do_getValid, List<E> to_validate, ValueValidator<E> element_validator)  {
       Iterator<E> itr = null;

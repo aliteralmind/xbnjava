@@ -16,19 +16,19 @@ package  com.github.xbn.text.padchop.z;
    import  com.github.xbn.text.padchop.ChopString;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.text.padchop.ChopString ChopString}.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/neederneedable/Needable.html#direct">directly</a> configuring a {@link com.github.xbn.text.padchop.ChopString ChopString}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ChopString_Cfg extends ChopString_CfgForNeeder<ChopString,DummyForNoNeeder>   {
    /**
       <p>Create a new {@code zChopString_Cfg} with defaults.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R)">super</a>(null)</code></p>
-      @see  #ChopString_Cfg(int) this(i)
-    **/
+    * @see  #ChopString_Cfg(int) this(i)
+    */
    public ChopString_Cfg()  {
       super(null);
    }
@@ -37,8 +37,8 @@ public class ChopString_Cfg extends ChopString_CfgForNeeder<ChopString,DummyForN
 
          <p>Equal to
       <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</a>(null, goal_len)</code></p>
-      @see  #ChopString_Cfg() this()
-    **/
+    * @see  #ChopString_Cfg() this()
+    */
    public ChopString_Cfg(int goal_len)  {
       super(null, goal_len);
    }

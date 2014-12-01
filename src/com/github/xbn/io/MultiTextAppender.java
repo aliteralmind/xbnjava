@@ -20,7 +20,7 @@ package  com.github.xbn.io;
 /**
    <p>{@code TextAppender} that writes to two or more destinations.</p>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for detapndrils. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for detapndrils. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class MultiTextAppender extends TextAppender  {
    private final TextAppender[] tappenders;
@@ -64,15 +64,15 @@ public class MultiTextAppender extends TextAppender  {
       }
    }
    /**
-      @return  <code>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</code>
-    **/
+    * @return  <code>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</code>
+    */
    public String toString()  {
       return  appendToString(new StringBuilder()).toString();
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #toString()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #toString()
+    */
    public StringBuilder appendToString(StringBuilder to_appendTo)  {
       try  {
          to_appendTo.append("All appenders:").append(LINE_SEP);

@@ -11,9 +11,9 @@ public class TwoTuple<A,B> {
    /**
       <p>Create a new instance.</p>
 
-      @param  o_1  Get with {@link #get1() get1}{@code ()}
-      @param  o_2  Get with {@link #get2() get2}{@code ()}
-    **/
+    * @param  o_1  Get with {@link #get1() get1}{@code ()}
+    * @param  o_2  Get with {@link #get2() get2}{@code ()}
+    */
    public TwoTuple(A o_1, B o_2)  {
       o1 = o_1;
       o2 = o_2;

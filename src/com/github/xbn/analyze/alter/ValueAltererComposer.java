@@ -16,9 +16,9 @@ package  com.github.xbn.analyze.alter;
 /**
    <p>For classes that need to implement {@code AltererComposer}, that cannot extend {@code AbstractAlterer}.</p>
 
-   @see  AbstractAlterer
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  AbstractAlterer
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueAltererComposer<V,A> extends AltererComposer  {
 //constructors...START
@@ -26,7 +26,7 @@ public class ValueAltererComposer<V,A> extends AltererComposer  {
       <p>Create a new {@code ValueAltererComposer}.</p>
 
       YYY
-    **/
+    */
    public ValueAltererComposer()  {
       super();
    }
@@ -39,11 +39,11 @@ public class ValueAltererComposer<V,A> extends AltererComposer  {
    /**
       <p>Create a new {@code ValueAltererComposer} as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    public ValueAltererComposer(ValueAlterer<V,A> to_copy)  {
       super(to_copy);
    }
@@ -68,6 +68,6 @@ public class ValueAltererComposer<V,A> extends AltererComposer  {
 
       return  avb_containsSub.declareThenReturnAltered_4prot(bNtbd, o);
    }
-    **/
+    */
 //static...END
 }

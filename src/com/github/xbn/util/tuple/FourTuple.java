@@ -10,8 +10,8 @@ public class FourTuple<A,B,C,D> extends ThreeTuple<A,B,C>  {
    /**
       <p>Create a new instance.</p>
 
-      @param  o_4  Get with {@link #get4() get4}{@code ()}
-    **/
+    * @param  o_4  Get with {@link #get4() get4}{@code ()}
+    */
    public FourTuple(A o_1, B o_2, C o_3, D o_4)  {
       super(o_1, o_2, o_3);
       o4 = o_4;

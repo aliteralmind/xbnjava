@@ -23,8 +23,8 @@ package  com.github.xbn.array.z;
 /**
    <p>Base class for configuring {@code Xbn*IndexOutOfBoundsException}-s.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class XbnIbxBase_Cfg extends SimpleChainable  {
    public Throwable tCause    = null;
@@ -56,9 +56,9 @@ public class XbnIbxBase_Cfg extends SimpleChainable  {
    /**
       <p>Set the bounds that the bad-index should conform to, based on the length of a(n object that is known to be a) primitive array.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength}(min_inclusive, objThatIs_primArrayForLen, null, &quot;[the-primitive-array]&quot;)</code></p>
-    **/
+    */
    public void setAbsMinAndPArrayLength(int min_inclusive, Object objThatIs_primArrayForLen)  {
       setAbsMinAndPArrayLength(min_inclusive, objThatIs_primArrayForLen, null, "[the-primitive-array]");
    }
@@ -66,15 +66,15 @@ public class XbnIbxBase_Cfg extends SimpleChainable  {
       <p>Set the bounds that the bad-index should conform to, based on the length of a(n object that is known to be a) primitive array.</p>
 
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive,
       <br/> &nbsp; &nbsp; {@link #getLengthFromUnknownAsObject(Object, String, Object) getLengthFromUnknownAsObject}(objThatIs_primArrayForLen,
       <br/> &nbsp; &nbsp;  &nbsp; &nbsp; {@code "setAbsMinAndPArrayLength", cntr_name), min_name, cntr_name + ".length"})</code></p>
 
-      @param  objThatIs_primArrayForLen  May not be {@code null}.
-      @param  cntr_name  The array name. If {@code null}, defaults to {@code "[the-primitive-array]"}.
-      @see  #setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength(i,o,s,s)
-    **/
+    * @param  objThatIs_primArrayForLen  May not be {@code null}.
+    * @param  cntr_name  The array name. If {@code null}, defaults to {@code "[the-primitive-array]"}.
+    * @see  #setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength(i,o,s,s)
+    */
    public void setAbsMinAndPArrayLength(int min_inclusive, Object objThatIs_primArrayForLen, String min_name, String cntr_name)  {
       setAbsoluteBounds(min_inclusive,
          getLengthFromUnknownAsObject(objThatIs_primArrayForLen, cntr_name, null),
@@ -108,8 +108,8 @@ public class XbnIbxBase_Cfg extends SimpleChainable  {
    /**
       <p><i>Primitive array utility function:</i> Get the length of a primitive array <i>as held in an object</i>. This is not in {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil ObjThatIsPrimitiveArrayUtil} because this class must be compiled before it.</p>
 
-      @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object, String, Object) ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(o,s,o)
-    **/
+    * @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object, String, Object) ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(o,s,o)
+    */
    public static final int getLengthFromUnknownAsObject(Object objThatIs_primArray, String obj_name, Object xtra_errInfo)  {
       Class<?> cls = null;
       try  {

@@ -16,10 +16,10 @@ package  com.github.xbn.list.lister.z;
    import  com.github.xbn.list.lister.LLCfgElement;
    import  com.github.xbn.neederneedable.DummyForNoNeeder;
 /**
-   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#direct">directly</a> configuring an {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/neederneedable/Needable.html#direct">directly</a> configuring an {@link com.github.xbn.list.lister.LLCfgElement LLCfgElement}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LLCfgElement_Cfg<E> extends LLCfgElement_CfgForNeeder<E,LLCfgElement<E>,DummyForNoNeeder>   {
    /**
@@ -27,7 +27,7 @@ public class LLCfgElement_Cfg<E> extends LLCfgElement_CfgForNeeder<E,LLCfgElemen
 
          <p>Equal to
       <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCfgElement_CfgForNeeder.html#LLCfgElement_CfgForNeeder(R)">super</a>(null)</code></p>
-    **/
+    */
    public LLCfgElement_Cfg()  {
       super(null);
    }

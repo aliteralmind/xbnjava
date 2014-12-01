@@ -17,15 +17,15 @@ package  com.github.xbn.util.copyval;
 /**
    <p>Determines what--and if--the new value should be when the original is {@code null}. This is useful when duplicating wrapper arrays to their primitive types.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface NullHandler<O> extends Copyable  {
    /**
       <p>YYY</p>
 
-      @return  A non-{@code null} {@code ActionForNull}
-    **/
+    * @return  A non-{@code null} {@code ActionForNull}
+    */
    ActionForNull getAction();
    O getNonNull();
 }

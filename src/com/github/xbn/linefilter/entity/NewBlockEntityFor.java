@@ -31,22 +31,22 @@ package  com.github.xbn.linefilter.entity;
 /**
    <p>Convenience functions for creating {@code BlockEntity}s.</p>
 
-   @see  com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  com.github.xbn.linefilter.entity.raw.NewRawBlockEntityFor
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewBlockEntityFor  {
    /**
       <p>Create a <i>partially configured</i> block entity, to match a Java multi-line comment.</p>
 
-      @return
+    * @return
 <blockquote><pre>{@link #lineRange_Cfg(String, EntityRequired, Pattern, ValidResultFilter, Appendable, Pattern, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRange_Cfg}(name_ifNonNull,
    {@link java.util.regex.Pattern}.{@link java.util.regex.Pattern#compile(String) compile}(
          {@link com.github.xbn.util.JavaRegexes}.{@link com.github.xbn.util.JavaRegexes#getMultiLineCommentOpenMarkerRegex(IncludeJavaDoc) getMultiLineCommentOpenMarkerRegex}(java_doc)),
       null, dbgStart_ifNonNull,
    Pattern.compile(&quot;*&quot;+&quot;/&quot;, Pattern.{@link java.util.regex.Pattern#LITERAL LITERAL}), null, dbgEnd_ifNonNull,
    filter_ifNonNull, dbgLineNums_ifNonNull)</pre></blockquote>
-    **/
+    */
    public static final BlockEntity_CfgForNeeder<?,?> javaComment_Cfg(String name_ifNonNull, EntityRequired required, IncludeJavaDoc java_doc, Appendable dbgStart_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       return  lineRange_Cfg(name_ifNonNull, required,
          Pattern.compile(
@@ -58,14 +58,14 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a <i>partially configured</i> block entity, to match a JavaDoc multi-line comment.</p>
 
-      @param  filter_ifNonNull  If non-{@code null}, then a {@linkplain com.github.xbn.analyze.validate.ValidResultFilter#getObjectCopy() unique copy} is used by both the start and end alterers. If {@code null}, then {@code null} is provided to both.
-      @return
+    * @param  filter_ifNonNull  If non-{@code null}, then a {@linkplain com.github.xbn.analyze.validate.ValidResultFilter#getObjectCopy() unique copy} is used by both the start and end alterers. If {@code null}, then {@code null} is provided to both.
+    * @return
 <blockquote><pre>{@link #lineRange_Cfg(String, EntityRequired, Pattern, ValidResultFilter, Appendable, Pattern, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRange_Cfg}(name_ifNonNull,
    startPattern, filter_ifNonNull, null, dbgStart_ifNonNull,
    endPattern, filter_ifNonNull, null, dbgEnd_ifNonNull,
    dbgLineNums_ifNonNull)</pre></blockquote>
-      <br/>Where {@code startPattern} and {@code endPattern} are the {@linkplain java.util.regex.Pattern.LITERAL literal} strings {@code "/"+"**"} and {@code "*"+"/"}.
-    **/
+      <br/>Where {@code startPattern} and {@code endPattern} are the {@linkplain java.util.regex.Pattern#LITERAL literal} strings {@code "/"+"**"} and {@code "*"+"/"}.
+    */
    public static final BlockEntity_CfgForNeeder<?,?> javaDocComment_Cfg(String name_ifNonNull, EntityRequired required, Appendable dbgStart_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       return  lineRange_Cfg(name_ifNonNull, required,
          Pattern.compile("/"+"**", Pattern.LITERAL), null, dbgStart_ifNonNull,
@@ -75,8 +75,8 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a <i>partially configured</i> block entity, to match a block of lines starting and ending with ones that contain specific text.</p>
 
-      @param  endPtrn_ifNonNull  The pattern that defines the end line (must be found somewhere in the end line). If {@code null}, defaults to <code>{@link com.github.xbn.regexutil.NewPatternFor}.{@link com.github.xbn.regexutil.NewPatternFor#IMPOSSIBLE_TO_MATCH IMPOSSIBLE_TO_MATCH}</code>
-      @return
+    * @param  endPtrn_ifNonNull  The pattern that defines the end line (must be found somewhere in the end line). If {@code null}, defaults to <code>{@link com.github.xbn.regexutil.NewPatternFor}.{@link com.github.xbn.regexutil.NewPatternFor#IMPOSSIBLE_TO_MATCH IMPOSSIBLE_TO_MATCH}</code>
+    * @return
 <blockquote><pre>new {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg#BlockEntity_Cfg(String) BlockEntity_Cfg}(name_ifNonNull).
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startAlter(ValueAlterer) startAlter}(NewTextLineAltererFor#textValidateOnly(
       start_ptrn, null, dbgStart_ifNonNull)).
@@ -87,9 +87,9 @@ public class NewBlockEntityFor  {
          <li>non-{@code null}: {@link com.github.xbn.linefilter.entity.EndRequired}.{@link com.github.xbn.linefilter.entity.EndRequired#YES YES}</li>
          <li>{@code null}: EndRequired.{@link com.github.xbn.linefilter.entity.EndRequired#NO NO}</li>
       </ul>
-      @see  #javaComment_Cfg(String, EntityRequired, IncludeJavaDoc, Appendable, Appendable, RawOnOffEntityFilter, Appendable)
-      @see  #javaDocComment_Cfg(String, EntityRequired, Appendable, Appendable, RawOnOffEntityFilter, Appendable)
-    **/
+    * @see  #javaComment_Cfg(String, EntityRequired, IncludeJavaDoc, Appendable, Appendable, RawOnOffEntityFilter, Appendable)
+    * @see  #javaDocComment_Cfg(String, EntityRequired, Appendable, Appendable, RawOnOffEntityFilter, Appendable)
+    */
    public static final BlockEntity_CfgForNeeder<?,?> lineRange_Cfg(String name_ifNonNull, EntityRequired required, Pattern start_ptrn, ValidResultFilter startFilter_ifNonNull, Appendable dbgStart_ifNonNull, Pattern endPtrn_ifNonNull, ValidResultFilter endFilter_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       EndRequired endRqd = EndRequired.YES;
       if(endPtrn_ifNonNull == null)  {
@@ -112,8 +112,8 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a new block entity that contains specific text in the start and end lines.</p>
 
-      @param  keep_all  May not be {@code null}.
-      @return
+    * @param  keep_all  May not be {@code null}.
+    * @return
 <blockquote><pre>{@link #lineRange(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, Pattern, ValidResultFilter, Appendable, Pattern, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRange}(name_ifNonNull,
          {@link KeepStartLine}.{@link KeepStartLine#getForKeepMatched(KeepMatched, String) getForKeepMatched}(keep_all, ...),
          {@link KeepMidLines}.{@link KeepMidLines#getForKeepMatched(KeepMatched, String) getForKeepMatched}(keep_all, ...),
@@ -121,7 +121,7 @@ public class NewBlockEntityFor  {
          start_ptrn, null, dbgStart_ifNonNull,
          endPtrn_ifNonNull, null, dbgEnd_ifNonNull,
          dbgLineNums_ifNonNull)</pre></blockquote>
-    **/
+    */
    public static final BlockEntity lineRange(String name_ifNonNull, KeepMatched keep_all, EntityRequired required, Pattern start_ptrn, ValidResultFilter startFilter_ifNonNull, Appendable dbgStart_ifNonNull, Pattern endPtrn_ifNonNull, ValidResultFilter endFilter_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       return  lineRange(name_ifNonNull,
          KeepStartLine.getForKeepMatched(keep_all, "keep_all"),
@@ -135,10 +135,10 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a block entity that contains specific text in the start and end lines.</p>
 
-      @param  keep_start  May not be {@code null}
-      @param  keep_mids  May not be {@code null}
-      @param  keep_end  May not be {@code null}
-      @return
+    * @param  keep_start  May not be {@code null}
+    * @param  keep_mids  May not be {@code null}
+    * @param  keep_end  May not be {@code null}
+    * @return
 <blockquote><pre>{@link #lineRange_Cfg(String, EntityRequired, Pattern, ValidResultFilter, Appendable, Pattern, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRange_Cfg}(name_ifNonNull,
       start_ptrn, null, dbgStart_ifNonNull,
       endPtrn_ifNonNull, null, dbgEnd_ifNonNull,
@@ -147,8 +147,8 @@ public class NewBlockEntityFor  {
       keep_start.{@link KeepStartLine#isYes() isYes}(), keep_mids.{@link KeepMidLines#isYes() isYes}(), keep_end.{@link KeepEndLine#isYes() isYes}()).
    build()
 </pre></blockquote>
-      @see  #lineRange(String, KeepMatched, EntityRequired, Pattern, ValidResultFilter, Appendable, Pattern, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable)
-    **/
+    * @see  #lineRange(String, KeepMatched, EntityRequired, Pattern, ValidResultFilter, Appendable, Pattern, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable)
+    */
    public static final BlockEntity lineRange(String name_ifNonNull, KeepStartLine keep_start, KeepMidLines keep_mids, KeepEndLine keep_end, EntityRequired required, Pattern start_ptrn, ValidResultFilter startFilter_ifNonNull, Appendable dbgStart_ifNonNull, Pattern endPtrn_ifNonNull, ValidResultFilter endFilter_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       try  {
          return  lineRange_Cfg(name_ifNonNull, required,
@@ -168,9 +168,9 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a <i>partially configured</i> block entity that contains specific text in the start and end lines--this also makes replacements on each line.</p>
 
-      @param  midAlterer_ifNonNull  The alterer that modifies any lines between the start and end lines. If {@code null}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#midAlter(ValueAlterer) midAlter} is never called.
-      @param  endPtrn_ifNonNull  The pattern that defines the end line (must be found somewhere in the end line). If {@code null}, defaults to <code>{@link com.github.xbn.regexutil.NewPatternFor}.{@link com.github.xbn.regexutil.NewPatternFor#IMPOSSIBLE_TO_MATCH IMPOSSIBLE_TO_MATCH}</code>
-      @return
+    * @param  midAlterer_ifNonNull  The alterer that modifies any lines between the start and end lines. If {@code null}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#midAlter(ValueAlterer) midAlter} is never called.
+    * @param  endPtrn_ifNonNull  The pattern that defines the end line (must be found somewhere in the end line). If {@code null}, defaults to <code>{@link com.github.xbn.regexutil.NewPatternFor}.{@link com.github.xbn.regexutil.NewPatternFor#IMPOSSIBLE_TO_MATCH IMPOSSIBLE_TO_MATCH}</code>
+    * @return
 <blockquote><pre>new {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg#BlockEntity_Cfg(String) BlockEntity_Cfg}(
       name_ifNonNull).
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#startAlter(ValueAlterer) startAlter}(AdaptRegexReplacerTo.lineReplacer(
@@ -187,8 +187,8 @@ public class NewBlockEntityFor  {
          <li>non-{@code null}: {@link com.github.xbn.linefilter.entity.EndRequired}.{@link com.github.xbn.linefilter.entity.EndRequired#YES YES}</li>
          <li>{@code null}: EndRequired.{@link com.github.xbn.linefilter.entity.EndRequired#NO NO}</li>
       </ul>and {@code endAlterRqd} is <code>{@link AlterationRequired}.{@link AlterationRequired#YES YES}</code> if {@code endRqd} is {@code YES}.
-      @see  #lineRangeWithReplace(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, ValueAlterer, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRangeWithReplace(...,KeepStartLine, KeepMidLines, KeepEndLine,...)
-    **/
+    * @see  #lineRangeWithReplace(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, ValueAlterer, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRangeWithReplace(...,KeepStartLine, KeepMidLines, KeepEndLine,...)
+    */
    public static final BlockEntity_CfgForNeeder<?,?> lineRangeWithReplace_Cfg(String name_ifNonNull, EntityRequired required, Pattern start_ptrn, String start_rplcWith, ReplacedInEachInput startRplcWhat_notMatchNums, ValidResultFilter startFilter_ifNonNull, Appendable dbgStart_ifNonNull, ValueAlterer<String,String> midAlterer_ifNonNull, Pattern endPtrn_ifNonNull, String end_rplcWith, ReplacedInEachInput endRplcWhat_notMatchNums, ValidResultFilter endFilter_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       EndRequired endRqd = EndRequired.YES;
       if(endPtrn_ifNonNull == null)  {
@@ -224,7 +224,7 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a block entity that contains specific text in the start and end lines--this also makes replacements on each line.</p>
 
-      @return
+    * @return
 <blockquote><pre>{@link #lineRangeWithReplace(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, ValueAlterer, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRangeWithReplace}(name_ifNonNull,
    {@link KeepStartLine}.{@link KeepStartLine#getForKeepMatched(KeepMatched, String) getForKeepMatched}(keep_all, ...),
    {@link KeepMidLines}.{@link KeepMidLines#getForKeepMatched(KeepMatched, String) getForKeepMatched}(keep_all, ...),
@@ -235,8 +235,8 @@ public class NewBlockEntityFor  {
    endPtrn_ifNonNull, end_rplcWith, endRplcWhat_notMatchNums,
       null, dbgEnd_ifNonNull,
    dbgLineNums_ifNonNull)</pre></blockquote>
-      @see  #lineRangeWithReplace(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, ValueAlterer, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRangeWithReplace(String, KeepStartLine, ...)
-    **/
+    * @see  #lineRangeWithReplace(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, ValueAlterer, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRangeWithReplace(String, KeepStartLine, ...)
+    */
    public static final BlockEntity lineRangeWithReplace(String name_ifNonNull, KeepMatched keep_all, EntityRequired required, Pattern start_ptrn, String start_rplcWith, ReplacedInEachInput startRplcWhat_notMatchNums, ValidResultFilter startFilter_ifNonNull, Appendable dbgStart_ifNonNull, ValueAlterer<String,String> midAlterer_ifNonNull, Pattern endPtrn_ifNonNull, String end_rplcWith, ReplacedInEachInput endRplcWhat_notMatchNums, ValidResultFilter endFilter_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       return  lineRangeWithReplace(name_ifNonNull,
          KeepStartLine.getForKeepMatched(keep_all, "keep_all"),
@@ -253,7 +253,7 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a block entity that contains specific text in the start and end lines--this also makes replacements on each line.</p>
 
-      @return
+    * @return
 <blockquote><pre>{@link #lineRange_Cfg(String, EntityRequired, Pattern, ValidResultFilter, Appendable, Pattern, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRange_Cfg}(name_ifNonNull,
    start_ptrn, start_rplcWith, startRplcWhat_notMatchNums,
       startFilter_ifNonNull, dbgStart_ifNonNull,
@@ -264,8 +264,8 @@ public class NewBlockEntityFor  {
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(
       keep_start.{@link KeepStartLine#isYes() isYes}(), keep_mids.{@link KeepMidLines#isYes() isYes}(), keep_end.{@link KeepEndLine#isYes() isYes}()).
    build()</pre></blockquote>
-      @see  #lineRangeWithReplace(String, KeepMatched, EntityRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, ValueAlterer, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRangeWithReplace(String, KeepMatched, ...)
-    **/
+    * @see  #lineRangeWithReplace(String, KeepMatched, EntityRequired, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, ValueAlterer, Pattern, String, ReplacedInEachInput, ValidResultFilter, Appendable, RawOnOffEntityFilter, Appendable) lineRangeWithReplace(String, KeepMatched, ...)
+    */
    public static final BlockEntity lineRangeWithReplace(String name_ifNonNull, KeepStartLine keep_start, KeepMidLines keep_mids, KeepEndLine keep_end, EntityRequired required, Pattern start_ptrn, String start_rplcWith, ReplacedInEachInput startRplcWhat_notMatchNums, ValidResultFilter startFilter_ifNonNull, Appendable dbgStart_ifNonNull, ValueAlterer<String,String> midAlterer_ifNonNull, Pattern endPtrn_ifNonNull, String end_rplcWith, ReplacedInEachInput endRplcWhat_notMatchNums, ValidResultFilter endFilter_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       try  {
          return  lineRangeWithReplace_Cfg(name_ifNonNull, required,
@@ -287,13 +287,13 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a <i>partially configured</i> block entity that may be used as a {@linkplain com.github.xbn.linefilter.FilteredIterator#getRootBlock() root block}, to which {@linkplain com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(TextChildEntity...) children} may be added. This keeps all lines unless overridden by a child entity.</p>
 
-      @return
+    * @return
 <blockquote><pre>new {@link com.github.xbn.linefilter.entity.z.BlockEntity_Cfg#BlockEntity_Cfg(String) BlockEntity_Cfg}(name_ifNonNull).
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(
       keep_start.{@link KeepStartLine#isYes() isYes}(), keep_mids.{@link KeepMidLines#isYes() isYes}(), keep_end.{@link KeepEndLine#isYes() isYes}())</pre></blockquote>
-      @see  #keepAllUnchanged(String, RawOnOffEntityFilter, Appendable)
-      @see  com.github.xbn.linefilter.FilteredLineIterator#FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, RawChildEntity[]) FilteredLineIterator#FilteredLineIterator(..., RawChildEntity[])
-    **/
+    * @see  #keepAllUnchanged(String, RawOnOffEntityFilter, Appendable)
+    * @see  com.github.xbn.linefilter.FilteredLineIterator#FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, RawChildEntity[]) FilteredLineIterator#FilteredLineIterator(..., RawChildEntity[])
+    */
    public static final BlockEntity_CfgForNeeder<?,?> returnKeptUnchanged_Cfg(String name_rootIfNull, KeepStartLine keep_start, KeepMidLines keep_mids, KeepEndLine keep_end, EntityRequired required, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       try  {
          return  new BlockEntity_Cfg(name_rootIfNull).
@@ -310,11 +310,11 @@ public class NewBlockEntityFor  {
    /**
       <p>Create a block entity that does nothing: All lines are kept and unaltered.</p>
 
-      @return
+    * @return
 <blockquote><pre>{@link #returnKeptUnchanged_Cfg(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, RawOnOffEntityFilter, Appendable) returnKeptUnchanged_Cfg}(name_rootIfNull,
    {@link KeepStartLine}.{@link KeepStartLine#YES YES}, {@link KeepMidLines}.{@link KeepMidLines#YES YES}, {@link KeepEndLine}.{@link KeepEndLine#YES YES}).
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#build() build}()</pre></blockquote>
-    **/
+    */
    public static final BlockEntity keepAllUnchanged(String name_rootIfNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       return  returnKeptUnchanged_Cfg(name_rootIfNull,
          KeepStartLine.YES, KeepMidLines.YES, KeepEndLine.YES, EntityRequired.YES, filter_ifNonNull, dbgLineNums_ifNonNull).			build();

@@ -14,8 +14,8 @@ public class XCObject implements ExceptionContextObject  {
          <li>{@link #setName(String) setName(obj_name)}</li>
       </ol></p>
 
-      @see  #XCObject(ExceptionContextObject) this(xco)
-    **/
+    * @see  #XCObject(ExceptionContextObject) this(xco)
+    */
    public XCObject(String obj_name)  {
       setName(obj_name);
    }
@@ -25,9 +25,9 @@ public class XCObject implements ExceptionContextObject  {
       <p>This<ol>
          <li><code>{@link #setName(String) setName}(to_copy.{@link #getName() getName}())</code></li>
       </ol></p>
-      @see  #getObjectCopy()
-      @see  #XCObject(ExceptionContext, String) this(xc,s)
-    **/
+    * @see  #getObjectCopy()
+    * @see  #XCObject(ExceptionContext, String) this(xc,s)
+    */
    public XCObject(ExceptionContextObject to_copy)  {
       setName(to_copy.getName());
    }
@@ -36,8 +36,8 @@ public class XCObject implements ExceptionContextObject  {
    /**
       <p>Set the just-called function in which the error happened (may happen).</p>
 
-      @param  obj_name  May not be {@code null} or empty. Get with {@link #getName() getName}{@code ()}.
-    **/
+    * @param  obj_name  May not be {@code null} or empty. Get with {@link #getName() getName}{@code ()}.
+    */
    public void setName(String obj_name)  {
       CrashIfString.nullEmpty(obj_name, "obj_name", null);
       sONm = obj_name;
@@ -45,8 +45,8 @@ public class XCObject implements ExceptionContextObject  {
 //Setters...END
 //Getters...START
    /**
-      @return  {@code obj_name}, as provided to {@link #setName(String) setName(s)}, the {@link #XCObject(ExceptionContext, String) constructor}, or the {@link #XCObject(ExceptionContextObject) copy-constructor}.
-    **/
+    * @return  {@code obj_name}, as provided to {@link #setName(String) setName(s)}, the {@link #XCObject(ExceptionContext, String) constructor}, or the {@link #XCObject(ExceptionContextObject) copy-constructor}.
+    */
    public String getName()  {
       return  sONm;
    }
@@ -55,8 +55,8 @@ public class XCObject implements ExceptionContextObject  {
    /**
       <p>Duplicate this {@code XCObject}</p>
 
-      @return  <code>(new {@link #XCObject(ExceptionContextObject) XCObject}(this)</code>
-    **/
+    * @return  <code>(new {@link #XCObject(ExceptionContextObject) XCObject}(this)</code>
+    */
    public XCObject getObjectCopy()  {
       return  (new XCObject(this));
    }
@@ -64,8 +64,8 @@ public class XCObject implements ExceptionContextObject  {
       return  "object=\"" + getName() + "\"";
    }
    /**
-      @return  {@code true} If {@code to_compareTo} is non-{@code null}, aYYY {@code XCObject}, and {@link #areFieldsEqual(XCObject) areFieldsEqual}{@code ((XCObject)to_compareTo)} is {@code true}.
-    **/
+    * @return  {@code true} If {@code to_compareTo} is non-{@code null}, aYYY {@code XCObject}, and {@link #areFieldsEqual(XCObject) areFieldsEqual}{@code ((XCObject)to_compareTo)} is {@code true}.
+    */
    @Override public boolean equals(Object to_compareTo)  {
       if(to_compareTo == null)  {
          throw  new NullPointerException("to_compareTo");
@@ -84,9 +84,9 @@ public class XCObject implements ExceptionContextObject  {
    /**
       <p>Are all internal values in the provided {@code XCObject} the same as in <i>{@code this}</i>?.</p>
 
-      @param  xc_o  May not be {@code null}.
-      @return  {@link #getName() getName}{@code ().equals(xc_o.getName())}
-    **/
+    * @param  xc_o  May not be {@code null}.
+    * @return  {@link #getName() getName}{@code ().equals(xc_o.getName())}
+    */
    public boolean areFieldsEqual(XCObject xc_o)  {
       return  getName().equals(xc_o.getName());
    }

@@ -93,8 +93,8 @@ package  com.github.xbn.regexutil;
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerXmplsFromRewriter%eliminateCommentBlocksAndPackageDecl()}
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copyable, PatternHaser, ToStringAppendable, RegexReplacer_Fieldable  {
 //config: mutable
@@ -116,22 +116,22 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
       trim().build();
    /**
       <p>To replace the match with itself: &quot;{@code $0}&quot;</p>
-    **/
+    */
    public static final String RPLC_WITH_SELF_DLR0 = "$0";
    /**
       <p>The default number of maximum &quot;until&quot; loops: {@code 20}.</p>
-    **/
+    */
    public static final int DEFAULT_MAX_UNTIL_LOOPS = 20;
 //constructors...START
    /**
       <p>Create a new {@code RegexReplacer}, for either direct or indirect replacements.</p>
 
-      @param  fieldable  May not be {@code null}, and must contain valid fields as documented by the <a href="#cfg">builder's setter functions</a>. If <code>fieldable.{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#getDirectReplacement() getDirectReplacement}()</code> is non-{@code null}, then this is an <a href="#direct">direct</a> replacement. If {@code null}, <a href="#indirect">indirect</a>.
-      @see  #RegexReplacer(RegexReplacer) this(rr)
+    * @param  fieldable  May not be {@code null}, and must contain valid fields as documented by the <a href="#cfg">builder's setter functions</a>. If <code>fieldable.{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#getDirectReplacement() getDirectReplacement}()</code> is non-{@code null}, then this is an <a href="#direct">direct</a> replacement. If {@code null}, <a href="#indirect">indirect</a>.
+    * @see  #RegexReplacer(RegexReplacer) this(rr)
 		@see  #RegexReplacer(RegexReplacer, String, String) this(rr,s,s)
 		@see  #RegexReplacer(RegexReplacer, String, int, String) this(rr,s,i,s)
-      @see  #RegexReplacer(RegexReplacer, Pattern, String) this(rr,p,s)
-    **/
+    * @see  #RegexReplacer(RegexReplacer, Pattern, String) this(rr,p,s)
+    */
    public RegexReplacer(RegexReplacer_Fieldable fieldable)  {
       //Transfer RegexReplacer_CfgForNeeder fields to THIS
          try  {
@@ -161,33 +161,33 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Create a new instance as a duplicate of another--with the same search-terms, and the same direct-or-indirect-ness.</p>
 
-      @param  to_copy  May not be <code>null</code>.
-      @see  <a href="#direct">Definition: direct replacement</a>
-      @see  <a href="#indirect">Definition: indirect replacement</a>
-      @see 	#RegexReplacer(RegexReplacer, Pattern, String) this(rr,p,s)
-    **/
+    * @param  to_copy  May not be <code>null</code>.
+    * @see  <a href="#direct">Definition: direct replacement</a>
+    * @see  <a href="#indirect">Definition: indirect replacement</a>
+    * @see 	#RegexReplacer(RegexReplacer, Pattern, String) this(rr,p,s)
+    */
    public RegexReplacer(RegexReplacer to_copy)  {
       this(true, to_copy, null, null);
    }
    /**
       <p>Create a new instance as a duplicate of another, with new search terms, but the same direct-or-indirect-ness.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #RegexReplacer(RegexReplacer, Pattern, String) this}(to_copy, {@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link com.github.xbn.regexutil.NewPatternFor#regex(String, String) regex}(findWhat_regex), new_directRplcWith)</code></p>
 
-      @param  findWhat_regex  May not be <code>null</code>.
-    **/
+    * @param  findWhat_regex  May not be <code>null</code>.
+    */
    public RegexReplacer(RegexReplacer to_copy, String findWhat_regex, String new_directRplcWith)  {
       this(to_copy, NewPatternFor.regex(findWhat_regex, "findWhat_regex"), new_directRplcWith);
    }
    /**
       <p>Create a new instance as a duplicate of another, with new search terms, but the same direct-or-indirect-ness.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #RegexReplacer(RegexReplacer, Pattern, String) this}(to_copy, {@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link NewPatternFor#regex(String, int, String) regex}(findWhat_regex, bit_flags), new_directRplcWith)</code></p>
 
-      @param  findWhat_regex  May not be <code>null</code>.
-    **/
+    * @param  findWhat_regex  May not be <code>null</code>.
+    */
    public RegexReplacer(RegexReplacer to_copy, String findWhat_regex, int bit_flags, String new_directRplcWith)  {
       this(to_copy, NewPatternFor.regex(findWhat_regex, bit_flags, "findWhat_regex"), new_directRplcWith);
    }
@@ -196,12 +196,12 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
 
       <p>To duplicate a <code>RegexReplacer</code> entirely (using the same search terms, and the same <a href="#direct">direct</a>-or-<a href="#indirect">indirect</a>-ness), use {@link #getObjectCopy() getObjectCopy}{@code ()}.</p>
 
-      @param  to_copy  May not be <code>null</code>.
-      @param  new_findWhat  May not be <code>null</code>. Get with {@link #getPattern() getPattern}{@code ()}.
-      @param  new_directRplcWith  If {@code null}, then <code>to_copy.{@link #getDirectReplacement() getDirectReplacement}()</code> is used.
-      @see  #RegexReplacer(RegexReplacer_Fieldable) this(rr_f)
-      @see  #RegexReplacer(RegexReplacer) this(rr)
-    **/
+    * @param  to_copy  May not be <code>null</code>.
+    * @param  new_findWhat  May not be <code>null</code>. Get with {@link #getPattern() getPattern}{@code ()}.
+    * @param  new_directRplcWith  If {@code null}, then <code>to_copy.{@link #getDirectReplacement() getDirectReplacement}()</code> is used.
+    * @see  #RegexReplacer(RegexReplacer_Fieldable) this(rr_f)
+    * @see  #RegexReplacer(RegexReplacer) this(rr)
+    */
    public RegexReplacer(RegexReplacer to_copy, Pattern new_findWhat, String new_directRplcWith)  {
       this(false, to_copy, new_findWhat, new_directRplcWith);
    }
@@ -235,18 +235,18 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Define the find-what search-term with a regular-expression string.</p>
 
-      @param  regex  May not be <code>null</code>.
-      @return  <code>{@link #findWhat(Pattern) findWhat}({@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link NewPatternFor#regex(String, String) regex}(regex))</code>
-    **/
+    * @param  regex  May not be <code>null</code>.
+    * @return  <code>{@link #findWhat(Pattern) findWhat}({@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link NewPatternFor#regex(String, String) regex}(regex))</code>
+    */
    public RegexReplacer findWhat(String regex)  {
       return  findWhat(NewPatternFor.regex(regex, "regex"));
    }
    /**
       <p>Define the find-what search-term with a regular-expression string.</p>
 
-      @param  regex  May not be <code>null</code>.
-      @return  <code>{@link #findWhat(Pattern) findWhat}({@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link NewPatternFor#regex(String, int, String) regex}(regex, bit_flags))</code>
-    **/
+    * @param  regex  May not be <code>null</code>.
+    * @return  <code>{@link #findWhat(Pattern) findWhat}({@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link NewPatternFor#regex(String, int, String) regex}(regex, bit_flags))</code>
+    */
    public RegexReplacer findWhat(String regex, int bit_flags)  {
       return  findWhat(NewPatternFor.regex(regex, bit_flags, "regex"));
    }
@@ -254,11 +254,11 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Define the find-what search-term with a pattern.</p>
 
-      @param  pattern_toFind  May not be <code>null</code>. Get with {@link #getPattern() getPattern}{@code ()}.
-      @see  #findWhat(String) findWhat(s)
-      @see  #findWhat(String, int) findWhat(s,i)
-      @see  #replaceWith(Object) replaceWith(O)
-    **/
+    * @param  pattern_toFind  May not be <code>null</code>. Get with {@link #getPattern() getPattern}{@code ()}.
+    * @see  #findWhat(String) findWhat(s)
+    * @see  #findWhat(String, int) findWhat(s,i)
+    * @see  #replaceWith(Object) replaceWith(O)
+    */
    public RegexReplacer findWhat(Pattern pattern_toFind)  {
       m = RegexUtil.newMatcherForPatternCINull(pattern_toFind, "", "pattern_toFind");
       sph.pattern(pattern_toFind);
@@ -267,19 +267,19 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Declare a new replacement, which will be indirect.</p>
 
-      @return  <code>{@link #replaceWith(Object) replaceWith}(null)</code>
-      @see  <a href="#indirect">indirect replacement</a>
-    **/
+    * @return  <code>{@link #replaceWith(Object) replaceWith}(null)</code>
+    * @see  <a href="#indirect">indirect replacement</a>
+    */
    public RegexReplacer declareIndirect()  {
       return  replaceWith(null);
    }
    /**
       <p>Declare a new direct replacement string.</p>
 
-      @param  direct_rplcWithOrNull  If {@code null}, this is an <a href="#indirect">indirect</a> replacement. If non-{@code null}, <a href="#direct">direct</a> Get with {@link #getDirectReplacement() getDirectReplacement}{@code ()}.
-      @see  #declareIndirect()
-      @see  #findWhat(Pattern) findWhat(p)
-    **/
+    * @param  direct_rplcWithOrNull  If {@code null}, this is an <a href="#indirect">indirect</a> replacement. If non-{@code null}, <a href="#direct">direct</a> Get with {@link #getDirectReplacement() getDirectReplacement}{@code ()}.
+    * @see  #declareIndirect()
+    * @see  #findWhat(Pattern) findWhat(p)
+    */
    public RegexReplacer replaceWith(Object direct_rplcWithOrNull)  {
       if(direct_rplcWithOrNull == null)  {
          oRWDrct = "";
@@ -294,8 +294,8 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>The find what pattern. This is used only for duplicating this {@code RegexReplacer}, and for inclusion in the {@link #toString() toString}{@code ()}.</p>
 
-      @see  #findWhat(Pattern)
-    **/
+    * @see  #findWhat(Pattern)
+    */
    //Composition implementation: null...START
       public Pattern getPattern()  {
          return  sph.getPattern();
@@ -312,9 +312,9 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
       /**
          <p>The {@code MatcherUses} equivalent, derived from {@code getReplacedInEachInput()}.</p>
 
-         @return  {@code true}  The string is matched as a whole.
-         @see  #getReplacedInEachInput()
-       **/
+       * @return  {@code true}  The string is matched as a whole.
+       * @see  #getReplacedInEachInput()
+       */
       public MatcherUses getMatcherUses()  {
          return  sph.getMatcherUses();
       }
@@ -322,14 +322,14 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Which matches should be replaced?.</p>
 
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#first() RegexReplacer_Cfg#first()
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#lookingAt() RegexReplacer_Cfg#lookingAt()
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#matches() RegexReplacer_Cfg#matches()
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#matchNumbers(ValueValidator) RegexReplacer_Cfg#matchNumbers(vv)
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#all() RegexReplacer_Cfg#all()
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(int, MaxUntilLoopsExceeded) RegexReplacer_Cfg#until(i,muxi)
-      @see  #getMatcherUses()
-    **/
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#first() RegexReplacer_Cfg#first()
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#lookingAt() RegexReplacer_Cfg#lookingAt()
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#matches() RegexReplacer_Cfg#matches()
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#matchNumbers(ValueValidator) RegexReplacer_Cfg#matchNumbers(vv)
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#all() RegexReplacer_Cfg#all()
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(int, MaxUntilLoopsExceeded) RegexReplacer_Cfg#until(i,muxi)
+    * @see  #getMatcherUses()
+    */
    public ReplacedInEachInput getReplacedInEachInput()  {
       return  erw;
    }
@@ -338,43 +338,43 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerValidTermXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-      @return  An int-validator, where a <!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/ValueValidator.html#isValid(O)">valid</a> int indicates the match should be replaced.
-      @see  #getReplacedInEachInput()
-      @see  ReplacedInEachInput#isMatchNumbers()
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#matchNumbers(ValueValidator) xbn.regexutil.z.RegexReplacer_CfgForNeeder#matchNumbers(vv)
-    **/
+    * @return  An int-validator, where a <!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/ValueValidator.html#isValid(O)">valid</a> int indicates the match should be replaced.
+    * @see  #getReplacedInEachInput()
+    * @see  ReplacedInEachInput#isMatchNumbers()
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#matchNumbers(ValueValidator) xbn.regexutil.z.RegexReplacer_CfgForNeeder#matchNumbers(vv)
+    */
    public ValueValidator<Integer> getMatchNumValidator()  {
       return  vvMatchNum;
    }
    /**
       <p>The maximum number of loops to attempt for &quot;until&quot; replacements. When this maximum is exceeded, the action taken is determined by {@link #doCrashIfMaxUntilExceeded() doCrashIfMaxUntilExceeded}{@code ()}.</p>
 
-      @return  An int one or greater.
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(int, MaxUntilLoopsExceeded) xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(i,muxi)
-    **/
+    * @return  An int one or greater.
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(int, MaxUntilLoopsExceeded) xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(i,muxi)
+    */
    public int getMaxUntilLoops()  {
       return  iMaxUntilLoops;
    }
    /**
       <p>When the maximum number of &quot;until&quot; replacements is exceeded, should an exception be thrown?.</p>
 
-      @return  <ul>
+    * @return  <ul>
          <li>{@code true}:  An {@code IllegalStateException} is thrown</li>
          <li>{@code false}: Execution stops.</li>
       </ul>
-      @see  #getMaxUntilLoops()
-      @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(int, MaxUntilLoopsExceeded) xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(i,muxi)
-    **/
+    * @see  #getMaxUntilLoops()
+    * @see  com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(int, MaxUntilLoopsExceeded) xbn.regexutil.z.RegexReplacer_CfgForNeeder#until(i,muxi)
+    */
    public boolean doCrashIfMaxUntilExceeded()  {
       return  bMaxUCrash;
    }
    /**
       <p>Get a capture group in the current match--intended for use only by {@code getIndirectReplacement()}.</p>
 
-      @param  group_num  Must be a valid given {@link #getGroupCount() getGroupCount}{@code ()}.
-      @return  <code>[getPattern().matcher(...)].{@link java.util.regex.Matcher#group(int) group}(group_num)</code>
-      @see  #getIndirectReplacement()
-    **/
+    * @param  group_num  Must be a valid given {@link #getGroupCount() getGroupCount}{@code ()}.
+    * @return  <code>[getPattern().matcher(...)].{@link java.util.regex.Matcher#group(int) group}(group_num)</code>
+    * @see  #getIndirectReplacement()
+    */
    public String getGroup(int group_num)  {
       try  {
          return  m.group(group_num);
@@ -386,22 +386,22 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>The number of groups in the current match.--intended for use only by {@code getIndirectReplacement()}.</p>
 
-      @return  <code><i>[{@link #getPattern() getPattern}().{@link java.util.regex.Pattern#matcher(CharSequence) matcher}(...)]</i>.{@link java.util.regex.Matcher#groupCount groupCount}()</code></i>
-      @see  #getGroup(int) getGroup(i)
-      @see  #getIndirectReplacement()
-    **/
+    * @return  <code><i>[{@link #getPattern() getPattern}().{@link java.util.regex.Pattern#matcher(CharSequence) matcher}(...)]</i>.{@link java.util.regex.Matcher#groupCount groupCount}()</code></i>
+    * @see  #getGroup(int) getGroup(i)
+    * @see  #getIndirectReplacement()
+    */
    public int getGroupCount()  {
       return  m.groupCount();
    }
    /**
       <p>The direct replacement string. See <a href="#direct">direct</a>. This is the string provided directly to <code><i>{@link java.util.regex.Matcher Matcher}</i>.{@link java.util.regex.Matcher#appendReplacement(StringBuffer, String) appendReplacement}(sb,s)</code>, as its second parameter.</p>
 
-      @return  <ul>
+    * @return  <ul>
          <li>A non-{@code null}, non-empty string: For <a href="#direct">direct</a> replacements.</li>
          <li>&quot;&quot;: For <a href="#indirect">indirect</a> replacements.</li>
       </ul>
-      @see  #getIndirectReplacement()
-    **/
+    * @see  #getIndirectReplacement()
+    */
    public Object getDirectReplacement()  {
       return  oRWDrct;
    }
@@ -412,27 +412,27 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerIndirectXmpl2of2%eliminateCommentBlocksAndPackageDecl()}
 
-      @exception  IllegalStateException  This function must be overridden for indirect replacements.
-      @see  #getDirectReplacement()
-      @see  #getGroup(int) getGroup(i)
-      @see  #getGroupCount()
-    **/
+    * @exception  IllegalStateException  This function must be overridden for indirect replacements.
+    * @see  #getDirectReplacement()
+    * @see  #getGroup(int) getGroup(i)
+    * @see  #getGroupCount()
+    */
    public String getIndirectReplacement()  {
       throw  new IllegalStateException("getIndirectReplacement()");
    }
    /**
       <p>How many replacements were made during the most-recent call to {@link #appendReplacedX(Appendable, Object) appendReplacedX}{@code (apbl,o)}</p>
-    **/
+    */
    public int getReplacementCount()  {
       return  iRplcs;
    }
    /**
       <p>Get the entire replacement result, as configured.</p>
 
-      @param  text_toRplc  May not be {@code null}.
-      @return  {@link #appendReplaced(Appendable, Object) appendReplaced}{@code (new StringBuffer(text_toRplc.length()), text_toRplc).toString()}
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @param  text_toRplc  May not be {@code null}.
+    * @return  {@link #appendReplaced(Appendable, Object) appendReplaced}{@code (new StringBuffer(text_toRplc.length()), text_toRplc).toString()}
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public String getReplaced(Object text_toRplc)  {
       String sOrig = null;
       try  {
@@ -469,18 +469,18 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Append the replacement as configured, with a new-line at the end, and with runtime errors only. Intended for debugging and testing.</p>
 
-      @return  <code>{@link #appendReplacedlns(int, Appendable, Object) appendReplacedln}(1, to_appendTo, text_toRplc)</code>
-    **/
+    * @return  <code>{@link #appendReplacedlns(int, Appendable, Object) appendReplacedln}(1, to_appendTo, text_toRplc)</code>
+    */
    public Appendable appendReplacedln(Appendable to_appendTo, Object text_toRplc)  {
       return  appendReplacedlns(1, to_appendTo, text_toRplc);
    }
    /**
       <p>Append the replacement as configured, with a new-line at the end, and with runtime errors only. Intended for debugging and testing.</p>
 
-      @return  <code>{@link #appendReplacedX(Appendable, Object) appendReplacedX}(to_appendTo, text_toRplc)</code>
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-      @see  #appendReplacedln(Appendable, Object) appendReplacedln(apbl,O)
-    **/
+    * @return  <code>{@link #appendReplacedX(Appendable, Object) appendReplacedX}(to_appendTo, text_toRplc)</code>
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    * @see  #appendReplacedln(Appendable, Object) appendReplacedln(apbl,O)
+    */
    public Appendable appendReplacedlns(int newLine_count, Appendable to_appendTo, Object text_toRplc)  {
       try  {
          appendReplacedX(to_appendTo, text_toRplc);
@@ -492,9 +492,9 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Append the replacement as configured, with runtime errors only.</p>
 
-      @return  <code>{@link #appendReplacedX(Appendable, Object) appendReplacedX}(to_appendTo, text_toRplc)</code>
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @return  <code>{@link #appendReplacedX(Appendable, Object) appendReplacedX}(to_appendTo, text_toRplc)</code>
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public Appendable appendReplaced(Appendable to_appendTo, Object text_toRplc)  {
       try  {
          return  appendReplacedX(to_appendTo, text_toRplc);
@@ -505,10 +505,10 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Append the replacement as configured.</p>
 
-      @param  to_appendTo  May not be <code>null</code>
-      @return  <code>to_appendTo.{@link java.lang.Appendable#append(CharSequence) append}({@link #getReplaced(Object) getReplaced}(text_toRplc))</code> &nbsp; &nbsp; <i>(<code>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#appendReplacement(StringBuffer, String) appendReplacement}(sb,s)</code> requires a <code>{@link java.lang.StringBuffer StringBuffer}</code>)</i>
-      @see  #getReplacementCount()
-    **/
+    * @param  to_appendTo  May not be <code>null</code>
+    * @return  <code>to_appendTo.{@link java.lang.Appendable#append(CharSequence) append}({@link #getReplaced(Object) getReplaced}(text_toRplc))</code> &nbsp; &nbsp; <i>(<code>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#appendReplacement(StringBuffer, String) appendReplacement}(sb,s)</code> requires a <code>{@link java.lang.StringBuffer StringBuffer}</code>)</i>
+    * @see  #getReplacementCount()
+    */
    public Appendable appendReplacedX(Appendable to_appendTo, Object text_toRplc) throws IOException  {
       try  {
          return  to_appendTo.append(getReplaced(text_toRplc));
@@ -519,16 +519,16 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Get the replacement result, as configured.</p>
 
-      @param  to_appendTo  May not be {@code null}. <i>{@link java.util.regex.Matcher Matcher} requires a {@code StringBuffer}. This should ideally be an {@code Appendable}.</i>
-      @param  text_toRplc  May not be {@code null}.
-      @return  <code>to_appendTo</code>
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-      @see  #getReplaced(Object) getReplaced(cs)
-      @see  #appendReplaced(Appendable, Object) getReplaced(apbl,O)
-      @see  #appendReplacedX(Appendable, Object) appendReplacedX(apbl,O)
-      @see  #appendReplacedln(Appendable, Object) appendReplacedln(apbl,O)
-      @see  #appendReplacedlns(int, Appendable, Object) appendReplacedlns(i,apbl,O)
-    **/
+    * @param  to_appendTo  May not be {@code null}. <i>{@link java.util.regex.Matcher Matcher} requires a {@code StringBuffer}. This should ideally be an {@code Appendable}.</i>
+    * @param  text_toRplc  May not be {@code null}.
+    * @return  <code>to_appendTo</code>
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    * @see  #getReplaced(Object) getReplaced(cs)
+    * @see  #appendReplaced(Appendable, Object) getReplaced(apbl,O)
+    * @see  #appendReplacedX(Appendable, Object) appendReplacedX(apbl,O)
+    * @see  #appendReplacedln(Appendable, Object) appendReplacedln(apbl,O)
+    * @see  #appendReplacedlns(int, Appendable, Object) appendReplacedlns(i,apbl,O)
+    */
    public StringBuffer appendReplaced(StringBuffer to_appendTo, Object text_toRplc)  {
       String sOrig = null;
       try  {
@@ -738,8 +738,8 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
    /**
       <p>Duplicate this {@code RegexReplacer}.</p>
 
-      @return  <code>(new {@link #RegexReplacer(RegexReplacer) RegexReplacer}(this))</code>
-    **/
+    * @return  <code>(new {@link #RegexReplacer(RegexReplacer) RegexReplacer}(this))</code>
+    */
    public RegexReplacer getObjectCopy()  {
       return  (new RegexReplacer(this));
    }

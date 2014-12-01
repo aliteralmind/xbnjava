@@ -24,8 +24,8 @@ package  com.github.xbn.experimental.listify;
 /**
    <p>Abstract implementation of {@code Listify}. For classes that need to implement {@code Listify} but cannot extend this class, see {@link ListifyComposer}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListify<E> implements Listify<E>  {
    private ListifyComposer<E> lc = null;
@@ -35,21 +35,21 @@ public abstract class AbstractListify<E> implements Listify<E>  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) super}{@code (raw_obj, add_rmvbl, array_helper, get_valCopy)}</p>
-    **/
+    */
    public AbstractListify(Object raw_obj, AddRemovable add_rmvbl, ArrayHelperBase<E> array_helper, ValueCopier<E> get_valCopy)  {
       lc = new ListifyComposer<E>(raw_obj, add_rmvbl, array_helper, get_valCopy);
    }
    /**
       <p>Create a new {@code AbstractListify} as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    */
    public AbstractListify(Listify<E> to_copy)  {
       lc = new ListifyComposer<E>(to_copy);
    }

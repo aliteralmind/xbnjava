@@ -17,8 +17,8 @@ package  com.github.xbn.keyed;
 /**
    <p>Implementation of {@code KeyValue}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleKeyValue<K,V> extends SimpleKeyed<K> implements KeyValue<K,V>  {
 //state
@@ -45,8 +45,8 @@ public class SimpleKeyValue<K,V> extends SimpleKeyed<K> implements KeyValue<K,V>
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
    @SuppressWarnings("unchecked")
    public SimpleKeyValue(KeyValue<K,V> to_copy)  {
       super(to_copy);
@@ -76,9 +76,9 @@ public class SimpleKeyValue<K,V> extends SimpleKeyed<K> implements KeyValue<K,V>
    /**
       <p>Duplicate this {@code SimpleKeyValue}.</p>
 
-      @return  <code>(new {@link #SimpleKeyValue(KeyValue) SimpleKeyValue}&lt;K,V&gt;(this))</code>
+    * @return  <code>(new {@link #SimpleKeyValue(KeyValue) SimpleKeyValue}&lt;K,V&gt;(this))</code>
    public SimpleKeyValue<K,V> getObjectCopy()  {
       return  (new SimpleKeyValue<K,V>(this));
    }
-    **/
+    */
 }

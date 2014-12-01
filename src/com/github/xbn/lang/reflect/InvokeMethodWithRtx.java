@@ -23,9 +23,9 @@ package  com.github.xbn.lang.reflect;
 
 {@.codelet.and.out com.github.xbn.examples.lang.reflect.InvokePrivateStaticMethodWithRtxXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-   @see  <code>{@link com.github.xbn.array.ArrayUtil}.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/array/ArrayUtil.html#getStringArrayOrNull(E[], boolean, java.lang.String)">getStringArrayOrNull</a>(E[],b,s)</code>
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  <code>{@link com.github.xbn.array.ArrayUtil}.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/array/ArrayUtil.html#getStringArrayOrNull(E[], boolean, java.lang.String)">getStringArrayOrNull</a>(E[],b,s)</code>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class InvokeMethodWithRtx  {
 //state
@@ -104,8 +104,8 @@ public class InvokeMethodWithRtx  {
    /**
       <p>YYY</p>
 
-      @param  attempting_errMsg  Brief description of the application (example: {@code "Obtaining output for example code"}). <i>Should</i> not be {@code null} or empty. <i>The name of the class is already in the error message. It does not need to be in this parameter.</i>
-    **/
+    * @param  attempting_errMsg  Brief description of the application (example: {@code "Obtaining output for example code"}). <i>Should</i> not be {@code null} or empty. <i>The name of the class is already in the error message. It does not need to be in this parameter.</i>
+    */
    public static final String getApplicationOutput(Class<?> cls_containingMain, String[] cmd_lineParams, String attempting_errMsg)  {
       PrintStreamForString pss = new PrintStreamForString().setSystemOutTo();
       String output;

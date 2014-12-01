@@ -31,23 +31,23 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    private ArrayList<Iterable<T>> vitrblt = new ArrayList<Iterable<T>>();
    /**
       <p>Create a new IterationOdometer. Does nothing.</p>
-    **/
+    */
    public IterationOdometer()  {
    }
 
    /**
       <p>How many columns are in this IterationOdometer?.</p>
 
-      @return  An <b>int</b> representing the number of times {@code addColumn(Iterable)} was called.
-    **/
+    * @return  An <b>int</b> representing the number of times {@code addColumn(Iterable)} was called.
+    */
    public final int getColumnCount()  {
       return  vitrblt.size();
    }
    /**
       <p>Get an odometer-column.</p>
 
-      @param  index  The column-index. Must be valid given {@link #getColumnCount() getColumnCount}{@code ()}.
-    **/
+    * @param  index  The column-index. Must be valid given {@link #getColumnCount() getColumnCount}{@code ()}.
+    */
    public final Iterable<T> getIterableColumn(int index)  {
       try  {
          return  vitrblt.get(index);
@@ -60,9 +60,9 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Add a column. This appends a new column to the right of existing columns. When adding the final (right-most) column, either use {@code addLastColumn()}, or call {@link #wasLastColumnAdded() wasLastColumnAdded}{@code ()}.</p>
 
-      @exception LockException  If {@code addLastColumn()} or {@code wasLastColumnAdded()} was already called.
-      @see  #addColumnsFrom(IterationOdometer, boolean) addColumnsFrom(iod,b)
-    **/
+    * @exception LockException  If {@code addLastColumn()} or {@code wasLastColumnAdded()} was already called.
+    * @see  #addColumnsFrom(IterationOdometer, boolean) addColumnsFrom(iod,b)
+    */
    public final IterationOdometer<T> addColumn(Iterable<T> itrblt_column)  {
       ciLocked();
 
@@ -77,9 +77,9 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Add the final (right-most) column. For all other columns, use {@code addColumn(itrbl)}</p>
 
-      @exception LockException  If {@link #wasLastColumnAdded() wasLastColumnAdded}{@code ()} is true.
-      @see  #addColumnsFrom(IterationOdometer, boolean) addColumnsFrom(iod,b)
-    **/
+    * @exception LockException  If {@link #wasLastColumnAdded() wasLastColumnAdded}{@code ()} is true.
+    * @see  #addColumnsFrom(IterationOdometer, boolean) addColumnsFrom(iod,b)
+    */
    public final IterationOdometer<T> addLastColumn(Iterable<T> itrblt_column)  {
       addColumn(itrblt_column);
       lastColumnAdded();
@@ -89,8 +89,8 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Add all columns existing in another IterationOdometer.</p>
 
-      @return  {@code addColumnsFrom(itr_odometer, false)}
-    **/
+    * @return  {@code addColumnsFrom(itr_odometer, false)}
+    */
    public final IterationOdometer<T> addColumnsFrom(IterationOdometer<T> itr_odometer)  {
       return  addColumnsFrom(itr_odometer, false);
    }
@@ -98,13 +98,13 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Add all columns existing in another IterationOdometer.</p>
 
-      @param  itr_odometer  The columns to add. May not be null, and <code>itr_odometer.{@link #wasLastColumnAdded() wasLastColumnAdded}()</code> must be true.
-      @param  does_containLastColumn  If true, then {@link #lastColumnAdded() lastColumnAdded}{@code ()} is called after the columns are added.
-      @return  <b>{@code this}</b>
-      @exception LockException  If {@code wasLastColumnAdded()} is true.
-      @see  #addColumnsFrom(IterationOdometer) addColumnsFrom(iod)
-      @see  #addColumn(Iterable)
-    **/
+    * @param  itr_odometer  The columns to add. May not be null, and <code>itr_odometer.{@link #wasLastColumnAdded() wasLastColumnAdded}()</code> must be true.
+    * @param  does_containLastColumn  If true, then {@link #lastColumnAdded() lastColumnAdded}{@code ()} is called after the columns are added.
+    * @return  <b>{@code this}</b>
+    * @exception LockException  If {@code wasLastColumnAdded()} is true.
+    * @see  #addColumnsFrom(IterationOdometer) addColumnsFrom(iod)
+    * @see  #addColumn(Iterable)
+    */
    public final IterationOdometer<T> addColumnsFrom(IterationOdometer<T> itr_odometer, boolean does_containLastColumn)  {
       ciLocked();
 
@@ -131,7 +131,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
       <p>Get a new IteratorIOD, where each call to next returns a ArrayList of the elements as returned by each columns' iterator.</p>
 
       <p>See {@link #iteratorIOD() iteratorIOD}{@code ()}</p>
-    **/
+    */
    public final Iterator<ArrayList<T>> iterator()  {
       ciNotLocked();
       return  (Iterator<ArrayList<T>>)(new IteratorIOD<T>(vitrblt));
@@ -139,8 +139,8 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Get a new IteratorIOD, where each call to next returns a ArrayList of the elements as returned by each columns' iterator.</p>
 
-      @return  <code>(IteratorIOD&lt;T&gt;){@link #iterator() iterator}()</code>
-    **/
+    * @return  <code>(IteratorIOD&lt;T&gt;){@link #iterator() iterator}()</code>
+    */
    public final IteratorIOD<T> iteratorIOD()  {
    	return  (IteratorIOD<T>)iterator();
    }
@@ -165,8 +165,8 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Testing/diagnostic function.</p>
 
-      @return  <code>test_get1stIdxIfNotAtCurrPos({@link #iteratorIOD() iteratorIOD}(), 0, string_elements)</code>
-    **/
+    * @return  <code>test_get1stIdxIfNotAtCurrPos({@link #iteratorIOD() iteratorIOD}(), 0, string_elements)</code>
+    */
    public final int test_get1stIdxIfNotAtStart(String... string_elements)  {
       return  test_get1stIdxIfNotAtCurrPos(iteratorIOD(), 0, string_elements);
    }
@@ -175,11 +175,11 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
 
       <p>Note that this function uses {@code IteratorIOD.nextString()}, which concatenates all the {@code toString()} values, of all the ArrayList elements returned by {@code IteratorIOD.next()}. See the example code at the top of this class for usage.</p>
 
-      @param  iod_itr  An iterator as returned by {@link #iterator() iterator}{@code ()}. The next element retrieved is the point at which the first element in {@code string_elements} is expected to exist. May not be {@code null}.
-      @param  idx_start  The index in {@code string_elements} at which to start analysis. This is needed by the {@code test_get1stIdxIfNotInMiddle()} function (It finds the first element, and then passes the iterator to this function...so in that case, this needs to tbe set to 1, so we don't try and <u>re</u>-find the first [0-th] element again).
-      @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are the first elements in this IterationOdometer.
+    * @param  iod_itr  An iterator as returned by {@link #iterator() iterator}{@code ()}. The next element retrieved is the point at which the first element in {@code string_elements} is expected to exist. May not be {@code null}.
+    * @param  idx_start  The index in {@code string_elements} at which to start analysis. This is needed by the {@code test_get1stIdxIfNotInMiddle()} function (It finds the first element, and then passes the iterator to this function...so in that case, this needs to tbe set to 1, so we don't try and <u>re</u>-find the first [0-th] element again).
+    * @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are the first elements in this IterationOdometer.
       <br/><b>{@code <i>the index</i>}</b> Of the first element not found.
-    **/
+    */
    public final int test_get1stIdxIfNotAtCurrPos(IteratorIOD<T> iod_itr, int idx_start, String... string_elements)  {
       int i = idx_start;
       for(; i < string_elements.length; i++)  {
@@ -208,18 +208,18 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Testing/diagnostic function.</p>
 
-      @return  {@code test_get1stIdxIfNotInMiddle(0, string_elements)}
-    **/
+    * @return  {@code test_get1stIdxIfNotInMiddle(0, string_elements)}
+    */
    public final int test_get1stIdxIfNotInMiddle(String... string_elements)  {
       return  test_get1stIdxIfNotInMiddle(0, string_elements);
    }
    /**
       <p>Testing/diagnostic function. Get the index of the first element in {@code string_elements} that is not found <i>anywhere</i> in this IterationOdometer (its iterator). Once the first item is found (at any point), all following strings in {@code string_elements} must be immediately following.</p>
 
-      @param  elements_toBypassCount  If you're obviously testing far into the iterator, then you can bypass a certain number of elements, to save a bit of processing power.
-      @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are found, sequentially, anywhere in this IterationOdometer.
+    * @param  elements_toBypassCount  If you're obviously testing far into the iterator, then you can bypass a certain number of elements, to save a bit of processing power.
+    * @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are found, sequentially, anywhere in this IterationOdometer.
       <br/><b>{@code <i>the index</i>}</b> Of the first element not found.
-    **/
+    */
    public final int test_get1stIdxIfNotInMiddle(int elements_toBypassCount, String... string_elements)  {
       IteratorIOD<T> itrt = (IteratorIOD<T>)iteratorIOD();
       boolean bQ = false;
@@ -247,18 +247,18 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
    /**
       <p>Testing/diagnostic function.</p>
 
-      @return  {@code test_get1stIdxIfNotAtEnd(0, string_elements)}
-    **/
+    * @return  {@code test_get1stIdxIfNotAtEnd(0, string_elements)}
+    */
    public final int test_get1stIdxIfNotAtEnd(String... string_elements)  {
       return  test_get1stIdxIfNotAtEnd(0, string_elements);
    }
    /**
       <p>Testing/diagnostic function. Get the index of the first element in {@code string_elements} that is not found <i>at the end</i> of this IterationOdometer (its iterator). The final string in {@code string_elements} must be the final element in this IterationOdometer. The second-to-last string must be the second-to-last element, and so on.</p>
 
-      @param  elements_toBypassCount  If you're obviously testing far into the iterator, then you can bypass a certain number of elements, to save a bit of processing power.
-      @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are found, sequentially, beginning anywhere in this IterationOdometer.
+    * @param  elements_toBypassCount  If you're obviously testing far into the iterator, then you can bypass a certain number of elements, to save a bit of processing power.
+    * @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are found, sequentially, beginning anywhere in this IterationOdometer.
       <br/><b>{@code <i>the index</i>}</b> Of the first element not found.
-    **/
+    */
    public final int test_get1stIdxIfNotAtEnd(int elements_toBypassCount, String... string_elements)  {
       ArrayList<String> vs = new ArrayList<String>(string_elements.length);
       IteratorIOD<T> ioditrt = (IteratorIOD<T>)iterator();

@@ -21,14 +21,14 @@ package  com.github.xbn.linefilter.alter;
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.alter.ExpirableTextLineAlterListXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String>  {
    /*
       <p>Create a new instance in which expirable elements are optional, and {@code null} elements are forbidden.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.array.ExpirableAlterList#ExpirableAlterList(MultiAlterType, MultiAlterType) this}(text_lineAlterers, multi_alterType)</code></p>
    public ExpirableTextLineAlterList(ValueAlterer<String,String>[] text_lineAlterers, MultiAlterType multi_alterType)  {
       super(text_lineAlterers, multi_alterType);
@@ -37,9 +37,9 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
    /**
       <p>Create a new instance.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link ExpirableRawLineAlterList#ExpirableRawLineAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable) super}(text_lineAlterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull)</code></p>
-    **/
+    */
    public ExpirableTextLineAlterList(ValueAlterer<String,String>[] text_lineAlterers, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
       super(text_lineAlterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull);
    }
@@ -52,8 +52,8 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
    /**
       <p>Duplicate this <code>ExpirableTextLineAlterList</code>.</p>
 
-      @return  <code>(new <a href="#ExpirableTextLineAlterList(ExpirableTextLineAlterList)">ExpirableTextLineAlterList</a>(this))</code>
-    **/
+    * @return  <code>(new <a href="#ExpirableTextLineAlterList(ExpirableTextLineAlterList)">ExpirableTextLineAlterList</a>(this))</code>
+    */
    public ExpirableTextLineAlterList getObjectCopy()  {
       return  (new ExpirableTextLineAlterList(this));
    }
@@ -65,8 +65,8 @@ public class ExpirableTextLineAlterList extends ExpirableRawLineAlterList<String
    /**
       <p>Get a new text-line-alterer array from the provided <i>ordered</i> elements, optionally excluding {@code null} elements.</p>
 
-      @return  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/ExpirableAlterList.html#getAltererArrayFromOrderedElementsIfNonNull(L[], com.github.xbn.array.NullElement, java.lang.Class, java.lang.String)">getAltererArrayFromOrderedElementsIfNonNull</a>(orderedAlterers_whichMayBeNull, null_element, TextLineAlterer.class, alterers_varName)</code>
-    **/
+    * @return  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ExpirableAlterList.html#getAltererArrayFromOrderedElementsIfNonNull(L[], com.github.xbn.array.NullElement, java.lang.Class, java.lang.String)">getAltererArrayFromOrderedElementsIfNonNull</a>(orderedAlterers_whichMayBeNull, null_element, TextLineAlterer.class, alterers_varName)</code>
+    */
    public static final <O> TextLineAlterer[] getTextLineAltererArrayFromOrderedElementsIfNonNull(NullElement null_element, String alterers_varName, TextLineAlterer... orderedAlterers_whichMayBeNull)  {
       return  getAltererArrayFromOrderedElementsIfNonNull(orderedAlterers_whichMayBeNull, null_element, TextLineAlterer.class, alterers_varName);
    }

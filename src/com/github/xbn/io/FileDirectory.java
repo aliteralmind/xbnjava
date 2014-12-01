@@ -17,79 +17,79 @@ package  com.github.xbn.io;
 /**
    <p>Must a {@code java.nio.file.Path} be a directory, a regular file, or can it be either?.</p>
 
-   @see  PathMustBe#fileOrDirectory(FileDirectory)
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  PathMustBe#fileOrDirectory(FileDirectory)
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum FileDirectory  {
    /**
       <p>YYY.</p>
 
-      @see  #DIRECTORY
-      @see  #EITHER
-      @see  #isRegularFile()
-    **/
+    * @see  #DIRECTORY
+    * @see  #EITHER
+    * @see  #isRegularFile()
+    */
    REGULAR_FILE,
    /**
       <p>YYY.</p>
 
-      @see  #REGULAR_FILE
-      @see  #isDirectory()
-    **/
+    * @see  #REGULAR_FILE
+    * @see  #isDirectory()
+    */
    DIRECTORY,
    /**
       <p>YYY.</p>
 
-      @see  #REGULAR_FILE
-      @see  #isEither()
-    **/
+    * @see  #REGULAR_FILE
+    * @see  #isEither()
+    */
    EITHER;
    /**
       <p>Is this {@code FileDirectory} equal to {@code REGULAR_FILE}?.</p>
 
-      @return  <code>this == {@link #REGULAR_FILE}</code>
+    * @return  <code>this == {@link #REGULAR_FILE}</code>
 
-      @see  #isDirectory()
-      @see  #isEither()
-    **/
+    * @see  #isDirectory()
+    * @see  #isEither()
+    */
    public final boolean isRegularFile()  {
       return  this == REGULAR_FILE;
    }
    /**
       <p>Is this {@code FileDirectory} equal to {@code DIRECTORY}?.</p>
 
-      @return  <code>this == {@link #DIRECTORY}</code>
-      @see  #isRegularFile()
-    **/
+    * @return  <code>this == {@link #DIRECTORY}</code>
+    * @see  #isRegularFile()
+    */
    public final boolean isDirectory()  {
       return  this == DIRECTORY;
    }
    /**
       <p>Is this {@code FileDirectory} equal to {@code EITHER}?.</p>
 
-      @return  <code>this == {@link #EITHER}</code>
-      @see  #isRegularFile()
-    **/
+    * @return  <code>this == {@link #EITHER}</code>
+    * @see  #isRegularFile()
+    */
    public final boolean isEither()  {
       return  this == EITHER;
    }
    /**
       <p>If an <code>FileDirectory</code> is not a required value, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-      @see  #crashIfForbiddenValue(FileDirectory, String, Object) crashIfForbiddenValue(ert,s,o)
-    **/
+    * @see  #crashIfForbiddenValue(FileDirectory, String, Object) crashIfForbiddenValue(ert,s,o)
+    */
    public void crashIfNotRequiredValue(FileDirectory e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
       EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
    }
    /**
       <p>If an <code>FileDirectory</code> is a forbidden value, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-      @see  #crashIfNotRequiredValue(FileDirectory, String, Object) crashIfNotRequiredValue(ert,s,o)
-    **/
+    * @see  #crashIfNotRequiredValue(FileDirectory, String, Object) crashIfNotRequiredValue(ert,s,o)
+    */
    public void crashIfForbiddenValue(FileDirectory e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
       EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
    }

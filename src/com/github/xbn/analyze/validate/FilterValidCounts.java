@@ -38,8 +38,8 @@ package  com.github.xbn.analyze.validate;
 
    <p>{@code java com.github.xbn.examples.analyze.validate.ValidResultFilterXmpl}</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FilterValidCounts extends SimpleDebuggable implements ValidResultFilter, FilterValidCounts_Fieldable  {
    //configuration
@@ -66,8 +66,8 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
          <br/> &nbsp; &nbsp; <code>(fieldable.{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Fieldable#getAfterPreAction() getAfterPreAction}().{@link FilterPreAction#isReturn() isReturn}()  ||  !fieldable.{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Fieldable#getAfterAfterValue() getAfterAfterValue}().{@link FilterAfterValue#isUnchanged() isUnchanged}())</code></li>
       </ol></p>
 
-      @see  #FilterValidCounts(FilterValidCounts) this(fvc)
-    **/
+    * @see  #FilterValidCounts(FilterValidCounts) this(fvc)
+    */
    public FilterValidCounts(FilterValidCounts_Fieldable fieldable)  {
       super(fieldable);
 
@@ -94,7 +94,7 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
    }
    /**
       <p>Crash if any fields are invalid, as specified throughout the setter functions in the builder: {@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder z.FilterValidCounts_CfgForNeeder}</p>
-    **/
+    */
    public static final void crashIfBadFieldsFVC(FilterValidCounts_Fieldable fieldable)  {
       if(fieldable.getRange() == null)  {
          throw  new NullPointerException("fieldable.getRange() (set range(lir))");
@@ -134,8 +134,8 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
          <li>Sets all fields from {@code to_copy}</li>
       </ol></p>
 
-      @see  #FilterValidCounts(FilterValidCounts_Fieldable) this(fvc_f)
-    **/
+    * @see  #FilterValidCounts(FilterValidCounts_Fieldable) this(fvc_f)
+    */
    public FilterValidCounts(FilterValidCounts to_copy)  {
       super(to_copy);
       vfc = to_copy.getFilterCountType();
@@ -162,19 +162,19 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
    /**
       <p>The min-max range the count must conform to.</p>
 
-      @return  A non-{@code null} {@code LengthInRange}.
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#range(LengthInRange range) range(lir)
-    **/
+    * @return  A non-{@code null} {@code LengthInRange}.
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#range(LengthInRange range) range(lir)
+    */
    public LengthInRange getRange()  {
       return  lir;
    }
    /**
       <p>What is counted?.</p>
 
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#countAll() FilterValidCounts_Cfg#countAll()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#countInvalid() FilterValidCounts_Cfg#countInvalid()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#countValid() FilterValidCounts_Cfg#countValid()
-    **/
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#countAll() FilterValidCounts_Cfg#countAll()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#countInvalid() FilterValidCounts_Cfg#countInvalid()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#countValid() FilterValidCounts_Cfg#countValid()
+    */
    public FilterCountType getFilterCountType()  {
       return  vfc;
    }
@@ -186,63 +186,63 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
          <li><b>Post:</b> {@link #getBelowAfterValue() getBelowAfterValue}{@code ()}, {@link #getInAfterValue() getInAfterValue}{@code ()}, {@link #getAfterAfterValue() getAfterAfterValue}{@code ()}</li>
       </ul></p>
 
-      @see  #getRange()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction) FilterValidCounts_Cfg#preActionBelowInAfter(fpa,fpa,fpa)
-    **/
+    * @see  #getRange()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction) FilterValidCounts_Cfg#preActionBelowInAfter(fpa,fpa,fpa)
+    */
    public FilterPreAction getBelowPreAction()  {
       return  fPreBlw;
    }
    /**
       <p>What does the post-filter return when the count is below the range?.</p>
 
-      @see  #getBelowPreAction()
-      @see  #getInAfterValue()
-      @see  #getAfterAfterValue()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
-    **/
+    * @see  #getBelowPreAction()
+    * @see  #getInAfterValue()
+    * @see  #getAfterAfterValue()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
+    */
    public FilterAfterValue getBelowAfterValue()  {
       return  fPostBlw;
    }
    /**
       <p>What does the pre-filter do when the count is in the range?.</p>
 
-      @see  #getBelowPreAction()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction) FilterValidCounts_Cfg#preActionBelowInAfter(fpa,fpa,fpa)
-    **/
+    * @see  #getBelowPreAction()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction) FilterValidCounts_Cfg#preActionBelowInAfter(fpa,fpa,fpa)
+    */
    public FilterPreAction getInPreAction()  {
       return  fPreIn;
    }
    /**
       <p>What does the post-filter return when the count is in the range?.</p>
 
-      @see  #getBelowAfterValue()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
-    **/
+    * @see  #getBelowAfterValue()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
+    */
    public FilterAfterValue getInAfterValue()  {
       return  fPostIn;
    }
    /**
       <p>What does the pre-filter do on the iteration <i>after</i> the count has reached the range-maximum?.</p>
 
-      @see  #getBelowPreAction()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction) FilterValidCounts_Cfg#preActionBelowInAfter(fpa,fpa,fpa)
-    **/
+    * @see  #getBelowPreAction()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction) FilterValidCounts_Cfg#preActionBelowInAfter(fpa,fpa,fpa)
+    */
    public FilterPreAction getAfterPreAction()  {
       return  fPreAftr;
    }
    /**
       <p>What does the post-filter return on the iteration <i>after</i> the count has reached the range-maximum?.</p>
 
-      @see  #getBelowAfterValue()
-      @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
-    **/
+    * @see  #getBelowAfterValue()
+    * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter(fpv,fpv,fpv)
+    */
    public FilterAfterValue getAfterAfterValue()  {
       return  fPostAftr;
    }
    /**
       <p>Get the pre-filter action, given the current count and expiration.</p>
 
-      @return  If {@link #isExpired() isExpired}{@code ()} is<ul>
+    * @return  If {@link #isExpired() isExpired}{@code ()} is<ul>
          <li>{@code true}: {@link #getAfterPreAction() getAfterPreAction}{@code ()}</li>
             <li>Greater than the {@link #getRange() range} maxumum: {@link #getBelowPreAction() getBelowPreAction}{@code ()}</li>
             <li>Between the range minimum and maximum (inclusive): {@link #getInPreAction() getInPreAction}{@code ()} &nbsp; &nbsp; (If <b>equal</b> to the maximum and
@@ -250,8 +250,8 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
             <code>getBelowPreAction().{@link FilterPreAction#isReturn() isReturn}()</code>
             <br/>is {@code true}, then {@link #isExpired() isExpired}{@code ()} is set to {@code true})</li>
          </ul><b>Note:</b> No counts are incremented by this function. {@link FilterValidCounts} only count the number of times the <i>something</i> is validated against the <i><b>rules</b></i>, and it [post {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inversion}] is determined to be valid.)
-      @see  #getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules(b)
-    **/
+    * @see  #getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules(b)
+    */
    public FilterPreAction getPreAction()  {
       if(isDebugOn())  { getDebugAptr().appentln("<FVC> getPreAction(): " + toString()); }
 
@@ -295,17 +295,17 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
    /**
       <p>Get the post-filter action, given the current count, expiration, and if the (post-inverted) rules are followed. This increases {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} by one.</p>
 
-      @param  are_postInvertRulesFollowed  Does the <i>something</i> follow the rules? If {@code true}, the rules are followed (or it doesn't, but the rules are {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}). When {@code true}, {@link #getValidCount() getValidCount}{@code ()} are increased by one. When {@code false}, {@link #getInvalidCount() getInvalidCount}{@code ()} is increased. <b>Note:</b> {@link FilterValidCounts} only count the number of times the <i>something</i> is validated against the <i><b>rules</b></i>, and it [post inversion] is determined to be valid. Regardless the {@code FilterAfterValue} returned by this function, the counts are only affected by the value of this parameter.)
-      @return  If {@link #isExpired() isExpired}{@code ()} is<ul>
+    * @param  are_postInvertRulesFollowed  Does the <i>something</i> follow the rules? If {@code true}, the rules are followed (or it doesn't, but the rules are {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inverted}). When {@code true}, {@link #getValidCount() getValidCount}{@code ()} are increased by one. When {@code false}, {@link #getInvalidCount() getInvalidCount}{@code ()} is increased. <b>Note:</b> {@link FilterValidCounts} only count the number of times the <i>something</i> is validated against the <i><b>rules</b></i>, and it [post inversion] is determined to be valid. Regardless the {@code FilterAfterValue} returned by this function, the counts are only affected by the value of this parameter.)
+    * @return  If {@link #isExpired() isExpired}{@code ()} is<ul>
          <li>{@code true}: {@link #getAfterAfterValue() getAfterAfterValue}{@code ()}</li>
          <li>{@code false}: If the {@link #getFilterCountType() count} is<ul>
             <li>Greater than the {@link #getRange() range} maxumum: {@link #getBelowAfterValue() getBelowAfterValue}{@code ()}</li>
             <li>Between the range minimum and maximum (inclusive): {@link #getInAfterValue() getInAfterValue}{@code ()} &nbsp; &nbsp; <i>(If <b>equal</b> to the maximum, then {@link #isExpired() isExpired}{@code ()} is set to {@code true})</i></li>
          </ul></li>
       </ul>
-      @see  #getPreAction()
-      @see  com.github.xbn.analyze.validate.Validator#doInvertRules()
-    **/
+    * @see  #getPreAction()
+    * @see  com.github.xbn.analyze.validate.Validator#doInvertRules()
+    */
    public FilterAfterValue getAfterValueFromInvertedRules(boolean are_postInvertRulesFollowed)  {
       getDebugAptr().appentln("<FVC>    getAfterValueFromInvertedRules(" + are_postInvertRulesFollowed + ")");
 
@@ -347,25 +347,25 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
       return  fpv;
    }
    /**
-      @see  #FilterValidCounts(FilterValidCounts_Fieldable) this(fvc_f)
-    **/
+    * @see  #FilterValidCounts(FilterValidCounts_Fieldable) this(fvc_f)
+    */
    public boolean doesExpire()  {
       return  ec.doesExpire();
    }
    /**
-      @see  #getPreAction()
-      @see  #getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules(b)
-    **/
+    * @see  #getPreAction()
+    * @see  #getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules(b)
+    */
    public boolean isExpired()  {
       return  ec.isExpired();
    }
    /**
       <p>How many times has the <i>something</i> been analyzed against the rules?.</p>
 
-      @see  #getValidCount()
-      @see  #getInvalidCount()
-      @see  #getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules(b)
-    **/
+    * @see  #getValidCount()
+    * @see  #getInvalidCount()
+    * @see  #getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules(b)
+    */
    public int getAnalyzedCount()  {
       return  validCounts.getAnalyzedCount();
    }
@@ -373,8 +373,8 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
       <p>How many times has the <i>something</i> been analyzed against the rules, and (post-inversion) deemed valid?.</p>
 
     	@see  #getAnalyzedCount()
-      @see  com.github.xbn.analyze.validate.Validator#doInvertRules()
-    **/
+    * @see  com.github.xbn.analyze.validate.Validator#doInvertRules()
+    */
    public int getValidCount()  {
       return  validCounts.getValidCount();
    }
@@ -382,8 +382,8 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
       <p>How many times has the <i>something</i> been analyzed against the rules, and (post-inversion) deemed invalid?.</p>
 
     	@see  #getAnalyzedCount()
-      @see  com.github.xbn.analyze.validate.Validator#doInvertRules()
-    **/
+    * @see  com.github.xbn.analyze.validate.Validator#doInvertRules()
+    */
    public int getInvalidCount()  {
       return  validCounts.getInvalidCount();
    }
@@ -420,14 +420,14 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
    /**
       <p>Duplicate this <code>FilterValidCounts</code>.</p>
 
-      @return  <code>(new <a href="#FilterValidCounts(FilterValidCounts)">FilterValidCounts</a>(this))</code>
-    **/
+    * @return  <code>(new <a href="#FilterValidCounts(FilterValidCounts)">FilterValidCounts</a>(this))</code>
+    */
    public FilterValidCounts getObjectCopy()  {
       return  (new FilterValidCounts(this));
    }
    /**
     	@return  <code>true</code> If {@code to_compareTo} is non-{@code null}, a {@code FilterValidCounts}, and all relevant fields {@linkplain #areFieldsEqual(FilterValidCounts) are equal}. This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).
-    **/
+    */
    @Override
    public boolean equals(Object to_compareTo)  {
       //Check for object equality first, since it's faster than instanceof.
@@ -451,8 +451,8 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
    /**
       <p>Are all relevant fields equal?.</p>
 
-      @param  to_compareTo  May not be {@code null}.
-    **/
+    * @param  to_compareTo  May not be {@code null}.
+    */
    public boolean areFieldsEqual(FilterValidCounts to_compareTo)  {
       try  {
          return  (getRange().equals(to_compareTo.getRange())  &&

@@ -23,21 +23,21 @@ package  com.github.xbn.experimental.listify.primitiveable;
 public interface ListifyPrimitiveable<E> extends Listify<E>  {
    /**
       <p>For obtaining initialized arrays of both the wrapper and primitive type, and basic manipulation and access of the raw object, when it is also a primitive array.</p>
-    **/
+    */
    @Override
    PrimitiveArrayHelper<E> getArrayHelper();
    /**
       <p>Defines how {@code null} elements should be handled when creating new primitive arrays containing the virtual elements.</p>
-    **/
+    */
    NullHandlerForPrimitives<E> getNullHandlerForPrimitives();
    /**
       <p>Createa new primitive array containing all virtual elements.</p>
 
-      @param  nnull  If the <a href="#getRawObject()">raw object</a> is {@code null}, and this parameter is<ul>
+    * @param  nnull  If the <a href="#getRawObject()">raw object</a> is {@code null}, and this parameter is<ul>
          <li>non-{@code null}: crash ({@code is_nullCntrOk} is the name of the function calling this one)</li>
          <li>{@code null}: <i><b>return</b></i> {@code null}</li>
       </ul>.
-      @see  com.github.xbn.array.IndexableUtil#crashIfContainerIsNullAndThatIsBad(com.github.xbn.array.NullContainer, boolean) CrashIfObject#crashIfContainerIsNullAndThatIsBad(nc,b)
-    **/
+    * @see  com.github.xbn.array.IndexableUtil#crashIfContainerIsNullAndThatIsBad(com.github.xbn.array.NullContainer, boolean) CrashIfObject#crashIfContainerIsNullAndThatIsBad(nc,b)
+    */
    Object getPArrayCopyOrNull(NullContainer nnull);
 }

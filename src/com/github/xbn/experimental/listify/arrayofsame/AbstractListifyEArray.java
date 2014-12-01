@@ -27,8 +27,8 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 /**
    <p>For building listifiers whose raw objects are arrays (primitive or non-primitive), and whose virtual elements are of the same type. For primitive arrays, the virtual type is their primitive wrapper (such as {@code int[]} and {@code java.lang.Integer[]}).</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyEArray<E> implements ListifyEArray<E>  {
    private ListifyEArrayComposer<E> leac = null;
@@ -37,9 +37,9 @@ public abstract class AbstractListifyEArray<E> implements ListifyEArray<E>  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(Object, ArrayHelperBase, ValueCopier) super}{@code (obj_thatIsArray, array_helper, get_valCopy)}</p>
-    **/
+    */
    public AbstractListifyEArray(Object obj_thatIsArray, ArrayHelperBase<E> array_helper, ValueCopier<E> get_valCopy)  {
       leac = new ListifyEArrayComposer<E>(obj_thatIsArray, array_helper, get_valCopy);
    }
@@ -48,11 +48,11 @@ public abstract class AbstractListifyEArray<E> implements ListifyEArray<E>  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(com.github.xbn.list.listify.arrayofsame.ListifyEArrayBase) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    public AbstractListifyEArray(ListifyEArray<E> to_copy)  {
       leac = new ListifyEArrayComposer<E>(to_copy);
    }

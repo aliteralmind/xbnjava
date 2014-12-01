@@ -18,9 +18,9 @@ package  com.github.xbn.neederneedable;
 /**
    <p>For classes that need to implement <i>both</i> {@code Needable} and {@code Needer}, that cannot extend {@code AbstractNeedableWithSubs}.</p>
 
-   @see  AbstractNeedableWithSubs
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  AbstractNeedableWithSubs
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableComposer<O,R>  {//implements Needer  {
    private final NeederComposer ndrc;
@@ -33,7 +33,7 @@ public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableCompos
          <li>Creates an internal
          <br/> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</li>
       </ol></p>
-    **/
+    */
    @CompositionConstructor
    public NeedableWithSubsComposer(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit)  {
       super(is_avaliableToNeeders, is_neededUseableAtInit);
@@ -41,15 +41,15 @@ public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableCompos
    }
    //Composition implementation: NeederComposer...START
       /**
-         @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#getNeededType() getNeededType}()</code>
-       **/
+       * @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#getNeededType() getNeededType}()</code>
+       */
       @CompositionFunction
       public Class getNeededType()  {
          return  ndrc.getNeededType();
       }
       /**
-         @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#isConfigActive() isConfigActive}()</code>
-       **/
+       * @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#isConfigActive() isConfigActive}()</code>
+       */
       @CompositionFunction
       public boolean isConfigActive()  {
          return  ndrc.isConfigActive();
@@ -59,14 +59,14 @@ public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableCompos
 
          <p>Equal to
          <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
-       **/
+       */
       @CompositionFunction
       public void startConfig(Class<?> needed_class)  {
          ndrc.startConfig(needed_class);
       }
       /**
-         @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#setGetNeededEndConfig_4prot(Object) setGetNeededEndConfig_4prot}(needed_fullyConfigured)</code>
-       **/
+       * @return   <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#setGetNeededEndConfig_4prot(Object) setGetNeededEndConfig_4prot}(needed_fullyConfigured)</code>
+       */
       @CompositionFunction
       protected Object setGetNeededEndConfig(Object needed_fullyConfigured)  {
          return  ndrc.setGetNeededEndConfig_4prot(needed_fullyConfigured);

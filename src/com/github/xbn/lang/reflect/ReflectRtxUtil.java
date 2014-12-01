@@ -30,18 +30,18 @@ package  com.github.xbn.lang.reflect;
 /**
    <p>Reflection-related utilities with runtime errors only. The original exception is accessible via {@code getCause()}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReflectRtxUtil   {
    /**
       <p>Is one class assignable from another?.</p>
 
-      @param  class_forPreDot  May not be {@code null}.
-      @param  class_forParam  May not be {@code null}.
-      @return  <code>class_forPreDot.{@link java.lang.Class#isAssignableFrom(Class) isAssignableFrom}(class_forParam)</code>
-      @see  #crashIfNotAssignableFrom(Class, Class) crashIfNotAssignableFrom(c,c)
-    **/
+    * @param  class_forPreDot  May not be {@code null}.
+    * @param  class_forParam  May not be {@code null}.
+    * @return  <code>class_forPreDot.{@link java.lang.Class#isAssignableFrom(Class) isAssignableFrom}(class_forParam)</code>
+    * @see  #crashIfNotAssignableFrom(Class, Class) crashIfNotAssignableFrom(c,c)
+    */
    public static final boolean isClassAssignableFrom(Class<?> class_forPreDot, Class<?> class_forParam)  {
       try  {
          return  class_forPreDot.isAssignableFrom(class_forParam);
@@ -53,10 +53,10 @@ public class ReflectRtxUtil   {
    /**
       <p>If one class is not assignable from another, crash. Otherwise, do nothing.</p>
 
-      @exception  ClassCastException  If
+    * @exception  ClassCastException  If
       <br/> &nbsp; &nbsp; <code>{@link #isClassAssignableFrom(Class, Class) isClassAssignableFrom}(class_forPreDot, class_forParam)</code>
       <br/>is {@code false}
-    **/
+    */
    public static final void crashIfNotAssignableFrom(Class<?> class_forPreDot, Class<?> class_forParam)  {
       if(!isClassAssignableFrom(class_forPreDot, class_forParam))  {
          throw  new ClassCastException("class_forPreDot expected to be of type " + class_forParam + ". class_forPreDot.getName()=\"" + class_forPreDot.getName() + "\"");
@@ -65,14 +65,14 @@ public class ReflectRtxUtil   {
    /**
       <p>Invoke a non-{@code void} method, and get any {@code RuntimeException} thrown from it. If no exception is thrown, this returns {@code null}.</p>
 
-      @param  obj_methodInvokedFrom  If non-{@code null}, the method is being invoked from this class. If {@code null}, the method must be static.
-      @param  method  May not be {@code null}.
-      @param  param_objArr  May not be {@code null}.
-      @return  <code>method.{@link java.lang.reflect.Method#invoke(Object, Object...) invoke}(obj_methodInvokedFrom, param_objArr)</code>
-      @exception  RuntimeException  If any error occurs. The original exception is accessible with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
-      @see  #invokeVoidMethodGetRtx(Object, Method, Object, Object...) invokeVoidMethodGetRtx
-      @see  InvokeMethodWithRtx
-    **/
+    * @param  obj_methodInvokedFrom  If non-{@code null}, the method is being invoked from this class. If {@code null}, the method must be static.
+    * @param  method  May not be {@code null}.
+    * @param  param_objArr  May not be {@code null}.
+    * @return  <code>method.{@link java.lang.reflect.Method#invoke(Object, Object...) invoke}(obj_methodInvokedFrom, param_objArr)</code>
+    * @exception  RuntimeException  If any error occurs. The original exception is accessible with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
+    * @see  #invokeVoidMethodGetRtx(Object, Method, Object, Object...) invokeVoidMethodGetRtx
+    * @see  InvokeMethodWithRtx
+    */
    public static final Object invokeMethodWithRtxGetReturnValue(Object obj_methodInvokedFrom, Method method, Object xtra_errInfo, Object... param_objArr)  {
       Throwable tbl = null;
       try  {
@@ -101,8 +101,8 @@ public class ReflectRtxUtil   {
    /**
       <p>If a fully qualified name represents an actually-existing Java class, get its class object.</p>
 
-      @return  <code>{@link #getClassIfExistsOrNull(String, Class) getClassIfExistsOrNull}(fully_qualifiedName, null)</code>
-    **/
+    * @return  <code>{@link #getClassIfExistsOrNull(String, Class) getClassIfExistsOrNull}(fully_qualifiedName, null)</code>
+    */
    public static final Class<?> getClassIfExistsOrNull(String fully_qualifiedName)  {
       return  getClassIfExistsOrNull(fully_qualifiedName, null);
    }
@@ -111,11 +111,11 @@ public class ReflectRtxUtil   {
 
       <p><i>This uses a {@code ClassNotFoundException} as its {@code false} logic. <a href="http://stackoverflow.com/questions/19809640/check-if-class-exists-without-running-into-classnotfoundexception">It seems not</a>.</i></p>
 
-      @param  fully_qualifiedName  <i>Should</i> not be {@code null} or empty.
-      @param  rqdType_ifNonNull  If non-{@code null}, this is the type the class must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
-      @see  #getClassIfExistsOrNull(String)
-      @exception  ClassCastException  if {@code rqdType_ifNonNull} is non-{@code null} and the class is not assignable from it.
-    **/
+    * @param  fully_qualifiedName  <i>Should</i> not be {@code null} or empty.
+    * @param  rqdType_ifNonNull  If non-{@code null}, this is the type the class must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
+    * @see  #getClassIfExistsOrNull(String)
+    * @exception  ClassCastException  if {@code rqdType_ifNonNull} is non-{@code null} and the class is not assignable from it.
+    */
    public static final <O> Class<O> getClassIfExistsOrNull(String fully_qualifiedName, Class<O> rqdType_ifNonNull)  {
       Class<O> cls = null;
 
@@ -143,12 +143,12 @@ public class ReflectRtxUtil   {
       <p>This calls
       <br/> &nbsp; &nbsp; <code>method.{@link java.lang.reflect.Method#invoke(Object, Object...) invoke}(obj_methodInvokedFrom, dddo_params)</code></p>
 
-      @param  obj_methodInvokedFrom  The object the underlying method is invoked from. If the method is {@code static}, set this to {@code null}.
-      @param  method  May not be {@code null}.
-      @return  <b>{@code null}</b> If the function returned normally. Otherwise, a <b>{@code RuntimeException}</b> whose {@code getCause()} contains the original exception.
-      @see  #invokeMethodWithRtxGetReturnValue(Object, Method, Object, Object...) invokeMethodWithRtxGetReturnValue(o,m,o,o...)
-      @see  InvokeMethodWithRtx
-    **/
+    * @param  obj_methodInvokedFrom  The object the underlying method is invoked from. If the method is {@code static}, set this to {@code null}.
+    * @param  method  May not be {@code null}.
+    * @return  <b>{@code null}</b> If the function returned normally. Otherwise, a <b>{@code RuntimeException}</b> whose {@code getCause()} contains the original exception.
+    * @see  #invokeMethodWithRtxGetReturnValue(Object, Method, Object, Object...) invokeMethodWithRtxGetReturnValue(o,m,o,o...)
+    * @see  InvokeMethodWithRtx
+    */
    public static final RuntimeException invokeVoidMethodGetRtx(Object obj_methodInvokedFrom, Method method, Object xtra_errInfo, Object... dddo_params)  {
       Throwable tbl = null;
       try  {
@@ -163,15 +163,15 @@ public class ReflectRtxUtil   {
    /**
       <p>Get an object`s class-name with a prefix and postfix string, and an if-null default.</p>
 
-      @param  prefix  If non-{@code null}, this precedes the class-name. If {@code null}, nothing precedes it. When {@code object} is {@code null}, this and {@code postfix} are ignored.
-      @param  object  The object whose class-name is needed.
-      @param  postfix  If non-{@code null}, this follows the class-name. If {@code null}, nothing follows it.
-      @param  if_nonNull  What to return if {@code object} is {@code null}.
-      @return  If {@code object} is<ul>
+    * @param  prefix  If non-{@code null}, this precedes the class-name. If {@code null}, nothing precedes it. When {@code object} is {@code null}, this and {@code postfix} are ignored.
+    * @param  object  The object whose class-name is needed.
+    * @param  postfix  If non-{@code null}, this follows the class-name. If {@code null}, nothing follows it.
+    * @param  if_nonNull  What to return if {@code object} is {@code null}.
+    * @return  If {@code object} is<ul>
          <li>{@code null}: {@code if_nonNull}</li>
          <li>non-{@code null}: <code>prefix + object.{@link java.lang.Object#getClass getClass}().{@link java.lang.Class#getName() getName}() + prefix</code></li>
       </ul>
-    **/
+    */
    private static final String getClassNameWithNullDefault(String prefix, Object object, String postfix, String if_nonNull)  {
       if(object == null)  {
          return  ((if_nonNull == null) ? "" : if_nonNull);
@@ -184,12 +184,12 @@ public class ReflectRtxUtil   {
    /**
       <p>Get a new instance of a class from its no-parameter constructor, given its fully-qualified name.</p>
 
-      @param  class_name  May not be {@code null}, and must represent an existing class, and one that has a publicly accessible zero-parameter constructor.
-      @param  rqdType_ifNonNull  If non-{@code null}, this is the type that {@code class_name} must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
-      @param  debugDest_ifNonNull  If non-{@code null}, debugging output is printed. Using this <i>should</i> not result in any errors.
-      @exception  RTClassNotFoundException  If {@code class_name} is non-{@code null}, non-empty, but does not represent an actually-existing class.
-      @exception  ClassCastException  if {@code rqdType_ifNonNull} is non-{@code null} and the class is not assignable from it.
-    **/
+    * @param  class_name  May not be {@code null}, and must represent an existing class, and one that has a publicly accessible zero-parameter constructor.
+    * @param  rqdType_ifNonNull  If non-{@code null}, this is the type that {@code class_name} must be {@linkplain java.lang.Class#isAssignableFrom(Class) assignable from}.
+    * @param  debugDest_ifNonNull  If non-{@code null}, debugging output is printed. Using this <i>should</i> not result in any errors.
+    * @exception  RTClassNotFoundException  If {@code class_name} is non-{@code null}, non-empty, but does not represent an actually-existing class.
+    * @exception  ClassCastException  if {@code rqdType_ifNonNull} is non-{@code null} and the class is not assignable from it.
+    */
    public static final <O> O getNewInstanceFromNoParamCnstr(String class_name, Class<O> rqdType_ifNonNull, Appendable debugDest_ifNonNull)  {
       TextAppenter dbgAptr = NewTextAppenterFor.appendableUnusableIfNull(debugDest_ifNonNull);
       if(dbgAptr.isUseable())  {
@@ -254,7 +254,7 @@ public class ReflectRtxUtil   {
          <li><i><b>Returns</b></i>
          <br/> &nbsp; &nbsp; <code>{@link #getMethod(Class, String, Declared, Object, Class...) getMethod}(<i>[that class]</i>, method_name, declared, xtra_errInfo, param_types)</code></li>
       </ol></p>
-    **/
+    */
    public static final Method getMethodForClassName(String fq_className, String method_name, Declared declared, Object xtra_errInfo, Class... param_types)  {
       Class <?> cls = getClassForName(fq_className, "fq_className");
       return  getMethod(cls, method_name, declared, xtra_errInfo, param_types);
@@ -263,10 +263,10 @@ public class ReflectRtxUtil   {
    /**
       <p>Get an object's class, or crash if it's {@code null}.</p>
 
-      @param  fq_className  The fully-qualified name of the class. Must be non-{@code null} and valid.
-      @see  #getClass(Object, Object) getClass(o,o)
-      @exception  RTClassNotFoundException  If a {@link java.lang.ClassNotFoundException ClassNotFoundException} is thrown.
-    **/
+    * @param  fq_className  The fully-qualified name of the class. Must be non-{@code null} and valid.
+    * @see  #getClass(Object, Object) getClass(o,o)
+    * @exception  RTClassNotFoundException  If a {@link java.lang.ClassNotFoundException ClassNotFoundException} is thrown.
+    */
    public static final Class getClassForName(String fq_className, String fqcn_varName)  {
       try  {
          return  Class.forName(fq_className);
@@ -280,9 +280,9 @@ public class ReflectRtxUtil   {
    /**
       <p>Get an object's class, or crash if it's {@code null}.</p>
 
-      @param  object  May not be {@code null}.
-      @see  #getClassForName(String, String) getClass(s,s)
-    **/
+    * @param  object  May not be {@code null}.
+    * @see  #getClassForName(String, String) getClass(s,s)
+    */
    public static final Class getClass(Object object, Object xtra_errInfo)  {
       try  {
          return  object.getClass();
@@ -293,9 +293,9 @@ public class ReflectRtxUtil   {
    /**
       <p>Get a constructor from its object.</p>
 
-      @param  obj_withConstructor  May not be {@code null}.
-      @return  <code>{@link #getConstructor(Class, Declared, Object, Class...) getConstructor}(obj_withConstructor.{@link java.lang.Object#getClass() getClass}(), declared, xtra_errInfo, param_types)</code>
-    **/
+    * @param  obj_withConstructor  May not be {@code null}.
+    * @return  <code>{@link #getConstructor(Class, Declared, Object, Class...) getConstructor}(obj_withConstructor.{@link java.lang.Object#getClass() getClass}(), declared, xtra_errInfo, param_types)</code>
+    */
    public static final Constructor getConstructor(Object obj_withConstructor, Declared declared, Object xtra_errInfo, Class<?>... param_types)  {
       try  {
          return  getConstructor(obj_withConstructor.getClass(), declared, xtra_errInfo, param_types);
@@ -306,15 +306,15 @@ public class ReflectRtxUtil   {
    /**
       <p>Get a constructor from its class.</p>
 
-      @param  containing_class  May not be {@code null}
-      @return  If {@code declared} is<ul>
+    * @param  containing_class  May not be {@code null}
+    * @return  If {@code declared} is<ul>
          <li>{@link com.github.xbn.lang.reflect.Declared#YES YES}: <code>containing_class.{@link java.lang.Class#getDeclaredConstructor(Class...) getDeclaredConstructor}(param_types)</code></li>
          <li>{@link com.github.xbn.lang.reflect.Declared#NO NO}: <code>containing_class.{@link java.lang.Class#getConstructor(Class...) getConstructor}(param_types)</code></li>
       </ul>
-      @exception  RTNoSuchMethodException  If a {@link java.lang.NoSuchMethodException} is thrown.
-      @exception  RuntimeException  If any error occurs. The original exception is accessible with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
-      @see  #getConstructor(Object, Declared, Object, Class...) getConstructor
-    **/
+    * @exception  RTNoSuchMethodException  If a {@link java.lang.NoSuchMethodException} is thrown.
+    * @exception  RuntimeException  If any error occurs. The original exception is accessible with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
+    * @see  #getConstructor(Object, Declared, Object, Class...) getConstructor
+    */
    public static final Constructor getConstructor(Class<?> containing_class, Declared declared, Object xtra_errInfo, Class<?>... param_types)  {
       try  {
          return  ((declared.isNo())
@@ -333,9 +333,9 @@ public class ReflectRtxUtil   {
    /**
       <p>Get a method from its containing object.</p>
 
-      @param  obj_withMethod  May not be {@code null}.
-      @return  <code>{@link #getMethod(Class, String, Declared, Object, Class...) getMethod}(obj_withMethod.{@link java.lang.Object#getClass() getClass}(), method_name, xtra_errInfo, param_types)</code>
-    **/
+    * @param  obj_withMethod  May not be {@code null}.
+    * @return  <code>{@link #getMethod(Class, String, Declared, Object, Class...) getMethod}(obj_withMethod.{@link java.lang.Object#getClass() getClass}(), method_name, xtra_errInfo, param_types)</code>
+    */
    public static final Method getMethod(Object obj_withMethod, String method_name, Declared declared, Object xtra_errInfo, Class<?>... param_types)  {
       try  {
          return  getMethod(obj_withMethod.getClass(), method_name, declared, xtra_errInfo, param_types);
@@ -346,16 +346,16 @@ public class ReflectRtxUtil   {
    /**
       <p>Get a method from its containing class.</p>
 
-      @param  containing_class  May not be {@code null}
-      @return  If {@code declared} is<ul>
+    * @param  containing_class  May not be {@code null}
+    * @return  If {@code declared} is<ul>
          <li>{@link com.github.xbn.lang.reflect.Declared#YES YES}: <code>containing_class.{@link java.lang.Class#getDeclaredMethod(String, Class...) getDeclaredMethod}(method_name, param_types)</code></li>
          <li>{@link com.github.xbn.lang.reflect.Declared#NO NO}: <code>containing_class.{@link java.lang.Class#getMethod(String, Class...) getMethod}(method_name, param_types)</code></li>
       </ul>
-      @exception  RTNoSuchMethodException  If a {@link java.lang.NoSuchMethodException} is thrown.
-      @exception  RuntimeException  If any error occurs. The original exception is accessible with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
-      @see  #getMethod(Object, String, Declared, Object, Class...) getMethod(Object, *)
-      @see  #getMethodForClassName(String, String, Declared, Object, Class...) getMethodForClassName
-    **/
+    * @exception  RTNoSuchMethodException  If a {@link java.lang.NoSuchMethodException} is thrown.
+    * @exception  RuntimeException  If any error occurs. The original exception is accessible with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
+    * @see  #getMethod(Object, String, Declared, Object, Class...) getMethod(Object, *)
+    * @see  #getMethodForClassName(String, String, Declared, Object, Class...) getMethodForClassName
+    */
    public static final Method getMethod(Class<?> containing_class, String method_name, Declared declared, Object xtra_errInfo, Class<?>... param_types)  {
       try  {
          return  ((declared.isNo())
@@ -387,9 +387,9 @@ public class ReflectRtxUtil   {
    /**
       <p>Get a list of {@code Class}es, for each object in an array, as required when obtaining a method.</p>
 
-      @param  objects  May not be {@code null}, and no element may be {@code null}.
-      @see  #getMethod(Class, String, Declared, Object, Class...)
-    **/
+    * @param  objects  May not be {@code null}, and no element may be {@code null}.
+    * @see  #getMethod(Class, String, Declared, Object, Class...)
+    */
    public static final List<Class<?>> getClassListFromObjects(Object[] objects)  {
       List<Class<?>> classList = null;
       try  {
@@ -410,9 +410,9 @@ public class ReflectRtxUtil   {
    /**
       <p>Get a list of {@code Class}es, for each object in a list, as required when obtaining a method.</p>
 
-      @param  objectList  May not be {@code null}, and no element may be {@code null}.
-      @see  #getMethod(Class, String, Declared, Object, Class...)
-    **/
+    * @param  objectList  May not be {@code null}, and no element may be {@code null}.
+    * @see  #getMethod(Class, String, Declared, Object, Class...)
+    */
    public static final List<Class<?>> getClassListFromObjects(List<?> objectList)  {
       List<Class<?>> classList = null;
       try  {
@@ -448,9 +448,9 @@ public class ReflectRtxUtil   {
    /**
       <p>YYY</p>
 
-      @see  java.lang.Class#getName()
-      @see  com.github.aliteralmind.codelet.util.JavaDocUtil#appendClassNameForParams(StringBuilder, Class[], VarArgs)
-    **/
+    * @see  java.lang.Class#getName()
+    * @see  com.github.aliteralmind.codelet.util.JavaDocUtil#appendClassNameForParams(StringBuilder, Class[], VarArgs)
+    */
    public static final StringBuilder appendClassNames(StringBuilder to_appendTo, String element_prefix, Class<?>[] classes, String element_postfix, String separator)  {
       if(classes == null)  {
          return  to_appendTo.append("null");

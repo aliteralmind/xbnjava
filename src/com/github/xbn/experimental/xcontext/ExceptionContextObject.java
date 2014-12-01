@@ -8,7 +8,7 @@ public interface ExceptionContextObject extends Copyable  {
    /**
       <p>Descriptive name for the error-causing object.</p>
 
-      @return  A non-{@code null}, non-empty string.
-    **/
+    * @return  A non-{@code null}, non-empty string.
+    */
    String getName();
 }

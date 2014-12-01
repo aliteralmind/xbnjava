@@ -65,23 +65,23 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
    /**
       <p>Create a Fraction where the denominator is 1.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@code this(whole_number, 1)}</p>
-    **/
+    */
    public Fraction(long whole_number) {
       this(whole_number, 1);
    }
    /**
       <p>Create a Fraction from a string in 'mixed number form' (such as {@code '3 1/2'}). See <a href="http://en.wikipedia.org/wiki/Fraction_%28mathematics%29#Mixed_numbers">Fractions:Mixed Numbers </a> on Wikipedia.</p>
 
-      @param  frac_str  A string representation of a fraction, in one of the following forms:<ul>
+    * @param  frac_str  A string representation of a fraction, in one of the following forms:<ul>
          <li><b>{@code 'whole-number'}</b>, such as {@code 3}, which is translated to {@code 3/1}.</li>
          <li><b>{@code 'numerator/denominator'}</b>, such as {@code 1/2}.</li>
          <li><b>{@code 'whole-number numerator/denominator'}</b>, such as {@code '3 1/2'}, translated to {@code 7/2}.</li>
       </ul>
       May not be {@code null}. Must have whitespace only (spaces or tabs) between the whole-number and numerator. No other whitespace allowed.
-      @see  #Fraction(long, long, long) Fraction(l,l,l)
-    **/
+    * @see  #Fraction(long, long, long) Fraction(l,l,l)
+    */
    public Fraction(String frac_str) {
       try  {
          if(frac_str.length() == 0)  {
@@ -168,11 +168,11 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
    /**
       <p>Get the whole-number from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 1}.</p>
 
-      @return  If {@link #getNumerator() getNumerator}{@code ()} is greater-than-or-equal-to {@link #getDenominator() getDenominator}{@code ()}:  {@code <b>(getNumerator() / getDenominator())</b>}
+    * @return  If {@link #getNumerator() getNumerator}{@code ()} is greater-than-or-equal-to {@link #getDenominator() getDenominator}{@code ()}:  {@code <b>(getNumerator() / getDenominator())</b>}
       <br/>Otherwise: <b>{@code 0}</b>
-      @see  #getMixedNumerator()
-      @see  #getMixedDenominator()
-    **/
+    * @see  #getMixedNumerator()
+    * @see  #getMixedDenominator()
+    */
    public final long getMixedWhole() {
       return  ((getNumerator() >= getDenominator())
          ?  (getNumerator() / getDenominator())
@@ -181,10 +181,10 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
    /**
       <p>Get the numerator from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 2}.</p>
 
-      @return  If {@code getMixedWhole()} is greater than zero:   <code><b>(getNumerator() - ({@link #getMixedWhole() getMixedWhole}() * getDenominator()))</b></code>
+    * @return  If {@code getMixedWhole()} is greater than zero:   <code><b>(getNumerator() - ({@link #getMixedWhole() getMixedWhole}() * getDenominator()))</b></code>
       <br/>Otherwise: <b>{@code getNumerator()}</b>
-      @see  #getMixedDenominator()
-    **/
+    * @see  #getMixedDenominator()
+    */
    public final long getMixedNumerator() {
       long lMi = getMixedWhole();
       return  (lMi > 0
@@ -194,9 +194,9 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
    /**
       <p>Get the denominator from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 3}.</p>
 
-      @return  {@link #getDenominator() getDenominator}{@code ()}
-      @see  #getMixedDenominator()
-    **/
+    * @return  {@link #getDenominator() getDenominator}{@code ()}
+    * @see  #getMixedDenominator()
+    */
    public final long getMixedDenominator()  {
       return  getDenominator();
    }
@@ -204,7 +204,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   		<p>Return the numerator as a string.</p>
 
   		@return  <code>(new Long({@link #getNumerator() getNumerator}())).toString()</code>
-  	 **/
+  	 */
    public final String getNumeratorString()  {
       return  (new Long(getNumerator())).toString();
    }
@@ -212,7 +212,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   		<p>Return the denominator as a string.</p>
 
   		@return  <code>(new Long({@link #getDenominator() getDenominator}())).toString()</code>
-  	 **/
+  	 */
    public final String getDenominatorString()  {
       return  (new Long(getDenominator())).toString();
    }
@@ -220,7 +220,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   		<p>Return the mixed-number integer as a string.</p>
 
   		@return  <code>(new Long({@link #getMixedWhole() getMixedWhole}())).toString()</code>
-  	 **/
+  	 */
    public final String getMixedWholeString()  {
       return  (new Long(getMixedWhole())).toString();
    }
@@ -228,7 +228,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   		<p>Return the mixed-number numerator as a string.</p>
 
   		@return  <code>(new Long({@link #getMixedNumerator() getMixedNumerator}())).toString()</code>
-  	 **/
+  	 */
    public final String getMixedNumeratorString()  {
       return  (new Long(getMixedNumerator())).toString();
    }
@@ -236,7 +236,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   		<p>Return the mixed-number denominator as a string.</p>
 
   		@return  <code>(new Long({@link #getMixedDenominator() getMixedDenominator}())).toString()</code>
-  	 **/
+  	 */
    public final String getMixedDenominatorString()  {
       return  (new Long(getMixedDenominator())).toString();
    }
@@ -305,7 +305,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
 
    /**
   		<p>return  a Fraction representing this Fraction plus num</p>
-    **/
+    */
   public Fraction plus(int num) {
      return  plus((new Integer(num)).longValue());
   }
@@ -329,7 +329,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
       //   1/4 + 1/8 + (1/8 * 1/2) = 1/4 + 1/8 + 1/16 =
       //   4/16 + 2/16 + 1/16 = <b>7/16</b></pre>
 
-      @param  dot_count  The number of dots following the duration. May not be less than zero.
+    * @param  dot_count  The number of dots following the duration. May not be less than zero.
    **/
    public Fraction plusDurationDots(int dot_count) {
       Fraction fTotalDuration = new Fraction(this);
@@ -400,7 +400,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
   /** return  a number less, equal, or greater than zero
    * reflecting whether this Fraction is less, equal or greater than
    * the value of Fraction other.
-      @param  fraction  May not be {@code null}.
+    * @param  fraction  May not be {@code null}.
    **/
    public int compareTo(Fraction fraction) {
       long an = getNumerator();
@@ -450,7 +450,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
             Item two is wrong. When the parameter is null, it should throw an npx instead of throwing false:
             See: xbnjava\z_build\answers\is-it-a-bad-idea-if-equalsnull-throws-nullpointerexception-instead.txt
          ]]]
-       **/
+       */
       if(!(to_compareTo instanceof Fraction))  {
          return  false;
       }

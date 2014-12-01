@@ -71,8 +71,8 @@ and this
    ...END
   -->
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParentEntity<L>  {
    private final ValueAlterer<L,L>         startAlter  ;
@@ -96,8 +96,8 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    /**
       <p>YYY</p>
 
-      @param  fieldable  May not be {@code null}.
-    **/
+    * @param  fieldable  May not be {@code null}.
+    */
    public RawBlockEntity(RawBlockEntity_Fieldable<L> fieldable)  {
       super(fieldable);
       startAlter = fieldable.getStartAlterer();
@@ -151,9 +151,9 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) BlockEntity_CfgForNeeder#keepStartMidEnd
-      @see  #doKeepJustAnalyzed()
-    **/
+    * @see  com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) BlockEntity_CfgForNeeder#keepStartMidEnd
+    * @see  #doKeepJustAnalyzed()
+    */
    public boolean doKeepStartLine()  {
       return  doKeepStart;
    }
@@ -235,18 +235,18 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) BlockEntity_CfgForNeeder#keepStartMidEnd
-      @see  #doKeepJustAnalyzed()
-    **/
+    * @see  com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) BlockEntity_CfgForNeeder#keepStartMidEnd
+    * @see  #doKeepJustAnalyzed()
+    */
    public boolean doKeepMidLines()  {
       return  doKeepMid;
    }
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) BlockEntity_CfgForNeeder#keepStartMidEnd
-      @see  #doKeepJustAnalyzed()
-    **/
+    * @see  com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#keepStartMidEnd(boolean, boolean, boolean) BlockEntity_CfgForNeeder#keepStartMidEnd
+    * @see  #doKeepJustAnalyzed()
+    */
    public boolean doKeepEndLine()  {
       return  doKeepEnd;
    }
@@ -284,24 +284,24 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#startAlter(ValueAlterer) RawBlockEntity_CfgForNeeder#startAlter
-    **/
+    * @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#startAlter(ValueAlterer) RawBlockEntity_CfgForNeeder#startAlter
+    */
    protected ValueAlterer<L,L> getStartAlterer()  {
       return  startAlter;
    }
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#midAlter(ValueAlterer) RawBlockEntity_CfgForNeeder#midAlter
-    **/
+    * @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#midAlter(ValueAlterer) RawBlockEntity_CfgForNeeder#midAlter
+    */
    protected ValueAlterer<L,L> getMidAlterer()  {
       return  midAlter;
    }
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) RawBlockEntity_CfgForNeeder#endAlter
-    **/
+    * @see  com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) RawBlockEntity_CfgForNeeder#endAlter
+    */
    protected ValueAlterer<L,L> getEndAlterer()  {
       return  endAlter;
    }
@@ -327,13 +327,13 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    }
    /**
       <p>The currently active child, if any.</p>
-    **/
+    */
    public RawChildEntity<L> getRawActiveChild()  {
       return  activeChild;
    }
    /**
       <p>An immutable list of all children.</p>
-    **/
+    */
    public List<RawChildEntity<L>> getRawChildList()  {
       if(childList == null)  {
          synchronized(children)  {
@@ -351,9 +351,9 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
       return  new RawBlockEntity<L>(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #toString()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #toString()
+    */
    public StringBuilder appendToString(StringBuilder to_appendTo)  {
       try  {
          if(isStartLineInclusive() == isEndLineInclusive())  {
@@ -394,7 +394,7 @@ public class RawBlockEntity<L> extends RawBlockEntityBase<L> implements RawParen
    }
    /**
       <p>Does not include information on the mid-alterer.</p>
-    **/
+    */
    public StringBuilder appendRules(StringBuilder to_appendTo)  {
       try  {
          to_appendTo.append("getStartAlterer()=[");

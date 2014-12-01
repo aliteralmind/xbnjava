@@ -45,8 +45,8 @@ package  com.github.xbn.list.lister;
       <li><b>Display only valid values:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#valueFilter(ValueValidator) valueFilter}{@code (vv)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#filterNullValues() filterNullValues}{@code ()}</li>
    </ul></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListLister<E> implements ToStringAppendable  {
 //state
@@ -142,8 +142,8 @@ public class ListLister<E> implements ToStringAppendable  {
  	/**
  		<p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
- 	 **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+ 	 */
  	public static final <E> Appendable append(ListLister<E> lister, Appendable to_appendTo, List<E> list)  {
       try  {
          return  appendX(lister, to_appendTo, list);
@@ -164,7 +164,7 @@ getOverallConfig()
    getVPCFinalOutput()
    getPrefix()
    getPostfix()</pre>
-    **/
+    */
  	public static final <E> Appendable appendX(ListLister<E> lister, Appendable to_appendTo, List<E> list) throws IOException  {
       LLCfgOverall<E> llco = null;
       try  {
@@ -237,8 +237,8 @@ getOverallConfig()
  	/**
  		<p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
- 	 **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+ 	 */
  	public static final <E> Appendable appendElement(LLCfgElement<E> llc_e, Appendable to_appendTo, int index, E obj)  {
       try  {
          return  appendElementX(llc_e, to_appendTo, index, obj);
@@ -257,7 +257,7 @@ getOverallConfig()
    getVPCFinalOutput()
 getOverallConfig()
    getBetween()</pre>
- 	 **/
+ 	 */
  	public static final <E> Appendable appendElementX(LLCfgElement<E> llc_e, Appendable to_appendTo, int index, E obj) throws IOException  {
       try  {
          if(obj == null)  {

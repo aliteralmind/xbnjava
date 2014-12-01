@@ -38,8 +38,8 @@ public class CompositionStubUtil {
    /**
       <p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public static final void main(String[] as_1Rqd_pathToJavaFile)  {
 /*
       String sCnstrNmInGrp = "\\b([\\w.]+)\\b";
@@ -60,8 +60,8 @@ public class CompositionStubUtil {
    /**
       <p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public static final void appendForSource(Appendable to_appendTo, String sourceCode_path)  {
       try  {
          appendForSourceX(to_appendTo, (new File(sourceCode_path)));
@@ -72,8 +72,8 @@ public class CompositionStubUtil {
    /**
       <p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public static final void appendForSource(Appendable to_appendTo, File source_code)  {
       try  {
          appendForSourceX(to_appendTo, source_code);

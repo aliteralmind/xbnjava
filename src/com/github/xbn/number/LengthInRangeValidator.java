@@ -31,9 +31,9 @@ package  com.github.xbn.number;
    public LengthInRangeValidator_CfgForNeeder<G,V,R> debugTo(Appendable dest_ifNonNull)  {
    public LengthInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
 
-   @see  LengthInRange
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  LengthInRange
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LengthInRangeValidator extends IntInRangeValidator  {
 //constructors...START
@@ -46,13 +46,13 @@ public class LengthInRangeValidator extends IntInRangeValidator  {
    /**
       <p>Create a new {@code LengthInRangeValidator} as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link IntInRangeValidator#IntInRangeValidator(IntInRangeValidator) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #LengthInRangeValidator(RuleType, LengthInRangeValidator_Fieldable) this(rti,vlir_f)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #LengthInRangeValidator(RuleType, LengthInRangeValidator_Fieldable) this(rti,vlir_f)
+    */
    public LengthInRangeValidator(LengthInRangeValidator to_copy)  {
       super(to_copy);
    }
@@ -102,8 +102,8 @@ public class LengthInRangeValidator extends IntInRangeValidator  {
    }
    /**
     * <p>Get a duplicate of this object.</p>
-      @return  <code>(new {@link #LengthInRangeValidator(LengthInRangeValidator) LengthInRangeValidator}(this))</code>
-    **/
+    * @return  <code>(new {@link #LengthInRangeValidator(LengthInRangeValidator) LengthInRangeValidator}(this))</code>
+    */
    public LengthInRangeValidator getObjectCopy()  {
       return  (new LengthInRangeValidator(this));
    }

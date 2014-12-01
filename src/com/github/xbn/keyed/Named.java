@@ -17,19 +17,19 @@ package  com.github.xbn.keyed;
 /**
    <p>{@code Keyed} where the key is a string (which contains only letters, digts, and underscores).</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface Named extends Keyed<String>  {
    /**
-      @return  A string containing only letters, digits, and underscores.
-    **/
+    * @return  A string containing only letters, digits, and underscores.
+    */
    @Override
    String getKey();
    /**
       <p>The key.</p>
 
-      @return  {@link #getKey() getKey}{@code ()}
-    **/
+    * @return  {@link #getKey() getKey}{@code ()}
+    */
    String getName();
 }

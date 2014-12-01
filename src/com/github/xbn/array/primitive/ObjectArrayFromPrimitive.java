@@ -19,13 +19,13 @@ package  com.github.xbn.array.primitive;
 /**
    <p>Translate a primitive array to an object array.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ObjectArrayFromPrimitive  {
    /**
       <p>This constructor does nothing.</p>
-    **/
+    */
    public ObjectArrayFromPrimitive()  {
    }
    /**
@@ -35,14 +35,14 @@ public class ObjectArrayFromPrimitive  {
       <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/a/5606435/2736496">http://stackoverflow.com/a/5606435/2736496</a>}
       <br/>(viewed 12/5/2013)</p>
 
-      @param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
-      @return  If {@code objThatIsAPArray} is <ul>
+    * @param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
+    * @return  If {@code objThatIsAPArray} is <ul>
          <li>{@code null}: {@code null}</li>
          <li>Otherwise (for example), if {@code objThatIsAPArray} is a {@code boolean} array:
       <br/> &nbsp; &nbsp; {@link #get(boolean[], NullContainer, String) get}{@code ((b[])objThatIsAPArray, null, null)}</li>
       </ul>
-      @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitive(Object) ObjThatIsPrimitiveArrayUtil#isPrimitive(o)
-    **/
+    * @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitive(Object) ObjThatIsPrimitiveArrayUtil#isPrimitive(o)
+    */
    public static final Object[] getFromUnknown(Object objThatIsAPArray, NullContainer nnull, String cntrName_forNullBad)  {
       if(objThatIsAPArray == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -72,20 +72,20 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code boolean}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
 
-      @see  #get(char[], NullContainer, String) get(char[],s)
-      @see  #get(byte[], NullContainer, String) get(byte[],s)
-      @see  #get(short[], NullContainer, String) get(short[],s)
-      @see  #get(int[], NullContainer, String) get(int[],s)
-      @see  #get(long[], NullContainer, String) get(long[],s)
-      @see  #get(float[], NullContainer, String) get(float[],s)
-      @see  #get(double[], NullContainer, String) get(double[],s)
-    **/
+    * @see  #get(char[], NullContainer, String) get(char[],s)
+    * @see  #get(byte[], NullContainer, String) get(byte[],s)
+    * @see  #get(short[], NullContainer, String) get(short[],s)
+    * @see  #get(int[], NullContainer, String) get(int[],s)
+    * @see  #get(long[], NullContainer, String) get(long[],s)
+    * @see  #get(float[], NullContainer, String) get(float[],s)
+    * @see  #get(double[], NullContainer, String) get(double[],s)
+    */
    public static final Object[] get(boolean[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -106,13 +106,13 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code char}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
-      @see  #get(boolean[], NullContainer, String) get(b[])
-    **/
+    * @see  #get(boolean[], NullContainer, String) get(b[])
+    */
    public static final Object[] get(char[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -133,13 +133,13 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code byte}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
-      @see  #get(boolean[], NullContainer, String) get(b[])
-    **/
+    * @see  #get(boolean[], NullContainer, String) get(b[])
+    */
    public static final Object[] get(byte[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -160,13 +160,13 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code short}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
-      @see  #get(boolean[], NullContainer, String) get(b[])
-    **/
+    * @see  #get(boolean[], NullContainer, String) get(b[])
+    */
    public static final Object[] get(short[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -187,13 +187,13 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code int}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
-      @see  #get(boolean[], NullContainer, String) get(b[])
-    **/
+    * @see  #get(boolean[], NullContainer, String) get(b[])
+    */
    public static final Object[] get(int[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -214,13 +214,13 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code long}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
-      @see  #get(boolean[], NullContainer, String) get(b[])
-    **/
+    * @see  #get(boolean[], NullContainer, String) get(b[])
+    */
    public static final Object[] get(long[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -241,13 +241,13 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code float}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
-      @see  #get(boolean[], NullContainer, String) get(b[])
-    **/
+    * @see  #get(boolean[], NullContainer, String) get(b[])
+    */
    public static final Object[] get(float[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -268,13 +268,13 @@ public class ObjectArrayFromPrimitive  {
    /**
       <p>Get a {@code java.lang.Object} array from an array of {@code double}-s.</p>
 
-      @return  If {@code prmtv_array} is<ul>
+    * @return  If {@code prmtv_array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null} and has no elements: <code>org.apache.commons.lang3.{@link org.apache.commons.lang3.ArrayUtils ArrayUtils}.{@link org.apache.commons.lang3.ArrayUtils#EMPTY_OBJECT_ARRAY EMPTY_OBJECT_ARRAY}</code></li>
          <li>Otherwise: A new {@code Object} array containing all elements in {@code prmtv_array}.</li>
       </ul>
-      @see  #get(boolean[], NullContainer, String) get(b[])
-    **/
+    * @see  #get(boolean[], NullContainer, String) get(b[])
+    */
    public static final Object[] get(double[] prmtv_array, NullContainer nnull, String cntrName_forNullBad)  {
       if(prmtv_array == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);

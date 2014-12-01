@@ -16,49 +16,49 @@ package  com.github.xbn.linefilter;
 /**
    <p>If a child block is active on the very first line of the root block, should the text of the {@linkplain #YES child} or {@linkplain #NO parent}-block be returned?</p>
 
-   @see  FilteredLineIterator#appendAllBlockLines(java.lang.StringBuilder, java.lang.String, com.github.xbn.linefilter.StripFinalNewLine, com.github.xbn.linefilter.ChildOnFirstLine) FilteredLineIterator#appendAllBlockLines
-   @since  0.1.2
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  FilteredLineIterator#appendAllBlockLines(java.lang.StringBuilder, java.lang.String, com.github.xbn.linefilter.StripFinalNewLine, com.github.xbn.linefilter.ChildOnFirstLine) FilteredLineIterator#appendAllBlockLines
+ * @since  0.1.2
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum ChildOnFirstLine  {
    /**
       <p>Return the child-block.</p>
 
-      @see  #NO
-      @see  #isYes()
-    **/
+    * @see  #NO
+    * @see  #isYes()
+    */
    YES,
    /**
       <p>Return the parent block.</p>
 
-      @see  #YES
-      @see  #isNo()
-    **/
+    * @see  #YES
+    * @see  #isNo()
+    */
    NO;
    /**
       <p>Is this {@code ChildOnFirstLine} equal to {@code YES}?.</p>
 
-      @return  <code>this == {@link #YES}</code>
+    * @return  <code>this == {@link #YES}</code>
 
-      @see  #isNo()
-    **/
+    * @see  #isNo()
+    */
    public final boolean isYes()  {
       return  this == YES;
    }
    /**
       <p>Is this {@code ChildOnFirstLine} equal to {@code NO}?.</p>
 
-      @return  <code>this == {@link #NO}</code>
-      @see  #isYes()
-    **/
+    * @return  <code>this == {@link #NO}</code>
+    * @see  #isYes()
+    */
    public final boolean isNo()  {
       return  this == NO;
    }
    /**
       <p>Return {@code ChildOnFirstLine.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
 
-      @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
-    **/
+    * @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
+    */
    public static final ChildOnFirstLine getForBoolean(boolean flag)  {
       return  (flag ? YES : NO);
    }

@@ -17,8 +17,8 @@ package  com.github.xbn.lang;
 /**
    <p>Thrown when parameters are (potentially) individually valid, but taken together are invalid.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IllegalArgumentStateException extends IllegalArgumentException  {
    /**
@@ -27,25 +27,25 @@ public class IllegalArgumentStateException extends IllegalArgumentException  {
    private static final long serialVersionUID = 1827662705643375426L;
    /**
       <p>Create a IllegalArgumentStateException with no error message.</p>
-    **/
+    */
    public IllegalArgumentStateException()  {
       super();
    }
    /**
       <p>Create a IllegalArgumentStateException.</p>
-    **/
+    */
    public IllegalArgumentStateException(String message)  {
       super(message);
    }
    /**
       <p>Create a IllegalArgumentStateException with no error message.</p>
-    **/
+    */
    public IllegalArgumentStateException(Throwable cause)  {
       super(cause);
    }
    /**
       <p>Create a IllegalArgumentStateException.</p>
-    **/
+    */
    public IllegalArgumentStateException(String message, Throwable cause)  {
       super(message, cause);
    }

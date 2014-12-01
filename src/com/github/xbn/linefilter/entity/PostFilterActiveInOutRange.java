@@ -21,15 +21,15 @@ package  com.github.xbn.linefilter.entity;
 /**
    <p>A {@code RawOnOffEntityFilter} that is dependant on a specific entity's fully-active count being in a range.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PostFilterActiveInOutRange extends RawPostFilterActiveInOutRange<String>  {
    /**
       <p>Create a new instance from an entity, range, and when-in setting.</p>
 
-      @param  entity_toTrack  The entity whose {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#getFullyActiveCount() active count} should be monitored. Get with {@link #getEntityToTrack() getEntityToTrack}{@code ()}.
-    **/
+    * @param  entity_toTrack  The entity whose {@linkplain com.github.xbn.linefilter.entity.raw.RawEntity#getFullyActiveCount() active count} should be monitored. Get with {@link #getEntityToTrack() getEntityToTrack}{@code ()}.
+    */
    public PostFilterActiveInOutRange(RawEntity<String> entity_toTrack, LengthInRange range, OnOffAbort when_inRange, OnOffAbort when_outOfRange, OutOfRangeResponseWhen response, Appendable debug_ifNonNull)  {
       super(entity_toTrack, range, when_inRange, when_outOfRange, response, debug_ifNonNull);
    }

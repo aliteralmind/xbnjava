@@ -18,8 +18,8 @@ package  com.github.xbn.number;
 /**
    <p>Crash if an int is less or greater than another number.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfIntIs  {//extends CrashIfObject  {
    public static final void lessThanZero(int num, String num_name, Object xtra_errInfo)  {
@@ -39,9 +39,9 @@ public class CrashIfIntIs  {//extends CrashIfObject  {
    /*
       <p>If a minimum number is greater than a maximum, crash.</p>
 
-      @param  num  The int to test.
-      @param  max  The maximum bound.
-      @exception  IllegalArgumentException  If {@code num} is greater than {@code max}. Its message is constructed by {@link com.github.xbn.lang.CrashIfBase#getXMsg(String, Object) getXMsg}{@code (s,o)}
+    * @param  num  The int to test.
+    * @param  max  The maximum bound.
+    * @exception  IllegalArgumentException  If {@code num} is greater than {@code max}. Its message is constructed by {@link com.github.xbn.lang.CrashIfBase#getXMsg(String, Object) getXMsg}{@code (s,o)}
    public static final CrashIfIntIs greaterThan(int num, int max, String num_name, String max_nameName, Object xtra_errInfo)  {
       if(num > max)  {
          throw  new IllegalArgumentStateException(getXMsg(num_name + " (" + num + ") is greater than " + gtBndPstMaybeName(max_nameName, max), xtra_errInfo));

@@ -17,8 +17,8 @@ package  com.github.xbn.analyze.alter;
 /**
    <p>{@code Alterer}s change something.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface Alterer extends Analyzer  {
    /**
@@ -26,10 +26,10 @@ public interface Alterer extends Analyzer  {
 
       <p>Sets {@link #needsToBeDeleted() needsToBeDeleted}{@code ()} and {@link #wasAltered() wasAltered}{@code ()} to {@code false}.</p>
 
-      @see  #resetCounts()
-      @see  #mayDelete()
-      @see  #isExpired()
-    **/
+    * @see  #resetCounts()
+    * @see  #mayDelete()
+    * @see  #isExpired()
+    */
    void resetState();
 
    /**
@@ -40,8 +40,8 @@ public interface Alterer extends Analyzer  {
          <li>{@link #getAlteredCount() getAlteredCount}{@code ()}, and</li>
          <li>{@link #getDeletedCount() getDeletedCount}{@code ()}</li>
       </ul>to zero.</p>
-      @see  #resetState()
-    **/
+    * @see  #resetState()
+    */
    void resetCounts();
    /**
       <p>Was the thing actually altered <i>by this {@code Alterer}</i>?.</p>
@@ -52,12 +52,12 @@ public interface Alterer extends Analyzer  {
       <br/> &nbsp; &nbsp; {@link #needsToBeDeleted() needsToBeDeleted}{@code ()}
       <br/>will be {@code true}. Delete the element and then call {@link #resetForDeletion() resetForDeletion}{@code ()}.</p>
 
-      @return <ul>
+    * @return <ul>
          <li><b>{@code true}:</b>  When the thing was altered by this {@code Alterer} class.</li>
          <li><b>{@code false}:</b> If {@code needsToBeDeleted()} is {@code true}, then it must be manually deleted. Otherwise, the value was not altered, and does not need to be (this case is only possible when there is a condition that must be met before the alteration can take place).</li>
          </ul></li>
       </ul>
-    **/
+    */
    boolean wasAltered();
    /**
       <p>Updates the necessary count after a manual deletion, and ends with a call to {@code resetState()}.  This needs to be called even if no further alterations/analyses are needed.</p>
@@ -70,71 +70,71 @@ public interface Alterer extends Analyzer  {
          <li>Calls {@link #resetState() resetState}{@code ()}</li>
       </ol></p>
 
-      @see  #wasAltered()
-    **/
+    * @see  #wasAltered()
+    */
    void resetForDeletion();
    /**
       <p>When the thing-to-be-altered must be manually deleted.</p>
 
-      @return  {@code false}  If {@link #mayDelete() mayDelete}{@code ()} is {@code false}.
-      @see  #wasAltered()
-    **/
+    * @return  {@code false}  If {@link #mayDelete() mayDelete}{@code ()} is {@code false}.
+    * @see  #wasAltered()
+    */
    boolean needsToBeDeleted();
    /**
       <p>Is it possible that the alteration may be a deletion?. This value must never change.</p>
 
       <p>This is useful when the length of a container must be known before its elements are altered, such as when creating arrays. When there is a possibility of deletion, elements must be altered and held in a temporary container before the array can be created. When {@code true}, the need for a temporary container is avoided.</p>
 
-      @return  <ul>
+    * @return  <ul>
          <li>{@code true}  It is possible for the alteration to be a {@link #needsToBeDeleted() deletion}.</li>
          <li>{@code false} When {@link #isExpired() isExpired}{@code ()} is {@code true}, or the alteration will never be a deletion.</li>
       </ul>
-      @see  com.github.xbn.lang.Expirable#isExpired()
-    **/
+    * @see  com.github.xbn.lang.Expirable#isExpired()
+    */
    boolean mayDelete();
    /**
       <p>How many <i>things</i> were analyzed (regardless if altered)?.</p>
 
-      @return  {@link #getAlteredCount() getAlteredCount}{@code ()}. <i>Sub-classes may require certain conditions to be met before an alteration is made. In this case, this will be greater-than-or-equal-to {@code getAlteredCount()}.</i>
+    * @return  {@link #getAlteredCount() getAlteredCount}{@code ()}. <i>Sub-classes may require certain conditions to be met before an alteration is made. In this case, this will be greater-than-or-equal-to {@code getAlteredCount()}.</i>
 
-      @see  #getDeletedCount()
-      @see  #getAlteredCount()
-    **/
+    * @see  #getDeletedCount()
+    * @see  #getAlteredCount()
+    */
    int getAnalyzedCount();
    /**
       <p>How many things were deleted?.</p>
 
-      @return  The number of <i>things</i> deleted since the last call {@link #resetCounts() resetCounts}{@code ()}. This is always less-than-or-equal-to {@link #getAlteredCount() getAlteredCount}{@code ()}.
-      @see  #getAnalyzedCount()
-    **/
+    * @return  The number of <i>things</i> deleted since the last call {@link #resetCounts() resetCounts}{@code ()}. This is always less-than-or-equal-to {@link #getAlteredCount() getAlteredCount}{@code ()}.
+    * @see  #getAnalyzedCount()
+    */
    int getDeletedCount();
    /**
       <p>How many things were actually altered?. This number includes the amount of {@link #getDeletedCount() deletions} made.</p>
 
-      @see  #getAnalyzedCount()
-      @see  #isComplete()
-    **/
+    * @see  #getAnalyzedCount()
+    * @see  #isComplete()
+    */
    int getAlteredCount();
    /**
       <p>Is it required that this alterer actually makes an alteration?.</p>
-    **/
+    */
    boolean isRequired();
    /**
       <p>Was an alteration made (at any time in the past) and, if a multi-part alteration, did it finish?.</p>
 
-      @return  If {@link #isRequired() isRequired}{@code ()} is {@code false}, this always returns {@code true}. Otherwise, at it's simplest, this can return
+    * @return  If {@link #isRequired() isRequired}{@code ()} is {@code false}, this always returns {@code true}. Otherwise, at it's simplest, this can return
       <br/> &nbsp; &nbsp; <code>({@link #getAlteredCount() getAlteredCount}() != 0)</code>
-      @see  #appendIncompleteInfo(StringBuilder)
-    **/
+    * @see  #appendIncompleteInfo(StringBuilder)
+    */
    boolean isComplete();
    /**
       <p>When a multi-step alteration did not finish, append the information about the incomplete steps.</p>
 
       <p>At it's simplest, this should just append the value of the alterer's {@code toString()}.</p>
 
-      @param  to_appendTo  May not be {@code null}.
-      @return  {@code to_appendTo}
-      @exception  IllegalStateException  If {@link #isComplete() isComplete}{@code ()} is {@code true}.
-    **/
+    * @param  to_appendTo  May not be {@code null}.
+    * @return  {@code to_appendTo}
+    * @exception  IllegalStateException  If {@link #isComplete() isComplete}{@code ()} is {@code true}.
+    */
    StringBuilder appendIncompleteInfo(StringBuilder to_appendTo);
 }

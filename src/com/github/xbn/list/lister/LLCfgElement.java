@@ -27,9 +27,9 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 
    <p>If the output of any configuration item (including  <code><i>[{@link com.github.xbn.list.lister.LLConfigBase LLConfigBase}]</i>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}()</code>) contains a {@link #sDISPLAY_IDX_MARKER}, it is replaced with the element's index. Only the first [left-most] marker in each item is recognized. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}. This also includes the string-value of the element itself, if and only if it is altered.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; &quot;{@code ~index~}&quot;</p>
-    **/
+    */
    public static final String sDISPLAY_IDX_MARKER = "~index~";
    /**
       <p>Create a new {@code LLCfgElement} with defaults.</p>
@@ -50,7 +50,7 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 
       <p>This constructor is equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase super}{@code ()}</p>
-    **/
+    */
    public LLCfgElement(LLCfgElement_Fieldable<E> fieldable)  {
       super(fieldable);
       avIndex = fieldable.getAlterIndex();
@@ -63,10 +63,10 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
          <li>Calls {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase(LLConfigBase) super}{@code (to_copy)}</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
+    */
    public LLCfgElement(LLCfgElement<E> to_copy)  {
       super(to_copy);
       avIndex = to_copy.getAlterIndex();
@@ -78,26 +78,26 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 
       <p>The <i>unaltererd</i> index is analyzed by the index-filter.</p>
 
-      @param  av_i  If {@code null}, indexes are presented without change. Get with {@link #getAlterIndex() getAlterIndex}{@code ()}
-      @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
-    **/
+    * @param  av_i  If {@code null}, indexes are presented without change. Get with {@link #getAlterIndex() getAlterIndex}{@code ()}
+    * @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
+    */
 //setters...END
 //getters...START
    /**
       <p>Alters the index.</p>
 
-      @return  YYY
-      @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
-    **/
+    * @return  YYY
+    * @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
+    */
    public ValueAlterer<Integer,Integer> getAlterIndex()  {
       return  avIndex;
    }
    /**
       <p>Alters the value.</p>
 
-      @return  YYY
-      @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
-    **/
+    * @return  YYY
+    * @see  #LLCfgElement(LLCfgElement_Fieldable) this(llce_f)
+    */
    public ValueAlterer<E,E> getAlterValue()  {
       return  aValue;
    }
@@ -106,8 +106,8 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
    /**
     * <p>Get a duplicate of this object.</p>
 
-      @return  <code>(new {@link #LLCfgElement(LLCfgElement) LLCfgElement}&lt;E&gt;(this))</code>
-    **/
+    * @return  <code>(new {@link #LLCfgElement(LLCfgElement) LLCfgElement}&lt;E&gt;(this))</code>
+    */
    public LLCfgElement<E> getObjectCopy()  {
       return  (new LLCfgElement<E>(this));
    }

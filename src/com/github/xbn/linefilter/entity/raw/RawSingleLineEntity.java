@@ -48,8 +48,8 @@ package  com.github.xbn.linefilter.entity.raw;
    ...END
   -->
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RawSingleLineEntity<L> extends RawLineEntity<L> implements RawChildEntity<L>  {
    private final ValueAlterer<L,L> alterer;
@@ -57,8 +57,8 @@ public class RawSingleLineEntity<L> extends RawLineEntity<L> implements RawChild
    /**
       <p>Create a new and <i>temporarily unusable</i> instance from a fieldable.</p>
 
-      @param  fieldable  May not be {@code null}, and all relevant fields must conform to the restrictions as documented in the <a href="#cfg">setters</a>.
-    **/
+    * @param  fieldable  May not be {@code null}, and all relevant fields must conform to the restrictions as documented in the <a href="#cfg">setters</a>.
+    */
    public RawSingleLineEntity(RawSingleLineEntity_Fieldable<L> fieldable)  {
       super(fieldable);
       alterer = fieldable.getAlterer();
@@ -105,9 +105,9 @@ public class RawSingleLineEntity<L> extends RawLineEntity<L> implements RawChild
       return  getAlterer().appendRules(to_appendTo);
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #toString()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #toString()
+    */
    public StringBuilder appendToString(StringBuilder to_appendTo)  {
       to_appendTo.append("getAlterer()=").append(getAlterer()).append(", ");
 
@@ -168,7 +168,7 @@ public class RawSingleLineEntity<L> extends RawLineEntity<L> implements RawChild
 
    /**
       <p>Does nothing.</p>
-    **/
+    */
    public void declareEndOfInput()  {
       incrementFullyActiveCountIfWas();
       crashIfRequiredAndNeverActive();

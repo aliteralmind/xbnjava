@@ -19,8 +19,8 @@ package  com.github.xbn.io;
 /**
    <p>Convenience functions for creating {@code TextAppenter}s.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class NewTextAppenterFor  {
@@ -33,9 +33,9 @@ public class NewTextAppenterFor  {
    /**
       <p>Creates a new appenter with an appendable, or an unusable appenter if its {@code null}</p>
 
-      @return  <code>((toApndTo_ifNonNull == null) ? TextAppenter.{@link TextAppenter#UNUSABLE UNUSABLE}
+    * @return  <code>((toApndTo_ifNonNull == null) ? TextAppenter.{@link TextAppenter#UNUSABLE UNUSABLE}
       <br/> &nbsp; &nbsp; : &nbsp;{@link #appendable(Appendable) appendable}(toApndTo_ifNonNull))</code>
-    **/
+    */
    public static final TextAppenter appendableUnusableIfNull(Appendable toApndTo_ifNonNull)  {
       return  ((toApndTo_ifNonNull == null) ? TextAppenter.UNUSABLE
          :  appendable(toApndTo_ifNonNull));

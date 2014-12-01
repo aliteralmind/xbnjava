@@ -17,16 +17,16 @@ package  com.github.xbn.array.primitive;
 /**
    <p>If an object that is <i>known to be a primitive array</i> is {@code null}, or the index for it is invalid, crash--otherwise <i>return</i> the causing error.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfObjThatIsPrimitiveArray  {
    /**
       <p>If an object that is <i>known to be a primitive array</i> is {@code null}, or the index for it is invalid, crash--otherwise <i>return</i> the causing error.</p>
 
-      @param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
-      @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitiveType(Class) isPrimitiveType(cls)
-    **/
+    * @param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
+    * @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitiveType(Class) isPrimitiveType(cls)
+    */
    public static final void nullOrBadIndex(Object objThatIsAPArray, int index, String idx_name, String obj_name)  {
       if(objThatIsAPArray == null)  {
          throw  new NullPointerException(obj_name);

@@ -23,8 +23,8 @@ package  com.github.xbn.analyze.validate;
 /**
    <p>YYY</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class NewValueValidatorFor  {
@@ -34,11 +34,11 @@ public class NewValueValidatorFor  {
    /**
       <p>Get a new {@code ValueValidator} where {@code null} (or non-{@code null}) is the <i>only good value</i>.</p>
 
-      @return  If <code>nnull.{@link com.github.xbn.lang.Null#isOk() ok}()</code> is<ul>
+    * @return  If <code>nnull.{@link com.github.xbn.lang.Null#isOk() ok}()</code> is<ul>
          <li>{@code true}: <code>NewValueValidatorFor.&lt;O&gt;{@link #onlyNullGood(ValidResultFilter, Appendable) onlyNullGood}(filter_doNothingIfNull, dbgDest_ifNonNull)</code></li>
          <li>{@code false}: <code>NewValueValidatorFor.&lt;O&gt;{@link #nullBad(ValidResultFilter, Appendable) nullBad}(filter_doNothingIfNull, dbgDest_ifNonNull)</code></li>
       </ul>
-    **/
+    */
    public static final <O> ValueValidator<O> nullIs(Null nnull, ValidResultFilter filter_doNothingIfNull, Appendable dbgDest_ifNonNull)  {
       try  {
          return  (nnull.isOk()
@@ -51,9 +51,9 @@ public class NewValueValidatorFor  {
    /**
       <p>Get a new {@code ValueValidator} where {@code null} is good, and non-{@code null} is bad.</p>
 
-      @return  <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) nullOk}(false).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#invert(boolean) invert}(true).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
-      @see  #nullBad(ValidResultFilter, Appendable) nullBad(vrf,apbl)
-    **/
+    * @return  <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) nullOk}(false).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#invert(boolean) invert}(true).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
+    * @see  #nullBad(ValidResultFilter, Appendable) nullBad(vrf,apbl)
+    */
    @SuppressWarnings("unchecked")
    public static final <O> ValueValidator<O> onlyNullGood(ValidResultFilter filter_doNothingIfNull, Appendable dbgDest_ifNonNull)  {
       return  buildCIFilterNull(
@@ -62,9 +62,9 @@ public class NewValueValidatorFor  {
    /**
       <p>Get a new {@code ValueValidator} where {@code null} is bad, and non-{@code null} is good.</p>
 
-      @return  <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) nullOk}(false).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
+    * @return  <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) nullOk}(false).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
 
-    **/
+    */
    public static final <O> ValueValidator<O> nullBad(ValidResultFilter filter_doNothingIfNull, Appendable dbgDest_ifNonNull)  {
       return  buildCIFilterNull(
          new ValueValidator_Cfg().nullOk(false).invert(false).debugTo(dbgDest_ifNonNull).filter(filter_doNothingIfNull));
@@ -72,13 +72,13 @@ public class NewValueValidatorFor  {
    /**
       <p>Get a new {@code ValueValidator} where anything is good.</p>
 
-      @return   <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
+    * @return   <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
 
-      @see  #nullBad(ValidResultFilter, Appendable) nullBad
-      @see  #nullIs(Null, ValidResultFilter, Appendable) nullIs
-      @see  #onlyNullGood(ValidResultFilter, Appendable) onlyNullGood
-      @see  #impossible(ValidResultFilter, Appendable) impossible
-    **/
+    * @see  #nullBad(ValidResultFilter, Appendable) nullBad
+    * @see  #nullIs(Null, ValidResultFilter, Appendable) nullIs
+    * @see  #onlyNullGood(ValidResultFilter, Appendable) onlyNullGood
+    * @see  #impossible(ValidResultFilter, Appendable) impossible
+    */
    public static final <O> ValueValidator<O> unrestricted(ValidResultFilter filter_doNothingIfNull, Appendable dbgDest_ifNonNull)  {
       return  buildCIFilterNull(
          new ValueValidator_Cfg().nullOk(true).invert(false).debugTo(dbgDest_ifNonNull).filter(filter_doNothingIfNull));
@@ -95,9 +95,9 @@ public class NewValueValidatorFor  {
    /**
       <p>Get a new {@code ValueValidator} where the value is always bad.</p>
 
-      @return  <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#invert(boolean) invert}(true).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
-      @see  #nullBad(ValidResultFilter, Appendable) nullBad(vrf,apbl)
-    **/
+    * @return  <code>new NullnessValidator.{@link com.github.xbn.analyze.validate.z.ValueValidator_Cfg#ValueValidator_Cfg() Cfg}().{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#invert(boolean) invert}(true).{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#build() build}()</code>
+    * @see  #nullBad(ValidResultFilter, Appendable) nullBad(vrf,apbl)
+    */
    public static final <O> ValueValidator<O> impossible(ValidResultFilter filter_doNothingIfNull, Appendable dbgDest_ifNonNull)  {
       return  buildCIFilterNull(
          new ValueValidator_Cfg().nullOk(true).invert(true).debugTo(dbgDest_ifNonNull).filter(filter_doNothingIfNull));

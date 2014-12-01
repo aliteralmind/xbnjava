@@ -43,8 +43,8 @@ package  com.github.xbn.linefilter.entity.raw;
    com.github.xbn.linefilter.entity.raw.z.RawLineEntity_CfgForNeeder#chainID(boolean, Object)
    </ul></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> implements RawChildEntity<L>   {
    private final RawParentEntity<L> parent         ;
@@ -63,8 +63,8 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
    /**
       <p>Create a new and <i>temporarily unusable</i> instance from a fieldable.</p>
 
-      @param  fieldable  May not be {@code null}, and all relevant fields must conform to the restrictions as documented in the setters of all sub-classes (<code><a href="{@docRoot}/com/github/xbn/linefilter/entity/SingleLineEntity.html#cfg">SingleLineEntity</a></code>, <code><a href="{@docRoot}/com/github/xbn/linefilter/entity/BlockEntity.html#cfg">BlockEntity</a></code>, <code><a href="{@docRoot}/com/github/xbn/linefilter/entity/StealthBlockEntity.html#cfg">StealthBlockEntity</a></code>).
-    **/
+    * @param  fieldable  May not be {@code null}, and all relevant fields must conform to the restrictions as documented in the setters of all sub-classes (<code><a href="{@docRoot}/com/github/xbn/linefilter/entity/SingleLineEntity.html#cfg">SingleLineEntity</a></code>, <code><a href="{@docRoot}/com/github/xbn/linefilter/entity/BlockEntity.html#cfg">BlockEntity</a></code>, <code><a href="{@docRoot}/com/github/xbn/linefilter/entity/StealthBlockEntity.html#cfg">StealthBlockEntity</a></code>).
+    */
    public RawLineEntity(RawLineEntity_Fieldable<L> fieldable)  {
       super();
 
@@ -161,8 +161,8 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
    /**
       <p>The outputter for diagnostics on every analyzed line.</p>
 
-      @see  com.github.xbn.linefilter.FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
-    **/
+    * @see  com.github.xbn.linefilter.FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity)
+    */
    public TextAppenter getDebugAptrEveryLine()  {
       return  dbgAptrEveryLine;
    }
@@ -300,15 +300,15 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
       return  to_appendTo;
    }
    /**
-      @return  <code>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</code>
-    **/
+    * @return  <code>{@link #appendToString(StringBuilder) appendToString}(new StringBuilder()).toString()</code>
+    */
    public String toString()  {
       return  appendToString(new StringBuilder()).toString();
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #toString()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #toString()
+    */
    public StringBuilder appendToString(StringBuilder to_appendTo)  {
       try  {
          to_appendTo.append("\"");
@@ -344,8 +344,8 @@ public abstract class RawLineEntity<L> extends AbstractValueAlterer<L,L> impleme
    /**
       <p><i>Do not use</i>--Use {@code getAlteredPostResetCheck} instead.</p>
 
-      @exception  UnsupportedOperationException
-    **/
+    * @exception  UnsupportedOperationException
+    */
    public final RawLineEntity<L> getObjectCopy()  {
       throw  new UnsupportedOperationException("Use getAlteredPostResetCheck");
    }

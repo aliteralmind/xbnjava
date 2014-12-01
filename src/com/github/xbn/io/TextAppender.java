@@ -19,8 +19,8 @@ package  com.github.xbn.io;
 /**
    <p>Decorator for {@code Appendable}-s, including conditional printing. For runtime-only errors, see {@link TextAppenter}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class TextAppender implements Appendable  {
    private String sLineSep = null;
@@ -37,14 +37,14 @@ public abstract class TextAppender implements Appendable  {
    }
    /**
       <p>Set the line separator to something other than &quot;&quot;</p>
-    **/
+    */
    public final void setLineSeparator(String separator)  {
       CrashIfString.nullEmpty(separator, "separator", null);
       sLineSep = separator;
    }
    /**
       <p>Get the line separator for calls to {@code appendln()}.</p>
-    **/
+    */
    public final String getLineSeparator()  {
       return  sLineSep;
    }

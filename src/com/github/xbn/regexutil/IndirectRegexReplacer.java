@@ -20,41 +20,41 @@ package  com.github.xbn.regexutil;
 /**
    <p>A {@code RegexReplacer} for indirect replacements only.</p>
 
-   @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IndirectRegexReplacer extends RegexReplacer  {
    /**
       <p>Create a new instance for an <i>indirect replacement only</i>, with a regular-expression string.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(String) findWhat}(find_whatRegex))</code></p>
 
-      @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
-    **/
+    * @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
+    */
    public IndirectRegexReplacer(String find_whatRegex)  {
       super(new RegexReplacer_Cfg().findWhat(find_whatRegex));
    }
    /**
       <p>Create a new instance for an <i>indirect replacement only</i>, with a regular-expression string.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(String, int) findWhat}(find_whatRegex, bit_flags))</code></p>
 
-      @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
-    **/
+    * @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
+    */
    public IndirectRegexReplacer(String find_whatRegex, int bit_flags)  {
       super(new RegexReplacer_Cfg().findWhat(find_whatRegex, bit_flags));
    }
    /**
       <p>Create a new instance for an <i>indirect replacement only</i>, with a pattern.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(Pattern) findWhat}(pattern_toFind))</code></p>
 
-      @see  <a href="#indirect">Definition: indirect</a>
-    **/
+    * @see  <a href="#indirect">Definition: indirect</a>
+    */
    public IndirectRegexReplacer(Pattern pattern_toFind)  {
       super(new RegexReplacer_Cfg().findWhat(pattern_toFind));
    }

@@ -18,8 +18,8 @@ package  com.github.xbn.util.itr;
 /**
    <p>For building iterators that return, for each element in an indexable container, the <i>length</i> of its {@code toString()}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractElementTSLengthIterator<R> extends AbstractIndexableIterator<R,Integer>  {
 //constructors...START
@@ -34,9 +34,9 @@ public abstract class AbstractElementTSLengthIterator<R> extends AbstractIndexab
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.util.itr.AbstractIndexableIterator#AbstractIndexableIterator(Object, int, int) super}{@code (indexable_cntrOfR, idx_start, idx_endX)}</p>
-    **/
+    */
    public AbstractElementTSLengthIterator(Object indexable_cntrOfR, int idx_start, int idx_endX)  {
       super(indexable_cntrOfR, idx_start, idx_endX, IteratorDirection.LOW_TO_HIGH);
    }

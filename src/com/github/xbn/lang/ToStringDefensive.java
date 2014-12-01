@@ -18,29 +18,29 @@ package  com.github.xbn.lang;
 /**
    <p>Gets the {@code toString()} of an object, handling the possibility that it throws an exception.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ToStringDefensive  {
    /**
       <p>Get an object's {@code toString()}, anticipating the possibility of it throwing an exception.</p>
 
-      @return  {@link #append(Appendable, Object, String, int) append}{@code ((new StringBuilder()), obj_forToStr, objOrCntr_name, idx_ofObjInCntr)}
-    **/
+    * @return  {@link #append(Appendable, Object, String, int) append}{@code ((new StringBuilder()), obj_forToStr, objOrCntr_name, idx_ofObjInCntr)}
+    */
    public static final String get(Object obj_forToStr, String objOrCntr_name, int idx_ofObjInCntr)  {
       return  append((new StringBuilder()), obj_forToStr, objOrCntr_name, idx_ofObjInCntr).toString();
    }
    /**
       <p>Append an object's {@code toString()}, anticipating the possibility of it throwing an exception.</p>
 
-      @param  obj_forToStr  The object whose {@code toString()} is needed. May not be {@code null}.
-      @param  objOrCntr_name  Descriptive name of {@code obj_forToStr}. <i>Should</i> not be {@code null} or empty.
-      @return  If {@code obj_forToStr.toString()}<ul>
+    * @param  obj_forToStr  The object whose {@code toString()} is needed. May not be {@code null}.
+    * @param  objOrCntr_name  Descriptive name of {@code obj_forToStr}. <i>Should</i> not be {@code null} or empty.
+    * @return  If {@code obj_forToStr.toString()}<ul>
          <li>Returns normally: {@code obj_forToStr.toString()}</li>
          <li>Fails for any reason: A diagnostic string stating {@code objOrCntr_name + &quot;.toString()&quot;} failed, with the exception's toString() appended.</li>
       </ul>
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public static final Appendable append(Appendable to_appendTo, Object obj_forToStr, String objOrCntr_name, int idx_ofObjInCntr)  {
       String sTs = null;
       try  {

@@ -66,8 +66,8 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
       <p>Create a new {@code VzblPadChop}.</p>
 
 
-      @see  #VzblPadChop(VzblPadChop) this(padchop)
-    **/
+    * @see  #VzblPadChop(VzblPadChop) this(padchop)
+    */
    public VzblPadChop(DifferentGoalLengths gl_da, VzblPadChop_Fieldable fieldable)  {
       super(fieldable);
       bTrimR =  fieldable.doTrimRight();
@@ -146,10 +146,10 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
       <p>This<ol>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) this(idgl,vpc_cfn)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #VzblPadChop(DifferentGoalLengths, VzblPadChop_Fieldable) this(idgl,vpc_cfn)
+    */
    public VzblPadChop(VzblPadChop to_copy)  {
       super(to_copy);
       bTrimR =  to_copy.doTrimRight();
@@ -166,95 +166,95 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
    /**
       <p>Is the string trimmed on the left side?.</p>
 
-      @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) VzblPadChop_Cfg#trim(b,b)
-      @see  #doTrimLeftRight()
-      @see  #doTrimRight()
-      @see  #getEscapeAction()
-    **/
+    * @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) VzblPadChop_Cfg#trim(b,b)
+    * @see  #doTrimLeftRight()
+    * @see  #doTrimRight()
+    * @see  #getEscapeAction()
+    */
    public boolean doTrimLeft()  {
       return  bTrimL;
    }
    /**
       <p>Is the string trimmed on the right side?.</p>
 
-      @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) VzblPadChop_Cfg#trim(b,b)
-      @see  #doTrimLeft()
-    **/
+    * @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) VzblPadChop_Cfg#trim(b,b)
+    * @see  #doTrimLeft()
+    */
    public boolean doTrimRight()  {
       return  bTrimR;
    }
    /**
       <p>Will the string be escaped, unescaped, or left alone?.</p>
 
-      @see  #doTrimLeft()
-    **/
+    * @see  #doTrimLeft()
+    */
    public EscapeAction getEscapeAction()  {
       return  eesc;
    }
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) VzblPadChop_Cfg#cfgPad(b,i)
-      @see  #getPad()
-    **/
+    * @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) VzblPadChop_Cfg#cfgPad(b,i)
+    * @see  #getPad()
+    */
    public boolean doPad()  {
       return  bPad;
    }
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) VzblPadChop_Cfg#cfgChop(b,i)
-      @see  #getPad()
-    **/
+    * @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) VzblPadChop_Cfg#cfgChop(b,i)
+    * @see  #getPad()
+    */
    public boolean doChop()  {
       return  bChop;
    }
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) VzblPadPad_Cfg#cfgPad(b,i)
-      @see  #doChop()
-      @see  #doPad()
-      @see  #doPadChop()
-      @see  #doPadFirst()
-      @see  #getChop()
-    **/
+    * @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgPad(boolean, int) VzblPadPad_Cfg#cfgPad(b,i)
+    * @see  #doChop()
+    * @see  #doPad()
+    * @see  #doPadChop()
+    * @see  #doPadFirst()
+    * @see  #getChop()
+    */
    public PadString getPad()  {
       return  ps;
    }
    /**
       <p>YYY</p>
 
-      @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) VzblPadChop_Cfg#cfgChop(b,i)
-      @see  #getPad()
-    **/
+    * @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) VzblPadChop_Cfg#cfgChop(b,i)
+    * @see  #getPad()
+    */
    public ChopString getChop()  {
       return  cs;
    }
    /**
       <p>When both padding and chopping are active, which occurs first?.</p>
 
-      @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#padFirst() VzblPadChop_Cfg#padFirst()
-      @see  #getPad()
-    **/
+    * @see  com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#padFirst() VzblPadChop_Cfg#padFirst()
+    * @see  #getPad()
+    */
    public boolean doPadFirst()  {
       return  bPad1st;
    }
    /**
       <p>Is the string trimmed on both sides?.</p>
 
-      @return  <code>({@link #doTrimLeft() doTrimLeft}() &nbsp;&amp;&amp; &nbsp;{@link #doTrimRight() doTrimRight}())</code>
-      @see  #getPad()
-    **/
+    * @return  <code>({@link #doTrimLeft() doTrimLeft}() &nbsp;&amp;&amp; &nbsp;{@link #doTrimRight() doTrimRight}())</code>
+    * @see  #getPad()
+    */
    public boolean doTrimLeftRight()  {
       return  (doTrimLeft()  &&  doTrimRight());
    }
    /**
       <p>Is the string both padded and chopped?.</p>
 
-      @return  <code>({@link #doPad() doPad}() &nbsp;&amp;&amp; &nbsp;{@link #doChop() doChop}())</code>
-      @see  #getPad()
-    **/
+    * @return  <code>({@link #doPad() doPad}() &nbsp;&amp;&amp; &nbsp;{@link #doChop() doChop}())</code>
+    * @see  #getPad()
+    */
    public boolean doPadChop()  {
       return  (doPad()  &&  doChop());
    }
@@ -299,20 +299,20 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
    /**
       <p>Alter the string as configured.</p>
 
-      @return  <code>{@link #get(int, Object) get}({@link #getGoalLenFromPadChop() getGoalLenFromPadChop}(), text)</code>
-    **/
+    * @return  <code>{@link #get(int, Object) get}({@link #getGoalLenFromPadChop() getGoalLenFromPadChop}(), text)</code>
+    */
    public String get(Object text)  {
       return  get(getGoalLenFromPadChop(), text);
    }
    /**
       <p>Alter the string as configured, with a specific goal-length.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #appendX(Appendable, int, Object) appendX}{@code ((new StringBuilder()), goal_len, text)}</p>
 
-      @param  text  May not be {@code null}.
-      @return  {@code append((new StringBuilder()), goal_len, text).toString()}
-    **/
+    * @param  text  May not be {@code null}.
+    * @return  {@code append((new StringBuilder()), goal_len, text).toString()}
+    */
    public String get(int goal_len, Object text)  {
       return  append((new StringBuilder()), goal_len, text).toString();
    }
@@ -325,7 +325,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
    }
    /**
       <p>YYY</p>
-    **/
+    */
    public final Appendable append(Appendable to_appendTo, int goal_len, Object text)  {
       try  {
          return  appendX(to_appendTo, goal_len, text);
@@ -364,8 +364,8 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
    /**
       <p>Alter the string as configured.</p>
 
-      @return  <code>{@link #appendX(Appendable, int, Object) appendX}(to_appendTo, text, {@link #getGoalLenFromPadChop() getGoalLenFromPadChop}())</code>
-    **/
+    * @return  <code>{@link #appendX(Appendable, int, Object) appendX}(to_appendTo, text, {@link #getGoalLenFromPadChop() getGoalLenFromPadChop}())</code>
+    */
    public Appendable appendX(Appendable to_appendTo, Object text) throws IOException  {
       return  appendX(to_appendTo, getGoalLenFromPadChop(), text);
    }
@@ -385,11 +385,11 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
          </ol></li>
       </ol></p>
 
-      @param  vpc  May not be {@code null}.
-      @param  to_appendTo  May not be {@code null}.
-      @param  text  The string to chop.
-      @param  goal_len  The goal length to chop to. May not be less than one.
-    **/
+    * @param  vpc  May not be {@code null}.
+    * @param  to_appendTo  May not be {@code null}.
+    * @param  text  The string to chop.
+    * @param  goal_len  The goal length to chop to. May not be less than one.
+    */
    public static final Appendable appendX(VzblPadChop vpc, Appendable to_appendTo, int goal_len, Object text) throws IOException  {
 
       if(text == null)  {
@@ -516,8 +516,8 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
    /**
       <p>Duplicate this {@code VzblPadChop}</p>
 
-      @return  <code>(new {@link #VzblPadChop(VzblPadChop) VzblPadChop}(this))</code>
-    **/
+    * @return  <code>(new {@link #VzblPadChop(VzblPadChop) VzblPadChop}(this))</code>
+    */
    public VzblPadChop getObjectCopy()  {
       return  (new VzblPadChop(this));
    }

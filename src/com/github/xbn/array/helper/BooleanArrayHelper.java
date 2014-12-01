@@ -39,15 +39,15 @@ Character char CHARACTER_O CHAR Char
  -->
 
  	@since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BooleanArrayHelper extends AbstractPrimitiveArrayHelper<Boolean>  {
    public BooleanArrayHelper()  {
       super(boolean[].class);
    }
    /**
-      @return  {@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs PrimitiveArrayFromObjThatIs.}{@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs#forBoolean(Object, NullContainer, String) forBoolean}{@code (obj_thatIsPrimArr, nnull, cntrName_forNullBad)}
-    **/
+    * @return  {@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs PrimitiveArrayFromObjThatIs.}{@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs#forBoolean(Object, NullContainer, String) forBoolean}{@code (obj_thatIsPrimArr, nnull, cntrName_forNullBad)}
+    */
    public boolean[] getPrimitiveArray(Object obj_thatIsPrimArr, NullContainer nnull, String cntrName_forNullBad)  {
       return  PrimitiveArrayFromObjThatIs.forBoolean(obj_thatIsPrimArr, nnull, cntrName_forNullBad);
    }
@@ -60,8 +60,8 @@ public class BooleanArrayHelper extends AbstractPrimitiveArrayHelper<Boolean>  {
       }
    }
    /**
-      @return  <code>(new Boolean({@link #getPrimitiveArray(Object, NullContainer, String) getPrimitiveArray}(obj_thatIsPrimArr, NullContainer.{@link com.github.xbn.array.NullContainer#BAD BAD}, array_name)[index]))</code>
-    **/
+    * @return  <code>(new Boolean({@link #getPrimitiveArray(Object, NullContainer, String) getPrimitiveArray}(obj_thatIsPrimArr, NullContainer.{@link com.github.xbn.array.NullContainer#BAD BAD}, array_name)[index]))</code>
+    */
    public Boolean getWrapper(Object obj_thatIsPrimArr, int index, String array_name)  {
       try  {
          return  (new Boolean(getPrimitiveArray(obj_thatIsPrimArr, NullContainer.BAD, array_name)[index]));
@@ -71,14 +71,14 @@ public class BooleanArrayHelper extends AbstractPrimitiveArrayHelper<Boolean>  {
       }
    }
    /**
-      @return  <code>{@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs PrimitiveArrayFromObjThatIs.}{@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs#copyForBoolean(Object, NullContainer, String) copyForBoolean}(obj_thatIsPrimArr, nnull, cntrName_forNullBad)</code>
-    **/
+    * @return  <code>{@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs PrimitiveArrayFromObjThatIs.}{@link com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs#copyForBoolean(Object, NullContainer, String) copyForBoolean}(obj_thatIsPrimArr, nnull, cntrName_forNullBad)</code>
+    */
    public boolean[] getPArrayCopyOrNull(Object obj_thatIsPrimArr, NullContainer nnull, String cntrName_forNullBad)  {
       return  PrimitiveArrayFromObjThatIs.copyForBoolean(obj_thatIsPrimArr, nnull, cntrName_forNullBad);
    }
    /**
-      @return  <code>{@link com.github.xbn.array.primitive.WrapperArrayFromPrimitive WrapperArrayFromPrimitive}.{@link com.github.xbn.array.primitive.WrapperArrayFromPrimitive#get(boolean[], NullContainer, String) get}({@link #getPrimitiveArray(Object, NullContainer, String) getPrimitiveArray}(obj_thatIsPrimArr, nnull, cntrName_forNullBad), nnull, cntrName_forNullBad)</code>
-    **/
+    * @return  <code>{@link com.github.xbn.array.primitive.WrapperArrayFromPrimitive WrapperArrayFromPrimitive}.{@link com.github.xbn.array.primitive.WrapperArrayFromPrimitive#get(boolean[], NullContainer, String) get}({@link #getPrimitiveArray(Object, NullContainer, String) getPrimitiveArray}(obj_thatIsPrimArr, nnull, cntrName_forNullBad), nnull, cntrName_forNullBad)</code>
+    */
    public Boolean[] getWrapperArrayOrNull(Object obj_thatIsPrimArr, NullContainer nnull, String cntrName_forNullBad)  {
       return  WrapperArrayFromPrimitive.get(getPrimitiveArray(obj_thatIsPrimArr, nnull, cntrName_forNullBad), nnull, cntrName_forNullBad);
    }
@@ -89,11 +89,11 @@ public class BooleanArrayHelper extends AbstractPrimitiveArrayHelper<Boolean>  {
       return  StringArrayFromPrimitive.get(getPrimitiveArray(obj_thatIsPrimArr, nnull, cntrName_forNullBad), nnull, cntrName_forNullBad);
    }
    /**
-      @return  If {@code length} is<ul>
+    * @return  If {@code length} is<ul>
          <li>zero: {@link #getEmpty() getEmpty}{@code ()}</li>
          <li>non-zero: {@code (new Boolean[length])}</li>
       </ul>
-    **/
+    */
    public Boolean[] getInitialized(int length)  {
       if(length == 0)  {
          return  getEmpty();
@@ -105,17 +105,17 @@ public class BooleanArrayHelper extends AbstractPrimitiveArrayHelper<Boolean>  {
       }
    }
    /**
-      @return  <code>{@link org.apache.commons.lang3.ArrayUtils ArrayUtils.}{@link org.apache.commons.lang3.ArrayUtils#EMPTY_BOOLEAN_OBJECT_ARRAY EMPTY_BOOLEAN_OBJECT_ARRAY}</code>
-    **/
+    * @return  <code>{@link org.apache.commons.lang3.ArrayUtils ArrayUtils.}{@link org.apache.commons.lang3.ArrayUtils#EMPTY_BOOLEAN_OBJECT_ARRAY EMPTY_BOOLEAN_OBJECT_ARRAY}</code>
+    */
    public Boolean[] getEmpty()  {
       return  ArrayUtils.EMPTY_BOOLEAN_OBJECT_ARRAY;
    }
    /**
-      @return  If {@code length} is<ul>
+    * @return  If {@code length} is<ul>
          <li>zero: {@link #getEmptyPrimitive() getEmptyPrimitive}{@code ()}</li>
          <li>non-zero: {@code (new boolean[length])}</li>
       </ul>
-    **/
+    */
    public boolean[] getInitializedPrimitive(int length)  {
       if(length == 0)  {
          return  getEmptyPrimitive();
@@ -127,8 +127,8 @@ public class BooleanArrayHelper extends AbstractPrimitiveArrayHelper<Boolean>  {
       }
    }
    /**
-      @return  <code>{@link org.apache.commons.lang3.ArrayUtils ArrayUtils.}{@link org.apache.commons.lang3.ArrayUtils#EMPTY_BOOLEAN_ARRAY EMPTY_BOOLEAN_ARRAY}</code>
-    **/
+    * @return  <code>{@link org.apache.commons.lang3.ArrayUtils ArrayUtils.}{@link org.apache.commons.lang3.ArrayUtils#EMPTY_BOOLEAN_ARRAY EMPTY_BOOLEAN_ARRAY}</code>
+    */
    public boolean[] getEmptyPrimitive()  {
       return  ArrayUtils.EMPTY_BOOLEAN_ARRAY;
    }

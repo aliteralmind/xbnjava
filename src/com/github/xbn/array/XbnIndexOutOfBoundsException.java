@@ -24,7 +24,7 @@ package  com.github.xbn.array;
       <li><b>Bad index/index-range:</b> <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#badIndex(int) badIndex}(i)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#badIndex(int, String) badIndex}(i,s)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#badRange(int, int) badRange}(i,i)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#badRange(int, int, String, String) badRange}(i,i,s,s)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#chainID(boolean, Object) chainID}(b,o)</code></li>
       <li><b>Absolute bounds:</b><ul>
       <!-- //Delete in XbnStr_ingIndexOutOfBoundsException...START -->
-         <li><b>Non-primitive arrays:</b> <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/array/z/XbnIndexOutOfBoundsException_Cfg#absArrayLength(E[])">absArrayLength</a>(o[])</code>, <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/array/z/XbnIndexOutOfBoundsException_Cfg#absArrayLength(E[], String)">absArrayLength</a>(o[],s)</code>, <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/array/z/XbnIndexOutOfBoundsException_Cfg.html#absMinAndArrayLength(int, E[])">absMinAndArrayLength</a>(i,o[])</code>, <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/array/z/XbnIndexOutOfBoundsException_Cfg#absMinAndArrayLength(int, E[], String, String)">absMinAndArrayLength</a>(i,o[],s,s)</code></li>
+         <li><b>Non-primitive arrays:</b> <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="z/XbnIndexOutOfBoundsException_Cfg.html#absArrayLength(E[])">absArrayLength</a>(o[])</code>, <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="z/XbnIndexOutOfBoundsException_Cfg.html#absArrayLength(E[], String)">absArrayLength</a>(o[],s)</code>, <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="z/XbnIndexOutOfBoundsException_Cfg.html#absMinAndArrayLength(int, E[])">absMinAndArrayLength</a>(i,o[])</code>, <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="z/XbnIndexOutOfBoundsException_Cfg.html#absMinAndArrayLength(int, E[], String, String)">absMinAndArrayLength</a>(i,o[],s,s)</code></li>
          <li><b>Primitive arrays:</b> <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absPArrayLength(Object) absPArrayLength}(o)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absPArrayLength(Object, String) absPArrayLength}(o,s)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absMinAndPArrayLength(int, Object) absMinAndPArrayLength}(i,o)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absMinAndPArrayLength(int, Object, String, String) absMinAndPArrayLength}(i,o,s,s)</code></li>
       <!-- //Delete in XbnStr_ingIndexOutOfBoundsException...END -->
       <!-- //Delete in XbnArr_ayIndexOutOfBoundsException...START -->
@@ -39,26 +39,26 @@ package  com.github.xbn.array;
 
    <p><i>{@code XbnArray}{@code IndexOutOfBoundsException} and {@code XbnString}{@code IndexOutOfBoundsException} both derive from {@code Xbn}{@code IndexOutOfBoundsException}. <b>Do not edit any class except {@code Xbn}{@code IndexOutOfBoundsException}</b></i></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class XbnIndexOutOfBoundsException extends XbnIbxBase  {
 //constructors...START
    /**
       <p>Create a new {@code XbnIndexOutOfBoundsException}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XIbxData) super}{@code (x_data)}</p>
-    **/
+    */
    public XbnIndexOutOfBoundsException(XIbxData x_data)  {
       super(x_data);
    }
    /**
       <p>Create a new {@code XbnIndexOutOfBoundsException}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XbnIbxBase) super}{@code (to_copy)}</p>
-    **/
+    */
    public XbnIndexOutOfBoundsException(XbnIbxBase to_copy)  {
       super(to_copy);
    }

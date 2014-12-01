@@ -17,14 +17,14 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 /**
    <p>Listifier whose raw object is a primitive array, and whose virtual elements are of its wrapper type. For example, the raw object is an {@code int[]}, and the virtual elements are {@code java.lang.Integer}-s.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface ListifyPrimitiveEArray<E> extends ListifyEArray<E>, ListifyPrimitiveable<E>  {
    /**
       <p>Get the raw array of primitives.</p>
 
-      @return  <code><i>[{@link com.github.xbn.experimental.listify.Listify super}]</i>.{@link com.github.xbn.experimental.listify.Listify#getRawObject() getRawObject}()</code>
-    **/
+    * @return  <code><i>[{@link com.github.xbn.experimental.listify.Listify super}]</i>.{@link com.github.xbn.experimental.listify.Listify#getRawObject() getRawObject}()</code>
+    */
    Object getRawPArray();
 }

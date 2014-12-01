@@ -46,39 +46,39 @@ Use this header (Change Booxl to Bool when done--BUT NOT IN THIS HTML COMMENT!)
  ** /
  -->
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> implements ListifyBoolable  {
 //constructors...START
    /**
       <p>Create a new {@code ListifyBoolEArray}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(Object, ValueCopier) super}(obj_thatIsPrimArr, (new {@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}()), (new {@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#OneParamCnstrValueCopier(Class) OneParamCnstrValueCopier}&lt;Boolean&gt;(Boolean.class)))</code></p>
 
-      @see  #ListifyBoolEArray(boolean[]) ListifyBoolEArray(pah)
-    **/
+    * @see  #ListifyBoolEArray(boolean[]) ListifyBoolEArray(pah)
+    */
    public ListifyBoolEArray(boolean[] obj_thatIsPrimArr)  {
       super(obj_thatIsPrimArr, NewPrimitiveArrayHelper.forBoolean(), (new OneParamCnstrValueCopier<Boolean>(Boolean.class)));
    }
    /**
       <p>Create a new {@code ListifyBoolEArray} as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(AbstractListifyPrimitiveEArray) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #ListifyBoolEArray(boolean[]) this(boolean[])
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #ListifyBoolEArray(boolean[]) this(boolean[])
+    */
    public ListifyBoolEArray(ListifyBoolEArray to_copy)  {
       super(to_copy);
    }
 //constructors...END
    /**
-      @return   <code>(boolean[])<i>[{@link com.github.xbn.experimental.listify.ListifyEArrayComposer ListifyEArrayComposer}]</i>.{@link com.github.xbn.experimental.listify.ListifyEArrayComposer#getRawObject() getRawObject}()</code>
-    **/
+    * @return   <code>(boolean[])<i>[{@link com.github.xbn.experimental.listify.ListifyEArrayComposer ListifyEArrayComposer}]</i>.{@link com.github.xbn.experimental.listify.ListifyEArrayComposer#getRawObject() getRawObject}()</code>
+    */
    public final boolean[] getRawPArray()  {
       return  (boolean[])getRawObject();
    }
@@ -86,8 +86,8 @@ public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> i
       return  (boolean[])super.getPArrayCopyOrNull(nnull);
    }
    /**
-      @return  {@link #getRawPArray() getRawPArray}{@code ()[index]}
-    **/
+    * @return  {@link #getRawPArray() getRawPArray}{@code ()[index]}
+    */
    public final boolean getBool(int index)  {
       try  {
          return  getRawPArray()[index];
@@ -97,8 +97,8 @@ public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> i
       }
    }
    /**
-      @return  <code>(new {@link #ListifyBoolEArray(ListifyBoolEArray) ListifyBoolEArray}(this))</code>
-    **/
+    * @return  <code>(new {@link #ListifyBoolEArray(ListifyBoolEArray) ListifyBoolEArray}(this))</code>
+    */
    public ListifyBoolEArray getObjectCopy()  {
       return  (new ListifyBoolEArray(this));
    }

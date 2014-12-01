@@ -31,9 +31,9 @@ public class IntBound extends NumberBound<Integer>  {
     * <p>Create a new {@code IntBound}.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberBound#NumberBound(N, boolean, String)">super</a>(num, is_inclusive, name)</code></p>
+    * <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberBound.html#NumberBound(N, boolean, String)">super</a>(num, is_inclusive, name)</code></p>
     * @since  0.1.4.2
-    **/
+    */
    public IntBound(Integer num, Inclusive incl, String name)  {
       super(num, incl, name);
    }
@@ -41,16 +41,16 @@ public class IntBound extends NumberBound<Integer>  {
     * <p>Create a new {@code IntBound} as a duplicate of another.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; {@link NumberBound#NumberBound(NumberBound) super}{@code (to_copy)}</p>
+    * <br/> &nbsp; &nbsp; {@link NumberBound.html#NumberBound(NumberBound) super}{@code (to_copy)}</p>
     * @param  to_copy  May not be {@code null}.
-    **/
+    */
    public IntBound(IntBound to_copy)  {
       super(to_copy);
    }
    /**
     * <p>Get the number as an int.</p>
     * @return  <code>{@link NumberBound#get() get}()*.{@link java.lang.Integer#intValue() intValue}()</code>
-    **/
+    */
    public int getInt()  {
       return  get().intValue();
    }

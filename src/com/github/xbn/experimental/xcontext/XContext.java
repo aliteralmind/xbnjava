@@ -14,9 +14,9 @@ public class XContext implements ExceptionContext  {
    /**
       <p>Create a new {@code XContext}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #XContext(Object) this}(null)</code></p>
-    **/
+    */
    public XContext()  {
       this(null);
    }
@@ -27,9 +27,9 @@ public class XContext implements ExceptionContext  {
          <li>{@link #setExtraInfo(Object) setExtraInfo(o_xtraInfo)}</li>
       </ol></p>
 
-      @see  #XContext() this()
-      @see  #XContext(boolean, ExceptionContext) this(b,xc)
-    **/
+    * @see  #XContext() this()
+    * @see  #XContext(boolean, ExceptionContext) this(b,xc)
+    */
    public XContext(Object o_xtraInfo)  {
       //Never ever call interface functions, directly or indirectly, in a constructor.
       zsetExtraInfoXC(o_xtraInfo);
@@ -41,10 +41,10 @@ public class XContext implements ExceptionContext  {
          <li>{@link #getExtraInfo() getExtraInfo}{@code ()} to {@code to_copy.getExtraInfo()} &nbsp; &nbsp; <i>(See  <code><i>[{@link com.github.xbn.experimental.xcontext.ExceptionContext ExceptionContext}]</i>.{@link com.github.xbn.experimental.xcontext.ExceptionContext#setExtraInfo(Object) setExtraInfo}(o)</code>)</i></li>
       </ol></p>
 
-      @param  ignored  Used only distinguish this constructor signature from {@link #XContext(String) this(s)}, <i>which allows {@code null}</i>.
-      @param  to_copy  May not be {@code null}.
-      @see  #XContext(String, Object) XContext(s,o)
-    **/
+    * @param  ignored  Used only distinguish this constructor signature from {@link #XContext(String) this(s)}, <i>which allows {@code null}</i>.
+    * @param  to_copy  May not be {@code null}.
+    * @see  #XContext(String, Object) XContext(s,o)
+    */
    public XContext(boolean ignored, ExceptionContext to_copy)  {
       try  {
          oXInfo = to_copy.getExtraInfo();
@@ -60,8 +60,8 @@ public class XContext implements ExceptionContext  {
    /**
       <p>Set the extra-information string, which elaborates on the error.</p>
 
-      @param  o_xtraInfo  When non-{@code null}, this object's {@code toString()} is appended onto the error message. When non-{@code null}, {@code o_xtraInfo.toString()} <i>should</i> not be empty. <i>This object is untouched until {@code getExtraInfo()} is called.</i>
-    **/
+    * @param  o_xtraInfo  When non-{@code null}, this object's {@code toString()} is appended onto the error message. When non-{@code null}, {@code o_xtraInfo.toString()} <i>should</i> not be empty. <i>This object is untouched until {@code getExtraInfo()} is called.</i>
+    */
    public void setExtraInfo(Object o_xtraInfo)  {
       zsetExtraInfoXC(o_xtraInfo);
    }
@@ -71,8 +71,8 @@ public class XContext implements ExceptionContext  {
 //Setters...END
 //Getters...START
    /**
-      @return  {@code ((oXInfo == null) ? "" : oXInfo.toString())} Where {@code o_xtraInfo} is as provided to {@link #setExtraInfo(Object) setExtraInfo(s)}, the {@link #XContext(String, Object) constructor}, or {@link #XContext(XContext) copy-constructor}.
-    **/
+    * @return  {@code ((oXInfo == null) ? "" : oXInfo.toString())} Where {@code o_xtraInfo} is as provided to {@link #setExtraInfo(Object) setExtraInfo(s)}, the {@link #XContext(String, Object) constructor}, or {@link #XContext(XContext) copy-constructor}.
+    */
    public String getExtraInfo()  {
       return  ((oXInfo == null) ? "" : oXInfo.toString());
    }
@@ -83,14 +83,14 @@ public class XContext implements ExceptionContext  {
 //Other...START
    /**
     * <p>Get a duplicate of this object.</p>
-      @return  <code>(new {@link #XContext(boolean, XContext) XContext}(false, this)</code>
-    **/
+    * @return  <code>(new {@link #XContext(boolean, XContext) XContext}(false, this)</code>
+    */
    public ExceptionContext getObjectCopy()  {
       return  (new XContext(false, this));
    }
    /**
-      @return  {@code true} If {@code to_compareTo} is non-{@code null}, aYYY {@code XContext}, and {@link #areFieldsEqual(XContext) areFieldsEqual}{@code ((XContext)to_compareTo)} is {@code true}.
-    **/
+    * @return  {@code true} If {@code to_compareTo} is non-{@code null}, aYYY {@code XContext}, and {@link #areFieldsEqual(XContext) areFieldsEqual}{@code ((XContext)to_compareTo)} is {@code true}.
+    */
    @Override public boolean equals(Object to_compareTo)  {
 
       //See internal comments for com.github.xbn.lang.XbnObject.equals(o)
@@ -112,9 +112,9 @@ public class XContext implements ExceptionContext  {
    /**
       <p>Are all internal values in the provided {@code XContext} the same as in <i>{@code this}</i>?.</p>
 
-      @param  xc_nx  May not be {@code null}.
-      @return  {@code true} If {@link #getExtraInfo() getExtraInfo}{@code ()} is the same value ({@code null} is okay) or the same object.
-    **/
+    * @param  xc_nx  May not be {@code null}.
+    * @return  {@code true} If {@link #getExtraInfo() getExtraInfo}{@code ()} is the same value ({@code null} is okay) or the same object.
+    */
    public boolean areFieldsEqual(XContext xc_nx)  {
       try  {
          return  Objects.equals(getExtraInfo(), xc_nx.getExtraInfo());
@@ -140,11 +140,11 @@ public class XContext implements ExceptionContext  {
    /**
       <p>Interface-function wrapper for {@code ExceptionContext}.</p>
 
-      @param  xc_forIW  May not be {@code null}.
-      @return  {@code xc_theIInstance.getExtraInfo(xc_theIInstance)}
-      @exception  NullPointerException  When {@code xc_theIInstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code xc_theIInstance} is non-{@code null} and the call to {@code getExtraInfo()} fails for any unexpected reason.
-    **/
+    * @param  xc_forIW  May not be {@code null}.
+    * @return  {@code xc_theIInstance.getExtraInfo(xc_theIInstance)}
+    * @exception  NullPointerException  When {@code xc_theIInstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code xc_theIInstance} is non-{@code null} and the call to {@code getExtraInfo()} fails for any unexpected reason.
+    */
    public static final String getExtraInfo(ExceptionContext xc_theIInstance, ExceptionContext xc_forIW)  {
       try  {
          return  xc_theIInstance.getExtraInfo();

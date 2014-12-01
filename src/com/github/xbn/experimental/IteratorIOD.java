@@ -188,7 +188,7 @@ public class IteratorIOD<T> implements Iterator<ArrayList<T>>  {
 
    /**
       <p>Joins the {@code toString()} value for all columns into a single string. Use for testing.</p>
-    **/
+    */
    public final String getNextAsStr(ArrayList<T> v_t)  {
       if(v_t == null)  {
          return  null;

@@ -19,15 +19,15 @@ package  com.github.xbn.util.itr;
 /**
    <p>Iterator-related utilities.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IteratorUtil  {
    /**
       <p>Crash if there are not elements, otherwise <i>return</i> the cause.</p>
 
-      @param  itr  May not be {@code null}.
-    **/
+    * @param  itr  May not be {@code null}.
+    */
    public static final void crashIfNoSuchElement(Iterator<?> itr)  {
       try  {
          if(!itr.hasNext())  {
@@ -41,7 +41,7 @@ public class IteratorUtil  {
       <p>Creates a new iterator, skipping over the first x elements. This can be used to simulate a(n albeit inefficient) double-for loop for comparing elements, such as for detecting duplicates.</p>
 
 {@.codelet.and.out com.github.xbn.examples.util.itr.DetectDupsWithIterators%eliminateCommentBlocksAndPackageDecl()}
-    **/
+    */
    public static final <E> Iterator<E> newIteratorStartingAtIndex(int first_wantedIdx, Iterable<E> iterable)  {
       Iterator<E> itr = iterable.iterator();
       while(first_wantedIdx > 0)  {

@@ -28,8 +28,8 @@ package  com.github.xbn.linefilter.alter;
 /**
    <p>Alters all the the lines returned by a string iterator with a single alterer.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class AllTextLineAlterer extends AbstractAlterer  {
    private int lineNum;
@@ -43,9 +43,9 @@ public class AllTextLineAlterer extends AbstractAlterer  {
    /**
       <p>Create a new instance from a line-alterer.</p>
 
-      @param  line_alterer  May not be {@code null} or {@linkplain com.github.xbn.lang.Expirable#isExpired() expired}. A <i>duplicate</i> of this object (defensive copy) is stored internally.
-      @exception  ExpiredException  If {@code line_alterer} is expired.
-    **/
+    * @param  line_alterer  May not be {@code null} or {@linkplain com.github.xbn.lang.Expirable#isExpired() expired}. A <i>duplicate</i> of this object (defensive copy) is stored internally.
+    * @exception  ExpiredException  If {@code line_alterer} is expired.
+    */
    public AllTextLineAlterer(ValueAlterer<String,String> line_alterer)  {
       try  {
          if(line_alterer.isExpired())  {
@@ -60,13 +60,13 @@ public class AllTextLineAlterer extends AbstractAlterer  {
       <p>Create a new instance as a duplicate of another.</p>
 
       <p>This<ol>
-         <li>Calls <code><a href="YYY/AbstractAlterer.html#AbstractAlterer(AbstractAlterer)">super</a>(to_copy)</code></li>
+         <li>Calls {@link com.github.xbn.analyze.validate. AbstractAlterer#AbstractAlterer(AbstractAlterer) super}{@code (to_copy)}/li>
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be <code>null</code>.
-      @see  #getObjectCopy()
-    **/
+    * @param  to_copy  May not be <code>null</code>.
+    * @see  #getObjectCopy()
+    */
    public AllTextLineAlterer(AllTextLineAlterer to_copy)  {
       super(to_copy);
       this.alterer = to_copy.alterer.getObjectCopy();
@@ -76,7 +76,7 @@ public class AllTextLineAlterer extends AbstractAlterer  {
    }
    /**
       <p>Append all lines, accumulated and altered, with runtime exceptions.</p>
-    **/
+    */
    public Appendable appendAlteredFromLineObjects(Appendable to_appendTo, int start_lineNum, Iterator<String> line_itr, String lineSep_orNullForNone)  {
       try  {
          return  appendAlteredFromLineObjectsX(to_appendTo, start_lineNum, line_itr, lineSep_orNullForNone);
@@ -87,11 +87,11 @@ public class AllTextLineAlterer extends AbstractAlterer  {
    /**
       <p>Append all altered lines, with checked exceptions.</p>
 
-      @param  to_appendTo  May not be {@code null}.
-      @param  start_lineNum  The line number of the first line returned by the iterator.
-      @param  line_itr  May not be {@code null}, and <i>should</i> return at least one line.
-      @exception  RuntimeException  If getting the altered value fails. The cause can be obatined with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
-    **/
+    * @param  to_appendTo  May not be {@code null}.
+    * @param  start_lineNum  The line number of the first line returned by the iterator.
+    * @param  line_itr  May not be {@code null}, and <i>should</i> return at least one line.
+    * @exception  RuntimeException  If getting the altered value fails. The cause can be obatined with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
+    */
    public Appendable appendAlteredFromLineObjectsX(Appendable to_appendTo, int start_lineNum, Iterator<String> line_itr, String lineSep_orNullForNone) throws IOException  {
       lineNum = start_lineNum;
       try  {
@@ -118,7 +118,7 @@ public class AllTextLineAlterer extends AbstractAlterer  {
    }
    /**
       <p>Append all lines, accumulated and altered, with runtime exceptions.</p>
-    **/
+    */
    public Appendable appendAlteredLines(Appendable to_appendTo, int start_lineNum, Iterator<String> line_itr, String lineSep_orNullForNone)  {
       try  {
          return  appendAlteredLinesX(to_appendTo, start_lineNum, line_itr, lineSep_orNullForNone);
@@ -129,11 +129,11 @@ public class AllTextLineAlterer extends AbstractAlterer  {
    /**
       <p>Append all altered lines, with checked exceptions.</p>
 
-      @param  to_appendTo  May not be {@code null}.
-      @param  start_lineNum  The line number of the first line returned by the iterator.
-      @param  line_itr  May not be {@code null}, and <i>should</i> return at least one line.
-      @exception  RuntimeException  If getting the altered value fails. The cause can be obatined with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
-    **/
+    * @param  to_appendTo  May not be {@code null}.
+    * @param  start_lineNum  The line number of the first line returned by the iterator.
+    * @param  line_itr  May not be {@code null}, and <i>should</i> return at least one line.
+    * @exception  RuntimeException  If getting the altered value fails. The cause can be obatined with {@link java.lang.RuntimeException#getCause() getCause}{@code ()}.
+    */
    public Appendable appendAlteredLinesX(Appendable to_appendTo, int start_lineNum, Iterator<String> line_itr, String lineSep_orNullForNone) throws IOException  {
       lineNum = start_lineNum;
       try  {
@@ -158,8 +158,8 @@ public class AllTextLineAlterer extends AbstractAlterer  {
    /**
       <p>Duplicate this <code>AllTextLineAlterer</code>.</p>
 
-      @return  <code>(new <a href="#AllTextLineAlterer(AllTextLineAlterer)">AllTextLineAlterer</a>(this))</code>
-    **/
+    * @return  <code>(new <a href="#AllTextLineAlterer(AllTextLineAlterer)">AllTextLineAlterer</a>(this))</code>
+    */
    public AllTextLineAlterer getObjectCopy()  {
       return  (new AllTextLineAlterer(this));
    }
@@ -170,12 +170,12 @@ public class AllTextLineAlterer extends AbstractAlterer  {
       return  to_appendTo.append(", alterer=[" + alterer + "]");
    }
    /**
-    **/
+    */
    public boolean isComplete()  {
       return  alterer.isComplete();
    }
    /**
-    **/
+    */
    public StringBuilder appendIncompleteInfo(StringBuilder to_appendTo)  {
       return  alterer.appendIncompleteInfo(to_appendTo);
    }

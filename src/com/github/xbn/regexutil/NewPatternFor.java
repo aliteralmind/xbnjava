@@ -19,15 +19,15 @@ package  com.github.xbn.regexutil;
 /**
    <p>Convenience functions for creating {@code java.util.regex.Pattern}-s from strings. {@code java.util.regex.}{@link java.util.regex.Pattern Pattern} allows the regex-strings to be empty. This class requires non-empty.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewPatternFor  {
    /**
       <p>A pattern that cannot be matched--Equal to {@code "(?!a)a"} (a position that is not followed by an {@code 'a'}, that is followed by an {@code 'c'}).</p>
 
-      @see <code><a href="//http://stackoverflow.com/questions/1723182/a-regex-that-will-never-be-matched-by-anything">//http://stackoverflow.com/questions/1723182/a-regex-that-will-never-be-matched-by-anything</a></code>
-    **/
+    * @see <code><a href="http://stackoverflow.com/questions/1723182/a-regex-that-will-never-be-matched-by-anything">http://stackoverflow.com/questions/1723182/a-regex-that-will-never-be-matched-by-anything</a></code>
+    */
    public static final Pattern IMPOSSIBLE_TO_MATCH = Pattern.compile("(?!a)a");
 
    private NewPatternFor()  {
@@ -36,18 +36,18 @@ public class NewPatternFor  {
    /**
       <p>Create a new {@code Pattern} from a literal string.</p>
 
-      @return  <code>{@link #literal(String, String) literal}(text, &quot;literal&quot;, &quot;text&quot;)</code>
-    **/
+    * @return  <code>{@link #literal(String, String) literal}(text, &quot;literal&quot;, &quot;text&quot;)</code>
+    */
    public static final Pattern literal(String text)  {
       return  literal(text, "text");
    }
    /**
       <p>Create a new {@code Pattern} from a literal string.</p>
 
-      @param  text  May not be {@code null} or empty. <i>{@code Pattern.compile(s)} does allow the empty-string pattern. This class forbids it.</i>
-      @param  text_name  Descriptive name for {@code text}. <i>Should</i> not be {@code null} or empty.
-      @return  {@code Pattern.compile(text, Pattern.LITERAL)}
-    **/
+    * @param  text  May not be {@code null} or empty. <i>{@code Pattern.compile(s)} does allow the empty-string pattern. This class forbids it.</i>
+    * @param  text_name  Descriptive name for {@code text}. <i>Should</i> not be {@code null} or empty.
+    * @return  {@code Pattern.compile(text, Pattern.LITERAL)}
+    */
    public static final Pattern literal(String text, String text_name)  {
       CrashIfString.nullEmpty(text, text_name, null);
       try  {
@@ -65,13 +65,13 @@ public class NewPatternFor  {
    /**
       <p>Create a new {@code Pattern} from a(n escaped) regular-expression string.</p>
 
-      @param  regex  May not be {@code null} or empty, and must be valid for {@code Pattern.compile(s,i)}.
-      @param  rgx_name  Descriptive name for {@code regex}. <i>Should</i> not be {@code null} or empty.
-      @return  {@code Pattern.compile(regex)}
-      @see  #regex(String, int, String) regex(s,i,s)
-      @see  #literal(String) literal(s)
-      @see  #literal(String, String) literal(s,s)
-    **/
+    * @param  regex  May not be {@code null} or empty, and must be valid for {@code Pattern.compile(s,i)}.
+    * @param  rgx_name  Descriptive name for {@code regex}. <i>Should</i> not be {@code null} or empty.
+    * @return  {@code Pattern.compile(regex)}
+    * @see  #regex(String, int, String) regex(s,i,s)
+    * @see  #literal(String) literal(s)
+    * @see  #literal(String, String) literal(s,s)
+    */
    public static final Pattern regex(String regex, String rgx_name)  {
       CrashIfString.nullEmpty(regex, rgx_name, null);
       try  {
@@ -83,12 +83,12 @@ public class NewPatternFor  {
    /**
       <p>Create a new {@code Pattern} from a(n escaped) regular-expression string and bit flags.</p>
 
-      @param  regex  May not be {@code null} or empty, and must be valid for {@code Pattern.compile(s,i)}.
-      @param  bit_flags  Must be valid for {@code Pattern.compile(s,i)}.
-      @param  rgx_name  Descriptive name for {@code regex}. <i>Should</i> not be {@code null} or empty.
-      @return  {@code Pattern.compile(regex)}
-      @see  #regex(String, String) regex(s,s)
-    **/
+    * @param  regex  May not be {@code null} or empty, and must be valid for {@code Pattern.compile(s,i)}.
+    * @param  bit_flags  Must be valid for {@code Pattern.compile(s,i)}.
+    * @param  rgx_name  Descriptive name for {@code regex}. <i>Should</i> not be {@code null} or empty.
+    * @return  {@code Pattern.compile(regex)}
+    * @see  #regex(String, String) regex(s,s)
+    */
    public static final Pattern regex(String regex, int bit_flags, String rgx_name)  {
       CrashIfString.nullEmpty(regex, rgx_name, null);
       try  {

@@ -22,8 +22,8 @@ package  com.github.xbn.analyze.validate;
 /**
    <p>Convenience functions for creating {@code ValidResultFilter}s.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class NewValidResultFilterFor  {
@@ -39,13 +39,13 @@ public class NewValidResultFilterFor  {
    /**
       <p>A new filter that returns {@code false} when the number of <i>valid results</i> is outside of a specific (inclusive) range--it otherwise the leaves follows-the-rules finding unchanged.</p>
 
-      @param  maxIncl_neg1IfNoMax  If {@code -1}, there is no maximum bound.
-      @return  <code>FilterValidCounts_Cfg().{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#range(LengthInRange) range}(lengthRange).{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#inUnchangedOutFalse() inUnchangedOutFalse}().
+    * @param  maxIncl_neg1IfNoMax  If {@code -1}, there is no maximum bound.
+    * @return  <code>FilterValidCounts_Cfg().{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#range(LengthInRange) range}(lengthRange).{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#inUnchangedOutFalse() inUnchangedOutFalse}().
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#countValid() countValid}().{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.analyze.validate.z.FilterValidCounts_CfgForNeeder#build() build}()</code>
       <br/>Where {@code lengthRange} is equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.number.NewLengthInRangeFor NewLengthInRangeFor}.{@link com.github.xbn.number.NewLengthInRangeFor#minMaxInclusive(Invert, int, int, String, String) minMaxInclusive}(null, inclusive_min, maxIncl_neg1IfNoMax, min_name, max_name)</code>
-      @see  #unfiltered()
-    **/
+    * @see  #unfiltered()
+    */
    public static final FilterValidCounts inUnchangedOutFalse(int inclusive_min, int maxIncl_neg1IfNoMax, String min_name, String max_name, Appendable dbgDest_ifNonNull)  {
       LengthInRange range = ((maxIncl_neg1IfNoMax == -1)
          ?  NewLengthInRangeFor.min(null, inclusive_min, min_name)
@@ -56,8 +56,8 @@ public class NewValidResultFilterFor  {
    /**
       <p>A valid-result filter that does nothing--it always passes the follows-the-rules value unchanged. This is a singleton that never {@link com.github.xbn.lang.Expirable#isExpired() expires}, whose {@link ValidResultFilter#getPreAction() pre-action} is always {@link FilterPreAction#PROCEED PROCEED}, {@link ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-value} is always {@link FilterAfterValue#UNCHANGED UNCHANGED}.</p>
 
-      @return  <code>{@link com.github.xbn.analyze.validate.ValidatorComposer ValidatorComposer}.{@link com.github.xbn.analyze.validate.ValidatorComposer#unfiltered() unfiltered}()</code>
-    **/
+    * @return  <code>{@link com.github.xbn.analyze.validate.ValidatorComposer ValidatorComposer}.{@link com.github.xbn.analyze.validate.ValidatorComposer#unfiltered() unfiltered}()</code>
+    */
    public static final ValidResultFilter unfiltered()  {
       return  ValidatorComposer.unfiltered();
    }

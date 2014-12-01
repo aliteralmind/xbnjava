@@ -8,7 +8,7 @@ public interface EXContextable extends OXContextable  {
    /**
       <p>Get the exception context.</p>
 
-      @return  May or may not be {@code null}.
-    **/
+    * @return  May or may not be {@code null}.
+    */
    ElementExceptionContext getEXContext();
 }

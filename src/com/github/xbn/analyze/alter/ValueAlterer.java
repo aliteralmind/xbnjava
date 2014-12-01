@@ -19,10 +19,10 @@ package  com.github.xbn.analyze.alter;
 
 {@.codelet.and.out com.github.xbn.examples.analyze.alter.ValueAltererXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-   @param  <V>  The type of object to validate (optional--usually the same as {@code A})
-   @param  <A>  The type of object to alter (optionally, only when {@code V} is valid)
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @param  <V>  The type of object to validate (optional--usually the same as {@code A})
+ * @param  <A>  The type of object to alter (optionally, only when {@code V} is valid)
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface ValueAlterer<V,A> extends Alterer, Ruleable  {
    /**
@@ -48,10 +48,10 @@ public interface ValueAlterer<V,A> extends Alterer, Ruleable  {
          </ol></li>
       </ol></p>
 
-      @param  to_validate  The value to optionally validate. In many cases this is the same object as {@code to_alter}. When no validation is done, this parameter is ignored.
-      @param  to_alter  The value to alter, only when {@code to_validate} is deemed valid.
-      @exception  IllegalStateException  If {@code wasAltered()} or {@code needsToBeDeleted()} are {@code true} (must call {@link com.github.xbn.analyze.alter.Alterer#resetState() resetState}{@code ()}* or {@link com.github.xbn.analyze.alter.Alterer#resetForDeletion() resetForDeletion}{@code ()}*).
-    **/
+    * @param  to_validate  The value to optionally validate. In many cases this is the same object as {@code to_alter}. When no validation is done, this parameter is ignored.
+    * @param  to_alter  The value to alter, only when {@code to_validate} is deemed valid.
+    * @exception  IllegalStateException  If {@code wasAltered()} or {@code needsToBeDeleted()} are {@code true} (must call {@link com.github.xbn.analyze.alter.Alterer#resetState() resetState}{@code ()}* or {@link com.github.xbn.analyze.alter.Alterer#resetForDeletion() resetForDeletion}{@code ()}*).
+    */
    A getAltered(V to_validate, A to_alter);
 //	String getAlteredString(V to_validate, A to_alter);
    ValueAlterer<V,A> getObjectCopy();

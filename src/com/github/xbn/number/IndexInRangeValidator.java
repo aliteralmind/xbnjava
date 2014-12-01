@@ -36,9 +36,9 @@ package  com.github.xbn.number;
    public IndexInRangeValidator_CfgForNeeder<G,V,R> debugTo(Appendable dest_ifNonNull)  {
    public IndexInRangeValidator_CfgForNeeder<G,V,R> chainID(boolean do_setStatic, Object id)  {
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
-   @see  IndexInRange
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  IndexInRange
  **/
 public class IndexInRangeValidator extends IntInRangeValidator  {
 //constructors...START
@@ -51,13 +51,13 @@ public class IndexInRangeValidator extends IntInRangeValidator  {
    /**
       <p>Create a new {@code IndexInRangeValidator} as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link IntInRangeValidator#IntInRangeValidator(IntInRangeValidator) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #IndexInRangeValidator(IndexInRangeValidator_Fieldable) this(vxir_f)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #IndexInRangeValidator(IndexInRangeValidator_Fieldable) this(vxir_f)
+    */
    public IndexInRangeValidator(IndexInRangeValidator to_copy)  {
       super(to_copy);
    }
@@ -82,8 +82,8 @@ public class IndexInRangeValidator extends IntInRangeValidator  {
    }
    /**
     * <p>Get a duplicate of this object.</p>
-      @return  <code>(new {@link #IndexInRangeValidator(IndexInRangeValidator) IndexInRangeValidator}(this))</code>
-    **/
+    * @return  <code>(new {@link #IndexInRangeValidator(IndexInRangeValidator) IndexInRangeValidator}(this))</code>
+    */
    public IndexInRangeValidator getObjectCopy()  {
       return  (new IndexInRangeValidator(this));
    }

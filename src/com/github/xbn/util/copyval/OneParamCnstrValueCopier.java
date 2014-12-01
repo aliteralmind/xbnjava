@@ -20,8 +20,8 @@ package  com.github.xbn.util.copyval;
    <p>The idea for this comes from
    <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/6094575/creating-an-instance-using-the-class-name-and-calling-constructor">http://stackoverflow.com/questions/6094575/creating-an-instance-using-the-class-name-and-calling-constructor</a>}</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
    private Class<O> cls = null;
@@ -39,10 +39,10 @@ public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
    /**
       <p>Create a new {@code OneParamCnstrValueCopier}.</p>
 
-      @param  cls  The class of type {@code O} (if {@code O} is {@code java.lang.Integer}, this should be {@code Integer.class}). May not be {@code null} and must be a type that has a constructor of {@code new TYPE(TYPE original_value)} (such as {@code new Integer(Integer I_original)}). Get with {@link #getClass() getEClass}{@code ()}.
+    * @param  cls  The class of type {@code O} (if {@code O} is {@code java.lang.Integer}, this should be {@code Integer.class}). May not be {@code null} and must be a type that has a constructor of {@code new TYPE(TYPE original_value)} (such as {@code new Integer(Integer I_original)}). Get with {@link #getClass() getEClass}{@code ()}.
 
-      @see  #OneParamCnstrValueCopier(OneParamCnstrValueCopier) this
-    **/
+    * @see  #OneParamCnstrValueCopier(OneParamCnstrValueCopier) this
+    */
    public OneParamCnstrValueCopier(Class<O> cls)  {
       super(true);
       if(cls == null)  {
@@ -58,26 +58,26 @@ public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #OneParamCnstrValueCopier(Class) this(cls)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #OneParamCnstrValueCopier(Class) this(cls)
+    */
    public OneParamCnstrValueCopier(OneParamCnstrValueCopier<O> to_copy)  {
       super(to_copy);
       cls = to_copy.getEClass();
    }
    /**
-      @see  #OneParamCnstrValueCopier(Class) this(cls)
-    **/
+    * @see  #OneParamCnstrValueCopier(Class) this(cls)
+    */
    public Class<O> getEClass()  {
       return  cls;
    }
    /**
-      @return  {@link #getEClass() getEClass}{@code ().getConstructor(getEClass()).newInstance}{@code (new Object[] { original_value })}
+    * @return  {@link #getEClass() getEClass}{@code ().getConstructor(getEClass()).newInstance}{@code (new Object[] { original_value })}
       <br/>(&quot;newInstance() is a varargs method (just as GetConstructor()), there's no need for explicit Object-array creation. &quot;–  Joachim Sauer May 23 '11 at 8:28
       <br/>&quot;@Joachim: I know it's varargs, but as it can get tricky when you have an Object[] argument, I prefer to create the array explicitly in this case.&quot; –  Jon Skeet May 23 '11 at 8:32)</i>
-      @exception  InvocationTargetException  If getEClass is not a type that has a constructor like {@code new TYPE(TYPE original_value)} (such as {@code new Integer(Integer I_original)}).
-    **/
+    * @exception  InvocationTargetException  If getEClass is not a type that has a constructor like {@code new TYPE(TYPE original_value)} (such as {@code new Integer(Integer I_original)}).
+    */
    protected O getCopyOfNonNullOrig(O non_nullOrig, String orig_name)  {
       Throwable tbl;
       try  {
@@ -98,8 +98,8 @@ public class OneParamCnstrValueCopier<O> extends AbstractValueCopier<O>  {
    /**
       <p>Get a complete copy of this {@code OneParamCnstrValueCopier}.</p>
 
-      @return  <code>(new {@link #OneParamCnstrValueCopier(OneParamCnstrValueCopier) OneParamCnstrValueCopier}&lt;O&gt;(this))</code>.
-    **/
+    * @return  <code>(new {@link #OneParamCnstrValueCopier(OneParamCnstrValueCopier) OneParamCnstrValueCopier}&lt;O&gt;(this))</code>.
+    */
    public ValueCopier<O> getObjectCopy()  {
       return  (new OneParamCnstrValueCopier<O>(this));
    }

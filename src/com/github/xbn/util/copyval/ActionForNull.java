@@ -16,79 +16,79 @@ package  com.github.xbn.util.copyval;
 /**
    <p>The action taken when attempting to duplicate a value that is {@code null}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum ActionForNull {
    /**
       <p>The duplicate should also be {@code null}.</p>
 
-      @see  #USE_NON_NULL
-      @see  #DELETE
-      @see  #CRASH
-      @see  #doUseNull()
-    **/
+    * @see  #USE_NON_NULL
+    * @see  #DELETE
+    * @see  #CRASH
+    * @see  #doUseNull()
+    */
    USE_NULL,
    /**
       <p>The duplicate should be set to a pre-configured non-{@code null} value.</p>
 
-      @see  #USE_NULL
-      @see  #doUseNonNull()
-      @see  NullHandler#getNonNull()
-    **/
+    * @see  #USE_NULL
+    * @see  #doUseNonNull()
+    * @see  NullHandler#getNonNull()
+    */
    USE_NON_NULL,
    /**
       <p>The duplicate should not be created.</p>
 
-      @see  #USE_NULL
-      @see  #doDelete()
-    **/
+    * @see  #USE_NULL
+    * @see  #doDelete()
+    */
    DELETE,
    /**
       <p>Throw an exception.</p>
 
-      @see  #USE_NULL
-      @see  #doCrash()
-    **/
+    * @see  #USE_NULL
+    * @see  #doCrash()
+    */
    CRASH;
    /**
       <p>Is this {@code eCllLstAryOthr} equal to {@code USE_NULL}?.</p>
 
-      @return  <code>this == {@link #USE_NULL}</code>
+    * @return  <code>this == {@link #USE_NULL}</code>
 
-      @see  #doUseNonNull()
-      @see  #doDelete()
-      @see  #doCrash()
-    **/
+    * @see  #doUseNonNull()
+    * @see  #doDelete()
+    * @see  #doCrash()
+    */
    public final boolean doUseNull()  {
       return  this == USE_NULL;
    }
    /**
       <p>Is this {@code eCllLstAryOthr} equal to {@code USE_NON_NULL}?.</p>
 
-      @return  <code>this == {@link #USE_NON_NULL}</code>
-      @see  #doUseNull()
-    **/
+    * @return  <code>this == {@link #USE_NON_NULL}</code>
+    * @see  #doUseNull()
+    */
    public final boolean doUseNonNull()  {
       return  this == USE_NON_NULL;
    }
    /**
       <p>Is this {@code eCllLstAryOthr} equal to {@code DELETE}?.</p>
 
-      @return  <code>this == {@link #DELETE}</code>
-      @see  #doUseNull()
-      @see  #isNparray()
-    **/
+    * @return  <code>this == {@link #DELETE}</code>
+    * @see  #doUseNull()
+    * @see  #isNparray()
+    */
    public final boolean doDelete()  {
       return  this == DELETE;
    }
    /**
       <p>Is this {@code eCllLstAryOthr} equal to {@code CRASH}?.</p>
 
-      @return  <code>this == {@link #CRASH}</code>
-      @see  #doUseNull()
-      @see  #isParray()
-    **/
+    * @return  <code>this == {@link #CRASH}</code>
+    * @see  #doUseNull()
+    * @see  #isParray()
+    */
    public final boolean doCrash()  {
       return  this == CRASH;
    }

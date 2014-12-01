@@ -24,42 +24,42 @@ package  com.github.xbn.list;
 /**
    <p>If a list is invalid, crash. Otherwise, do nothing. This is the same as {@link com.github.xbn.list.CrashIfCollection} except for the error messages.</p>
 
-   @see  com.github.xbn.lang.CrashIfObject
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  com.github.xbn.lang.CrashIfObject
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfList  {
    /**
       <p>The template for list error output--Equal to {@code "%name%.get(%idx%)"}.</p>
 
-      @see  #bad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) bad
-      @see  #ofStringsBad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) ofStringsBad
-    **/
+    * @see  #bad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) bad
+    * @see  #ofStringsBad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) ofStringsBad
+    */
    static final String LIST_ERR_TMPL = "%name%.get(%idx%)";
    /**
       <p>If a list is {@code null} or has no elements, crash. Otherwise, do nothing.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #empty(List, String, NullContainer) empty}(list, list_name, {@link com.github.xbn.array.NullContainer}.{@link com.github.xbn.array.NullContainer#BAD BAD})</code></p>
-    **/
+    */
    public static final void nullEmpty(List<?> list, String list_name)  {
       empty(list, list_name, NullContainer.BAD);
    }
    /**
       <p>If a list has no elements, crash. Otherwise, do nothing.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #bad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) bad}(list, list_name, null_list, 1, null, {@link com.github.xbn.array.NullElement}.{@link com.github.xbn.array.NullElement#OK OK}, 0, null, {@link com.github.xbn.array.Duplicates}.{@link com.github.xbn.array.Duplicates#OK OK})</code></p>
-    **/
+    */
    public static final void empty(List<?> list, String list_name, NullContainer null_list)  {
       bad(list, list_name, null_list, 1, null, NullElement.OK, 0, null, Duplicates.OK);
    }
    /**
       <p>If a list's size is less than a number, crash. Otherwise, do nothing.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #bad(List, String, NullContainer, int, String, NullElement, int, String, Duplicates) bad}(list, list_name, null_list, min_allowedLength, min_varName, {@link com.github.xbn.array.NullElement}.{@link com.github.xbn.array.NullElement#OK OK}, 0, null, {@link com.github.xbn.array.Duplicates}.{@link com.github.xbn.array.Duplicates#OK OK})</code></p>
-    **/
+    */
    public static final void sizeLessThan(List<?> list, String list_name, NullContainer null_list, int min_allowedLength, String min_varName)  {
       bad(list, list_name, null_list, min_allowedLength, min_varName, NullElement.OK, 0, null, Duplicates.OK);
    }
@@ -70,12 +70,12 @@ public class CrashIfList  {
       <br/> &nbsp; &nbsp; <code>{@link CrashIfCollection}.{@link CrashIfCollection#bad(Collection, String, NullContainer, int, String, NullElement, int, String) bad}(list, list_name, null_list, min_allowedLength, min_varName, null_element, min_allowedElementLen, minElementLen_name)</code>
       <br/>.</p>
 
-      @param  duplicates  If {@link com.github.xbn.array.Duplicates#BAD BAD}, then elements must be unique. This parameter may not be {@code null}.
-      @exception  BadDuplicateException  If two elements are equal and {@code duplicates.BAD}.
-      @see  #nullEmpty(List, String) nullEmpty
-      @see  #empty(List, String, NullContainer) empty
-      @see  #sizeLessThan(List, String, NullContainer, int, String) lengthLessThan
-    **/
+    * @param  duplicates  If {@link com.github.xbn.array.Duplicates#BAD BAD}, then elements must be unique. This parameter may not be {@code null}.
+    * @exception  BadDuplicateException  If two elements are equal and {@code duplicates.BAD}.
+    * @see  #nullEmpty(List, String) nullEmpty
+    * @see  #empty(List, String, NullContainer) empty
+    * @see  #sizeLessThan(List, String, NullContainer, int, String) lengthLessThan
+    */
    public static final void bad(List<?> list, String list_name, NullContainer null_list, int min_allowedLength, String min_varName, NullElement null_element, int min_allowedElementLen, String minElementLen_name, Duplicates duplicates)  {
       CrashIfCollection.crashForNullnessAndSize(LIST_ERR_TMPL, list, list_name, null_list, min_allowedLength, min_varName);
 

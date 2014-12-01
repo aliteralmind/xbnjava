@@ -21,21 +21,21 @@ public abstract class AbstractLockable implements Lockable  {
    /**
       <p>Create a new {@code AbstractLockable}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.util.lock.LockableComposer#LockableComposer(boolean) super}{@code (is_unlockable)}</p>
-    **/
+    */
    public AbstractLockable(boolean is_unlockable)  {
       lc = new LockableComposer(is_unlockable);
    }
    /**
       <p>Create a new {@code AbstractLockable} from a {@code Lockable} object.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.util.lock.LockableComposer#LockableComposer(Lockable) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #AbstractLockable(boolean, boolean) this(b,b)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #AbstractLockable(boolean, boolean) this(b,b)
+    */
    public AbstractLockable(Lockable to_copy)  {
       lc = new LockableComposer(to_copy);
    }
@@ -44,13 +44,13 @@ public abstract class AbstractLockable implements Lockable  {
    }
    /**
       <p>Crash if this {@code LockableComposer} is locked.</p>
-    **/
+    */
    protected void ciLocked()  {
       lc.ciLocked_4prot();
    }
    /**
       <p>Crash if this {@code LockableComposer} is unlocked.</p>
-    **/
+    */
    protected void ciNotLocked()  {
       lc.ciNotLocked_4prot();
    }

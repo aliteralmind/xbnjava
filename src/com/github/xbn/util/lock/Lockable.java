@@ -22,21 +22,21 @@ public interface Lockable  {
    /**
       <p>Is the object locked?.</p>
 
-      @see  #lock(boolean) lock(b)
-    **/
+    * @see  #lock(boolean) lock(b)
+    */
    boolean isLocked();
    /**
       <p>Lock or unlock the object.</p>
 
-      @param  do_lock  If {@code true}, then lock the object. If {@code false}, unlock. Get with {@link #isLocked() isLocked}{@code ()}.
-      @exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code true}, and both {@code do_lock} and {@link #isUnlockable() isUnlockable}{@code ()} are {@code false}.
-      @see  #isLocked()
-    **/
+    * @param  do_lock  If {@code true}, then lock the object. If {@code false}, unlock. Get with {@link #isLocked() isLocked}{@code ()}.
+    * @exception  LockException  If {@link #isLocked() isLocked}{@code ()} is {@code true}, and both {@code do_lock} and {@link #isUnlockable() isUnlockable}{@code ()} are {@code false}.
+    * @see  #isLocked()
+    */
    void lock(boolean do_lock);
 
    /**
       <p>Is the object unlockable?.</p>
-      @see  #lock(boolean) lock(b)
-    **/
+    * @see  #lock(boolean) lock(b)
+    */
    boolean isUnlockable();
 }

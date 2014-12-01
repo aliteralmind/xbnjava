@@ -44,8 +44,8 @@ package  com.github.xbn.experimental.listify;
 /**
    <p>Convenience functions for creating listifiers whose raw object is a {@code java.util.List}, and whose vitual elements are of the same type as the raw elements.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewListifyEList<E>  {
    private NewListifyEList()  {
@@ -141,9 +141,9 @@ abstract class ListifyEListRoot<E> extends AbstractListify<E>  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, boolean, ArrayHelper, ValueCopier) super}{@code (raw_obj, add_rmvbl, ah_root, get_valCopy)}</p>
-    **/
+    */
    public ListifyEListRoot(List<E> list, AddRemovable add_rmvbl, ArrayHelperBase<E> ah_root, ValueCopier<E> get_valCopy)  {
       super(list, add_rmvbl, ah_root, get_valCopy);
    }
@@ -530,4 +530,4 @@ Character list Char
    public static final ListifyEListRoot<Double> newForDouble(List<Double> list, AddRemovable add_rmvbl)  {
       return  new ListifyEListRoot<Double>(list, add_rmvbl, NewPrimitiveArrayHelper.forDouble(), (new OneParamCnstrValueCopier<Double>(Double.class)));
    }
-    **/
+    */

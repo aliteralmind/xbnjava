@@ -33,8 +33,8 @@ package  com.github.xbn.testdev;
 
 {@.codelet.and.out com.github.xbn.examples.testdev.TimeIteratorVsIndexIntegerList(1000000)%eliminateCommentBlocksAndPackageDecl()}
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class TimedTest  {
@@ -46,19 +46,19 @@ public class TimedTest  {
    /**
       <p>The default number of digits to show after the decimal point in the &quot;percentage faster by&quot; message--Equal to {@code 3}</p>
 
-      @see  #getTestABTestNanoDifferenceMsg(TimedTest)
-    **/
+    * @see  #getTestABTestNanoDifferenceMsg(TimedTest)
+    */
    public static final int DECIMAL_PLACES_DEFAULT = 3;
    /**
       <p>Create a new instance with a descriptive name.</p>
 
       <p>If getWriter() is {@code null} (which only occurs in the first {@code TimedTest} instance), this calls<ol>
-         <li><code>TimedTest.{@link #setLocale(Locale) setLocale}({@link java.text.Locale Locale}.{@link java.text.Locale#US US})</code></li>
+         <li><code>TimedTest.{@link #setLocale(Locale) setLocale}({@link java.util.Locale Locale}.{@link java.util.Locale#US US})</code></li>
          <li><code>TimedTest.setWriter(new {@link java.io.PrintWriter#PrintWriter(OutputStream) PrintWriter}(System.out))</code></li>
       </ol></p>
 
-      @param  name  Descriptive name used in output. May not be {@code null} or empty. Get with {@link #getName() getName}{@code ()}.
-    **/
+    * @param  name  Descriptive name used in output. May not be {@code null} or empty. Get with {@link #getName() getName}{@code ()}.
+    */
    public TimedTest(String name)  {
       if(numFmt == null)  {
          TimedTest.setLocale(Locale.US);
@@ -70,19 +70,19 @@ public class TimedTest  {
    /**
       <p>Descriptive name of this test, used in output strings.</p>
 
-      @see  #TimedTest(String)
-    **/
+    * @see  #TimedTest(String)
+    */
    public String getName()  {
       return  name;
    }
    /**
       <p>Output a &quot;starting test&quot; message, then start it.</p>
 
-      @see  #declareStart()
-      @see  #declareEndWithOutput()
-      @see  #declareEndThenStartNextWithOutput(TimedTest)
-      @exception  RuntimeException  If attempting to write the message fails for any reason.
-    **/
+    * @see  #declareStart()
+    * @see  #declareEndWithOutput()
+    * @see  #declareEndThenStartNextWithOutput(TimedTest)
+    * @exception  RuntimeException  If attempting to write the message fails for any reason.
+    */
    public void declareStartWithOutput()  {
       try  {
          getWriter().println("Starting test \"" + getName() + "\"");
@@ -103,10 +103,10 @@ public class TimedTest  {
 
       <p></p>
 
-      @param  next_test  May not be {@code null}.
-      @see  #declareEndWithOutput()
-      @exception  RuntimeException  If attempting to write the message fails for any reason.
-    **/
+    * @param  next_test  May not be {@code null}.
+    * @see  #declareEndWithOutput()
+    * @exception  RuntimeException  If attempting to write the message fails for any reason.
+    */
    public void declareEndThenStartNextWithOutput(TimedTest next_test)  {
       declareEnd();
       try  {
@@ -126,8 +126,8 @@ public class TimedTest  {
          <li>Outputs {@link #getTestTookXNanosMsg() getTestTookXNanosMsg}{@code ()} with {@link #getWriter() getWriter}{@code ()}.</li>
       </ol></p>
 
-      @exception  RuntimeException  If attempting to write the message fails for any reason.
-    **/
+    * @exception  RuntimeException  If attempting to write the message fails for any reason.
+    */
    public void declareEndWithOutput()  {
       declareEnd();
       try  {
@@ -142,10 +142,10 @@ public class TimedTest  {
 
       <p>This sets {@link #getStart() getStart}{@code ()} to <code>{@link java.lang.System System}.{@link java.lang.System#nanoTime() nanoTime}</code>.</p>
 
-      @see  #declareEnd()
-      @see  #declareStartWithOutput()
-      @exception  IllegalStateException  If {@link #wasStarted() wasStarted}{@code ()} is {@code true}. (The test is not started until after this {@code wasStarted()} check.)
-    **/
+    * @see  #declareEnd()
+    * @see  #declareStartWithOutput()
+    * @exception  IllegalStateException  If {@link #wasStarted() wasStarted}{@code ()} is {@code true}. (The test is not started until after this {@code wasStarted()} check.)
+    */
    public void declareStart()  {
       if(wasStarted())  {
          throw  new IllegalStateException("wasStarted() is true.");
@@ -157,11 +157,11 @@ public class TimedTest  {
 
       <p>This sets {@link #getEnd() getEnd}{@code ()} to <code>{@link java.lang.System System}.{@link java.lang.System#nanoTime() nanoTime}</code>.</p>
 
-      @see  #declareStart()
-      @see  #declareEndWithOutput()
-      @see  #declareEndThenStartNextWithOutput(TimedTest)
-      @exception  IllegalStateException  If {@link #wasStarted() wasStarted}{@code ()} is {@code false} or {@link #wasEnded() wasEnded}{@code ()} is {@code true}. (These {@code was*} tests are not done until after the test is stopped. But {@code getEnd()} is not set to this value until these tests pass.)
-    **/
+    * @see  #declareStart()
+    * @see  #declareEndWithOutput()
+    * @see  #declareEndThenStartNextWithOutput(TimedTest)
+    * @exception  IllegalStateException  If {@link #wasStarted() wasStarted}{@code ()} is {@code false} or {@link #wasEnded() wasEnded}{@code ()} is {@code true}. (These {@code was*} tests are not done until after the test is stopped. But {@code getEnd()} is not set to this value until these tests pass.)
+    */
    public void declareEnd()  {
       long end2 = System.nanoTime();
       if(!wasStarted())  {
@@ -175,47 +175,47 @@ public class TimedTest  {
    /**
       <p>The nanosecond that the test started.</p>
 
-      @return  The nanosecond the test started, or {@code -1} if {@link #wasStarted() wasStarted}{@code ()} is {@code false}.
-      @see  #getEnd()
-      @see  #declareStart()
-    **/
+    * @return  The nanosecond the test started, or {@code -1} if {@link #wasStarted() wasStarted}{@code ()} is {@code false}.
+    * @see  #getEnd()
+    * @see  #declareStart()
+    */
    public long getStart()  {
       return  startTime;
    }
    /**
       <p>Was the test started?.</p>
 
-      @return  <code>({@link #getStart() getStart}() != -1)</code>
-      @see  #wasEnded()
-    **/
+    * @return  <code>({@link #getStart() getStart}() != -1)</code>
+    * @see  #wasEnded()
+    */
    public boolean wasStarted()  {
       return  (getStart() != -1);
    }
    /**
       <p>Was the test ended?.</p>
 
-      @return  <code>({@link #getEnd() getEnd}() != -1)</code>
-      @see  #wasStarted()
-    **/
+    * @return  <code>({@link #getEnd() getEnd}() != -1)</code>
+    * @see  #wasStarted()
+    */
    public boolean wasEnded()  {
       return  (getEnd() != -1);
    }
    /**
       <p>The nanosecond that the test ended.</p>
 
-      @return  The nanosecond the test ended, or {@code -1} if {@link #wasEnded() wasEnded}{@code ()} is {@code false}.
-      @see  #getStart()
-      @see  #declareEnd()
-    **/
+    * @return  The nanosecond the test ended, or {@code -1} if {@link #wasEnded() wasEnded}{@code ()} is {@code false}.
+    * @see  #getStart()
+    * @see  #declareEnd()
+    */
    public long getEnd()  {
       return  endTime;
    }
    /**
       <p>Get the nanoseconds from test start-to-finish.</p>
 
-      @return  <code>({@link #getEnd() getEnd}() - {@link #getStart() getStart}())</code>
-      @exception  IllegalStateException  If {@link #wasEnded() wasEnded}{@code ()} is {@code false}.
-    **/
+    * @return  <code>({@link #getEnd() getEnd}() - {@link #getStart() getStart}())</code>
+    * @exception  IllegalStateException  If {@link #wasEnded() wasEnded}{@code ()} is {@code false}.
+    */
    public long getDuration()  {
       if(!wasEnded())  {
          throw  new IllegalStateException("wasEnded() is false.");
@@ -231,19 +231,19 @@ public class TimedTest  {
    /**
       <p>Was this test faster than another?.</p>
 
-      @return  <code>({@link #longCompareTo(TimedTest) longCompareTo}(to_compareTo) &lt; 0)</code>
-    **/
+    * @return  <code>({@link #longCompareTo(TimedTest) longCompareTo}(to_compareTo) &lt; 0)</code>
+    */
    public boolean didBeat(TimedTest to_compareTo)  {
       return  (longCompareTo(to_compareTo) < 0);  //this < to_compareTo
    }
    /**
       <p>Get the between this test and another's duration.</p>
 
-      @param  to_compareTo  May not be {@code null}, and its test must be {@link #wasEnded() ended}.
-      @return  <code>{@link java.lang.Long Long}.{@link java.lang.Long#compare(long, long) compare}({@link #getDuration() getDuration}(), to_compareTo.getDuration())</code>
-      @exception  IllegalStateException  If {@link #wasEnded() wasEnded}{@code ()} is {@code false}.
-      @see  #didBeat(TimedTest)
-    **/
+    * @param  to_compareTo  May not be {@code null}, and its test must be {@link #wasEnded() ended}.
+    * @return  <code>{@link java.lang.Long Long}.{@link java.lang.Long#compare(long, long) compare}({@link #getDuration() getDuration}(), to_compareTo.getDuration())</code>
+    * @exception  IllegalStateException  If {@link #wasEnded() wasEnded}{@code ()} is {@code false}.
+    * @see  #didBeat(TimedTest)
+    */
    public long longCompareTo(TimedTest to_compareTo)  {
       try  {
          return  Long.compare(getDuration(), to_compareTo.getDuration());
@@ -254,42 +254,42 @@ public class TimedTest  {
    /**
       <p>A basic message to display after this test ends.</p>
 
-      @return  <code>TimedTest.{@link #getTestTookXNanosMsg(TimedTest) getTestTookXNanosMsg}(this)</code>
-    **/
+    * @return  <code>TimedTest.{@link #getTestTookXNanosMsg(TimedTest) getTestTookXNanosMsg}(this)</code>
+    */
    public String getTestTookXNanosMsg()  {
       return  TimedTest.getTestTookXNanosMsg(this);
    }
    /**
       <p>Determines the winner, loser, and the time-difference between them.</p>
 
-      @return  <code>TimedTest.{@link #getWinnerDifferenceLoser(TimedTest, TimedTest) getWinnerDifferenceLoser}(this, to_compareTo)</code>
-    **/
+    * @return  <code>TimedTest.{@link #getWinnerDifferenceLoser(TimedTest, TimedTest) getWinnerDifferenceLoser}(this, to_compareTo)</code>
+    */
    public ThreeTuple<TimedTest,Long,TimedTest> getWinnerDifferenceLoser(TimedTest to_compareTo)  {
       return  TimedTest.getWinnerDifferenceLoser(this, to_compareTo);
    }
    /**
       <p>A message stating which of two tests was faster, and by what percentage.</p>
 
-      @return  <code>{@link #getTestABTestNanoDifferenceMsg(TimedTest, int) getTestABTestNanoDifferenceMsg}(to_compareTo, {@link #DECIMAL_PLACES_DEFAULT})</code>
-    **/
+    * @return  <code>{@link #getTestABTestNanoDifferenceMsg(TimedTest, int) getTestABTestNanoDifferenceMsg}(to_compareTo, {@link #DECIMAL_PLACES_DEFAULT})</code>
+    */
    public String getTestABTestNanoDifferenceMsg(TimedTest to_compareTo)  {
       return  getTestABTestNanoDifferenceMsg(to_compareTo, DECIMAL_PLACES_DEFAULT);
    }
    /**
       <p>A message stating which of two tests was faster, and by what percentage.</p>
 
-      @return  <code>TimedTest.{@link #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg}(this, to_compareTo, decimal_places)</code>
-    **/
+    * @return  <code>TimedTest.{@link #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg}(this, to_compareTo, decimal_places)</code>
+    */
    public String getTestABTestNanoDifferenceMsg(TimedTest to_compareTo, int decimal_places)  {
       return  TimedTest.getTestABTestNanoDifferenceMsg(this, to_compareTo, decimal_places);
    }
    /**
       <p>A message stating how long a test took.</p>
 
-      @param  test  A test that has ended. May not be {@code null}.
-      @see  #getTestTookXNanosMsg()
-      @see  #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg(tt,tt,i)
-    **/
+    * @param  test  A test that has ended. May not be {@code null}.
+    * @see  #getTestTookXNanosMsg()
+    * @see  #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg(tt,tt,i)
+    */
    public static final String getTestTookXNanosMsg(TimedTest test)  {
       try  {
          return  "Test \"" + test.getName() + "\" took " + numFmt.format(test.getDuration())  + " nanoseconds";
@@ -300,13 +300,13 @@ public class TimedTest  {
    /**
       <p>Determines the winner, loser, and the time-difference between them.</p>
 
-      @param  test_a  May not be {@code null} and must be {@link #wasEnded() ended}.
-      @param  test_b  May not be {@code null} and must be ended.
-      @return  An tuple containing the following three objects in order: The faster test, the nanosecond difference between them, and the slower tast.
-      @exception  IllegalStateException  If this test is not ended.
-      @see  #getWinnerDifferenceLoser(TimedTest, TimedTest) getWinnerDifferenceLoser(tt,tt)
-      @see  #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg(tt,tt,i)
-    **/
+    * @param  test_a  May not be {@code null} and must be {@link #wasEnded() ended}.
+    * @param  test_b  May not be {@code null} and must be ended.
+    * @return  An tuple containing the following three objects in order: The faster test, the nanosecond difference between them, and the slower tast.
+    * @exception  IllegalStateException  If this test is not ended.
+    * @see  #getWinnerDifferenceLoser(TimedTest, TimedTest) getWinnerDifferenceLoser(tt,tt)
+    * @see  #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg(tt,tt,i)
+    */
    public static final ThreeTuple<TimedTest,Long,TimedTest> getWinnerDifferenceLoser(TimedTest test_a, TimedTest test_b)  {
       long diff = -1;
       TimedTest winner = null;
@@ -330,23 +330,23 @@ public class TimedTest  {
    /**
       <p>A message stating which of two tests was faster, and by what percentage.</p>
 
-      @return  <code>{@link #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg}(test_a, test_b, {@link #DECIMAL_PLACES_DEFAULT})</code>
-    **/
+    * @return  <code>{@link #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest, int) getTestABTestNanoDifferenceMsg}(test_a, test_b, {@link #DECIMAL_PLACES_DEFAULT})</code>
+    */
    public static final String getTestABTestNanoDifferenceMsg(TimedTest test_a, TimedTest test_b)  {
       return  getTestABTestNanoDifferenceMsg(test_a, test_b, DECIMAL_PLACES_DEFAULT);
    }
    /**
       <p>A message stating which of two tests was faster, and by what percentage.</p>
 
-      @param  test_a  May not be {@code null}, and must be {@link #wasEnded() ended}.
-      @param  test_b  May not be {@code null}, and must be ended.
-      @param  decimal_places  The number of digits to display to the right of the decimal point. May not be less than zero, and must be valid for <code>String.{@link java.lang.String#format(String, Object...) format}(s,o...)</code> (for use between {@code "%."} and {@code "f"}).
-      @see  #getWinnerDifferenceLoser(TimedTest, TimedTest) getWinnerDifferenceLoser(tt,tt)
-      @see  #getTestABTestNanoDifferenceMsg(TimedTest) getTestABTestNanoDifferenceMsg(tt)
-      @see  #getTestABTestNanoDifferenceMsg(TimedTest, int) getTestABTestNanoDifferenceMsg(tt,i)
-      @see  #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest) getTestABTestNanoDifferenceMsg(tt,tt)
-      @see  #getTestTookXNanosMsg(TimedTest) getTestTookXNanosMsg(tt)
-    **/
+    * @param  test_a  May not be {@code null}, and must be {@link #wasEnded() ended}.
+    * @param  test_b  May not be {@code null}, and must be ended.
+    * @param  decimal_places  The number of digits to display to the right of the decimal point. May not be less than zero, and must be valid for <code>String.{@link java.lang.String#format(String, Object...) format}(s,o...)</code> (for use between {@code "%."} and {@code "f"}).
+    * @see  #getWinnerDifferenceLoser(TimedTest, TimedTest) getWinnerDifferenceLoser(tt,tt)
+    * @see  #getTestABTestNanoDifferenceMsg(TimedTest) getTestABTestNanoDifferenceMsg(tt)
+    * @see  #getTestABTestNanoDifferenceMsg(TimedTest, int) getTestABTestNanoDifferenceMsg(tt,i)
+    * @see  #getTestABTestNanoDifferenceMsg(TimedTest, TimedTest) getTestABTestNanoDifferenceMsg(tt,tt)
+    * @see  #getTestTookXNanosMsg(TimedTest) getTestTookXNanosMsg(tt)
+    */
    public static final String getTestABTestNanoDifferenceMsg(TimedTest test_a, TimedTest test_b, int decimal_places)  {
       ThreeTuple<TimedTest,Long,TimedTest> winnerDiffLoser = getWinnerDifferenceLoser(test_a, test_b);
       double dPct = 100.00 -
@@ -363,9 +363,9 @@ public class TimedTest  {
    /**
       <p>Set the localization used for displaying the nanoseconds.</p>
 
-      @param  locale  May not be {@code null}. Get with {@link #getAvailableLocales() getAvailableLocales}{@code ()}
-      @see  #setWriter(PrintWriter)
-    **/
+    * @param  locale  May not be {@code null}. Get with {@link #getAvailableLocales() getAvailableLocales}{@code ()}
+    * @see  #setWriter(PrintWriter)
+    */
    public static final void setLocale(Locale locale)  {
       Objects.requireNonNull(locale, "locale");
       numFmt = NumberFormat.getNumberInstance(locale);
@@ -373,9 +373,9 @@ public class TimedTest  {
    /**
       <p>Set the writer for printing messages.</p>
 
-      @param  writer  May not be {@code null}, and <code>writer.{@link java.io.PrintWriter#checkError() checkError}()</code> must be {@code false}. Get with {@link #getWriter() getWriter}{@code ()}
-      @see  #setLocale(Locale)
-    **/
+    * @param  writer  May not be {@code null}, and <code>writer.{@link java.io.PrintWriter#checkError() checkError}()</code> must be {@code false}. Get with {@link #getWriter() getWriter}{@code ()}
+    * @see  #setLocale(Locale)
+    */
    public static final void setWriter(PrintWriter writer)  {
       IOUtil.crashIfPrintWriterError(writer, "writer");
       TimedTest.writer = writer;
@@ -383,8 +383,8 @@ public class TimedTest  {
    /**
       <p>Get the number of test iterations as provided in the command line.</p>
 
-      @return  <code>{@link com.github.xbn.testdev.GetFromCommandLineAtIndex GetFromCommandLineAtIndex}.{@link com.github.xbn.testdev.GetFromCommandLineAtIndex#number(String[], int, IntInRange, String, Appendable) number}(cmd_lineParams, test_countIdx, {@link com.github.xbn.number.NewIntInRangeFor NewIntInRangeFor}.{@link com.github.xbn.number.NewIntInRangeFor#min(Invert, int, String) min}(1, null))</code>
-    **/
+    * @return  <code>{@link com.github.xbn.testdev.GetFromCommandLineAtIndex GetFromCommandLineAtIndex}.{@link com.github.xbn.testdev.GetFromCommandLineAtIndex#number(String[], int, IntInRange, String, Appendable) number}(cmd_lineParams, test_countIdx, {@link com.github.xbn.number.NewIntInRangeFor NewIntInRangeFor}.{@link com.github.xbn.number.NewIntInRangeFor#min(Invert, int, String) min}(1, null))</code>
+    */
    public static final int getTestCountFromCmdLine(String[] cmd_lineParams, int test_countIdx)  {
       return  GetFromCommandLineAtIndex.number(cmd_lineParams, test_countIdx, NewIntInRangeFor.min(null, 1, null), "[test count]", null);
    }

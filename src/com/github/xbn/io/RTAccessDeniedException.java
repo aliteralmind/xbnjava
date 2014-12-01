@@ -16,8 +16,8 @@ package  com.github.xbn.io;
 /**
    <p>Runtime-wrapper for {@code java.nio.file.AccessDeniedException}-s.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RTAccessDeniedException extends RTIOException  {
 
@@ -27,24 +27,24 @@ public class RTAccessDeniedException extends RTIOException  {
    private static final long serialVersionUID = 7078314154264491059L;
    /**
       <p>Create an RTAccessDeniedException with no error message.</p>
-    **/
+    */
    public RTAccessDeniedException()  {
    }
    /**
       <p>Create an RTAccessDeniedException.</p>
-    **/
+    */
    public RTAccessDeniedException(String message)  {
       super(message);
    }
    /**
       <p>Create an RTAccessDeniedException with no error message.</p>
-    **/
+    */
    public RTAccessDeniedException(Throwable cause)  {
       super(cause);
    }
    /**
       <p>Create an RTAccessDeniedException.</p>
-    **/
+    */
    public RTAccessDeniedException(String message, Throwable cause)  {
       super(message, cause);
    }

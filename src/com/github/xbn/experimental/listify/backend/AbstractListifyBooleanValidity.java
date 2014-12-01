@@ -20,8 +20,8 @@ package  com.github.xbn.experimental.listify.backend;
 /**
    <p>For building listifiers whose virtual elements express the <i>validity</i> of its raw elements.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyBoolable  {
    private ValueValidator<R> vvre = null;
@@ -31,9 +31,9 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object) super}{@code (raw_obj)}</p>
-    **/
+    */
    public AbstractListifyBooleanValidity(Object raw_obj, ValueValidator<R> raw_elementVldtr)  {
       super(raw_obj);
       setVVRE(raw_elementVldtr);
@@ -43,9 +43,9 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object, NullHandlerForPrimitives) super}{@code (raw_obj, null_handler)}</p>
-    **/
+    */
    public AbstractListifyBooleanValidity(Object raw_obj, ValueValidator<R> raw_elementVldtr, NullHandlerForPrimitives<Boolean> null_handler)  {
       super(raw_obj, null_handler);
       setVVRE(raw_elementVldtr);
@@ -64,9 +64,9 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    */
    @SuppressWarnings("unchecked")
    public AbstractListifyBooleanValidity(AbstractListifyBooleanValidity<R> to_copy)  {
       super(to_copy);

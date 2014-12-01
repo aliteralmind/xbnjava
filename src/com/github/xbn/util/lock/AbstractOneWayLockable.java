@@ -20,21 +20,21 @@ public abstract class AbstractOneWayLockable extends AbstractLockable implements
    /**
       <p>Create a new {@code AbstractOneWayLockable}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.util.lock.AbstractLockable#AbstractLockable(boolean) super}{@code (false)}</p>
 
-      @see  #AbstractOneWayLockable(OneWayLockable, boolean) this(owl,b)
-    **/
+    * @see  #AbstractOneWayLockable(OneWayLockable, boolean) this(owl,b)
+    */
    public AbstractOneWayLockable()  {
       super(false);
    }
    /**
       <p>Create a new {@code AbstractOneWayLockable} from a {@code OneWayLockable}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.util.lock.AbstractLockable#AbstractLockable(Lockable) super}{@code (to_copy)}</p>
-      @see  #AbstractOneWayLockable(boolean) this(b)
-    **/
+    * @see  #AbstractOneWayLockable(boolean) this(b)
+    */
    public AbstractOneWayLockable(OneWayLockable to_copy)  {
       super(to_copy);
    }

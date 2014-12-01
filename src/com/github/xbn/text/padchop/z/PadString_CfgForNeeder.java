@@ -16,10 +16,10 @@ package  com.github.xbn.text.padchop.z;
    import  com.github.xbn.text.padchop.PadString;
    import  com.github.xbn.neederneedable.Needer;
 /**
-   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.text.padchop.PadString PadString}.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/neederneedable/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.text.padchop.PadString PadString}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extends PadChopBase_CfgForNeeder<P,R> implements PadString_Fieldable  {
    public char cPad = ' ';
@@ -27,9 +27,9 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
    /**
       <p>Create a new {@code zPadString_CfgForNeeder} with defaults.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R, int)">this</a>(needer, -1)</code></p>
-    **/
+    */
    public PadString_CfgForNeeder(R needer)  {
       this(needer, -1);
    }
@@ -45,7 +45,7 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
          <li>{@link #right() right}{@code ()}</li>
          <li>{@link #withSpace() withSpace}{@code ()}</li>
       </ol></p>
-    **/
+    */
    public PadString_CfgForNeeder(R needer, int goal_len)  {
       super(needer, goal_len);
       right();
@@ -56,9 +56,9 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
    /**
       <p>Declare the length that the string should be chopped to.</p>
 
-      @param  length  May not be less than 0. Get with {@link com.github.xbn.text.padchop.PadString#getGoalLen() getGoalLen}{@code ()}*
-      @return  <i>{@code this}</i>
-    **/
+    * @param  length  May not be less than 0. Get with {@link com.github.xbn.text.padchop.PadString#getGoalLen() getGoalLen}{@code ()}*
+    * @return  <i>{@code this}</i>
+    */
    public PadString_CfgForNeeder<P,R> goalLen(int length)  {
       iGoalLen = length;
       return  this;
@@ -68,8 +68,8 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
 
       <p>This sets {@link com.github.xbn.text.padchop.PadString#isSideRight() isSideRight}{@code ()}* to {@code true}.</p>
 
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public PadString_CfgForNeeder<P,R> right()  {
       bSideRight = true;
       return  this;
@@ -79,9 +79,9 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
 
       <p>This sets {@link com.github.xbn.text.padchop.PadString#isSideRight() isSideRight}{@code ()}* to {@code false}.</p>
 
-      @return  <i>{@code this}</i>
-      @see  #goalLen(int) goalLen(i)
-    **/
+    * @return  <i>{@code this}</i>
+    * @see  #goalLen(int) goalLen(i)
+    */
    public PadString_CfgForNeeder<P,R> left()  {
       bSideRight = false;
       return  this;
@@ -89,10 +89,10 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
    /**
       <p>Define the character to pad with.</p>
 
-      @param  pad_char  Get with {@link com.github.xbn.text.padchop.PadString#getPadChar() getPadChar}{@code ()}*
-      @return  <i>{@code this}</i>
-      @see  #withSpace()
-    **/
+    * @param  pad_char  Get with {@link com.github.xbn.text.padchop.PadString#getPadChar() getPadChar}{@code ()}*
+    * @return  <i>{@code this}</i>
+    * @see  #withSpace()
+    */
    public PadString_CfgForNeeder<P,R> with(char pad_char)  {
       cPad = pad_char;
       return  this;
@@ -100,8 +100,8 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
    /**
       <p>Declare the pad-character to be a space.</p>
 
-      @return  {@link #with(char) with}{@code (' ')}
-    **/
+    * @return  {@link #with(char) with}{@code (' ')}
+    */
    public PadString_CfgForNeeder<P,R> withSpace()  {
       return  with(' ');
    }
@@ -118,16 +118,16 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
          </ul></p>
 
 
-      @return  <code>(new {@link com.github.xbn.text.padchop.PadString#PadString(PadString_Fieldable) PadString}(this))</code>
-    **/
+    * @return  <code>(new {@link com.github.xbn.text.padchop.PadString#PadString(PadString_Fieldable) PadString}(this))</code>
+    */
    public P build()  {
       @SuppressWarnings("unchecked")
       P p = (P)(new PadString(this));
       return  p;
    }
    /**
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public PadString_CfgForNeeder<P,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
       Class<P> clsp = (Class<P>)(Class)PadString.class;
@@ -137,14 +137,14 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
    /**
       <p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-      @return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
-    **/
+    * @return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
+    */
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }
    /**
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public PadString_CfgForNeeder<P,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;

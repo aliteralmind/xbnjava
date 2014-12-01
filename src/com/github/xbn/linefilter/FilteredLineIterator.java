@@ -82,7 +82,7 @@ package  com.github.xbn.linefilter;
 <A NAME="xmpl_extract_blocks"></a>
    <h2><a href="#skip-navbar_top"><IMG SRC="{@docRoot}/resources/up_arrow.gif"/></a> &nbsp; {@code FilteredLineIterator}: Example: More realistic block extraction</h2>
 
-<p>A more realistic version of the <a href="#xmpl_basic">first example</a>, extracting all blocks that start with {@code "Reference Type:..."} and end with {@code "'File' Attachments:..."}: <i>(<a href="{@docRoot}/com/github/xbn/examples/linefilter/reference_type_through_attachment_blocks_input.txt.txt">input</a>, <a href="{@docRoot}/src-html/com/github/xbn/examples/linefilter/ExtractReferenceTypeBlocks.html">full source</a>)</i></p>
+<p>A more realistic version of the <a href="#xmpl_basic">first example</a>, extracting all blocks that start with {@code "Reference Type:..."} and end with {@code "'File' Attachments:..."}: <i>(<a href="{@docRoot}/com/github/xbn/examples/linefilter/reference_type_through_attachment_blocks_input.txt">input</a>, <a href="{@docRoot}/src-html/com/github/xbn/examples/linefilter/ExtractReferenceTypeBlocks.html">full source</a>)</i></p>
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.ExtractReferenceTypeBlocks("examples\com\github\xbn\examples\linefilter\reference_type_through_attachment_blocks_input.txt")%lineRangeWithReplace(1, true, "(block = NewBlockEntityFor)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
@@ -127,21 +127,21 @@ package  com.github.xbn.linefilter;
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.PrintJavaDocBlockSubLinesBolded("examples\com\github\xbn\examples\linefilter\JavaClassWithOneCommentAndTwoJavaDocBlocksWithSub_input.txt")%lineRangeWithReplace(1, true, "(String subModePre)", "$1", "FIRST", 1, true, " +//End snippet$", "", "FIRST", "^      ")}
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class FilteredLineIterator extends FilteredIterator<String>  {
    /**
       <p>Create a new instance with a root block entity that matches all lines in the file.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, RawChildEntity[]) this}(all_lineItr, return_what,
       <br/> &nbsp; &nbsp; start_mid_end, start_mid_end, start_mid_end
       <br/> &nbsp; &nbsp; dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull, children)</code>
       <br/>Where {@code doKeepStartLine} is {@code true} if {@code start_mid_end} is {@link KeepStartLine#YES YES}</p>
 
-      @param  start_mid_end May not be {@code null}.
-    **/
+    * @param  start_mid_end May not be {@code null}.
+    */
    public FilteredLineIterator(Iterator<String> all_lineItr, Returns return_what, KeepUnmatched start_mid_end, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, TextChildEntity... children)  {
       this(all_lineItr, return_what,
          KeepStartLine.getForBoolean(
@@ -154,17 +154,17 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    /**
       <p>Create a new instance with a root block entity that matches all lines.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, RawChildEntity[]) this}(all_lineItr, return_what,
       <br/> &nbsp; &nbsp; keep_rootStart, keep_rootMids, keep_rootEnd
       <br/> &nbsp; &nbsp; dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
       <br/> &nbsp; &nbsp; ({@link com.github.xbn.linefilter.entity.raw.RawChildEntity}&lt;String&gt;[])children)</code>
       <br/>Where {@code doKeepStartLine} is {@code true} if {@code start_mid_end} is {@link KeepStartLine#YES YES}</p>
 
-      @param  keep_rootStart May not be {@code null}.
-      @param  keep_rootMids May not be {@code null}.
-      @param  keep_rootEnd May not be {@code null}.
-    **/
+    * @param  keep_rootStart May not be {@code null}.
+    * @param  keep_rootMids May not be {@code null}.
+    * @param  keep_rootEnd May not be {@code null}.
+    */
    public FilteredLineIterator(Iterator<String> all_lineItr, Returns return_what, KeepStartLine keep_rootStart, KeepMidLines keep_rootMids, KeepEndLine keep_rootEnd, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, TextChildEntity... children)  {
       this(all_lineItr, return_what,
          keep_rootStart, keep_rootMids, keep_rootEnd,
@@ -174,16 +174,16 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    /**
       <p>Create a new instance with a root block entity that matches all lines.</p>
 
-      <p>Equal to
+    * <p>Equal to
 <blockquote><pre>{@link #FilteredLineIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) this}(all_lineItr, return_what, dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull
    {@link com.github.xbn.linefilter.entity.NewBlockEntityFor}.{@link com.github.xbn.linefilter.entity.NewBlockEntityFor#returnKeptUnchanged_Cfg(String, KeepStartLine, KeepMidLines, KeepEndLine, EntityRequired, RawOnOffEntityFilter, Appendable) returnKeptUnchanged_Cfg}(&quot;root&quot;,
       keep_rootStart, keep_rootMids, keep_rootEnd, {@link com.github.xbn.linefilter.entity.EntityRequired}.{@link com.github.xbn.linefilter.entity.EntityRequired#YES YES}, null, null).
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}(children).{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#build() build}())</pre></blockquote></p>
 
-      @param  keep_rootStart May not be {@code null}.
-      @param  keep_rootMids May not be {@code null}.
-      @param  keep_rootEnd May not be {@code null}.
-    **/
+    * @param  keep_rootStart May not be {@code null}.
+    * @param  keep_rootMids May not be {@code null}.
+    * @param  keep_rootEnd May not be {@code null}.
+    */
    public FilteredLineIterator(Iterator<String> all_lineItr, Returns return_what, KeepStartLine keep_rootStart, KeepMidLines keep_rootMids, KeepEndLine keep_rootEnd, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawChildEntity<String>[] children)  {
       this(all_lineItr, return_what,
          dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull,
@@ -194,25 +194,25 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    /**
       <p>Create a new instance from a root block that may or may not match all lines.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.linefilter.FilteredIterator#FilteredIterator(Iterator, Returns, Appendable, LengthInRange, RawBlockEntity) super}(all_lineItr, return_what, dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull, root_block)</code>
-      @see  #FilteredLineIterator(Iterator, Returns, KeepUnmatched, Appendable, LengthInRange, TextChildEntity...) FilteredLineIterator(..., KeepUnmatched, ...)
-      @see  #FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, TextChildEntity...) FilteredLineIterator(..., KeepEndLine, ..., TextChildEntity...)
-      @see  #FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, RawChildEntity[]) FilteredLineIterator(..., KeepStartLine, ..., RawChildEntity[])
-    **/
+    * @see  #FilteredLineIterator(Iterator, Returns, KeepUnmatched, Appendable, LengthInRange, TextChildEntity...) FilteredLineIterator(..., KeepUnmatched, ...)
+    * @see  #FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, TextChildEntity...) FilteredLineIterator(..., KeepEndLine, ..., TextChildEntity...)
+    * @see  #FilteredLineIterator(Iterator, Returns, KeepStartLine, KeepMidLines, KeepEndLine, Appendable, LengthInRange, RawChildEntity[]) FilteredLineIterator(..., KeepStartLine, ..., RawChildEntity[])
+    */
    public FilteredLineIterator(Iterator<String> all_lineItr, Returns return_what, Appendable dbgEveryLine_ifNonNull, LengthInRange rangeForEveryLineDebug_ifNonNull, RawBlockEntity<String> root_block)  {
       super(all_lineItr, return_what, dbgEveryLine_ifNonNull, rangeForEveryLineDebug_ifNonNull, root_block);
    }
    /**
-      @return  <code>{@link #appendAllLines(StringBuilder) appendAllLines}(new StringBuilder()).toString()</code>
-    **/
+    * @return  <code>{@link #appendAllLines(StringBuilder) appendAllLines}(new StringBuilder()).toString()</code>
+    */
    public String getAllLines()  {
       return  appendAllLines(new StringBuilder()).toString();
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #getAllLines()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #getAllLines()
+    */
    public StringBuilder appendAllLines(StringBuilder to_appendTo)  {
       try  {
          while(hasNext())  {
@@ -226,10 +226,10 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    /**
       <p>Get the root block as a non-raw block entity.</p>
 
-      @return  <code>(BlockEntity){@link FilteredIterator#getRawRootBlock() getRawRootBlock}()*</code>
-      @see  #getActiveChild()
-      @since  0.1.2
-    **/
+    * @return  <code>(BlockEntity){@link FilteredIterator#getRawRootBlock() getRawRootBlock}()*</code>
+    * @see  #getActiveChild()
+    * @since  0.1.2
+    */
    public BlockEntity getRootBlock()  {
       try  {
          return  (BlockEntity)getRawRootBlock();
@@ -239,13 +239,13 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       }
    }
    /**
-      @return  <code>(BlockEntity){@link FilteredIterator#getRawActiveChild() getRawActiveChild}()*</code>
-      @see  #getActiveChildSingleLine()
-      @see  #getActiveChildBlock()
-      @see  FilteredIterator#getActiveChildStealthBlock()
-      @see  #getRootBlock()
-      @since  0.1.2
-    **/
+    * @return  <code>(BlockEntity){@link FilteredIterator#getRawActiveChild() getRawActiveChild}()*</code>
+    * @see  #getActiveChildSingleLine()
+    * @see  #getActiveChildBlock()
+    * @see  FilteredIterator#getActiveChildStealthBlock()
+    * @see  #getRootBlock()
+    * @since  0.1.2
+    */
    public TextChildEntity getActiveChild()  {
       try  {
          return  (TextChildEntity)getRawActiveChild();
@@ -255,10 +255,10 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       }
    }
    /**
-      @return  <code>(BlockEntity){@link FilteredIterator#getRawActiveChildBlock() getRawActiveChildBlock}()*</code>
-      @see  #getActiveChild()
-      @since  0.1.2
-    **/
+    * @return  <code>(BlockEntity){@link FilteredIterator#getRawActiveChildBlock() getRawActiveChildBlock}()*</code>
+    * @see  #getActiveChild()
+    * @since  0.1.2
+    */
    public BlockEntity getActiveChildBlock()  {
       try  {
          return  (BlockEntity)getRawActiveChildBlock();
@@ -268,10 +268,10 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       }
    }
    /**
-      @return  <code>(BlockEntity){@link FilteredIterator#getActiveChildStealthBlock() getActiveChildStealthBlock}()*</code>
-      @see  #getActiveChild()
-      @since  0.1.2
-    **/
+    * @return  <code>(BlockEntity){@link FilteredIterator#getActiveChildStealthBlock() getActiveChildStealthBlock}()*</code>
+    * @see  #getActiveChild()
+    * @since  0.1.2
+    */
    public StealthBlockEntity getActiveChildStealthBlock()  {
       try  {
          return  (StealthBlockEntity)getRawActiveChildStealthBlock();
@@ -281,10 +281,10 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       }
    }
    /**
-      @return  <code>(BlockEntity){@link FilteredIterator#getRawActiveChildSingleLine() getRawActiveChildSingleLine}()*</code>
-      @see  #getActiveChild()
-      @since  0.1.2
-    **/
+    * @return  <code>(BlockEntity){@link FilteredIterator#getRawActiveChildSingleLine() getRawActiveChildSingleLine}()*</code>
+    * @see  #getActiveChild()
+    * @since  0.1.2
+    */
    public SingleLineEntity getActiveChildSingleLine()  {
       try  {
          return  (SingleLineEntity)getRawActiveChildSingleLine();
@@ -297,11 +297,8 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
       <p>. Set the next line to be returned by {@code next()}.</p>
 
       <p>This sets {@link #next() next}{@code ()} to {@code altered_body}</p>
-
-      @param  altered_body  <i>Should</i> not be {@code null}.
-
-      @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="raw/FilteredIterator.html#setNextLineReturnTrue(int, O)">FilteredIterator.html#setNextLineReturnTrue</a></code>
-    **/
+    * @param  altered_body  <i>Should</i> not be {@code null}.
+    */
    protected boolean setNextLineReturnTrue(String altered_body)  {
       nextLineNum = getMostRecentLineNum();
       nextLine = altered_body;
@@ -312,19 +309,19 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    /**
       <p>Convenience function for retrieving all lines in a newly active block.</p>
 
-      @since  0.1.2
-      @return  <code>{@link #appendAllBlockLines(java.lang.StringBuilder, java.lang.String, com.github.xbn.linefilter.StripFinalNewLine, com.github.xbn.linefilter.ChildOnFirstLine) getAllBlockLines}(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull, childOn1stLine_noIfNull).toString()</code>
-    **/
+    * @since  0.1.2
+    * @return  <code>{@link #appendAllBlockLines(java.lang.StringBuilder, java.lang.String, com.github.xbn.linefilter.StripFinalNewLine, com.github.xbn.linefilter.ChildOnFirstLine) getAllBlockLines}(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull, childOn1stLine_noIfNull).toString()</code>
+    */
    public String getAllBlockLines(String block_startLine, StripFinalNewLine stripFinalNewline_noIfNull, ChildOnFirstLine childOn1stLine_noIfNull)  {
       return  appendAllBlockLines(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull, childOn1stLine_noIfNull).toString();
    }
    /**
       <p>Convenience function for retrieving all lines in a newly active block.</p>
 
-      @return  <code>{@link #appendAllBlockLinesX(java.lang.StringBuilder, java.lang.String, com.github.xbn.linefilter.StripFinalNewLine, com.github.xbn.linefilter.ChildOnFirstLine) appendAllBlockLinesX}(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull,
-      @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
-      @since  0.1.2
-    **/
+    * @return  <code>{@link #appendAllBlockLinesX(java.lang.StringBuilder, java.lang.String, com.github.xbn.linefilter.StripFinalNewLine, com.github.xbn.linefilter.ChildOnFirstLine) appendAllBlockLinesX}(new StringBuilder(), block_startLine, stripFinalNewline_noIfNull,
+    * @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
+    * @since  0.1.2
+    */
    public Appendable appendAllBlockLines(Appendable to_appendTo, String block_startLine, StripFinalNewLine stripFinalNewline_noIfNull, ChildOnFirstLine childOn1stLine_noIfNull)  {
       try  {
          return  appendAllBlockLinesX(to_appendTo, block_startLine, stripFinalNewline_noIfNull, childOn1stLine_noIfNull);
@@ -335,24 +332,24 @@ public class FilteredLineIterator extends FilteredIterator<String>  {
    /**
       <p>Convenience function for retrieving all lines in a newly active block. This must be called immediately after the start-line in a block or stealth block is detected--before the next call to {@link FilteredIterator#next() next}{@code ()}* is made. (<a href="#xmpl_extract_blocks">Example</a>)</p>
 
-      @param  to_appendTo May not be {@code null}.
-      @param  block_startLine  The text of the just-retrieved block start-line. <i>Should</i> not be {@code null}.
-      @param  stripFinalNewline_noIfNull  If {@link StripFinalNewLine#YES YES}, then a {@linkplain com.github.xbn.lang.XbnConstants#LINE_SEP new-line} is not appended to the final line in the block. If {@link StripFinalNewLine#NO NO} (or {@code null}), a new-line is appended.
-      @param  childOn1stLine_noIfNull  For when the the first line in the root block happens to also be the first line in a child-block. If {@link ChildOnFirstLine#YES YES}, then the child-block is retrieved. If {@link ChildOnFirstLine#NO NO} (or {@code null}), the root-block is retrieved. If there is no child block, this must be {@code NO}.
-      @return  {@code to_appendTo}, with all lines in the block appended (and, in the case of a non-stealth block, potentially altered).
-      @exception  IllegalArgumentException  If this is <ul>
+    * @param  to_appendTo May not be {@code null}.
+    * @param  block_startLine  The text of the just-retrieved block start-line. <i>Should</i> not be {@code null}.
+    * @param  stripFinalNewline_noIfNull  If {@link StripFinalNewLine#YES YES}, then a {@linkplain com.github.xbn.lang.XbnConstants#LINE_SEP new-line} is not appended to the final line in the block. If {@link StripFinalNewLine#NO NO} (or {@code null}), a new-line is appended.
+    * @param  childOn1stLine_noIfNull  For when the the first line in the root block happens to also be the first line in a child-block. If {@link ChildOnFirstLine#YES YES}, then the child-block is retrieved. If {@link ChildOnFirstLine#NO NO} (or {@code null}), the root-block is retrieved. If there is no child block, this must be {@code NO}.
+    * @return  {@code to_appendTo}, with all lines in the block appended (and, in the case of a non-stealth block, potentially altered).
+    * @exception  IllegalArgumentException  If this is <ul>
          <li>The first line in the input file, {@code childOn1stLine_noIfNull} is<ul>
             <li>{@code NO}, and this is not the {@linkplain #getRootBlock() root block}'s {@linkplain com.github.xbn.linefilter.entity.BlockEntity#isStartLine() start line}.</li>
             <li>{@code YES}, and there is no {@linkplain #hasActiveChild() active child}.</li>
          </ul></li>
          <li>Not the first line in the input file and there is no active child.</li>
       </ul>
-      @exception  ClassCastException  If the active child is a {@linkplain #getActiveChildSingleLine() single-line entity}.
-      @exception  LineEntityException  If the child block is active but, at the moment this function is called, it's not the start line.
-      @see  #getAllBlockLines(String, StripFinalNewLine, ChildOnFirstLine) getAllBlockLines
-      @see  #appendAllBlockLines(Appendable, String, StripFinalNewLine, ChildOnFirstLine) appendAllBlockLines
-      @since  0.1.2
-    **/
+    * @exception  ClassCastException  If the active child is a {@linkplain #getActiveChildSingleLine() single-line entity}.
+    * @exception  LineEntityException  If the child block is active but, at the moment this function is called, it's not the start line.
+    * @see  #getAllBlockLines(String, StripFinalNewLine, ChildOnFirstLine) getAllBlockLines
+    * @see  #appendAllBlockLines(Appendable, String, StripFinalNewLine, ChildOnFirstLine) appendAllBlockLines
+    * @since  0.1.2
+    */
    public Appendable appendAllBlockLinesX(Appendable to_appendTo, String block_startLine, StripFinalNewLine stripFinalNewline_noIfNull, ChildOnFirstLine childOn1stLine_noIfNull) throws IOException  {
       childOn1stLine_noIfNull = ((childOn1stLine_noIfNull == null)
          ?  ChildOnFirstLine.NO

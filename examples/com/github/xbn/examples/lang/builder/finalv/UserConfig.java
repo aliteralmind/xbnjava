@@ -21,8 +21,8 @@ package  com.github.xbn.examples.lang.builder.finalv;
 
    <p>{@code java com.github.xbn.examples.lang.builder.finalv.UserConfig}</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class UserConfig  {
@@ -67,31 +67,31 @@ public class UserConfig  {
       /**
          <p>The user's name.</p>
 
-         @return  A non-{@code null}, non-empty string.
-         @see  UserConfig_Cfg#UserConfig_Cfg(String)
-         @see  #getAge()
-         @see  #getFavoriteColor()
-       **/
+       * @return  A non-{@code null}, non-empty string.
+       * @see  UserConfig_Cfg#UserConfig_Cfg(String)
+       * @see  #getAge()
+       * @see  #getFavoriteColor()
+       */
       public String getName()  {
          return  sName;
       }
       /**
          <p>The user's age.</p>
 
-         @return  A number greater-than-or-equal-to zero.
-         @see  UserConfig_Cfg#age(int)
-         @see  #getName()
-       **/
+       * @return  A number greater-than-or-equal-to zero.
+       * @see  UserConfig_Cfg#age(int)
+       * @see  #getName()
+       */
       public int getAge()  {
          return  iAge;
       }
       /**
          <p>The user's favorite color.</p>
 
-         @return  A non-{@code null}, non-empty string.
-         @see  UserConfig_Cfg#age(int)
-         @see  #getName()
-       **/
+       * @return  A non-{@code null}, non-empty string.
+       * @see  UserConfig_Cfg#age(int)
+       * @see  #getName()
+       */
       public String getFavoriteColor()  {
          return  sFavColor;
       }

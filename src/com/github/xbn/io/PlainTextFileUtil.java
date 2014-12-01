@@ -35,27 +35,27 @@ public class PlainTextFileUtil  {
    /**
       <p>Get all plain-text from a file, given its path.</p>
 
-      @return  <code>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), path, file_varName).toString()</code>
-    **/
+    * @return  <code>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), path, file_varName).toString()</code>
+    */
    public static final String getText(String path, String file_varName)  {
       return  appendText((new StringBuilder()), path, file_varName).toString();
    }
    /**
       <p>Get all plain-text from a file, given its path.</p>
 
-      @return  <code>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), file, file_varName).toString()</code>
-    **/
+    * @return  <code>{@link #appendText(StringBuilder, String, String) appendText}((new StringBuilder()), file, file_varName).toString()</code>
+    */
    public static final String getText(File file, String file_varName)  {
       return  appendText((new StringBuilder()), file, file_varName).toString();
    }
    /**
       <p>Append all plain-text from a file, given its path.</p>
 
-      @return  {@code to_appendTo}, after all lines from
+    * @return  {@code to_appendTo}, after all lines from
       <br/> &nbsp; &nbsp; {@link #getLineIterator(String, String) getLineIterator}{@code (path, file_varName)}
       <br/>are appended to it.
-      @see  #appendText(StringBuilder, File, String)
-    **/
+    * @see  #appendText(StringBuilder, File, String)
+    */
    public static final StringBuilder appendText(StringBuilder to_appendTo, String path, String file_varName)  {
       Iterator<String> lineItr = getLineIterator(path, file_varName);
       while(lineItr.hasNext())  {
@@ -66,11 +66,11 @@ public class PlainTextFileUtil  {
    /**
       <p>Append all plain-text from a file.</p>
 
-      @return  {@code to_appendTo}, after all lines from
+    * @return  {@code to_appendTo}, after all lines from
       <br/> &nbsp; &nbsp; {@link #getLineIterator(File, String) getLineIterator}{@code (file, file_varName)}
       <br/>are appended to it.
-      @see  #appendText(StringBuilder, String, String)
-    **/
+    * @see  #appendText(StringBuilder, String, String)
+    */
    public static final StringBuilder appendText(StringBuilder to_appendTo, File file, String file_varName)  {
       Iterator<String> lineItr = getLineIterator(file, file_varName);
       while(lineItr.hasNext())  {
@@ -81,9 +81,9 @@ public class PlainTextFileUtil  {
    /**
       <p>Get a line-iterator for a file.</p>
 
-      @see  com.github.xbn.text.StringUtil#getLineIterator(Object) StringUtil#getLineIteratorForString(cs)
-      @return  <code>{@link #getLineIterator(File, String) getLineIterator}((new {@link java.io.File#File(String) File}(path, path_varName)))</code>
-    **/
+    * @see  com.github.xbn.text.StringUtil#getLineIterator(Object) StringUtil#getLineIteratorForString(cs)
+    * @return  <code>{@link #getLineIterator(File, String) getLineIterator}((new {@link java.io.File#File(String) File}(path, path_varName)))</code>
+    */
    public static final Iterator<String> getLineIterator(String path, String path_varName)  {
       try  {
          return  getLineIterator((new File(path)), path_varName);
@@ -94,9 +94,9 @@ public class PlainTextFileUtil  {
    /**
       <p>Get a line-iterator for a file.</p>
 
-      @return  <code>{@link org.apache.commons.io.FileUtils}.{@link org.apache.commons.io.FileUtils#lineIterator(File) lineIterator}(file)</code>
-      @exception  RTIOException  If attempting to open the file results in an {@code java.io.IOException}
-      @see  #getLineIterator(String, String)
+    * @return  <code>{@link org.apache.commons.io.FileUtils}.{@link org.apache.commons.io.FileUtils#lineIterator(File) lineIterator}(file)</code>
+    * @exception  RTIOException  If attempting to open the file results in an {@code java.io.IOException}
+    * @see  #getLineIterator(String, String)
     **/
    public static final Iterator<String> getLineIterator(File file, String file_varName)  {
       try  {

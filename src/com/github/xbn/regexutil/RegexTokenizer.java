@@ -46,8 +46,8 @@ package  com.github.xbn.regexutil;
 <p>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
 <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</a>}</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexTokenizer extends SimpleDebuggable implements Iterator<TokenizerElement>, Copyable, PatternHaser  {
 //config: immutable
@@ -71,8 +71,8 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
    /**
       <p>Create a new regex tokenizer, where every match is manipulated before returned by {@code next()}.</p>
 
-      @param  fieldable  May not be {@code null}.
-    **/
+    * @param  fieldable  May not be {@code null}.
+    */
    public RegexTokenizer(RegexTokenizer_Fieldable fieldable)  {
       iLnNum = fieldable.getLineNumber();
       bRtnSep   = fieldable.doReturnSeparators();
@@ -118,8 +118,8 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
    /**
       <p>Create a new {@code RegexTokenizer} as a duplicate of another, but for a new search-string. This leaves debugging on, if it is already on in the original. This goes against the "exception".......................</p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    public RegexTokenizer(RegexTokenizer to_copy, Pattern new_findWhat, Object string_toSearch, int line_num)  {
       super(to_copy);
       try  {
@@ -191,11 +191,11 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
       /**
          <p>Should the string be matched as a whole?. Should <code><i>[{@link java.util.regex.Matcher}]</i>.{@link java.util.regex.Matcher#matches() matches}()</code> be used?.</p>
 
-         @return  {@code true}  The string is matched as a whole.
-         @see  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg#useMatches() Cfg.useMatches()
-         @see  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg#useFind() Cfg.useFind()
-         @see  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg#useLookingAt() Cfg.useLookingAt()
-       **/
+       * @return  {@code true}  The string is matched as a whole.
+       * @see  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg#useMatches() Cfg.useMatches()
+       * @see  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg#useFind() Cfg.useFind()
+       * @see  com.github.xbn.regexutil.z.RegexGroupExtractor_Cfg#useLookingAt() Cfg.useLookingAt()
+       */
       public MatcherUses getMatcherUses()  {
          return  sph.getMatcherUses();
       }
@@ -203,34 +203,34 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
    /**
       <p>Get the original string-to-tokenize.</p>
 
-      @return  <b>{@code string_toSearch}</b>, as provided to the constructor.
-    **/
+    * @return  <b>{@code string_toSearch}</b>, as provided to the constructor.
+    */
    public final String getOriginal()  {
       return  sOrig;
    }
    /**
       <p>Are regex-separators retrieved?.</p>
-    **/
+    */
    public final boolean doReturnSeparators()  {
       return  bRtnSep;
    }
    /**
       <p>Are betweens retrieved?.</p>
-    **/
+    */
    public final boolean doReturnNonEmptyBetweens()  {
       return  bRtnNEBtw;
    }
    /**
       <p>Are empty-string betweens retrieved?.</p>
-    **/
+    */
    public final boolean doReturnEmptyBetweens()  {
       return  bRtnEBtw;
    }
    /**
       <p>Is there another token (match) or between to get?.</p>
 
-      @return  <b>{@code true}</b>  If there is another match or between remaining in the {@link #getOriginal() string-to-tokenize}, and it is wanted.
-    **/
+    * @return  <b>{@code true}</b>  If there is another match or between remaining in the {@link #getOriginal() string-to-tokenize}, and it is wanted.
+    */
    public final boolean hasNext() {
       if (rteNextBetween != null  ||  rteNextSeparator != null) {
          return  true;
@@ -273,10 +273,10 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
    /**
       <p>Get the next regex-match or between.</p>
 
-      @exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is false.
-      @see  #isNextASeparator()
-      @see  #isNextABetween()
-    **/
+    * @exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is false.
+    * @see  #isNextASeparator()
+    * @see  #isNextABetween()
+    */
    public final TokenizerElement next() {
       TokenizerElement rte = null;
 
@@ -296,17 +296,17 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
    }
    /**
       <p>Is the next token a regex-match?.</p>
-      @see  #next()
-      @see  #isNextABetween()
-    **/
+    * @see  #next()
+    * @see  #isNextABetween()
+    */
    public boolean isNextASeparator() {
       return  (rteNextBetween == null  &&  rteNextSeparator != null);
    }
    /**
       <p>Is the next token a between?.</p>
-      @see  #next()
-      @see  #isNextASeparator()
-    **/
+    * @see  #next()
+    * @see  #isNextASeparator()
+    */
    public boolean isNextABetween() {
       //Betweens have precedence
       return  (rteNextBetween != null);
@@ -317,16 +317,16 @@ public class RegexTokenizer extends SimpleDebuggable implements Iterator<Tokeniz
    /**
       <p>Unsupported.</p>
 
-      @exception  UnsupportedOperationException
-    **/
+    * @exception  UnsupportedOperationException
+    */
    public final void remove() {
       throw  new UnsupportedOperationException("remove");
    }
    /**
       <p>Duplicate this <code>RegexTokenizer</code>.</p>
 
-      @return  <code>(new <a href="#RegexTokenizer(RegexTokenizer)">RegexTokenizer</a>(this))</code>
-    **/
+    * @return  <code>(new <a href="#RegexTokenizer(RegexTokenizer)">RegexTokenizer</a>(this))</code>
+    */
    public RegexTokenizer getObjectCopy()  {
       return  (new RegexTokenizer(this));
    }

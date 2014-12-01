@@ -10,8 +10,8 @@ public class ThreeTuple<A,B,C> extends TwoTuple<A,B>  {
    /**
       <p>Create a new instance.</p>
 
-      @param  o_3  Get with {@link #get3() get3}{@code ()}
-    **/
+    * @param  o_3  Get with {@link #get3() get3}{@code ()}
+    */
    public ThreeTuple(A o_1, B o_2, C o_3)  {
       super(o_1, o_2);
       o3 = o_3;

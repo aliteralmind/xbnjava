@@ -17,10 +17,10 @@ package  com.github.xbn.text.padchop.z;
    import  com.github.xbn.lang.CrashIfObject;
    import  com.github.xbn.neederneedable.Needer;
 /**
-   <p>For <a href="{@docRoot}/com/github/xbn/chain/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.text.padchop.ChopString ChopString}.</p>
+   <p>For <a href="{@docRoot}/com/github/xbn/neederneedable/Needable.html#indirect">indirectly</a> configuring a {@link com.github.xbn.text.padchop.ChopString ChopString}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> extends PadChopBase_CfgForNeeder<C,R> implements ChopString_Fieldable  {
 //state
@@ -32,9 +32,9 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
    /**
       <p>Create a new {@code zChopString_CfgForNeeder} with defaults.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</a>(needer, -1)</code></p>
-    **/
+    */
    public ChopString_CfgForNeeder(R needer)  {
       this(needer, -1);
    }
@@ -48,8 +48,8 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
          <li>{@link #atEnd() atEnd}{@code ()}</li>
          <li>{@link #noOverhang() noOverhang}{@code ()}</li>
       </ol></p>
-      @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#zChopString_CfgForNeeder(R)">this</a>(R)</code>
-    **/
+    * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#zChopString_CfgForNeeder(R)">this</a>(R)</code>
+    */
    public ChopString_CfgForNeeder(R needer, int goal_len)  {
       super(needer, goal_len);
       right();
@@ -62,9 +62,9 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
    /**
       <p>Declare the length that the string should be chopped to.</p>
 
-      @param  goal_len  May not be less than zero. Get with {@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}{@code ()}*.
-      @return  <i>{@code this}</i>
-    **/
+    * @param  goal_len  May not be less than zero. Get with {@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}{@code ()}*.
+    * @return  <i>{@code this}</i>
+    */
    public ChopString_CfgForNeeder<C,R> goalLen(int goal_len)  {
       iGoalLen = goal_len;
       return  this;
@@ -74,9 +74,9 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
 
       <p>This sets {@link com.github.xbn.text.padchop.PadChopBase#isSideRight() isSideRight}{@code ()}* to {@code true}.</p>
 
-      @return  <i>{@code this}</i>
-      @see  #left()
-    **/
+    * @return  <i>{@code this}</i>
+    * @see  #left()
+    */
    public ChopString_CfgForNeeder<C,R> right()  {
       bSideRight = true;
       return  this;
@@ -86,9 +86,9 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
 
       <p>This sets {@link com.github.xbn.text.padchop.PadChopBase#isSideRight() isSideRight}{@code ()}* to {@code false}.</p>
 
-      @return  <i>{@code this}</i>
-      @see  #right()
-    **/
+    * @return  <i>{@code this}</i>
+    * @see  #right()
+    */
    public ChopString_CfgForNeeder<C,R> left()  {
       bSideRight = false;
       return  this;
@@ -96,28 +96,28 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
    /**
       <p>Do not use an ellipsis.</p>
 
-      @return  {@link #ddd(String) ddd(null)}
-    **/
+    * @return  {@link #ddd(String) ddd(null)}
+    */
    public ChopString_CfgForNeeder<C,R> noDDD()  {
       return  ddd(null);
    }
    /**
       <p>Use the default ellipsis.</p>
 
-      @return  {@link #ddd(String) ddd}{@code ("...")}
-    **/
+    * @return  {@link #ddd(String) ddd}{@code ("...")}
+    */
    public ChopString_CfgForNeeder<C,R> ddd()  {
       return  ddd("...");
    }
    /**
       <p>Set the chop-ellipsis, that visually indicates a chop (for example: &quot;{@code ...}&quot; [dot-dot-dot]).</p>
 
-      @param  ellipsis  What is added to the end of chopped text. May not be empty. Get with  {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()}*. When {@code null}, there is no ellipsis, and both {@link #getOverhangCount() getOverhangCount}{@code ()} and {@link #getCharsBeforeDDD() getCharsBeforeDDD}{@code ()} are ignored. <i>Notes<ul>
+    * @param  ellipsis  What is added to the end of chopped text. May not be empty. Get with  {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()}*. When {@code null}, there is no ellipsis, and both {@link #getOverhangCount() getOverhangCount}{@code ()} and {@link #getCharsBeforeDDD() getCharsBeforeDDD}{@code ()} are ignored. <i>Notes<ul>
          <li>If this is longer than the {@link ChopString_CfgForNeeder#getGoalLen() goal length}, then when attempting to chop the string, <i><b>an {@code IllegalArgumentException} will be thrown</b></i>.</li>
          <li>In all cases, the ellipsis is displayed in its entirety, even if it contains more characters than the goal length.</li>
       </ul></i>
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public ChopString_CfgForNeeder<C,R> ddd(String ellipsis)  {
       sEllipsis = ellipsis;
       return  this;
@@ -132,11 +132,11 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
          <li>See &quot;note 2&quot; in {@link #charsBefore(int) charsBefore}{@code (i)}, regarding precedence.</li>
       </ul></p>
 
-      @param  char_len  If {@code -1} or less, or greater than {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}, then {@code getOverhangCount()} will return {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}. Get with {@link com.github.xbn.text.padchop.ChopString#getOverhangCount() getOverhangCount}{@code ()}*.
-      @return  <i>{@code this}</i>
-      @see  #maxOverhang()
-      @see  #noOverhang()
-    **/
+    * @param  char_len  If {@code -1} or less, or greater than {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}, then {@code getOverhangCount()} will return {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}. Get with {@link com.github.xbn.text.padchop.ChopString#getOverhangCount() getOverhangCount}{@code ()}*.
+    * @return  <i>{@code this}</i>
+    * @see  #maxOverhang()
+    * @see  #noOverhang()
+    */
    public ChopString_CfgForNeeder<C,R> overhang(int char_len)  {
       iDDDOverhang = char_len;
       return  this;
@@ -144,8 +144,8 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
    /**
       <p>The ellipsis always exceeds the chopped string as much as possible.</p>
 
-      @return  <code>{@link #overhang(int) overhang}({@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}()*.length())</code>
-    **/
+    * @return  <code>{@link #overhang(int) overhang}({@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}()*.length())</code>
+    */
    public ChopString_CfgForNeeder<C,R> maxOverhang()  {
       try  {
          return  overhang(sEllipsis.length());
@@ -156,17 +156,17 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
    /**
       <p>The ellipsis is always contained within the chopped text.</p>
 
-      @return  <code>{@link #overhang(int) overhang}(0)</code>
-    **/
+    * @return  <code>{@link #overhang(int) overhang}(0)</code>
+    */
    public ChopString_CfgForNeeder<C,R> noOverhang()  {
       return  overhang(0);
    }
    /**
       <p>Set debugging.</p>
 
-      @param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
-      @return  <i>{@code this}</i>
-    **/
+    * @param  dest_ifNonNull  When non-{@code null}, this is the destination to write debugging output (and debugging is turned {@link com.github.xbn.io.Debuggable#isDebugOn() on}). Get with {@link com.github.xbn.io.Debuggable#getDebugApbl() getDebugApbl}{@code ()}* and {@link com.github.xbn.io.Debuggable#getDebugAptr() getDebugAptr}{@code ()}*.
+    * @return  <i>{@code this}</i>
+    */
    public ChopString_CfgForNeeder<C,R> debugTo(Appendable dest_ifNonNull)  {
       apblDebug = dest_ifNonNull;
       return  this;
@@ -181,13 +181,13 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
          <li>The {@link #getOverhangCount() ddd-max-overhang} setting trumps this min-start-chars setting. That is, when-and-only-when the {@link #getGoalLen() goal length} is short enough, such that the {@link #getEllipsis() chop ellipsis} will not fit <b>unless one of these two settings is violated</b>, the min-start-chars setting <b>will</b> be violated. The max-overhang is never violated.</li>
       </ol></p>
 
-      @param  len  The number of characters, <i>starting on the <b>opposite</b> {@link #right() side} of the chop</i>, that must be in the final-result string. Get with {@link com.github.xbn.text.padchop.ChopString#getCharsBeforeDDD() getCharsBeforeDDD}{@code ()}*. When {@code len} is<ul>
+    * @param  len  The number of characters, <i>starting on the <b>opposite</b> {@link #right() side} of the chop</i>, that must be in the final-result string. Get with {@link com.github.xbn.text.padchop.ChopString#getCharsBeforeDDD() getCharsBeforeDDD}{@code ()}*. When {@code len} is<ul>
          <li>{@link com.github.xbn.text.padchop.ChopString#iIN_MIDDLE}: {@code getCharsBeforeDDD()} is set to <code>({@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}() / 2)</code>. <i>In this case, {@code getOverhangCount()} is ignored.</i></li>
          <li>{@link com.github.xbn.text.padchop.ChopString#iAT_END}:  or greater than {@code <i>[super]</i>.getGoalLen()}: {@code getCharsBeforeDDD()} is set to {@code getGoalLen()}.</li>
          <li>Between {@code 0} and {@code <i>[super]</i>.getGoalLen()} (inclusive): {@code getCharsBeforeDDD()} is set to that number.</li>
       </ul>
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public ChopString_CfgForNeeder<C,R> charsBefore(int len)  {
       iCharsBeforeDDD = len;
       return  this;
@@ -220,23 +220,23 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
          </ul></p>
 
 
-      @return  {@code (new }{@link com.github.xbn.text.padchop.ChopString#ChopString(ChopString_Fieldable) ChopString}{@code (this))}
-    **/
+    * @return  {@code (new }{@link com.github.xbn.text.padchop.ChopString#ChopString(ChopString_Fieldable) ChopString}{@code (this))}
+    */
    public C build()  {
       @SuppressWarnings("unchecked")
       C c = (C)(new ChopString(this));
       return  c;
    }
    /**
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public ChopString_CfgForNeeder<C,R> chainID(boolean do_setStatic, Object id)  {
       setChainID(do_setStatic, id);
       return  this;
    }
    /**
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public ChopString_CfgForNeeder<C,R> startConfigReturnNeedable(R needer)  {
       @SuppressWarnings("unchecked")
       Class<C> clsc = (Class<C>)(Class)ChopString.class;
@@ -246,8 +246,8 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
    /**
       <p>Sets the fully-configured object into the {@code Needer}, and returns control back to the needer-chain.</p>
 
-      @return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
-    **/
+    * @return  <code>{@link com.github.xbn.neederneedable.AbstractNeedableWithSubs#endCfgWithNeededReturnNeeder(Object) endCfgWithNeededReturnNeeder}({@link #build() build}())</code>
+    */
    public R endCfg()  {
       return  endCfgWithNeededReturnNeeder(build());
    }

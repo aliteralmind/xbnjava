@@ -19,10 +19,10 @@ package  com.github.xbn.neederneedable;
 /**
    <p>For classes that need to implement {@code Chainable}, that cannot extend {@code SimpleChainable}.</p>
 
-   @see  Chainable
-   @see  SimpleChainable
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  Chainable
+ * @see  SimpleChainable
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ChainableComposer  {//implements Chainable  {
    private Object cid = null;
@@ -34,9 +34,9 @@ public class ChainableComposer  {//implements Chainable  {
 
       <p>This calls {@link #unsetChainID(boolean) unsetChainID}{@code (false)}</p>
 
-      @see  #ChainableComposer(boolean, ChainableComposer) this(b,cc)
-      @see  #ChainableComposer(Chainable) this(chbl)
-    **/
+    * @see  #ChainableComposer(boolean, ChainableComposer) this(b,cc)
+    * @see  #ChainableComposer(Chainable) this(chbl)
+    */
    @CompositionConstructor
    public ChainableComposer()  {
       unsetChainID(false);
@@ -44,14 +44,14 @@ public class ChainableComposer  {//implements Chainable  {
    /**
       <p>Create a new instance as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #setChainID_4prot(boolean, Object) setChainID_4prot}{@code (false, to_copy.getChainID())}</p>
 
       <p>This does nothing with the <a href="#getStaticChainID()">static id</a>, because &quot;duplicating&quot; it would just overwrite the existing value.</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #ChainableComposer() this()
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #ChainableComposer() this()
+    */
    @CompositionConstructor
    protected ChainableComposer(boolean ignored, ChainableComposer to_copy)  {
       try  {
@@ -70,9 +70,9 @@ public class ChainableComposer  {//implements Chainable  {
          <li>{@link #unsetChainID(boolean) unsetChainID}{@code (false)}</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #ChainableComposer() this()
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #ChainableComposer() this()
+    */
    @CompositionConstructor
    public ChainableComposer(Chainable to_copy)  {
       unsetChainID(false);
@@ -82,9 +82,9 @@ public class ChainableComposer  {//implements Chainable  {
    /**
       <p>Set the chain-id to {@code null}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #setChainID_4prot(boolean, Object) setChainID_4prot(do_unsetStatic, null)}</p>
-    **/
+    */
    @CompositionFunction
    public void unsetChainID(boolean do_unsetStatic)  {
       setChainID_4prot(do_unsetStatic, null);
@@ -92,10 +92,10 @@ public class ChainableComposer  {//implements Chainable  {
    /**
       <p>Set the chain-id. This must be implemented as {@code protected}, with the name &quot;{@code setChainID}&quot;.</p>
 
-      @param  id  The chain-id.
+    * @param  id  The chain-id.
 
-      @see  #unsetChainID(boolean) unsetChainID()
-    **/
+    * @see  #unsetChainID(boolean) unsetChainID()
+    */
    @CompositionFunction
    public void setChainID_4prot(boolean do_setStatic, Object id)  {
       cid = id;
@@ -106,8 +106,8 @@ public class ChainableComposer  {//implements Chainable  {
 //setters...END
 //getters...START
    /**
-      @see  #setChainID_4prot(boolean, Object)
-    **/
+    * @see  #setChainID_4prot(boolean, Object)
+    */
    @CompositionFunction
    public Object getChainID()  {
       return  cid;
@@ -121,7 +121,7 @@ public class ChainableComposer  {//implements Chainable  {
 //main functionality...END
 //other...START
    /**
-    **/
+    */
    public String toString()  {
       return  appendToString(new StringBuilder()).toString();
    }
@@ -143,8 +143,8 @@ public class ChainableComposer  {//implements Chainable  {
       <p><i><b>See:</b></i><ul>
       </ul></p>
 
-      @return  The same object is returned for each call. Its internal chain-id is updated.
-    **/
+    * @return  The same object is returned for each call. Its internal chain-id is updated.
+    */
    public static final Object getChainIDForXMsgCINull(Chainable chainable, Object xtra_errInfo)  {
       try  {
          return  cID_FOR_XMSG.chainIDXtraInfo(chainable.getChainID(), xtra_errInfo);

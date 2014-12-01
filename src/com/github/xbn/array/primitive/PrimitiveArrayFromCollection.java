@@ -24,8 +24,8 @@ package  com.github.xbn.array.primitive;
 /**
    <p>Translate a collection of wrappers to an array of its primitive type (such as {@code List<Integer>} to {@code int[]}).</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PrimitiveArrayFromCollection  {
 //internal
@@ -33,15 +33,15 @@ public class PrimitiveArrayFromCollection  {
    private static final ResettableNullHandler rstblNullHndlr = new ResettableNullHandler(1);
    /**
       <p>Create a new instance--This does nothing.</p>
-    **/
+    */
    public PrimitiveArrayFromCollection()  {
    }
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forBoolean(Collection, NullHandler, NullContainer, String) forBoolean}(coll, (new ResettableNullHandler&lt;Boolean&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final boolean[] forBoolean(Collection<Boolean> coll, boolean for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forBoolean(coll, (NullHandler<Boolean>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -68,8 +68,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       &#64;see #forBooxl(Collection, NullHandler, boolean, String) forBooxl(lst,hnv)
 
  -->
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final boolean[] forBoolean(Collection<Boolean> coll, NullHandler<Boolean> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -113,7 +113,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /*
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacter(Collection) forCharacter(cll)
+    * @see  #forCharacter(Collection) forCharacter(cll)
    @SuppressWarnings("unchecked")
    public static final boolean[] forBoolean(Collection<Boolean> coll)  {
       boolean[] ap = null;
@@ -138,9 +138,9 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forCharacter(Collection, NullHandler, NullContainer, String) forCharacter}(coll, (new ResettableNullHandler&lt;Character&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final char[] forCharacter(Collection<Character> coll, char for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forCharacter(coll, (NullHandler<Character>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -148,8 +148,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final char[] forCharacter(Collection<Character> coll, NullHandler<Character> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -193,9 +193,9 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forByte(Collection, NullHandler, NullContainer, String) forByte}(coll, (new ResettableNullHandler&lt;Byte&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final byte[] forByte(Collection<Byte> coll, byte for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forByte(coll, (NullHandler<Byte>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -203,8 +203,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final byte[] forByte(Collection<Byte> coll, NullHandler<Byte> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -248,9 +248,9 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forShort(Collection, NullHandler, NullContainer, String) forShort}(coll, (new ResettableNullHandler&lt;Short&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final short[] forShort(Collection<Short> coll, short for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forShort(coll, (NullHandler<Short>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -258,8 +258,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final short[] forShort(Collection<Short> coll, NullHandler<Short> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -303,9 +303,9 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forInteger(Collection, NullHandler, NullContainer, String) forInteger}(coll, (new ResettableNullHandler&lt;Integer&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final int[] forInteger(Collection<Integer> coll, int for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forInteger(coll, (NullHandler<Integer>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -313,8 +313,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final int[] forInteger(Collection<Integer> coll, NullHandler<Integer> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -358,9 +358,9 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forLong(Collection, NullHandler, NullContainer, String) forLong}(coll, (new ResettableNullHandler&lt;Long&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final long[] forLong(Collection<Long> coll, long for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forLong(coll, (NullHandler<Long>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -368,8 +368,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final long[] forLong(Collection<Long> coll, NullHandler<Long> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -413,9 +413,9 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forFloat(Collection, NullHandler, NullContainer, String) forFloat}(coll, (new ResettableNullHandler&lt;Float&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final float[] forFloat(Collection<Float> coll, float for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forFloat(coll, (NullHandler<Float>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -423,8 +423,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final float[] forFloat(Collection<Float> coll, NullHandler<Float> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -468,9 +468,9 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #forDouble(Collection, NullHandler, NullContainer, String) forDouble}(coll, (new ResettableNullHandler&lt;Double&gt;(for_whenNull)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final double[] forDouble(Collection<Double> coll, double for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
       return  forDouble(coll, (NullHandler<Double>)rstblNullHndlr.nonNullValue(for_whenNull), nnull, cntrName_forNullBad);
@@ -478,8 +478,8 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  null_handler  May not be {@code null}.
-    **/
+    * @param  null_handler  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final double[] forDouble(Collection<Double> coll, NullHandler<Double> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
@@ -538,8 +538,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
       &#64;see  {&#64;link #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)}
  -->
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final char[] forCharacterCrashIfNullElement(Collection<Character> coll)  {
       char[] ac = null;
@@ -563,8 +563,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
    /**
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final double[] forDoubleCrashIfNullElement(Collection<Double> coll)  {
       double[] ap = null;
@@ -588,8 +588,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
    /**
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final boolean[] forBooleanCrashIfNullElement(Collection<Boolean> coll)  {
       boolean[] ap = null;
@@ -613,8 +613,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
    /**
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final float[] forFloatCrashIfNullElement(Collection<Float> coll)  {
       float[] ap = null;
@@ -638,8 +638,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
    /**
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final long[] forLongCrashIfNullElement(Collection<Long> coll)  {
       long[] ap = null;
@@ -663,8 +663,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
    /**
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final int[] forIntegerCrashIfNullElement(Collection<Integer> coll)  {
       int[] ap = null;
@@ -688,8 +688,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
    /**
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final short[] forShortCrashIfNullElement(Collection<Short> coll)  {
       short[] ap = null;
@@ -713,8 +713,8 @@ Use this see link, and change Chaxracter to Character when done. (NOT IN THIS HT
    /**
       <p>Get a primitive array from a <i>non-{@code null}</i> collection that has <i>no {@code null} elements</i>.</p>
 
-      @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
-    **/
+    * @see  #forCharacterCrashIfNullElement(Collection) forCharacterCrashIfNullElement(cll)
+    */
    @SuppressWarnings("unchecked")
    public static final byte[] forByteCrashIfNullElement(Collection<Byte> coll)  {
       byte[] ap = null;

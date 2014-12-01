@@ -22,8 +22,8 @@ package  com.github.xbn.experimental.listify;
 /**
    <p>For classes needing to implement {@code Listify}, that cannot extend {@code AbstractListify}.</p>
 
-   @see  AbstractListify
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code>
+ * @see  AbstractListify
+ * @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). <code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code>
  **/
 public class ListifyComposer<E>  {//implements Listify<E>  {
    private Object oRaw = null;
@@ -52,8 +52,8 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public ListifyComposer(boolean ignored, ListifyComposer<E> to_copy)  {
       try  {
@@ -76,8 +76,8 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public ListifyComposer(Listify<E> to_copy)  {
       try  {
@@ -90,26 +90,26 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
    }
 //constructors...END
    /**
-      @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
-    **/
+    * @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
+    */
    public ArrayHelperBase<E> getArrayHelper()  {
       return  ahr;
    }
    /**
-      @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
-    **/
+    * @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
+    */
    public final boolean isAddRemovable()  {
       return  bARable;
    }
    /**
-      @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
-    **/
+    * @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
+    */
    public ValueCopier<E> getValueCopier()  {
       return  copyval;
    }
    /**
-      @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
-    **/
+    * @see  #ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) this(o,b,ahb,copyval)
+    */
    public Object getRawObject()  {
       return  oRaw;
    }
@@ -123,8 +123,8 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
    /**
       <p>If the underlying object is {@code null}, crash. Otherwise, do nothing.</p>
 
-      @param  listifier  May not be {@code null}.
-    **/
+    * @param  listifier  May not be {@code null}.
+    */
    public static final <E> void ciRawObjectNull(Listify<E> listifier)  {
       try  {
          if(listifier.getRawObject() == null)  {
@@ -161,37 +161,37 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
 //do-not-use. Override if necessary...START
    /**
       <p>Do not use--override if necessary.</p>
-    **/
+    */
    public void clear()  {
       throw  new ListifiedNotAddRemovableException("clear");
    }
    /**
       <p>Do not use--override if necessary.</p>
-    **/
+    */
    public boolean retainAll(Collection<?> coll)  {
       throw  new ListifiedNotAddRemovableException("retainAll");
    }
    /**
       <p>Do not use--override if necessary.</p>
-    **/
+    */
    public boolean removeAll(Collection<?> coll)  {
       throw  new ListifiedNotAddRemovableException("removeAll");
    }
    /**
       <p>Do not use--override if necessary.</p>
-    **/
+    */
    public boolean addAll(Collection<? extends E> coll)  {
       throw  new ListifiedNotAddRemovableException("addAll");
    }
    /**
       <p>Do not use--override if necessary.</p>
-    **/
+    */
    public boolean remove(Object obj)  {
       throw  new ListifiedNotAddRemovableException("remove");
    }
    /**
       <p>Do not use--override if necessary.</p>
-    **/
+    */
    public boolean add(E to_add)  {
       throw  new ListifiedNotAddRemovableException("add");
    }

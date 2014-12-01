@@ -50,8 +50,8 @@ package  com.github.xbn.linefilter.entity.raw;
    ...END
   -->
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
    private final ValueValidator<L> startVldtr;
@@ -60,8 +60,8 @@ public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
    /**
       <p>YYY</p>
 
-      @param  fieldable  May not be {@code null}.
-    **/
+    * @param  fieldable  May not be {@code null}.
+    */
    public RawStealthBlockEntity(RawStealthBlockEntity_Fieldable<L> fieldable)  {
       super(fieldable);
       startVldtr = fieldable.getStartValidator();
@@ -209,9 +209,9 @@ public class RawStealthBlockEntity<L> extends RawBlockEntityBase<L>  {
       crashIfRequiredAndNeverActive();
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #toString()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #toString()
+    */
    public StringBuilder appendToString(StringBuilder to_appendTo)  {
       try  {
          to_appendTo.append("getStartValidator()=[").append(getStartValidator()).

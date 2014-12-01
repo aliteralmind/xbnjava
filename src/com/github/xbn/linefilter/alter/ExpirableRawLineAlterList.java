@@ -19,14 +19,14 @@ package  com.github.xbn.linefilter.alter;
 /**
    <p>For a series of alterers that expire--once an item is expired, it is removed from the list.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ExpirableRawLineAlterList<L> extends ExpirableAlterList<L,L>  {
    /*
       <p>Create a new instance in which expirable elements are optional, and {@code null} elements are forbidden.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.analyze.alter.ExpirableAlterList#ExpirableAlterList(MultiAlterType, MultiAlterType) this}(line_alterers, multi_alterType)</code></p>
    public ExpirableRawLineAlterList(ValueAlterer<L,L>[] line_alterers, MultiAlterType multi_alterType)  {
       super(line_alterers, multi_alterType);
@@ -35,9 +35,9 @@ public class ExpirableRawLineAlterList<L> extends ExpirableAlterList<L,L>  {
    /**
       <p>Create a new instance.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.analyze.alter.ExpirableAlterList#ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable) super}(line_alterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull)</code></p>
-    **/
+    */
    public ExpirableRawLineAlterList(ValueAlterer<L,L>[] line_alterers, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
       super(line_alterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull);
    }
@@ -47,8 +47,8 @@ public class ExpirableRawLineAlterList<L> extends ExpirableAlterList<L,L>  {
    /**
       <p>Duplicate this <code>ExpirableRawLineAlterList</code>.</p>
 
-      @return  <code>(new <a href="#ExpirableRawLineAlterList(ExpirableRawLineAlterList)">ExpirableRawLineAlterList</a>&lt;O&gt;(this))</code>
-    **/
+    * @return  <code>(new <a href="#ExpirableRawLineAlterList(ExpirableRawLineAlterList)">ExpirableRawLineAlterList</a>&lt;O&gt;(this))</code>
+    */
    public ExpirableRawLineAlterList<L> getObjectCopy()  {
       return  (new ExpirableRawLineAlterList<L>(this));
    }

@@ -19,8 +19,8 @@ package  com.github.xbn.array.helper;
 /**
    <p>Base class for {@code ArrayHelper} and {@code PrimitiveArrayHelper}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface ArrayHelperBase<E>  {
    Class<?> getStaticClass();
@@ -29,18 +29,18 @@ public interface ArrayHelperBase<E>  {
    String[] getStringArrayOrNull(Object obj_thatIsAnArray, NullContainer null_ok, String cntrName_forNullBad);
    /**
       <p>Get a new iterator to step through the array's elements.</p>
-    **/
+    */
    Iterator<E> getIterator(Object obj_thatIsAnArray, String array_name);
    /**
       <p>Get a new array of {@code E}, where each element is {@code null}. Use this in lieu of creating generic arrays, such as {@code new E[iLength]}, which is illegal.</p>
 
-      @see  #getEmpty()
-    **/
+    * @see  #getEmpty()
+    */
    E[] getInitialized(int length);
    /**
       <p>Get an empty array of {@code E}. This returned array is recommended to be {@code static final}.</p>
 
-      @see  #getInitialized(int) getInitialized(int)
-    **/
+    * @see  #getInitialized(int) getInitialized(int)
+    */
    E[] getEmpty();
 }

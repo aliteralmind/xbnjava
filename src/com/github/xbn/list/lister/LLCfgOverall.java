@@ -23,7 +23,7 @@ package  com.github.xbn.list.lister;
       <li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#prePost(String, String) prePost}{@code (s,s)}</li>
    </ul></p>
 
-   @param  E  The type of element in the {@code List}.
+ * @param  E  The type of element in the {@code List}.
  **/
 public class LLCfgOverall<E> extends LLConfigBase<List<E>>  {
    private final ValueValidator<Integer> vv4LLen;

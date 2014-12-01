@@ -22,8 +22,8 @@ package  com.github.xbn.regexutil;
 /**
    <p>Duplicate a pattern, crash if a pattern is {@code null} or a group-number is invalid for a matcher, and other regex-related utilities.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexUtil  {
    private RegexUtil()  {
@@ -35,8 +35,8 @@ public class RegexUtil  {
    /**
       <p>Does a pattern have the literal bit-flag associated to it?.</p>
 
-      @return  <code>{@link com.github.xbn.util.BitBinaryUtil BitBinaryUtil}.{@link com.github.xbn.util.BitBinaryUtil#doesIntHaveBit(int, int) doesIntHaveBit}(pattern_toFind.{@link java.util.regex.Pattern#flags() flags}(), Pattern.{@link java.util.regex.Pattern#LITERAL LITERAL})</code>
-    **/
+    * @return  <code>{@link com.github.xbn.util.BitBinaryUtil BitBinaryUtil}.{@link com.github.xbn.util.BitBinaryUtil#doesIntHaveBit(int, int) doesIntHaveBit}(pattern_toFind.{@link java.util.regex.Pattern#flags() flags}(), Pattern.{@link java.util.regex.Pattern#LITERAL LITERAL})</code>
+    */
    public static final boolean isLiteral(Pattern to_find)  {
       try  {
          return  BitBinaryUtil.doesIntHaveBit(to_find.flags(), Pattern.LITERAL);
@@ -47,8 +47,8 @@ public class RegexUtil  {
    /**
       <p>Duplicate a pattern.</p>
 
-      @return  <code>{@link #getPatternCopy(Pattern, String) getPatternCopy}(to_find, &quot;getPatternCopy&quot;, &quot;to_find&quot;)</code>
-    **/
+    * @return  <code>{@link #getPatternCopy(Pattern, String) getPatternCopy}(to_find, &quot;getPatternCopy&quot;, &quot;to_find&quot;)</code>
+    */
    public static final Pattern getPatternCopy(Pattern to_find)  {
       return  getPatternCopy(to_find, "to_find");
    }
@@ -63,12 +63,12 @@ public class RegexUtil  {
    /**
       <p>Duplicate a pattern, or return {@code null} if it's {@code null}.</p>
 
-      @return  If <code>to_find</code> is<ul>
+    * @return  If <code>to_find</code> is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null}: <code>{@link #getPatternCopy(Pattern, String) getPatternCopy}(to_find, null)</code></li>
       </ul>
-      @see  #getPatternCopy(Pattern) getPatternCopy(p)
-    **/
+    * @see  #getPatternCopy(Pattern) getPatternCopy(p)
+    */
    public static final Pattern getPatternCopyOrNull(Pattern to_find)  {
       return  ((to_find == null) ? null
          :  getPatternCopy(to_find, null));
@@ -76,11 +76,11 @@ public class RegexUtil  {
    /**
       <p>Get the pattern in a {@code PatternHaser}, or crash if the haser is {@code null}.</p>
 
-      @param  haser  May not be {@code null}.
-      @param  haser_name  Descriptive name of {@code haser}. <i>Should</i> not be {@code null} or empty.
-      @return  <code>haser.{@link com.github.xbn.regexutil.PatternHaser#getPattern() getPattern}()</code>
-      @see  #getPatternCopy(PatternHaser, String)
-    **/
+    * @param  haser  May not be {@code null}.
+    * @param  haser_name  Descriptive name of {@code haser}. <i>Should</i> not be {@code null} or empty.
+    * @return  <code>haser.{@link com.github.xbn.regexutil.PatternHaser#getPattern() getPattern}()</code>
+    * @see  #getPatternCopy(PatternHaser, String)
+    */
    public static final Pattern getPatternCrashIfHaserNull(PatternHaser haser, String haser_name)  {
       try  {
          return  haser.getPattern();
@@ -91,9 +91,9 @@ public class RegexUtil  {
    /**
       <p>Duplicate the pattern in a {@code PatternHaser}, or crash if the haser is {@code null}.</p>
 
-      @param  haser  May not be {@code null}.
-      @return  <code>{@link #getPatternCopy(Pattern, String) getPatternCopy}(haser.{@link PatternHaser#getPattern() getPattern}(), haser_name)</code>
-    **/
+    * @param  haser  May not be {@code null}.
+    * @return  <code>{@link #getPatternCopy(Pattern, String) getPatternCopy}(haser.{@link PatternHaser#getPattern() getPattern}(), haser_name)</code>
+    */
    public static final Pattern getPatternCopy(PatternHaser haser, String haser_name)  {
       Pattern p = null;
       try  {
@@ -105,13 +105,13 @@ public class RegexUtil  {
    /**
       <p>Duplicate a pattern, or crash if it's {@code null}.</p>
 
-      @param  to_find  May not be {@code null}.
-      @param  ptrn_name  Descriptive name {@code to_find}. <i>Should</i> not be {@code null} or empty.
-      @see  #getPatternCopy(Pattern) getPatternCopy(p)
-      @see  #getPatternCopy(PatternHaser, String) getPatternCopy(ph,s)
-      @see  #getPatternCrashIfHaserNull(PatternHaser, String) getPatternCrashIfHaserNull(ph,s)
-      @see  #getPatternCopyOrNull(Pattern) getPatternCopyOrNull(p)
-    **/
+    * @param  to_find  May not be {@code null}.
+    * @param  ptrn_name  Descriptive name {@code to_find}. <i>Should</i> not be {@code null} or empty.
+    * @see  #getPatternCopy(Pattern) getPatternCopy(p)
+    * @see  #getPatternCopy(PatternHaser, String) getPatternCopy(ph,s)
+    * @see  #getPatternCrashIfHaserNull(PatternHaser, String) getPatternCrashIfHaserNull(ph,s)
+    * @see  #getPatternCopyOrNull(Pattern) getPatternCopyOrNull(p)
+    */
    public static final Pattern getPatternCopy(Pattern to_find, String ptrn_name)  {
       try  {
          return  Pattern.compile(to_find.toString(), to_find.flags());
@@ -122,12 +122,12 @@ public class RegexUtil  {
    /**
       <p>If a group number is invalid for a given matcher, crash.</p>
 
-      @param  group_num  The group number to retrieve. Must be valid given <code>mtchr.{@link java.util.regex.Matcher#groupCount() groupCount}()</code>
-      @param  mtchr  May not be {@code null}.
-      @param  group_numName  Descriptive name of {@code group_num}. <i>Should</i> not be {@code null} or empty.
-      @param  mtchr_name  Descriptive name of {@code mtchr}.
-      @exception  XbnIndexOutOfBoundsException  If {@code group_num} is invalid.
-    **/
+    * @param  group_num  The group number to retrieve. Must be valid given <code>mtchr.{@link java.util.regex.Matcher#groupCount() groupCount}()</code>
+    * @param  mtchr  May not be {@code null}.
+    * @param  group_numName  Descriptive name of {@code group_num}. <i>Should</i> not be {@code null} or empty.
+    * @param  mtchr_name  Descriptive name of {@code mtchr}.
+    * @exception  XbnIndexOutOfBoundsException  If {@code group_num} is invalid.
+    */
    public static final void crashIfBadGroupNumberForCount(int group_num, Matcher mtchr, String group_numName, String mtchr_name)  {
       int igc = -1;
       try  {
@@ -149,7 +149,7 @@ public class RegexUtil  {
          <li>If that throws no exception, then this <i><b>returns</b></i> {@code cause}.</li>
       </ol></p>
 
-      @param  cause  May not be {@code null}.
+    * @param  cause  May not be {@code null}.
    public static final RuntimeException crashIfBadGroupNumberForCountOrReturnCause(int group_num, Matcher mtchr, String group_numName, String mtchr_name, RuntimeException cause)  {
       crashIfBadGroupNumberForCount(group_num, mtchr, group_numName, mtchr_name);
 //		xtra_errInfo = XInfoAccumulator.getAddedOrNew(xtra_errInfo,
@@ -160,11 +160,11 @@ public class RegexUtil  {
    /**
       <p>Get a matcher from a pattern, or crash if the pattern is {@code null}.</p>
 
-      @param  to_find  May not be {@code null}.
-      @param  to_search  The string to search. May not be {@code null}.
-      @param  ptrn_name  Descriptive name for {@code to_find}. <i>Should</i> not be {@code null} or empty.
-      @return  <code>to_find.{@link java.util.regex.Pattern#matcher(CharSequence) matcher}(to_search)</code>
-    **/
+    * @param  to_find  May not be {@code null}.
+    * @param  to_search  The string to search. May not be {@code null}.
+    * @param  ptrn_name  Descriptive name for {@code to_find}. <i>Should</i> not be {@code null} or empty.
+    * @return  <code>to_find.{@link java.util.regex.Pattern#matcher(CharSequence) matcher}(to_search)</code>
+    */
    public static final Matcher newMatcherForPatternCINull(Pattern to_find, String to_search, String ptrn_name)  {
       try  {
          return  to_find.matcher(to_search);  //Does crash for a null string
@@ -175,10 +175,10 @@ public class RegexUtil  {
    /**
       <p>Reset the matcher string, and crash if the string is {@code null}. <code>{@link java.util.regex.Matcher Matcher}.{@link java.util.regex.Matcher#reset(CharSequence) reset}</code> allows {@code null} strings. This does not.</p>
 
-      @param  matcher  May not be {@code null}.
-      @param  to_search  May not be {@code null}.
-      @param  toSearch_name  Descriptive name of {@code to_search}. <i>Should</i> not be {@code null} or empty.
-    **/
+    * @param  matcher  May not be {@code null}.
+    * @param  to_search  May not be {@code null}.
+    * @param  toSearch_name  Descriptive name of {@code to_search}. <i>Should</i> not be {@code null} or empty.
+    */
    public static final Matcher resetGetMatcherCINullString(Matcher matcher, String to_search, String toSearch_name)  {
       if(to_search == null)  {
          throw  new NullPointerException(toSearch_name);

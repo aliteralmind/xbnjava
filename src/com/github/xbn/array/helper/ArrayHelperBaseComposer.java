@@ -20,8 +20,8 @@ package  com.github.xbn.array.helper;
 /**
    <p>For classes that need to implement {@code ArrayHelperBase}, that cannot extend an abstract or concrete implementation.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ArrayHelperBaseComposer<E>  {//implements ArrayHelperBase<E>  {
    private Class<?> clsStatic = null;
@@ -37,8 +37,8 @@ public class ArrayHelperBaseComposer<E>  {//implements ArrayHelperBase<E>  {
 
       YYY
 
-      @see  #ArrayHelperBaseComposer(Class)
-    **/
+    * @see  #ArrayHelperBaseComposer(Class)
+    */
    public Class<?> getStaticClass()  {
       return  clsStatic;
    }

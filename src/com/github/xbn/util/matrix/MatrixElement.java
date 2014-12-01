@@ -41,24 +41,6 @@ public class MatrixElement extends AbstractElement  {
          throw  new IllegalArgumentException("col_idx (" + col_idx + ") is less than zero.");
       }
    }
-   /*
-    * <p>The index of this items' sub-array within the overall array.</p>
-    *
-    * @return  <code>row_index</code>, as provided to the
-    * {@link #MatrixElement(int) constructor}.
-   public int getRowIndex()  {
-      return  getVertical();
-   }
-   */
-   /*
-    * <p>The index of this item within its sub-array.</p>
-    *
-    * @return  <code>col_idx</code>, as provided to the
-    * {@link #MatrixElement(int, int, O) constructor}.
-   public int getColumnIndex()  {
-      return  getHorizontal();
-   }
-   */
    /**
     * The horizontal distance (the number of cells away) from <i>{@code this}</i>
     * element to another.

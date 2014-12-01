@@ -18,8 +18,8 @@ package  com.github.xbn.array;
 /**
    <p>Get the middle index given a specific length. Intended for future utilities related to indexable and lengthable containers (such as strings, arrays, and collections).</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class IndexableUtil  {
    private IndexableUtil()  {
@@ -28,14 +28,14 @@ public class IndexableUtil  {
    /**
       <p>Get the middle index of a container, given its length.</p>
 
-      @return  {@link com.github.xbn.number.NumberUtil NumberUtil.}{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}{@code (0, length)}
-    **/
+    * @return  {@link com.github.xbn.number.NumberUtil NumberUtil.}{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}{@code (0, length)}
+    */
    public static final int getMiddleIndex(int length)  {
       return  NumberUtil.getMiddleInt(0, length);
    }
    /**
       <p>Get a random index for a container, given its length.</p>
-    **/
+    */
    public static final int getRandomIndexForLength(int length)  {
       return  NumberUtil.getRandomIntBetweenInclusive(0, (length - 1));
    }

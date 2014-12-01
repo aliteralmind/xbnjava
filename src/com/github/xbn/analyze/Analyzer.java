@@ -22,8 +22,8 @@ package  com.github.xbn.analyze;
 /**
    <p>Base class for {@code com.github.xbn.analyze.validate.}{@link com.github.xbn.analyze.validate.Validator Validator} and {@code com.github.xbn.analyze.alter.}{@link com.github.xbn.analyze.alter.Alterer Alterer}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public interface Analyzer extends Copyable, Debuggable, ExtraErrInfoable, Expirable, ToStringAppendable  {
@@ -36,49 +36,49 @@ public interface Analyzer extends Copyable, Debuggable, ExtraErrInfoable, Expira
 
       <p>Resets all internal state except counts. This does not change any user-configuration.</p>
 
-      @see  #resetCounts()
-      @see  #doAutoResetState()
-    **/
+    * @see  #resetCounts()
+    * @see  #doAutoResetState()
+    */
    void resetState();
 
    /**
       <p>Is state automatically reset before each analysis?.</p>
 
-      @return  {@code true}  <a href="#resetState()">State</a> is automatically reset.
-    **/
+    * @return  {@code true}  <a href="#resetState()">State</a> is automatically reset.
+    */
    boolean doAutoResetState();
    /**
       <p>Reset all counts to zero.</p>
 
       <p>Sets {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to zero.</p>
-      @see  #resetState()
-    **/
+    * @see  #resetState()
+    */
    void resetCounts();
 
    /**
       <p>How many times has something been analyzed?.</p>
-      @see  #resetCounts()
-    **/
+    * @see  #resetCounts()
+    */
    int getAnalyzedCount();
 
    /**
       <p>Was something just analyzed?.</p>
-      @see  #resetState() reset()
-    **/
+    * @see  #resetState() reset()
+    */
    boolean wasAnalyzed();
 
    /**
       <p>Duplicate this {@code Analyzer} that, by default, has the same configuration (state and counts are reset).</p>
 
-      @return  A non-{@code null} duplicate of this {@code Analyzer}.
-    **/
+    * @return  A non-{@code null} duplicate of this {@code Analyzer}.
+    */
    @Override
    Analyzer getObjectCopy();
    /**
       <p>Returns {@code true} if another {@code Analyzer} has the same configuration as this one--state and counts are ignored.</p>
 
-      @see  #resetState()
-      @see  #resetCounts()
-    **/
+    * @see  #resetState()
+    * @see  #resetCounts()
+    */
    boolean equals(Object to_compareTo);
 }

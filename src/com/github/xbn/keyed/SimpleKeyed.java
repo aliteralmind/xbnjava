@@ -16,8 +16,8 @@ package  com.github.xbn.keyed;
 /**
    <p>Implementation of {@code Keyed}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleKeyed<K> implements Keyed<K>  {
 //state
@@ -43,8 +43,8 @@ public class SimpleKeyed<K> implements Keyed<K>  {
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
    @SuppressWarnings("unchecked")
    public SimpleKeyed(Keyed<K> to_copy)  {
       try  {
@@ -79,9 +79,9 @@ public class SimpleKeyed<K> implements Keyed<K>  {
    /**
       <p>Duplicate this {@code SimpleKeyed}.</p>
 
-      @return  <code>(new {@link #SimpleKeyed(Keyed) SimpleKeyed}&lt;K&gt;(this))</code>
+    * @return  <code>(new {@link #SimpleKeyed(Keyed) SimpleKeyed}&lt;K&gt;(this))</code>
    public SimpleKeyed<K> getObjectCopy()  {
       return  (new SimpleKeyed<K>(this));
    }
-    **/
+    */
 }

@@ -17,21 +17,21 @@ package  com.github.xbn.lang;
 /**
    <p>If an object is {@code null}, crash. Otherwise, do nothing.</p>
 
-   @see  com.github.xbn.array.CrashIfArray
-   @see  com.github.xbn.list.CrashIfCollection
-   @see  com.github.xbn.list.CrashIfList
-   @see  com.github.xbn.text.CrashIfString
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  com.github.xbn.array.CrashIfArray
+ * @see  com.github.xbn.list.CrashIfCollection
+ * @see  com.github.xbn.list.CrashIfList
+ * @see  com.github.xbn.text.CrashIfString
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfObject  {
 //nnull*...START
    /**
       <p>If an object is {@code null}, crash--otherwise, <i>return</i> the causing error.</p>
 
-      @param  obj_toTest  The object expected to be {@code null}.
-      @param  cause  The causing error. May not be {@code null}.
-    **/
+    * @param  obj_toTest  The object expected to be {@code null}.
+    * @param  cause  The causing error. May not be {@code null}.
+    */
    public static final RuntimeException nullOrReturnCause(Object obj_toTest, String obj_name, Object xtra_errInfo, RuntimeException cause)  {
       if(cause == null)  {
          throw  new NullPointerException("cause");
@@ -42,20 +42,20 @@ public class CrashIfObject  {
    /**
       <p>If an object is {@code null}, crash. Otherwise, do nothing.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #nnull(Null, Object, String, Object) nnull}({@link Null}.{@link Null#BAD BAD}, obj_toTest, obj_name, xtra_errInfo)</code></p>
-    **/
+    */
    public static final void nnull(Object obj_toTest, String obj_name, Object xtra_errInfo)  {
       nnull(Null.BAD, obj_toTest, obj_name, xtra_errInfo);
    }
    /**
       <p>If an object is optionally-{@code null}, crash. Otherwise, do nothing.</p>
 
-      @param  obj_toTest  The object to test.
-      @exception  NullPointerException  If {@code obj_toTest} is {@code null} and {@code nnull} is {@link Null#BAD BAD}
+    * @param  obj_toTest  The object to test.
+    * @exception  NullPointerException  If {@code obj_toTest} is {@code null} and {@code nnull} is {@link Null#BAD BAD}
 
-      @see  #nnull(Object, String, Object) nnull
-    **/
+    * @see  #nnull(Object, String, Object) nnull
+    */
    public static final void nnull(Null nnull, Object obj_toTest, String obj_name, Object xtra_errInfo)  {
       if(obj_toTest == null  &&  !nnull.isOk())  {
          throw  new NullPointerException(getXMsg(obj_name, xtra_errInfo));

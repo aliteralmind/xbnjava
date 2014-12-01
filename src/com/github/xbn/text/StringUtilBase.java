@@ -17,8 +17,8 @@ package  com.github.xbn.text;
 /**
    <p>Get a string's length (or crash if it's {@code null}), or value (or a default if {@code null}, or chopped value. These functions are fundamental to XBN-Java, and are therefore separated from {@link StringUtil} to avoid circular dependencies.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class StringUtilBase  {
    protected StringUtilBase()  {
@@ -31,9 +31,9 @@ public class StringUtilBase  {
       <p>Get the length of a string, or crash if it's {@code null}.</p>
 
       <!-- MAIN FUNCTION -->
-      @param  str_toPad  The string whose length is needed.
-      @exception  NullPointerException  If {@code str_toPad} is {@code null}.
-    **/
+    * @param  str_toPad  The string whose length is needed.
+    * @exception  NullPointerException  If {@code str_toPad} is {@code null}.
+    */
    public static final int getLengthCrashIfNull(Object str_toPad, String str_name)  {
       try  {
          return  str_toPad.toString().length();
@@ -45,8 +45,8 @@ public class StringUtilBase  {
       <p>Get the length of a string, or crash if it's {@code null}.</p>
 
       <!-- MAIN FUNCTION -->
-      @param  str_toPad  The string whose length is needed.
-      @exception  NullPointerException  If {@code str_toPad} is {@code null}.
+    * @param  str_toPad  The string whose length is needed.
+    * @exception  NullPointerException  If {@code str_toPad} is {@code null}.
    public static final int getLengthCrashIfNull(Object str_toPad, String str_name, Object xtra_errInfo)  {
       try  {
          return  str_toPad.toString().length();
@@ -58,12 +58,12 @@ public class StringUtilBase  {
    /**
       <p>Chop and optionally trim a string.</p>
 
-      @param  do_trim  If {@code YES}, {@code str_toPad} is trimmed first. May not be {@code null}.
-      @param  str_toPad  The string to trim.
-      @param  max_len  The length to trim to. If {@code -1}, it is not trimmed. Otherwise, must be zero or greater.
-      @param  ellipsis  If non-{@code null} and the string <i>is</i> chopped, then this is appended to the end. Example: {@code "..."}. When {@code null}, no ellipsis is appended.
-      @exception  StringIndexOutOfBoundsException  If {@code max_len} is invalid.
-    **/
+    * @param  do_trim  If {@code YES}, {@code str_toPad} is trimmed first. May not be {@code null}.
+    * @param  str_toPad  The string to trim.
+    * @param  max_len  The length to trim to. If {@code -1}, it is not trimmed. Otherwise, must be zero or greater.
+    * @param  ellipsis  If non-{@code null} and the string <i>is</i> chopped, then this is appended to the end. Example: {@code "..."}. When {@code null}, no ellipsis is appended.
+    * @exception  StringIndexOutOfBoundsException  If {@code max_len} is invalid.
+    */
    public static final String getChopped(Trim do_trim, Object str_toPad, int max_len, String ellipsis)  {
       if(str_toPad == null)  {
          return  null;

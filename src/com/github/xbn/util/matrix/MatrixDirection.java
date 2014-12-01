@@ -88,7 +88,7 @@ public enum MatrixDirection  {
     * @see  #UP
     * @see  #isRight()
     * @see  #isHorizontal()
-    **/
+    */
    RIGHT(0, 1, null, VertHorizDirection.RIGHT),
    /**
     * <p>Diagonal, up and to the left.</p>
@@ -103,7 +103,7 @@ public enum MatrixDirection  {
     * @see  #UP
     * @see  #isUpLeft()
     * @see  #isDiagonal()
-    **/
+    */
    UP_LEFT(-1, -1, VertHorizDirection.UP, VertHorizDirection.LEFT),
    /**
     * <p>Diagonal, up and to the right.</p>
@@ -118,7 +118,7 @@ public enum MatrixDirection  {
     * @see  #UP
     * @see  #isUpRight()
     * @see  #isDiagonal()
-    **/
+    */
    UP_RIGHT(-1, 1, VertHorizDirection.UP, VertHorizDirection.RIGHT),
    /**
     * <p>Diagonal, down and to the left.</p>
@@ -133,7 +133,7 @@ public enum MatrixDirection  {
     * @see  #UP
     * @see  #isDownLeft()
     * @see  #isDiagonal()
-    **/
+    */
    DOWN_LEFT(1, -1, VertHorizDirection.DOWN, VertHorizDirection.LEFT),
    /**
     * <p>Diagonal, down and to the right.</p>
@@ -148,7 +148,7 @@ public enum MatrixDirection  {
     * @see  #UP
     * @see  #isDownRight()
     * @see  #isDiagonal()
-    **/
+    */
    DOWN_RIGHT(1, 1, VertHorizDirection.DOWN, VertHorizDirection.RIGHT);
 
       private final int vertInc;
@@ -239,7 +239,7 @@ public enum MatrixDirection  {
     * @return  <code>this == {@link #RIGHT}</code>
     * @see  #isUp()
     * @see  #isHorizontal()
-    **/
+    */
    public final boolean isRight()  {
       return  this == RIGHT;
    }
@@ -257,7 +257,7 @@ public enum MatrixDirection  {
     *
     * @return  <code>this == {@link #DOWN_RIGHT}</code>
     * @see  #isUp()
-    **/
+    */
    public final boolean isDownRight()  {
       return  this == DOWN_RIGHT;
    }
@@ -266,7 +266,7 @@ public enum MatrixDirection  {
     *
     * @return  <code>this == {@link #DOWN_LEFT}</code>
     * @see  #isUp()
-    **/
+    */
    public final boolean isDownLeft()  {
       return  this == DOWN_LEFT;
    }
@@ -275,7 +275,7 @@ public enum MatrixDirection  {
     *
     * @return  <code>this == {@link #UP_RIGHT}</code>
     * @see  #isUp()
-    **/
+    */
    public final boolean isUpRight()  {
       return  this == UP_RIGHT;
    }
@@ -284,7 +284,7 @@ public enum MatrixDirection  {
     *
     * @return  <code>this == {@link #UP_LEFT}</code>
     * @see  #isUp()
-    **/
+    */
    public final boolean isUpLeft()  {
       return  this == UP_LEFT;
    }
@@ -339,7 +339,7 @@ public enum MatrixDirection  {
     * @see  #hasUp()
     * @see  #isHorizontal()
     * @see  #hasHorizontal()
-    **/
+    */
    public final boolean hasRight()  {
       return  (getHorizPortion() == VertHorizDirection.RIGHT);
    }

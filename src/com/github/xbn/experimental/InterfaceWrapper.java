@@ -22,7 +22,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
          <li>{@link #setXContext(ExceptionContext) setXContext}{@code (x_c)}</li>
          <li>{@link #setGetIInstance(Object, String) setGetIInstance}{@code (o_iinstance, null)}</li>
       </ol></p>
-    **/
+    */
    public InterfaceWrapper(Object o_iinstance, ExceptionContext x_c)  {
       setXContext(x_c);
       setGetIInstance(o_iinstance, null);
@@ -35,9 +35,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
          <li><code>{@link #setXContext(ExceptionContext) setXContext}((ExceptionContext)to_copy.{@link #getXContext() getXContext}().{@link com.github.xbn.experimental.xcontext.ExceptionContext#getObjectCopy() getObjectCopy}())</code></li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    */
    public InterfaceWrapper(InterfaceWrapper to_copy)  {
       try  {
          setGetIInstance(to_copy.getIInstance(), null);
@@ -49,14 +49,14 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Set the interface instance, then immediately return it. To set the instance to {@code null}, use {@link #removeIInstance() removeIInstance}{@code ()}. Attempting to use this function results in an ambiguous reference compile error.</p>
 
-      @param  o_iinstance  Get with {@link #getIInstance() getIInstance}{@code ()}. At initialization of this {@code InterfaceWrapper}, this may be {@code null} (before any functions are called against it). Otherwise, it should never be {@code null}.
-      @return  {@code o_iinstance} <i>This makes it easier to maintain a redundant reference to the object, via
+    * @param  o_iinstance  Get with {@link #getIInstance() getIInstance}{@code ()}. At initialization of this {@code InterfaceWrapper}, this may be {@code null} (before any functions are called against it). Otherwise, it should never be {@code null}.
+    * @return  {@code o_iinstance} <i>This makes it easier to maintain a redundant reference to the object, via
       <br/> &nbsp; &nbsp; {@code o = iw.setGetIInstance(...);}
       <br/>This extra reference minimizes the need for calling this function, when the instance simply needs to be passed or tested for {@code null}.</i>
 
-      @see  #setXContext(ExceptionContext) setXContext(xc)
-      @see  #setIInstanceSubIWs(Object, String, InterfaceWrapper...) setIInstanceSubIWs(s,o,iw...)
-    **/
+    * @see  #setXContext(ExceptionContext) setXContext(xc)
+    * @see  #setIInstanceSubIWs(Object, String, InterfaceWrapper...) setIInstanceSubIWs(s,o,iw...)
+    */
    public Object setGetIInstance(Object o_iinstance, String nonNull_objName)  {
       if(nonNull_objName != null)  {
          try  {
@@ -72,9 +72,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Set the interface-instance to {@code null}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #setGetIInstance(Object, String) setGetIInstance(null, null)}</p>
-    **/
+    */
    public void removeIInstance()  {
       setGetIInstance(null, null);
    }
@@ -83,7 +83,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       <p>For each, this calls
       <br/> &nbsp; &nbsp; {@link #setGetIInstance(Object, String) setGetIInstance(o_iinstance, nonNull_objName)}</p>
-    **/
+    */
    public void setIInstanceSubIWs(Object o_iinstance, String nonNull_objName, InterfaceWrapper... ddd_iw)  {
       if(ddd_iw.length == 0)  {
          throw  new IllegalArgumentException("ddd_iw.length is zero.");
@@ -95,9 +95,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Set the context for potential errors.</p>
 
-      @param  x_c  May not be {@code null}. Get with {@link #getXContext() getXContext}{@code ()}.
-      @see  #setGetIInstance(Object, String) setGetIInstance(o,s)
-    **/
+    * @param  x_c  May not be {@code null}. Get with {@link #getXContext() getXContext}{@code ()}.
+    * @see  #setGetIInstance(Object, String) setGetIInstance(o,s)
+    */
    public void setXContext(ExceptionContext x_c)  {
       if(x_c == null)  {
          throw  new NullPointerException("x_c");
@@ -107,7 +107,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Shortcut for {@code getXContext().setExtraInfo(o)}.</p>
 
-    **/
+    */
    public void setExtraInfo(Object o_iinstance, XContextable... ddd_xcblOthers)  {
       ExceptionContext xc = getXContext();
       xc.setExtraInfo(o_iinstance);
@@ -118,17 +118,17 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Reset the context's index to zero.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #setIndex(int, EXContextable...) setIndex}{@code (0)}</p>
-    **/
+    */
    public void setIndexTo0(EXContextable... ddd_xcblOthers)  {
       setIndex(0);
    }
    /**
       <p>Shortcut for {@code getXContext().setIndex(i)}.</p>
 
-      @see  #setIndexTo0(EXContextable...) setIndexTo0}(exc...)
-    **/
+    * @see  #setIndexTo0(EXContextable...) setIndexTo0}(exc...)
+    */
    public void setIndex(int index, EXContextable... ddd_xcblOthers)  {
       ElementExceptionContext exc = getEXContext();
       exc.setIndex(index);
@@ -139,25 +139,25 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Get the interface instance.</p>
 
-      @return  {@code o_iinstance}, as provided to {@link #setGetIInstance(Object, String) setGetIInstance(o,s)}
-    **/
+    * @return  {@code o_iinstance}, as provided to {@link #setGetIInstance(Object, String) setGetIInstance(o,s)}
+    */
    public Object getIInstance()  {
       return  oii;
    }
    /**
       <p>Get the exception context.</p>
 
-      @return  {@code x_c}, as provided to {@link #setXContext(ExceptionContext) setXContext(xc)}.
-    **/
+    * @return  {@code x_c}, as provided to {@link #setXContext(ExceptionContext) setXContext(xc)}.
+    */
    public ExceptionContext getXContext()  {
       return  xc;
    }
    /**
       <p>Get the object exception context.</p>
 
-      @return  {@code x_c}, as provided to {@link #setXContext(ExceptionContext) setXContext(xc)}.
-      @exception  ClassCastException  If {@link #getXContext() getXContext}{@code ()} is not an {@code ObjectExceptionContext}
-    **/
+    * @return  {@code x_c}, as provided to {@link #setXContext(ExceptionContext) setXContext(xc)}.
+    * @exception  ClassCastException  If {@link #getXContext() getXContext}{@code ()} is not an {@code ObjectExceptionContext}
+    */
    public ObjectExceptionContext getOXContext()  {
       try  {
          return  (ObjectExceptionContext)getXContext();
@@ -168,9 +168,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Get the object exception context.</p>
 
-      @return  {@code x_c}, as provided to {@link #setXContext(ExceptionContext) setXContext(xc)}.
-      @exception  ClassCastException  If {@link #getXContext() getXContext}{@code ()} is not an {@code ElementExceptionContext}
-    **/
+    * @return  {@code x_c}, as provided to {@link #setXContext(ExceptionContext) setXContext(xc)}.
+    * @exception  ClassCastException  If {@link #getXContext() getXContext}{@code ()} is not an {@code ElementExceptionContext}
+    */
    public ElementExceptionContext getEXContext()  {
       try  {
          return  (ElementExceptionContext)getXContext();
@@ -182,8 +182,8 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       return  super.toString() + ": getIInstance()=[" + getIInstance() + "], getXContext()=[" + getXContext() + "]";
    }
    /**
-      @return  {@code true} If {@code o_iinstance} is non-{@code null}, aYYY {@code InterfaceWrapper}, and {@link #areFieldsEqual(InterfaceWrapper) areFieldsEqual}{@code ((InterfaceWrapper)to_compareTo)} is {@code true}.
-    **/
+    * @return  {@code true} If {@code o_iinstance} is non-{@code null}, aYYY {@code InterfaceWrapper}, and {@link #areFieldsEqual(InterfaceWrapper) areFieldsEqual}{@code ((InterfaceWrapper)to_compareTo)} is {@code true}.
+    */
    @Override public boolean equals(Object to_compareTo)  {
 
       //See internal comments for com.github.xbn.lang.SimpleXbnObject.equals(o)
@@ -205,8 +205,8 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
    /**
       <p>Are all internal values in the provided {@code InterfaceWrapper} the same as in <i>{@code this}</i>?. <i>This ignores the interface-instances (they may be different or {@code null}).</i></p>
 
-      @return  {@link #getXContext() getXContext}{@code ().equals(wrapper.getXContext())}
-    **/
+    * @return  {@link #getXContext() getXContext}{@code ().equals(wrapper.getXContext())}
+    */
    public boolean areFieldsEqual(InterfaceWrapper wrapper)  {
       return  getXContext().equals(wrapper.getXContext());
    }
@@ -216,8 +216,8 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  {@code InterfaceWrapper.{@link #iiGetClass(Object, ExceptionContext) iiGetClass}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
-    **/
+    * @return  {@code InterfaceWrapper.{@link #iiGetClass(Object, ExceptionContext) iiGetClass}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
+    */
    public final Class iiGetClass()  {
       return  InterfaceWrapper.iiGetClass(getIInstance(), getXContext());
    }
@@ -226,8 +226,8 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  {@code InterfaceWrapper.{@link #iiHashCode(Object, ExceptionContext) iiHashCode}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
-    **/
+    * @return  {@code InterfaceWrapper.{@link #iiHashCode(Object, ExceptionContext) iiHashCode}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
+    */
    public final int iiHashCode()  {
       return  InterfaceWrapper.iiHashCode(getIInstance(), getXContext());
    }
@@ -236,8 +236,8 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  {@code InterfaceWrapper.{@link #iiEquals(Object, Object, ExceptionContext) iiEquals}(to_compareTo, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
-    **/
+    * @return  {@code InterfaceWrapper.{@link #iiEquals(Object, Object, ExceptionContext) iiEquals}(to_compareTo, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
+    */
    public final boolean iiEquals(Object to_compareTo)  {
       return  InterfaceWrapper.iiEquals(to_compareTo, getIInstance(), getXContext());
    }
@@ -246,8 +246,8 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  {@code InterfaceWrapper.{@link #iiToString(Object, ExceptionContext) iiToString}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
-    **/
+    * @return  {@code InterfaceWrapper.{@link #iiToString(Object, ExceptionContext) iiToString}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}
+    */
    public final String iiToString()  {
       return  InterfaceWrapper.iiToString(getIInstance(), getXContext());
    }
@@ -256,9 +256,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiNotify(Object, ExceptionContext) iiNotify}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
-    **/
+    */
    public final void iiNotify()  {
       InterfaceWrapper.iiNotify(getIInstance(), getXContext());
    }
@@ -267,9 +267,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiNotifyAll(Object, ExceptionContext) iiNotifyAll}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
-    **/
+    */
    public final void iiNotifyAll()  {
       InterfaceWrapper.iiNotifyAll(getIInstance(), getXContext());
    }
@@ -278,9 +278,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(long, Object, ExceptionContext) iiWait}(timeout_mills, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
-    **/
+    */
    public final void iiWait(long timeout_mills)  throws InterruptedException  {
       InterfaceWrapper.iiWait(timeout_mills, getIInstance(), getXContext());
    }
@@ -289,9 +289,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(long, int, Object, ExceptionContext) iiWait}(timeout_mills, nanos, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
-    **/
+    */
    public final void iiWait(long timeout_mills, int nanos)  throws InterruptedException  {
       InterfaceWrapper.iiWait(timeout_mills, nanos, getIInstance(), getXContext());
    }
@@ -300,9 +300,9 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(Object, ExceptionContext) iiWait}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
-    **/
+    */
    public final void iiWait()  throws InterruptedException  {
       InterfaceWrapper.iiWait(getIInstance(), getXContext());
    }
@@ -314,12 +314,12 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  <code>o_iinstance.{@link Object#getClass() getClass}()</code>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code getClass()} fails for any unexpected reason.
-    **/
+    * @return  <code>o_iinstance.{@link Object#getClass() getClass}()</code>
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code getClass()} fails for any unexpected reason.
+    */
    public static final Class iiGetClass(Object o_iinstance, ExceptionContext x_c)  {
       try  {
          return  o_iinstance.getClass();
@@ -333,12 +333,12 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  <code>o_iinstance.{@link Object#hashCode() hashCode}()</code>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code hashCode()} fails for any unexpected reason.
-    **/
+    * @return  <code>o_iinstance.{@link Object#hashCode() hashCode}()</code>
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code hashCode()} fails for any unexpected reason.
+    */
    public static final int iiHashCode(Object o_iinstance, ExceptionContext x_c)  {
       try  {
          return  o_iinstance.hashCode();
@@ -352,12 +352,12 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  <code>o_iinstance.{@link Object#equals(Object) equals}(to_compareTo)</code>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code equals()} fails for any unexpected reason.
-    **/
+    * @return  <code>o_iinstance.{@link Object#equals(Object) equals}(to_compareTo)</code>
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code equals()} fails for any unexpected reason.
+    */
    public static final boolean iiEquals(Object to_compareTo, Object o_iinstance, ExceptionContext x_c)  {
       try  {
          return  o_iinstance.equals(to_compareTo);
@@ -371,12 +371,12 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      @return  <code>o_iinstance.{@link Object#toString() toString}()</code>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code toString()} fails for any unexpected reason.
-    **/
+    * @return  <code>o_iinstance.{@link Object#toString() toString}()</code>
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code toString()} fails for any unexpected reason.
+    */
    public static final String iiToString(Object o_iinstance, ExceptionContext x_c)  {
       try  {
          return  o_iinstance.toString();
@@ -390,13 +390,13 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#notify() notify}()</code></p>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code notify()} fails for any unexpected reason.
-    **/
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code notify()} fails for any unexpected reason.
+    */
    public static final void iiNotify(Object o_iinstance, ExceptionContext x_c)  {
       try  {
          o_iinstance.notify();
@@ -410,13 +410,13 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#notifyAll() notifyAll}()</code></p>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code notifyAll()} fails for any unexpected reason.
-    **/
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code notifyAll()} fails for any unexpected reason.
+    */
    public static final void iiNotifyAll(Object o_iinstance, ExceptionContext x_c)  {
       try  {
          o_iinstance.notifyAll();
@@ -430,13 +430,13 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait(long) wait}(timeout_mills)</code></p>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code wait()} fails for any unexpected reason.
-    **/
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code wait()} fails for any unexpected reason.
+    */
    public static final void iiWait(long timeout_mills, Object o_iinstance, ExceptionContext x_c)  throws InterruptedException  {
       try  {
          o_iinstance.wait(timeout_mills);
@@ -450,13 +450,13 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait(long, int) wait}(timeout_mills, nanos)</code></p>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code wait()} fails for any unexpected reason.
-    **/
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code wait()} fails for any unexpected reason.
+    */
    public static final void iiWait(long timeout_mills, int nanos, Object o_iinstance, ExceptionContext x_c)  throws InterruptedException  {
       try  {
          o_iinstance.wait(timeout_mills, nanos);
@@ -470,13 +470,13 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait() wait}()</code></p>
-      @param  o_iinstance  May not be {@code null}.
-      @param  x_c  May not be {@code null}.
-      @exception  NullPointerException  When {@code o_iinstance} is {@code null}
-      @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code wait()} fails for any unexpected reason.
-    **/
+    * @param  o_iinstance  May not be {@code null}.
+    * @param  x_c  May not be {@code null}.
+    * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
+    * @exception  BadInterfaceBehaviorException  When {@code o_iinstance} is non-{@code null} and the call to {@code wait()} fails for any unexpected reason.
+    */
    public static final void iiWait(Object o_iinstance, ExceptionContext x_c)  throws InterruptedException  {
       try  {
          o_iinstance.wait();

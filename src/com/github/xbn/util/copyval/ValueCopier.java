@@ -17,37 +17,37 @@ package  com.github.xbn.util.copyval;
 /**
    <p>Determines if an object is duplicate-able, and safely duplicates it.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface ValueCopier<O> extends Copyable  {
    /**
       <p>Is the value copyable?.</p>
 
-      @return  {@code true}  If {@link #getValueCopy(O, String) getValueCopy(O,s)} may be safely called.
-    **/
+    * @return  {@code true}  If {@link #getValueCopy(O, String) getValueCopy(O,s)} may be safely called.
+    */
    boolean isValueCopyable();
    /**
       <p>Duplicate a value.</p>
 
-      @return  <code>{@link #getValueCopy(O, String, NullHandler) getValueCopy}(original_value, orig_name, (NullHandler&lt;O&gt;){@link com.github.xbn.util.copyval.SimpleNullHandler SimpleNullHandler.}{@link com.github.xbn.util.copyval.SimpleNullHandler#USE_NULL USE_NULL})</code>
-    **/
+    * @return  <code>{@link #getValueCopy(O, String, NullHandler) getValueCopy}(original_value, orig_name, (NullHandler&lt;O&gt;){@link com.github.xbn.util.copyval.SimpleNullHandler SimpleNullHandler.}{@link com.github.xbn.util.copyval.SimpleNullHandler#USE_NULL USE_NULL})</code>
+    */
    O getValueCopy(O original_value, String orig_name);
    /**
       <p>Duplicate a value.</p>
 
-      @param  original_value  The original value.
-      @param  orig_name  Descriptive name of {@code original_value}. <i>Should</i> not be {@code null} or empty.
-      @param  null_handler  May not be {@code null}.
-      @return  A duplicate of {@code original_value}, or {@code null} if {@code original_value} is {@code null}.
-      @exception  NotCopyableException  If {@link #isValueCopyable() isValueCopyable}{@code ()} is {@code false}.
-      @exception  IllegalStateException  If {@code original_value} is {@code null} and <code>null_handler.{@link com.github.xbn.util.copyval.NullHandler#doDelete() doDelete}()</code> is {@code true}.
-    **/
+    * @param  original_value  The original value.
+    * @param  orig_name  Descriptive name of {@code original_value}. <i>Should</i> not be {@code null} or empty.
+    * @param  null_handler  May not be {@code null}.
+    * @return  A duplicate of {@code original_value}, or {@code null} if {@code original_value} is {@code null}.
+    * @exception  NotCopyableException  If {@link #isValueCopyable() isValueCopyable}{@code ()} is {@code false}.
+    * @exception  IllegalStateException  If {@code original_value} is {@code null} and <code>null_handler.{@link com.github.xbn.util.copyval.NullHandler#doDelete() doDelete}()</code> is {@code true}.
+    */
    O getValueCopy(O original_value, String orig_name, NullHandler<O> null_handler);
    /**
       <p>Duplicate this {@code ValueCopier} which, by default, is a reference to the original--if any sub-classes contain state, this should be overridden.</p>
 
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    ValueCopier<O> getObjectCopy();
 }

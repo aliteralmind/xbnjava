@@ -19,7 +19,7 @@ package  com.github.xbn.io;
 /**
    <p>Basic implementation of {@code Debuggable}.</p>
 
-   @author  Copyright (C) 2014, Jeff Epstein. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @author  Copyright (C) 2014, Jeff Epstein. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 **/
 public class SimpleDebuggable implements Debuggable  {
    private TextAppenter xpnt = null;
@@ -34,8 +34,8 @@ public class SimpleDebuggable implements Debuggable  {
          <li>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code false}.</li>
       </ol></p>
 
-      @see  #SimpleDebuggable(GetDebugApbl_Fieldable) this(gda_f)
-    **/
+    * @see  #SimpleDebuggable(GetDebugApbl_Fieldable) this(gda_f)
+    */
    public SimpleDebuggable()  {
       //Never ever call interface functions, directly or indirectly, in a constructor.
       zsetDebugDB(null, false);
@@ -56,8 +56,8 @@ public class SimpleDebuggable implements Debuggable  {
          <li>Sets {@link #getDebugAptr() getDebugAptr}{@code ()} to {@code to_copy.getDebugAptr()}.</li>
          <li>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code to_copy.isDebugOn()}.</li>
       </ol></p>
-      @see  #SimpleDebuggable() this()
-    **/
+    * @see  #SimpleDebuggable() this()
+    */
    public SimpleDebuggable(Debuggable to_copy)  {
       //Never ever call interface functions, directly or indirectly, in a constructor.
       try  {
@@ -128,8 +128,8 @@ public class SimpleDebuggable implements Debuggable  {
    /**
       <p>Duplicate this {@code SimpleDebuggable}</p>
 
-      @return  <code>(new {@link #SimpleDebuggable(Debuggable) SimpleDebuggable}(this)</code>
-    **/
+    * @return  <code>(new {@link #SimpleDebuggable(Debuggable) SimpleDebuggable}(this)</code>
+    */
    public SimpleDebuggable getObjectCopy()  {
       return  (new SimpleDebuggable(this));
    }

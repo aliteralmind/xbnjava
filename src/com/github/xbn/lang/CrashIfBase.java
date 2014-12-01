@@ -17,15 +17,15 @@ package  com.github.xbn.lang;
    <p>Basic error message construction. It is encouraged that this class be <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language/static-import.html">statically imported</a> &quot;en masse&quot;:
    <br/> &nbsp; &nbsp; {@code import  static com.github.xbn.lang.CrashIfBase.*;}</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class CrashIfBase  {
    /**
       <p>A basic error message with optional extra context. When there is no extra context, there is no point in using this function.</p>
 
-      @see  #appendExtraInfoPostfix(StringBuilder, Object) appendExtraInfoPostfix(sd,o)
-    **/
+    * @see  #appendExtraInfoPostfix(StringBuilder, Object) appendExtraInfoPostfix(sd,o)
+    */
 //getXMsg(String, Object)
    public static final String getXMsg(String message, Object xtra_errInfo)  {
       StringBuilder sd = (new StringBuilder());

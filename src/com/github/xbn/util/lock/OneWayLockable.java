@@ -18,15 +18,15 @@ package  com.github.xbn.util.lock;
  **/
 public interface OneWayLockable extends Lockable  {
    /**
-      @return  <b>{@code false}</b>
-    **/
+    * @return  <b>{@code false}</b>
+    */
    boolean isUnlockable();
 
    /**
       <p>Shortcut for {@code lock(true)}</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>(OneWayLockable){@link com.github.xbn.util.lock.Lockable super}.{@link com.github.xbn.util.lock.Lockable#lock(boolean) lock}(true)</code></p>
-    **/
+    */
    void lock();
 }

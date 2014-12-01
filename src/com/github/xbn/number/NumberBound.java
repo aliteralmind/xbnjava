@@ -14,7 +14,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
    /**
     * @deprecated Use <code><!-- Generic parameters fail in at-links: --><a href="#NumberBound(N, com.github.xbn.number.Inclusive, java.lang.String)">NumberBound</a>(N,i,s)</code>
     * @since  0.1.4.2
-    **/
+    */
    public NumberBound(N num, boolean is_inclusive, String name)  {
       this(num, Inclusive.getForBoolean(is_inclusive), name);
    }
@@ -39,7 +39,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
     *    <li>YYY</li>
     * </ol></p>
     * @param  to_copy  May not be {@code null}.
-    **/
+    */
    public NumberBound(NumberBound<N> to_copy)  {
       try  {
          num = to_copy.get();
@@ -61,7 +61,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
     * <p>Get the bound number.</p>
     * @see <code><!-- Generic parameters fail in at-links: --><a href="#NumberBound(N, com.github.xbn.number.Inclusive, java.lang.String)">NumberBound</a>(N,i,s)</code>
     * @see #getGivenIncl(com.github.xbn.number.BoundSide)
-    **/
+    */
    public final N get()  {
       return  num;
    }
@@ -94,7 +94,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
     *    <li>{@code false}: Exclusive (a number must be greater than it).</li>
     * </ul>
     * @see <code><!-- Generic parameters fail in at-links: --><a href="#NumberBound(N, com.github.xbn.number.Inclusive, java.lang.String)">NumberBound</a>(N,i,s)</code>
-    **/
+    */
    public final boolean isInclusive()  {
       return  isInclusive;
    }
@@ -104,7 +104,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
    }
    /**
     * @param  to_compareTo  May not be {@code null}.
-    **/
+    */
    @Override
    public boolean equals(Object to_compareTo)  {
       //Check for object equality first, since it's faster than instanceof.
@@ -128,7 +128,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
    /**
     * <p>Are all relevant fields equal?.</p>
     * @param  to_compareTo  May not be {@code null}.
-    **/
+    */
    public boolean areFieldsEqual(NumberBound<?> to_compareTo)  {
       return  (get().equals(to_compareTo.get())  &&
             isInclusive() == to_compareTo.isInclusive());

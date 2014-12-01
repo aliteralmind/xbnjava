@@ -40,8 +40,8 @@ package  com.github.xbn.regexutil;
       <li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#requiredGroups(int) requiredGroups}(i)</code>, <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code></li>
    </ul></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class RegexGroupExtractor extends AbstractIterator<List<String>> implements Copyable, PatternHaser   {
 //state: immutable
@@ -55,12 +55,12 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>Create a new instance with a pattern <i>that contains groups</i>.</p>
 
-      @param  fieldable  May not be <code>null</code>.
-      @see  #RegexGroupExtractor(RegexGroupExtractor, String) this(rgx,s)
-      @see  #RegexGroupExtractor(RegexGroupExtractor) this(rgx)
-      @see  #RegexGroupExtractor(RegexGroupExtractor, String) this(rgx,s)
-      @see  #RegexGroupExtractor(RegexGroupExtractor, Pattern) this(rgx,p)
-    **/
+    * @param  fieldable  May not be <code>null</code>.
+    * @see  #RegexGroupExtractor(RegexGroupExtractor, String) this(rgx,s)
+    * @see  #RegexGroupExtractor(RegexGroupExtractor) this(rgx)
+    * @see  #RegexGroupExtractor(RegexGroupExtractor, String) this(rgx,s)
+    * @see  #RegexGroupExtractor(RegexGroupExtractor, Pattern) this(rgx,p)
+    */
    public RegexGroupExtractor(RegexGroupExtractor_Fieldable fieldable)  {
 
       iRqdGrps = fieldable.getRequiredGroups();
@@ -83,11 +83,11 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>Create a new instance as a duplicate of another, with a new regex.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #RegexGroupExtractor(RegexGroupExtractor, Pattern) this}(to_copy, {@link NewPatternFor}.{@link NewPatternFor#regex(String, String) regex}(regex_withGroups))</code></p>
 
-      @param  regex_withGroups  May not be <code>null</code>.
-    **/
+    * @param  regex_withGroups  May not be <code>null</code>.
+    */
    public RegexGroupExtractor(RegexGroupExtractor to_copy, String regex_withGroups)  {
       this(to_copy, NewPatternFor.regex(regex_withGroups, "regex_withGroups"));
    }
@@ -97,21 +97,21 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>Create a new instance as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #RegexGroupExtractor(RegexGroupExtractor, Pattern) this}(to_copy, {@link RegexUtil}.{@link RegexUtil#getPatternCopy(PatternHaser, String) getPatternCopy}(to_copy, ...))</code></p>
 
-      @param  to_copy  May not be <code>null</code>.
-    **/
+    * @param  to_copy  May not be <code>null</code>.
+    */
    public RegexGroupExtractor(RegexGroupExtractor to_copy)  {
       this(to_copy, RegexUtil.getPatternCopy(to_copy, "to_copy"));
    }
    /**
       <p>Create a new instance as a duplicate of another, with a new pattern.</p>
 
-      @param  to_copy  May not be <code>null</code>.
-      @param  ptrn_withGroups  If <code>null</code>, the <a href="#getPattern()">pattern</a> in <code>to_copy</code> is duplicated. If non-{@code null}, this is expected to have at least one group. If <code>to_copy.{@link #getRequiredGroupCount() getRequiredGroupCount}()</code> is not {@code -1}, this must contain exactly that number of groups. Get with {@link #getPattern() getPattern}{@code ()}.
-      @see  #RegexGroupExtractor(RegexGroupExtractor, Pattern) this(rgx, p)
-    **/
+    * @param  to_copy  May not be <code>null</code>.
+    * @param  ptrn_withGroups  If <code>null</code>, the <a href="#getPattern()">pattern</a> in <code>to_copy</code> is duplicated. If non-{@code null}, this is expected to have at least one group. If <code>to_copy.{@link #getRequiredGroupCount() getRequiredGroupCount}()</code> is not {@code -1}, this must contain exactly that number of groups. Get with {@link #getPattern() getPattern}{@code ()}.
+    * @see  #RegexGroupExtractor(RegexGroupExtractor, Pattern) this(rgx, p)
+    */
    public RegexGroupExtractor(RegexGroupExtractor to_copy, Pattern ptrn_withGroups)  {
       sph = new SimplePatternHaser(to_copy, ptrn_withGroups);
       iRqdGrps = to_copy.getRequiredGroupCount();
@@ -134,11 +134,11 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
       /**
          <p>Should the string be matched as a whole?. Should <code><i>[{@link java.util.regex.Matcher}]</i>.{@link java.util.regex.Matcher#matches() matches}()</code> be used?.</p>
 
-         @return  A non-null {@link MatcherUses} that defines what is matched in each iteration.
-         @see  com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useMatches() Cfg.useMatches()
-         @see  com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useFind() Cfg.useFind()
-         @see  com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useLookingAt() Cfg.useLookingAt()
-       **/
+       * @return  A non-null {@link MatcherUses} that defines what is matched in each iteration.
+       * @see  com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useMatches() Cfg.useMatches()
+       * @see  com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useFind() Cfg.useFind()
+       * @see  com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useLookingAt() Cfg.useLookingAt()
+       */
       public MatcherUses getMatcherUses()  {
          return  sph.getMatcherUses();
       }
@@ -146,11 +146,11 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>How many groups are required in the pattern?.</p>
 
-      @return  <ul>
+    * @return  <ul>
          <li>{@code -1}:  At least one group is required.</li>
          <li>A number greater than zero: That exact number of groups is required.</li>
       </ul><b>Set by:</b> <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder Cfg}.{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#requiredGroups(int) requiredGroups}(i)</code>
-    **/
+    */
    public int getRequiredGroupCount()  {
       return  iRqdGrps;
    }
@@ -158,8 +158,8 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>Set the string to be searched. If {@link #getMatcherUses() getMatcherUses}{@code ()} is true, follow this with a call to {@link #next() next}{@code ()}.</p>
 
-      @param  to_search  May not be <code>null</code>.
-    **/
+    * @param  to_search  May not be <code>null</code>.
+    */
    public RegexGroupExtractor search(String to_search)  {
       try  {
          m.reset(to_search);
@@ -218,16 +218,16 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>Returns all groups in the next iteration concatenated into a single string--for debugging and testing.</p>
 
-      @return  <code>{@link org.apache.commons.lang3.StringUtils StringUtils}*.{@link org.apache.commons.lang3.StringUtils#join(Iterable, String) join}({@link #next() next}(), separator)</code>
-    **/
+    * @return  <code>{@link org.apache.commons.lang3.StringUtils StringUtils}*.{@link org.apache.commons.lang3.StringUtils#join(Iterable, String) join}({@link #next() next}(), separator)</code>
+    */
    public String nextAsJoined(String separator)  {
       return  StringUtils.join(next(), separator);
    }
    /**
       <p>Append the next set of groups, joined into a single string, and followed by a new-line--for debugging and testing.</p>
 
-      @return  <code>{@link #appendNextAsJoinedlns(int, Appendable, String) appendNextAsJoinedlns}(1, to_appendTo, separator)</code>
-    **/
+    * @return  <code>{@link #appendNextAsJoinedlns(int, Appendable, String) appendNextAsJoinedlns}(1, to_appendTo, separator)</code>
+    */
    public Appendable appendNextAsJoinedln(Appendable to_appendTo, String separator)  {
       return  appendNextAsJoinedlns(1, to_appendTo, separator);
    }
@@ -241,8 +241,8 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
          <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.io.IOUtil IOUtil}.{@link com.github.xbn.io.IOUtil#appendNewLinesX(int, Appendable) appendNewLinesX}(new_lineCount, to_appendTo)</code></li>
       </ol></p>
 
-      @exception  RTIOException  If a {@code java.io.IOException} is thrown for any reason.
-    **/
+    * @exception  RTIOException  If a {@code java.io.IOException} is thrown for any reason.
+    */
    public Appendable appendNextAsJoinedlns(int new_lineCount, Appendable to_appendTo, String separator)  {
       try  {
          to_appendTo.append(nextAsJoined(separator));
@@ -254,9 +254,9 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>Get the list containing all groups in the next iteration.</p>
 
-      @see  #nextAsJoined(String) nextAsJoined(s)
-      @exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is {@code false}.
-    **/
+    * @see  #nextAsJoined(String) nextAsJoined(s)
+    * @exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is {@code false}.
+    */
    public List<String> next()  {
       if(!hasNext())  {
          throw  new NoSuchElementException("hasNext() is false. Must search(s).");
@@ -274,8 +274,8 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
    /**
       <p>Duplicate this <code>RegexGroupExtractor</code>, where all internal fields are duplicateted, and the search is started anew.</p>
 
-      @return  <code>(new {@link #RegexGroupExtractor(RegexGroupExtractor) RegexGroupExtractor}(this))</code>
-    **/
+    * @return  <code>(new {@link #RegexGroupExtractor(RegexGroupExtractor) RegexGroupExtractor}(this))</code>
+    */
    public RegexGroupExtractor getObjectCopy()  {
       return  (new RegexGroupExtractor(this));
    }

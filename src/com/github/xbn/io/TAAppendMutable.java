@@ -19,8 +19,8 @@ package  com.github.xbn.io;
 /**
    <p>Companion to {@code TAAppendable} in which the {@code Appendable} may be re-set. See {@link com.github.xbn.io.TAAppendable TAAppendable}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class TAAppendMutable<A extends Appendable> extends TextAppender  {
    private A apbl = null;
@@ -75,8 +75,8 @@ public class TAAppendMutable<A extends Appendable> extends TextAppender  {
    /**
       <p>Get a reference to <i>this</i> object.</p>
 
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public TAAppendMutable<A> getObjectCopy()  {
       return  this;
    }

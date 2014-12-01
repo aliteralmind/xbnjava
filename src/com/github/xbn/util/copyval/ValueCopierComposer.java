@@ -17,10 +17,10 @@ package  com.github.xbn.util.copyval;
 /**
    <p>For classes that need to implement {@code ValueCopier}, that cannot extend {@code AbstractValueCopier}.</p>
 
-   @see  ValueCopier
-   @see  AbstractValueCopier
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  ValueCopier
+ * @see  AbstractValueCopier
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ValueCopierComposer<O> {
    private final boolean bCpybl;
@@ -35,8 +35,8 @@ public class ValueCopierComposer<O> {
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    public ValueCopierComposer(boolean ignored, ValueCopierComposer<O> to_copy)  {
       bCpybl = to_copy.isValueCopyable();
    }

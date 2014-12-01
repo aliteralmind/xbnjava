@@ -19,8 +19,8 @@ package  com.github.xbn.io;
 /**
    <p>Off, or one through five, representing the amount of debugging that should be output.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum DebugLevel  {
@@ -86,8 +86,8 @@ public enum DebugLevel  {
    /**
       <p>The number associated to this level.</p>
 
-      @see  #OFF
-    **/
+    * @see  #OFF
+    */
    public final int getNumber()  {
       return  number;
    }
@@ -186,12 +186,12 @@ public enum DebugLevel  {
    /**
       <p>Get the highest level--from either <i>{@code this}</i> or one of the provided levels.</p>
 
-      @param  levels  Elements <i>should</i> be unique and not <i>this</i> object. {@code null} elements are ignored.
-      @return  The level with the highest {@linkplain #getNumber() number}.
-      @see  #isThisOrAnyOn(DebugLevel...)
-      @see  #isHighestAtLeast(int, DebugLevel...)
-      @see  #isHighestOnAndAtLeast(int, DebugLevel...)
-    **/
+    * @param  levels  Elements <i>should</i> be unique and not <i>this</i> object. {@code null} elements are ignored.
+    * @return  The level with the highest {@linkplain #getNumber() number}.
+    * @see  #isThisOrAnyOn(DebugLevel...)
+    * @see  #isHighestAtLeast(int, DebugLevel...)
+    * @see  #isHighestOnAndAtLeast(int, DebugLevel...)
+    */
    public final DebugLevel getHighestLevel(DebugLevel... levels)  {
       DebugLevel highest = this;
       for(DebugLevel level : levels)  {
@@ -210,26 +210,26 @@ public enum DebugLevel  {
    /**
       <p>Get the highest level number--from either <i>{@code this}</i> or one of the provided levels.</p>
 
-      @return  <code>{@link #getHighestLevel(DebugLevel...) getHighestLevel}(levels).{@link #getNumber() getNumber}()</code>
-    **/
+    * @return  <code>{@link #getHighestLevel(DebugLevel...) getHighestLevel}(levels).{@link #getNumber() getNumber}()</code>
+    */
    public final int getHighestNumber(DebugLevel... levels)  {
       return  getHighestLevel(levels).getNumber();
    }
    /**
       <p>Is this or any of the parameter levels on?.</p>
 
-      @return  <code>{@link #isHighestAtLeast(int, DebugLevel...) isHighestAtLeast}(1, levels)</code>
-    **/
+    * @return  <code>{@link #isHighestAtLeast(int, DebugLevel...) isHighestAtLeast}(1, levels)</code>
+    */
    public final boolean isThisOrAnyOn(DebugLevel... levels)  {
       return  isHighestAtLeast(1, levels);
    }
    /**
       <p>Is the highest number at least a minimum?.</p>
 
-      @param  min  May not be less than zero.
-      @return  <code>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</code>
-      @see  #getHighestNumber(DebugLevel...)
-    **/
+    * @param  min  May not be less than zero.
+    * @return  <code>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</code>
+    * @see  #getHighestNumber(DebugLevel...)
+    */
    public final boolean isHighestAtLeast(int min, DebugLevel... levels)  {
       return  DebugLevel.isNumberAtLeast(getHighestNumber(levels), min);
    }
@@ -253,7 +253,7 @@ public enum DebugLevel  {
          <TD>{@code 3}</TD>
          <TD><code>DebugLevel.ONE &gt;= DebugLevel.OFF</code></TD>
       </TR></TABLE></p>
-      @return  <code>({@link #getNumber() getNumber}() - to_compareTo.getNumber())</code>
+    * @return  <code>({@link #getNumber() getNumber}() - to_compareTo.getNumber())</code>
    public int compareTo(DebugLevel to_compareTo)  {
       try  {
          return  (getNumber() - to_compareTo.getNumber());
@@ -261,14 +261,14 @@ public enum DebugLevel  {
          throw  CrashIfObject.nullOrReturnCause(to_compareTo, "to_compareTo", null, rx);
       }
    }
-    **/
+    */
    /**
       <p>Is the highest number on and at least a minimum?.</p>
 
-      @param  min  May not be less than one.
-      @return  <code>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</code>
-      @see  #getHighestNumber(DebugLevel...)
-    **/
+    * @param  min  May not be less than one.
+    * @return  <code>(min <= {@link #getHighestNumber(DebugLevel...) getHighestNumber}(levels))</code>
+    * @see  #getHighestNumber(DebugLevel...)
+    */
    public final boolean isHighestOnAndAtLeast(int min, DebugLevel... levels)  {
       return  DebugLevel.isNumberOnAndAtLeast(getHighestNumber(levels), min);
    }
@@ -287,9 +287,9 @@ public enum DebugLevel  {
    /**
       <p>Get the {@code DebugLevel} for a string equal to {@code "off"}, or a number between one and five.</p>
 
-      @param  value  May not be {@code null}, and must be a string equal to {@code "off"}, or a number one through five.
-      @param  value_varName  Descriptive name of {@code value}. <i>Should</i> not be {@code null} or empty.
-      @return  If {@code value} is<ul>
+    * @param  value  May not be {@code null}, and must be a string equal to {@code "off"}, or a number one through five.
+    * @param  value_varName  Descriptive name of {@code value}. <i>Should</i> not be {@code null} or empty.
+    * @return  If {@code value} is<ul>
          <li>{@code "off"}: {@link #OFF}</li>
          <li>{@code "1"}: {@link #ONE}</li>
          <li>{@code "2"}: {@link #TWO}</li>
@@ -297,8 +297,8 @@ public enum DebugLevel  {
          <li>{@code "4"}: {@link #FOUR}</li>
          <li>{@code "5"}: {@link #FIVE}</li>
       </ul>
-      @exception  IllegalArgumentException  If {@code value} is invalid.
-    **/
+    * @exception  IllegalArgumentException  If {@code value} is invalid.
+    */
    public static final DebugLevel getFromStringOff12345(String value, String value_varName)  {
       try  {
          switch(value)  {

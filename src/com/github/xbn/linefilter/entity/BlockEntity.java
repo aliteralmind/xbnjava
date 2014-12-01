@@ -60,16 +60,16 @@ and this
    ...END
   -->
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class BlockEntity extends RawBlockEntity<String> implements TextParentEntity  {
    private List<TextChildEntity> childList;
    /**
       <p>Create a new and <i>temporarily unusable</i> instance from a fieldable.</p>
 
-      @param  fieldable  May not be {@code null}, and all relevant fields must conform to the restrictions as documented in the <a href="#cfg">setters</a>.
-    **/
+    * @param  fieldable  May not be {@code null}, and all relevant fields must conform to the restrictions as documented in the <a href="#cfg">setters</a>.
+    */
    public BlockEntity(RawBlockEntity_Fieldable<String> fieldable)  {
       super(fieldable);
    }
@@ -102,7 +102,7 @@ public class BlockEntity extends RawBlockEntity<String> implements TextParentEnt
       return  (TextParentEntity)super.getTopParent();
    }
    /**
-      @since  0.1.2
+    * @since  0.1.2
     **/
    public BlockEntity getCopyWithParentAssigned(int levels_belowRoot, RawParentEntity<String> parent, TextAppenter dbgAptrEveryLine_ifUseable, LengthInRange range_forEveryLineDebug)  {
       return  new BlockEntity(this, levels_belowRoot, parent, dbgAptrEveryLine_ifUseable, range_forEveryLineDebug);

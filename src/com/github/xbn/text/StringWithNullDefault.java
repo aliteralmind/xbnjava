@@ -20,8 +20,8 @@ package  com.github.xbn.text;
 /**
    <p>Get a string, or a default value when {@code null}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class StringWithNullDefault  {
@@ -31,40 +31,40 @@ public class StringWithNullDefault  {
    /**
       <p>Get a string, or a default value if it's {@code null}.</p>
 
-      @return  {@link #get(String, Object, String, String) get}{@code (null, stringThatMay_beNull, null, if_null)}
-    **/
+    * @return  {@link #get(String, Object, String, String) get}{@code (null, stringThatMay_beNull, null, if_null)}
+    */
    public static final String get(Object stringThatMay_beNull, String if_null)  {
       return  get(null, stringThatMay_beNull, null, if_null);
    }
    /**
       <p>Get a string, or a default value if it's {@code null}.</p>
 
-      @return  {@link #get(Object, String) get}{@code (null, stringThatMay_beNull, null, if_null)}
-    **/
+    * @return  {@link #get(Object, String) get}{@code (null, stringThatMay_beNull, null, if_null)}
+    */
    public static final String get(String prefix_ifNonNull, Object stringThatMay_beNull, String postfix_ifNonNull, String if_null)  {
       return  append((new StringBuilder()), prefix_ifNonNull, stringThatMay_beNull, postfix_ifNonNull, if_null).toString();
    }
    /**
       <p>Append a string, or a default value if {@code null}.</p>
 
-      @return  {@link #append(Appendable, String, Object, String, String) append}{@code (to_appendTo, null, stringThatMay_beNull, null, if_null)}
-    **/
+    * @return  {@link #append(Appendable, String, Object, String, String) append}{@code (to_appendTo, null, stringThatMay_beNull, null, if_null)}
+    */
    public static final Appendable append(Appendable to_appendTo, Object stringThatMay_beNull, String if_null)  {
       return  append(to_appendTo, null, stringThatMay_beNull, null, if_null);
    }
    /**
       <p>Append a string, or a default value if {@code null}.</p>
 
-      @param  to_appendTo  To append to. May not be {@code null}.
-      @param  prefix_ifNonNull  When the string is non-{@code null}, this will be displayed before it. <i>Should</i> not be empty. When {@code null}, there is no prefix.
-      @param  stringThatMay_beNull  The string.
-      @param  postfix_ifNonNull  When the string is non-{@code null}, this will be displayed after it. <i>Should</i> not be empty. When {@code null}, there is no postfix.
-      @param  if_null  When the string is {@code null}, this is displayed in its place. If this parameter, {@code if_null} is {@code null}, then <i>nothing</i> is appended (this is the same as providing the empty-string).
-      @return  {@code to_appendTo}
-      @see  #get(Object, String) get(O,s)
-      @see  #get(String, Object, String, String) get(s,O,s,s)
-      @see  #append(Appendable, Object, String) append(apbl,O,s)
-    **/
+    * @param  to_appendTo  To append to. May not be {@code null}.
+    * @param  prefix_ifNonNull  When the string is non-{@code null}, this will be displayed before it. <i>Should</i> not be empty. When {@code null}, there is no prefix.
+    * @param  stringThatMay_beNull  The string.
+    * @param  postfix_ifNonNull  When the string is non-{@code null}, this will be displayed after it. <i>Should</i> not be empty. When {@code null}, there is no postfix.
+    * @param  if_null  When the string is {@code null}, this is displayed in its place. If this parameter, {@code if_null} is {@code null}, then <i>nothing</i> is appended (this is the same as providing the empty-string).
+    * @return  {@code to_appendTo}
+    * @see  #get(Object, String) get(O,s)
+    * @see  #get(String, Object, String, String) get(s,O,s,s)
+    * @see  #append(Appendable, Object, String) append(apbl,O,s)
+    */
    public static final Appendable append(Appendable to_appendTo, String prefix_ifNonNull, Object stringThatMay_beNull, String postfix_ifNonNull, String if_null)  {
       try  {
          try  {

@@ -16,8 +16,8 @@ package  com.github.xbn.experimental.listify;
 /**
    <p>Can the raw object's elements be added or removed?.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum AddRemovable  {
@@ -57,8 +57,8 @@ public enum AddRemovable  {
    /**
       <p>Get a {@code AddRemovable} from an actual boolean.</p>
 
-      @return  <code>(b ? {@link #YES} : {@link #NO})</code>
-    **/
+    * @return  <code>(b ? {@link #YES} : {@link #NO})</code>
+    */
    public static final AddRemovable getForBoolean(boolean b)  {
       return  (b ? YES : NO);
    }

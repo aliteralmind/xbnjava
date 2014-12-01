@@ -18,7 +18,7 @@ package  com.github.xbn.list.lister;
       <li>{@link #getPrefix() getPrefix}{@code ()} and {@link #getPostfix() getPostfix}{@code ()}</li>
    </ol></p>
 
-   @param  <O>  Either the list itself, or the type of element in the list. See {@code LLConfigBase} and {@code zL_CfgElement}.
+ * @param  <O>  Either the list itself, or the type of element in the list. See {@code LLConfigBase} and {@code zL_CfgElement}.
  **/
 public abstract class LLConfigBase<O> implements ToStringAppendable  {
    private String            sIfNl   ;
@@ -31,8 +31,8 @@ public abstract class LLConfigBase<O> implements ToStringAppendable  {
    /**
       <p>Create a new {@code LLConfigBase} with defaults.</p>
 
-      @see  #LLConfigBase(LLConfigBase) this(llcb)
-    **/
+    * @see  #LLConfigBase(LLConfigBase) this(llcb)
+    */
    public LLConfigBase(LLConfigBase_Fieldable fieldable)  {
       sIfNl = fieldable.getIfNull();
       sIfNNl = fieldable.getIfNonNull();
@@ -51,9 +51,9 @@ public abstract class LLConfigBase<O> implements ToStringAppendable  {
    /**
       <p>Create a new {@code LLConfigBase} as a duplicate of another.</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #LLConfigBase(LLConfigBase_Fieldable) this(s,s,s,s,padchop)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #LLConfigBase(LLConfigBase_Fieldable) this(s,s,s,s,padchop)
+    */
    public LLConfigBase(LLConfigBase<O> to_copy)  {
       try  {
          sIfNl = to_copy.sIfNl;
@@ -69,32 +69,32 @@ public abstract class LLConfigBase<O> implements ToStringAppendable  {
    /**
       <p>Short circuit: What is displayed when the list-or-element is {@code null}?. Short-circuit <a href="#short_circuit">definition</a>.</p>
 
-      @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setIfNull(String) LLConfigBase_Cfg#setIfNull(s)
-    **/
+    * @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setIfNull(String) LLConfigBase_Cfg#setIfNull(s)
+    */
    public String getIfNull()  {
       return  sIfNl;
    }
    /**
       <p>Short circuit: What is displayed when the list-or-element is <i>not</i> {@code null}?. Short-circuit <a href="#short_circuit">definition</a>.</p>
 
-      @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setIfNonNull(String) LLConfigBase_Cfg#setIfNonNull(s)
-    **/
+    * @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setIfNonNull(String) LLConfigBase_Cfg#setIfNonNull(s)
+    */
    public String getIfNonNull()  {
       return  sIfNNl;
    }
    /**
       <p>Get the prefix to display before the list-or-element. Only used when no short-circuits are used.</p>
 
-      @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setPrePost(String, String) LLConfigBase_Cfg#setPrePost(s,s)
-    **/
+    * @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setPrePost(String, String) LLConfigBase_Cfg#setPrePost(s,s)
+    */
    public String getPrefix()  {
       return  sPre;
    }
    /**
       <p>Get the postfix to display after the list-or-element. Only used when no short-circuits are used.</p>
 
-      @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setPrePost(String, String) LLConfigBase_Cfg#setPrePost(s,s)
-    **/
+    * @see  com.github.xbn.list.lister.z.LLConfigBase_CfgForNeeder#setPrePost(String, String) LLConfigBase_Cfg#setPrePost(s,s)
+    */
    public String getPostfix()  {
       return  sPost;
    }

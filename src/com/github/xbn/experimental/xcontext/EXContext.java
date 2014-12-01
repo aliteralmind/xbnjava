@@ -21,27 +21,27 @@ public class EXContext extends OXContext implements ElementExceptionContext  {
    /**
       <p>Create a new {@code EXContext}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #EXContext(String, String, int, String) this(cntr_name, index, null)}</p>
-    **/
+    */
    public EXContext(String cntr_name, int index)  {
       this(cntr_name, index, null);
    }
    /**
       <p>Create a new {@code EXContext}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #EXContext(String, ExceptionContextElement) this}((new {@link com.github.xbn.experimental.xcontext.XCElement#XCElement(String, int) XCElement}(cntr_name, index)))</code></p>
-    **/
+    */
    public EXContext(String cntr_name, int index, Object o_xtraInfo)  {
       this((new XCElement(cntr_name, index)), o_xtraInfo);
    }
    /**
       <p>Create a new {@code EXContext}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #EXContext(String, String, int) this(xc_e, null)}</p>
-    **/
+    */
    public EXContext(ExceptionContextElement xc_e)  {
       this(xc_e, null);
    }
@@ -52,11 +52,11 @@ public class EXContext extends OXContext implements ElementExceptionContext  {
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.xcontext.OXContext#OXContext(String, ObjectExceptionContext, String) super}{@code (xc_e, o_xtraInfo)}</li>
       </ol></p>}
 
-      @see  #EXContext(String, String, int) this(xc,s,s,i)
-      @see  #EXContext(String, String, int, String) this(xc,s,s,i,s)
-      @see  #EXContext(String, ExceptionContextElement) this(xc,s,xce)
-      @see  #EXContext(ElementExceptionContext) this(exc)
-    **/
+    * @see  #EXContext(String, String, int) this(xc,s,s,i)
+    * @see  #EXContext(String, String, int, String) this(xc,s,s,i,s)
+    * @see  #EXContext(String, ExceptionContextElement) this(xc,s,xce)
+    * @see  #EXContext(ElementExceptionContext) this(exc)
+    */
    public EXContext(ExceptionContextElement xc_e, Object o_xtraInfo)  {
       super(xc_e, o_xtraInfo);
    }
@@ -67,15 +67,15 @@ public class EXContext extends OXContext implements ElementExceptionContext  {
          <li>Calls {@link com.github.xbn.experimental.xcontext.OXContext#OXContext(ObjectExceptionContext) super}{@code (to_copy)}</li>
          <li><code>{@link #setXCElement(ExceptionContextElement) setXCElement}(to_copy.{@link #getXCElement() getXCElement}())</code></li>
       </ol></p>
-      @see  #EXContext(String, String, int, String, String) this(s,s,i,s,s)
-    **/
+    * @see  #EXContext(String, String, int, String, String) this(s,s,i,s,s)
+    */
    public EXContext(ElementExceptionContext to_copy)  {
       super(to_copy);
       setXCElement(to_copy.getXCElement());
    }
    /**
       <p>Set the error-causing object's container-name and element-index.</p>
-    **/
+    */
    public void setContainerNameIndex(String cntr_name, int index)  {
       setXCElement(new XCElement(cntr_name, index));
    }
@@ -85,9 +85,9 @@ public class EXContext extends OXContext implements ElementExceptionContext  {
    /**
       <p>Set the error-causing object's metadata.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp;  <code><i>[{@link com.github.xbn.experimental.xcontext.OXContext super}]</i>.{@link com.github.xbn.experimental.xcontext.OXContext#setXCObject(ExceptionContextObject) setXCObject}(method_name)</code></p>
-    **/
+    */
    public void setXCElement(ExceptionContextElement xc_e)  {
       setXCObject(xc_e);
    }
@@ -98,8 +98,8 @@ public class EXContext extends OXContext implements ElementExceptionContext  {
       return  getXCElement().getIndex();
    }
    /**
-      @return   <code>(ExceptionContextElement)<i>[{@link com.github.xbn.experimental.xcontext.OXContext super}]</i>.{@link com.github.xbn.experimental.xcontext.OXContext#getXCObject() getXCObject}()</code>
-    **/
+    * @return   <code>(ExceptionContextElement)<i>[{@link com.github.xbn.experimental.xcontext.OXContext super}]</i>.{@link com.github.xbn.experimental.xcontext.OXContext#getXCObject() getXCObject}()</code>
+    */
    public ExceptionContextElement getXCElement()  {
       return  (ExceptionContextElement)getXCObject();
    }

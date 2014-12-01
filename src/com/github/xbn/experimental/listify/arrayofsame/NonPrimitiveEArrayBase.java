@@ -28,8 +28,8 @@ package  com.github.xbn.experimental.listify.arrayofsame;
 /**
    <p>Base class for a listifier whose raw object is a non-primitive array of any <i>non wrapper type</i>  (not {@code java.lang.Integer}s, for instance), and whose virtual elements are of the same type.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NonPrimitiveEArrayBase<E> implements ListifyNonPrimitiveEArray<E>  {
    private ListifyEArrayComposer<E> leac = null;
@@ -39,21 +39,21 @@ public class NonPrimitiveEArrayBase<E> implements ListifyNonPrimitiveEArray<E>  
 
       YYY
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/ListifyComposer#ListifyComposer(E[], ValueCopier)">super</a>(objects, array_helper, get_valCopy)</code></p>
-    **/
+    */
    public NonPrimitiveEArrayBase(E[] objects, ArrayHelper<E> array_helper, ValueCopier<E> get_valCopy)  {
       leac = new ListifyEArrayComposer<E>(objects, array_helper, get_valCopy);
    }
    /**
       <p>Create a new {@code NonPrimitiveEArrayBase} from a {@code ListifyNonPrimitiveEArray}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    */
    public NonPrimitiveEArrayBase(ListifyNonPrimitiveEArray<E> to_copy)  {
       leac = new ListifyEArrayComposer<E>(to_copy);
    }

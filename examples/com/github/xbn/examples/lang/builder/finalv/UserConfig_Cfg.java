@@ -18,8 +18,8 @@ package  com.github.xbn.examples.lang.builder.finalv;
 
    <p>Validation of all fields occurs in the <code>UserConfig</code> constructor. However, each validation requirement is document only in this classes setter functions.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class UserConfig_Cfg implements UserConfig_Fieldable  {
@@ -29,8 +29,8 @@ public class UserConfig_Cfg implements UserConfig_Fieldable  {
    /**
       <p>Create a new instance with the user's name.</p>
 
-      @param  name  May not be {@code null} or empty, and must contain only letters, digits, and underscores. Get with {@code UserConfig#getName() getName()}{@code ()}*.
-    **/
+    * @param  name  May not be {@code null} or empty, and must contain only letters, digits, and underscores. Get with {@code UserConfig#getName() getName()}{@code ()}*.
+    */
    public UserConfig_Cfg(String name)  {
       sName = name;
    }
@@ -38,9 +38,9 @@ public class UserConfig_Cfg implements UserConfig_Fieldable  {
       /**
          <p>Set the user's age.</p>
 
-         @param  years  May not be less than zero. Get with {@code UserConfig#getName() getName()}{@code ()}*.
-         @see  #favoriteColor(String)
-       **/
+       * @param  years  May not be less than zero. Get with {@code UserConfig#getName() getName()}{@code ()}*.
+       * @see  #favoriteColor(String)
+       */
       public UserConfig_Cfg age(int years)  {
          iAge = years;
          return  this;
@@ -48,9 +48,9 @@ public class UserConfig_Cfg implements UserConfig_Fieldable  {
       /**
          <p>Set the user's favorite color.</p>
 
-         @param  color  Must be {@code "red"}, {@code "blue"}, {@code green}, or {@code "hot pink"}. Get with {@code UserConfig#getName() getName()}{@code ()}*.
-         @see  #age(int)
-       **/
+       * @param  color  Must be {@code "red"}, {@code "blue"}, {@code green}, or {@code "hot pink"}. Get with {@code UserConfig#getName() getName()}{@code ()}*.
+       * @see  #age(int)
+       */
       public UserConfig_Cfg favoriteColor(String color)  {
          sFavColor = color;
          return  this;
@@ -70,8 +70,8 @@ public class UserConfig_Cfg implements UserConfig_Fieldable  {
    /**
       <p>Build the {@code UserConfig}, as configured.</p>
 
-      @return  <code>(new {@link UserConfig#UserConfig(UserConfig_Fieldable) UserConfig}(this))</code>
-    **/
+    * @return  <code>(new {@link UserConfig#UserConfig(UserConfig_Fieldable) UserConfig}(this))</code>
+    */
    public UserConfig build()  {
       return  (new UserConfig(this));
    }

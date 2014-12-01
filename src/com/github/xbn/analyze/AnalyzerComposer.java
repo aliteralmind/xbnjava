@@ -23,8 +23,8 @@ package  com.github.xbn.analyze;
 /**
    <p>For classes that need to implement {@code Analyzer}, that cannot extend {@code AbstractAnalyzer}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class AnalyzerComposer extends SimpleDebuggable  {
@@ -36,9 +36,9 @@ public class AnalyzerComposer extends SimpleDebuggable  {
    /**
       <p>Create a new {@code AnalyzerComposer}.</p>
 
-      @see  #AnalyzerComposer(boolean, AnalyzerComposer) this(b,ac)
-      @see  #AnalyzerComposer(Analyzer) this(z)
-    **/
+    * @see  #AnalyzerComposer(boolean, AnalyzerComposer) this(b,ac)
+    * @see  #AnalyzerComposer(Analyzer) this(z)
+    */
    @CompositionConstructor
    public AnalyzerComposer()  {
       super();
@@ -60,9 +60,9 @@ public class AnalyzerComposer extends SimpleDebuggable  {
          <li>Calls {@link #zresetStateAB() zresetStateAB}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
       </ol></p>
 
-      @param  ignored  Required to prevent an ambigous-invocation error, when attempting to call this or the {@link #AnalyzerComposer(Analyzer) other} copy-constructor with a class such as {@link com.github.xbn.analyze.AbstractAnalyzer AbstractAnalyzer}, which both extends this {@code AnalyzerComposer} and is an {@link com.github.xbn.analyze.Analyzer Analyzer}.
-      @see  #AnalyzerComposer()
-    **/
+    * @param  ignored  Required to prevent an ambigous-invocation error, when attempting to call this or the {@link #AnalyzerComposer(Analyzer) other} copy-constructor with a class such as {@link com.github.xbn.analyze.AbstractAnalyzer AbstractAnalyzer}, which both extends this {@code AnalyzerComposer} and is an {@link com.github.xbn.analyze.Analyzer Analyzer}.
+    * @see  #AnalyzerComposer()
+    */
    @CompositionConstructor
    protected AnalyzerComposer(boolean ignored, AnalyzerComposer to_copy)  {
       super(to_copy);  //AnalyzerComposers ARE Debuggable. No need for ignored
@@ -85,8 +85,8 @@ public class AnalyzerComposer extends SimpleDebuggable  {
          </ol></li>
          <li>Calls {@link #zresetStateAB() zresetStateAB}{@code ()}</li>
       </ol></p>
-      @see  #AnalyzerComposer()
-    **/
+    * @see  #AnalyzerComposer()
+    */
    @CompositionConstructor
    public AnalyzerComposer(Analyzer to_copy)  {
       super(to_copy);
@@ -139,8 +139,8 @@ public class AnalyzerComposer extends SimpleDebuggable  {
       return  ec.isExpired();
    }
    /**
-      @return  The number of times {@link #declareAnalyzed_4prot() declareAnalyzed_4prot}{@code ()} was called since the most recent call to {@link #resetCounts() resetCounts}{@code ()}.
-    **/
+    * @return  The number of times {@link #declareAnalyzed_4prot() declareAnalyzed_4prot}{@code ()} was called since the most recent call to {@link #resetCounts() resetCounts}{@code ()}.
+    */
    @CompositionFunction
    public int getAnalyzedCount()  {
       return  iNlzd;
@@ -151,15 +151,15 @@ public class AnalyzerComposer extends SimpleDebuggable  {
       <p>This<ol>
          <li>Increments {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} and sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code true}.</li>
       </ol></p>
-    **/
+    */
    @CompositionFunction
    public void declareAnalyzed_4prot()  {
       iNlzd++;
       bWNlzd = true;
    }
    /**
-      @return  {@code true} If {@link #declareAnalyzed_4prot() declareAnalyzed_4prot}{@code ()} was called more recently than {@link #resetState() resetState}{@code ()}
-    **/
+    * @return  {@code true} If {@link #declareAnalyzed_4prot() declareAnalyzed_4prot}{@code ()} was called more recently than {@link #resetState() resetState}{@code ()}
+    */
    @CompositionFunction
    public boolean wasAnalyzed()  {
       return  bWNlzd;
@@ -195,9 +195,9 @@ public class AnalyzerComposer extends SimpleDebuggable  {
    /**
       <p>If this {@code Analyzer} needs its {@code stateReset()}, crash. This is useful as the first step of any analysis.</p>
 
-      @param  analyzer  May not be {@code null}.
-      @exception  IllegalStateException  If <code>analyzer.{@link com.github.xbn.analyze.Analyzer#wasAnalyzed() wasAnalyzed}()</code> is {@code true}.
-    **/
+    * @param  analyzer  May not be {@code null}.
+    * @exception  IllegalStateException  If <code>analyzer.{@link com.github.xbn.analyze.Analyzer#wasAnalyzed() wasAnalyzed}()</code> is {@code true}.
+    */
    public static final void autoResetStateOrCINeedTo(Analyzer analyzer)  {
       try  {
          if(analyzer.doAutoResetState())  {

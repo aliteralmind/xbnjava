@@ -21,15 +21,15 @@ package  com.github.xbn.array.primitive;
 /**
    <p>Translate a wrapper array to an array of its primitives (such as {@code Integer[]} to {@code int[]}), with {@code null}-element management.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class PrimitiveArrayFromWrapper  {
    @SuppressWarnings("unchecked")  //hnrrv works for all types
    private static final ResettableNullHandler hnrrv = new ResettableNullHandler(1);
    /**
       <p>This constructor does nothing.</p>
-    **/
+    */
    public PrimitiveArrayFromWrapper()  {
    }
    /**
@@ -53,15 +53,15 @@ forBoolean Boolean boolean
       No comments. For master at-see list in forByte
       __AT__ see  #get(Byte[] wrapper_array, byte if_null)
  -->
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Boolean[], boolean) get(B[],b)
-      @see  #get(Character[], char) get(C[],c)
-      @see  #get(Short[], short) get(H[],h)
-      @see  #get(Integer[], int) get(I[],i)
-      @see  #get(Long[], long) get(L[],l)
-      @see  #get(Float[], float) get(F[],f)
-      @see  #get(Double[], double) get(D[],d)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Boolean[], boolean) get(B[],b)
+    * @see  #get(Character[], char) get(C[],c)
+    * @see  #get(Short[], short) get(H[],h)
+    * @see  #get(Integer[], int) get(I[],i)
+    * @see  #get(Long[], long) get(L[],l)
+    * @see  #get(Float[], float) get(F[],f)
+    * @see  #get(Double[], double) get(D[],d)
+    */
    public static final byte[] get(Byte[] wrapper_array, byte if_null)  {
       byte[] ab = new byte[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -75,9 +75,9 @@ forBoolean Boolean boolean
 
       <p>This function is derived from {@code get(Byte[], byte)}. <i>Do not edit any function except {@code get(Byte[], byte)}.</i></p>
 
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Byte[], byte)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Byte[], byte)
+    */
    public static final boolean[] get(Boolean[] wrapper_array, boolean if_null)  {
       boolean[] ab = new boolean[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -91,9 +91,9 @@ forBoolean Boolean boolean
 
       <p>This function is derived from {@code get(Byte[], byte)}. <i>Do not edit any function except {@code get(Byte[], byte)}.</i></p>
 
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Byte[], byte)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Byte[], byte)
+    */
    public static final char[] get(Character[] wrapper_array, char if_null)  {
       char[] ab = new char[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -107,9 +107,9 @@ forBoolean Boolean boolean
 
       <p>This function is derived from {@code get(Byte[], byte)}. <i>Do not edit any function except {@code get(Byte[], byte)}.</i></p>
 
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Byte[], byte)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Byte[], byte)
+    */
    public static final short[] get(Short[] wrapper_array, short if_null)  {
       short[] ab = new short[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -123,9 +123,9 @@ forBoolean Boolean boolean
 
       <p>This function is derived from {@code get(Byte[], byte)}. <i>Do not edit any function except {@code get(Byte[], byte)}.</i></p>
 
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Byte[], byte)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Byte[], byte)
+    */
    public static final int[] get(Integer[] wrapper_array, int if_null)  {
       int[] ab = new int[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -139,9 +139,9 @@ forBoolean Boolean boolean
 
       <p>This function is derived from {@code get(Byte[], byte)}. <i>Do not edit any function except {@code get(Byte[], byte)}.</i></p>
 
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Byte[], byte)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Byte[], byte)
+    */
    public static final long[] get(Long[] wrapper_array, long if_null)  {
       long[] ab = new long[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -155,9 +155,9 @@ forBoolean Boolean boolean
 
       <p>This function is derived from {@code get(Byte[], byte)}. <i>Do not edit any function except {@code get(Byte[], byte)}.</i></p>
 
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Byte[], byte)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Byte[], byte)
+    */
    public static final float[] get(Float[] wrapper_array, float if_null)  {
       float[] ab = new float[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -171,9 +171,9 @@ forBoolean Boolean boolean
 
       <p>This function is derived from {@code get(Byte[], byte)}. <i>Do not edit any function except {@code get(Byte[], byte)}.</i></p>
 
-      @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
-      @see  #get(Byte[], byte)
-    **/
+    * @return  {@code null} If {@code wrapper_array} is {@code null}. Otherwise, an array containing all values in {@code wrapper_array}. {@code null} elements are replaced with {@code if_null}.
+    * @see  #get(Byte[], byte)
+    */
    public static final double[] get(Double[] wrapper_array, double if_null)  {
       double[] ab = new double[wrapper_array.length];
       for(int i = 0; i < wrapper_array.length; i++)  {
@@ -185,9 +185,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Character[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Character&gt;(if_null)))</code>
-    **/
+    */
    public static final char[] get(Character[] wrapper_array, char if_null, NullContainer nnull, String cntrName_forNullBad)  {
       @SuppressWarnings("unchecked")
       char[] ac = get(wrapper_array, (NullHandler<Character>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -196,9 +196,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Boolean[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Boolean&gt;(if_null)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final boolean[] get(Boolean[] wrapper_array, boolean if_null, NullContainer nnull, String cntrName_forNullBad)  {
       return  get(wrapper_array, (NullHandler<Boolean>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -206,9 +206,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Byte[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Byte&gt;(if_null)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final byte[] get(Byte[] wrapper_array, byte if_null, NullContainer nnull, String cntrName_forNullBad)  {
       return  get(wrapper_array, (NullHandler<Byte>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -216,9 +216,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Short[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Short&gt;(if_null)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final short[] get(Short[] wrapper_array, short if_null, NullContainer nnull, String cntrName_forNullBad)  {
       return  get(wrapper_array, (NullHandler<Short>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -226,9 +226,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Integer[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Integer&gt;(if_null)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final int[] get(Integer[] wrapper_array, int if_null, NullContainer nnull, String cntrName_forNullBad)  {
       return  get(wrapper_array, (NullHandler<Integer>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -236,9 +236,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Long[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Long&gt;(if_null)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final long[] get(Long[] wrapper_array, long if_null, NullContainer nnull, String cntrName_forNullBad)  {
       return  get(wrapper_array, (NullHandler<Long>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -246,9 +246,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Float[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Float&gt;(if_null)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final float[] get(Float[] wrapper_array, float if_null, NullContainer nnull, String cntrName_forNullBad)  {
       return  get(wrapper_array, (NullHandler<Float>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -256,9 +256,9 @@ forBoolean Boolean boolean
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @return  The equivalent of
+    * @return  The equivalent of
       <br/> &nbsp; &nbsp; <code>{@link #get(Double[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Double&gt;(if_null)))</code>
-    **/
+    */
    @SuppressWarnings("unchecked")
    public static final double[] get(Double[] wrapper_array, double if_null, NullContainer nnull, String cntrName_forNullBad)  {
       return  get(wrapper_array, (NullHandler<Double>)hnrrv.nonNullValue(if_null), nnull, cntrName_forNullBad);
@@ -281,13 +281,13 @@ Byte wrapper_array byte
 Boolean wrapper_array boolean
 
 Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT THOUGH!!!)
-      @see  #get(Character[], char, NullContainer, String) get(C[],c)
+    * @see  #get(Character[], char, NullContainer, String) get(C[],c)
       &#64;see #get(Character[], NullHandler, NullContainer, String) get(C[],hnv)
 
  -->
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public static final char[] get(Character[] wrapper_array, NullHandler<Character> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {
@@ -330,11 +330,11 @@ Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT 
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-      @see  #get(Double[], double, NullContainer, String) get(D[],d)
-      @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv)
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    * @see  #get(Double[], double, NullContainer, String) get(D[],d)
+    * @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv)
+    */
    @SuppressWarnings("unchecked")
    public static final double[] get(Double[] wrapper_array, NullHandler<Double> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {
@@ -377,11 +377,11 @@ Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT 
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-      @see  #get(Float[], float, NullContainer, String) get(F[],f)
-      @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv,s,s)
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    * @see  #get(Float[], float, NullContainer, String) get(F[],f)
+    * @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv,s,s)
+    */
    @SuppressWarnings("unchecked")
    public static final float[] get(Float[] wrapper_array, NullHandler<Float> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {
@@ -424,11 +424,11 @@ Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT 
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-      @see  #get(Long[], long, NullContainer, String) get(L[],l)
-      @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv,s,s)
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    * @see  #get(Long[], long, NullContainer, String) get(L[],l)
+    * @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv,s,s)
+    */
    @SuppressWarnings("unchecked")
    public static final long[] get(Long[] wrapper_array, NullHandler<Long> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {
@@ -471,11 +471,11 @@ Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT 
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-      @see  #get(Integer[], int, NullContainer, String) get(I[],i)
-      @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv,s,s)
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    * @see  #get(Integer[], int, NullContainer, String) get(I[],i)
+    * @see  #get(Character[], NullHandler, NullContainer, String) get(C[],hnv,s,s)
+    */
    @SuppressWarnings("unchecked")
    public static final int[] get(Integer[] wrapper_array, NullHandler<Integer> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {
@@ -518,11 +518,11 @@ Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT 
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-      @see  #get(Short[], short, NullContainer, String) get(H[],h)
-      @see  #get(Short[], NullHandler, NullContainer, String) get(H[],hnv,s,s)
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    * @see  #get(Short[], short, NullContainer, String) get(H[],h)
+    * @see  #get(Short[], NullHandler, NullContainer, String) get(H[],hnv,s,s)
+    */
    @SuppressWarnings("unchecked")
    public static final short[] get(Short[] wrapper_array, NullHandler<Short> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {
@@ -565,11 +565,11 @@ Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT 
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-      @see  #get(Byte[], byte, NullContainer, String) get(Y[],y)
-      @see  #get(Byte[], NullHandler, NullContainer, String) get(Y[],hnv,s,s)
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    * @see  #get(Byte[], byte, NullContainer, String) get(Y[],y)
+    * @see  #get(Byte[], NullHandler, NullContainer, String) get(Y[],hnv,s,s)
+    */
    @SuppressWarnings("unchecked")
    public static final byte[] get(Byte[] wrapper_array, NullHandler<Byte> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {
@@ -612,11 +612,11 @@ Use this see link, and change Char to Char when done. (NOT IN THIS HTML COMMENT 
    /**
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
-      @param  wrapper_array  The wrapper array.
-      @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
-      @see  #get(Boolean[], boolean, NullContainer, String) get(B[],b)
-      @see  #get(Boolean[], NullHandler, NullContainer, String) get(H[],hnv,s,s)
-    **/
+    * @param  wrapper_array  The wrapper array.
+    * @param  null_handler  Defines how {@code null} values are handled. May not be {@code null}.
+    * @see  #get(Boolean[], boolean, NullContainer, String) get(B[],b)
+    * @see  #get(Boolean[], NullHandler, NullContainer, String) get(H[],hnv,s,s)
+    */
    @SuppressWarnings("unchecked")
    public static final boolean[] get(Boolean[] wrapper_array, NullHandler<Boolean> null_handler, NullContainer nnull, String cntrName_forNullBad)  {
       if(wrapper_array == null)  {

@@ -18,29 +18,29 @@ package  com.github.xbn.util.itr;
 /**
    <p>Assists in building iterators. Sub-classes must implement {@link java.util.Iterator#next() next}{@code ()} and {@link java.util.Iterator#hasNext() hasNext}{@code ()}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractIterator<E> implements Iterator<E>  {
 //state
    /**
       <p>Create a new instance. This does nothing.</p>
-    **/
+    */
    public AbstractIterator()  {
    }
    /**
       <p><i>Do not use.</i></p>
 
-      @exception  UnsupportedOperationException
-    **/
+    * @exception  UnsupportedOperationException
+    */
    public void remove() {
       throw  new UnsupportedOperationException("remove()");
    }
    /**
       <p>If there are no more elements, crash. Otherwise, do nothing.</p>
 
-      @exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is {@code false}.
-    **/
+    * @exception  NoSuchElementException  If {@link #hasNext() hasNext}{@code ()} is {@code false}.
+    */
    protected void crashIfNoNext()  {
       if(!hasNext())  {
          throw  new NoSuchElementException();

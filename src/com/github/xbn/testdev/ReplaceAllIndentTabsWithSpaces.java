@@ -35,8 +35,8 @@ package  com.github.xbn.testdev;
 
 {@.codelet com.github.xbn.examples.testdev.ReplaceAllIndentTabsWithSpacesXmpl%lineRange(1, false, "allFileTypesKeepFilter =", 1, false, "new ReplaceAllIndentTabsWithSpaces", "^      ")}
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ReplaceAllIndentTabsWithSpaces  {
    private final TextAppenter debug;
@@ -46,27 +46,27 @@ public class ReplaceAllIndentTabsWithSpaces  {
    /**
       <p>Create a new instance from space-count and optional debugging.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel) this}(space_count, debug_ifNonNull, {@link TabToSpaceDebugLevel}.{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY})</code></p>
-    **/
+    */
    public ReplaceAllIndentTabsWithSpaces(int space_count, Appendable debug_ifNonNull)  {
       this(space_count, debug_ifNonNull, TabToSpaceDebugLevel.ALL_SUMMARY_ONLY);
    }
    /**
       <p>Create a new instance from space-count and optional debugging.</p>
 
-      @param  space_count  The number of spaces to replace each tab with. If zero, indentation is eliminated. May not be less than zero. Get with {@link #getSpaces() getSpaces}{@code ()}
-      @param  debug_ifNonNull  Get with {@link #getDebugAptr() getDebugAptr}{@code ()}.
-      @param  debug_level  If {@code debug_ifNonNull} is non-{@code null}, this may not be {@code null}. Get with {@link #getDebugLevel() getDebugLevel}{@code ()}. If<ul>
+    * @param  space_count  The number of spaces to replace each tab with. If zero, indentation is eliminated. May not be less than zero. Get with {@link #getSpaces() getSpaces}{@code ()}
+    * @param  debug_ifNonNull  Get with {@link #getDebugAptr() getDebugAptr}{@code ()}.
+    * @param  debug_level  If {@code debug_ifNonNull} is non-{@code null}, this may not be {@code null}. Get with {@link #getDebugLevel() getDebugLevel}{@code ()}. If<ul>
          <li>{@link TabToSpaceDebugLevel#OFF OFF}: Nothing is debugged.</li>
          <li>{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY}: A single summary after all files are processed.</li>
          <li>{@link TabToSpaceDebugLevel#FILE_SUMMARIES FILE_SUMMARIES}: In addition to the all-summary, a single dot is printed for every file.</li>
          <li>{@link TabToSpaceDebugLevel#FILE_DOTS FILE_DOTS}: In addition to the all-summary, a summary is printed for every file.</li>
          <li>{@link TabToSpaceDebugLevel#LINE_COUNTS LINE_COUNTS}: In addition to the above, this also outputs a single character for every line, representing the number of tabs replaced in it (when one or greater). This uses <code>{@link com.github.xbn.number.NumberUtil}.{@link com.github.xbn.number.NumberUtil#CHAR_LIST_FOR_NUMBERS_0_THROUGH_62 CHAR_LIST_FOR_NUMBERS_0_THROUGH_62}</code>.</li>
       </ul>
-      @exception  NegativeArraySizeException  If {@code space_count} is less than zero.
-      @see  #ReplaceAllIndentTabsWithSpaces(int, Appendable)
-    **/
+    * @exception  NegativeArraySizeException  If {@code space_count} is less than zero.
+    * @see  #ReplaceAllIndentTabsWithSpaces(int, Appendable)
+    */
    public ReplaceAllIndentTabsWithSpaces(int space_count, Appendable debug_ifNonNull, TabToSpaceDebugLevel debug_level)  {
       spaces = StringUtil.getStringOfLengthAllCharsEqualTo(space_count, ' ', "space_count");
       debug = NewTextAppenterFor.appendableUnusableIfNull(debug_ifNonNull);
@@ -80,17 +80,17 @@ public class ReplaceAllIndentTabsWithSpaces  {
    /**
       <p>The string-of-spaces, which replaces a single tab.</p>
 
-      @see  #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel)
-    **/
+    * @see  #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel)
+    */
    public String getSpaces()  {
       return  spaces;
    }
    /**
       <p>The debugging appenter.</p>
 
-      @see  #getDebugLevel()
-      @see  #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel)
-    **/
+    * @see  #getDebugLevel()
+    * @see  #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel)
+    */
    public TextAppenter getDebugAptr()  {
       return  debug;
    }
@@ -100,11 +100,11 @@ public class ReplaceAllIndentTabsWithSpaces  {
    /**
       <p>Replace all indentation tabs for all files in a directory, with runtime errors only--<i>this overwrites the files</i>.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #overwriteDirectoryX(Iterator) overwriteDirectoryX}(file_itr)</code></p>
 
-      @exception  RTIOException  If a {@code java.io.IOException} is thrown for any reason.
-    **/
+    * @exception  RTIOException  If a {@code java.io.IOException} is thrown for any reason.
+    */
    public FourTuple<Long,Long,Long,Integer> overwriteDirectory(Iterator<File> file_itr)  {
       try  {
          return  overwriteDirectoryX(file_itr);
@@ -123,12 +123,12 @@ public class ReplaceAllIndentTabsWithSpaces  {
          <br/> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(<i>[line-iterator]</i>, <i>[print-writer]</i>)</code></li>
       </ol></p>
 
-      @param  file_itr  May not be {@code null}.
-      @return  A four-tuple containing, in order, the total number of lines in all files, the total lines containing at least one tab, the total tabs replaced, and the number of files processed.
-      @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
-      @see  #overwriteDirectory(Iterator)
-      @see  org.apache.commons.io.FileUtils#iterateFiles(File, IOFileFilter, IOFileFilter) commons.io.FileUtils#iterateFiles
-    **/
+    * @param  file_itr  May not be {@code null}.
+    * @return  A four-tuple containing, in order, the total number of lines in all files, the total lines containing at least one tab, the total tabs replaced, and the number of files processed.
+    * @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
+    * @see  #overwriteDirectory(Iterator)
+    * @see  org.apache.commons.io.FileUtils#iterateFiles(File, IOFileFilter, IOFileFilter) commons.io.FileUtils#iterateFiles
+    */
    public FourTuple<Long,Long,Long,Integer> overwriteDirectoryX(Iterator<File> file_itr) throws IOException  {
       int totalFiles = 0;
       long totalLines = 0;
@@ -184,11 +184,11 @@ public class ReplaceAllIndentTabsWithSpaces  {
    /**
       <p>Replace all indentation tabs in a single file, with runtime errors only.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(line_itr, output)</code></p>
 
-      @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
+    */
    public ThreeTuple<Long,Long,Long> appendForFile(Iterator<String> line_itr, Appendable output)  {
       try  {
          return  appendForFileX(line_itr, output);
@@ -199,12 +199,12 @@ public class ReplaceAllIndentTabsWithSpaces  {
    /**
       <p>Replace all indentation tabs in a single file.</p>
 
-      @param  line_itr  May not be {@code null}.
-      @param  to_appendTo  Where output should be written. May not be {@code null}.
-      @return  A three-tuple containing, in order, the total number of lines in the file, the total lines containing at least one tab, and the total tabs replaced.
-      @see  #appendForFile(Iterator, Appendable) appendForFile
-      @see  #overwriteDirectoryX(Iterator)
-    **/
+    * @param  line_itr  May not be {@code null}.
+    * @param  to_appendTo  Where output should be written. May not be {@code null}.
+    * @return  A three-tuple containing, in order, the total number of lines in the file, the total lines containing at least one tab, and the total tabs replaced.
+    * @see  #appendForFile(Iterator, Appendable) appendForFile
+    * @see  #overwriteDirectoryX(Iterator)
+    */
    public ThreeTuple<Long,Long,Long> appendForFileX(Iterator<String> line_itr, Appendable to_appendTo) throws IOException  {
       long totalLines = 0;
       long tabLines = 0;

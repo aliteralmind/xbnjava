@@ -14,8 +14,7 @@
 \*license*/
 package  com.github.xbn.examples.lang.non_xbn.basic;
 /**
-   <p>Smart-ass answer to a puzzle inappropriately posted on stackoverflow. The question was closed literally seconds before I pressed the submit button.
-   <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21423532/challenge-pattern-using-loops">http://stackoverflow.com/questions/21423532/challenge-pattern-using-loops</a></code></p>
+   <p>Smart-ass answer to a puzzle inappropriately posted on stackoverflow. The question was closed literally seconds before I pressed the submit button. This now-deleted post was a good laugh.</p>
 
    <p>{@code java com.github.xbn.examples.lang.non_xbn.basic.LoopyHouse}</p>
 
@@ -25,8 +24,8 @@ package  com.github.xbn.examples.lang.non_xbn.basic;
     3. Use only java to achieve this pattern
 and of course, the fastest wins</pre>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class LoopyHouse  {
    public static final void main(String[] ignored)  {

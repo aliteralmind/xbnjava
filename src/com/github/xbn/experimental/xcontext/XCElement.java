@@ -16,8 +16,8 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
          <li>{@link #setIndex(int) setIndex(index)}</li>
       </ol></p>
 
-      @see  #XCElement(ExceptionContextElement) this(xce)
-    **/
+    * @see  #XCElement(ExceptionContextElement) this(xce)
+    */
    public XCElement(String cntr_name, int index)  {
       super(cntr_name);
       setIndex(index);
@@ -29,9 +29,9 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
          <li>Calls {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(ExceptionContextObject) super}{@code (to_copy)}</li>
          <li><code>{@link #setIndex(int) setIndex}(to_copy.{@link #getIndex() getIndex}())</code></li>
       </ol></p>
-      @see  #getObjectCopy()
-      @see  #XCElement(ExceptionContext, String, int) XCElement(xc,s,i)
-    **/
+    * @see  #getObjectCopy()
+    * @see  #XCElement(ExceptionContext, String, int) XCElement(xc,s,i)
+    */
    public XCElement(ExceptionContextElement to_copy)  {
       super(to_copy);
       setIndex(to_copy.getIndex());
@@ -41,8 +41,8 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
    /**
       <p>Set the just-called function in which the error happened (may happen).</p>
 
-      @param  index  May not be {@code null} or empty. Get with {@link #getIndex() getIndex}{@code ()}.
-    **/
+    * @param  index  May not be {@code null} or empty. Get with {@link #getIndex() getIndex}{@code ()}.
+    */
    public void setIndex(int index)  {
       CrashIfString.nullEmpty(index, "index", null);
       ix = index;
@@ -53,8 +53,8 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
       return  getName();
    }
    /**
-      @return  {@code index}, as provided to {@link #setIndex(int) setIndex(i)}, the {@link #XCElement(ExceptionContext, String, int) constructor}, or the {@link #XCElement(XCElement) copy-constructor}.
-    **/
+    * @return  {@code index}, as provided to {@link #setIndex(int) setIndex(i)}, the {@link #XCElement(ExceptionContext, String, int) constructor}, or the {@link #XCElement(XCElement) copy-constructor}.
+    */
    public int getIndex()  {
       return  ix;
    }
@@ -62,8 +62,8 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
 //Other...START
    /**
     * <p>Get a duplicate of this object.</p>
-      @return  <code>(new {@link #XCElement(XCElement) XCElement}(this)</code>
-    **/
+    * @return  <code>(new {@link #XCElement(XCElement) XCElement}(this)</code>
+    */
    public XCElement getObjectCopy()  {
       return  (new XCElement(this));
    }
@@ -71,8 +71,8 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
       return  super.toString() + ", getIndex()=" + getIndex();
    }
    /**
-      @return  {@code true} If {@code to_compareTo} is non-{@code null}, aYYY {@code XCElement}, and {@link #areFieldsEqual(XCElement) areFieldsEqual}{@code ((XCElement)to_compareTo)} is {@code true}.
-    **/
+    * @return  {@code true} If {@code to_compareTo} is non-{@code null}, aYYY {@code XCElement}, and {@link #areFieldsEqual(XCElement) areFieldsEqual}{@code ((XCElement)to_compareTo)} is {@code true}.
+    */
    @Override public boolean equals(Object to_compareTo)  {
       if(to_compareTo == null)  {
          throw  new NullPointerException("to_compareTo");
@@ -91,8 +91,8 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
    /**
       <p>Are all internal values in the provided {@code XCElement} the same as in <i>{@code this}</i>?.</p>
 
-      @return  <code>({@link com.github.xbn.experimental.xcontext.XCObject super}.{@link com.github.xbn.experimental.xcontext.XCObject#areFieldsEqual(XCObject) areFieldsEqual}(SUPER_CLASS_ABBREVIATION) &nbsp;&amp;&amp; &nbsp; {@link #getIndex() getIndex}() == xc_e.getIndex())</code>
-    **/
+    * @return  <code>({@link com.github.xbn.experimental.xcontext.XCObject super}.{@link com.github.xbn.experimental.xcontext.XCObject#areFieldsEqual(XCObject) areFieldsEqual}(SUPER_CLASS_ABBREVIATION) &nbsp;&amp;&amp; &nbsp; {@link #getIndex() getIndex}() == xc_e.getIndex())</code>
+    */
    public boolean areFieldsEqual(XCElement xc_e)  {
       return  (super.areFieldsEqual(xc_e)  &&  getIndex() == xc_e.getIndex());
    }

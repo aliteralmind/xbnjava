@@ -16,47 +16,47 @@ package  com.github.xbn.lang;
 /**
    <p>Is {@code null} an acceptable value?.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum Null  {
    /**
       <p>{@code null} is acceptable.</p>
 
-      @see  #BAD
-      @see  #isOk()
-    **/
+    * @see  #BAD
+    * @see  #isOk()
+    */
    OK,
    /**
       <p>{@code null} is bad.</p>
 
-      @see  #OK
-      @see  #isBad()
-    **/
+    * @see  #OK
+    * @see  #isBad()
+    */
    BAD;
    /**
       <p>Is this {@code Null} equal to {@code OK}?.</p>
 
-      @return  <code>(this == {@link #OK})</code>
-      @see  #isBad()
-    **/
+    * @return  <code>(this == {@link #OK})</code>
+    * @see  #isBad()
+    */
    public final boolean isOk()  {
       return  (this == OK);
    }
    /**
       <p>Is this {@code Null} equal to {@code BAD}?.</p>
 
-      @return  <code>(this == {@link #BAD})</code>
-      @see  #isOk()
-    **/
+    * @return  <code>(this == {@link #BAD})</code>
+    * @see  #isOk()
+    */
    public final boolean isBad()  {
       return  (this == BAD);
    }
    /**
       <p>Get a {@code Null} from an actual boolean.</p>
 
-      @return  <code>(b ? {@link #OK} : {@link #BAD})</code>
-    **/
+    * @return  <code>(b ? {@link #OK} : {@link #BAD})</code>
+    */
    public static final Null getForBoolean(boolean b)  {
       return  (b ? OK : BAD);
    }

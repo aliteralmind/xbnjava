@@ -20,15 +20,15 @@ package  com.github.xbn.analyze.validate;
 /**
    <p>Abstract implementation of {@code Validator}. For classes needing to implement {@code Validator}, that cannot extend this class, see {@code ValidatorComposer}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public abstract class AbstractValidator implements Validator  {
    private ValidatorComposer vc = null;
    /**
       <p>Create a new {@code AbstractValidator}.</p>
-    **/
+    */
    protected AbstractValidator(RuleType type, Validator_Fieldable filter)  {
       vc = new ValidatorComposer(type, filter);
    }
@@ -39,9 +39,9 @@ public abstract class AbstractValidator implements Validator  {
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    */
    public AbstractValidator(Validator to_copy)  {
       vc = new ValidatorComposer(to_copy);
    }
@@ -133,8 +133,8 @@ public abstract class AbstractValidator implements Validator  {
       return  vc.appendToString(to_appendTo).append(", getRules()=").append(getRules());
    }
    /**
-      @return  <code>true</code> If <code>to_compareTo</code> is non-<code>null</code>, an <code>AbstractValidator</code>, and <code><a href="#areFieldsEqual(xbn.lang.AbstractValidator)">areFieldsEqual</a>((AbstractValidator)to_compareTo)</code> is <code>true</code>. <i>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</i>
-    **/
+    * @return  <code>true</code> If <code>to_compareTo</code> is non-<code>null</code>, an <code>AbstractValidator</code>, and <code><a href="#areFieldsEqual(xbn.lang.AbstractValidator)">areFieldsEqual</a>((AbstractValidator)to_compareTo)</code> is <code>true</code>. <i>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</i>
+    */
    @Override
    public boolean equals(Object to_compareTo)  {
       //Check for object equality first, since it's faster than instanceof.
@@ -160,7 +160,7 @@ public abstract class AbstractValidator implements Validator  {
    }
    /*
       <p>FUNC_JD_INTRO</p>
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType)">setERuleType_4prot</a>(type)}</p>
    protected void setERuleType(RuleType type)  {
       vc.setERuleType_4prot(type);
@@ -168,7 +168,7 @@ public abstract class AbstractValidator implements Validator  {
     */
    /*
       <p>FUNC_JD_INTRO</p>
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType, String)">setERuleType_4prot</a>(type, type_name)}</p>
    protected void setERuleType(RuleType type, String type_name)  {
       vc.setERuleType_4prot(type, type_name);

@@ -20,8 +20,8 @@ package  com.github.xbn.io;
 /**
    <p>Immutable {@code TextAppender} for {@code Appendable}-s. See {@link com.github.xbn.io.TAAppendMutable TAAppendMutable}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class TAAppendable<A extends Appendable> extends TextAppender  {
    private final Flushable  flbl;
@@ -72,8 +72,8 @@ public class TAAppendable<A extends Appendable> extends TextAppender  {
    /**
       <p>Get a reference to <i>this</i> object</p>
 
-      @return  <i>{@code this}</i>
-    **/
+    * @return  <i>{@code this}</i>
+    */
    public TAAppendable<A> getObjectCopy()  {
       return  this;
    }

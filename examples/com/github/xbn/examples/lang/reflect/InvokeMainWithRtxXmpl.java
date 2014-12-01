@@ -26,8 +26,8 @@ package  com.github.xbn.examples.lang.reflect;
    <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/4770425/how-do-i-invoke-a-private-static-method-using-reflection-java">http://stackoverflow.com/questions/4770425/how-do-i-invoke-a-private-static-method-using-reflection-java</a></code>
    <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/11483647/how-to-access-private-methods-and-private-data-members-via-reflection">http://stackoverflow.com/questions/11483647/how-to-access-private-methods-and-private-data-members-via-reflection</a></code></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class InvokeMainWithRtxXmpl  {
    public static final void main(String[] ignored)  {

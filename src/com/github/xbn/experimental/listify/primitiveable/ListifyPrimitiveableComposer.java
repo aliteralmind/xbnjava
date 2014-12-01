@@ -25,10 +25,10 @@ package  com.github.xbn.experimental.listify.primitiveable;
 /**
    <p>For classes that need to implement {@code ListifyPrimitiveable}, that cannot extend {@code AbstractListifyPrimitiveable}</p>
 
-   @see  ListifyPrimitiveable
-   @see  AbstractListifyPrimitiveable
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  ListifyPrimitiveable
+ * @see  AbstractListifyPrimitiveable
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//implements ListifyPrimitiveable<E>  {
    private NullHandlerForPrimitives<E> hnvnb = null;
@@ -39,7 +39,7 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
       YYY
 
       ...{@link com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives SimpleNullHandlerForPrimitives.}{@link com.github.xbn.util.copyval.SimpleNullHandlerForPrimitives#CRASH CRASH})}
-    **/
+    */
    @SuppressWarnings("unchecked")
    public ListifyPrimitiveableComposer(Object raw_obj, AddRemovable add_rmvbl, PrimitiveArrayHelper<E> primitive_arrHelper, ValueCopier<E> get_valCopy)  {
       this(raw_obj, add_rmvbl, primitive_arrHelper, get_valCopy, SimpleNullHandlerForPrimitives.CRASH);
@@ -61,8 +61,8 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public ListifyPrimitiveableComposer(boolean ignored, ListifyPrimitiveableComposer<E> to_copy)  {
       super(ignored, to_copy);
@@ -82,8 +82,8 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
          <li>YYY</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-    **/
+    * @param  to_copy  May not be {@code null}.
+    */
    @SuppressWarnings("unchecked")
    public ListifyPrimitiveableComposer(ListifyPrimitiveable<E> to_copy)  {
       super(to_copy);
@@ -112,7 +112,7 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
    }
    /**
       <p>Get the message for when calling a {@code get[PrimitiveType](index)} (such as {@code getBool(i)}), and the if-{@code null} behavior is {@code CRASH} or {@code DELETE}.</p>
-    **/
+    */
    public static final <E> void ciActionCrashOrDel(ListifyPrimitiveable<E> listifier, int index)  {
       try  {
          SimpleNullHandler.ciActionCrashOrDel(listifier.getNullHandlerForPrimitives());

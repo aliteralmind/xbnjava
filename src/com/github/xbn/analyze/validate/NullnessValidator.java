@@ -41,28 +41,28 @@ package  com.github.xbn.analyze.validate;
       <li><b>Other:</b> <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</code></li>
    </ul></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NullnessValidator<O> extends AbstractValidator implements ValueValidator<O>  {
    private final boolean isNullOk;
    /**
       <p>Create a new instance from its fieldable.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>this(NullnessValidator.{@link #getRuleTypeFromFieldsVVN(ValueValidator_Fieldable) getRuleTypeFromFieldsVVN}(fieldable), fieldable)</code></p>
-    **/
+    */
    public NullnessValidator(ValueValidator_Fieldable fieldable)  {
       this(NullnessValidator.getRuleTypeFromFieldsVVN(fieldable), fieldable);
    }
    /**
       <p>Create a new instance from its rule-type and fieldable.</p>
 
-      @param  rule_type  Defines the restrictiveness of this instance. May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.AbstractValidator#getRuleType() getRuleType}{@code ()}*.
-      @param  fieldable  May not be {@code null}, and its fields must conform to the restrictions as documented in the <a href="#cfg">buider's setter functions</a>.
-      @see  #NullnessValidator(ValueValidator_Fieldable)
-      @see  #NullnessValidator(ValueValidator)
-    **/
+    * @param  rule_type  Defines the restrictiveness of this instance. May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.AbstractValidator#getRuleType() getRuleType}{@code ()}*.
+    * @param  fieldable  May not be {@code null}, and its fields must conform to the restrictions as documented in the <a href="#cfg">buider's setter functions</a>.
+    * @see  #NullnessValidator(ValueValidator_Fieldable)
+    * @see  #NullnessValidator(ValueValidator)
+    */
    protected NullnessValidator(RuleType rule_type, ValueValidator_Fieldable fieldable)  {
       super(rule_type, fieldable);
       isNullOk = fieldable.isNullOk();
@@ -70,8 +70,8 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
    /**
       <p>Create a new instance from a <code>ValueValidator</code>.</p>
 
-      @see  #NullnessValidator(RuleType, ValueValidator_Fieldable)
-    **/
+    * @see  #NullnessValidator(RuleType, ValueValidator_Fieldable)
+    */
    public NullnessValidator(ValueValidator<O> validator)  {
       super(validator);
       isNullOk = validator.isNullOk();
@@ -86,11 +86,11 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
          <li>Otherwise this {@link #adjustForPostFilterReturnValue(boolean) makes adjustments}, and then <i><b>returns</b></i> it (un-inverted).</li>
       </ol></p>
 
-      @see  com.github.xbn.analyze.Analyzer#getAnalyzedCount() Analyzer#getAnalyzedCount()
-      @see  com.github.xbn.analyze.validate.Validator#getValidCount() Validator#getValidCount()
-      @see  com.github.xbn.analyze.validate.Validator#getValidResultSource() Validator#getValidResultSource()
-      @see  com.github.xbn.analyze.validate.Validator#isValid() Validator#isValid()
-    **/
+    * @see  com.github.xbn.analyze.Analyzer#getAnalyzedCount() Analyzer#getAnalyzedCount()
+    * @see  com.github.xbn.analyze.validate.Validator#getValidCount() Validator#getValidCount()
+    * @see  com.github.xbn.analyze.validate.Validator#getValidResultSource() Validator#getValidResultSource()
+    * @see  com.github.xbn.analyze.validate.Validator#isValid() Validator#isValid()
+    */
    public final boolean isValid(O to_validate)  {
       if(isDebugOn()) { getDebugAptr().appentln("<NV> isValid(to_validate): to_validate=[" + StringUtilBase.getChopped(Trim.YES, to_validate, 30, "...") + "], " + this); }
 
@@ -153,8 +153,8 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
    if(bPostValid != bFollowsRules)  {
       adjustForPostFilterReturnValue(bPostValid);
    }</pre>
-      @param  isValid_fromPostFilter  The value from the post filter, which is <i>different</i> than that just-returned by {@code doesFollowRulesPreInvert(O)} (post-inversion).
-    **/
+    * @param  isValid_fromPostFilter  The value from the post filter, which is <i>different</i> than that just-returned by {@code doesFollowRulesPreInvert(O)} (post-inversion).
+    */
    public void adjustForPostFilterReturnValue(boolean isValid_fromPostFilter)  {
    }
    @Override
@@ -166,19 +166,19 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
    /**
       <p>Given the current invert-setting, is {@code null} an acceptable value?.</p>
 
-      @return  <code>NullnessValidator.{@link #isNullOkGivenInvert(ValueValidator) isNullOkGivenInvert}(this)</code>
-    **/
+    * @return  <code>NullnessValidator.{@link #isNullOkGivenInvert(ValueValidator) isNullOkGivenInvert}(this)</code>
+    */
    public boolean isNullOkGivenInvert()  {
       return  NullnessValidator.isNullOkGivenInvert(this);
    }
    /**
       <p>Given the current invert-setting, is {@code null} an acceptable value?.</p>
 
-      @param  validator  May not be {@code null}.
-      @return  <code>(validator.{@link com.github.xbn.analyze.validate.Validator#doInvertRules() doInvertRules}()* ? !validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}()* : validator.isNullOk())</code>
-      @see  #isNullOkGivenInvert()
-      @see  #isImpossibleConsideringNullInvert(ValueValidator) isImpossibleConsideringNullInvert(vv)
-    **/
+    * @param  validator  May not be {@code null}.
+    * @return  <code>(validator.{@link com.github.xbn.analyze.validate.Validator#doInvertRules() doInvertRules}()* ? !validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}()* : validator.isNullOk())</code>
+    * @see  #isNullOkGivenInvert()
+    * @see  #isImpossibleConsideringNullInvert(ValueValidator) isImpossibleConsideringNullInvert(vv)
+    */
    public static final <O> boolean isNullOkGivenInvert(ValueValidator<O> validator)  {
       try  {
          return  (validator.doInvertRules() ? !validator.isNullOk() : validator.isNullOk());
@@ -189,9 +189,9 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
    /**
       <p>Given the current invert and {@code null} settings, is impossible for a value to be valid?.</p>
 
-      @param  validator  May not be {@code null}.
-      @return  <code>(validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}() &nbsp;&amp;&amp; &nbsp;validator.{@link #doInvertRules() doInvertRules}())</code>
-    **/
+    * @param  validator  May not be {@code null}.
+    * @return  <code>(validator.{@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() isNullOk}() &nbsp;&amp;&amp; &nbsp;validator.{@link #doInvertRules() doInvertRules}())</code>
+    */
    public static final <O> boolean isImpossibleConsideringNullInvert(ValueValidator<O> validator)  {
       try  {
          return  (validator.isNullOk()  &&  validator.doInvertRules());
@@ -211,10 +211,10 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
    /**
       <p>Are the rules followed?.</p>
 
-      @param  to_validate  The value to validate.
-      @return  {@code true}  If {@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() null is okay}, or the value is not {@code null}.
-      @see   <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="isValid(O)">isValid</a>(O)</code>
-    **/
+    * @param  to_validate  The value to validate.
+    * @return  {@code true}  If {@link com.github.xbn.analyze.validate.ValueValidator#isNullOk() null is okay}, or the value is not {@code null}.
+    * @see   <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#isValid(O)">isValid</a>(O)</code>
+    */
    public boolean doesFollowRulesPreInvert(O to_validate)  {
       if(isNullOk())  {
          if(isDebugOn()) { getDebugAptr().appentln("<NV>    doesFollowRulesPreInvert(to_validate): isNullOk() is true. Returning true."); }
@@ -224,14 +224,14 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
       return  (to_validate != null);
    }
    /**
-      @see  com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) ValueValidator_Cfg#nullOk(b)
-    **/
+    * @see  com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) ValueValidator_Cfg#nullOk(b)
+    */
    public boolean isNullOk()  {
       return  isNullOk;
    }
    /**
-    	@return  <code>true</code> If <code>to_compareTo</code> is non-<code>null</code>, a <code>NullnessValidator</code>, and <code><a href="#areFieldsEqual(xbn.lang.NullnessValidator)">areFieldsEqual</a>((NullnessValidator)to_compareTo)</code> is <code>true</code>. <i>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</i>
-    **/
+    	@return  <code>true</code> If <code>to_compareTo</code> is non-<code>null</code>, a <code>NullnessValidator</code>, and <code><a href="#areFieldsEqual(xbn.analyze.validate.NullnessValidator)">areFieldsEqual</a>((NullnessValidator)to_compareTo)</code> is <code>true</code>. <i>This is implemented as suggested by Joshua Bloch in &quot;Effective Java&quot; (2nd ed, item 8, page 46).</i>
+    */
    @Override
    public boolean equals(Object to_compareTo)  {
       //Check for object equality first, since it's faster than instanceof.
@@ -270,7 +270,7 @@ is_nullOk  do_invert  Returns       Description
  false     true     RESTRICTED    Non-null bad, null okay
  false     false    RESTRICTED    Non-null okay, null bad</pre>
  		@see  #NullnessValidator(ValueValidator_Fieldable) this(vv_f)
-    **/
+    */
    public static final RuleType getRuleTypeFromFieldsVVN(ValueValidator_Fieldable fieldable)  {
       return  (fieldable.isNullOk()
          ?  (fieldable.doInvertRules() ? RuleType.IMPOSSIBLE : RuleType.UNRESTRICTED)
@@ -279,8 +279,8 @@ is_nullOk  do_invert  Returns       Description
    /**
       <p>Duplicate this <code>NullnessValidator</code>.</p>
 
-      @return  <code>(new <a href="#NullnessValidator(NullnessValidator)">NullnessValidator</a>&lt;O&gt;(this))</code>
-    **/
+    * @return  <code>(new {@link #NullnessValidator(NullnessValidator) NullnessValidator}&lt;O&gt;(this))</code>
+    */
    public NullnessValidator<O> getObjectCopy()  {
       return  (new NullnessValidator<O>(this));
    }

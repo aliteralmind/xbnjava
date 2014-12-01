@@ -30,10 +30,10 @@ package  com.github.xbn.analyze.alter;
 
 {@.codelet.and.out com.github.xbn.examples.linefilter.alter.ExpirableTextLineAlterListXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-   @see  com.github.xbn.lang.Expirable#isExpired()
-   @see  com.github.xbn.linefilter.alter.ExpirableTextLineAlterList
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  com.github.xbn.lang.Expirable#isExpired()
+ * @see  com.github.xbn.linefilter.alter.ExpirableTextLineAlterList
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
@@ -46,7 +46,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    /*
       <p>Create a new instance in which expirable elements are optional, and {@code null} elements are forbidden.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType) this}(xprbl_alterArray, {@link com.github.xbn.analyze.alter.ExpirableElements ExpirableElements}.{@link com.github.xbn.analyze.alter.ExpirableElements#OPTIONAL OPTIONAL}, multi_alterType)</code></p>
    public ExpirableAlterList(ValueAlterer<V,A>[] xprbl_alterArray, MultiAlterType multi_alterType)  {
       this(xprbl_alterArray, ExpirableElements.OPTIONAL, multi_alterType);
@@ -55,12 +55,12 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    /**
       <p>Create a new instance.</p>
 
-      @param  multi_alterType  May not be {@code null}. Get (the resulting boolean) with {@link com.github.xbn.analyze.alter.MultiAlterType#isShortCircuit() isShortCircuit}{@code ()}. If {@link com.github.xbn.analyze.alter.MultiAlterType#SHORT_CIRCUIT SHORT_CIRCUIT}, then only one element at a maximum may alter the value (the first element whose {@link com.github.xbn.analyze.alter.Alterer#wasAltered() wasAltered}{@code ()} is true, causes <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getAlteredPostResetCheck(V, A)">getAlteredPostResetCheck</a>(V,A)</code> to exit.) If {@link com.github.xbn.analyze.alter.MultiAlterType#CUMULATIVE CUMULATIVE}, then the value is altered by all elements in each call to {@code getAlteredPostResetCheck(V,A)}.
-      @param  xprbl_lmntsAre  If {@code ExpirableElements.}{@code com.github.xbn.analyze.alter.ExpirableElements#REQUIRED REQUIRED}, then no element in {@code xprbl_alterArray} may be {@link com.github.xbn.lang.Expirable#isExpired() expired}.
-      @param  xprbl_alterArray  May not be {@code null}, empty, or contain duplicates, and no element may be {@code null}. Each object in this array is {@link com.github.xbn.lang.Copyable#getObjectCopy() duplicated} internally.
-      @exception  IllegalArgumentException  If {@code xprbl_lmntsAre.}{@link com.github.xbn.analyze.alter.ExpirableElements#isRequired() isRequired}{@code ()} is {@code true} and any element's {@link com.github.xbn.lang.Expirable#doesExpire() doesExpire}{@code ()} is {@code false}.
-      @see  #ExpirableAlterList(ExpirableAlterList) this(xal)
-    **/
+    * @param  multi_alterType  May not be {@code null}. Get (the resulting boolean) with {@link com.github.xbn.analyze.alter.MultiAlterType#isShortCircuit() isShortCircuit}{@code ()}. If {@link com.github.xbn.analyze.alter.MultiAlterType#SHORT_CIRCUIT SHORT_CIRCUIT}, then only one element at a maximum may alter the value (the first element whose {@link com.github.xbn.analyze.alter.Alterer#wasAltered() wasAltered}{@code ()} is true, causes <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getAlteredPostResetCheck(V, A)">getAlteredPostResetCheck</a>(V,A)</code> to exit.) If {@link com.github.xbn.analyze.alter.MultiAlterType#CUMULATIVE CUMULATIVE}, then the value is altered by all elements in each call to {@code getAlteredPostResetCheck(V,A)}.
+    * @param  xprbl_lmntsAre  If {@code ExpirableElements.}{@code com.github.xbn.analyze.alter.ExpirableElements#REQUIRED REQUIRED}, then no element in {@code xprbl_alterArray} may be {@link com.github.xbn.lang.Expirable#isExpired() expired}.
+    * @param  xprbl_alterArray  May not be {@code null}, empty, or contain duplicates, and no element may be {@code null}. Each object in this array is {@link com.github.xbn.lang.Copyable#getObjectCopy() duplicated} internally.
+    * @exception  IllegalArgumentException  If {@code xprbl_lmntsAre.}{@link com.github.xbn.analyze.alter.ExpirableElements#isRequired() isRequired}{@code ()} is {@code true} and any element's {@link com.github.xbn.lang.Expirable#doesExpire() doesExpire}{@code ()} is {@code false}.
+    * @see  #ExpirableAlterList(ExpirableAlterList) this(xal)
+    */
    public ExpirableAlterList(ValueAlterer<V,A>[] xprbl_alterArray, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
       super();
       if(multi_alterType == null)  {
@@ -101,9 +101,9 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          <li>Sets {@link #doShortCircuit() doShortCircuit}{@code ()} to {@code to_copy.doShortCircuit()}</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}
-      @see  #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable)
-    **/
+    * @param  to_copy  May not be {@code null}
+    * @see  #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable)
+    */
    public ExpirableAlterList(ExpirableAlterList<V,A> to_copy)  {
       super(to_copy);
       alterList = new ArrayList<ValueAlterer<V,A>>(to_copy.alterList);
@@ -112,18 +112,18 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    /**
       <p>Should the object be altered, at most, by a single element, or should it be cumulatively altered by every element, every time?.</p>
 
-      @return  <ul>
+    * @return  <ul>
          <li>{@code true}: At the most, only one element may alter the object in a single call to  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#getAltered(V, A)">getAltered</a>(V,A)</code></li>
          <li>{@code false}: All elements alter the object, cumulatively, in each call to {@code getAltered(V,A)}.</li>
       </ul>
-      @see  MultiAlterType
-    **/
+    * @see  MultiAlterType
+    */
    public boolean doShortCircuit()  {
       return  bShrtCrct;
    }
    /**
       <p>The number of remaining--non-expired--alter-elements.</p>
-    **/
+    */
    public int size()  {
       return  alterList.size();
    }
@@ -135,8 +135,8 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
 
       <p>When {@code to_alter} is altered by an element and {@link #doShortCircuit() doShortCircuit}{@code ()} is {@code true} (or that alteration is &quot;{@link com.github.xbn.analyze.alter.Alterer#needsToBeDeleted() needs to be deleted}&quot;), this function exits. Otherwise, the now-altered value of {@code to_alter} is passed to the next element to be further ({@link com.github.xbn.analyze.alter.MultiAlterType#CUMULATIVE cumulatively}) altered.</p>
 
-      @see  <code><a href="AbstractValueAlterer.html">AbstractValueAlterer</a>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="AbstractValueAlterer.html#getAltered(V, A)">getAltered</a>(V,A)</code>
-    **/
+    * @see  <code><a href="AbstractValueAlterer.html">AbstractValueAlterer</a>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="AbstractValueAlterer.html#getAltered(V, A)">getAltered</a>(V,A)</code>
+    */
    public A getAlteredPostResetCheck(V to_validate, A to_alter)  {
 //		if(isDebugOn()) {
 //			getDebugAptr().appentln("<XAL>    (" + size() + " elements, " +
@@ -196,8 +196,8 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    /**
       <p>Did any alterer not make an alteration?. This is intended for use after all alterations are attempted.</p>
 
-      @return  {@code false} If at least one {@linkplain Alterer#isRequired() required} element's {@linkplain com.github.xbn.analyze.alter.Alterer#getAlteredCount() alteration count} is zero.
-    **/
+    * @return  {@code false} If at least one {@linkplain Alterer#isRequired() required} element's {@linkplain com.github.xbn.analyze.alter.Alterer#getAlteredCount() alteration count} is zero.
+    */
    public boolean isComplete()  {
       for(ValueAlterer<V,A> alterer : alterList)  {
          if(alterer.isRequired()  &&  alterer.getAlteredCount() == 0)  {
@@ -208,7 +208,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    }
    /**
       <p>Append the {@code toString()}s of all elements that made no alteration.</p>
-    **/
+    */
    public StringBuilder appendIncompleteInfo(StringBuilder to_appendTo)  {
       if(isComplete())  {
          throw  new IllegalStateException("isComplete() is true.");
@@ -229,21 +229,21 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       return  to_appendTo;
    }
    /**
-      @return  {@code true}
-    **/
+    * @return  {@code true}
+    */
    public boolean doesExpire()  {
       return  true;
    }
    /**
-      @return  <code>({@link #size() size}() == 0)</code>
-    **/
+    * @return  <code>({@link #size() size}() == 0)</code>
+    */
    public boolean isExpired()  {
       return  (size() == 0);
    }
    /**
     * <p>Get a duplicate of this object.</p>
-      @return  <code>(new {@link #ExpirableAlterList(ExpirableAlterList) ExpirableAlterList}&lt;V,A&gt;(this))</code>
-    **/
+    * @return  <code>(new {@link #ExpirableAlterList(ExpirableAlterList) ExpirableAlterList}&lt;V,A&gt;(this))</code>
+    */
    public ExpirableAlterList<V,A> getObjectCopy()  {
       return  (new ExpirableAlterList<V,A>(this));
    }
@@ -264,7 +264,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          <li><code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetState() resetState}()</code></li>
          <li>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetState() resetState}{@code ()}</li>
       </ol></p>
-    **/
+    */
    public void resetState()  {
       super.resetState();
       for(ValueAlterer<V,A> av : alterList)  {
@@ -278,7 +278,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          <li><code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetCounts() resetCounts}()</code></li>
          <li>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetCounts() resetCounts}{@code ()}</li>
       </ol></p>
-    **/
+    */
    public void resetCounts()  {
       super.resetCounts();
       for(ValueAlterer<V,A> av : alterList)  {
@@ -292,7 +292,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          <li><code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetForDeletion() resetForDeletion}()</code></li>
          <li>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetForDeletion() resetForDeletion}{@code ()}</li>
       </ol></p>
-    **/
+    */
    public void resetForDeletion()  {
       super.resetForDeletion();
       for(ValueAlterer<V,A> av : alterList)  {
@@ -305,7 +305,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <p>This calls<ol>
          <li>{@link com.github.xbn.io.SimpleDebuggable#setDebug(Appendable, boolean) setDebug}{@code (destination, is_on)}</li>
       </ol></p>
-    **/
+    */
    public void setDebug(Appendable destination, boolean is_on)  {
       super.setDebug(destination, is_on);
    }
@@ -316,7 +316,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          <li>{@link com.github.xbn.analyze.alter.AbstractValueAlterer#setExtraErrInfo(Object) setExtraErrInfo}{@code (info)}</li>
          <li>For every element: {@link com.github.xbn.lang.ExtraErrInfoable#setExtraErrInfo(Object) setExtraErrInfo}{@code (info)}</li>
       </ol></p>
-    **/
+    */
    public void setExtraErrInfo(Object info)  {
       super.setExtraErrInfo(info);
       for(ValueAlterer<V,A> av : alterList)  {
@@ -326,13 +326,13 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
    /**
       <p>Get a new alterer array from the provided <i>ordered</i> elements, optionally excluding {@code null} elements.</p>
 
-      @param  orderedAlterers_whichMayBeNull  May not be {@code null} and <i>should</i> not be empty or contain duplicates.
-      @param  null_element  May not be {@code null}. If {@link com.github.xbn.array.NullElement#OK OK}, {@code null} elements are excluded from the returned array. If {@link com.github.xbn.array.NullElement#BAD BAD}, all elements must be non-{@code null}.
-      @param  class_ofTypeL  May not be {@code null}.
-      @param  alterers_varName  Descriptive name of {@code orderedAlterers_whichMayBeNull}. <i>Should</i> not be {@code null} or empty.
-      @return  A new non-{@code null} array of line-alterers containing all non-{@code null} parameters, if any.
-      @exception  NullPointerException  If {@code null_element.isBad()} and an element is null.
-    **/
+    * @param  orderedAlterers_whichMayBeNull  May not be {@code null} and <i>should</i> not be empty or contain duplicates.
+    * @param  null_element  May not be {@code null}. If {@link com.github.xbn.array.NullElement#OK OK}, {@code null} elements are excluded from the returned array. If {@link com.github.xbn.array.NullElement#BAD BAD}, all elements must be non-{@code null}.
+    * @param  class_ofTypeL  May not be {@code null}.
+    * @param  alterers_varName  Descriptive name of {@code orderedAlterers_whichMayBeNull}. <i>Should</i> not be {@code null} or empty.
+    * @return  A new non-{@code null} array of line-alterers containing all non-{@code null} parameters, if any.
+    * @exception  NullPointerException  If {@code null_element.isBad()} and an element is null.
+    */
    public static final <V,A,L extends ValueAlterer<V,A>> L[] getAltererArrayFromOrderedElementsIfNonNull(L[] orderedAlterers_whichMayBeNull, NullElement null_element, Class<L> class_ofTypeL, String alterers_varName)  {
 
       List<L> alterList = null;
@@ -390,15 +390,15 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          :  RuleType.UNRESTRICTED);
    }
    /**
-      @return  <code>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</code>
-    **/
+    * @return  <code>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</code>
+    */
    public String getRules()  {
       return  appendRules(new StringBuilder()).toString();
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #getRules()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #getRules()
+    */
    public StringBuilder appendRules(StringBuilder to_appendTo)  {
       try  {
          to_appendTo.append(LINE_SEP);

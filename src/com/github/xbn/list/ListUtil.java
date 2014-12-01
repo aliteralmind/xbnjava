@@ -31,15 +31,15 @@ package  com.github.xbn.list;
 /**
    <p>Translate lists to arrays and lists of primitives, objects, and strings, and other list-related utilities.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ListUtil  {
    /**
       <p>YYY</p>
 
-      @exception  XbnIndexOutOfBoundsException  If any {@code list_ofUniqueAscIdxsToDelete} are invalid for {@code list}, or if its elements are not unique or ascending, causing subsequent indexes (that <i>were</i> valid) to not be valid.
-    **/
+    * @exception  XbnIndexOutOfBoundsException  If any {@code list_ofUniqueAscIdxsToDelete} are invalid for {@code list}, or if its elements are not unique or ascending, causing subsequent indexes (that <i>were</i> valid) to not be valid.
+    */
    public static final void deleteElementsNotInAscUnqIndexList(List<?> list, List<Integer> list_ofUniqueAscIdxsToDelete)  {
       int iOrigSz = -1;
 //		int iLXSz = -1;
@@ -65,7 +65,7 @@ public class ListUtil  {
    }
    /**
       <p>YYY</p>
-    **/
+    */
    public static final <E> List<E> getEListCopyOrNull(Collection<E> coll, ValueCopier<E> copier, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -85,7 +85,7 @@ public class ListUtil  {
    }
    /**
       <p>YYY</p>
-    **/
+    */
    public static final <E> List<Object> getObjectListOrNull(Collection<E> coll, ValueCopier<E> copier, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -105,7 +105,7 @@ public class ListUtil  {
    }
    /**
       <p>YYY</p>
-    **/
+    */
    public static final <E> List<String> getStringListOrNull(Collection<E> coll, ValueCopier<E> copier, NullContainer nnull, String cntrName_forNullBad)  {
       if(coll == null)  {
          IndexableUtil.crashIfContainerIsNullAndThatIsBad(nnull, cntrName_forNullBad);
@@ -216,7 +216,7 @@ public class ListUtil  {
       <p>YYY</p>
 
 
-    **/
+    */
    public static final String getJoinedWithDelimiter(List<?> list, char delimiter, int idx_start, int idx_endX)  {
       return  getJoinedWithDelimiter(list, String.valueOf(delimiter), idx_start, idx_endX);
    }
@@ -224,7 +224,7 @@ public class ListUtil  {
       <p>YYY</p>
 
       <p>The missing {@code join(...)} functions from {@link org.apache.commons.lang3.StringUtils}</p>
-    **/
+    */
    public static final String getJoinedWithDelimiter(List<?> list, String to_appendToelim, int idx_start, int idx_endX)  {
       StringBuilder sd = new StringBuilder();
       int iEXMinus1 = (idx_endX - 1);

@@ -14,8 +14,8 @@ package  com.github.xbn.regexutil;
 
    <p>This class is supposed to be equivalent to Ruby's 'gsub' when given a block. This is the nicest syntax I've managed to come up with in Java so far. It's not too bad, and might actually be preferable if you want to do the same rewriting to a number of strings in the same method or class.</p>
 
-   @author Elliott Hughes
-   @author Roger Millington
+ * @author Elliott Hughes
+ * @author Roger Millington
  */
 public abstract class Rewriter  {
     private Pattern pattern;

@@ -156,7 +156,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
       return  getMaxNumber().intValue();
    }
    /**
-    * @return <blockquote><pre>new {@link IntInRange#IntInRange(com.github.xbn.lang.Invert, int, int) IntInRange}({@link Invert}.{@link Invert#getForBoolean(boolean) getForBoolean}(!{@link NumberInRange#isInverted() isInverted}()),
+    * @return <blockquote><pre>new {@link IntInRange#IntInRange(com.github.xbn.lang.Invert, int, int) IntInRange}({@link Invert}.{@link Invert#getForBoolean(boolean) getForBoolean}(!{@link NumberInRange.html#isInverted() isInverted}()),
     *    {@link #getMinBound()}(), {@link #getMaxBound()}()</pre></blockquote>
     */
    public IntInRange getInvertedCopy()  {
@@ -396,7 +396,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * </ul></p>
     * @exception  IllegalArgumentStateException  If both bounds are non-{@code null}, and violated the above rules are violated.
     * @see  #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength(ibi,nb,s,s,o)
-    * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberInRange#isIn(N)">isIn</a>(N)*</code>
+    * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberInRange.html#isIn(N)">isIn</a>(N)*</code>
     */
    public static final void crashIfBadBounds(IntBound min, IntBound max,
             String min_name, String max_name, Object xtra_errInfo)  {

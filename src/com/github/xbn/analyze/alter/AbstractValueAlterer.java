@@ -21,8 +21,8 @@ package  com.github.xbn.analyze.alter;
 /**
    <p>Abstract implementation of {@code ValueAlterer}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
    private ValueAltererComposer<V,A> avc = null;
@@ -32,8 +32,8 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       <p>Sets the internal composer to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer() ValueAltererComposer}&lt;V,A&gt;{@code ()}</p>
 
-      @see  #AbstractValueAlterer(ValueAlterer)
-    **/
+    * @see  #AbstractValueAlterer(ValueAlterer)
+    */
    protected AbstractValueAlterer()  {
       avc = new ValueAltererComposer<V,A>();
    }
@@ -43,26 +43,26 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       <p>Sets the internal composer to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer(AlterationRequired) ValueAltererComposer}&lt;V,A&gt;{@code (required)}</p>
 
-      @see  #AbstractValueAlterer()
-      @see  #AbstractValueAlterer(com.github.xbn.analyze.alter.Alterer) AbstractAlterer(a)
-    **/
+    * @see  #AbstractValueAlterer()
+    * @see  #AbstractValueAlterer(com.github.xbn.analyze.alter.Alterer) AbstractAlterer(a)
+    */
    protected AbstractValueAlterer(AlterationRequired required)  {
       avc = new ValueAltererComposer<V,A>(required);
    }
    /**
       <p>Create a new {@code AbstractValueAlterer}.</p>
 
-      @see  #AbstractValueAlterer(com.github.xbn.analyze.alter.AlterationRequired)
-    **/
+    * @see  #AbstractValueAlterer(com.github.xbn.analyze.alter.AlterationRequired)
+    */
    public AbstractValueAlterer(ValueAlterer<V,A> to_copy)  {
       avc = new ValueAltererComposer<V,A>(to_copy);
    }
    /**
       <p>If the {@code ValueAlterer} needs to have its state reset, crash. This is useful as the first line</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer}.{@link com.github.xbn.analyze.alter.AltererComposer#autoResetStateOrCINeedTo(com.github.xbn.analyze.Analyzer) autoResetStateOrCINeedTo}{@code (this)}</p>
-    **/
+    */
    public void autoResetStateOrCINeedTo()  {
       AnalyzerComposer.autoResetStateOrCINeedTo(this);
    }
@@ -171,15 +171,15 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       return  RuleType.UNRESTRICTED;
    }
    /**
-      @return  <code>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</code>
-    **/
+    * @return  <code>{@link #appendRules(StringBuilder) appendRules}(new StringBuilder()).toString()</code>
+    */
    public String getRules()  {
       return  appendRules(new StringBuilder()).toString();
    }
    /**
-      @param  to_appendTo May not be {@code null}.
-      @see  #getRules()
-    **/
+    * @param  to_appendTo May not be {@code null}.
+    * @see  #getRules()
+    */
    public StringBuilder appendRules(StringBuilder to_appendTo)  {
       try  {
          to_appendTo.append("unrestricted");
@@ -189,12 +189,12 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       return  to_appendTo;
    }
    /**
-    **/
+    */
    public boolean isComplete()  {
       return  avc.isComplete();
    }
    /**
-    **/
+    */
    public StringBuilder appendIncompleteInfo(StringBuilder to_appendTo)  {
       return  avc.appendIncompleteInfo(to_appendTo);
    }

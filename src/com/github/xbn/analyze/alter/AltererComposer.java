@@ -20,8 +20,8 @@ package  com.github.xbn.analyze.alter;
 /**
    <p>For classes needing to implement {@code Alterer}, that cannot extend {@code AbstractAlterer}. See {@link com.github.xbn.analyze.alter.AbstractAlterer AbstractAlterer}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class AltererComposer extends AnalyzerComposer  {
    private final boolean isRequired;
@@ -34,7 +34,7 @@ public class AltererComposer extends AnalyzerComposer  {
 //constructor...START
    /**
       <p>Create a new instance that is required to make an alteration.</p>
-    **/
+    */
    public AltererComposer()  {
       this(AlterationRequired.YES);
    }
@@ -47,9 +47,9 @@ public class AltererComposer extends AnalyzerComposer  {
          <li>{@link #zresetCountsAC() zresetCountsAC}{@code ()}</li>
       </ol></p>
 
-      @see  #AltererComposer(boolean, AltererComposer) this(b,ab)
-      @see  #AltererComposer(Alterer) this(ltr)
-    **/
+    * @see  #AltererComposer(boolean, AltererComposer) this(b,ab)
+    * @see  #AltererComposer(Alterer) this(ltr)
+    */
    public AltererComposer(AlterationRequired required)  {
       try  {
          isRequired = required.isYes();
@@ -72,10 +72,10 @@ public class AltererComposer extends AnalyzerComposer  {
          </ol></li>
          <li>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
       </ol></p>
-      @param  to_copy  May not be {@code null}
-      @see  #getObjectCopy()
-      @see  #AltererComposer() this()
-    **/
+    * @param  to_copy  May not be {@code null}
+    * @see  #getObjectCopy()
+    * @see  #AltererComposer() this()
+    */
    public AltererComposer(boolean ignored, AltererComposer to_copy)  {
       super(ignored, to_copy);
       isRequired = to_copy.isRequired();
@@ -95,9 +95,9 @@ public class AltererComposer extends AnalyzerComposer  {
          </ol></li>
          <li>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
       </ol></p>
-      @param  to_copy  May not be {@code null}
-      @see  #AltererComposer() this()
-    **/
+    * @param  to_copy  May not be {@code null}
+    * @see  #AltererComposer() this()
+    */
    public AltererComposer(Alterer to_copy)  {
       super(to_copy);
       isRequired = to_copy.isRequired();
@@ -110,9 +110,9 @@ public class AltererComposer extends AnalyzerComposer  {
    /**
       <p>Reset non-count state.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #zresetStateAC() zresetStateAC}{@code ()}</p>
-    **/
+    */
    public void resetState()  {
       super.resetState();
       zresetStateAC();
@@ -124,7 +124,7 @@ public class AltererComposer extends AnalyzerComposer  {
          <li>{@link #wasAltered() wasAltered}{@code ()},</li>
          <li>{@link #needsToBeDeleted() needsToBeDeleted}{@code ()}</li>
       </ul>to {@code false}</p>
-    **/
+    */
    protected final void zresetStateAC()  {
       bWLtrd = false;
       bNtbDel = false;
@@ -132,9 +132,9 @@ public class AltererComposer extends AnalyzerComposer  {
    /**
       <p>Reset counters to zero.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link #zresetCountsAC() zresetCountsAC}{@code ()}</p>
-    **/
+    */
    public void resetCounts()  {
       super.resetCounts();
       zresetCountsAC();
@@ -147,7 +147,7 @@ public class AltererComposer extends AnalyzerComposer  {
          <li>{@link #getAlteredCount() getAlteredCount}{@code ()}, and</li>
          <li>{@link #getDeletedCount() getDeletedCount}{@code ()}</li>
       </ul>to zero.</p>
-    **/
+    */
    protected final void zresetCountsAC()  {
       iLtrd = 0;
       iDltd = 0;
@@ -165,7 +165,7 @@ public class AltererComposer extends AnalyzerComposer  {
          <li>Sets {@link #wasAltered() wasAltered}{@code ()} to {@code false}</li>
          <li>Sets {@link #needsToBeDeleted() needsToBeDeleted}{@code ()} to {@code true}</li>
       </ol></p>
-    **/
+    */
    public void declareAltered_4prot(Altered altered, NeedsToBeDeleted deleted)  {
       try  {
          if(altered.isYes())  {
@@ -197,9 +197,9 @@ public class AltererComposer extends AnalyzerComposer  {
       return  bWLtrd;
    }
    /**
-      @return  {@code true}  If it is possible that an alteration may {@link #needsToBeDeleted() delete the element}.
-      @see  #declareMayDelete_4prot(boolean)
-    **/
+    * @return  {@code true}  If it is possible that an alteration may {@link #needsToBeDeleted() delete the element}.
+    * @see  #declareMayDelete_4prot(boolean)
+    */
    public boolean mayDelete()  {
       return  bDnDl;
    }
@@ -217,14 +217,14 @@ public class AltererComposer extends AnalyzerComposer  {
       bDnDl = true;
    }
    /**
-      @return  <code>(({@link #getAlteredCount() getAlteredCount}() != 0))</code>
-    **/
+    * @return  <code>(({@link #getAlteredCount() getAlteredCount}() != 0))</code>
+    */
    public boolean isComplete()  {
       return  (getAlteredCount() != 0);
    }
    /**
-      @return  <code>{@link #appendToString(StringBuilder) appendToString}(to_appendTo)</code>
-    **/
+    * @return  <code>{@link #appendToString(StringBuilder) appendToString}(to_appendTo)</code>
+    */
    public StringBuilder appendIncompleteInfo(StringBuilder to_appendTo)  {
       if(isComplete())  {
          throw  new IllegalStateException("isComplete() is true.");
@@ -268,8 +268,8 @@ public class AltererComposer extends AnalyzerComposer  {
    /**
       <p><i>Do not use--override if a copy is needed.</i></p>
 
-      @exception  UnsupportedOperationException
-    **/
+    * @exception  UnsupportedOperationException
+    */
    public AltererComposer getObjectCopy()  {
       throw  new UnsupportedOperationException("getObjectCopy");
    }

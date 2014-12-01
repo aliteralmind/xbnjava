@@ -23,8 +23,8 @@ package  com.github.xbn.io;
 
 {@.codelet com.github.xbn.examples.io.NewPrintWriterToFileXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewPrintWriterToFile  {
 //state
@@ -37,7 +37,7 @@ public class NewPrintWriterToFile  {
          <li>{@link #overwrite() overwrite}{@code ()}</li>
          <li>{@link #manualFlush() manualFlush}{@code ()}</li>
       </ol></p>
-    **/
+    */
    public NewPrintWriterToFile()  {
       overwrite();
       manualFlush();
@@ -45,16 +45,16 @@ public class NewPrintWriterToFile  {
    /**
       <p>Append to the file. Existing text is left untouched.</p>
 
-      @return  {@link #overwrite(boolean) overwrite}{@code (false)}
-    **/
+    * @return  {@link #overwrite(boolean) overwrite}{@code (false)}
+    */
    public NewPrintWriterToFile append()  {
       return  overwrite(false);
    }
    /**
       <p>Overwrite the file. Existing text is erased.</p>
 
-      @return  {@link #overwrite(boolean) overwrite}{@code (false)}
-    **/
+    * @return  {@link #overwrite(boolean) overwrite}{@code (false)}
+    */
    public NewPrintWriterToFile overwrite()  {
       return  overwrite(true);
    }
@@ -63,9 +63,9 @@ public class NewPrintWriterToFile  {
 
       <p>This sets {@link #doAppend() doAppend}{@code ()} to {@code do_overwrite}.</p>
 
-      @see  #append()
-      @see  #overwrite()
-    **/
+    * @see  #append()
+    * @see  #overwrite()
+    */
    public NewPrintWriterToFile overwrite(boolean do_overwrite)  {
       doOverwrite = do_overwrite;
       return  this;
@@ -75,9 +75,9 @@ public class NewPrintWriterToFile  {
 
       <p>This sets {@link #doAutoFlush() doAutoFlush}{@code ()} to {@code true}.</p>
 
-      @see  #manualFlush()
-      @see  java.io.PrintWriter#flush()
-    **/
+    * @see  #manualFlush()
+    * @see  java.io.PrintWriter#flush()
+    */
    public NewPrintWriterToFile autoFlush()  {
       bAutoFlush = true;
       return  this;
@@ -87,8 +87,8 @@ public class NewPrintWriterToFile  {
 
       <p>This sets {@link #doAutoFlush() doAutoFlush}{@code ()} to {@code true}.</p>
 
-      @see  #autoFlush()
-    **/
+    * @see  #autoFlush()
+    */
    public NewPrintWriterToFile manualFlush()  {
       bAutoFlush = false;
       return  this;
@@ -96,41 +96,41 @@ public class NewPrintWriterToFile  {
    /**
       <p>Is text appended to the file?.</p>
 
-      @return  <code>(!{@link #doOverwrite() doOverwrite}())</code>
-    **/
+    * @return  <code>(!{@link #doOverwrite() doOverwrite}())</code>
+    */
    public boolean doAppend()  {
       return  (!doOverwrite());
    }
    /**
       <p>If the file exists, is it overwritten?.</p>
 
-      @return  {@code true} if {@link #overwrite() overwrite}{@code ()} was called more recently than {@link #append() append}{@code ()}.
-    **/
+    * @return  {@code true} if {@link #overwrite() overwrite}{@code ()} was called more recently than {@link #append() append}{@code ()}.
+    */
    public boolean doOverwrite()  {
       return  doOverwrite;
    }
    /**
       <p>Is output automatically flushed?.</p>
 
-      @return  <code>true</code> if {@link #autoFlush() autoFlush}{@code ()} was called more recently than {@link #manualFlush() manualFlush}{@code ()}
-      @see  #isManualFlush()
-    **/
+    * @return  <code>true</code> if {@link #autoFlush() autoFlush}{@code ()} was called more recently than {@link #manualFlush() manualFlush}{@code ()}
+    * @see  #isManualFlush()
+    */
    public boolean doAutoFlush()  {
       return  bAutoFlush;
    }
    /**
       <p>Must output be explicitly flushed?.</p>
 
-      @return  <code>(!{@link #doAutoFlush() doAutoFlush}())</code>
-    **/
+    * @return  <code>(!{@link #doAutoFlush() doAutoFlush}())</code>
+    */
    public boolean isManualFlush()  {
       return  (!doAutoFlush());
    }
    /**
       <p>Create new {@code PrintWriter} that writes to a file as configured.</p>
 
-      @return  <code>{@link #build(File) build}(new {@link java.io.File#File(String) File}(path))</code>
-    **/
+    * @return  <code>{@link #build(File) build}(new {@link java.io.File#File(String) File}(path))</code>
+    */
    public PrintWriter build(String path)  {
       try  {
          return  build(new File(path));
@@ -141,26 +141,26 @@ public class NewPrintWriterToFile  {
    /**
       <p>Create new {@code PrintWriter} that writes to a file as configured.</p>
 
-      @return  <code>NewPrintWriterToFile.{@link #build(File, boolean, boolean) build}(file, {@link #doAppend() doAppend}(), {@link #doAutoFlush() doAutoFlush}())</code>
-      @see  #buildTA(String) buildTA(s)
-      @see  #buildMuteableTA(String) buildMuteableTA(s)
-    **/
+    * @return  <code>NewPrintWriterToFile.{@link #build(File, boolean, boolean) build}(file, {@link #doAppend() doAppend}(), {@link #doAutoFlush() doAutoFlush}())</code>
+    * @see  #buildTA(String) buildTA(s)
+    * @see  #buildMuteableTA(String) buildMuteableTA(s)
+    */
    public PrintWriter build(File file)  {
       return  NewPrintWriterToFile.build(file, doAppend(), doAutoFlush());
    }
    /**
       <p>Create new {@code PrintWriter}, wrapped in a {@code TextAppender}, that writes to a file as configured.</p>
 
-      @return  <code>(new {@link TAAppendable}&lt;{@link java.io.PrintWriter PrintWriter}&gt;({@link #build(String) build}(path)))</code>
-    **/
+    * @return  <code>(new {@link TAAppendable}&lt;{@link java.io.PrintWriter PrintWriter}&gt;({@link #build(String) build}(path)))</code>
+    */
    public TextAppender buildTA(String path)  {
       return  (new TAAppendable<PrintWriter>(build(path)));
    }
    /**
       <p>Create new {@code PrintWriter}, wrapped in a {@code TAAppendMutable}, that writes to a file as configured.</p>
 
-      @return  <code>(new {@link TAAppendMutable}&lt;{@link java.io.PrintWriter PrintWriter}&gt;({@link #build(String) build}(path)))</code>
-    **/
+    * @return  <code>(new {@link TAAppendMutable}&lt;{@link java.io.PrintWriter PrintWriter}&gt;({@link #build(String) build}(path)))</code>
+    */
    public TAAppendMutable<PrintWriter> buildMuteableTA(String path)  {
       return  (new TAAppendMutable<PrintWriter>(build(path)));
    }
@@ -171,8 +171,8 @@ public class NewPrintWriterToFile  {
       <p><i>Deprecated: Use <code>{@link IOUtil}.{@link IOUtil#getPrintWriterToFile(File, boolean, boolean) getPrintWriterToFile}</code> instead</i> -- Create a new {@code PrintWriter} that writes to a file with specific configuration.</p>
 
       @deprecated  Use <code>{@link IOUtil}.{@link IOUtil#getPrintWriterToFile(File, boolean, boolean) getPrintWriterToFile}</code> instead</i>
-      @return  <code>{@link IOUtil}.{@link IOUtil#getPrintWriterToFile(File, boolean, boolean) getPrintWriterToFile}(file, do_append, do_autoFlush)</code>
-    **/
+    * @return  <code>{@link IOUtil}.{@link IOUtil#getPrintWriterToFile(File, boolean, boolean) getPrintWriterToFile}(file, do_append, do_autoFlush)</code>
+    */
    public static final PrintWriter build(File file, boolean do_append, boolean do_autoFlush)  {
       return  IOUtil.getPrintWriterToFile(file, do_append, do_autoFlush);
    }

@@ -17,78 +17,78 @@ package  com.github.xbn.linefilter.entity;
 /**
    <p>Should the entity be turned on or off, or should the {@code FilteredIterator} be stopped entirely (all remaining lines are discarded)?.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum OnOffAbort  {
    /**
       <p>YYY.</p>
 
-      @see  #OFF
-      @see  #ABORT_ITERATOR
-      @see  #isOn()
-    **/
+    * @see  #OFF
+    * @see  #ABORT_ITERATOR
+    * @see  #isOn()
+    */
    ON,
    /**
       <p>YYY.</p>
 
-      @see  #ON
-      @see  #isOff()
-    **/
+    * @see  #ON
+    * @see  #isOff()
+    */
    OFF,
    /**
       <p>YYY.</p>
 
-      @see  #ON
-      @see  #doAbortIterator()
-    **/
+    * @see  #ON
+    * @see  #doAbortIterator()
+    */
    ABORT_ITERATOR;
    /**
       <p>Is this {@code OnOffAbort} equal to {@code ON}?.</p>
 
-      @return  <code>this == {@link #ON}</code>
+    * @return  <code>this == {@link #ON}</code>
 
-      @see  #isOff()
-      @see  #doAbortIterator()
-    **/
+    * @see  #isOff()
+    * @see  #doAbortIterator()
+    */
    public final boolean isOn()  {
       return  this == ON;
    }
    /**
       <p>Is this {@code OnOffAbort} equal to {@code OFF}?.</p>
 
-      @return  <code>this == {@link #OFF}</code>
-      @see  #isOn()
-    **/
+    * @return  <code>this == {@link #OFF}</code>
+    * @see  #isOn()
+    */
    public final boolean isOff()  {
       return  this == OFF;
    }
    /**
       <p>Is this {@code OnOffAbort} equal to {@code ABORT_ITERATOR}?.</p>
 
-      @return  <code>this == {@link #ABORT_ITERATOR}</code>
-      @see  #isOn()
-    **/
+    * @return  <code>this == {@link #ABORT_ITERATOR}</code>
+    * @see  #isOn()
+    */
    public final boolean doAbortIterator()  {
       return  this == ABORT_ITERATOR;
    }
    /**
       <p>If an <code>OnOffAbort</code> is not a required value, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-      @see  #crashIfForbiddenValue(OnOffAbort, String, Object) crashIfForbiddenValue(ert,s,o)
-    **/
+    * @see  #crashIfForbiddenValue(OnOffAbort, String, Object) crashIfForbiddenValue(ert,s,o)
+    */
    public void crashIfNotRequiredValue(OnOffAbort e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
       EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
    }
    /**
       <p>If an <code>OnOffAbort</code> is a forbidden value, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-      @see  #crashIfNotRequiredValue(OnOffAbort, String, Object) crashIfNotRequiredValue(ert,s,o)
-    **/
+    * @see  #crashIfNotRequiredValue(OnOffAbort, String, Object) crashIfNotRequiredValue(ert,s,o)
+    */
    public void crashIfForbiddenValue(OnOffAbort e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
       EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
    }

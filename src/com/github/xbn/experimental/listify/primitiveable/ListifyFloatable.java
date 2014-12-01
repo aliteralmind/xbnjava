@@ -19,20 +19,20 @@ package  com.github.xbn.experimental.listify.primitiveable;
 
    <p><i>All {@code Listify[Type]} are derived from {@link com.github.xbn.experimental.listify.primitiveable.ListifyBoolable ListifyBoolable}. <b>Only edit {@code ListifyBoolable}.</b></i></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface ListifyFloatable extends ListifyPrimitiveable<Float>  {
    /**
       <p>Get an element as a {@code float} primitive--{@code null} elements are handled.</p>
 
-      @return  If  <code><i>[{@link com.github.xbn.experimental.listify.Listify Listify}]</i>.{@link com.github.xbn.experimental.listify.Listify#get(int) get}(index)</code> is<ul>
+    * @return  If  <code><i>[{@link com.github.xbn.experimental.listify.Listify Listify}]</i>.{@link com.github.xbn.experimental.listify.Listify#get(int) get}(index)</code> is<ul>
          <li>non-{@code null}: {@code get(index)}</li>
          <li>{@code null} and {@code <i>[{@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveable super}]</i>.{@link com.github.xbn.experimental.listify.primitiveable.ListifyPrimitiveable#getNullHandlerForPrimitives() getNullHandlerForPrimitives}().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#doUseNonNull() doUseNonNull}()} is {@code true}:  <code><i>[super]</i>.getNullHandlerForPrimitives().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#getNonNull() getNonNull}()</code></li>
          </ul></li>
       </ul>
-      @exception  IllegalStateException  If {@code <i>[Listify]</i>.get(index)} is {@code null} and  <code><i>[super]</i>.getNullHandlerForPrimitives().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#getAction() getAction}().{@link com.github.xbn.util.copyval.ActionForNull#doCrash() doCrash}()</code> or <code>getNullHandlerForPrimitives().getAction().{@link com.github.xbn.util.copyval.ActionForNull#doDelete() doDelete}()</code> is {@code true}.
-    **/
+    * @exception  IllegalStateException  If {@code <i>[Listify]</i>.get(index)} is {@code null} and  <code><i>[super]</i>.getNullHandlerForPrimitives().{@link com.github.xbn.util.copyval.NullHandlerForPrimitives#getAction() getAction}().{@link com.github.xbn.util.copyval.ActionForNull#doCrash() doCrash}()</code> or <code>getNullHandlerForPrimitives().getAction().{@link com.github.xbn.util.copyval.ActionForNull#doDelete() doDelete}()</code> is {@code true}.
+    */
    float getPFloat(int index);
    float[] getPArrayCopyOrNull(NullContainer nnull);
 }

@@ -24,8 +24,8 @@ package  com.github.xbn.array.helper;
 /**
    <p>Convenience functions for creating {@code PrimitiveArrayHelper}s of any type.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NewPrimitiveArrayHelper  {
    private NewPrimitiveArrayHelper()  {
@@ -79,9 +79,9 @@ char Char
    /**
       <p>Get a new {@code PrimitiveArrayHelper} for booleans.</p>
 
-      @return  {@code (new }{@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}{@code ())}
-      @see  #forCharacter()
-    **/
+    * @return  {@code (new }{@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}{@code ())}
+    * @see  #forCharacter()
+    */
    public static final PrimitiveArrayHelper<Boolean> forBoolean()  {
       return  (new BooleanArrayHelper());
    }
@@ -101,16 +101,16 @@ Byte byte BYTE_O BYTE
       <p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {&#64;link #forChaxr() forChaxr()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forChaxr()}.</b></i></p>
  -->
 
-      @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
+    * @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
 
-      @see  #forBoolean()
-      @see  #forByte()
-      @see  #forShort()
-      @see  #forInteger()
-      @see  #forLong()
-      @see  #forFloat()
-      @see  #forDouble()
-    **/
+    * @see  #forBoolean()
+    * @see  #forByte()
+    * @see  #forShort()
+    * @see  #forInteger()
+    * @see  #forLong()
+    * @see  #forFloat()
+    * @see  #forDouble()
+    */
    public static final PrimitiveArrayHelper<Character> forCharacter()  {
       return  (new CharacterArrayHelper());
    }
@@ -119,8 +119,8 @@ Byte byte BYTE_O BYTE
 
       <p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
-      @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
-    **/
+    * @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
+    */
    public static final PrimitiveArrayHelper<Byte> forByte()  {
       return  (new ByteArrayHelper());
    }
@@ -129,8 +129,8 @@ Byte byte BYTE_O BYTE
 
       <p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
-      @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
-    **/
+    * @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
+    */
    public static final PrimitiveArrayHelper<Short> forShort()  {
       return  (new ShortArrayHelper());
    }
@@ -139,8 +139,8 @@ Byte byte BYTE_O BYTE
 
       <p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
-      @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
-    **/
+    * @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
+    */
    public static final PrimitiveArrayHelper<Integer> forInteger()  {
       return  (new IntegerArrayHelper());
    }
@@ -149,8 +149,8 @@ Byte byte BYTE_O BYTE
 
       <p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
-      @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
-    **/
+    * @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
+    */
    public static final PrimitiveArrayHelper<Long> forLong()  {
       return  (new LongArrayHelper());
    }
@@ -159,8 +159,8 @@ Byte byte BYTE_O BYTE
 
       <p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
-      @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
-    **/
+    * @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
+    */
    public static final PrimitiveArrayHelper<Float> forFloat()  {
       return  (new FloatArrayHelper());
    }
@@ -169,8 +169,8 @@ Byte byte BYTE_O BYTE
 
       <p><i>Except for {@code forBoolean()}, this and all primitive-type functions in this class are derived from {@link #forCharacter() forCharacter}{@code ()}{@code ()} (and its corresponding private class). <b>Do not edit any function except {@code forCharacter()}.</b></i></p>
 
-      @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
-    **/
+    * @return  A class equivalent to {@link com.github.xbn.array.helper.BooleanArrayHelper BooleanArrayHelper}.
+    */
    public static final PrimitiveArrayHelper<Double> forDouble()  {
       return  (new DoubleArrayHelper());
    }

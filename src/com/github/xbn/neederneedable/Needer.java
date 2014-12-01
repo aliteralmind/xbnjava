@@ -18,9 +18,9 @@ package  com.github.xbn.neederneedable;
 
    <p><i>This interface results in a number of unchecked-cast warnings, due to the possibility of multiple types of objects being needed by the same class. Type-safety is ensured by the {@code needed_class} parameter in {@link #startConfig(Class) startConfig(cls)}.</i></p>
 
-   @see  Needable
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  Needable
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface Needer  {
    /**
@@ -31,7 +31,7 @@ public interface Needer  {
          <li>Sets {@link #isConfigActive() isConfigActive}{@code ()} to {@code true}.</li>
       </ol>
 
-      @param  needed_class  The type of object needed. Get with {@link #getNeededType() getNeededType}{@code ()}. For example: {@code Integer.class} or
+    * @param  needed_class  The type of object needed. Get with {@link #getNeededType() getNeededType}{@code ()}. For example: {@code Integer.class} or
       <br/> &nbsp; &nbsp; {@code (Class<ListLister<E>>)((Class)ListLister.class))}
       <br/>Why the crazy casting is necessary with generics:
 
@@ -57,21 +57,21 @@ public interface Needer  {
          </p>However, this is a flaw of Java type system; in practice we do need things like {@code Class<List<Integer>>}. Our solution - casting and pretending {@code Class<List<Int>>} exists - is likewise flawed - but it's not our fault.</TD>
       </TR></TABLE></p>
 
-      @exception  IllegalStateException  If {@link #isConfigActive() isConfigActive}{@code ()} is {@code true}.
-    **/
+    * @exception  IllegalStateException  If {@link #isConfigActive() isConfigActive}{@code ()} is {@code true}.
+    */
    void startConfig(Class<?> needed_class);
    /**
       <p>Is an object being configured?.</p>
 
-      @return  {@code true}  If {@link #startConfig(Class) startConfig(cls)} was more-recently called than {@link #neeadableSetsNeeded(Object) neeadableSetsNeeded(o)}.
-    **/
+    * @return  {@code true}  If {@link #startConfig(Class) startConfig(cls)} was more-recently called than {@link #neeadableSetsNeeded(Object) neeadableSetsNeeded(o)}.
+    */
    boolean isConfigActive();
    /**
       <p>The type of object currently being configured.</p>
 
-      @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="Needable.html#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(R)</code>
-      @see  #isConfigActive()
-    **/
+    * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="Needable.html#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(R)</code>
+    * @see  #isConfigActive()
+    */
    Class getNeededType();
    /**
       <p>Called by the {@code Needable} to set the fully configured object. This {@link com.github.xbn.neederneedable.Needable Needable} is the same one as called in the first step of {@link #startConfig(Class) startConfig(cls)}. This function is never called directly.</p>
@@ -81,9 +81,9 @@ public interface Needer  {
          <li>{@link #isConfigActive() isConfigActive}{@code ()} to {@code false}.</li>
       </ol>
 
-      @exception  IllegalStateException  If {@code isConfigActive()} is {@code null}.
-      @exception  ClassCastException  If <code>({@link #getNeededType() getNeededType}().isInstance(fully_configured))</code> is {@code false}. <i>{@code Needer}-s may need multiple types of objects, so {@code Needer&lt;ASingleClassType&gt;} is not possible. {@code <i>[Class]</i>.isInstance(o)} ensures that the needable-configuration completes as expected, and avoids an {@code instanceof} &quot;switch&quot; (if-then-else) block.</i>
-    **/
+    * @exception  IllegalStateException  If {@code isConfigActive()} is {@code null}.
+    * @exception  ClassCastException  If <code>({@link #getNeededType() getNeededType}().isInstance(fully_configured))</code> is {@code false}. <i>{@code Needer}-s may need multiple types of objects, so {@code Needer&lt;ASingleClassType&gt;} is not possible. {@code <i>[Class]</i>.isInstance(o)} ensures that the needable-configuration completes as expected, and avoids an {@code instanceof} &quot;switch&quot; (if-then-else) block.</i>
+    */
    void neeadableSetsNeeded(Object fully_configured);
 }
 

@@ -76,7 +76,7 @@ public enum VertHorizDirection  {
     * @see  #UP
     * @see  #isRight()
     * @see  #isHorizontal()
-    **/
+    */
    RIGHT(0, 1);
 
       private int vertInc = -1;
@@ -146,7 +146,7 @@ public enum VertHorizDirection  {
     * @return  <code>this == {@link #RIGHT}</code>
     * @see  #isUp()
     * @see  #isHorizontal()
-    **/
+    */
    public final boolean isRight()  {
       return  this == RIGHT;
    }

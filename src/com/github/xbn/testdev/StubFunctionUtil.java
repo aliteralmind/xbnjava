@@ -35,8 +35,8 @@ package  com.github.xbn.testdev;
 
    <p>{@code <a href="http://stackoverflow.com/questions/2690118/java-easy-way-to-get-method-stub-out-of-class-files-within-a-jar-file-reflecti">http://stackoverflow.com/questions/2690118/java-easy-way-to-get-method-stub-out-of-class-files-within-a-jar-file-reflecti</a>}</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class StubFunctionUtil  {
    private StubFunctionUtil()  {
@@ -53,8 +53,8 @@ System.out.println("FIX: Allow interface sigs");
    /**
       <p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public static final Appendable appendForSource(Appendable to_appendTo, String sourceCode_path)  {
       try  {
          return  appendForSourceX(to_appendTo, (new File(sourceCode_path)));
@@ -65,8 +65,8 @@ System.out.println("FIX: Allow interface sigs");
    /**
       <p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public static final Appendable appendForSource(Appendable to_appendTo, File source_code)  {
       try  {
          return  appendForSourceX(to_appendTo, source_code);
@@ -118,8 +118,8 @@ System.out.println("FIX: Allow interface sigs");
    /**
       <p>YYY</p>
 
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-    **/
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    */
    public static final String getStubFunctionForSigLine(String func_sigLine)  {
       try  {
          return  appendStubFuncForSigLineX((new StringBuilder()), func_sigLine).toString();

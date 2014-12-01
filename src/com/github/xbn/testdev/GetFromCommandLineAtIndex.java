@@ -29,8 +29,8 @@ package  com.github.xbn.testdev;
 /**
    <p>Get an object at a specific index, from command line parameters.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class GetFromCommandLineAtIndex  {
@@ -41,10 +41,10 @@ public class GetFromCommandLineAtIndex  {
    /**
       <p>Get a line-iterator to a specific file, from a path provided on the command-line, at a specific index.</p>
 
-      @return  <code>{@link com.github.xbn.io.PlainTextFileUtil PlainTextFileUtil}.{@link com.github.xbn.io.PlainTextFileUtil#getLineIterator(String, String) getLineIterator}(
+    * @return  <code>{@link com.github.xbn.io.PlainTextFileUtil PlainTextFileUtil}.{@link com.github.xbn.io.PlainTextFileUtil#getLineIterator(String, String) getLineIterator}(
          <br/> &nbsp; &nbsp; text(cmd_lineParams, index, &quot;path&quot;), ...)</code>
-      @see  #fileTextAppended(StringBuilder, String[], int, Appendable)
-    **/
+    * @see  #fileTextAppended(StringBuilder, String[], int, Appendable)
+    */
    public static final Iterator<String> fileLineIterator(String[] cmd_lineParams, int index, Appendable debugPath_ifNonNull)  {
       Iterator<String> itr = PlainTextFileUtil.getLineIterator(
          text(cmd_lineParams, index, "path", debugPath_ifNonNull), "cmd_lineParams[index]");
@@ -66,9 +66,9 @@ public class GetFromCommandLineAtIndex  {
          <li>Appends each line, plus a {@linkplain com.github.xbn.lang.XbnConstants#LINE_SEP line-separator} onto {@code to_appendTo}.</li>
       </ol></p>
 
-      @return  {@code to_appendTo}, with all lines from the file appended to it.
-      @see  #fileText(String[], int, Appendable)
-    **/
+    * @return  {@code to_appendTo}, with all lines from the file appended to it.
+    * @see  #fileText(String[], int, Appendable)
+    */
    public static final StringBuilder fileTextAppended(StringBuilder to_appendTo, String[] cmd_lineParams, int index, Appendable debugPath_ifNonNull)  {
       Iterator<String> lineItr = fileLineIterator(cmd_lineParams, index, debugPath_ifNonNull);
       while(lineItr.hasNext())  {
@@ -79,19 +79,19 @@ public class GetFromCommandLineAtIndex  {
    /**
       <p>Get all file text in a string, from a path provided on the command-line, at a specific index.</p>
 
-      @return  <code>{@link #fileTextAppended(StringBuilder, String[], int, Appendable) fileTextAppended}((new StringBuilder()), cmd_lineParams, index, debugPath_ifNonNull).toString()</code>
-    **/
+    * @return  <code>{@link #fileTextAppended(StringBuilder, String[], int, Appendable) fileTextAppended}((new StringBuilder()), cmd_lineParams, index, debugPath_ifNonNull).toString()</code>
+    */
    public static final String fileText(String[] cmd_lineParams, int index, Appendable debugPath_ifNonNull)  {
       return  fileTextAppended((new StringBuilder()), cmd_lineParams, index, debugPath_ifNonNull).toString();
    }
    /**
       <p>Get a string from the command-line, at a specific index.</p>
 
-      @param  cmd_lineParams  The command-line parameters. May not be {@code null}, and must be a length of at least {@code (index + 1)}.
-      @param  index  The index in {@code cmd_lineParams} at which the path is expected.
-      @return  <code>cmd_lineParams[index]</code>
-      @exception  ArrayIndexOutOfBoundsException  If {@code cmd_lineParams[index]} does not exist.
-    **/
+    * @param  cmd_lineParams  The command-line parameters. May not be {@code null}, and must be a length of at least {@code (index + 1)}.
+    * @param  index  The index in {@code cmd_lineParams} at which the path is expected.
+    * @return  <code>cmd_lineParams[index]</code>
+    * @exception  ArrayIndexOutOfBoundsException  If {@code cmd_lineParams[index]} does not exist.
+    */
    public static final String text(String[] cmd_lineParams, int index, String description, Appendable debug_ifNonNull)  {
       String s = null;
       try  {
@@ -110,23 +110,23 @@ public class GetFromCommandLineAtIndex  {
    /**
       <p>Get an integer from the command-line, at a specific index, and validate its numeric range.</p>
 
-      @return  <code>{@link #number(String[], int, IntInRange, String, Appendable) number}(cmd_lineParams, index, {@link com.github.xbn.number.NewIntInRangeFor NewIntInRangeFor}.{@link com.github.xbn.number.NewIntInRangeFor#UNRESTRICTED UNRESTRICTED}, description, debug_ifNonNull)</code>
-    **/
+    * @return  <code>{@link #number(String[], int, IntInRange, String, Appendable) number}(cmd_lineParams, index, {@link com.github.xbn.number.NewIntInRangeFor NewIntInRangeFor}.{@link com.github.xbn.number.NewIntInRangeFor#UNRESTRICTED UNRESTRICTED}, description, debug_ifNonNull)</code>
+    */
    public static final int number(String[] cmd_lineParams, int index, String description, Appendable debug_ifNonNull)  {
       return  number(cmd_lineParams, index, NewIntInRangeFor.UNRESTRICTED, description, debug_ifNonNull);
    }
    /**
       <p>Get an integer from the command-line, at a specific index, and validate its numeric range.</p>
 
-      @param  cmd_lineParams  The command-line parameters. May not be {@code null}, and must be a length of at least {@code (index + 1)}.
-      @param  index  The index in {@code cmd_lineParams} at which the path is expected.
-      @param  range  May not be {@code null}.
-      @return  <code>{@link java.lang.Integer Integer}.{@link java.lang.Integer#parseInt(String) parseInt}(cmd_lineParams[index])</code>
-      @exception  ArrayIndexOutOfBoundsException  If {@code cmd_lineParams[index]} does not exist
-      @exception  NumberFormatException  If the parameter is not an integer.
-      @exception  IllegalArgumentException  If the parameter is an integer, but out of range.
-      @see  #number(String[], int, String, Appendable)
-    **/
+    * @param  cmd_lineParams  The command-line parameters. May not be {@code null}, and must be a length of at least {@code (index + 1)}.
+    * @param  index  The index in {@code cmd_lineParams} at which the path is expected.
+    * @param  range  May not be {@code null}.
+    * @return  <code>{@link java.lang.Integer Integer}.{@link java.lang.Integer#parseInt(String) parseInt}(cmd_lineParams[index])</code>
+    * @exception  ArrayIndexOutOfBoundsException  If {@code cmd_lineParams[index]} does not exist
+    * @exception  NumberFormatException  If the parameter is not an integer.
+    * @exception  IllegalArgumentException  If the parameter is an integer, but out of range.
+    * @see  #number(String[], int, String, Appendable)
+    */
    public static final int number(String[] cmd_lineParams, int index, IntInRange range, String description, Appendable debug_ifNonNull)  {
       int num = -1;
       try  {
@@ -159,7 +159,7 @@ public class GetFromCommandLineAtIndex  {
       <p>Get an enum value from a string, with arbitrary string-values assigned to each enum-value.</p>
 
 {@.codelet.and.out com.github.xbn.examples.util.GetFromExplicitStringValuesExample%eliminateCommentBlocksAndPackageDecl()}
-    **/
+    */
    public static final <T extends Enum<T>> T enumValue(String[] cmd_lineParams, int index, T enumInstance_anyNonNullValue, IgnoreCase ignore_case, Appendable debug_ifNonNull, String... one_perEnumValueInOrder)  {
       String description = "[" + enumInstance_anyNonNullValue.getClass().getName() + ":" +
          Joiner.on(", ").skipNulls().join(one_perEnumValueInOrder) + "]";

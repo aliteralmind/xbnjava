@@ -24,8 +24,8 @@ package  com.github.xbn.testdev.ant;
 /**
    <p>Detect if the internet is available, determined by the ability to reach a specific url.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ATDetectInternet extends Task  {
    private String sUrl = null;
@@ -33,28 +33,28 @@ public class ATDetectInternet extends Task  {
 
    /**
       <p>Create an ATDetectInternet. This does nothing.</p>
-    **/
+    */
    public ATDetectInternet()  {
    }
    /**
       <p>Set the url to reach.</p>
 
-      @param  url  The url. May not be null or empty.
-    **/
+    * @param  url  The url. May not be null or empty.
+    */
    public void setUrl(String url)  {
       sUrl = url;
    }
    /**
       <p>The property which should be set only if the url can be reached. It is either set to true (if the url can be reached) or not set at all.</p>
 
-      @param  prop_name  The property name. May not be null or empty.
-    **/
+    * @param  prop_name  The property name. May not be null or empty.
+    */
    public void setProperty(String prop_name)  {
       sProperty = prop_name;
    }
    /**
       <p>Do it. Uh huh. Oh yeah.</p>
-    **/
+    */
    public void execute() throws BuildException  {
       if(sUrl == null  ||  sUrl.length() == 0)  {
          throw  new BuildException("Parameter url ('" + sUrl + "') is null or empty.");

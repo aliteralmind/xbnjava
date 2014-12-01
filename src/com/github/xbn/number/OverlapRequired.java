@@ -28,14 +28,14 @@ public enum OverlapRequired  {
     *
     * @see  #NO
     * @see  #isYes()
-    **/
+    */
    YES,
    /**
     * <p>The &quot;no&quot; value.</p>
     *
     * @see  #YES
     * @see  #isNo()
-    **/
+    */
    NO;
    /**
     * <p>Is this {@code OverlapRequired} equal to {@code YES}?.</p>
@@ -43,7 +43,7 @@ public enum OverlapRequired  {
     * @return  <code>this == {@link #YES}</code>
     *
     * @see  #isNo()
-    **/
+    */
    public final boolean isYes()  {
       return  this == YES;
    }
@@ -52,7 +52,7 @@ public enum OverlapRequired  {
     *
     * @return  <code>this == {@link #NO}</code>
     * @see  #isYes()
-    **/
+    */
    public final boolean isNo()  {
       return  this == NO;
    }
@@ -60,7 +60,7 @@ public enum OverlapRequired  {
     * <p>Return {@code OverlapRequired.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
     *
     * @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
-    **/
+    */
    public static final OverlapRequired getForBoolean(boolean flag)  {
       return  (flag ? YES : NO);
    }

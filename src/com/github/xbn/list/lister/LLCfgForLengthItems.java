@@ -18,7 +18,7 @@ class LLCfgForLengthItems   {
 
       <p>If the output of any configuration item, aside from  <code><i>[{@link com.github.xbn.list.lister.LLConfigBase LLConfigBase}]</i>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}()</code>, contains a {@link #sDISPLAY_SIZE_MARKER}, it is replaced with the list's {@code size()}. Only the first [left-most] marker in each item is recognized. This also includes the string-value of the list itself, if any only if it is altered.</p>
 
-    **/
+    */
    public static final String sDISPLAY_SIZE_MARKER = "~size~";
 
    public static final void crashIfBad(ValueValidator<Integer> element_lenValidator, String display_ifValid, String vldtr_name, String disp_ifName)  {

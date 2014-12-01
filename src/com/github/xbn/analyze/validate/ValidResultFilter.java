@@ -27,34 +27,34 @@ package  com.github.xbn.analyze.validate;
 
 {@.codelet.and.out com.github.xbn.examples.analyze.validate.FirstCheckIsAlwaysValidThenExpireXmpl%eliminateCommentBlocksAndPackageDecl()}
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public interface ValidResultFilter extends Copyable, ToStringAppendable, Debuggable, Expirable  {
    /**
       <p>Before the <i>something</i> is ever validated against the rules, what should happen?.</p>
 
-      @return  {@link FilterPreAction#RETURN_FALSE RETURN_FALSE}: If {@link #isExpired() isExpired}{@code ()} is {@code true}.
-    **/
+    * @return  {@link FilterPreAction#RETURN_FALSE RETURN_FALSE}: If {@link #isExpired() isExpired}{@code ()} is {@code true}.
+    */
    FilterPreAction getPreAction();
    /**
       <p>After the <i>something</i> is validated against the rules, what value should be returned?.</p>
 
-      @param  were_postInvertRulesFollowed  If the rules--post inversion--were followed.
-      @return  {@link FilterAfterValue#FALSE FALSE}  If {@link #isExpired() isExpired}{@code ()} is {@code true}.
-    **/
+    * @param  were_postInvertRulesFollowed  If the rules--post inversion--were followed.
+    * @return  {@link FilterAfterValue#FALSE FALSE}  If {@link #isExpired() isExpired}{@code ()} is {@code true}.
+    */
    FilterAfterValue getAfterValueFromInvertedRules(boolean were_postInvertRulesFollowed);
    ValidResultFilter getObjectCopy();
    /**
       <p>Is this filter expired?.</p>
 
       <p>When this filter is expired, the containing {@link Validator validator} is also expired.</p>
-    **/
+    */
    @Override
    boolean isExpired();
    /**
       <p>Does this filter do nothing?.</p>
-    **/
+    */
    boolean doesNothing();
 }

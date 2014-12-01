@@ -20,8 +20,8 @@ package  com.github.xbn.number;
 /**
    <p>Convenience functions for creating {@code IntInRange}s.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class NewIntInRangeFor  {
@@ -31,22 +31,22 @@ public class NewIntInRangeFor  {
    /**
       <p>An {@code IntInRange} with no bounds.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link IntInRange}.{@link IntInRange#UNRESTRICTED UNRESTRICTED}</code></p>
-    **/
+    */
    public static final IntInRange UNRESTRICTED = IntInRange.UNRESTRICTED;
    /**
       <p>An {@code IntInRange} with no members.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link IntInRange}.{@link IntInRange#IMPOSSIBLE IMPOSSIBLE}</code></p>
-    **/
+    */
    public static final IntInRange IMPOSSIBLE = IntInRange.IMPOSSIBLE;
    /**
       <p>Create a new instance with an inclusive minimum.</p>
 
-      @return  {@link #minInclusive(Invert, int, String) minInclusive}{@code (min, min_name)}
-    **/
+    * @return  {@link #minInclusive(Invert, int, String) minInclusive}{@code (min, min_name)}
+    */
    public static final IntInRange min(Invert invert_dontIfNull, int min, String min_name)  {
       return  minInclusive(getInvNoIfNull(invert_dontIfNull),
          min, min_name);
@@ -54,8 +54,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with an inclusive maximum.</p>
 
-      @return  {@link #maxInclusive(Invert, int, String) maxInclusive}{@code (max, max_name)}
-    **/
+    * @return  {@link #maxInclusive(Invert, int, String) maxInclusive}{@code (max, max_name)}
+    */
    public static final IntInRange max(Invert invert_dontIfNull, int max, String max_name)  {
       return  maxInclusive(getInvNoIfNull(invert_dontIfNull),
          max, max_name);
@@ -63,8 +63,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with inclusive bounds.</p>
 
-      @return  (new {@link IntInRange#IntInRange(int, int, String, String) IntInRange}(min_max, min_max, minMax_name, minMax_name){@code </p>}
-    **/
+    * @return  (new {@link IntInRange#IntInRange(int, int, String, String) IntInRange}(min_max, min_max, minMax_name, minMax_name){@code </p>}
+    */
    public static final IntInRange exactly(Invert invert_dontIfNull, int min_max, String minMax_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          min_max, min_max, minMax_name, minMax_name);
@@ -72,8 +72,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with an inclusive minimum.</p>
 
-      @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name), null))</code></p>
-    **/
+    * @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name), null))</code></p>
+    */
    public static final IntInRange minInclusive(Invert invert_dontIfNull, int min, String min_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          new IntBoundInclusive(min, min_name), null);
@@ -81,8 +81,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with an inclusive maximum.</p>
 
-      @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(null, (new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(max, max_name))))</code>
-    **/
+    * @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(null, (new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(max, max_name))))</code>
+    */
    public static final IntInRange maxInclusive(Invert invert_dontIfNull, int max, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          null, (new IntBoundInclusive(max, max_name)));
@@ -90,8 +90,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with an exclusive minimum.</p>
 
-      @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}((new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name)), null))</code>
-    **/
+    * @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}((new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name)), null))</code>
+    */
    public static final IntInRange minExclusive(Invert invert_dontIfNull, int min, String min_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          (new IntBoundExclusive(min, min_name)), null);
@@ -99,8 +99,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with an exclusive maximum.</p>
 
-      @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(null, (new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))))</code>
-    **/
+    * @return  <code>(new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(null, (new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))))</code>
+    */
    public static final IntInRange maxExclusive(Invert invert_dontIfNull, int max, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          null, (new IntBoundExclusive(max, max_name)));
@@ -108,8 +108,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with inclusive bounds.</p>
 
-      @return  <code>{@link #minMaxInclusive(Invert, int, int, String, String) minMaxInclusive}(min, max, min_name, max_name)</code>
-    **/
+    * @return  <code>{@link #minMaxInclusive(Invert, int, int, String, String) minMaxInclusive}(min, max, min_name, max_name)</code>
+    */
    public static final IntInRange minMax(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  minMaxInclusive(getInvNoIfNull(invert_dontIfNull),
          min, max, min_name, max_name);
@@ -117,8 +117,8 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with inclusive bounds.</p>
 
-      @return  <code>(new {@link IntInRange#IntInRange(int, int, String, String) IntInRange}(min, max, min_name, max_name))</code>
-    **/
+    * @return  <code>(new {@link IntInRange#IntInRange(int, int, String, String) IntInRange}(min, max, min_name, max_name))</code>
+    */
    public static final IntInRange minMaxInclusive(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          min, max, min_name, max_name);
@@ -126,10 +126,10 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with an inclusive minimum and exclusive maximum.</p>
 
-      @return  <code>new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(
+    * @return  <code>new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(
          <br/> &nbsp; &nbsp; new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name),
          <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))</code>
-    **/
+    */
    public static final IntInRange minInMaxExclusive(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          new IntBoundInclusive(min, min_name),
@@ -138,10 +138,10 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with an exclusive minimum and inclusive maximum.</p>
 
-      @return  <code>new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(
+    * @return  <code>new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(
          <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name),
          <br/> &nbsp; &nbsp; new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(max, max_name))</code>
-    **/
+    */
    public static final IntInRange minExMaxInclusive(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          new IntBoundExclusive(min, min_name),
@@ -150,10 +150,10 @@ public class NewIntInRangeFor  {
    /**
       <p>Create a new instance with exclusive bounds.</p>
 
-      @return  <code>new {@link IntInRange#IntInRange(int, int) IntInRange}(
+    * @return  <code>new {@link IntInRange#IntInRange(int, int) IntInRange}(
          <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name),
          <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))</code>
-    **/
+    */
    public static final IntInRange minMaxExclusive(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
          new IntBoundExclusive(min, min_name),

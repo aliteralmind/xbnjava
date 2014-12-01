@@ -36,7 +36,7 @@ package  com.github.xbn.list;
 
    <p><i>From <code><a href="http://stackoverflow.com/questions/46898/how-do-i-iterate-over-each-entry-in-a-map/46908#46908">http://stackoverflow.com/questions/46898/how-do-i-iterate-over-each-entry-in-a-map/46908#46908</a></code> (downloaded 5/28/2014)</i></p>
 
-   @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.jeffyepstein.com">http://xbnjava.jeffyepstein.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
+ * @author  Copyright (C) 2014, Jeff Epstein, dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <code><a href="http://xbnjava.aliteralmind.com">http://xbnjava.aliteralmind.com</a></code>, <code><a href="https://github.com/aliteralmind/xbnjava">https://github.com/aliteralmind/xbnjava</a></code>
  **/
 public class MapUtil  {
    public static final <K,V> String toString(Map<K,V> map, ValueFilter<Map.Entry<K,V>> entryFilter_ifNonNull)  {
@@ -76,7 +76,7 @@ public class MapUtil  {
       <p>YYY</p>
 
    	@exception  UnsupportedOperationException  If {@code put} is unsupported by {@code map_withMutableListValues}.
-    **/
+    */
    public static final <M extends Comparable<? super M>,K> Map<K,List<M>> getWithModifiedListValues(Map<K,List<M>> map_withMutableListValues, SortListValues sort, ImmutableValues immutable)  {
       try  {
          if(sort.doNotSort())  {
@@ -167,7 +167,7 @@ public class MapUtil  {
       <p>YYY</p>
 
    	@exception  UnsupportedOperationException  If {@code put} is unsupported by {@code to_addTo}.
-    **/
+    */
    public static final <K,V> void putOrCrashIfContainsKey(Map<K,V> to_addTo, String map_varName, K key, Null null_key, String key_varName, V value, Null null_value, String value_varName)  {
       try  {
          if(to_addTo.containsKey(key))  {

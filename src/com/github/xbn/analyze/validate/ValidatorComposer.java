@@ -28,8 +28,8 @@ package  com.github.xbn.analyze.validate;
 /**
    <p>For classes that need to implement {@code Validator}, that cannot extend {@code AbstractValidator}. See {@link com.github.xbn.analyze.AbstractAnalyzer AbstractValidator}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public class ValidatorComposer extends AnalyzerComposer  {
@@ -51,9 +51,9 @@ public class ValidatorComposer extends AnalyzerComposer  {
          <li><code>fieldable.{@link com.github.xbn.analyze.validate.z.Validator_Fieldable#getDebugApbl() getDebugApbl}():</code> If non-{@code null}, then debugging is {@link com.github.xbn.io.Debuggable#setDebugOn(boolean) turned on}, and printed by this.</li>
       </ul></p>
 
-      @see  #ValidatorComposer(boolean, ValidatorComposer) this(b,vc)
-      @see  #ValidatorComposer(Validator) this(v)
-    **/
+    * @see  #ValidatorComposer(boolean, ValidatorComposer) this(b,vc)
+    * @see  #ValidatorComposer(Validator) this(v)
+    */
    public ValidatorComposer(RuleType rule_type, Validator_Fieldable fieldable)  {
       super();
       ruleCmpsr = new RuleableComposer(rule_type, "rule_type");
@@ -75,10 +75,10 @@ public class ValidatorComposer extends AnalyzerComposer  {
          <li>Sets {@link #getValidCount() getValidCount}{@code ()} to {@code to_copy.getValidCount()}.</li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #ValidatorComposer(RuleType, Validator_Fieldable) this(rti,vrFilter)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #ValidatorComposer(RuleType, Validator_Fieldable) this(rti,vrFilter)
+    */
    public ValidatorComposer(boolean ignored, ValidatorComposer to_copy)  {
       super(ignored, to_copy);
       validCount = to_copy.getValidCount();
@@ -93,8 +93,8 @@ public class ValidatorComposer extends AnalyzerComposer  {
          <li>Calls {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (validator)}</li>
          <li>Sets {@link #getValidCount() getValidCount}{@code ()} to {@code validator.getValidCount()}</li>
       </ol></p>
-      @see  #ValidatorComposer(RuleType, Validator_Fieldable) this(rti,vrFilter)
-    **/
+    * @see  #ValidatorComposer(RuleType, Validator_Fieldable) this(rti,vrFilter)
+    */
    @CompositionConstructor
    public ValidatorComposer(Validator validator)  {
       super(validator);
@@ -124,7 +124,7 @@ public class ValidatorComposer extends AnalyzerComposer  {
          <li>{@link com.github.xbn.analyze.AnalyzerComposer super}.{@link com.github.xbn.analyze.AnalyzerComposer#resetCounts() resetCounts}{@code ()}</li>
          <li>{@link #zresetCountsVB() zresetCountsVB}{@code ()}</li>
       </ol></p>
-    **/
+    */
    @CompositionFunction
    public void resetCounts()  {
       super.resetCounts();
@@ -134,8 +134,8 @@ public class ValidatorComposer extends AnalyzerComposer  {
       <p>Reset counts specific to this {@code ValidatorComposer}.</p>
 
       <p>This sets {@link #getValidCount() getValidCount}{@code ()} to zero.</p>
-      @see  #resetCounts()
-    **/
+    * @see  #resetCounts()
+    */
    protected final void zresetCountsVB()  {
       validCount = 0;
    }
@@ -173,8 +173,8 @@ public class ValidatorComposer extends AnalyzerComposer  {
 //setters...END
 //getters...START
    /**
-      @return  The number of times {@link #declareValidSetSourceInvertIfRules_4prot(boolean, ResultReturnedBy) declarePreInvertGetValidSetSource_4prot}{@code (true, ...)} was called, since the last call to {@link #zresetCountsVB() zresetCountsVB}{@code ()}.
-    **/
+    * @return  The number of times {@link #declareValidSetSourceInvertIfRules_4prot(boolean, ResultReturnedBy) declarePreInvertGetValidSetSource_4prot}{@code (true, ...)} was called, since the last call to {@link #zresetCountsVB() zresetCountsVB}{@code ()}.
+    */
    @CompositionFunction
    public int getValidCount()  {
       return  validCount;
@@ -184,8 +184,8 @@ public class ValidatorComposer extends AnalyzerComposer  {
       return  validResultSource;
    }
    /**
-      @return  {@code true} If {@link #declareValidSetSourceInvertIfRules_4prot(boolean, ResultReturnedBy) declarePreInvertGetValidSetSource_4prot}{@code (true, ...)} was called more recently than {@link #resetState() resetState}{@code ()}.
-    **/
+    * @return  {@code true} If {@link #declareValidSetSourceInvertIfRules_4prot(boolean, ResultReturnedBy) declarePreInvertGetValidSetSource_4prot}{@code (true, ...)} was called more recently than {@link #resetState() resetState}{@code ()}.
+    */
    @CompositionFunction
    public boolean isValid()  {
       return  wasValid;
@@ -246,9 +246,9 @@ public class ValidatorComposer extends AnalyzerComposer  {
    /**
       <p>If a <code>Validator</code>-s rule-type is not as required, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>validator.getRuleType().{@link com.github.xbn.lang.RuleType#crashIfNotRequiredValue(RuleType, String, Object) ciNotRequiredRuleType}(validator.{@link #getRuleType() getRuleType}(), rqd_value, vldtr_name)</code></p>
-    **/
+    */
    public static final void ciNotRequiredRuleType(Validator validator, RuleType rqd_value, String vldtr_name, Object xtra_errInfo)  {
       try  {
          validator.getRuleType().crashIfNotRequiredValue(rqd_value, sVNM_GERT,
@@ -260,9 +260,9 @@ public class ValidatorComposer extends AnalyzerComposer  {
    /**
       <p>If a <code>Validator</code>-s rule-type is a forbidden value, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>validator.getRuleType().{@link com.github.xbn.lang.RuleType#crashIfForbiddenValue(RuleType, String, Object)}(validator.{@link #getRuleType() getRuleType}(), rqd_value, vldtr_name)</code></p>
-    **/
+    */
    public static final void ciForbiddenRuleType(Validator validator, RuleType rqd_value, String vldtr_name, Object xtra_errInfo)  {
       try  {
          validator.getRuleType().crashIfForbiddenValue(rqd_value, sVNM_GERT,
@@ -304,7 +304,7 @@ public class ValidatorComposer extends AnalyzerComposer  {
 //static...END
    /**
       <p>A valid-result filter that does nothing--it always passes the follows-the-rules value unchanged. This is a singleton that never {@link com.github.xbn.lang.Expirable#isExpired() expires}, whose {@link ValidResultFilter#getPreAction() pre-action} is always {@link FilterPreAction#PROCEED PROCEED}, {@link ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-value} is always {@link FilterAfterValue#UNCHANGED UNCHANGED}.</p>
-    **/
+    */
    public static final ValidResultFilter unfiltered()  {
       return  VRFDoesNothing.INSTANCE;
    }

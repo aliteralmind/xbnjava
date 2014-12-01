@@ -43,8 +43,8 @@ package  com.github.xbn.text.padchop;
       </ul></li>
    </ul></p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class ChopString extends PadChopBase implements Debuggable, ToStringAppendable  {
 //state
@@ -60,9 +60,9 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
    /**
       <p>A good test string.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; &quot;{@code ---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z}&quot;</p>
-    **/
+    */
    public static final String sGOOD_TEST_STRING = "---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z";
 //constructors...START
    /**
@@ -70,9 +70,9 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
 
       <p>This first calls {@link PadChopBase#PadChopBase(PadChopBase_Fieldable) super}{@code (cs_c)}, and sets <i>and validates</i> all internal variable as set into {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder ChopString_CfgForNeeder}.</p>
 
-      @see  #ChopString(ChopString) this(cs)
-      @see  #ChopString(ChopString, int) this(cs,i)
-    **/
+    * @see  #ChopString(ChopString) this(cs)
+    * @see  #ChopString(ChopString, int) this(cs,i)
+    */
    public ChopString(ChopString_Fieldable fieldable)  {
       super(fieldable);
       sg = new SimpleDebuggable(fieldable);
@@ -100,9 +100,9 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
    /**
       <p>Create a new {@code ChopString} as a duplicate of another.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, -2)}</p>
-    **/
+    */
    public ChopString(ChopString to_copy)  {
       this(to_copy, -2);
    }
@@ -118,10 +118,10 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
          </ol></li>
       </ol></p>
 
-      @param  to_copy  May not be {@code null}.
-      @see  #getObjectCopy()
-      @see  #ChopString(xbn.text.padchop.z.ChopString_Fieldable) this(cs_f)
-    **/
+    * @param  to_copy  May not be {@code null}.
+    * @see  #getObjectCopy()
+    * @see  #ChopString(xbn.text.padchop.z.ChopString_Fieldable) this(cs_f)
+    */
    public ChopString(ChopString to_copy, int new_goalLen)  {
       super(to_copy, new_goalLen);
       sg = new SimpleDebuggable(to_copy);
@@ -134,26 +134,26 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
    /**
       <p>The ellipsis (dot-dot-dot) that indicates the string was chopped.</p>
 
-      @return  {@code null} If there is no ellipsis.
-      @see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#ddd(String) ChopString_CfgForNeeder#ddd(s)
-    **/
+    * @return  {@code null} If there is no ellipsis.
+    * @see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#ddd(String) ChopString_CfgForNeeder#ddd(s)
+    */
    public final String getEllipsis()  {
       return  sDdd;
    }
    /**
       <p>The ellipsis chars-before sub-setting.</p>
 
-      @see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#charsBefore(int) ChopString_CfgForNeeder#charsBefore(i)
-    **/
+    * @see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#charsBefore(int) ChopString_CfgForNeeder#charsBefore(i)
+    */
    public final int getCharsBeforeDDD()  {
       return  iChrsB4Ddd;
    }
    /**
       <p>The number of characters that, at a maximum, the ellipsis can exceed the chopped string.</p>
 
-      @return  A number between zero and <code>{@link #getEllipsis() getEllipsis}().length()</code>, inclusive. When {@code getEllipsis()} is {@code null}, this returns zero.
-      @see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#overhang(int) ChopString_CfgForNeeder#overhang(i)
-    **/
+    * @return  A number between zero and <code>{@link #getEllipsis() getEllipsis}().length()</code>, inclusive. When {@code getEllipsis()} is {@code null}, this returns zero.
+    * @see  com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#overhang(int) ChopString_CfgForNeeder#overhang(i)
+    */
    public final int getOverhangCount()  {
       return  iDddOH;
    }
@@ -162,8 +162,8 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
    /**
       <p>Duplicate this {@code ChopString}.</p>
 
-      @return  <code>(new {@link #ChopString(ChopString) ChopString}(this))</code>
-    **/
+    * @return  <code>(new {@link #ChopString(ChopString) ChopString}(this))</code>
+    */
    public ChopString getObjectCopy()  {
       return  (new ChopString(this));
    }
@@ -171,32 +171,32 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
       <p>Duplicate this {@code ChopString}, with a new goal-length.</p>
 
 
-      @return  <code>(new {@link #ChopString(ChopString) ChopString}(this))</code>
-    **/
+    * @return  <code>(new {@link #ChopString(ChopString) ChopString}(this))</code>
+    */
    public ChopString getCopyNewGoalLen(int goal_len)  {
       return  (new ChopString(this, goal_len));
    }
    /**
       <p>Chop the string as configured.</p>
 
-      @return  <code>{@link #getChopped(int, Object) getChopped}({@link PadChopBase#getGoalLen() getGoalLen}(), str_toPad)</code>
-    **/
+    * @return  <code>{@link #getChopped(int, Object) getChopped}({@link PadChopBase#getGoalLen() getGoalLen}(), str_toPad)</code>
+    */
    public String getChopped(Object str_toPad)  {
       return  getChopped(getGoalLen(), str_toPad);
    }
    /**
       <p>Chop the string as configured, with a specific goal-length.</p>
 
-      @return  {@code appendChopped((new StringBuilder()), goal_len, str_toPad).toString()}
-    **/
+    * @return  {@code appendChopped((new StringBuilder()), goal_len, str_toPad).toString()}
+    */
    public String getChopped(int goal_len, Object str_toPad)  {
       return  appendChopped((new StringBuilder()), goal_len, str_toPad).toString();
    }
    /**
       <p>Chop the string as configured.</p>
 
-      @return  {@link #appendChoppedX(Appendable, Object) appendChoppedX(to_appendTo, str_toPad)}
-    **/
+    * @return  {@link #appendChoppedX(Appendable, Object) appendChoppedX(to_appendTo, str_toPad)}
+    */
    public Appendable appendChopped(Appendable to_appendTo, Object str_toPad)  {
       try  {
          return  appendChoppedX(to_appendTo, str_toPad);
@@ -257,14 +257,14 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
    /**
       <p>Chop the string as configured, with a specific goal-length.</p>
 
-      @param  to_appendTo  May not be {@code null}.
-      @param  str_toPad  The string to chop.
-      @param  goal_len  The goal length to chop to. May not be less than one.
+    * @param  to_appendTo  May not be {@code null}.
+    * @param  str_toPad  The string to chop.
+    * @param  goal_len  The goal length to chop to. May not be less than one.
 
-      @see  #appendChopped(Appendable, Object) appendChopped(apbl,o)
-      @see  #getChopped(Object) getChopped(o)
-      @see  #getChopped(int, Object) getChopped(o,i)
-    **/
+    * @see  #appendChopped(Appendable, Object) appendChopped(apbl,o)
+    * @see  #getChopped(Object) getChopped(o)
+    * @see  #getChopped(int, Object) getChopped(o,i)
+    */
    public static final Appendable appendChoppedX(ChopString chpr, Appendable to_appendTo, int goal_len, Object str_toPad) throws IOException  {
       goal_len = PadChopBase.getCIBGoalLenForOutput(goal_len, "Chopp");
       if(str_toPad == null)  {

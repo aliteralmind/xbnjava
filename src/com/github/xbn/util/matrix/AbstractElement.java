@@ -54,7 +54,7 @@ public abstract class AbstractElement implements Copyable  {
       return  col_idx;
    }
    /**
-    * @return  <code>{@link #appendToString(java.lang.StringBuilder) appendToString}(new {@link java.lang.StringBuilder#StringBuilder() StringBuilder}()).toString()</code>
+    * @return  <code>{@link #appendToString(StringBuilder) appendToString}(new {@link java.lang.StringBuilder#StringBuilder() StringBuilder}()).toString()</code>
     */
    public String toString()  {
       return  appendToString(new StringBuilder()).toString();
@@ -76,7 +76,7 @@ public abstract class AbstractElement implements Copyable  {
     * an {@code AbstractElement}, and all relevant fields {@linkplain #areFieldsEqual(AbstractElement)
     * are equal}. This is implemented as suggested by Joshua Bloch in
     * &quot;Effective Java&quot; (2nd ed, item 8, page 46).
-    **/
+    */
    @Override
    public boolean equals(Object to_compareTo)  {
       //Check for object equality first, since it's faster than instanceof.
@@ -99,7 +99,7 @@ public abstract class AbstractElement implements Copyable  {
    /**
     * <p>Are all relevant fields equal?.</p>
     * param  to_compareTo  May not be {@code null}.
-    **/
+    */
    public boolean areFieldsEqual(AbstractElement to_compareTo)  {
       try  {
          return  (getColumnIndex() == to_compareTo.getColumnIndex()  &&

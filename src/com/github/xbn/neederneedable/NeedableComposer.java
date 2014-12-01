@@ -19,10 +19,10 @@ package  com.github.xbn.neederneedable;
 /**
    <p>For classes that need to implement {@code Needable}, that cannot extend {@code AbstractNeedable}.</p>
 
-   @see  Needable
-   @see  AbstractNeedable
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @see  Needable
+ * @see  AbstractNeedable
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//  implements Needable<O,R>  {
 //state
@@ -40,9 +40,9 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
          <li>{@link #declareNeededReset_4prot() declareNeededReset_4prot}{@code ()}</li>
       </ol></p>
 
-      @param  is_avaliableToNeeders  Get with {@link #isAvailableToNeeder() isAvailableToNeeder}{@code ()}.
-      @param  is_neededUseableAtInit  If {@code true}, the needed object is useable immediately after a configuration is started. Get with {@link #isNeededUseableAtStart() isNeededUseableAtStart}{@code ()}.
-    **/
+    * @param  is_avaliableToNeeders  Get with {@link #isAvailableToNeeder() isAvailableToNeeder}{@code ()}.
+    * @param  is_neededUseableAtInit  If {@code true}, the needed object is useable immediately after a configuration is started. Get with {@link #isNeededUseableAtStart() isNeededUseableAtStart}{@code ()}.
+    */
    @CompositionConstructor
    public NeedableComposer(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit)  {
       super();
@@ -62,7 +62,7 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
       </ol></p>
 
       <h3><i>Does this interact acceptably with directly-used {@code Needables}?</i></h3>
-    **/
+    */
    @CompositionFunction
    public void declareNeededReset_4prot()  {
       cndr = null;
@@ -78,11 +78,11 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
          <li>Sets {@link #getActiveNeeder() getActiveNeeder}{@code ()} to {@code needer}</li>
       </ol></p>
 
-      @param  needer  May not be equal to <i>{@code this}</i> (for situations where classes implement both {@code Needable} and {@code Needer}. See {@link com.github.xbn.neederneedable.NeedableWithSubsComposer NeedableWithSubsComposer}).
+    * @param  needer  May not be equal to <i>{@code this}</i> (for situations where classes implement both {@code Needable} and {@code Needer}. See {@link com.github.xbn.neederneedable.NeedableWithSubsComposer NeedableWithSubsComposer}).
 
-      @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#endCfgWithNeededReturnNeeder_4prot(O)">endCfgWithNeededReturnNeeder_4prot</a>(O)</code>
-      @see  #declareNeededUseable_4prot(boolean) declareNeededUseable_4prot(b)
-    **/
+    * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#endCfgWithNeededReturnNeeder_4prot(O)">endCfgWithNeededReturnNeeder_4prot</a>(O)</code>
+    * @see  #declareNeededUseable_4prot(boolean) declareNeededUseable_4prot(b)
+    */
    @CompositionFunction
    public void startConfig_4prot(R needer, Class<O> expected_type)  {
       if(needer == this)  {
@@ -105,8 +105,8 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
          <li>Calls {@link #declareNeededReset_4prot() declareNeededReset_4prot}{@code ()} (which sets {@code getActiveNeeder()} to {@code null}).</li>
          <li>Returns the (now inactive) {@code Needer}.</li>
       </ol></p>
-      @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NeedableComposer.html#startConfig_4prot(R, java.lang.Class)">startConfig_4prot</a>(R,cls)</code>
-    **/
+    * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NeedableComposer.html#startConfig_4prot(R, java.lang.Class)">startConfig_4prot</a>(R,cls)</code>
+    */
    @CompositionFunction
    public R endCfgWithNeededReturnNeeder_4prot(O fully_configured)  {
       ciInactive_4prot();
@@ -125,10 +125,10 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
    /**
       <p>Declare that {@code endCfg()} may be safely called.--this must be implemented as {@code protected} with the name &quot;{@code declareNeededUseable}&quot;.</p>
 
-      @param  is_usable  If {@code null}, the needed object is ready for use. It may be configured further, or may be retrieved immediately (by first ending the configuration).
-      @exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is {@code null}.
-      @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NeedableComposer.html#startConfig_4prot(R, java.lang.Class)">startConfig_4prot</a>(R,cls)</code>
-    **/
+    * @param  is_usable  If {@code null}, the needed object is ready for use. It may be configured further, or may be retrieved immediately (by first ending the configuration).
+    * @exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is {@code null}.
+    * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NeedableComposer.html#startConfig_4prot(R, java.lang.Class)">startConfig_4prot</a>(R,cls)</code>
+    */
    @CompositionFunction
    public void declareNeededUseable_4prot(boolean is_usable)  {
       ciInactive_4prot();
@@ -137,16 +137,16 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
 //setters...END
 //getters...START
    /**
-      @see  #declareNeededUseable_4prot(boolean)
-    **/
+    * @see  #declareNeededUseable_4prot(boolean)
+    */
    @CompositionFunction
    public boolean isNeededUsable()  {
       ciInactive_4prot();
       return  bNdUsbl;
    }
    /**
-      @see  #NeedableComposer(boolean, boolean)
-    **/
+    * @see  #NeedableComposer(boolean, boolean)
+    */
    @CompositionFunction
    public boolean isNeededUseableAtStart()  {
       return  bNdUsblAtStrt;
@@ -156,8 +156,8 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
       return  cndr;
    }
    /**
-      @see  #NeedableComposer(boolean, boolean)
-    **/
+    * @see  #NeedableComposer(boolean, boolean)
+    */
    @CompositionFunction
    public boolean isAvailableToNeeder()  {
       return  bAv2Ndr;
@@ -173,10 +173,10 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
    /**
          <p>If a configuration is active, crash.</p>
 
-      @exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is non-{@code null}.
+    * @exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is non-{@code null}.
 
-      @see  #ciInactive_4prot()
-    **/
+    * @see  #ciInactive_4prot()
+    */
    @CompositionFunction
    public void ciActive_4prot()  {
       if(getActiveNeeder() != null)  {
@@ -186,9 +186,9 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
    /**
          <p>If no configuration is active, crash.</p>
 
-      @exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is {@code null}.
-      @see  #ciActive_4prot() ciActive_4prot(s)
-    **/
+    * @exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is {@code null}.
+    * @see  #ciActive_4prot() ciActive_4prot(s)
+    */
    @CompositionFunction
    public void ciInactive_4prot()  {
       if(getActiveNeeder() == null)  {

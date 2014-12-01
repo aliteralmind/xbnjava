@@ -17,78 +17,78 @@ package  com.github.xbn.linefilter;
 /**
    <p>What should be returned by the filtered line iterator?.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public enum Returns  {
    /**
       <p>YYY.</p>
 
-      @see  #ACTIVE
-      @see  #ALL
-      @see  #isKept()
-    **/
+    * @see  #ACTIVE
+    * @see  #ALL
+    * @see  #isKept()
+    */
    KEPT,
    /**
       <p>YYY.</p>
 
-      @see  #KEPT
-      @see  #isActive()
-    **/
+    * @see  #KEPT
+    * @see  #isActive()
+    */
    ACTIVE,
    /**
       <p>YYY.</p>
 
-      @see  #KEPT
-      @see  #isAll()
-    **/
+    * @see  #KEPT
+    * @see  #isAll()
+    */
    ALL;
    /**
       <p>Is this {@code Returns} equal to {@code KEPT}?.</p>
 
-      @return  <code>this == {@link #KEPT}</code>
+    * @return  <code>this == {@link #KEPT}</code>
 
-      @see  #isActive()
-      @see  #isAll()
-    **/
+    * @see  #isActive()
+    * @see  #isAll()
+    */
    public final boolean isKept()  {
       return  this == KEPT;
    }
    /**
       <p>Is this {@code Returns} equal to {@code ACTIVE}?.</p>
 
-      @return  <code>this == {@link #ACTIVE}</code>
-      @see  #isKept()
-    **/
+    * @return  <code>this == {@link #ACTIVE}</code>
+    * @see  #isKept()
+    */
    public final boolean isActive()  {
       return  this == ACTIVE;
    }
    /**
       <p>Is this {@code Returns} equal to {@code ALL}?.</p>
 
-      @return  <code>this == {@link #ALL}</code>
-      @see  #isKept()
-    **/
+    * @return  <code>this == {@link #ALL}</code>
+    * @see  #isKept()
+    */
    public final boolean isAll()  {
       return  this == ALL;
    }
    /**
       <p>If a <code>Returns</code> is not a required value, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-      @see  #crashIfForbiddenValue(Returns, String, Object) crashIfForbiddenValue(ert,s,o)
-    **/
+    * @see  #crashIfForbiddenValue(Returns, String, Object) crashIfForbiddenValue(ert,s,o)
+    */
    public void crashIfNotRequiredValue(Returns e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
       EnumUtil.crashIfNotRequiredValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
    }
    /**
       <p>If a <code>Returns</code> is a forbidden value, crash.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
-      @see  #crashIfNotRequiredValue(Returns, String, Object) crashIfNotRequiredValue(ert,s,o)
-    **/
+    * @see  #crashIfNotRequiredValue(Returns, String, Object) crashIfNotRequiredValue(ert,s,o)
+    */
    public void crashIfForbiddenValue(Returns e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
       EnumUtil.crashIfForbiddenValue(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo);
    }

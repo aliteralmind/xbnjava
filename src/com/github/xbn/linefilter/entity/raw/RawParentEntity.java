@@ -17,27 +17,27 @@ package  com.github.xbn.linefilter.entity.raw;
 /**
    <p>A block entity that spans multiple lines (is a &quot;block&quot;) and may contain zero or more child entities.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public interface RawParentEntity<L> extends RawBlockChildEntity<L>  {
    /**
       <p>The currently active child entity.</p>
 
-      @return  The non-{@code null}, currently active child, or {@code null} if no child entity is active.
-    **/
+    * @return  The non-{@code null}, currently active child, or {@code null} if no child entity is active.
+    */
    RawChildEntity<L> getRawActiveChild();
    /**
       <p>An immutable list of all child entities.</p>
 
-      @return  A non-{@code null} list. <i>While the list itself is immutable, the elements are not.</i> Making any changes to an element (for example, by resetting its {@linkplain com.github.xbn.analyze.alter.Alterer#resetState() state} or {@linkplain com.github.xbn.analyze.alter.Alterer#resetCounts() counts}, or by directly calling <code><i>[an-entity]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ValueAlterer.html#getAltered(V,A)">getAltered</a></code>) will cause unpredictable behavior.
-    **/
+    * @return  A non-{@code null} list. <i>While the list itself is immutable, the elements are not.</i> Making any changes to an element (for example, by resetting its {@linkplain com.github.xbn.analyze.alter.Alterer#resetState() state} or {@linkplain com.github.xbn.analyze.alter.Alterer#resetCounts() counts}, or by directly calling <code><i>[an-entity]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ValueAlterer.html#getAltered(V,A)">getAltered</a></code>) will cause unpredictable behavior.
+    */
    List<RawChildEntity<L>> getRawChildList();
    /**
       <p>YYY</p>
 
-      @return  <code>({@link #areStartEndInclusive() areStartEndInclusive}() &nbsp;&amp;&amp; &nbsp;{@link #isEndLineInclusive() isEndLineInclusive}())</code>
-    **/
+    * @return  <code>({@link #areStartEndInclusive() areStartEndInclusive}() &nbsp;&amp;&amp; &nbsp;{@link #isEndLineInclusive() isEndLineInclusive}())</code>
+    */
    boolean areStartEndInclusive();
    boolean isStartLineInclusive();
    boolean isEndLineInclusive();

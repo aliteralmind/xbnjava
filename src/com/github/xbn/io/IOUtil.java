@@ -261,15 +261,15 @@ public class IOUtil  {
    /**
       <p>Create a new {@code PrintWriter} that writes to a file, with runtime errors only.</p>
 
-      @param  file  Must be non-{@code null} and writeable.
-      @param  do_append  If {@code true}, the file is appended to. Existing text is left untouched. If {@code false}, existing text is erased.
-      @param  do_autoFlush  If {@code true} output is automatically {@link java.io.PrintWriter#flush() flush}ed. If {@code false}, output must be manually flushed.
-      @return  <code>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(File, boolean) FileWriter}(file, do_append)), do_autoFlush))</code>
-      @exception  RTFileNotFoundException  If a {@link java.io.FileNotFoundException FileNotFoundException} is thrown
-      @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
-      @exception  SecurityException  If the file is not writable.
-      @see  NewPrintWriterToFile
-    **/
+    * @param  file  Must be non-{@code null} and writeable.
+    * @param  do_append  If {@code true}, the file is appended to. Existing text is left untouched. If {@code false}, existing text is erased.
+    * @param  do_autoFlush  If {@code true} output is automatically {@link java.io.PrintWriter#flush() flush}ed. If {@code false}, output must be manually flushed.
+    * @return  <code>(new {@link java.io.PrintWriter PrintWriter}(new {@link java.io.BufferedWriter BufferedWriter}(new {@link java.io.FileWriter#FileWriter(File, boolean) FileWriter}(file, do_append)), do_autoFlush))</code>
+    * @exception  RTFileNotFoundException  If a {@link java.io.FileNotFoundException FileNotFoundException} is thrown
+    * @exception  RTIOException  If an {@link java.io.IOException IOException} is thrown
+    * @exception  SecurityException  If the file is not writable.
+    * @see  NewPrintWriterToFile
+    */
    public static final PrintWriter getPrintWriterToFile(File file, boolean do_append, boolean do_autoFlush)  {
       try  {
          //Create the object to actually write to the file.

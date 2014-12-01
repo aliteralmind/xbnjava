@@ -24,8 +24,8 @@ package  com.github.xbn.util;
 /**
    <p>Get the title case of an enum's value, and crash if a specific enum is a forbidden or not a required value.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class EnumUtil  {
    private EnumUtil()  {
@@ -34,13 +34,13 @@ public class EnumUtil  {
    /**
       <p>If an Enum does not have a required value, crash. Otherwise, do nothing.</p>
 
-      @param  to_check  May not be {@code null}.
-      @param  required_value  May not be {@code null}.
-      @param  toCheck_name  Descriptive name of {@code to_check}. <i>Should</i> not be {@code null} or empty.
-      @param  xtra_errInfo  If non-{@code null}, appended to the error message.
-      @exception  IllegalArgumentException  If <code>to_check</code> is not equal to <code>required_value</code>.
-      @see  #crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue(e,e,s,o)
-    **/
+    * @param  to_check  May not be {@code null}.
+    * @param  required_value  May not be {@code null}.
+    * @param  toCheck_name  Descriptive name of {@code to_check}. <i>Should</i> not be {@code null} or empty.
+    * @param  xtra_errInfo  If non-{@code null}, appended to the error message.
+    * @exception  IllegalArgumentException  If <code>to_check</code> is not equal to <code>required_value</code>.
+    * @see  #crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue(e,e,s,o)
+    */
    public static final <T extends Enum<T>> void crashIfNotRequiredValue(T to_check, T required_value, String toCheck_name, Object xtra_errInfo)  {
       if(to_check == null)  {
          throw  new NullPointerException("to_check");
@@ -55,13 +55,13 @@ public class EnumUtil  {
    /**
       <p>If an Enum does has a forbidden value, crash. Otherwise, do nothing.</p>
 
-      @param  to_check  May not be {@code null}.
-      @param  forbidden_value  May not be {@code null}.
-      @param  toCheck_name  Descriptive name of {@code to_check}. <i>Should</i> not be {@code null} or empty.
-      @param  xtra_errInfo  If non-{@code null}, appended to the error message.
-      @exception  IllegalArgumentException  If <code>to_check</code> is equal to <code>forbidden_value</code>.
-      @see  #crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue(e,e,s,o)
-    **/
+    * @param  to_check  May not be {@code null}.
+    * @param  forbidden_value  May not be {@code null}.
+    * @param  toCheck_name  Descriptive name of {@code to_check}. <i>Should</i> not be {@code null} or empty.
+    * @param  xtra_errInfo  If non-{@code null}, appended to the error message.
+    * @exception  IllegalArgumentException  If <code>to_check</code> is equal to <code>forbidden_value</code>.
+    * @see  #crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue(e,e,s,o)
+    */
    public static final <T extends Enum<T>> void crashIfForbiddenValue(T to_check, T forbidden_value, String toCheck_name, Object xtra_errInfo)  {
       if(to_check == null)  {
          throw  new NullPointerException("to_check");
@@ -115,15 +115,15 @@ public class EnumUtil  {
    /**
       <p>Assigns an arbitrary string to each enum value then, given a value, returns the actual enum-value it represents.</p>
 
-      @param  enumInstance_anyNonNullValue  The enum to return. May not be {@code null}, but its value is ignored.
-      @param  value  The string representing an actual enum value, which must equal one of the <i>non-{@code null}</i> values in {@code one_perEnumValueInOrder}.
-      @param  value_varName  Descriptive name for {@code value}. <i>Should</i> not be {@code null} or empty.
-      @param  ignore_case  If {@link com.github.xbn.regexutil.IgnoreCase#YES YES}, the case of {@code value} is changed to lowercase. If {@link com.github.xbn.regexutil.IgnoreCase#NO NO}, its case is <i>expected</i> to be exactly as in {@code one_perEnumValueInOrder}.
-      @param  one_perEnumValueInOrder  The string values that each reperesent a single value in {@code enumInstance_anyNonNullValue}. Its length must equal
+    * @param  enumInstance_anyNonNullValue  The enum to return. May not be {@code null}, but its value is ignored.
+    * @param  value  The string representing an actual enum value, which must equal one of the <i>non-{@code null}</i> values in {@code one_perEnumValueInOrder}.
+    * @param  value_varName  Descriptive name for {@code value}. <i>Should</i> not be {@code null} or empty.
+    * @param  ignore_case  If {@link com.github.xbn.regexutil.IgnoreCase#YES YES}, the case of {@code value} is changed to lowercase. If {@link com.github.xbn.regexutil.IgnoreCase#NO NO}, its case is <i>expected</i> to be exactly as in {@code one_perEnumValueInOrder}.
+    * @param  one_perEnumValueInOrder  The string values that each reperesent a single value in {@code enumInstance_anyNonNullValue}. Its length must equal
       <br/> &nbsp; &nbsp; <code>enumInstance_anyNonNullValue.{@link java.lang.Object#getClass() getClass}().{@link java.lang.Class#getEnumConstants() getEnumConstants}().length</code>
       <br/>At least one element must be non-{@code null}, and all non-null elements must be contiguous, non-empty, and unique. Use this to accept a sub-set of values.
-      @return  The enum value in {@code enumInstance_anyNonNullValue} that has the same element index as the one in {@code one_perEnumValueInOrder}, that {@code value} is equal to.
-    **/
+    * @return  The enum value in {@code enumInstance_anyNonNullValue} that has the same element index as the one in {@code one_perEnumValueInOrder}, that {@code value} is equal to.
+    */
    public static final <T extends Enum<T>> T getFromExplicitStringValues(T enumInstance_anyNonNullValue, String value, String value_varName, IgnoreCase ignore_case, String... one_perEnumValueInOrder)  {
       T[] allEnumValues = null;
       try  {

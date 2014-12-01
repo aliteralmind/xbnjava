@@ -16,8 +16,8 @@ package  com.github.xbn.neederneedable;
 /**
    <p>Basic implementation of {@code Chainable}. Classes that need to implement {@code Chainable}, but cannot extend this class, should use {@link com.github.xbn.neederneedable.ChainableComposer}</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class SimpleChainable implements Chainable  {
    private ChainableComposer cc = null;
@@ -30,8 +30,8 @@ public class SimpleChainable implements Chainable  {
          <br/> &nbsp; &nbsp; <code>new {@link com.github.xbn.neederneedable.ChainableComposer#ChainableComposer() ChainableComposer}()</code></li>
       </ol></p>
 
-      @see  #SimpleChainable(SimpleChainable)
-    **/
+    * @see  #SimpleChainable(SimpleChainable)
+    */
    public SimpleChainable()  {
       cc = new ChainableComposer();
    }
@@ -42,8 +42,8 @@ public class SimpleChainable implements Chainable  {
          <li>Creates an internal
          <br/> &nbsp; &nbsp; <code>new {@link com.github.xbn.neederneedable.ChainableComposer#ChainableComposer(Chainable) ChainableComposer}(to_copy)</code></li>
       </ol></p>
-      @see  #SimpleChainable()
-    **/
+    * @see  #SimpleChainable()
+    */
    public SimpleChainable(SimpleChainable to_copy)  {
       cc = new ChainableComposer(to_copy);
    }
@@ -51,9 +51,9 @@ public class SimpleChainable implements Chainable  {
    /**
       <p>Set the chain-id.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp;  <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#setChainID_4prot(boolean, Object) setChainID_4prot}(do_setStatic, id)</code></p>
-    **/
+    */
    public SimpleChainable chainID(boolean do_setStatic, Object id)  {
       cc.setChainID_4prot(do_setStatic ,id);
       return  null;
@@ -61,28 +61,28 @@ public class SimpleChainable implements Chainable  {
    /**
       <p>Set the chain-id to {@code null}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp;  <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#unsetChainID(boolean) unsetChainID}(unset_static)</code></p>
-    **/
+    */
    public void unsetChainID(boolean unset_static)  {
       cc.unsetChainID(unset_static);
    }
    /**
-      @return   <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#getChainID() getChainID}()</code></p>
-    **/
+    * @return   <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#getChainID() getChainID}()</code></p>
+    */
    public Object getChainID()  {
       return  cc.getChainID();
    }
    /**
-      @return   <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#getStaticChainID() getStaticChainID}()</code></p>
-    **/
+    * @return   <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#getStaticChainID() getStaticChainID}()</code></p>
+    */
    public Object getStaticChainID()  {
       return  cc.getStaticChainID();
    }
 //Created in SimpleChainable, needed  by AbstractNeedable, AbstractNeedableWithSubs...START
    /**
-      @return  {@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer.}{@link com.github.xbn.neederneedable.ChainableComposer#getChainIDForXMsgCINull(Chainable, Object) getChainID}{@code (this, xtra_errInfo)}</p>
-    **/
+    * @return  {@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer.}{@link com.github.xbn.neederneedable.ChainableComposer#getChainIDForXMsgCINull(Chainable, Object) getChainID}{@code (this, xtra_errInfo)}</p>
+    */
    protected Object getChainIDForXMsg(Object xtra_errInfo)  {
       return  ChainableComposer.getChainIDForXMsgCINull(this, xtra_errInfo);
    }

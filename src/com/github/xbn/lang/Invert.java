@@ -24,14 +24,14 @@ public enum Invert  {
     *
     * @see  #NO
     * @see  #isYes()
-    **/
+    */
    YES,
    /**
     * <p>Do not invert the rules.</p>
     *
     * @see  #YES
     * @see  #isNo()
-    **/
+    */
    NO;
    /**
     * <p>Is this {@code Invert} equal to {@code YES}?.</p>
@@ -39,7 +39,7 @@ public enum Invert  {
     * @return  <code>this == {@link #YES}</code>
     *
     * @see  #isNo()
-    **/
+    */
    public final boolean isYes()  {
       return  this == YES;
    }
@@ -48,7 +48,7 @@ public enum Invert  {
     *
     * @return  <code>this == {@link #NO}</code>
     * @see  #isYes()
-    **/
+    */
    public final boolean isNo()  {
       return  this == NO;
    }
@@ -56,7 +56,7 @@ public enum Invert  {
     * <p>Return {@code Invert.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
     *
     * @return  <code>(flag ? {@link #YES} : {@link #NO})</code>
-    **/
+    */
    public static final Invert getForBoolean(boolean flag)  {
       return  (flag ? YES : NO);
    }

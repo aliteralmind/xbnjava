@@ -17,8 +17,8 @@ package  com.github.xbn.analyze.alter;
 /**
    <p>Abstract implementation of {@code Alterer}. Classes needing to implement {@code Alterer}, that cannot extend this class, should use {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public abstract class AbstractAlterer implements Alterer  {
    private AltererComposer ac = null;
@@ -28,8 +28,8 @@ public abstract class AbstractAlterer implements Alterer  {
       <p>Sets the internal composer to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer() AltererComposer}{@code ()}</p>
 
-      @see  #AbstractAlterer(AlterationRequired)
-    **/
+    * @see  #AbstractAlterer(AlterationRequired)
+    */
    protected AbstractAlterer()  {
       ac = new AltererComposer();
    }
@@ -39,20 +39,20 @@ public abstract class AbstractAlterer implements Alterer  {
       <p>Sets the internal composer to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(AlterationRequired) AltererComposer}{@code (required)}</p>
 
-      @see  #AbstractAlterer()
-      @see  #AbstractAlterer(com.github.xbn.analyze.alter.Alterer)
-    **/
+    * @see  #AbstractAlterer()
+    * @see  #AbstractAlterer(com.github.xbn.analyze.alter.Alterer)
+    */
    protected AbstractAlterer(AlterationRequired required)  {
       ac = new AltererComposer(required);
    }
    /**
       <p>Create a new {@code AbstractAlterer}.</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
 
-      @see  #AbstractAlterer(com.github.xbn.analyze.alter.AlterationRequired)
-    **/
+    * @see  #AbstractAlterer(com.github.xbn.analyze.alter.AlterationRequired)
+    */
    public AbstractAlterer(Alterer to_copy)  {
       ac = new AltererComposer(to_copy);
    }
@@ -147,12 +147,12 @@ public abstract class AbstractAlterer implements Alterer  {
       ac.setExtraErrInfo(info);
    }
    /**
-    **/
+    */
    public boolean isComplete()  {
       return  ac.isComplete();
    }
    /**
-    **/
+    */
    public StringBuilder appendIncompleteInfo(StringBuilder to_appendTo)  {
       return  ac.appendIncompleteInfo(to_appendTo);
    }

@@ -16,8 +16,8 @@ package  com.github.xbn.io;
 /**
    <p>Indicates an attempt to use a {@code TextAppenter} that is {@linkplain TextAppenter#isUseable() unusable}.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  **/
 public class UnusableAppenterException extends RTIOException  {
    /**
@@ -26,24 +26,24 @@ public class UnusableAppenterException extends RTIOException  {
    private static final long serialVersionUID = 3682322290098625894L;
    /**
       <p>Create an UnusableAppenterException with no error message.</p>
-    **/
+    */
    public UnusableAppenterException()  {
    }
    /**
       <p>Create an UnusableAppenterException.</p>
-    **/
+    */
    public UnusableAppenterException(String message)  {
       super(message);
    }
    /**
       <p>Create an UnusableAppenterException with no error message.</p>
-    **/
+    */
    public UnusableAppenterException(Throwable cause)  {
       super(cause);
    }
    /**
       <p>Create an UnusableAppenterException.</p>
-    **/
+    */
    public UnusableAppenterException(String message, Throwable cause)  {
       super(message, cause);
    }

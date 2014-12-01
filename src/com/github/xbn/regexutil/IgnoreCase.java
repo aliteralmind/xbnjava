@@ -17,8 +17,8 @@ package  com.github.xbn.regexutil;
 /**
    <p>Should textual-case be ignored?.</p>
 
-   @since  0.1.0
-   @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
+ * @since  0.1.0
+ * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
 
  **/
 public enum IgnoreCase  {
@@ -72,8 +72,8 @@ public enum IgnoreCase  {
    /**
       <p>Return {@code IgnoreCase.YES} if the flag is {@code true}, or {@code NO} if {@code false}.</p>
 
-      @return  <code>(b ? {@link #YES} : {@link #NO})</code>
-    **/
+    * @return  <code>(b ? {@link #YES} : {@link #NO})</code>
+    */
    public static final IgnoreCase getForBoolean(boolean b)  {
       return  (b ? YES : NO);
    }

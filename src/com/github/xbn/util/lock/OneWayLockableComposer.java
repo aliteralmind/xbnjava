@@ -26,9 +26,9 @@ public class OneWayLockableComposer extends LockableComposer  {
          <li> <code><i>[{@link com.github.xbn.util.lock.LockableComposer super}]</i>.{@link com.github.xbn.util.lock.LockableComposer#forceUnlock() forceUnlock}()</code></li>
       </ol></p>
 
-      @see  #OneWayLockableComposer(boolean, OneWayLockableComposer) this(b,owlc)
-      @see  #OneWayLockableComposer(OneWayLockable) this(owl)
-    **/
+    * @see  #OneWayLockableComposer(boolean, OneWayLockableComposer) this(b,owlc)
+    * @see  #OneWayLockableComposer(OneWayLockable) this(owl)
+    */
    public OneWayLockableComposer()  {
       super(false);
    }
@@ -36,8 +36,8 @@ public class OneWayLockableComposer extends LockableComposer  {
       <p>Create a new {@code OneWayLockableComposer}, as a duplicate of another.</p>
 
       <p>Calls {@link LockableComposer#LockableComposer(boolean, LockableComposer) super}{@code (ignored, to_copy)}.</p>
-      @see  #OneWayLockableComposer(boolean) this(b)
-    **/
+    * @see  #OneWayLockableComposer(boolean) this(b)
+    */
    public OneWayLockableComposer(boolean ignored, OneWayLockableComposer to_copy)  {
       super(ignored, to_copy);
    }
@@ -45,17 +45,17 @@ public class OneWayLockableComposer extends LockableComposer  {
       <p>Create a new {@code OneWayLockableComposer}, as a duplicate of another.</p>
 
       <p>Calls {@link LockableComposer#LockableComposer(Lockable) super}{@code (to_copy)}.</p>
-      @see  #OneWayLockableComposer(boolean) this(b)
-    **/
+    * @see  #OneWayLockableComposer(boolean) this(b)
+    */
    public OneWayLockableComposer(OneWayLockable to_copy)  {
       super(to_copy);
    }
    /**
       <p>Lock--this returns <b>{@code null}</b> (must return &quot;{@code this}&quot; in sub-classes).</p>
 
-      <p>Equal to
+    * <p>Equal to
       <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.util.lock.LockableComposer super}]</i>.{@link com.github.xbn.util.lock.LockableComposer#lock(boolean) lock}(true)</code></p>
-    **/
+    */
    public void lock()  {
       lock(true);
    }
