@@ -33,7 +33,7 @@ package  com.github.xbn.text.padchop;
    <A NAME="cfg"></a><h3>Builder Configuration: {@link com.github.xbn.text.padchop.z.VzblPadChop_Cfg VzblPadChop_Cfg}</h3>
 
    <p><ul>
-      <li><b>Used by:</b> <code>xbn.list.lister.<a href="../../list/lister/zL_CfgOverall.html#cfg">zL_CfgOverall</a></code> and <code><a href="../../list/lister/zL_CfgElement.html#cfg">zL_CfgElement</a></code></li>
+      <li><b>Used by:</b> <code>xbn.list.lister.<a href="../../list/lister/LLCfgOverall.html#cfg">LLConfigOverall</a></code> and <code><a href="../../list/lister/LLCfgElement.html#cfg">LLCfgElement</a></code></li>
       </ul></li>
       <li><b>Sub configs:</b><ul>
          <li><b><code><a href="ChopString.html#cfg">ChopString</a></code>:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop() cfgChop}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean) cfgChop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(int) cfgChop}{@code (b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#cfgChop(boolean, int) cfgChop}{@code (b,i)}<ul>

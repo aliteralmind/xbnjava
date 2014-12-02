@@ -26,7 +26,7 @@ public class LLCIndexableElement_Cfg<E> extends LLCIndexableElement_CfgForNeeder
       <p>Create a new {@code zLLCIndexableElement_Cfg} with defaults.</p>
 
          <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCIndexableElement_CfgForNeeder#LLCIndexableElement_CfgForNeeder(R)">super</a>(null)</code></p>
+      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCIndexableElement_CfgForNeeder.html#LLCIndexableElement_CfgForNeeder(R)">super</a>(null)</code></p>
     */
    public LLCIndexableElement_Cfg()  {
       super(null);

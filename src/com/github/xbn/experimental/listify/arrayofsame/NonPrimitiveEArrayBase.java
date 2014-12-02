@@ -40,7 +40,7 @@ public class NonPrimitiveEArrayBase<E> implements ListifyNonPrimitiveEArray<E>  
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/ListifyComposer#ListifyComposer(E[], ValueCopier)">super</a>(objects, array_helper, get_valCopy)</code></p>
+      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/ListifyComposer.html#ListifyComposer(E[], ValueCopier)">super</a>(objects, array_helper, get_valCopy)</code></p>
     */
    public NonPrimitiveEArrayBase(E[] objects, ArrayHelper<E> array_helper, ValueCopier<E> get_valCopy)  {
       leac = new ListifyEArrayComposer<E>(objects, array_helper, get_valCopy);

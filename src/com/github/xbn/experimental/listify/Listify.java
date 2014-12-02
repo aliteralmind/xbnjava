@@ -33,12 +33,12 @@ public interface Listify<E> extends Collection<E>, Copyable  {
       <p>Can elements be added or removed from the raw object?.</p>
 
     * @return  {@code true}  Elements may be removed or added.
- 		@see  ListifyComposer#clear()
- 		@see  ListifyComposer#retainAll(Collection) ListifyComposer#retainAll(cll)
- 		@see  ListifyComposer#removeAll(Collection) ListifyComposer#removeAll(cll)
- 		@see  ListifyComposer#addAll(Collection) ListifyComposer#addAll(cll)
- 		@see  ListifyComposer#remove(Object) ListifyComposer#remove(o)
- 		@see   <code><a href="ListifyComposer.html"><i>[ListifyComposer]</i></a>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="ListifyComposer.html#add(E)">add</a>(E)</code>
+ 		@see  com.github.xbn.experimental.listify.ListifyComposer#clear() ListifyComposer#clear
+ 		@see  com.github.xbn.experimental.listify.ListifyComposer#retainAll(Collection) ListifyComposer#retainAll
+ 		@see  com.github.xbn.experimental.listify.ListifyComposer#removeAll(Collection) ListifyComposer#removeAll
+ 		@see  com.github.xbn.experimental.listify.ListifyComposer#addAll(Collection) ListifyComposer#addAll
+ 		@see  com.github.xbn.experimental.listify.ListifyComposer#remove(Object) ListifyComposer#remove
+ 		@see   <code>{@link com.github.xbn.experimental.listify.ListifyComposer}<i>[ListifyComposer]</i></a>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/ListifyComposer.html#add(E)">add</a></code>
  	 */
    boolean isAddRemovable();
    /**

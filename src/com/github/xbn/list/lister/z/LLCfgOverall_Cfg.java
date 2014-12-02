@@ -26,7 +26,7 @@ public class LLCfgOverall_Cfg<E> extends LLCfgOverall_CfgForNeeder<E,LLCfgOveral
       <p>Create a new {@code zLLCfgOverall_Cfg} with defaults.</p>
 
          <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="zLLConfigOverall_CfgForNeeder.html#zLLConfigOverall_CfgForNeeder(R)">super</a>(null)</code></p>
+      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigOverall_CfgForNeeder.html#LLConfigOverall_CfgForNeeder(R)">super</a>(null)</code></p>
     */
    public LLCfgOverall_Cfg()  {
       super(null);

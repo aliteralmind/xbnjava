@@ -18,7 +18,7 @@ package  com.github.xbn.list.lister;
       <li>{@link #getPrefix() getPrefix}{@code ()} and {@link #getPostfix() getPostfix}{@code ()}</li>
    </ol></p>
 
- * @param  <O>  Either the list itself, or the type of element in the list. See {@code LLConfigBase} and {@code zL_CfgElement}.
+ * @param  <O>  Either the list itself, or the type of element in the list. See {@code LLConfigBase} and {@code LLCfgElement}.
  **/
 public abstract class LLConfigBase<O> implements ToStringAppendable  {
    private String            sIfNl   ;

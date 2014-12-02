@@ -22,6 +22,7 @@
 
          <property name="dir_sandbox_bldfiles" value="${dir_sandbox}z_build/"/>
             <property name="dir_sandbox_jar_dependencies" value="${dir_sandbox_bldfiles}jar_dependencies/"/>
+            <property name="dir_sandbox_bldfiles_other" value="${dir_sandbox_bldfiles}other/"/>
 
       <property name="dir_classes_xbn" value="${build.class.dir}/${com_github_xbn}"/>
 
@@ -145,7 +146,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <delete quiet="true" dir="${curr_redir_dir}"/>
       <mkdir dir="${curr_redir_dir}"/>
 
-      <copy file="${dir_sandbox_bldfiles}other/redir_for_QcurrentQ_directory_on_aliteralmind_com.html" tofile="${curr_redir_file}"/>
+      <copy file="${dir_sandbox_bldfiles_other}redir_for_QcurrentQ_directory_on_aliteralmind_com.html" tofile="${curr_redir_file}"/>
       <replace file="${curr_redir_file}" summary="yes"
          token="^{current_project_version}" value="${version.number}"/>
    </target>
@@ -160,6 +161,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <antcall target="zip"/>
       <antcall target="zip2"/>
       <antcall target="preppoms"/>
+      <antcall target="currversionredirfile"/>
       <record name="${dir_build_logs}build_log_post_codelet.txt" action="stop"/>
    </target>
 
@@ -194,7 +196,7 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
    <target name="preppoms" description="Moves z_build/pom_source_file.xml to pom.xml, and sets the proper version number.">
       <property name="pom_xml_dest" value="${dir_sandbox}pom.xml"/>
       <delete file="${pom_xml_dest}"/><!-- Originates in task preppoms. Needed by task clean -->
-      <copy file="${dir_sandbox_bldfiles}other/pom_source_file.xml" tofile="${pom_xml_dest}"/>
+      <copy file="${dir_sandbox_bldfiles_other}pom_source_file.xml" tofile="${pom_xml_dest}"/>
       <replace file="${pom_xml_dest}" summary="yes"
          token="^{project_version_for_jd}" value="${version.number}"/>
       <replace file="${pom_xml_dest}" summary="yes"
@@ -203,6 +205,24 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
 
    <target name="pot" description="Shortcut for pubposttabs.">
       <antcall target="pubposttabs"/>
+   </target>
+
+   <target name="linkchecker"
+            description="Find and log all broken links in the generated JavaDoc. For manual calling only. Tested only on Windows, but the application is cross-platform.">
+      <property name="output_file" value="${dir_build_grandparent}${project_name_with_version}-brokenlinks.txt"/>
+
+      <delete quiet="true" file="${output_file}"/>
+
+      <echo>Writing output to ${output_file}...</echo>
+      <exec executable="${link.checker.install.dir}linkchecker.exe"
+         output="${output_file}">
+      <arg value="--config=${dir_sandbox_bldfiles_other}linkchecker_config.txt"/>
+      <arg value="${dir_build_docs_javadoc}overview-summary.html"/>
+      </exec>
+
+      <echo>Duplicating log to ${dir_build_logs}</echo>
+      <copy overwrite="true"
+         file="${output_file}" todir="${dir_build_logs}"/>
    </target>
 
    <!-- FOR JEFF EPSTEIN'S USE ONLY...start -->
