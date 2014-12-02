@@ -223,6 +223,8 @@ Documentation for both XBN-Java and Template Feather can be generated before Cod
       <echo>Duplicating log to ${dir_build_logs}</echo>
       <copy overwrite="true"
          file="${output_file}" todir="${dir_build_logs}"/>
+
+      <echo>(If you want the log on aliteralmind, re-run 'dupbuildtoalit'.)</echo>
    </target>
 
    <!-- FOR JEFF EPSTEIN'S USE ONLY...start -->
