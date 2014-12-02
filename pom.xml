@@ -11,7 +11,7 @@
    <groupId>com.github.aliteralmind</groupId>
    <artifactId>xbnjava</artifactId>
    <packaging>pom</packaging>
-   <version>0.1.4.2</version>
+   <version>0.1.5</version>
    <name>XBN-Java</name>
    <url>https://github.com/aliteralmind/xbnjava</url>
    <inceptionYear>2014</inceptionYear>

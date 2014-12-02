@@ -22,7 +22,7 @@ package  com.github.xbn.number;
 public class IntBound extends NumberBound<Integer>  {
    /**
     * @deprecated Use {@link #IntBound(Integer, com.github.xbn.number.Inclusive, java.lang.String) IntBound}{@code (num, is_inclusive, name)}
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public IntBound(Integer num, boolean is_inclusive, String name)  {
       super(num, is_inclusive, name);
@@ -32,7 +32,7 @@ public class IntBound extends NumberBound<Integer>  {
     *
     * <p>Equal to
     * <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberBound.html#NumberBound(N, boolean, String)">super</a>(num, is_inclusive, name)</code></p>
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public IntBound(Integer num, Inclusive incl, String name)  {
       super(num, incl, name);

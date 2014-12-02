@@ -266,7 +266,7 @@ public class NumberUtil  {
    }
    /**
     * @deprecated Use {@link #getRandomIntBetweenInclusive(int, int) getRandomIntBetweenInclusive}{@code (i,i)}.
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public static final int getRandomBetweenInclusive(int min_inclusive, int max)  {
       return  getRandomIntBetweenInclusive(min_inclusive, max);
@@ -279,7 +279,7 @@ public class NumberUtil  {
     * @param  max  The maximum possible int to return.
     * @return  <code>(min_inclusive + (int)({@link java.lang.Math Math}.{@link java.lang.Math#random() random}() * ((max - min_inclusive) + 1)))</code>
     * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java">http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java</a></code>
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public static final int getRandomIntBetweenInclusive(int min_inclusive, int max)  {
       return  (min_inclusive + (int)(Math.random() * ((max - min_inclusive) + 1)));
@@ -342,7 +342,7 @@ public class NumberUtil  {
     *
     * @param  num The number that may or may not be prime.
     * @return     <code>true</code> if the <code>num</code> is prime.
-    * @since  0.1.4.2
+    * @since  0.1.5
     * @see <code><a href="http://www.mkyong.com/java/how-to-determine-a-prime-number-in-java">http://www.mkyong.com/java/how-to-determine-a-prime-number-in-java</a></code>
     */
    public static final boolean isPrime(long num)  {

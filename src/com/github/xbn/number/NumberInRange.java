@@ -370,7 +370,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     * {@linkplain Inclusive#NO exclusive}). (It is okay for one min (or
     *  max) bound to exist, and the other not exist.)
     * @see #getMerged(NumberInRange, OverlapRequired)
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public abstract NumberInRange<N> getIntersection(
          NumberInRange<N> to_intersectWith);
@@ -393,7 +393,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     * {@code to_mergeWith} does not overlap or touch <i>{@code this}</i>
     * one.
     * @see #getIntersection(NumberInRange)
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public abstract NumberInRange<N> getMerged(NumberInRange<N> to_mergeWith,
          OverlapRequired overlap_rqd);
@@ -402,7 +402,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     * @return <code>{@link #getMinBound() getMinBound}().{@link NumberBound#getGivenIncl(BoundSide) getGivenIncl}({@link BoundSide}.{@link BoundSide#MIN MIN})</code>
     * @exception IllegalStateException If {@link #hasMin() hasMin}{@code ()} is {@code false}.
     * @see #getMaxGivenIncl()
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public N getMinGivenIncl()  {
       try  {
@@ -416,7 +416,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     * @return <code>{@link #getMaxBound() getMaxBound}().{@link NumberBound#getGivenIncl(BoundSide) getGivenIncl}({@link BoundSide}.{@link BoundSide#MAX MAX})</code>
     * @exception IllegalStateException If {@link #hasMax() hasMax}{@code ()} is {@code false}.
     * @see #getMinGivenIncl()
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public N getMaxGivenIncl()  {
       try  {
@@ -433,7 +433,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     *    to_compareTo.isIn(getMinGivenIncl())  ||
     *    to_compareTo.isIn(getMaxGivenIncl()))</pre></blockquote>
     * @see #getOverlapDebugging(NumberInRange)
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public boolean doesOverlap(NumberInRange<N> to_compareTo)  {
       N inclMinThis = (!hasMin() ?  null : getMinGivenIncl());
@@ -508,7 +508,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
    public abstract boolean areFieldsEqual(NumberInRange<N> to_compareTo);
    /**
     * @deprecated Use <code><!-- Generics fail in at-links: --><a href="#getDebuggingForIsIn(N)">getDebuggingForIsIn</a>(N)</code>
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public static final <N extends Number> String getValidityDebugging(NumberInRange<N> range, N to_validate, String to_vldtName)  {
       try  {
@@ -521,7 +521,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     * In depth explanation on why a number is in or not in <i>{@code this}</i> range.
     * @param  to_validate The number to analyze. May not be <code>null</code>.
     * @return  Description on why {@code to_validate} is in or not in this range. This uses the terminology &quot;valid&quot; instead of &quot;in&quot;.
-    * @since  0.1.4.2
+    * @since  0.1.5
     */
    public String getDebuggingForIsIn(N to_validate)  {
       return  "valid-for-min?=" +

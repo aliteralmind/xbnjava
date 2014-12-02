@@ -19,7 +19,7 @@ package  com.github.xbn.number;
  * <p>Is it required that two {@code NumberInRange}s being merged, be touching or overlapping, or is it okay that there is a gap between one range's max and the other's min?.</p>
  *
  *	@see NumberInRange#getMerged(com.github.xbn.number.NumberInRange, com.github.xbn.number.OverlapRequired)
- * @since  0.1.4.2
+ * @since  0.1.5
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public enum OverlapRequired  {

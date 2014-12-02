@@ -19,7 +19,7 @@ package  com.github.xbn.util.matrix;
  * <p>If the grid's boundary is exceeded, should it crash or wrap around, <a href="https://www.youtube.com/watch?v=i3Pr8yC8_F4&t=29s">a la Asteroids</a>?</p>
  *
  * @see BoundedMatrix#getNeighbor(int, int, com.github.xbn.util.matrix.MatrixDirection, int, com.github.xbn.util.matrix.EdgeExceeded) BoundedMatrix#getNeighbor
- * @since  0.1.4.2
+ * @since  0.1.5
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public enum EdgeExceeded  {

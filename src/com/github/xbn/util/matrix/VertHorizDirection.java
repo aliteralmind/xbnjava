@@ -21,7 +21,7 @@ package  com.github.xbn.util.matrix;
  * @see BoundedMatrix#getVHNeighborCount(int, int, com.github.xbn.util.matrix.VertHorizDirection) BoundedMatrix#getVHNeighborCount
  * @see BoundedMatrix#getLongestVHForDiagonal(int, int, com.github.xbn.util.matrix.MatrixDirection) BoundedMatrix#getLongestVHForDiagonal
  * @see BoundedMatrix#getShortestVHForDiagonal(int, int, com.github.xbn.util.matrix.MatrixDirection) BoundedMatrix#getLongestVHForDiagonal
- * @since  0.1.4.2
+ * @since  0.1.5
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
  */
 public enum VertHorizDirection  {
