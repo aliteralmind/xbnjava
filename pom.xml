@@ -41,7 +41,7 @@
    <groupId>com.github.aliteralmind</groupId>
    <artifactId>xbnjava</artifactId>
    <packaging>pom</packaging>
-   <version>^{project_version_for_jd}</version>
+   <version>0.1.5</version>
    <name>XBN-Java</name>
    <url>https://github.com/aliteralmind/xbnjava</url>
    <inceptionYear>2014</inceptionYear>
@@ -96,7 +96,7 @@
    <properties>
       <java.version>1.7</java.version>
       <project_dash_version>${project.artifactId}-${project.version}</project_dash_version>
-      <jarprefix>^{project_build_dir}/${project_dash_version}/${project_dash_version}/download/${project_dash_version}</jarprefix>
+      <jarprefix>C:/data_jeffy/code/java/xbn/build//${project_dash_version}/${project_dash_version}/download/${project_dash_version}</jarprefix>
    </properties>
 
    <build>
