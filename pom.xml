@@ -5,6 +5,41 @@
    project_build_dir
 
    This can be manually done at any time with "ant preppoms" (shortcut "ant pp").
+
+   *************************************************************
+   The settings.xml file, which is stored in %M2_HOME%/conf
+   - https://maven.apache.org/settings.html#Quick_Overview
+
+   See:
+   - https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven
+   - http://stackoverflow.com/questions/24771467/how-to-use-maven-to-only-sign-three-jars-and-push-them-to-maven-central
+   - The ultimate answer to the above question:
+   - - http://stackoverflow.com/a/24827214/2736496
+
+   *************************************************************
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+      <servers>
+         <server>
+            <id>sonatype-nexus-snapshots</id>
+            <username>MY_SONATYPE_USERNAME</username>
+            <password>MY_SONATYPE_PASSWORD</password>
+         </server>
+         <server>
+            <id>sonatype-nexus-staging</id>
+            <username>MY_SONATYPE_USERNAME</username>
+            <password>MY_SONATYPE_PASSWORD</password>
+         </server>
+      </servers>
+      <pluginGroups></pluginGroups>
+      <proxies></proxies>
+      <mirrors></mirrors>
+      <profiles></profiles>
+   </settings>
+
   -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
@@ -65,7 +100,8 @@
 
    <properties>
       <java.version>1.7</java.version>
-      <jarprefix>C:/data_jeffy/programming/build//${project.artifactId}-${project.version}/download/${project.artifactId}-${project.version}</jarprefix>
+      <project_dash_version>${project.artifactId}-${project.version}</project_dash_version>
+      <jarprefix>C:/data_jeffy/code/java/xbn/build//${project_dash_version}/${project_dash_version}/download/${project_dash_version}</jarprefix>
    </properties>
 
    <build>
