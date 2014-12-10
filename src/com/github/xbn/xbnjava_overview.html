@@ -1,7 +1,7 @@
 <BODY>
    <p>XBN-Java is a collection of generically-useful backend (server side, non-GUI) programming utilities, featuring {@code RegexReplacer} and {@code FilteredLineIterator}--XBN-Java is the foundation of <a href="http://codelet.aliteralmind.com">Codelet</a>.</p>
 
-   <p>This version is <b><code>${project_version_for_jd}</code></b>. <ol>
+   <p>This version is <b><code>${project_version_for_jd}</code></b>.<ol>
       <li><a href="release_notes.html">Release notes</a></li>
       <li><a href="http://xbnjava.aliteralmind.com">Current version</a> at <code>aliteralmind.com</code></li>
       <li>Hosted by GitHub: <a href="https://github.com/aliteralmind/xbnjava">Project page</a>, <a href="https://github.com/aliteralmind/xbnjava/issues">issue tracker</a></li>
@@ -31,7 +31,7 @@
       <li>{@code xbnjava-${project_version_for_jd}_dependency_jars.jar}: All external jars required to <i>use</i> XBN-Java: <a href="../../download/xbnjava-${project_version_for_jd}_dependency_jars.zip">local copy</a>, <a href="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-${project_version_for_jd}/download/xbnjava-${project_version_for_jd}_dependency_jars.zip"><code>aliteralmind.com</code></a></li>
       <li>{@code xbnjava-${project_version_for_jd}-sources.jar}: Source code, including all files necessary for building XBN-Java: <a href="../../download/xbnjava-${project_version_for_jd}-sources.jar">local copy</a>, <a href="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-${project_version_for_jd}/download/xbnjava-${project_version_for_jd}-sources.jar"><code>aliteralmind.com</code></a></li>
       <li>{@code xbnjava-${project_version_for_jd}-javadoc.jar}: JavaDoc documentation for local installation: <a href="../../download/xbnjava-${project_version_for_jd}-javadoc.jar">local copy</a>, <a href="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-${project_version_for_jd}/download/xbnjava-${project_version_for_jd}-javadoc.jar"><code>aliteralmind.com</code></a></li>
-
+   </ol></p>
    <p>Adding the following to your <a href="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html">classpath</a> will install XBN-Java:</p>
 
 <blockquote><pre>INSTALLATION_DIR\xbnjava-${project_version_for_jd}_dependency_jars\*
@@ -43,8 +43,9 @@ INSTALLATION_DIR\xbnjava-${project_version_for_jd}-all.jar</pre></blockquote>
 
    <p><a href="http://aliteralmind.com/docs/computer/programming/xbnjava/xbnjava-${project_version_for_jd}/download/xbnjava-${project_version_for_jd}-sources.jar">Download</a> all source code, including all files necessary to build XBN-Java.</p>
 
-   <p>In addition to the jars needed to use XBN-Java, building requires additional jars, which are all located in {@code "z_build/dependency_jars"}:<ol>
-      <li><a href="http://ant.apache.org/">Apache Ant</a>, <a href="http://junit.org">JUnit</a>, <a href="http://codelet.aliteralmind.com">Codelet</a>, and <a href="http://templatefeather.aliteralmind.com">Template Featherweight</a>. Codelet is only necessary for displaying example code in the JavaDoc. Without it, <i>JavaDoc will still work</i>, but example code will be omitted (one warning will be given for every non-working taglet).</li>
+   <p>In addition to the jars needed to use XBN-Java, building requires additional jars, which are all located in {@code "z_build/dependency_jars"}: <a href="http://ant.apache.org/">Apache Ant</a>, <a href="http://junit.org">JUnit</a>, <a href="http://codelet.aliteralmind.com">Codelet</a>, and <a href="http://templatefeather.aliteralmind.com">Template Featherweight</a>.</p>
+
+   <p>Codelet is only necessary for displaying example code in the JavaDoc. Without it, <i>JavaDoc will still work</i>, but example code will be omitted (one warning will be given for every non-working taglet).</li>
    </ol></p>
 
    <p>Open a command prompt to the XBN-Java root installation directory, and call &quot;{@code ant help}&quot; for more information. The build process already has the Codelet taglets installed.</p>
