@@ -33,7 +33,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
       <p>Create a new {@code zChopString_CfgForNeeder} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</a>(needer, -1)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</a>(needer, -1)</code></p>
     */
    public ChopString_CfgForNeeder(R needer)  {
       this(needer, -1);
@@ -47,7 +47,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
          <li>{@link #noDDD() noDDD}{@code ()}</li>
          <li>{@link #atEnd() atEnd}{@code ()}</li>
          <li>{@link #noOverhang() noOverhang}{@code ()}</li>
-      </ol></p>
+      </ol>
     * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#zChopString_CfgForNeeder(R)">this</a>(R)</code>
     */
    public ChopString_CfgForNeeder(R needer, int goal_len)  {
@@ -130,7 +130,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
       <p>Notes:<ul>
          <li>This setting is never violated (in no cases is the overhang exceeded).</li>
          <li>See &quot;note 2&quot; in {@link #charsBefore(int) charsBefore}{@code (i)}, regarding precedence.</li>
-      </ul></p>
+      </ul>
 
     * @param  char_len  If {@code -1} or less, or greater than {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}, then {@code getOverhangCount()} will return {@link com.github.xbn.text.padchop.ChopString#getEllipsis() getEllipsis}{@code ()*.length()}. Get with {@link com.github.xbn.text.padchop.ChopString#getOverhangCount() getOverhangCount}{@code ()}*.
     * @return  <i>{@code this}</i>
@@ -179,7 +179,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
       <p>Notes:<ol>
          <li><i>This setting is ignored when there is no chop-ellipsis</i>. When {@link #getEllipsis() getEllipsis}{@code ()} is {@code null}, the chop always happens on the end. To force chopping in the middle with no ellipsis, set the ellipsis to the empty string.</li>
          <li>The {@link #getOverhangCount() ddd-max-overhang} setting trumps this min-start-chars setting. That is, when-and-only-when the {@link #getGoalLen() goal length} is short enough, such that the {@link #getEllipsis() chop ellipsis} will not fit <b>unless one of these two settings is violated</b>, the min-start-chars setting <b>will</b> be violated. The max-overhang is never violated.</li>
-      </ol></p>
+      </ol>
 
     * @param  len  The number of characters, <i>starting on the <b>opposite</b> {@link #right() side} of the chop</i>, that must be in the final-result string. Get with {@link com.github.xbn.text.padchop.ChopString#getCharsBeforeDDD() getCharsBeforeDDD}{@code ()}*. When {@code len} is<ul>
          <li>{@link com.github.xbn.text.padchop.ChopString#iIN_MIDDLE}: {@code getCharsBeforeDDD()} is set to <code>({@link com.github.xbn.text.padchop.PadChopBase#getGoalLen() getGoalLen}() / 2)</code>. <i>In this case, {@code getOverhangCount()} is ignored.</i></li>
@@ -217,7 +217,7 @@ public class ChopString_CfgForNeeder<C extends ChopString,R extends Needer> exte
 
          <p><i><b>See:</b></i><ul>
          <li><i>{@link #endCfg() endCfg}{@code ()}</i></li>
-         </ul></p>
+         </ul>
 
 
     * @return  {@code (new }{@link com.github.xbn.text.padchop.ChopString#ChopString(ChopString_Fieldable) ChopString}{@code (this))}

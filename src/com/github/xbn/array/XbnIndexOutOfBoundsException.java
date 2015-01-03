@@ -35,7 +35,7 @@ package  com.github.xbn.array;
       <!-- //Delete in Xbn[Array,String]IndexOutOfBoundsException...END -->
          <li><b>Integers:</b> <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absBounds(int, int) absBounds}(i,i)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absBounds(int, int, String, String) absBounds}(i,i,s,s)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absMaxX(int) absMaxX}(i)</code>, <code>{@link com.github.xbn.array.z.XbnIndexOutOfBoundsException_Cfg#absMaxX(int, String) absMaxX}(i,s)</code></li>
       </ul></li>
-   </ol></p>
+   </ol>
 
    <p><i>{@code XbnArray}{@code IndexOutOfBoundsException} and {@code XbnString}{@code IndexOutOfBoundsException} both derive from {@code Xbn}{@code IndexOutOfBoundsException}. <b>Do not edit any class except {@code Xbn}{@code IndexOutOfBoundsException}</b></i></p>
 
@@ -48,7 +48,7 @@ public class XbnIndexOutOfBoundsException extends XbnIbxBase  {
       <p>Create a new {@code XbnIndexOutOfBoundsException}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XIbxData) super}{@code (x_data)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XIbxData) super}{@code (x_data)}</p>
     */
    public XbnIndexOutOfBoundsException(XIbxData x_data)  {
       super(x_data);
@@ -57,7 +57,7 @@ public class XbnIndexOutOfBoundsException extends XbnIbxBase  {
       <p>Create a new {@code XbnIndexOutOfBoundsException}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XbnIbxBase) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.array.XbnIbxBase#XbnIbxBase(XbnIbxBase) super}{@code (to_copy)}</p>
     */
    public XbnIndexOutOfBoundsException(XbnIbxBase to_copy)  {
       super(to_copy);

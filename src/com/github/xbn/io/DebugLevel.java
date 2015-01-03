@@ -236,7 +236,7 @@ public enum DebugLevel  {
    /**
       <p>YYY</p>
 
-      <p><TABLE ALIGN="center" WIDTH="100%" BORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#EEEEEE"><TR ALIGN="center" VALIGN="middle">
+      <TABLE ALIGN="center" WIDTH="100%" BORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#EEEEEE"><TR ALIGN="center" VALIGN="middle">
          <TD><b><u>{@code compareTo}</u></b></TD>
          <TD><b><u>{@code compareTo} result</u></b></TD>
          <TD><b><u>Psuedo-logic equivalent</u></b></TD>
@@ -252,7 +252,7 @@ public enum DebugLevel  {
          <TD><code>DebugLevel.{@link #THREE}.compareTo(DebugLevel.{@link #OFF}) &gt;= 0</code></TD>
          <TD>{@code 3}</TD>
          <TD><code>DebugLevel.ONE &gt;= DebugLevel.OFF</code></TD>
-      </TR></TABLE></p>
+      </TR></TABLE>
     * @return  <code>({@link #getNumber() getNumber}() - to_compareTo.getNumber())</code>
    public int compareTo(DebugLevel to_compareTo)  {
       try  {

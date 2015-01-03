@@ -15,7 +15,7 @@
 package  com.github.xbn.lang;
 /**
    <p>Basic error message construction. It is encouraged that this class be <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language/static-import.html">statically imported</a> &quot;en masse&quot;:
-   <br/> &nbsp; &nbsp; {@code import  static com.github.xbn.lang.CrashIfBase.*;}</p>
+   <br> &nbsp; &nbsp; {@code import  static com.github.xbn.lang.CrashIfBase.*;}</p>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>

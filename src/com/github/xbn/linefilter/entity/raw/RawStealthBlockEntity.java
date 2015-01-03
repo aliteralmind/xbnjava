@@ -40,7 +40,7 @@ package  com.github.xbn.linefilter.entity.raw;
       <li>{@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</li>
       <li>{@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#keepLines(boolean) keepLines}(b), {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#keepLines() keepLines}(), {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#discardLines() discardLines}(), </li>
       <li><b>Other:</b> {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.raw.z.RawStealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</li>
-   </ul></p>
+   </ul>
 
 <!--
    Originates in

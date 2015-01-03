@@ -46,7 +46,7 @@ public class IntInRangeValidator extends NumberInRangeValidator<Integer>  {
       <p>Create a new {@code IntInRangeValidator} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link NumberInRangeValidator#NumberInRangeValidator(NumberInRangeValidator) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link NumberInRangeValidator#NumberInRangeValidator(NumberInRangeValidator) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

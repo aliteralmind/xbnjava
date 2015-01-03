@@ -31,8 +31,8 @@ public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableCompos
       <p>This<ol>
          <li>Calls {@link com.github.xbn.neederneedable.NeedableComposer#NeedableComposer(boolean, boolean) super}{@code (is_avaliableToNeeders, is_neededUseableAtInit)}</li>
          <li>Creates an internal
-         <br/> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</li>
-      </ol></p>
+         <br> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</li>
+      </ol>
     */
    @CompositionConstructor
    public NeedableWithSubsComposer(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit)  {
@@ -58,7 +58,7 @@ public class NeedableWithSubsComposer<O,R extends Needer> extends NeedableCompos
          <p>Starts configuration for a specific class-type.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer}]</i></a>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
        */
       @CompositionFunction
       public void startConfig(Class<?> needed_class)  {

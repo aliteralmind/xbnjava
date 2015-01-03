@@ -29,7 +29,7 @@ public class IndirectRegexReplacer extends RegexReplacer  {
       <p>Create a new instance for an <i>indirect replacement only</i>, with a regular-expression string.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(String) findWhat}(find_whatRegex))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(String) findWhat}(find_whatRegex))</code></p>
 
     * @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
     */
@@ -40,7 +40,7 @@ public class IndirectRegexReplacer extends RegexReplacer  {
       <p>Create a new instance for an <i>indirect replacement only</i>, with a regular-expression string.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(String, int) findWhat}(find_whatRegex, bit_flags))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(String, int) findWhat}(find_whatRegex, bit_flags))</code></p>
 
     * @see  <a href="RegexReplacer.html#indirect">Definition: indirect</a>
     */
@@ -51,7 +51,7 @@ public class IndirectRegexReplacer extends RegexReplacer  {
       <p>Create a new instance for an <i>indirect replacement only</i>, with a pattern.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(Pattern) findWhat}(pattern_toFind))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link RegexReplacer}(new xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#findWhat(Pattern) findWhat}(pattern_toFind))</code></p>
 
     * @see  <a href="#indirect">Definition: indirect</a>
     */

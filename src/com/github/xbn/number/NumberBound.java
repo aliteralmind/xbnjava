@@ -37,7 +37,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
     *
     * <p>This<ol>
     *    <li>YYY</li>
-    * </ol></p>
+    * </ol>
     * @param  to_copy  May not be {@code null}.
     */
    public NumberBound(NumberBound<N> to_copy)  {
@@ -83,7 +83,7 @@ public abstract class NumberBound<N extends Number> implements Named  {
     * @param  min_orMax May not be <code>null</code>.
     * @param  num       May not be <code>null</code>.
     * @return  Integer example:
-    * <br/> &nbsp; &nbsp; <code>{@link #getGivenIncl(BoundSide) getGivenIncl}(min_orMax).intValue() - num.intValue();</code>
+    * <br> &nbsp; &nbsp; <code>{@link #getGivenIncl(BoundSide) getGivenIncl}(min_orMax).intValue() - num.intValue();</code>
     * @exception NullPointerException If {@code num} is {@code null}.
     */
    public abstract N getInclComparedTo(BoundSide min_orMax, N num);

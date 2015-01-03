@@ -116,7 +116,7 @@ public enum DifferentGoalLengths  {
       <p>If an <code>DifferentGoalLengths</code> is not a required value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, pcgl_da, this_enumsVarName, &quot;DifferentGoalLengths&quot;, xtra_errInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, pcgl_da, this_enumsVarName, &quot;DifferentGoalLengths&quot;, xtra_errInfo)</code></p>
     * @see  #crashIfForbiddenValue(DifferentGoalLengths, String, Object) crashIfForbiddenValue(ert,s,o)
     */
    public void crashIfNotRequiredValue(DifferentGoalLengths pcgl_da, String this_enumsVarName, Object xtra_errInfo)  {
@@ -126,7 +126,7 @@ public enum DifferentGoalLengths  {
       <p>If an <code>DifferentGoalLengths</code> is a forbidden value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, pcgl_da, this_enumsVarName, &quot;DifferentGoalLengths&quot;, xtra_errInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, pcgl_da, this_enumsVarName, &quot;DifferentGoalLengths&quot;, xtra_errInfo)</code></p>
     * @see  #crashIfNotRequiredValue(DifferentGoalLengths, String, Object) crashIfNotRequiredValue(ert,s,o)
     */
    public void crashIfForbiddenValue(DifferentGoalLengths pcgl_da, String this_enumsVarName, Object xtra_errInfo)  {

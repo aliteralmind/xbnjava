@@ -27,7 +27,7 @@ package  com.github.xbn.io;
     	<li><code>append(char)</code></li>
       <li><code>append(CharSequence)</code></li>
       <li><code>append(CharSequence, int, int)</code></li>
-   </ul></p>
+   </ul>
 
    <p><code>TextAppenter</code> provides (&quot;decorates&quot; it with) additional functionality but, most importantly, it crash with only runtime errors. Hence the &quot;<code>appent</code>&quot;, with a <code>'t'</code>, prefix to all function names (such as {@link #appentln(Object) appentln}).</p>
 
@@ -77,7 +77,7 @@ public class TextAppenter  {
       <p>An unusable appenter.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>new {@link #TextAppenter() TextAppenter}()</code></p>
+      <br> &nbsp; &nbsp; <code>new {@link #TextAppenter() TextAppenter}()</code></p>
 
     * @see  #isUseable()
     */
@@ -86,7 +86,7 @@ public class TextAppenter  {
       <p>An appenter that is useable, but discards all output.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>new {@link #TextAppenter(TextAppender) TextAppenter}({@link TAAppendable}.{@link TAAppendable#SUPPRESS SUPPRESS})</code></p>
+      <br> &nbsp; &nbsp; <code>new {@link #TextAppenter(TextAppender) TextAppenter}({@link TAAppendable}.{@link TAAppendable#SUPPRESS SUPPRESS})</code></p>
 
     * @see  #UNUSABLE
     * @see  #isUseable()
@@ -96,7 +96,7 @@ public class TextAppenter  {
       <p>An appenter that outputs to {@code System.out}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>new {@link #TextAppenter(TextAppender) TextAppenter}({@link TAAppendable}.{@link TAAppendable#CONSOLE CONSOLE})</code></p>
+      <br> &nbsp; &nbsp; <code>new {@link #TextAppenter(TextAppender) TextAppenter}({@link TAAppendable}.{@link TAAppendable#CONSOLE CONSOLE})</code></p>
 
     * @see  #isUseable()
     */
@@ -139,7 +139,7 @@ public class TextAppenter  {
       <p>Is this appenter useable?.</p>
 
     * @return  {@code true}: If {@code appent*} can be safely called. Specifically, this returns
-      <br/> &nbsp; &nbsp; <code>({@link #getTextAppender() getTextAppender}() != null)</code>
+      <br> &nbsp; &nbsp; <code>({@link #getTextAppender() getTextAppender}() != null)</code>
     */
    public boolean isUseable()  {
       return  (getTextAppender() != null);
@@ -165,7 +165,7 @@ public class TextAppenter  {
       <p>Pause the application (that one using this appenter), with a message, until enter is pressed.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #pauseIfUseable(InputStream, Object) pauseIfUseable}({@link java.lang.System}.{@link java.lang.System#in in}, message)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #pauseIfUseable(InputStream, Object) pauseIfUseable}({@link java.lang.System}.{@link java.lang.System#in in}, message)</code></p>
     */
    public void pauseIfUseable(Object message)  {
       pauseIfUseable(System.in, message);
@@ -176,7 +176,7 @@ public class TextAppenter  {
       <p>This calls<ol>
          <li><code>appent(Object)((message == null) ? &quot;Paused. Press enter to proceed.&quot; : message)</code></li>
          <li><code>new {@link java.util.Scanner#Scanner(InputStream) Scanner}(source).{@link java.util.Scanner#nextLine() nextLine}()</code></li>
-      </ol></p>
+      </ol>
     */
    public void pauseIfUseable(InputStream source, Object message)  {
       if(!isUseable())  {

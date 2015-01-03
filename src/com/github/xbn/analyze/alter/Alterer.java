@@ -47,10 +47,10 @@ public interface Alterer extends Analyzer  {
       <p>Was the thing actually altered <i>by this {@code Alterer}</i>?.</p>
 
       <p>If the alteration was made by this {@code Alterer}, then this function will return {@code true}. If ({@link #mayDelete() mayDelete}{@code ()} is {@code true} and) it needs to be deleted, then
-      <br/> &nbsp; &nbsp; {@link #wasAltered() wasAltered}{@code ()}
-      <br/>will be {@code false}, and
-      <br/> &nbsp; &nbsp; {@link #needsToBeDeleted() needsToBeDeleted}{@code ()}
-      <br/>will be {@code true}. Delete the element and then call {@link #resetForDeletion() resetForDeletion}{@code ()}.</p>
+      <br> &nbsp; &nbsp; {@link #wasAltered() wasAltered}{@code ()}
+      <br>will be {@code false}, and
+      <br> &nbsp; &nbsp; {@link #needsToBeDeleted() needsToBeDeleted}{@code ()}
+      <br>will be {@code true}. Delete the element and then call {@link #resetForDeletion() resetForDeletion}{@code ()}.</p>
 
     * @return <ul>
          <li><b>{@code true}:</b>  When the thing was altered by this {@code Alterer} class.</li>
@@ -68,7 +68,7 @@ public interface Alterer extends Analyzer  {
             <li>Sets {@code needsToBeDeleted()} to {@code false}.</li>
          </ol></li>
          <li>Calls {@link #resetState() resetState}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @see  #wasAltered()
     */
@@ -123,7 +123,7 @@ public interface Alterer extends Analyzer  {
       <p>Was an alteration made (at any time in the past) and, if a multi-part alteration, did it finish?.</p>
 
     * @return  If {@link #isRequired() isRequired}{@code ()} is {@code false}, this always returns {@code true}. Otherwise, at it's simplest, this can return
-      <br/> &nbsp; &nbsp; <code>({@link #getAlteredCount() getAlteredCount}() != 0)</code>
+      <br> &nbsp; &nbsp; <code>({@link #getAlteredCount() getAlteredCount}() != 0)</code>
     * @see  #appendIncompleteInfo(StringBuilder)
     */
    boolean isComplete();

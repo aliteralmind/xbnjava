@@ -28,7 +28,7 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
       <p>Create a new {@code zPadString_CfgForNeeder} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R, int)">this</a>(needer, -1)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R, int)">this</a>(needer, -1)</code></p>
     */
    public PadString_CfgForNeeder(R needer)  {
       this(needer, -1);
@@ -38,13 +38,13 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
 
          <p><i><b>See:</b></i><ul>
          <li><i><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#PadString_CfgForNeeder(R)">this</a>(R)</code></i></li>
-         </ul></p>
+         </ul>
 
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R, int)">this</a>(needer, goal_len)</code></li>
          <li>{@link #right() right}{@code ()}</li>
          <li>{@link #withSpace() withSpace}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public PadString_CfgForNeeder(R needer, int goal_len)  {
       super(needer, goal_len);
@@ -115,7 +115,7 @@ public class PadString_CfgForNeeder<P extends PadString,R extends Needer> extend
 
          <p><i><b>See:</b></i><ul>
          <li><i>{@link #endCfg() endCfg}{@code ()}</i></li>
-         </ul></p>
+         </ul>
 
 
     * @return  <code>(new {@link com.github.xbn.text.padchop.PadString#PadString(PadString_Fieldable) PadString}(this))</code>

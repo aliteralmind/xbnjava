@@ -31,7 +31,7 @@ public interface Validator extends Analyzer, Ruleable, ExtraErrInfoable, ValidRe
       <p>This<ol>
          <li>Calls <code>{@link com.github.xbn.analyze.Analyzer super}.{@link com.github.xbn.analyze.Analyzer#resetState() resetState}()</code></li>
          <li>Sets {@link #isValid() wasValid}{@code ()} to {@code false}</li>
-      </ol></p>
+      </ol>
 
     * @see  #resetCounts()
     */
@@ -43,7 +43,7 @@ public interface Validator extends Analyzer, Ruleable, ExtraErrInfoable, ValidRe
       <p>This<ol>
          <li>Calls <code>{@link com.github.xbn.analyze.Analyzer super}.{@link com.github.xbn.analyze.Analyzer#resetCounts() resetCounts}()</code></li>
          <li>Sets {@link #getValidCount() getValidCount}{@code ()} to zero</li>
-      </ol></p>
+      </ol>
 
     * @see  #resetState()
     */

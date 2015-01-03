@@ -26,7 +26,7 @@ public class LLCfgElement_Cfg<E> extends LLCfgElement_CfgForNeeder<E,LLCfgElemen
       <p>Create a new {@code zLLCfgElement_Cfg} with defaults.</p>
 
          <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCfgElement_CfgForNeeder.html#LLCfgElement_CfgForNeeder(R)">super</a>(null)</code></p>
+      <br> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCfgElement_CfgForNeeder.html#LLCfgElement_CfgForNeeder(R)">super</a>(null)</code></p>
     */
    public LLCfgElement_Cfg()  {
       super(null);

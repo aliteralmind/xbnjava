@@ -32,7 +32,7 @@ public abstract class PadChopBase_CfgForNeeder<P extends PadChopBase,R extends N
       <p>Create a new {@code PadChopBase_CfgForNeeder} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#PadChopBase_CfgForNeeder(R, int)">this</a>(needer, -1)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#PadChopBase_CfgForNeeder(R, int)">this</a>(needer, -1)</code></p>
 
     */
    public PadChopBase_CfgForNeeder(R needer)  {
@@ -43,7 +43,7 @@ public abstract class PadChopBase_CfgForNeeder<P extends PadChopBase,R extends N
 
          <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/neederneedable/AbstractNeedable.html#AbstractNeedable(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
-      </ol></p>
+      </ol>
 
     * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#PadChopBase_CfgForNeeder(R)">this</a>(R)</code>
     */

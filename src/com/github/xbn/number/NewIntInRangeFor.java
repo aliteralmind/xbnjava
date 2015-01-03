@@ -32,14 +32,14 @@ public class NewIntInRangeFor  {
       <p>An {@code IntInRange} with no bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link IntInRange}.{@link IntInRange#UNRESTRICTED UNRESTRICTED}</code></p>
+      <br> &nbsp; &nbsp; <code>{@link IntInRange}.{@link IntInRange#UNRESTRICTED UNRESTRICTED}</code></p>
     */
    public static final IntInRange UNRESTRICTED = IntInRange.UNRESTRICTED;
    /**
       <p>An {@code IntInRange} with no members.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link IntInRange}.{@link IntInRange#IMPOSSIBLE IMPOSSIBLE}</code></p>
+      <br> &nbsp; &nbsp; <code>{@link IntInRange}.{@link IntInRange#IMPOSSIBLE IMPOSSIBLE}</code></p>
     */
    public static final IntInRange IMPOSSIBLE = IntInRange.IMPOSSIBLE;
    /**
@@ -127,8 +127,8 @@ public class NewIntInRangeFor  {
       <p>Create a new instance with an inclusive minimum and exclusive maximum.</p>
 
     * @return  <code>new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(
-         <br/> &nbsp; &nbsp; new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name),
-         <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))</code>
+         <br> &nbsp; &nbsp; new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name),
+         <br> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))</code>
     */
    public static final IntInRange minInMaxExclusive(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
@@ -139,8 +139,8 @@ public class NewIntInRangeFor  {
       <p>Create a new instance with an exclusive minimum and inclusive maximum.</p>
 
     * @return  <code>new {@link IntInRange#IntInRange(IntBound, IntBound) IntInRange}(
-         <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name),
-         <br/> &nbsp; &nbsp; new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(max, max_name))</code>
+         <br> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name),
+         <br> &nbsp; &nbsp; new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(max, max_name))</code>
     */
    public static final IntInRange minExMaxInclusive(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),
@@ -151,8 +151,8 @@ public class NewIntInRangeFor  {
       <p>Create a new instance with exclusive bounds.</p>
 
     * @return  <code>new {@link IntInRange#IntInRange(int, int) IntInRange}(
-         <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name),
-         <br/> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))</code>
+         <br> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(min, min_name),
+         <br> &nbsp; &nbsp; new {@link IntBoundExclusive#IntBoundExclusive(Integer, String) IntBoundExclusive}(max, max_name))</code>
     */
    public static final IntInRange minMaxExclusive(Invert invert_dontIfNull, int min, int max, String min_name, String max_name)  {
       return  new IntInRange(getInvNoIfNull(invert_dontIfNull),

@@ -37,14 +37,14 @@ public class NewLengthInRangeFor  {
       <p>An {@code LengthInRange} with no bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link LengthInRange}.{@link LengthInRange#UNRESTRICTED UNRESTRICTED}</code></p>
+      <br> &nbsp; &nbsp; <code>{@link LengthInRange}.{@link LengthInRange#UNRESTRICTED UNRESTRICTED}</code></p>
     */
    public static final LengthInRange UNRESTRICTED = LengthInRange.UNRESTRICTED;
    /**
       <p>An {@code LengthInRange} with no members.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link LengthInRange}.{@link LengthInRange#IMPOSSIBLE IMPOSSIBLE}</code></p>
+      <br> &nbsp; &nbsp; <code>{@link LengthInRange}.{@link LengthInRange#IMPOSSIBLE IMPOSSIBLE}</code></p>
     */
    public static final LengthInRange IMPOSSIBLE = LengthInRange.IMPOSSIBLE;
    /**
@@ -72,7 +72,7 @@ public class NewLengthInRangeFor  {
       <p>Create a new instance with a maximum.</p>
 
     * @return  <code>new LengthInRange#LengthInRange(Invert, int, int, String, String)(invert_dontIfNull,
-      <br/> &nbsp; &nbsp; 0, length, null, length_name)</code>
+      <br> &nbsp; &nbsp; 0, length, null, length_name)</code>
     */
    public static final LengthInRange length(Invert invert_dontIfNull, int length, String length_name)  {
       return  new LengthInRange(getInvNoIfNull(invert_dontIfNull),
@@ -235,8 +235,8 @@ public class NewLengthInRangeFor  {
 
     * @param  primitiveArray_forLen  May not be {@code null}, and must be a primitive array.
     * @return  <code>{@link #length(Invert, int, String) length}(
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
-      <br/> &nbsp; &nbsp; array_name)</code></p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
+      <br> &nbsp; &nbsp; array_name)</code></p>
     */
    public static final LengthInRange primitiveArrayLength(Invert invert_dontIfNull, Object primitiveArray_forLen, String array_name)  {
       return  length(getInvNoIfNull(invert_dontIfNull),
@@ -248,8 +248,8 @@ public class NewLengthInRangeFor  {
 
     * @param  primitiveArray_forLen  May not be {@code null}, and must be a primitive array.
     * @return  <code>{@link #exactly(Invert, int, String) exactly}(
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
-      <br/> &nbsp; &nbsp; array_name)</code></p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
+      <br> &nbsp; &nbsp; array_name)</code></p>
     */
    public static final LengthInRange primitiveArrayLengthExactly(Invert invert_dontIfNull, Object primitiveArray_forLen, String array_name)  {
       return  exactly(getInvNoIfNull(invert_dontIfNull),
@@ -261,8 +261,8 @@ public class NewLengthInRangeFor  {
 
     * @param  primitiveArray_forLen  May not be {@code null}, and must be a primitive array.
     * @return  <code>{@link #minAndLength(Invert, int, int, String, String) minAndLength}(min,
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
-      <br/> &nbsp; &nbsp; min_name, array_name)</code></p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
+      <br> &nbsp; &nbsp; min_name, array_name)</code></p>
     */
    public static final LengthInRange minAndPArrayLength(Invert invert_dontIfNull, int min, Object primitiveArray_forLen, String min_name, String array_name)  {
       return  minAndLength(getInvNoIfNull(invert_dontIfNull), min,

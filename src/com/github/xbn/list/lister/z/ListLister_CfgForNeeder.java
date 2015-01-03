@@ -43,7 +43,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/neederneedable/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</a>(true, true, needer)</code>{@code (true, true, needer)}</li>
          <li>{@link #resetLL() resetLL}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public ListLister_CfgForNeeder(R needer)  {
       super(true, true, needer);
@@ -53,7 +53,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
       <p>Revert configuration to <i>nothing</i>.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #resetLL() resetLL}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #resetLL() resetLL}{@code ()}</p>
     */
    public void declareReset()  {
       resetLL();
@@ -65,7 +65,7 @@ public class ListLister_CfgForNeeder<E,L extends ListLister<E>,R extends Needer>
          <li><code>{@link #cfgOverall() cfgOverall}().{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#endCfg() endCfg}()</code></li>;
          <li><code>{@link #cfgElement() cfgElement}().{@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#endCfg() endCfg}()</code></li>;
          <li>{@link #commaSpaceBetween() commaSpaceBetween}{@code ()}</li>
-      </ol></p>
+      </ol>
     * @see  #declareReset()
     */
    protected final void resetLL()  {

@@ -12,7 +12,7 @@ public class XCObject implements ExceptionContextObject  {
 
       <p>This calls<ol>
          <li>{@link #setName(String) setName(obj_name)}</li>
-      </ol></p>
+      </ol>
 
     * @see  #XCObject(ExceptionContextObject) this(xco)
     */
@@ -24,7 +24,7 @@ public class XCObject implements ExceptionContextObject  {
 
       <p>This<ol>
          <li><code>{@link #setName(String) setName}(to_copy.{@link #getName() getName}())</code></li>
-      </ol></p>
+      </ol>
     * @see  #getObjectCopy()
     * @see  #XCObject(ExceptionContext, String) this(xc,s)
     */

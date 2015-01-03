@@ -32,11 +32,11 @@ public class StringValidatorReplacer extends ValueValidatorAdapter<String,RegexR
 
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.validate.ValueValidatorAdapter#ValueValidatorAdapter(Object, ValueValidator_Fieldable) super}(replacer, fieldable))</code>
-         <br/>Where {@code fieldable} is equal to
-         <br/> &nbsp; &nbsp; <code>(new {@link com.github.xbn.analyze.validate.z.SimpleValueValidator_F#SimpleValueValidator_F(boolean, boolean, ValidResultFilter, Appendable, Object) SimpleValueValidator_F}(false, false, filter_doNothingIfNull, replacer.getDebugApbl()),
+         <br>Where {@code fieldable} is equal to
+         <br> &nbsp; &nbsp; <code>(new {@link com.github.xbn.analyze.validate.z.SimpleValueValidator_F#SimpleValueValidator_F(boolean, boolean, ValidResultFilter, Appendable, Object) SimpleValueValidator_F}(false, false, filter_doNothingIfNull, replacer.getDebugApbl()),
             null)</code></li>
          <li>{@link #resetStateSVR() resetStateSVR}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @param  replacer  May not be {@code null}. Get with {@link com.github.xbn.analyze.validate.ValueValidatorAdapter#getAdapted() getAdapted}{@code ()}*.
     * @param  filter_doNothingIfNull  If {@code null}, then this string-validator is left {@link com.github.xbn.analyze.validate.NewValidResultFilterFor#unfiltered() unfiltered}. Get with {@link com.github.xbn.analyze.validate.Validator#getFilter() getFilter}{@code ()}. <i><b>Warning:</b> If either the {@link com.github.xbn.analyze.validate.ValidResultFilter#getPreAction() pre-} or {@link com.github.xbn.analyze.validate.ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-}filters return {@code true}</i> ({@link com.github.xbn.analyze.validate.FilterPreAction#RETURN_TRUE pre}, {@link com.github.xbn.analyze.validate.FilterAfterValue#TRUE post}), the original string will be returned unchanged--in the case of the pre-filter, the string will never be analayzed by the {@code RegexReplacer}.
@@ -60,7 +60,7 @@ public class StringValidatorReplacer extends ValueValidatorAdapter<String,RegexR
             <li>{@link #getMostRecentReplaced() getMostRecentReplaced}{@code ()} to {@code to_copy.getMostRecentReplaced()}</li>
             <li>{@link #getMostRecent() getMostRecent}{@code ()} to {@code to_copy.getMostRecent()}</li>
          </ol></li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #StringValidatorReplacer(RegexReplacer, ValidResultFilter)
@@ -78,7 +78,7 @@ public class StringValidatorReplacer extends ValueValidatorAdapter<String,RegexR
          <li>Sets {@link #getMostRecentOriginal() getMostRecentOriginal}{@code ()} to {@code to_match}</li>
          <li>Sets {@link #getMostRecentReplaced() getMostRecentReplaced}{@code ()} to <code>{@link com.github.xbn.analyze.validate.ValueValidatorAdapter#getAdapted() getAdapted}().{@link com.github.xbn.regexutil.RegexReplacer#getReplaced(Object) getReplaced}(to_match)</code></li>
          <li>Sets {@link #getMostRecentOriginal() getMostRecentOriginal}{@code ()} to {@code getMostRecentReplaced()}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_match  The string to search. May not be {@code null}.
     * @return  <code>getAdapted().{@link com.github.xbn.regexutil.RegexReplacer#wasJustMatched() wasJustMatched}()</code>
@@ -111,7 +111,7 @@ public class StringValidatorReplacer extends ValueValidatorAdapter<String,RegexR
  		<p>This calls<ol>
  			<li><code>{@link com.github.xbn.analyze.validate.ValueValidatorAdapter super}.{@link com.github.xbn.analyze.validate.ValueValidatorAdapter#resetState() resetState}()</code></li>
  			<li>{@link #resetStateSVR() resetStateSVR}{@code ()}</li>
- 		</ol></p>
+ 		</ol>
  	 */
  	public void resetState()  {
       super.resetState();
@@ -165,7 +165,7 @@ public class StringValidatorReplacer extends ValueValidatorAdapter<String,RegexR
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.validate.AbstractValidator super}.{@link com.github.xbn.analyze.validate.AbstractValidator#setDebug(Appendable, boolean) setDebug}(destination, is_on)</code></li>
          <li><code>{@link com.github.xbn.analyze.validate.ValueValidatorAdapter#getAdapted() getAdapted}()*.{@link com.github.xbn.io.Debuggable#setDebug(Appendable, boolean) setDebug}(destination, is_on)</code></li>
-      </ol></p>
+      </ol>
     * @see  #setDebugOn(boolean)
     */
    public void setDebug(Appendable destination, boolean is_on)  {
@@ -178,7 +178,7 @@ public class StringValidatorReplacer extends ValueValidatorAdapter<String,RegexR
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.validate.AbstractValidator super}.{@link com.github.xbn.analyze.validate.AbstractValidator#setDebugOn(boolean) setDebugOn}(is_on)</code></li>
          <li><code>{@link com.github.xbn.analyze.validate.ValueValidatorAdapter#getAdapted() getAdapted}()*.{@link com.github.xbn.io.Debuggable#setDebugOn(boolean) setDebugOn}(is_on)</code></li>
-      </ol></p>
+      </ol>
 
     * @see  #setDebug(Appendable, boolean)
     */

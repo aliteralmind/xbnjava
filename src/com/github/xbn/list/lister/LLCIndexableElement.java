@@ -8,7 +8,7 @@ package  com.github.xbn.list.lister;
 
    <p><ul>
       <li><b>Parent:</b> {@code <a href="ListLister.html#cfg">ListLister</a>}</li>
-   </ul></p>
+   </ul>
  **/
 public class LLCIndexableElement<E> extends LLCfgElement<E>  {
    private final ValueValidator<Integer> vv4LLen;

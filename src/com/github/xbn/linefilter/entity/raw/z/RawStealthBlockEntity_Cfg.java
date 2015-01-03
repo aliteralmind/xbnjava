@@ -28,7 +28,7 @@ public class RawStealthBlockEntity_Cfg<L> extends RawStealthBlockEntity_CfgForNe
       <p>Create a new {@code RawStealthBlockEntity_Cfg} for the root-mode only.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RawStealthBlockEntity_Cfg(String) this}(&quot;stealthblock&quot;)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RawStealthBlockEntity_Cfg(String) this}(&quot;stealthblock&quot;)</code></p>
     */
    public RawStealthBlockEntity_Cfg()  {
       this("stealthblock");
@@ -37,7 +37,7 @@ public class RawStealthBlockEntity_Cfg<L> extends RawStealthBlockEntity_CfgForNe
       <p>Create a new {@code RawStealthBlockEntity_Cfg} for a sub-mode (which will be added to another already-existing mode).</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawStealthBlockEntity_CfgForNeeder.html#RawStealthBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawStealthBlockEntity_CfgForNeeder.html#RawStealthBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
     * @see  #RawStealthBlockEntity_Cfg() this()
     */
    public RawStealthBlockEntity_Cfg(String name)  {

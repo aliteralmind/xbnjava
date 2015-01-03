@@ -28,7 +28,7 @@ public class StealthBlockEntity_Cfg extends StealthBlockEntity_CfgForNeeder<Stea
       <p>Create a new stealth block.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="SingleLineEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name_ifNonNull)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="SingleLineEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name_ifNonNull)</code></p>
 
     * @param  name_ifNonNull  Descriptive name of this block. If {@code null}, defaults to {@code "stealthblock"}.
     */

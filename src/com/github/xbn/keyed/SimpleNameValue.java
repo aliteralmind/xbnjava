@@ -46,7 +46,7 @@ public class SimpleNameValue<V> extends SimpleKeyValue<String,V> implements Name
       <p>This<ol>
          <li>Calls {@link SimpleKeyValue#SimpleKeyValue(KeyValue) super}{@code (to_copy)}</li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

@@ -40,7 +40,7 @@ public class SimpleNullHandlerForPrimitives<O> extends SimpleNullHandler<O> impl
       <p>This<ol>
          <li>Calls {@link com.github.xbn.util.copyval.SimpleNullHandler#SimpleNullHandler(SimpleNullHandler) super}{@code (to_copy)}</li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

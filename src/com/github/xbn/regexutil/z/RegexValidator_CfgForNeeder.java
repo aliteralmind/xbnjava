@@ -36,7 +36,7 @@ public class RegexValidator_CfgForNeeder<V extends RegexValidator,R extends Need
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/z/ValueValidator_CfgForNeeder.html#ValueValidator_CfgForNeeder(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
          <li>{@link #resetRVCFN() resetRVCFN}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public RegexValidator_CfgForNeeder(R needer)  {
       super(true, true, needer);
@@ -48,7 +48,7 @@ public class RegexValidator_CfgForNeeder<V extends RegexValidator,R extends Need
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder ValueValidator_CfgForNeeder}.{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#reset() reset}()</code></li>
          <li>{@link #resetRVCFN() resetRVCFN}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     */

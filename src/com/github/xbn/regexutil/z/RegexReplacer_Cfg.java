@@ -28,7 +28,7 @@ public class RegexReplacer_Cfg extends RegexReplacer_CfgForNeeder<RegexReplacer,
       <p>Create a new {@code RegexReplacer_Cfg} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RegexReplacer_CfgForNeeder.html#RegexReplacer_CfgForNeeder(R)">super</a>(null)</code></p>
+      <br> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RegexReplacer_CfgForNeeder.html#RegexReplacer_CfgForNeeder(R)">super</a>(null)</code></p>
     */
    public RegexReplacer_Cfg()  {
       super(null);
@@ -37,8 +37,8 @@ public class RegexReplacer_Cfg extends RegexReplacer_CfgForNeeder<RegexReplacer,
       <p>Create a new {@code RegexReplacer} for a direct replacement.</p>
 
     * @return  <code>new {@link #RegexReplacer_Cfg() RegexReplacer_Cfg}().{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#direct(Pattern, Object) direct}(pattern_toFind, rplcWith_direct).
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rplcWhat_notMatchNums).
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}()</code>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rplcWhat_notMatchNums).
+      <br> &nbsp; &nbsp; {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}()</code>
     * @see  <a href="{@docRoot}/com/github/xbn/regexutil/RegexReplacer.html#direct">Definition: direct</a>
     */
    public static final RegexReplacer buildDirect(Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, Appendable dbgDest_ifNonNull)  {

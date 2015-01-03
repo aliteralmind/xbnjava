@@ -47,7 +47,7 @@ package  com.github.xbn.text.padchop;
       <li><b>EscapeAction:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#escape() escape}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#noEscape() noEscape}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#unescape() unescape}{@code ()}</li>
       <li><b>Trim:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim() trim}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trim(boolean, boolean) trim}{@code (b,b)}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trimLeft() trimLeft}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#trimRight() trimRight}{@code ()}</li>
       <li><b>Defaults:</b> {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#reset() reset}{@code ()}, {@link com.github.xbn.text.padchop.z.VzblPadChop_CfgForNeeder#reset(int) reset}{@code (i)}</li>
-   </ul></p>
+   </ul>
 
  **/
 public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable, Copyable, Debuggable  {
@@ -144,7 +144,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
       <p>Create a new {@code VzblPadChop} as a duplicate of another.</p>
 
       <p>This<ol>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()
@@ -308,7 +308,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
       <p>Alter the string as configured, with a specific goal-length.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #appendX(Appendable, int, Object) appendX}{@code ((new StringBuilder()), goal_len, text)}</p>
+      <br> &nbsp; &nbsp; {@link #appendX(Appendable, int, Object) appendX}{@code ((new StringBuilder()), goal_len, text)}</p>
 
     * @param  text  May not be {@code null}.
     * @return  {@code append((new StringBuilder()), goal_len, text).toString()}
@@ -383,7 +383,7 @@ public class VzblPadChop extends SimpleDebuggable implements ToStringAppendable,
             <li>Unescaped <code>(@code getConfig().{@link #getEscapeAction() getEscapeAction}())</code></li>
             <li>Padded/chopped <code>(getConfig().{@link #doPad() doPad}(), {@link #doChop() doChop}())</code></li>
          </ol></li>
-      </ol></p>
+      </ol>
 
     * @param  vpc  May not be {@code null}.
     * @param  to_appendTo  May not be {@code null}.

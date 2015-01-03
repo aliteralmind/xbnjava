@@ -157,7 +157,7 @@ public class CompositionStubUtil {
 
       if(bVoid)  {
          to_appendTo.append("<p>Equal to").append(LINE_SEP);
-         to_appendTo.append("\t\t\t<br/> &nbsp; &nbsp;");
+         to_appendTo.append("\t\t\t<br> &nbsp; &nbsp;");
       }  else  {
          to_appendTo.append("@return  ");
       }

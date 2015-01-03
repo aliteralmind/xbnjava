@@ -25,7 +25,7 @@ public abstract class AbstractNeeder implements Needer  {
       <p>Create a new instance.</p>
 
       <p>This creates an internal
-      <br/> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeederComposer#NeederComposer() NeederComposer}{@code ()}</p>
     */
    public AbstractNeeder()  {
       ndrc = new NeederComposer();
@@ -47,7 +47,7 @@ public abstract class AbstractNeeder implements Needer  {
       <p>Starts configuration for a specific type of object.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
+      <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeederComposer NeederComposer}]</i>.{@link com.github.xbn.neederneedable.NeederComposer#startConfig(Class) startConfig}(needed_class)</code></p>
     */
    public void startConfig(Class<?> needed_class)  {
       ndrc.startConfig(needed_class);

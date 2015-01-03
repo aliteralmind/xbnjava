@@ -35,7 +35,7 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawLineEntity_CfgForNeeder.html#RawLineEntity_CfgForNeeder(R, com.github.xbn.linefilter.entity.EntityType, java.lang.String)">super</a>(needer, {@link com.github.xbn.linefilter.entity.EntityType}.{@link com.github.xbn.linefilter.entity.EntityType#STEALTH_BLOCK STEALTH_BLOCK}, name)</code></li>
          <li>{@link #resetRSBECFN() resetRSBECFN}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public RawStealthBlockEntity_CfgForNeeder(R needer, String name)  {
       super(needer, EntityType.STEALTH_BLOCK, name);
@@ -58,7 +58,7 @@ public abstract class RawStealthBlockEntity_CfgForNeeder<L,M extends RawStealthB
       <p>This calls<ul>
          <li><code>{@link #startValidator(ValueValidator) startValidator}(null)</code></li>
          <li><code>{@link #endValidator(ValueValidator) endValidator}(null)</code></li>
-      </ul></p>
+      </ul>
 
     * @see  #reset()
     */

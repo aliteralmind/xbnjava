@@ -21,7 +21,7 @@ package  com.github.xbn.list.lister;
       <li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNull(String) ifNull}{@code (s)}</li>
       <li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#ifNonNull(String) ifNonNull}{@code (s)}</li>
       <li>{@link com.github.xbn.list.lister.z.LLCfgOverall_CfgForNeeder#prePost(String, String) prePost}{@code (s,s)}</li>
-   </ul></p>
+   </ul>
 
  * @param  E  The type of element in the {@code List}.
  **/

@@ -28,7 +28,7 @@ public class BlockEntity_Cfg extends BlockEntity_CfgForNeeder<BlockEntity,DummyF
       <p>Create a new block.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="BlockEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name_ifNonNull)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="BlockEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name_ifNonNull)</code></p>
 
     * @param  name_ifNonNull  Descriptive name of this block. If {@code null}, defaults to {@code "block"}.
     */

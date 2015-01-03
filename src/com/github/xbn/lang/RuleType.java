@@ -77,7 +77,7 @@ public enum RuleType {
       <p>If an <code>RuleType</code> is not a required value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</code></p>
     * @see  #crashIfForbiddenValue(RuleType, String, Object) crashIfForbiddenValue(ert,s,o)
     */
    public void crashIfNotRequiredValue(RuleType rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
@@ -87,7 +87,7 @@ public enum RuleType {
       <p>If an <code>RuleType</code> is a forbidden value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, &quot;RuleType&quot;, xtra_errInfo)</code></p>
     * @see  #crashIfNotRequiredValue(RuleType, String, Object) crashIfNotRequiredValue(ert,s,o)
     */
    public void crashIfForbiddenValue(RuleType rqd_value, String this_enumsVarName, Object xtra_errInfo)  {

@@ -33,7 +33,7 @@ public class SimpleNamed extends SimpleKeyed<String> implements Named  {
       <p>Create a new instance.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link SimpleKeyed#SimpleNamed(java.lang.String, java.lang.String) this}{@code (name, "name")}</p>
+      <br> &nbsp; &nbsp; {@link SimpleKeyed#SimpleNamed(java.lang.String, java.lang.String) this}{@code (name, "name")}</p>
     */
    public SimpleNamed(String name, String name_varName)  {
       super(name);
@@ -50,7 +50,7 @@ public class SimpleNamed extends SimpleKeyed<String> implements Named  {
       <p>Create a new {@code SimpleNamed} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link SimpleKeyed#SimpleKeyed(Keyed) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link SimpleKeyed#SimpleKeyed(Keyed) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

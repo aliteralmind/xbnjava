@@ -38,7 +38,7 @@ package  com.github.xbn.regexutil;
       <li><b>Using:</b> <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useMatches() useMatches}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useFind() useFind}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#useLookingAt() useLookingAt}()</code></li>
       <li><b>Pattern:</b> <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#pattern(String) pattern}(s)</code>, <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#pattern(String, int) pattern}(s,i)</code>, <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#pattern(Pattern) pattern}(p)</code></li>
       <li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#requiredGroups(int) requiredGroups}(i)</code>, <code>{@link com.github.xbn.regexutil.z.RegexGroupExtractor_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code></li>
-   </ul></p>
+   </ul>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
@@ -84,7 +84,7 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
       <p>Create a new instance as a duplicate of another, with a new regex.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RegexGroupExtractor(RegexGroupExtractor, Pattern) this}(to_copy, {@link NewPatternFor}.{@link NewPatternFor#regex(String, String) regex}(regex_withGroups))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RegexGroupExtractor(RegexGroupExtractor, Pattern) this}(to_copy, {@link NewPatternFor}.{@link NewPatternFor#regex(String, String) regex}(regex_withGroups))</code></p>
 
     * @param  regex_withGroups  May not be <code>null</code>.
     */
@@ -98,7 +98,7 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
       <p>Create a new instance as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RegexGroupExtractor(RegexGroupExtractor, Pattern) this}(to_copy, {@link RegexUtil}.{@link RegexUtil#getPatternCopy(PatternHaser, String) getPatternCopy}(to_copy, ...))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RegexGroupExtractor(RegexGroupExtractor, Pattern) this}(to_copy, {@link RegexUtil}.{@link RegexUtil#getPatternCopy(PatternHaser, String) getPatternCopy}(to_copy, ...))</code></p>
 
     * @param  to_copy  May not be <code>null</code>.
     */
@@ -236,10 +236,10 @@ public class RegexGroupExtractor extends AbstractIterator<List<String>> implemen
 
       <p>This<ol>
          <li>Calls
-         <br/> &nbsp; &nbsp; <code>to_appendTo.append({@link #nextAsJoined(String) nextAsJoined}(separator))</code></li>
+         <br> &nbsp; &nbsp; <code>to_appendTo.append({@link #nextAsJoined(String) nextAsJoined}(separator))</code></li>
          <li><i><b>Returns</b></i>
-         <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.io.IOUtil IOUtil}.{@link com.github.xbn.io.IOUtil#appendNewLinesX(int, Appendable) appendNewLinesX}(new_lineCount, to_appendTo)</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code>{@link com.github.xbn.io.IOUtil IOUtil}.{@link com.github.xbn.io.IOUtil#appendNewLinesX(int, Appendable) appendNewLinesX}(new_lineCount, to_appendTo)</code></li>
+      </ol>
 
     * @exception  RTIOException  If a {@code java.io.IOException} is thrown for any reason.
     */

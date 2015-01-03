@@ -58,7 +58,7 @@ public class AnalyzerComposer extends SimpleDebuggable  {
             <li>{@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code to_copy.wasAnalyzed()}</li>
          </ol></li>
          <li>Calls {@link #zresetStateAB() zresetStateAB}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
-      </ol></p>
+      </ol>
 
     * @param  ignored  Required to prevent an ambigous-invocation error, when attempting to call this or the {@link #AnalyzerComposer(Analyzer) other} copy-constructor with a class such as {@link com.github.xbn.analyze.AbstractAnalyzer AbstractAnalyzer}, which both extends this {@code AnalyzerComposer} and is an {@link com.github.xbn.analyze.Analyzer Analyzer}.
     * @see  #AnalyzerComposer()
@@ -84,7 +84,7 @@ public class AnalyzerComposer extends SimpleDebuggable  {
             <li>{@link #getAnalyzedCount() getAnalyzedCount}{@code ()} to {@code to_copy.getAnalyzedCount()}</li>
          </ol></li>
          <li>Calls {@link #zresetStateAB() zresetStateAB}{@code ()}</li>
-      </ol></p>
+      </ol>
     * @see  #AnalyzerComposer()
     */
    @CompositionConstructor
@@ -150,7 +150,7 @@ public class AnalyzerComposer extends SimpleDebuggable  {
 
       <p>This<ol>
          <li>Increments {@link #getAnalyzedCount() getAnalyzedCount}{@code ()} and sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code true}.</li>
-      </ol></p>
+      </ol>
     */
    @CompositionFunction
    public void declareAnalyzed_4prot()  {

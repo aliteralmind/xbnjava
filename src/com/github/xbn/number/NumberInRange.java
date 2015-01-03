@@ -36,7 +36,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     * <p>Create a new {@code NumberInRange}.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, null, null)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, null, null)</code></p>
     */
    public NumberInRange()  {
       this(Invert.NO, null, null);
@@ -45,7 +45,7 @@ public abstract class NumberInRange<N extends Number> extends AbstractExtraErrIn
     * <p>Create a new {@code NumberInRange}.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, nb_min, nb_max)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #NumberInRange(Invert, NumberBound, NumberBound) this}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#NO NO}, nb_min, nb_max)</code></p>
     */
    public NumberInRange(NumberBound<N> nb_min, NumberBound<N> nb_max)  {
       this(Invert.NO, nb_min, nb_max);

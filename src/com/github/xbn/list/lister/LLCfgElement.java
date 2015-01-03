@@ -17,7 +17,7 @@ package  com.github.xbn.list.lister;
       <li><b>Alter the index:</b> {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#indexUnaltered() indexUnaltered}{@code ()}*, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#alterIndex(ValueAlterer) alterIndex}{@code (av)}</li>
       <li></li>
       <li><b>Alter the value:</b> {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#valueUnaltered() valueUnaltered}{@code ()}*, {@link com.github.xbn.list.lister.z.LLCfgElement_CfgForNeeder#alterValue(ValueAlterer) alterValue}{@code (av)}</li>
-   </ul></p>
+   </ul>
  **/
 public class LLCfgElement<E> extends LLConfigBase<E>  {
    private final ValueAlterer<Integer,Integer> avIndex;
@@ -28,7 +28,7 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
    <p>If the output of any configuration item (including  <code><i>[{@link com.github.xbn.list.lister.LLConfigBase LLConfigBase}]</i>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}()</code>) contains a {@link #sDISPLAY_IDX_MARKER}, it is replaced with the element's index. Only the first [left-most] marker in each item is recognized. See the {@link #LLCfgElement(LLCfgElement_Fieldable) default constructor}. This also includes the string-value of the element itself, if and only if it is altered.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; &quot;{@code ~index~}&quot;</p>
+      <br> &nbsp; &nbsp; &quot;{@code ~index~}&quot;</p>
     */
    public static final String sDISPLAY_IDX_MARKER = "~index~";
    /**
@@ -42,14 +42,14 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
          <li>{@link com.github.xbn.list.lister.LLConfigBase#getIfNull() getIfNull}{@code ()}</li>
          <li>{@link com.github.xbn.list.lister.LLConfigBase#getIfNonNull() getIfNonNull}{@code ()}</li>
          <li>{@link com.github.xbn.list.lister.LLConfigBase#getPrefix() getPrefix}{@code ()} and {@link com.github.xbn.list.lister.LLConfigBase#getPostfix() getPostfix}{@code ()}</li>
-      </ol></p>
+      </ol>
 
       <p>The index alterer ({@link #getAlterIndex() getAlterIndex}{@code ()}) is never ignored.</p>
 
       <HR ALIGN="center" WIDTH="25%"/>
 
       <p>This constructor is equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase super}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase super}{@code ()}</p>
     */
    public LLCfgElement(LLCfgElement_Fieldable<E> fieldable)  {
       super(fieldable);
@@ -61,7 +61,7 @@ public class LLCfgElement<E> extends LLConfigBase<E>  {
 
       <p>This<ol>
          <li>Calls {@link com.github.xbn.list.lister.LLConfigBase#LLConfigBase(LLConfigBase) super}{@code (to_copy)}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

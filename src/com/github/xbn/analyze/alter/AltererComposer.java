@@ -45,7 +45,7 @@ public class AltererComposer extends AnalyzerComposer  {
          <li>{@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer() super}{@code ()}</li>
          <li>{@link #zresetStateAC() zresetStateAC}{@code ()}</li>
          <li>{@link #zresetCountsAC() zresetCountsAC}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @see  #AltererComposer(boolean, AltererComposer) this(b,ab)
     * @see  #AltererComposer(Alterer) this(ltr)
@@ -71,7 +71,7 @@ public class AltererComposer extends AnalyzerComposer  {
             <li>{@link #getDeletedCount() getDeletedCount}{@code ()} to {@code to_copy.getDeletedCount()}</li>
          </ol></li>
          <li>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
-      </ol></p>
+      </ol>
     * @param  to_copy  May not be {@code null}
     * @see  #getObjectCopy()
     * @see  #AltererComposer() this()
@@ -94,7 +94,7 @@ public class AltererComposer extends AnalyzerComposer  {
             <li>{@link #getDeletedCount() getDeletedCount}{@code ()} to {@code to_copy.getDeletedCount()}</li>
          </ol></li>
          <li>Calls {@link #zresetStateAC() zresetStateAC}{@code ()} &nbsp; &nbsp; <i>(as specified by  <code><i>[{@link com.github.xbn.analyze.Analyzer Analyzer}]</i>.{@link com.github.xbn.analyze.Analyzer#getObjectCopy() getObjectCopy}()</code>)</i></li>
-      </ol></p>
+      </ol>
     * @param  to_copy  May not be {@code null}
     * @see  #AltererComposer() this()
     */
@@ -111,7 +111,7 @@ public class AltererComposer extends AnalyzerComposer  {
       <p>Reset non-count state.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #zresetStateAC() zresetStateAC}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #zresetStateAC() zresetStateAC}{@code ()}</p>
     */
    public void resetState()  {
       super.resetState();
@@ -133,7 +133,7 @@ public class AltererComposer extends AnalyzerComposer  {
       <p>Reset counters to zero.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #zresetCountsAC() zresetCountsAC}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #zresetCountsAC() zresetCountsAC}{@code ()}</p>
     */
    public void resetCounts()  {
       super.resetCounts();
@@ -164,7 +164,7 @@ public class AltererComposer extends AnalyzerComposer  {
          <li>Calls  <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer super}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</code></li>
          <li>Sets {@link #wasAltered() wasAltered}{@code ()} to {@code false}</li>
          <li>Sets {@link #needsToBeDeleted() needsToBeDeleted}{@code ()} to {@code true}</li>
-      </ol></p>
+      </ol>
     */
    public void declareAltered_4prot(Altered altered, NeedsToBeDeleted deleted)  {
       try  {

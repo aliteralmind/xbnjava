@@ -38,7 +38,7 @@ public class RuleableComposer  {//implements Ruleable  {
 
       <p>This<ol>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()
@@ -55,7 +55,7 @@ public class RuleableComposer  {//implements Ruleable  {
 
       <p>This<ol>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

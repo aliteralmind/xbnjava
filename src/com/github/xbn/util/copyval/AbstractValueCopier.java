@@ -29,7 +29,7 @@ public abstract class AbstractValueCopier<O> implements ValueCopier<O>  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(boolean) super}{@code (is_copyable)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(boolean) super}{@code (is_copyable)}</p>
     */
    public AbstractValueCopier(boolean is_copyable)  {
       gvcc = new ValueCopierComposer<O>(is_copyable);
@@ -38,7 +38,7 @@ public abstract class AbstractValueCopier<O> implements ValueCopier<O>  {
       <p>Create a new {@code AbstractValueCopier} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(ValueCopier) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.ValueCopierComposer#ValueCopierComposer(ValueCopier) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     */
@@ -47,7 +47,8 @@ public abstract class AbstractValueCopier<O> implements ValueCopier<O>  {
    }
  	@SuppressWarnings("unchecked")
  	public O getValueCopy(O original, String orig_name)  {
-      return  getValueCopy(original, orig_name, NewNullHandlerFor.useNull());
+ 		//0.1.5.1: Explicit cast to O required for 1.8 compatibility.
+      return  (O)getValueCopy(original, orig_name, NewNullHandlerFor.useNull());
    }
 
  	public O getValueCopy(O original, String orig_name, NullHandler<O> null_handler)  {

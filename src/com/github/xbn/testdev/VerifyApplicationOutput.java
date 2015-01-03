@@ -95,7 +95,7 @@ public class VerifyApplicationOutput  {
       <p>If the application does not have the expected output, <code>{@link org.junit.Assert#fail() fail}()</code>. Otherwise, {@link org.junit.Assert#assertTrue(boolean) assertTrue}{@code (true)}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #assertWithParameters(DisplayOutputToConsole, String, Class, String[], String...) assertWithParameters}(out_toConsole.isYes(), forbiddenOutputs_ifNonNull, class_containingMainFunction, EMPTY_STRING_ARRAY, xpctdOutputs_inOrder)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #assertWithParameters(DisplayOutputToConsole, String, Class, String[], String...) assertWithParameters}(out_toConsole.isYes(), forbiddenOutputs_ifNonNull, class_containingMainFunction, EMPTY_STRING_ARRAY, xpctdOutputs_inOrder)</code></p>
     */
    public static final void assertWithNoParameters(DisplayOutputToConsole out_toConsole, String[] forbiddenOutputs_ifNonNull, Class<?> class_containingMainFunction, String... xpctdOutputs_inOrder)  {
       assertWithParameters(out_toConsole, forbiddenOutputs_ifNonNull, class_containingMainFunction, EMPTY_STRING_ARRAY, xpctdOutputs_inOrder);
@@ -104,8 +104,8 @@ public class VerifyApplicationOutput  {
       <p>If the application does not have the expected output, <code>{@link org.junit.Assert#fail() fail}()</code>. Otherwise, {@link org.junit.Assert#assertTrue(boolean) assertTrue}{@code (true)}.</p>
 
       <p>This calls
-      <br/> &nbsp; &nbsp; <code>{@link #getBadIndexWithParams(String, Class, String[], String...) getBadIndexWithParams}(forbiddenOutputs_ifNonNull, class_containingMainFunction, cmd_lineParams, xpctdOutputs_inOrder)</code>
-      <br/>If it returns {@code -1}, this calls {@code assertTrue(true)}. Otherwise, this calls {@code fail()} with a diagnostic message.</p>
+      <br> &nbsp; &nbsp; <code>{@link #getBadIndexWithParams(String, Class, String[], String...) getBadIndexWithParams}(forbiddenOutputs_ifNonNull, class_containingMainFunction, cmd_lineParams, xpctdOutputs_inOrder)</code>
+      <br>If it returns {@code -1}, this calls {@code assertTrue(true)}. Otherwise, this calls {@code fail()} with a diagnostic message.</p>
 
     * @param  out_toConsole  If {@link com.github.xbn.testdev.DisplayOutputToConsole#YES YES}, output is also displayed on the console. If {@link com.github.xbn.testdev.DisplayOutputToConsole#NO NO}, it's suppressed. May not be {@code null}.
     */

@@ -59,7 +59,7 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
       <p>This<ol>
          <li>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(boolean, ListifyComposer) super}{@code (ignored, to_copy)}</li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     */
@@ -80,7 +80,7 @@ public class ListifyPrimitiveableComposer<E> extends ListifyComposer<E>  {//impl
       <p>This<ol>
          <li>Calls {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     */

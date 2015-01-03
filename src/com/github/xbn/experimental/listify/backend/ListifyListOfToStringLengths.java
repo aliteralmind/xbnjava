@@ -38,7 +38,7 @@ public class ListifyListOfToStringLengths<R> extends AbstractListifyIntable  {
       <p>Create a new {@code ListifyListOfToStringLengths} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyIntable#AbstractListifyIntable(com.github.xbn.experimental.listify.primitiveable.ListifyIntable) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyIntable#AbstractListifyIntable(com.github.xbn.experimental.listify.primitiveable.ListifyIntable) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

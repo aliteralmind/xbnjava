@@ -43,7 +43,7 @@ public class SimpleKeyValue<K,V> extends SimpleKeyed<K> implements KeyValue<K,V>
       <p>This<ol>
          <li>Calls {@link SimpleKeyed#SimpleKeyed(Keyed) super}{@code (_toCopy)}</li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

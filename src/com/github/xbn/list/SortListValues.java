@@ -75,7 +75,7 @@ public enum SortListValues  {
       <p>If an <code>SortListValues</code> is not a required value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
     * @see  #crashIfForbiddenValue(SortListValues, String, Object) crashIfForbiddenValue(ert,s,o)
     */
    public void crashIfNotRequiredValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
@@ -85,7 +85,7 @@ public enum SortListValues  {
       <p>If an <code>SortListValues</code> is a forbidden value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
     * @see  #crashIfNotRequiredValue(SortListValues, String, Object) crashIfNotRequiredValue(ert,s,o)
     */
    public void crashIfForbiddenValue(SortListValues e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

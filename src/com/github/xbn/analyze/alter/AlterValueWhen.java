@@ -26,8 +26,8 @@ package  com.github.xbn.analyze.alter;
    import  com.github.xbn.text.StringUtilBase;
 /**
    <p>A {@code ValueAlterer} that does one of two things: One action when a condition is met, and another when it is not. Internally this is two {@code ValueAlterer}-s and an <code>xbn.analyze.validate.{@link com.github.xbn.analyze.validate.ValueValidator ValueValidator}</code>, the latter of which is the &quot;alter condition&quot;. If
-   <br/> &nbsp; &nbsp; {@link #getCondition() getCondition}{@code ().isValid(V)}
-   <br/>is {@code true}, then {@code A} is altered by the {@link #getAlterValid() valid alterer}. Otherwise, it is altered by the {@link #getAlterInvalid() invalid alterer}.</p>
+   <br> &nbsp; &nbsp; {@link #getCondition() getCondition}{@code ().isValid(V)}
+   <br>is {@code true}, then {@code A} is altered by the {@link #getAlterValid() valid alterer}. Otherwise, it is altered by the {@link #getAlterInvalid() invalid alterer}.</p>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
@@ -46,9 +46,9 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <p>Create a new {@code AlterValueWhen} that makes no alterations.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this}(
-      <br/> &nbsp; &nbsp; (ValueValidator&lt;V&gt;)NewValueValidatorFor.unrestricted(null, null),
-      <br/> &nbsp; &nbsp; (new ReturnValueUnchanged&lt;V,A&gt;()), (new ReturnValueUnchanged&lt;V,A&gt;()))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this}(
+      <br> &nbsp; &nbsp; (ValueValidator&lt;V&gt;)NewValueValidatorFor.unrestricted(null, null),
+      <br> &nbsp; &nbsp; (new ReturnValueUnchanged&lt;V,A&gt;()), (new ReturnValueUnchanged&lt;V,A&gt;()))</code></p>
     */
    public AlterValueWhen()  {
       this(
@@ -59,9 +59,9 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <p>Create a new {@code AlterValueWhen}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this}(
-      <br/> &nbsp; &nbsp; (ValueValidator&lt;V&gt;)new NewValueValidatorFor.unrestricted(null, null),
-      <br/> &nbsp; &nbsp; alter_forValid, (new {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#ReturnValueUnchanged() ReturnValueUnchanged}&lt;A&gt;()))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this}(
+      <br> &nbsp; &nbsp; (ValueValidator&lt;V&gt;)new NewValueValidatorFor.unrestricted(null, null),
+      <br> &nbsp; &nbsp; alter_forValid, (new {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#ReturnValueUnchanged() ReturnValueUnchanged}&lt;A&gt;()))</code></p>
     */
    public AlterValueWhen(ValueAlterer<V,A> alter_forValid)  {
       this(
@@ -72,7 +72,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <p>Create a new {@code AlterValueWhen} that does nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this}(condition, alter_forValid, (new ReturnValueUnchanged<V,A>()))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this}(condition, alter_forValid, (new ReturnValueUnchanged<V,A>()))</code></p>
     */
    public AlterValueWhen(ValueValidator<V> condition, ValueAlterer<V,A> alter_forValid)  {
       this(condition, alter_forValid, (new ReturnValueUnchanged<V,A>()));
@@ -81,7 +81,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <p>Create a new {@code AlterValueWhen}.</p>
 
       <p>This calls {@link com.github.xbn.analyze.alter.AbstractValueAlterer#AbstractValueAlterer() super}{@code ()}, and resets {@link #zresetStateAVW() state} and {@link #zresetCountsAVW() counts}</li>
-      </ol></p>
+      </ol>
 
       <p><i>All parameters must be non-{@code null}. They are also all duplicated internally (defensively copied).</i></p>
 
@@ -122,7 +122,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <p>This calls<ol>
          <li>{@link com.github.xbn.analyze.alter.AbstractValueAlterer#AbstractValueAlterer(ValueAlterer) super}{@code (to_copy)}</li>
          <li>{@link #zresetStateAVW() zresetStateAVW}{@code ()}</li>
-      </ol></p>
+      </ol>
     * @see  #getObjectCopy()
     * @see  #AlterValueWhen(ValueValidator, ValueAlterer, ValueAlterer) this(vv,av,av,b)
     */
@@ -153,7 +153,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
       <p>Reset non-count state.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #zresetStateAVW() zresetStateAVW}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #zresetStateAVW() zresetStateAVW}{@code ()}</p>
 
     * @see  #resetCounts()
     */
@@ -168,7 +168,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
          <li>{@link #getCondition() getCondition}{@code ().}{@link #resetState() resetState}{@code ()}</li>
          <li>{@link #getAlterValid() getAlterValid}{@code ().resetState()}</li>
          <li>{@link #getAlterInvalid() getAlterInvalid}{@code ().resetState()}</li>
-      </ol></p>
+      </ol>
     */
    protected final void zresetStateAVW()  {
       getCondition().resetState();
@@ -180,7 +180,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
 
       <p>This calls<ol>
          <li>{@link #zresetCountsAVW() zresetCountsAVW}{@code ()}</li>
-      </ol></p>
+      </ol>
     * @see  #resetState()
     */
    public void resetCounts()  {
@@ -194,7 +194,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
          <li>{@link #getCondition() getCondition}{@code ().}{@link #resetCounts() resetCounts}{@code ()}</li>
          <li>{@link #getAlterValid() getAlterValid}{@code ().resetCounts()}</li>
          <li>{@link #getAlterInvalid() getAlterInvalid}{@code ().resetCounts()}</li>
-      </ol></p>
+      </ol>
     * @see  #resetCounts()
     */
    protected final void zresetCountsAVW()  {
@@ -209,7 +209,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
          <li>{@link #getCondition() getCondition}{@code ().}{@link com.github.xbn.analyze.validate.ValidatorComposer#resetState() resetState}{@code ()}</li>
          <li>{@link #getAlterValid() getAlterValid}{@code ().resetForDeletion()}</li>
          <li>{@link #getAlterInvalid() getAlterInvalid}{@code ().resetForDeletion()}</li>
-      </ol></p>
+      </ol>
     */
    public void resetForDeletion()  {
       getCondition().resetState();
@@ -302,7 +302,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
          <li>{@link #getCondition() getCondition}{@code ().setDebugOn(is_on)}</li>
          <li>{@link #getAlterValid() getAlterValid}{@code ().setDebugOn(is_on)}</li>
          <li>{@link #getAlterInvalid() getAlterInvalid}{@code ().setDebugOn(is_on)}</li>
-      </ol></p>
+      </ol>
     */
    public void setDebugOn(boolean is_on)  {
       super.setDebugOn(is_on);
@@ -317,7 +317,7 @@ public class AlterValueWhen<V,A> extends AbstractValueAlterer<V,A>  {
          <li>{@link #getCondition() getCondition}{@code ().setDebug(destination)}</li>
          <li>{@link #getAlterValid() getAlterValid}{@code ().setDebug(destination)}</li>
          <li>{@link #getAlterInvalid() getAlterInvalid}{@code ().setDebug(destination)}</li>
-      </ol></p>
+      </ol>
     * @see  #setDebugOn(boolean) setDebugOn(b)
     */
    public void setDebug(Appendable destination, boolean is_on)  {

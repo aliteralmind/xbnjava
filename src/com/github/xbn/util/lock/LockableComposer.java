@@ -30,7 +30,7 @@ public class LockableComposer  {
       <p>This<ol>
          <li>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code is_unlockable}.</li>
          <li>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</li>
-      </ol></p>
+      </ol>
 
     * @see  #LockableComposer(boolean, LockableComposer) this(b,lc)
     * @see  #LockableComposer(Lockable) LockableComposer(lkbl)
@@ -45,7 +45,7 @@ public class LockableComposer  {
       <p>This<ol>
          <li>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</li>
          <li>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</li>
-      </ol></p>
+      </ol>
     * @see  #LockableComposer(boolean) this(b)
     */
    public LockableComposer(boolean ignored, LockableComposer to_copy)  {
@@ -64,7 +64,7 @@ public class LockableComposer  {
       <p>This<ol>
          <li>Sets {@link #isUnlockable() isUnlockable}{@code ()} to {@code to_copy.isUnlockable()}</li>
          <li>Sets {@link #isLocked() isLocked}{@code ()} to {@code false}.</li>
-      </ol></p>
+      </ol>
     * @see  #LockableComposer(boolean) this(b)
     */
    public LockableComposer(Lockable to_copy)  {

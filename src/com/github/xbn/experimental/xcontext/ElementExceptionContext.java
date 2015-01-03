@@ -21,7 +21,7 @@ public interface ElementExceptionContext extends ObjectExceptionContext  {
       <p>Update the element's index.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #getXCElement() getXCElement}{@code ().}{@link com.github.xbn.experimental.xcontext.ExceptionContextElement#index(int) index}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #getXCElement() getXCElement}{@code ().}{@link com.github.xbn.experimental.xcontext.ExceptionContextElement#index(int) index}{@code ()}</p>
     */
    void setIndex(int index);
 }

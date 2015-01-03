@@ -47,7 +47,7 @@ public class ReplaceAllIndentTabsWithSpaces  {
       <p>Create a new instance from space-count and optional debugging.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel) this}(space_count, debug_ifNonNull, {@link TabToSpaceDebugLevel}.{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY})</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #ReplaceAllIndentTabsWithSpaces(int, Appendable, TabToSpaceDebugLevel) this}(space_count, debug_ifNonNull, {@link TabToSpaceDebugLevel}.{@link TabToSpaceDebugLevel#ALL_SUMMARY_ONLY ALL_SUMMARY_ONLY})</code></p>
     */
    public ReplaceAllIndentTabsWithSpaces(int space_count, Appendable debug_ifNonNull)  {
       this(space_count, debug_ifNonNull, TabToSpaceDebugLevel.ALL_SUMMARY_ONLY);
@@ -101,7 +101,7 @@ public class ReplaceAllIndentTabsWithSpaces  {
       <p>Replace all indentation tabs for all files in a directory, with runtime errors only--<i>this overwrites the files</i>.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #overwriteDirectoryX(Iterator) overwriteDirectoryX}(file_itr)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #overwriteDirectoryX(Iterator) overwriteDirectoryX}(file_itr)</code></p>
 
     * @exception  RTIOException  If a {@code java.io.IOException} is thrown for any reason.
     */
@@ -120,8 +120,8 @@ public class ReplaceAllIndentTabsWithSpaces  {
          <li>Creates a {@linkplain com.github.xbn.text.StringUtil#getLineIterator(Object) line-iterator} to it,</li>
          <li>Opens a {@linkplain com.github.xbn.io.NewPrintWriterToFile print-writer} to the <i>original file</i> (with overwrite and auto-flush), and</li>
          <li>calls
-         <br/> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(<i>[line-iterator]</i>, <i>[print-writer]</i>)</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(<i>[line-iterator]</i>, <i>[print-writer]</i>)</code></li>
+      </ol>
 
     * @param  file_itr  May not be {@code null}.
     * @return  A four-tuple containing, in order, the total number of lines in all files, the total lines containing at least one tab, the total tabs replaced, and the number of files processed.
@@ -185,7 +185,7 @@ public class ReplaceAllIndentTabsWithSpaces  {
       <p>Replace all indentation tabs in a single file, with runtime errors only.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(line_itr, output)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #appendForFileX(Iterator, Appendable) appendForFileX}(line_itr, output)</code></p>
 
     * @exception  RTIOException  If an {@link java.io.IOException} is thrown for any reason.
     */

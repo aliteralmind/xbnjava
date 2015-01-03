@@ -28,7 +28,7 @@ public class SingleLineEntity_Cfg extends SingleLineEntity_CfgForNeeder<SingleLi
       <p>Create a new single line entity.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="SingleLineEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name_ifNonNull)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="SingleLineEntity_CfgForNeeder.html#BlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name_ifNonNull)</code></p>
 
     * @param  name_ifNonNull  Descriptive name of this block. If {@code null}, defaults to {@code "singleline"}.
     */

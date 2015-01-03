@@ -77,14 +77,14 @@ public class NumberUtil  {
     * <p>Get the integer in the middle of two others.</p>
     *
     * <p>From
-    * <br/> &nbsp; &nbsp; {@code http://stackoverflow.com/questions/2707605/java-arraylist-middle}
-    * <br/>(User {@code polygenelubricants}, downloaded 11/13/2013)
-    * <br/>&quot;Generally, if you need to find the middle of items between
+    * <br> &nbsp; &nbsp; {@code http://stackoverflow.com/questions/2707605/java-arraylist-middle}
+    * <br>(User {@code polygenelubricants}, downloaded 11/13/2013)
+    * <br>&quot;Generally, if you need to find the middle of items between
     * index low (inclusive) and high (exclusive), it's mathematically
-    * <br/> &nbsp; &nbsp; {@code int mid = (low + high) / 2}
-    * <br/>But due to arithmetic overflow in limited-precision integer, the
+    * <br> &nbsp; &nbsp; {@code int mid = (low + high) / 2}
+    * <br>But due to arithmetic overflow in limited-precision integer, the
     * proper formula is
-    * <br/> &nbsp; &nbsp; {@code int mid = (low + high) >>> 1}&quot;</p>
+    * <br> &nbsp; &nbsp; {@code int mid = (low + high) >>> 1}&quot;</p>
     *
     * <p>{@code low} <i>should</i> be less-than-or-equal-to {@code high}.</p>
     */
@@ -122,7 +122,7 @@ public class NumberUtil  {
     * @param  ints  The array which {@code num} should be in. May not be null, and, if {@code do_orderAsc} is true, <i>should</i> be non-empty, unique, and sorted ascending. If not, this function will not work properly.
     * @param  do_orderAsc  If true, then <code>{@link java.util.Arrays}.{@link java.util.Arrays#binarySearch(char[], char) binarySearch}(c[],c)</code> is used to search the array. If false, a for loop is used.
     * @return  The first index in {@code ints} at which {@code num} exists.
-    * <br/>{@code <b>-1</b>} If it doesn't.
+    * <br>{@code <b>-1</b>} If it doesn't.
     */
    public static final int getFoundIdx(int num, int[] ints, boolean do_orderAsc)  {
       if(ints == null)  {

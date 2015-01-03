@@ -21,9 +21,10 @@ package  com.github.xbn.io;
    import  com.github.xbn.lang.CrashIfObject;
    import  java.io.File;
    import  java.io.IOException;
+   import  java.io.PrintWriter;
    import  static com.github.xbn.lang.XbnConstants.*;
 /**
-   <p>Obtain line-iterators or the full-text from a plain-text file.</p>
+   <p>Obtain line-iterators or the full-text from, or write text to, a plain-text file.</p>
 
    @see  com.github.xbn.text.StringUtil
    @author  Copyright (C) 2014, Jeff Epstein, with asistance by Marc Baumbach for {@code newWriterForAppendable(apbl)}. Released under the LPGL 2.1. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
@@ -52,8 +53,8 @@ public class PlainTextFileUtil  {
       <p>Append all plain-text from a file, given its path.</p>
 
     * @return  {@code to_appendTo}, after all lines from
-      <br/> &nbsp; &nbsp; {@link #getLineIterator(String, String) getLineIterator}{@code (path, file_varName)}
-      <br/>are appended to it.
+      <br> &nbsp; &nbsp; {@link #getLineIterator(String, String) getLineIterator}{@code (path, file_varName)}
+      <br>are appended to it.
     * @see  #appendText(StringBuilder, File, String)
     */
    public static final StringBuilder appendText(StringBuilder to_appendTo, String path, String file_varName)  {
@@ -67,8 +68,8 @@ public class PlainTextFileUtil  {
       <p>Append all plain-text from a file.</p>
 
     * @return  {@code to_appendTo}, after all lines from
-      <br/> &nbsp; &nbsp; {@link #getLineIterator(File, String) getLineIterator}{@code (file, file_varName)}
-      <br/>are appended to it.
+      <br> &nbsp; &nbsp; {@link #getLineIterator(File, String) getLineIterator}{@code (file, file_varName)}
+      <br>are appended to it.
     * @see  #appendText(StringBuilder, String, String)
     */
    public static final StringBuilder appendText(StringBuilder to_appendTo, File file, String file_varName)  {
@@ -107,5 +108,28 @@ public class PlainTextFileUtil  {
          throw  CrashIfObject.nullOrReturnCause(file, file_varName, null, rx);
       }
    }
+   /**
+    * Open a plain text file, write text to it, and immediately close it.
+    * @param  path  The path of the file to write to. Must be valid and
+    * writeable.
+    * @param  path_varName  Descriptive name for {@code path}.
+    * @param   overwrite  If {@link Overwrite#YES YES}, the file is
+    * overwritten. May not be {@code null}.
+    * @param  text  The text to write. <i>Should</i> be non-{@code null}
+    * and non-empty.
+    * @since 0.1.5.1
+    */
+   public static final void openWriteClose(String path, String path_varName,
+            Overwrite overwrite, String text)  {
+      PrintWriter outWriter = null;
+      try  {
+         outWriter = new NewPrintWriterToFile().overwrite(overwrite.isYes()).
+            autoFlush().build(path);
+      }  catch(RuntimeException rx)  {
+         throw  new IllegalArgumentException("Attempting to create a PrintWriter to " + path + ": " + rx);
+      }
 
+      outWriter.write(text);
+      outWriter.close();         //Must close, or the text is not flushed!
+   }
 }

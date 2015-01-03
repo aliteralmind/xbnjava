@@ -70,7 +70,7 @@ public class ListifyBooleanEArray extends AbstractListifyPWrapperEArray<Boolean>
       <p>Create a new {@code ListifyBooleanEArray}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class)">super</a>(array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class)">super</a>(array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class)</code></p>
     * @see  #ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) this(B[],hnvnb)
     */
    public ListifyBooleanEArray(Boolean[] array)  {
@@ -80,7 +80,7 @@ public class ListifyBooleanEArray extends AbstractListifyPWrapperEArray<Boolean>
       <p>Create a new {@code ListifyBooleanEArray}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class, NullHandlerForPrimitives)">super</a>{@code (array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class, hnr_nb)}</p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/arrayofsame/AbstractListifyPWrapperEArray.html#AbstractListifyPWrapperEArray(E[], PrimitiveArrayHelper, Class, NullHandlerForPrimitives)">super</a>{@code (array, NewPrimitiveArrayHelper.forBoolean(), Boolean.class, hnr_nb)}</p>
     * @see  #ListifyBooleanEArray(Boolean[], NullHandlerForPrimitives) this(B[],hnvnb)
     */
    public ListifyBooleanEArray(Boolean[] array, NullHandlerForPrimitives<Boolean> hnr_nb)  {
@@ -90,7 +90,7 @@ public class ListifyBooleanEArray extends AbstractListifyPWrapperEArray<Boolean>
       <p>Create a new {@code ListifyBooleanEArray} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray#AbstractListifyPWrapperEArray(ListifyPWrapperEArray) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPWrapperEArray#AbstractListifyPWrapperEArray(ListifyPWrapperEArray) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

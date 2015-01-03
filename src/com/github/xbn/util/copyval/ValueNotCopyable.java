@@ -28,7 +28,7 @@ public class ValueNotCopyable<O> extends AbstractValueCopier<O>  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(boolean) super}{@code (false)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.util.copyval.AbstractValueCopier#AbstractValueCopier(boolean) super}{@code (false)}</p>
     */
    private ValueNotCopyable()  {
       super(false);

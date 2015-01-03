@@ -122,8 +122,8 @@ public class NewTextLineAltererFor  {
       <p>Makes a regular expression replacement.</p>
 
     * @return  <code>{@link com.github.xbn.linefilter.AdaptRegexReplacerTo AdaptRegexReplacerTo}.{@link com.github.xbn.linefilter.AdaptRegexReplacerTo#lineReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer}(required, rr, filter_ifNonNull)</code>
-      <br/>Where {@code rr} is a
-      <br/> &nbsp; &nbsp; <code>new {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().
+      <br>Where {@code rr} is a
+      <br> &nbsp; &nbsp; <code>new {@link com.github.xbn.regexutil.z.RegexReplacer_Cfg RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#RegexReplacer_Cfg() RegexReplacer_Cfg}().
          {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#direct(Pattern, Object) direct}(ptrn_findWhat, rplc_with).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rplcs_what).
          {@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(dbgDest_ifNonNull).{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#build() build}();</code>
     * @see  #literalReplacement(AlterationRequired, String, String, ReplacedInEachInput, Appendable, ValidResultFilter)

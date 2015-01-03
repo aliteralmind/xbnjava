@@ -28,7 +28,7 @@ public class RawBlockEntity_Cfg<L> extends RawBlockEntity_CfgForNeeder<L,RawBloc
       <p>Create a new {@code RawBlockEntity_Cfg} with the default name.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RawBlockEntity_Cfg(String) this}(&quot;block&quot;)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RawBlockEntity_Cfg(String) this}(&quot;block&quot;)</code></p>
     */
    public RawBlockEntity_Cfg()  {
       this("block");
@@ -37,7 +37,7 @@ public class RawBlockEntity_Cfg<L> extends RawBlockEntity_CfgForNeeder<L,RawBloc
       <p>Create a new {@code RawBlockEntity_Cfg} for a sub-mode (which will be added to another already-existing mode).</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawBlockEntity_CfgForNeeder.html#RawBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawBlockEntity_CfgForNeeder.html#RawBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
     * @see  #RawBlockEntity_Cfg() this()
     */
    public RawBlockEntity_Cfg(String name)  {

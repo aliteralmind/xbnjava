@@ -41,7 +41,7 @@ public abstract class LLConfigBase_CfgForNeeder<O,L extends LLConfigBase<O>,R ex
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/neederneedable/AbstractNeedableWithSubs.html#AbstractNeedableWithSubs(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
          <li>{@link #resetLLCB() resetLLCB}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public LLConfigBase_CfgForNeeder(R needer)  {
       super(true, true, needer);
@@ -51,7 +51,7 @@ public abstract class LLConfigBase_CfgForNeeder<O,L extends LLConfigBase<O>,R ex
       <p>Revert configuration to <i>nothing</i>.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #resetLLCB() resetLLCB}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #resetLLCB() resetLLCB}{@code ()}</p>
     */
    public void declareReset()  {
       resetLLCB();
@@ -63,7 +63,7 @@ public abstract class LLConfigBase_CfgForNeeder<O,L extends LLConfigBase<O>,R ex
          <li>{@link #setIfNull(String) setIfNull(null)}</li>
          <li>{@link #setIfNonNull(String) setIfNonNull(null)}</li>
          <li>{@link #setPrePost(String, String) setPrePost(null, null)}</li>
-      </ol></p>
+      </ol>
     * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#LLConfigBase_CfgForNeeder(R)">this</a>(R)</code>
     * @see  #setIfNull(String) setIfNull(s)
     */

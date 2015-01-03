@@ -147,7 +147,7 @@ public class RegexUtil  {
       <p>This<ol>
          <li>Calls {@link #crashIfBadGroupNumberForCount(int, Matcher, String, String) crashIfBadGroupNumberForCount}{@code (group_num, mtchr, group_numName, mtchr_name)}</li>
          <li>If that throws no exception, then this <i><b>returns</b></i> {@code cause}.</li>
-      </ol></p>
+      </ol>
 
     * @param  cause  May not be {@code null}.
    public static final RuntimeException crashIfBadGroupNumberForCountOrReturnCause(int group_num, Matcher mtchr, String group_numName, String mtchr_name, RuntimeException cause)  {

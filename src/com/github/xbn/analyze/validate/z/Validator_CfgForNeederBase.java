@@ -35,7 +35,7 @@ public abstract class Validator_CfgForNeederBase<V extends Validator,R extends N
 
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/neederneedable/AbstractNeedable.html#AbstractNeedable(boolean, boolean, R)">super</a>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</code></li>
-      </ol></p>
+      </ol>
     */
    public Validator_CfgForNeederBase(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
       super(is_avaliableToNeeders, is_neededUseableAtInit, needer);

@@ -57,7 +57,7 @@ public class XbnIbxBase_Cfg extends SimpleChainable  {
       <p>Set the bounds that the bad-index should conform to, based on the length of a(n object that is known to be a) primitive array.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength}(min_inclusive, objThatIs_primArrayForLen, null, &quot;[the-primitive-array]&quot;)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #setAbsMinAndPArrayLength(int, Object, String, String) setAbsMinAndPArrayLength}(min_inclusive, objThatIs_primArrayForLen, null, &quot;[the-primitive-array]&quot;)</code></p>
     */
    public void setAbsMinAndPArrayLength(int min_inclusive, Object objThatIs_primArrayForLen)  {
       setAbsMinAndPArrayLength(min_inclusive, objThatIs_primArrayForLen, null, "[the-primitive-array]");
@@ -67,9 +67,9 @@ public class XbnIbxBase_Cfg extends SimpleChainable  {
 
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive,
-      <br/> &nbsp; &nbsp; {@link #getLengthFromUnknownAsObject(Object, String, Object) getLengthFromUnknownAsObject}(objThatIs_primArrayForLen,
-      <br/> &nbsp; &nbsp;  &nbsp; &nbsp; {@code "setAbsMinAndPArrayLength", cntr_name), min_name, cntr_name + ".length"})</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive,
+      <br> &nbsp; &nbsp; {@link #getLengthFromUnknownAsObject(Object, String, Object) getLengthFromUnknownAsObject}(objThatIs_primArrayForLen,
+      <br> &nbsp; &nbsp;  &nbsp; &nbsp; {@code "setAbsMinAndPArrayLength", cntr_name), min_name, cntr_name + ".length"})</code></p>
 
     * @param  objThatIs_primArrayForLen  May not be {@code null}.
     * @param  cntr_name  The array name. If {@code null}, defaults to {@code "[the-primitive-array]"}.

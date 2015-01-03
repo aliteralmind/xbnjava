@@ -43,7 +43,7 @@ package  com.github.xbn.list.lister;
       <li><b>Between:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#between(String) between}{@code (s)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#commaSpaceBetween() commaSpaceBetween}{@code ()}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#newLineBetween() newLineBetween}{@code ()}</li>
       <li><b>Display only valid indexes:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#indexFilter(ValueValidator) indexFilter}{@code (vv)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepAllIndexes() keepAllIndexes}{@code ()}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepIndexesBelow(int) keepIndexesBelow}{@code (i)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#keepIndexesBetween(int, int) keepIndexesBetween}{@code (i,i)}</li>
       <li><b>Display only valid values:</b> {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#valueFilter(ValueValidator) valueFilter}{@code (vv)}, {@link com.github.xbn.list.lister.z.ListLister_CfgForNeeder#filterNullValues() filterNullValues}{@code ()}</li>
-   </ul></p>
+   </ul>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>

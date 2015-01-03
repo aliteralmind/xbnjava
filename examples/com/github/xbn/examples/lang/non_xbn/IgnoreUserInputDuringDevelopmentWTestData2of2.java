@@ -16,7 +16,7 @@ package  com.github.xbn.examples.lang.non_xbn;
    import java.util.*;
 /**
    <p>Demonstrates the use of test-data in an application requiring user-input at the console, preventing the need for user-input during development. This is an answer to
-   <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21584988/looping-with-different-variables">http://stackoverflow.com/questions/21584988/looping-with-different-variables</a></code></p>
+   <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21584988/looping-with-different-variables">http://stackoverflow.com/questions/21584988/looping-with-different-variables</a></code></p>
 
    <p>{@code java com.github.xbn.examples.lang.non_xbn.IgnoreUserInputDuringDevelopmentWTestData2of2}</p>
 

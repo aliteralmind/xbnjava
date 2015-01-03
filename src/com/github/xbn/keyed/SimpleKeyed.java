@@ -41,7 +41,7 @@ public class SimpleKeyed<K> implements Keyed<K>  {
       <p>This<ol>
          <li>Calls {@link com.github.xbn.util.lock.AbstractOneWayLockable#AbstractOneWayLockable(AbstractOneWayLockable) super}{@code (_toCopy)}</li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

@@ -26,7 +26,7 @@ public class PadString_Cfg extends PadString_CfgForNeeder<PadString,DummyForNoNe
       <p>Create a new {@code PadString_Cfg} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R)">super</a>(null)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R)">super</a>(null)</code></p>
     * @see  #PadString_Cfg(int) this(i)
     */
    public PadString_Cfg()  {
@@ -37,10 +37,10 @@ public class PadString_Cfg extends PadString_CfgForNeeder<PadString,DummyForNoNe
 
          <p><i><b>See:</b></i><ul>
          <li><i>{@link #PadString_Cfg() this}{@code ()}</i></li>
-         </ul></p>
+         </ul>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R, int)">super</a>(null, goal_len)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="PadString_CfgForNeeder.html#PadString_CfgForNeeder(R, int)">super</a>(null, goal_len)</code></p>
     */
    public PadString_Cfg(int goal_len)  {
       super(null, goal_len);

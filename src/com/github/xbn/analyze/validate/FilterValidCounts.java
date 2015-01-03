@@ -34,7 +34,7 @@ package  com.github.xbn.analyze.validate;
       <li><b>Post:</b> <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueBelowInAfter(FilterAfterValue, FilterAfterValue, FilterAfterValue) postValueBelowInAfter}(fpv,fpv,fpv)</code>, <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#inUnchangedOutFalse() inUnchangedOutFalse}()</code>, <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#unfiltered() unfiltered}()</code></li>
       <li><b>Pre and post:</b> <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValueAlwaysUnchanged() postValueAlwaysUnchanged}()</code>, <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#postValue_inUnchanged_outFalse() postValue_inUnchanged_outFalse}()</code></li>
       <li><b>Other:</b> <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#range(LengthInRange) range}(lir)</code>, <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#chainID(boolean, Object) chainID}(b,o)</code>, <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#reset() reset}()</code></li>
-   </ul></p>
+   </ul>
 
    <p>{@code java com.github.xbn.examples.analyze.validate.ValidResultFilterXmpl}</p>
 
@@ -63,8 +63,8 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
          <li>Calls {@link com.github.xbn.io.SimpleDebuggable#SimpleDebuggable(GetDebugApbl_Fieldable) super}(fieldable)</li>
          <li>Sets <i>and validates</i> all fields from {@code fieldable}</li>
          <li>Sets {@link #doesExpire() doesExpire}{@code ()} to
-         <br/> &nbsp; &nbsp; <code>(fieldable.{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Fieldable#getAfterPreAction() getAfterPreAction}().{@link FilterPreAction#isReturn() isReturn}()  ||  !fieldable.{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Fieldable#getAfterAfterValue() getAfterAfterValue}().{@link FilterAfterValue#isUnchanged() isUnchanged}())</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code>(fieldable.{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Fieldable#getAfterPreAction() getAfterPreAction}().{@link FilterPreAction#isReturn() isReturn}()  ||  !fieldable.{@link com.github.xbn.analyze.validate.z.FilterValidCounts_Fieldable#getAfterAfterValue() getAfterAfterValue}().{@link FilterAfterValue#isUnchanged() isUnchanged}())</code></li>
+      </ol>
 
     * @see  #FilterValidCounts(FilterValidCounts) this(fvc)
     */
@@ -132,7 +132,7 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
       <p>This<ol>
          <li>Calls {@link com.github.xbn.io.SimpleDebuggable#SimpleDebuggable(Debuggable) super}(to_copy)</li>
          <li>Sets all fields from {@code to_copy}</li>
-      </ol></p>
+      </ol>
 
     * @see  #FilterValidCounts(FilterValidCounts_Fieldable) this(fvc_f)
     */
@@ -184,7 +184,7 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
       <p><i>See:</i><ul>
          <li><b>Pre:</b> {@code getBelowPreAction()}, {@link #getInPreAction() getInPreAction}{@code ()}, {@link #getAfterPreAction() getAfterPreAction}{@code ()}</li>
          <li><b>Post:</b> {@link #getBelowAfterValue() getBelowAfterValue}{@code ()}, {@link #getInAfterValue() getInAfterValue}{@code ()}, {@link #getAfterAfterValue() getAfterAfterValue}{@code ()}</li>
-      </ul></p>
+      </ul>
 
     * @see  #getRange()
     * @see  com.github.xbn.analyze.validate.z.FilterValidCounts_Cfg#preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction) FilterValidCounts_Cfg#preActionBelowInAfter(fpa,fpa,fpa)
@@ -246,9 +246,9 @@ public class FilterValidCounts extends SimpleDebuggable implements ValidResultFi
          <li>{@code true}: {@link #getAfterPreAction() getAfterPreAction}{@code ()}</li>
             <li>Greater than the {@link #getRange() range} maxumum: {@link #getBelowPreAction() getBelowPreAction}{@code ()}</li>
             <li>Between the range minimum and maximum (inclusive): {@link #getInPreAction() getInPreAction}{@code ()} &nbsp; &nbsp; (If <b>equal</b> to the maximum and
-            <br/> &nbsp; &nbsp;
+            <br> &nbsp; &nbsp;
             <code>getBelowPreAction().{@link FilterPreAction#isReturn() isReturn}()</code>
-            <br/>is {@code true}, then {@link #isExpired() isExpired}{@code ()} is set to {@code true})</li>
+            <br>is {@code true}, then {@link #isExpired() isExpired}{@code ()} is set to {@code true})</li>
          </ul><b>Note:</b> No counts are incremented by this function. {@link FilterValidCounts} only count the number of times the <i>something</i> is validated against the <i><b>rules</b></i>, and it [post {@link com.github.xbn.analyze.validate.Validator#doInvertRules() inversion}] is determined to be valid.)
     * @see  #getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules(b)
     */

@@ -26,7 +26,7 @@ public class ListLister_Cfg<E> extends ListLister_CfgForNeeder<E,ListLister<E>,D
       <p>Create a new {@code zListLister_Cfg} with defaults.</p>
 
          <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ListLister_CfgForNeeder.html#ListLister_CfgForNeeder(R)">super</a>(null)</code></p>
+      <br> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ListLister_CfgForNeeder.html#ListLister_CfgForNeeder(R)">super</a>(null)</code></p>
     */
    public ListLister_Cfg()  {
       super(null);

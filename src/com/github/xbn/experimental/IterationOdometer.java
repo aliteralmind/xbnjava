@@ -178,7 +178,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
     * @param  iod_itr  An iterator as returned by {@link #iterator() iterator}{@code ()}. The next element retrieved is the point at which the first element in {@code string_elements} is expected to exist. May not be {@code null}.
     * @param  idx_start  The index in {@code string_elements} at which to start analysis. This is needed by the {@code test_get1stIdxIfNotInMiddle()} function (It finds the first element, and then passes the iterator to this function...so in that case, this needs to tbe set to 1, so we don't try and <u>re</u>-find the first [0-th] element again).
     * @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are the first elements in this IterationOdometer.
-      <br/><b>{@code <i>the index</i>}</b> Of the first element not found.
+      <br><b>{@code <i>the index</i>}</b> Of the first element not found.
     */
    public final int test_get1stIdxIfNotAtCurrPos(IteratorIOD<T> iod_itr, int idx_start, String... string_elements)  {
       int i = idx_start;
@@ -218,7 +218,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
 
     * @param  elements_toBypassCount  If you're obviously testing far into the iterator, then you can bypass a certain number of elements, to save a bit of processing power.
     * @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are found, sequentially, anywhere in this IterationOdometer.
-      <br/><b>{@code <i>the index</i>}</b> Of the first element not found.
+      <br><b>{@code <i>the index</i>}</b> Of the first element not found.
     */
    public final int test_get1stIdxIfNotInMiddle(int elements_toBypassCount, String... string_elements)  {
       IteratorIOD<T> itrt = (IteratorIOD<T>)iteratorIOD();
@@ -257,7 +257,7 @@ public class IterationOdometer<T> extends AbstractOneWayLockable implements Iter
 
     * @param  elements_toBypassCount  If you're obviously testing far into the iterator, then you can bypass a certain number of elements, to save a bit of processing power.
     * @return  <b>{@code -1}</b>  If all string elements in {@code string_elements} are found, sequentially, beginning anywhere in this IterationOdometer.
-      <br/><b>{@code <i>the index</i>}</b> Of the first element not found.
+      <br><b>{@code <i>the index</i>}</b> Of the first element not found.
     */
    public final int test_get1stIdxIfNotAtEnd(int elements_toBypassCount, String... string_elements)  {
       ArrayList<String> vs = new ArrayList<String>(string_elements.length);

@@ -24,7 +24,7 @@ package  com.github.xbn.experimental;
       <li><b>Middle:</b> Could be neither the first nor the last.</li>
       <li><b>Last-not-first:</b> Could be the last element, but not the first.</li>
       <li><b>Only:</b> Could be the first-and-last element in the sequence.</li>
-   </ul></p>
+   </ul>
 
    <p>For example:</p>
 
@@ -35,7 +35,7 @@ package  com.github.xbn.experimental;
       <li><b>Parameter 2 (false):</b> If it were somewhere in the middle (neither the first or last elemnt), that would be bad.</li>
       <li><b>Parameter 3 (true):</b> It could be the last element.</li>
       <li><b>Parameter 4 (true):</b> It could be the only element.</li>
-   </ul></p>
+   </ul>
 
 
    <h3>Different flavors of the same thing</h3>
@@ -69,7 +69,7 @@ package  com.github.xbn.experimental;
       <li>Since it is endable-MUST, it could <i>not</i> be middle (neither first-nor-last).</li>
       <li>It could be last-only--not beginable, but still endable.</li>
       <li>It could be first-last, since beginable is OPTIONAL.</li>
-   </ul></p>
+   </ul>
 
    <h3>{@code com.github.xbn.txol.SubSnip}</h3>
 
@@ -91,7 +91,7 @@ public class LegalFMLfl  {
       <p>Create a new LegalFMLfl.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code this(true, true, true, true)}</p>
+      <br> &nbsp; &nbsp; {@code this(true, true, true, true)}</p>
     */
    public LegalFMLfl()  {
       this(true, true, true, true);
@@ -197,7 +197,7 @@ public class LegalFMLfl  {
          <li>{@code is_actuallyFirst} is true, but {@link #isBeginable() beginability} is not legal, or</li>
          <li>{@code is_actuallyEnd} is true, but {@link #isEndable() endability} is not legal.</li>
       </ul>
-      <br/><b>{@code true}</b> If otherwise.
+      <br><b>{@code true}</b> If otherwise.
     */
    public boolean isValidActualLocation(boolean is_actuallyFirst, boolean is_actuallyEnd, boolean do_returnIfFalse, Object xtra_errInfo)  {
       if((is_actuallyFirst  &&  !isBeginable())  ||

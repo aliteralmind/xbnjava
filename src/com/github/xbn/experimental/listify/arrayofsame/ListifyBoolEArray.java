@@ -55,7 +55,7 @@ public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> i
       <p>Create a new {@code ListifyBoolEArray}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(Object, ValueCopier) super}(obj_thatIsPrimArr, (new {@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}()), (new {@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#OneParamCnstrValueCopier(Class) OneParamCnstrValueCopier}&lt;Boolean&gt;(Boolean.class)))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(Object, ValueCopier) super}(obj_thatIsPrimArr, (new {@link com.github.xbn.array.helper.BooleanArrayHelper#BooleanArrayHelper() BooleanArrayHelper}()), (new {@link com.github.xbn.util.copyval.OneParamCnstrValueCopier#OneParamCnstrValueCopier(Class) OneParamCnstrValueCopier}&lt;Boolean&gt;(Boolean.class)))</code></p>
 
     * @see  #ListifyBoolEArray(boolean[]) ListifyBoolEArray(pah)
     */
@@ -66,7 +66,7 @@ public class ListifyBoolEArray extends AbstractListifyPrimitiveEArray<Boolean> i
       <p>Create a new {@code ListifyBoolEArray} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(AbstractListifyPrimitiveEArray) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyPrimitiveEArray#AbstractListifyPrimitiveEArray(AbstractListifyPrimitiveEArray) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

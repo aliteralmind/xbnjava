@@ -27,8 +27,8 @@ public class SimpleChainable implements Chainable  {
 
       <p>This<ol>
          <li>Creates an internal
-         <br/> &nbsp; &nbsp; <code>new {@link com.github.xbn.neederneedable.ChainableComposer#ChainableComposer() ChainableComposer}()</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code>new {@link com.github.xbn.neederneedable.ChainableComposer#ChainableComposer() ChainableComposer}()</code></li>
+      </ol>
 
     * @see  #SimpleChainable(SimpleChainable)
     */
@@ -40,8 +40,8 @@ public class SimpleChainable implements Chainable  {
 
       <p>This<ol>
          <li>Creates an internal
-         <br/> &nbsp; &nbsp; <code>new {@link com.github.xbn.neederneedable.ChainableComposer#ChainableComposer(Chainable) ChainableComposer}(to_copy)</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code>new {@link com.github.xbn.neederneedable.ChainableComposer#ChainableComposer(Chainable) ChainableComposer}(to_copy)</code></li>
+      </ol>
     * @see  #SimpleChainable()
     */
    public SimpleChainable(SimpleChainable to_copy)  {
@@ -52,7 +52,7 @@ public class SimpleChainable implements Chainable  {
       <p>Set the chain-id.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#setChainID_4prot(boolean, Object) setChainID_4prot}(do_setStatic, id)</code></p>
+      <br> &nbsp; &nbsp;  <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#setChainID_4prot(boolean, Object) setChainID_4prot}(do_setStatic, id)</code></p>
     */
    public SimpleChainable chainID(boolean do_setStatic, Object id)  {
       cc.setChainID_4prot(do_setStatic ,id);
@@ -62,7 +62,7 @@ public class SimpleChainable implements Chainable  {
       <p>Set the chain-id to {@code null}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#unsetChainID(boolean) unsetChainID}(unset_static)</code></p>
+      <br> &nbsp; &nbsp;  <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#unsetChainID(boolean) unsetChainID}(unset_static)</code></p>
     */
    public void unsetChainID(boolean unset_static)  {
       cc.unsetChainID(unset_static);

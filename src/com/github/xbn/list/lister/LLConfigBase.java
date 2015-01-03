@@ -16,7 +16,7 @@ package  com.github.xbn.list.lister;
       <li>{@link #getIfNull() getIfNull}{@code ()} &nbsp; &nbsp; <i>(short circuit)</i></li>
       <li>{@link #getIfNonNull() getIfNonNull}{@code ()} &nbsp; &nbsp; <i>(short circuit)</i></li>
       <li>{@link #getPrefix() getPrefix}{@code ()} and {@link #getPostfix() getPostfix}{@code ()}</li>
-   </ol></p>
+   </ol>
 
  * @param  <O>  Either the list itself, or the type of element in the list. See {@code LLConfigBase} and {@code LLCfgElement}.
  **/

@@ -28,7 +28,7 @@ public class RawSingleLineEntity_Cfg<L> extends RawSingleLineEntity_CfgForNeeder
       <p>Create a new {@code RawSingleLineEntity_Cfg} for the root-mode only.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RawSingleLineEntity_Cfg(String) this}(&quot;singleline&quot;)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RawSingleLineEntity_Cfg(String) this}(&quot;singleline&quot;)</code></p>
     */
    public RawSingleLineEntity_Cfg()  {
       this("singleline");
@@ -37,7 +37,7 @@ public class RawSingleLineEntity_Cfg<L> extends RawSingleLineEntity_CfgForNeeder
       <p>Create a new {@code RawSingleLineEntity_Cfg} for a sub-mode (which will be added to another already-existing mode).</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawSingleLineEntity_CfgForNeeder.html#RawSingleLineEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawSingleLineEntity_CfgForNeeder.html#RawSingleLineEntity_CfgForNeeder(R, java.lang.String)">super</a>(null, name)</code></p>
     * @see  #RawSingleLineEntity_Cfg() this()
     */
    public RawSingleLineEntity_Cfg(String name)  {

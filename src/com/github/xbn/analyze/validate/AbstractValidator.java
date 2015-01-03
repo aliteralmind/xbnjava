@@ -37,7 +37,7 @@ public abstract class AbstractValidator implements Validator  {
 
       <p>This<ol>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()
@@ -161,7 +161,7 @@ public abstract class AbstractValidator implements Validator  {
    /*
       <p>FUNC_JD_INTRO</p>
     * <p>Equal to
-      <br/> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType)">setERuleType_4prot</a>(type)}</p>
+      <br> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType)">setERuleType_4prot</a>(type)}</p>
    protected void setERuleType(RuleType type)  {
       vc.setERuleType_4prot(type);
    }
@@ -169,7 +169,7 @@ public abstract class AbstractValidator implements Validator  {
    /*
       <p>FUNC_JD_INTRO</p>
     * <p>Equal to
-      <br/> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType, String)">setERuleType_4prot</a>(type, type_name)}</p>
+      <br> &nbsp; &nbsp;{@code <a href="YYY/ValidatorComposer.html"><i>[ValidatorComposer]</i></a>.<a href="YYY/ValidatorComposer.html#setERuleType_4prot(RuleType, String)">setERuleType_4prot</a>(type, type_name)}</p>
    protected void setERuleType(RuleType type, String type_name)  {
       vc.setERuleType_4prot(type, type_name);
    }

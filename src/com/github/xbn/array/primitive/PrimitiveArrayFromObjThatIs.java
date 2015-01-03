@@ -16,8 +16,8 @@ package  com.github.xbn.array.primitive;
    <p>Utilities related to primitive arrays, and {@code java.lang.Object}-s that are actually primitive arrays.</p>
 
    <p>This is released as a Gist on GitHub:
-   <br/> &nbsp; &nbsp; {@code <a href="https://gist.github.com/aliteralmind/7813097">https://gist.github.com/aliteralmind/7813097</a>}
-   <br/>To publish: Comment out the {@code package} and the {@code extends}, and change tabs to spaces.</p>
+   <br> &nbsp; &nbsp; {@code <a href="https://gist.github.com/aliteralmind/7813097">https://gist.github.com/aliteralmind/7813097</a>}
+   <br>To publish: Comment out the {@code package} and the {@code extends}, and change tabs to spaces.</p>
 
  * @see  com.github.xbn.array.GetArrayFromObjectThatIs
  * @since  0.1.0

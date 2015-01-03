@@ -36,7 +36,7 @@ public class CrashIfCollection  {
       <p>If a collection is {@code null} or has no elements, crash. Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #empty(Collection, String, NullContainer) empty}(coll, coll_name, {@link com.github.xbn.array.NullContainer}.{@link com.github.xbn.array.NullContainer#BAD BAD})</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #empty(Collection, String, NullContainer) empty}(coll, coll_name, {@link com.github.xbn.array.NullContainer}.{@link com.github.xbn.array.NullContainer#BAD BAD})</code></p>
     */
    public static final void nullEmpty(Collection<?> coll, String coll_name)  {
       empty(coll, coll_name, NullContainer.BAD);
@@ -45,7 +45,7 @@ public class CrashIfCollection  {
       <p>If a collection has no elements, crash. Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #bad(Collection, String, NullContainer, int, String, NullElement, int, String) bad}(coll, coll_name, null_coll, 1, null, {@link com.github.xbn.array.NullElement}.{@link com.github.xbn.array.NullElement#OK OK}, 0, null)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #bad(Collection, String, NullContainer, int, String, NullElement, int, String) bad}(coll, coll_name, null_coll, 1, null, {@link com.github.xbn.array.NullElement}.{@link com.github.xbn.array.NullElement#OK OK}, 0, null)</code></p>
     */
    public static final void empty(Collection<?> coll, String coll_name, NullContainer null_coll)  {
       bad(coll, coll_name, null_coll, 1, null, NullElement.OK, 0, null);
@@ -54,7 +54,7 @@ public class CrashIfCollection  {
       <p>If a collection's size is less than a number, crash. Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #bad(Collection, String, NullContainer, int, String, NullElement, int, String) bad}(coll, coll_name, null_coll, min_allowedLength, min_varName, {@link com.github.xbn.array.NullElement}.{@link com.github.xbn.array.NullElement#OK OK}, 0, null)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #bad(Collection, String, NullContainer, int, String, NullElement, int, String) bad}(coll, coll_name, null_coll, min_allowedLength, min_varName, {@link com.github.xbn.array.NullElement}.{@link com.github.xbn.array.NullElement#OK OK}, 0, null)</code></p>
     */
    public static final void sizeLessThan(Collection<?> coll, String coll_name, NullContainer null_coll, int min_allowedLength, String min_varName)  {
       bad(coll, coll_name, null_coll, min_allowedLength, min_varName, NullElement.OK, 0, null);

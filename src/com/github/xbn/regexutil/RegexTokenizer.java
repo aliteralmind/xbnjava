@@ -36,7 +36,7 @@ package  com.github.xbn.regexutil;
          <li><b>Non-only:</b> <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#separators() separators}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#emptyBetweens() emptyBetweens}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#nonEmptyBetweens() nonEmptyBetweens}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#allBetweens() allBetweens}()</code></li>
       </ul></li>
       <li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#toTokenize(Object) toTokenize}(o)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#lineNumber(int) lineNumber}(i)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.regexutil.z.RegexTokenizer_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code></li>
-   </ul></p>
+   </ul>
 
 {@.codelet.and.out com.github.xbn.examples.regexutil.TemplateTokenizer%eliminateCommentBlocksAndPackageDecl()}
 
@@ -44,7 +44,7 @@ package  com.github.xbn.regexutil;
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexTokenizerXmpl%eliminateCommentBlocksAndPackageDecl()}
 
 <p>An interesting problem solved with both java.util.regex and {@code RegexTokenizer}. From (viewed 12/31/2013)
-<br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</a>}</p>
+<br> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group">http://stackoverflow.com/questions/20859278/regex-split-up-parentheses-group</a>}</p>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>

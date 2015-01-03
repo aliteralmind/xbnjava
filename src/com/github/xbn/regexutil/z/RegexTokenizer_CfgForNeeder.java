@@ -41,7 +41,7 @@ public class RegexTokenizer_CfgForNeeder<T extends RegexTokenizer,R extends Need
          <li>{@link #setReturnSepsBtwns(boolean, boolean, boolean) setReturnSepsBtwns}{@code (false, false, false)}</li>
          <li>{@link #debugTo(Appendable) debugTo}{@code (null)}</li>
          <li>{@link #toTokenize(Object) toTokenize}{@code ("")}</li>
-      </ol></p>
+      </ol>
     */
    public RegexTokenizer_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
       super(is_avaliableToNeeders, is_neededUseableAtInit, needer);

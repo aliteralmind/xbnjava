@@ -60,7 +60,7 @@ public enum ExpirableElements  {
       <p>If an <code>ExpirableElements</code> is not a required value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</code></p>
     * @see  #crashIfForbiddenValue(ExpirableElements, String, Object) crashIfForbiddenValue(ert,s,o)
     */
    public void crashIfNotRequiredValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {
@@ -70,7 +70,7 @@ public enum ExpirableElements  {
       <p>If an <code>ExpirableElements</code> is a forbidden value, crash.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, rqd_value, this_enumsVarName, xtra_errInfo)</code></p>
     * @see  #crashIfNotRequiredValue(ExpirableElements, String, Object) crashIfNotRequiredValue(ert,s,o)
     */
    public void crashIfForbiddenValue(ExpirableElements rqd_value, String this_enumsVarName, Object xtra_errInfo)  {

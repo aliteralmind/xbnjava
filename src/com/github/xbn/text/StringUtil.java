@@ -110,10 +110,10 @@ public class StringUtil extends StringUtilBase  {
       <p>Eliminate whitespace from the left side of a str_obj.</p>
 
       <p>The idea for this and {@code rtrim(str_toPad)} is from
-      <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java">http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java</a></code>
-      <br/>and
-      <br/> &nbsp; &nbsp; <code><a href="http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html">http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html</a></code>
-      <br/>(viewed 11/18/2013)</p>
+      <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java">http://stackoverflow.com/questions/15567010/what-is-a-good-alternative-of-ltrim-and-rtrim-in-java</a></code>
+      <br>and
+      <br> &nbsp; &nbsp; <code><a href="http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html">http://www.fromdev.com/2009/07/playing-with-java-str_obj-trim-basics.html</a></code>
+      <br>(viewed 11/18/2013)</p>
 
     * @param  str_toPad  May not be {@code null}.
     * @see  #rtrim(Object) rtrim(o)
@@ -174,9 +174,9 @@ public class StringUtil extends StringUtilBase  {
 
     * @param  str_toPadForLen  The str_obj to mask.
     * @param  idx_start  The mask-start index. <i>Should</i> be between 0 and
-      <br/> &nbsp; &nbsp; {@code (str_toPadForLen.toString().length() - 1)}
+      <br> &nbsp; &nbsp; {@code (str_toPadForLen.toString().length() - 1)}
     * @param  idx_endX  The mask-end index. <i>Should</i> be between {@code (idx_start + 1)} and
-      <br/> &nbsp; &nbsp; {@code str_toPadForLen.toString().length()}.
+      <br> &nbsp; &nbsp; {@code str_toPadForLen.toString().length()}.
     */
    public static final String getVisibleIndexMask(Object str_toPadForLen, int idx_start, int idx_endX)  {
       StringBuilder sd = new StringBuilder(getDuped(" ", idx_start));
@@ -237,6 +237,33 @@ public class StringUtil extends StringUtilBase  {
       }
       return  new LineIterator(br);
    }
+   /*
+    * Get all text from an iterator.
+    * @return  <code>{@link #appendIterator(StringBuilder, Iterator, String) appendIterator}(new StringBuilder(), line_itr, line_sep).toString()</code>
+   public static final String getFromIterator(Iterator<String> line_itr, String line_sep)  {
+      return  appendIterator(new StringBuilder(), line_itr, line_sep).toString();
+   }
+    */
+   /*
+    * Append the text from an iterator. No parameter may be {@code null}.
+    * @return  {@code bldr}, with all text from {@code line_itr} appended to it, with each line separated by {@code line_sep}.
+    * @see  #getFromIterator(Iterator, String)
+    * @since  0.1.4.3
+   public static final StringBuilder appendIterator(StringBuilder bldr, Iterator<String> line_itr, String line_sep)  {
+      try  {
+         while(line_itr.hasNext()){
+            bldr.append(line_itr.next());
+            if(line_itr.hasNext())  {
+               bldr.append(line_sep);
+            }
+         }
+      }  catch(NullPointerException npx)  {
+         CrashIfObject.nnull(line_itr, "line_itr", null);
+         throw  CrashIfObject.nullOrReturnCause(bldr, "bldr", null, npx);
+      }
+      return  bldr;
+   }
+    */
 /*
    public static final boolean isEqualToExactlyOneElement(String to_test, String[] all_possibleValues, IgnoreCase ignore_case)  {
       try  {

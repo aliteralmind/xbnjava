@@ -26,7 +26,7 @@ package  com.github.xbn.examples.util.non_xbn;
     <p>Sorts the <i>first</i> array in a two-dimensional array, and moves all partner elements (in the same &quot;column&quot;) in the <i>second</i> to the same sort-destination index.</p>
 
     <p>This was used as an answer to
-    <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together">http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together</a></code></p>
+    <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together">http://stackoverflow.com/questions/22418151/sorting-2d-array-but-keeping-column-elements-together</a></code></p>
 
    <p>{@code java SortOneArrayKeepSecondArrayElementsAligned}</p>
 

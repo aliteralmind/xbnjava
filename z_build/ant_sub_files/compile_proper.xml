@@ -12,9 +12,11 @@
       <antcall target="compileproper1by1b"/>
    </target>
    <target name="compileproperasawhole" description="Compiles all core XBN-Java code (not examples or tests) in a single javac call.">
+      <echo>Compiling main classes (only those not already up-to-date)...START</echo>
       <javac srcdir="${dir_sandbox_src}" classpathref="project_classpath_id" listfiles="false" includeantruntime="true" createMissingPackageInfoClass="false"
          destdir="${build.class.dir}"
          includes="**/*.java"/>
+      <echo>Compiling main classes (only those not already up-to-date)...END</echo>
       <antcall target="compilebuildclasses"/>
    </target>
    <target name="compilebuildclasses" description="Compile all build-only classes.">

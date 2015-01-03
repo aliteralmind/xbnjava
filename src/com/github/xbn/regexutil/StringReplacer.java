@@ -33,7 +33,7 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
       <p>Create a new instance from a {@code RegexReplacer} and filter.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #StringReplacer(StringValidatorReplacer) this}(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #StringReplacer(StringValidatorReplacer) this}(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull))</code></p>
     */
    public StringReplacer(RegexReplacer replacer, AlterationRequired required, ValidResultFilter vfr_unfilteredIfNull)  {
       this(new StringValidatorReplacer(replacer, vfr_unfilteredIfNull), required);
@@ -63,7 +63,7 @@ public class StringReplacer extends AbstractValueAlterer<String,String> implemen
       <p>This<ol>
          <li>Calls <code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#AbstractValueAlterer(ValueAlterer) AbstractValueAlterer}(to_copy)</code></li>
          <li>Sets {@link #getAdapted() getAdapted}{@code ()} to {@code to_copy.getAdapted()}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #StringReplacer(StringValidatorReplacer) this(svr)

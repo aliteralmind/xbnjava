@@ -35,7 +35,7 @@ public class StringArrayFromPrimitive  {
     * @return  If {@code objThatIsAPArray} is <ul>
          <li>{@code null}: {@code null}</li>
          <li>Otherwise (for example), if {@code objThatIsAPArray} is a {@code boolean} array:
-      <br/> &nbsp; &nbsp; {@link #get(boolean[], NullContainer, String) get}{@code ((b[])objThatIsAPArray)}</li>
+      <br> &nbsp; &nbsp; {@link #get(boolean[], NullContainer, String) get}{@code ((b[])objThatIsAPArray)}</li>
       </ul>
     * @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitive(Object) ObjThatIsPrimitiveArrayUtil#isPrimitive(o)
     */

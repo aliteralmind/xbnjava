@@ -37,7 +37,7 @@ package  com.github.xbn.linefilter.entity;
       <li>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</li>
       <li>{@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#keepLines(boolean) keepLines}(b), {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#keepLines() keepLines}(), {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#discardLines() discardLines}(), </li>
       <li><b>Other:</b> {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#reset() reset}, {@link com.github.xbn.linefilter.entity.z.StealthBlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}</li>
-   </ul></p>
+   </ul>
 
 <!--
    Originates in

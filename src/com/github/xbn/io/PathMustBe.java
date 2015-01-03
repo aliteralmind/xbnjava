@@ -43,7 +43,7 @@ public class PathMustBe  {
          <li>{@link #writable(Writable) writable}<code>({@link Writable}.{@link Writable#OPTIONAL OPTIONAL})</code></li>
          <li>{@link #fileOrDirectory(FileDirectory) fileOrDirectory}<code>({@link FileDirectory}.{@link FileDirectory#EITHER EITHER})</code></li>
          <li>{@link #linkOptions(LinkOption...)}(new {@link java.nio.file.LinkOption}[]{});
-      </ol></p>
+      </ol>
     */
    public PathMustBe()  {
       existing(Existence.OPTIONAL);
@@ -218,7 +218,7 @@ public class PathMustBe  {
       <p>If a path is invalid, crash (with runtime errors only). Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #crashIfBadX(Path, String) crashIfBadX}(path, path_varName)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #crashIfBadX(Path, String) crashIfBadX}(path, path_varName)</code></p>
     */
    public void crashIfBad(Path path, String path_varName)  {
       try  {
@@ -247,7 +247,7 @@ public class PathMustBe  {
       <p>This<ol>
          <li>Calls <code>crashIfBadX({@link java.nio.file.Paths}.{@link java.nio.file.Paths#get(String, String...) get}(path), path_varName)</code></li>
          <li>And returns the path.</li>
-      </ol></p>
+      </ol>
     */
    public Path getOrCrashIfBadX(String path, String path_varName) throws NoSuchFileException, AccessDeniedException  {
       Path ppath = Paths.get(path);
@@ -258,7 +258,7 @@ public class PathMustBe  {
       <p>If a path is invalid, crash. Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, existing_is, readable_is, writable_is, file_directory, link_opts)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, existing_is, readable_is, writable_is, file_directory, link_opts)</code></p>
     */
    public static final void crashIfBad(Path path, String path_varName, Existence existing_is, Readable readable_is, Writable writable_is, FileDirectory file_directory, LinkOption... link_opts)  {
       try  {
@@ -274,7 +274,7 @@ public class PathMustBe  {
       <p>If a path is invalid, crash. Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>PathMustBe.{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</code></p>
+      <br> &nbsp; &nbsp; <code>PathMustBe.{@link #crashIfBadX(Path, String, Existence, Readable, Writable, FileDirectory, LinkOption...) crashIfBadX}(path, path_varName, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</code></p>
     */
    public void crashIfBadX(Path path, String path_varName) throws NoSuchFileException, AccessDeniedException  {
       PathMustBe.crashIfBadX(path, path_varName, getExistence(), getReadable(), getWritable(), getFileDirectory(), (LinkOption[])getLinkOptions());
@@ -336,7 +336,7 @@ public class PathMustBe  {
       <p>Does a path conform to all its restrictions?.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>PathMustBe.{@link #isGood(Path, Existence, Readable, Writable, FileDirectory, LinkOption...) isGood}(path, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</code></p>
+      <br> &nbsp; &nbsp; <code>PathMustBe.{@link #isGood(Path, Existence, Readable, Writable, FileDirectory, LinkOption...) isGood}(path, {@link #getExistence() getExistence}(), {@link #getReadable() getReadable}(), {@link #getWritable() getWritable}(), {@link #getFileDirectory() getFileDirectory}(), ({@link java.nio.file.LinkOption}[]){@link #getLinkOptions() getLinkOptions}())</code></p>
     */
    public boolean isGood(Path path)  {
       return  PathMustBe.isGood(path, getExistence(), getReadable(), getWritable(), getFileDirectory(), (LinkOption[])getLinkOptions());

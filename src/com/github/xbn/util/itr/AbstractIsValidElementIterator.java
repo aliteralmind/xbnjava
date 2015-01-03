@@ -41,7 +41,7 @@ public abstract class AbstractIsValidElementIterator<R> extends AbstractIndexabl
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.util.itr.AbstractIndexableIterator#AbstractIndexableIterator(Object, int, int) super}{@code (indexable_cntrOfR, idx_start, idx_endX)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.util.itr.AbstractIndexableIterator#AbstractIndexableIterator(Object, int, int) super}{@code (indexable_cntrOfR, idx_start, idx_endX)}</p>
     */
    public AbstractIsValidElementIterator(Object indexable_cntrOfR, ValueValidator<R> element_vldtr, int idx_start, int idx_endX, IteratorDirection direction)  {
       super(indexable_cntrOfR, idx_start, idx_endX, direction);

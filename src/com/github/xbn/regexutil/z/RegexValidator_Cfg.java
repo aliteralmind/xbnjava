@@ -26,7 +26,7 @@ public class RegexValidator_Cfg extends RegexValidator_CfgForNeeder<RegexValidat
       <p>Create a new instance with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RegexValidator_CfgForNeeder.html#RegexValidator_CfgForNeeder(R)">this</a>(null)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RegexValidator_CfgForNeeder.html#RegexValidator_CfgForNeeder(R)">this</a>(null)</code></p>
     */
    public RegexValidator_Cfg()  {
       super(null);

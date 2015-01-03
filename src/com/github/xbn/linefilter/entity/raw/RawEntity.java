@@ -70,10 +70,10 @@ public interface RawEntity<L> extends ValueAlterer<L,L>, Named  {
       <p>Was the just-analyzed line part of the entity?. An active line may or may not be {@linkplain #doKeepJustAnalyzed() kept}.</p>
 
       <p>For a single line entity, &quot;activeness&quot; is determined by whether the just-analyzed line (&quot;the line&quot;) was altered. <i>This does not necessarily mean that the line was <b><u>modified</u></b> in any way,</i> rather that when, after calling
-      <br/> &nbsp; &nbsp; <code><i>[the-raw-entity]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</a>(<i>[the-line]</i>, <i>[the-line]</i>)</code>
-      <br/>this
-      <br/> &nbsp; &nbsp; <code><i>{@link com.github.xbn.analyze.alter.ValueAlterer}</i>.{@link com.github.xbn.analyze.alter.ValueAlterer#wasAltered() wasAltered}()</code>
-      <br/>returns {@code true}. (A line entity <i>is</i> a value alterer--a line-alterer.)</p>
+      <br> &nbsp; &nbsp; <code><i>[the-raw-entity]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/alter/ReturnValueUnchanged.html#getAltered(V, A)">getAltered</a>(<i>[the-line]</i>, <i>[the-line]</i>)</code>
+      <br>this
+      <br> &nbsp; &nbsp; <code><i>{@link com.github.xbn.analyze.alter.ValueAlterer}</i>.{@link com.github.xbn.analyze.alter.ValueAlterer#wasAltered() wasAltered}()</code>
+      <br>returns {@code true}. (A line entity <i>is</i> a value alterer--a line-alterer.)</p>
 
       <p>In many cases, there will be an underlying {@linkplain com.github.xbn.analyze.validate.ValueValidator `validator} that, when the line is deemed &quot;valid&quot; (it &quot;matches&quot; the entity), will result in the line's body-text being returned unchanged.</p>
 

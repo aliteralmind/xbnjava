@@ -35,7 +35,7 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
       <p>Create a new instance, for the root entity only.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code> <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, java.lang.String)">this</a>(needer, &quot;root&quot;)</code></p>
+      <br> &nbsp; &nbsp; <code> <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, java.lang.String)">this</a>(needer, &quot;root&quot;)</code></p>
     */
    public RawLineEntity_CfgForNeeder(R needer, EntityType type)  {
       this(needer, type, "root");
@@ -47,7 +47,7 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
          <li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/z/ValueValidator_CfgForNeeder.html#ValueValidator_CfgForNeeder(boolean, boolean, R)">super</a>(true, true, needer)</code></li>
          <li>Sets {@link com.github.xbn.linefilter.entity.raw.RawLineEntity#getName() getName}{@code ()}* to {@code name}.</li>
          <li>Calls {@link #resetRLECFN() resetRLECFN}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#RawLineEntity_CfgForNeeder(R, int, java.lang.String)">this</a>(R)</code>
     */
@@ -73,7 +73,7 @@ public abstract class RawLineEntity_CfgForNeeder<L,M extends RawLineEntity<L>,R 
 
       <p>This<ul>
          <li>Sets </li>
-      </ul></p>
+      </ul>
     */
    protected final void resetRLECFN()  {
       //Do not reset the name.

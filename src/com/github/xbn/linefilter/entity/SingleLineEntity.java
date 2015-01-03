@@ -36,7 +36,7 @@ package  com.github.xbn.linefilter.entity;
       <li>{@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#alterer(ValueAlterer) alterer}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#keepMatchedLines(boolean) keepMatchedLines}(b)</li>
       <li>{@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter} </li>
       <li><b>Other:</b> {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#reset() reset}{@code ()}, {@link com.github.xbn.linefilter.entity.z.SingleLineEntity_CfgForNeeder#chainID(boolean, Object) chainID}</li>
-   </ul></p>
+   </ul>
 
 
 <!--

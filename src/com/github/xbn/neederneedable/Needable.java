@@ -51,8 +51,8 @@ public interface Needable<O,R extends Needer> extends Chainable  {
 
       <p>Some {@code Needable}-s may also allow direct use. That is, the {@code Needable} can be directly instantiated, which implies that the {@code Needer} is ignored. For example</p>
 
-      <br/> &nbsp; &nbsp; {@code int iFav = (new FavNumConfigurator()).
-      <br/> &nbsp; &nbsp; twentySeven().timesTwo().increment().get();}</p>
+      <br> &nbsp; &nbsp; {@code int iFav = (new FavNumConfigurator()).
+      <br> &nbsp; &nbsp; twentySeven().timesTwo().increment().get();}</p>
 
       <p>Where {@code FavNumConfigurator} is a trivial class whose only purpose is to pass in a <i>dummy</i> (ignored) {@code Needer} to its super-{@code Needable}:</p>
 
@@ -73,7 +73,7 @@ public interface Needable<O,R extends Needer> extends Chainable  {
       <p>This sets<ol>
          <li>{@code getActiveNeeder()} to {@code true}.</li>
          <li><!-- Requires class name: -->{@link com.github.xbn.neederneedable.Needable#isNeededUsable() isNeededUsable}{@code ()} as appropriate. <i>The value of {@code isNeededUsable()} must be maintained throughout this classes lifetime.</i></li>
-      </ol></p>
+      </ol>
 
       <p>After calling this function, use the {@code Needable}'s self-returning functions to configure the object. The final call in the chain is always <!-- Requires class name: -->{@link com.github.xbn.neederneedable.Needable#endCfg() endCfg}{@code ()}.</p>
 
@@ -103,7 +103,7 @@ public interface Needable<O,R extends Needer> extends Chainable  {
          <li>Calls <code>{@link #getActiveNeeder() getActiveNeeder}().{@link com.github.xbn.neederneedable.Needer#neeadableSetsNeeded(Object) neeadableSetsNeeded}(<i>[the-fully-configured-object]</i>)</code></li>
          <li>Sets {@code getActiveNeeder()} to {@code null}</li>
          <li>Returns the needer.</li>
-      </ol></p>
+      </ol>
 
     * @exception  IllegalStateException  If {@link #getActiveNeeder() getActiveNeeder}{@code ()} is {@code null} or {@link #isNeededUsable() isNeededUsable}{@code ()} is {@code false}.
     * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(R)</code>
@@ -113,7 +113,7 @@ public interface Needable<O,R extends Needer> extends Chainable  {
       <p>Should all builder-data be re-verified in the enclosing ({@code Needer}) constructor?. Using this flag is only necessary when thread-safety is a concern.</p>
 
       <p>A {@code Needable} that is also a Builder-pattern (as in Effective Java by Joshua Bloch, 2nd ed, item 2), is implemented as a static enclosing class. Because of this, other threads may change the data before the class is built ({@code build()} is called). This may require a re-verification of all data in the enclosing class. See (viewed 1/5/2014)
-      <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co">http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co</a>}</p>
+      <br> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co">http://stackoverflow.com/questions/20937880/making-blochs-builder-pattern-thread-safe-rechecking-necessary-in-enclosing-co</a>}</p>
 
    <p>{@code java com.github.xbn.examples.neederneedable.ReverifyBuilderInEnclosingCnstrXmpl}</p>
 

@@ -248,7 +248,7 @@ public class ArrayUtil  {
     * @return  If {@code array} is<ul>
          <li>{@code null}: {@code null}</li>
          <li>non-{@code null}:
-         <br/> &nbsp; &nbsp; {@code Arrays.asList(array)}</li>
+         <br> &nbsp; &nbsp; {@code Arrays.asList(array)}</li>
       </ul>
    public static final <E> List<E> getListOrNull(E[] array, NullContainer nnull, String cntrName_forNullBad)  {
       if(array == null)  {

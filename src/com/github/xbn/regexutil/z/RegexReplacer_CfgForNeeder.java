@@ -50,7 +50,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/neederneedable/AbstractNeedable.html#AbstractNeedable(boolean, boolean, R)">super</a>(true, true, needer)</code>{@code (true, true, needer)}</li>
          <li>{@link #resetRRCFN() resetRRCFN}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public RegexReplacer_CfgForNeeder(R needer)  {
       super(true, true, needer);
@@ -61,7 +61,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <p>Reset configuration with <i>no search terms</i>.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #resetRRCFN() resetRRCFN}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #resetRRCFN() resetRRCFN}{@code ()}</p>
 
     * @return  <i>{@code this}</i>
     */
@@ -82,7 +82,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
             <li>{@link com.github.xbn.regexutil.RegexReplacer#getMaxUntilLoops() getMaxUntilLoops}{@code ()}* to its {@link com.github.xbn.regexutil.RegexReplacer#DEFAULT_MAX_UNTIL_LOOPS default}</li>
             <li>{@link com.github.xbn.regexutil.RegexReplacer#doCrashIfMaxUntilExceeded() doCrashIfMaxUntilExceeded}{@code ()}* to {@code true}.</li>
          </ol></li>
-      </ol></p>
+      </ol>
 
     * @see  #reset()
     */
@@ -145,8 +145,8 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <p>This sets {@link RegexReplacer#getReplacedInEachInput() getReplacedInEachInput}{@code ()}* to <code>{@link com.github.xbn.regexutil.ReplacedInEachInput ReplacedInEachInput}.{@link com.github.xbn.regexutil.ReplacedInEachInput#MATCH_NUMBERS MATCH_NUMBERS}</code></p>
 
     * @param  match_numValidator  May not be <code>null</code>, and
-      <br/> &nbsp; &nbsp; <code>match_numValidator.{@link com.github.xbn.analyze.validate.ValueValidator#getRuleType() getRuleType}().{@link com.github.xbn.lang.RuleType#isImpossible() isImpossible}()</code>
-      <br/>must be {@code false}. Get with {@link RegexReplacer#getMatchNumValidator() getMatchNumValidator}{@code ()}
+      <br> &nbsp; &nbsp; <code>match_numValidator.{@link com.github.xbn.analyze.validate.ValueValidator#getRuleType() getRuleType}().{@link com.github.xbn.lang.RuleType#isImpossible() isImpossible}()</code>
+      <br>must be {@code false}. Get with {@link RegexReplacer#getMatchNumValidator() getMatchNumValidator}{@code ()}
     * @return  <i>{@code this}</i>
     * @see  #all()
     * @see  #matchRange(LengthInRange) matchRange(iir)
@@ -290,7 +290,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <p>This calls<ol>
          <li>{@link #findWhat(String) findWhat}{@code (findWhat_regex)}</li>
          <li>{@link #directReplacement(Object) directReplacement}{@code (direct_rplcWithStr)}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     */
@@ -304,7 +304,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <p>This calls<ol>
          <li>{@link #findWhat(String, int) findWhat}{@code (findWhat_regex, bit_flags)}</li>
          <li>{@link #directReplacement(Object) directReplacement}{@code (direct_rplcWithStr)}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     */
@@ -318,7 +318,7 @@ public class RegexReplacer_CfgForNeeder<P extends RegexReplacer,R extends Needer
       <p>This calls<ol>
          <li>{@link #findWhatLiteral(String) findWhatLiteral}{@code (findWhat_literal, bit_flags)}</li>
          <li>{@link #directReplacement(Object) directReplacement}{@code (direct_rplcWithStr)}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     */

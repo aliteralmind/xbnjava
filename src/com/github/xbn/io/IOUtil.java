@@ -69,7 +69,7 @@ public class IOUtil  {
 {@.codelet.and.out com.github.xbn.examples.io.WriterForAppendableXmpl%eliminateCommentBlocksAndPackageDecl()}
 
       <p>This function is also released as a <a href="https://gist.github.com/aliteralmind/8494917">gist</a>. It is an example of the <a href="http://en.wikipedia.org/wiki/Adapter_pattern#Object_Adapter_pattern">Object Adapter pattern</a>. Thanks to <a href="http://stackoverflow.com/users/1211906/marc-baumbach">Marc Baumbach</a> on <a href="http://stackoverflow.com">{@code stackoverflow}</a> for the assistance. See (viewed 1/18/2014)
-      <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer">http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer</a></code></p>
+      <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer">http://stackoverflow.com/questions/21200421/how-to-wrap-a-java-lang-appendable-into-a-java-io-writer</a></code></p>
 
       @return  A new writer that uses an appendable to do its output.
       @see  #FLUSHABLE_DO_NOTHING
@@ -107,7 +107,7 @@ public class IOUtil  {
 
 
       <p>See
-      <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr">http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr</a>}</p>
+      <br> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr">http://stackoverflow.com/questions/21028924/is-there-a-way-to-test-if-a-printwriter-is-open-and-ready-for-output-without-wr</a>}</p>
 
     **/
    public static final boolean closePrintWriterCheckError(PrintWriter to_close)  {

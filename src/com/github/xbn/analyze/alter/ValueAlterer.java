@@ -46,7 +46,7 @@ public interface ValueAlterer<V,A> extends Alterer, Ruleable  {
             </ul></li>
             <li>is deemed invalid: This <u><i>returns</i></u> {@code to_alter}, unchanged.</li>
          </ol></li>
-      </ol></p>
+      </ol>
 
     * @param  to_validate  The value to optionally validate. In many cases this is the same object as {@code to_alter}. When no validation is done, this parameter is ignored.
     * @param  to_alter  The value to alter, only when {@code to_validate} is deemed valid.

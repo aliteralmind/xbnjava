@@ -24,7 +24,7 @@ public class OXContext extends XContext implements ObjectExceptionContext  {
       <p>Create a new {@code OXContext}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #OXContext(String, String, Object) this(obj_name, null)}</p>
+      <br> &nbsp; &nbsp; {@link #OXContext(String, String, Object) this(obj_name, null)}</p>
     */
    public OXContext(String obj_name)  {
       this(obj_name, null);
@@ -33,7 +33,7 @@ public class OXContext extends XContext implements ObjectExceptionContext  {
       <p>Create a new {@code OXContext}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #OXContext(String, ExceptionContextObject, Object) this}((new {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(String) XCObject}(obj_name)), o_xtraInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #OXContext(String, ExceptionContextObject, Object) this}((new {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(String) XCObject}(obj_name)), o_xtraInfo)</code></p>
     */
    public OXContext(String obj_name, Object o_xtraInfo)  {
       this((new XCObject(obj_name)), o_xtraInfo);
@@ -42,7 +42,7 @@ public class OXContext extends XContext implements ObjectExceptionContext  {
       <p>Create a new {@code OXContext}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #OXContext(String, String, Object) this(xc_o, null)}</p>
+      <br> &nbsp; &nbsp; {@link #OXContext(String, String, Object) this(xc_o, null)}</p>
     */
    public OXContext(boolean ignored, ExceptionContextObject xc_o)  {
       this(xc_o, null);
@@ -53,7 +53,7 @@ public class OXContext extends XContext implements ObjectExceptionContext  {
       <p>This calls<ol>
          <li>{@link com.github.xbn.experimental.xcontext.XContext#XContext() super}{@code (xc_forIW)}</li>
          <li>{@link #setXCObject(ExceptionContextObject) setXCObject}{@code (xc_o)}</li>
-      </ol></p>}
+      </ol>}
 
     * @see  #OXContext(String) this(s)
     * @see  #OXContext(String, String) this(s)
@@ -72,7 +72,7 @@ public class OXContext extends XContext implements ObjectExceptionContext  {
       <p>This calls<ol>
          <li>Calls <code>{@link com.github.xbn.experimental.xcontext.XContext#XContext(boolean, ExceptionContext) super}(false, to_copy)</code></li>
          <li><code>{@link #setXCObject(ExceptionContextObject) setXCObject}(to_copy.{@link #getXCObject() getXCObject}())</code></li>
-      </ol></p>
+      </ol>
     * @see  #OXContext(String, ExceptionContextObject, Object) this(s,xco,o)
     */
    public OXContext(OXContext to_copy)  {
@@ -85,7 +85,7 @@ public class OXContext extends XContext implements ObjectExceptionContext  {
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.experimental.xcontext.XContext#XContext(boolean, ExceptionContext) super}(false, to_copy)</code></li>
          <li><code>{@link #setXCObject(ExceptionContextObject) setXCObject}(to_copy.{@link #getXCObject() getXCObject}())</code></li>
-      </ol></p>
+      </ol>
     * @see  #OXContext(String, String, String, String, String) this(s,s,s,s,s)
     */
    public OXContext(ObjectExceptionContext to_copy)  {
@@ -96,7 +96,7 @@ public class OXContext extends XContext implements ObjectExceptionContext  {
       <p>Set the error-causing object's name.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #setXCObject(ExceptionContextObject) setXCObject}(new {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(String) XCObject}(obj_name))</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #setXCObject(ExceptionContextObject) setXCObject}(new {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(String) XCObject}(obj_name))</code></p>
     */
    public void setObjectName(String obj_name)  {
       setXCObject(new XCObject(obj_name));

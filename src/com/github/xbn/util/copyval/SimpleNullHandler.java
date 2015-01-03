@@ -35,7 +35,7 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
       <p>Create a new {@code SimpleNullHandler}.</p>
 
       <p>This calls<ol>
-      </ol></p>
+      </ol>
     * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#SimpleNullHandler(O)">this</a>(O)</code>
     */
    public SimpleNullHandler(ActionForNull action, O non_nullReplacement)  {
@@ -57,7 +57,7 @@ public class SimpleNullHandler<O> implements NullHandler<O>  {
 
       <p>This<ol>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

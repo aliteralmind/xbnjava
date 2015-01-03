@@ -34,7 +34,7 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
 
       <p>This<ol>
          <li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</a>(needer)</code></li>
-      </ol></p>
+      </ol>
 
     * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</a>(R)</code>
     */
@@ -92,7 +92,7 @@ public class LLCfgElement_CfgForNeeder<E,C extends LLCfgElement<E>,R extends Nee
       <p>YYY</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="../LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</a>(needer, (Class&lt;LLCfgElement&lt;E&gt;&gt;)((Class)LLCfgElement.class))</code></p>
+      <br> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="../LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</a>(needer, (Class&lt;LLCfgElement&lt;E&gt;&gt;)((Class)LLCfgElement.class))</code></p>
     * @return  <i>{@code this}</i>
     * @see  com.github.xbn.neederneedable.Needer#startConfig(Class)
     */

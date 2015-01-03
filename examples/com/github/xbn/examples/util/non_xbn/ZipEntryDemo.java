@@ -19,7 +19,7 @@ package  com.github.xbn.examples.util.non_xbn;
    import  java.util.zip.ZipInputStream;
 /**
    <p>List all items in a zip file. From (viewed 4/26/2012):
-   <br/> &nbsp; &nbsp; <code><a href="http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html">http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html</a></code></p>
+   <br> &nbsp; &nbsp; <code><a href="http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html">http://www.roseindia.net/tutorial/java/corejava/zip/zipentry.html</a></code></p>
 
    <code>{@code java com.github.xbn.examples.util.non_xbn.ZipEntryDemo xbnjava_20120425152952_8hours.zip}</code>
 

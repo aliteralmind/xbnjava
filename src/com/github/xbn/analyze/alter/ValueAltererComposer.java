@@ -40,7 +40,7 @@ public class ValueAltererComposer<V,A> extends AltererComposer  {
       <p>Create a new {@code ValueAltererComposer} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     */

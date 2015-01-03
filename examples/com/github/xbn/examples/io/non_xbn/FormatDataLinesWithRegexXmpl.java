@@ -18,7 +18,7 @@ package  com.github.xbn.examples.io.non_xbn;
    import  java.util.regex.Pattern;
 /**
    <p>Demonstrates using regex to parse multi-line input, where parts of the input is only on some lines, and  must be redundantly used on other lines. This is an answer to
-   <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21341455/conditional-regular-expression">http://stackoverflow.com/questions/21341455/conditional-regular-expression</a></code></p>
+   <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/21341455/conditional-regular-expression">http://stackoverflow.com/questions/21341455/conditional-regular-expression</a></code></p>
 
    <p>{@code java com.github.xbn.examples.io.non_xbn.FormatDataLinesWithRegexXmpl}</p>
 

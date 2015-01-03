@@ -30,7 +30,7 @@ public class DateUtil   {
       <!-- MAIN VARIABLE -->
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code 1000}</p>
+      <br> &nbsp; &nbsp; {@code 1000}</p>
 
     * @see  #MILLS_IN_MINUTE
     * @see  #MILLS_IN_HOUR MILLS_IN_HOUR
@@ -42,28 +42,28 @@ public class DateUtil   {
       <p>Number of milliseconds in a minute.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>({@link #MILLS_IN_SECOND MILLS_IN_SECOND} * 60)</code></p>
+      <br> &nbsp; &nbsp; <code>({@link #MILLS_IN_SECOND MILLS_IN_SECOND} * 60)</code></p>
     */
    public static final int MILLS_IN_MINUTE = MILLS_IN_SECOND * 60;
    /**
       <p>Number of milliseconds in a hour.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>({@link #MILLS_IN_MINUTE MILLS_IN_MINUTE} * 60)</code></p>
+      <br> &nbsp; &nbsp; <code>({@link #MILLS_IN_MINUTE MILLS_IN_MINUTE} * 60)</code></p>
     */
    public static final int MILLS_IN_HOUR = MILLS_IN_MINUTE * 60;
    /**
       <p>Number of milliseconds in a day.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>({@link #MILLS_IN_HOUR MILLS_IN_HOUR} * 24)</code></p>
+      <br> &nbsp; &nbsp; <code>({@link #MILLS_IN_HOUR MILLS_IN_HOUR} * 24)</code></p>
     */
    public static final int MILLS_IN_DAY = MILLS_IN_HOUR * 24;
    /**
       <p>Number of milliseconds in a week.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>({@link #MILLS_IN_DAY MILLS_IN_DAY} * 7)</code></p>
+      <br> &nbsp; &nbsp; <code>({@link #MILLS_IN_DAY MILLS_IN_DAY} * 7)</code></p>
     */
    public static final int MILLS_IN_WEEK = MILLS_IN_DAY * 7;
 

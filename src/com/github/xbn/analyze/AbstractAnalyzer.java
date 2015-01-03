@@ -28,7 +28,7 @@ public abstract class AbstractAnalyzer implements Analyzer  {
       <p>Create a new {@code AbstractAnalyzer}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer super}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer super}{@code ()}</p>
 
     * @see  #AbstractAnalyzer(Analyzer) AbstractAnalyzer(z)
     */
@@ -39,7 +39,7 @@ public abstract class AbstractAnalyzer implements Analyzer  {
       <p>Create a new {@code AbstractAnalyzer} from an {@code Analyzer}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.AnalyzerComposer#AnalyzerComposer(Analyzer) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()
@@ -54,7 +54,7 @@ public abstract class AbstractAnalyzer implements Analyzer  {
          <p>Reset non-count state.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#resetState() resetState}()</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#resetState() resetState}()</code></p>
        */
       public void resetState()  {
          zc.resetState();
@@ -63,7 +63,7 @@ public abstract class AbstractAnalyzer implements Analyzer  {
          <p>Reset counts to zero.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#resetCounts() resetCounts}()</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#resetCounts() resetCounts}()</code></p>
        */
       public void resetCounts()  {
          zc.resetCounts();
@@ -78,7 +78,7 @@ public abstract class AbstractAnalyzer implements Analyzer  {
          <p>Declare an analysis occured.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.analyze.AnalyzerComposer AnalyzerComposer}]</i>.{@link com.github.xbn.analyze.AnalyzerComposer#declareAnalyzed_4prot() declareAnalyzed_4prot}()</code></p>
        */
       protected void declareAnalyzed()  {
          zc.declareAnalyzed_4prot();

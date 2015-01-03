@@ -31,7 +31,7 @@ public enum VertHorizDirection  {
     * <p>Sets <ul>
     *    <li>{@link #getVertIncrement() getVertIncrement}{@code ()} to {@code 0}</li>
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code -1}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #DOWN
     * @see  #LEFT
@@ -45,7 +45,7 @@ public enum VertHorizDirection  {
     * <p>Sets <ul>
     *    <li>{@link #getVertIncrement() getVertIncrement}{@code ()} to {@code 1}</li>
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code 0}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isDown()
@@ -58,7 +58,7 @@ public enum VertHorizDirection  {
     * <p>Sets <ul>
     *    <li>{@link #getVertIncrement() getVertIncrement}{@code ()} to {@code 0}</li>
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code -1}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isLeft()
@@ -71,7 +71,7 @@ public enum VertHorizDirection  {
     * <p>Sets <ul>
     *    <li>{@link #getVertIncrement() getVertIncrement}{@code ()} to {@code 0}</li>
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code 1}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isRight()
@@ -184,7 +184,7 @@ public enum VertHorizDirection  {
     * <p>Get the direction perpendicular to this one, towards the zero-th element.</p>
     *
     * <p>To go towards {@code (length - 1)}, use
-    * <br/><blockquote><code><i>instance</i>.getPerpendicularTowardsZero().{@link #getOpposite() getOpposite}()</code></blockquote></p>
+    * <br><blockquote><code><i>instance</i>.getPerpendicularTowardsZero().{@link #getOpposite() getOpposite}()</code></blockquote></p>
     * @return If either {@link #UP} or {@link #DOWN}, this returns {@link #LEFT}. If {@code LEFT} or {@link #RIGHT}, this returns {@code UP}.
     * @see  #getOpposite()
     */
@@ -201,7 +201,7 @@ public enum VertHorizDirection  {
     * <p>If an <code>VertHorizDirection</code> is not a required value, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
     * @see  #crashIfForbiddenValue(VertHorizDirection, String, Object) crashIfForbiddenValue(ert,s,o)
     */
    public void crashIfNotRequiredValue(VertHorizDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
@@ -211,7 +211,7 @@ public enum VertHorizDirection  {
     * <p>If an <code>VertHorizDirection</code> is a forbidden value, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
     * @see  #crashIfNotRequiredValue(VertHorizDirection, String, Object) crashIfNotRequiredValue(ert,s,o)
     */
    public void crashIfForbiddenValue(VertHorizDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

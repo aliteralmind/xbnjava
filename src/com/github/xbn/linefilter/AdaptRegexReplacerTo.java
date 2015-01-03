@@ -36,8 +36,8 @@ public class AdaptRegexReplacerTo  {
       <p>Create a text-line alterer makes a regular expression replacement.</p>
 
     * @return  {@link #lineReplacer(StringReplacer) lineReplacer}(new {@link com.github.xbn.regexutil.StringReplacer#StringReplacer(RegexReplacer, AlterationRequired, ValidResultFilter) StringReplacer}(required, rr, filter_ifNonNull))
-      <br/>Where {@code rr} is created with
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</code>
+      <br>Where {@code rr} is created with
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</code>
     */
    public static final TextLineAlterAdapter<StringReplacer> lineReplacer(AlterationRequired required, Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       RegexReplacer rr = RegexReplacer_Cfg.buildDirect(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull);
@@ -47,8 +47,8 @@ public class AdaptRegexReplacerTo  {
       <p>Create a string alterer from a {@code RegexReplacer}.</p>
 
     * @return  {@link #stringReplacer(AlterationRequired, RegexReplacer, ValidResultFilter) lineReplacer}(required, rr, filter_ifNonNull))
-      <br/>Where {@code rr} is created with
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</code>
+      <br>Where {@code rr} is created with
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</code>
     */
    public static final StringReplacer stringReplacer(AlterationRequired required, Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       RegexReplacer rr = RegexReplacer_Cfg.buildDirect(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull);
@@ -58,8 +58,8 @@ public class AdaptRegexReplacerTo  {
       <p>Create a string validator from a {@code RegexReplacer}--If the string is matched (is replaced), then it is valid.</p>
 
     * @return  (new {@link com.github.xbn.regexutil.StringValidatorReplacer#StringValidatorReplacer(RegexReplacer, ValidResultFilter) lineReplacer}(rr, filter_ifNonNull))
-      <br/>Where {@code rr} is created with
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</code>
+      <br>Where {@code rr} is created with
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg}.{@link com.github.xbn.regexutil.z.RegexReplacer_Cfg#buildDirect(Pattern, String, ReplacedInEachInput, Appendable) buildDirect}(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull)</code>
     */
    public static final StringValidatorReplacer stringValidator(AlterationRequired required, Pattern pattern_toFind, String rplcWith_direct, ReplacedInEachInput rplcWhat_notMatchNums, ValidResultFilter filter_ifNonNull, Appendable dbgDest_ifNonNull)  {
       RegexReplacer rr = RegexReplacer_Cfg.buildDirect(pattern_toFind, rplcWith_direct, rplcWhat_notMatchNums, dbgDest_ifNonNull);

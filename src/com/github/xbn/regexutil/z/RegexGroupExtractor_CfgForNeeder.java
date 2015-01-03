@@ -35,7 +35,7 @@ public class RegexGroupExtractor_CfgForNeeder<X extends RegexGroupExtractor,R ex
       <p>This calls<ol>
          <li>{@link #useFind() useFind}{@code ()}</li>
          <li><code>{@link #requiredGroups(int) requiredGroups}(-1)</code></li>
-      </ol></p>
+      </ol>
     */
    public RegexGroupExtractor_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
       super(is_avaliableToNeeders, is_neededUseableAtInit, needer);

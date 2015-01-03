@@ -32,14 +32,14 @@ public class ObjectArrayFromPrimitive  {
       <p>Convert an array of an unknown <i>primitive</i> type, to an array of {@code java.lang.Object}-s.</p>
 
       <p>Derived from
-      <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/a/5606435/2736496">http://stackoverflow.com/a/5606435/2736496</a>}
-      <br/>(viewed 12/5/2013)</p>
+      <br> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/a/5606435/2736496">http://stackoverflow.com/a/5606435/2736496</a>}
+      <br>(viewed 12/5/2013)</p>
 
     * @param  objThatIsAPArray  If non-{@code null}, must be an array of a primitive type ({@code boolean}, {@code char}, {@code int}, ...).
     * @return  If {@code objThatIsAPArray} is <ul>
          <li>{@code null}: {@code null}</li>
          <li>Otherwise (for example), if {@code objThatIsAPArray} is a {@code boolean} array:
-      <br/> &nbsp; &nbsp; {@link #get(boolean[], NullContainer, String) get}{@code ((b[])objThatIsAPArray, null, null)}</li>
+      <br> &nbsp; &nbsp; {@link #get(boolean[], NullContainer, String) get}{@code ((b[])objThatIsAPArray, null, null)}</li>
       </ul>
     * @see  com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil#isPrimitive(Object) ObjThatIsPrimitiveArrayUtil#isPrimitive(o)
     */

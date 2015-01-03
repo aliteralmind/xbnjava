@@ -52,7 +52,7 @@ public class IndexInRangeValidator extends IntInRangeValidator  {
       <p>Create a new {@code IndexInRangeValidator} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link IntInRangeValidator#IntInRangeValidator(IntInRangeValidator) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link IntInRangeValidator#IntInRangeValidator(IntInRangeValidator) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

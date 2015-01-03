@@ -34,7 +34,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<L,M extends RawSingleLine
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawLineEntity_CfgForNeeder.html#RawLineEntity_CfgForNeeder(R, com.github.xbn.linefilter.entity.EntityType, java.lang.String)">super</a>(needer, {@link com.github.xbn.linefilter.entity.EntityType}.{@link com.github.xbn.linefilter.entity.EntityType#SINGLE_LINE SINGLE_LINE}, name)</code></li>
          <li>{@link #resetRSLECFN() resetRSLECFN}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public RawSingleLineEntity_CfgForNeeder(R needer, String name)  {
       super(needer, EntityType.SINGLE_LINE, name);
@@ -56,7 +56,7 @@ public abstract class RawSingleLineEntity_CfgForNeeder<L,M extends RawSingleLine
 
       <p>This<ul>
          <li>Sets </li>
-      </ul></p>
+      </ul>
     */
    protected final void resetRSLECFN()  {
       keepAltered = true;

@@ -47,7 +47,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <p>Create a new instance in which expirable elements are optional, and {@code null} elements are forbidden.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType) this}(xprbl_alterArray, {@link com.github.xbn.analyze.alter.ExpirableElements ExpirableElements}.{@link com.github.xbn.analyze.alter.ExpirableElements#OPTIONAL OPTIONAL}, multi_alterType)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType) this}(xprbl_alterArray, {@link com.github.xbn.analyze.alter.ExpirableElements ExpirableElements}.{@link com.github.xbn.analyze.alter.ExpirableElements#OPTIONAL OPTIONAL}, multi_alterType)</code></p>
    public ExpirableAlterList(ValueAlterer<V,A>[] xprbl_alterArray, MultiAlterType multi_alterType)  {
       this(xprbl_alterArray, ExpirableElements.OPTIONAL, multi_alterType);
    }
@@ -99,7 +99,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
          <li>Calls {@link com.github.xbn.analyze.alter.AbstractValueAlterer#AbstractValueAlterer(ValueAlterer) super}(to_copy)</li>
          <li>Duplicates the internal list of alters (including state and counts)</li>
          <li>Sets {@link #doShortCircuit() doShortCircuit}{@code ()} to {@code to_copy.doShortCircuit()}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}
     * @see  #ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable)
@@ -131,7 +131,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <p>Alter the object, and remove expired alter elements.</p>
 
       <p>For every alter-element, this calls
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="AbstractValueAlterer.html#getAltered(V, A)">getAltered</a>(to_validate, to_alter)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="AbstractValueAlterer.html#getAltered(V, A)">getAltered</a>(to_validate, to_alter)</code></p>
 
       <p>When {@code to_alter} is altered by an element and {@link #doShortCircuit() doShortCircuit}{@code ()} is {@code true} (or that alteration is &quot;{@link com.github.xbn.analyze.alter.Alterer#needsToBeDeleted() needs to be deleted}&quot;), this function exits. Otherwise, the now-altered value of {@code to_alter} is passed to the next element to be further ({@link com.github.xbn.analyze.alter.MultiAlterType#CUMULATIVE cumulatively}) altered.</p>
 
@@ -263,7 +263,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetState() resetState}()</code></li>
          <li>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetState() resetState}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public void resetState()  {
       super.resetState();
@@ -277,7 +277,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetCounts() resetCounts}()</code></li>
          <li>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetCounts() resetCounts}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public void resetCounts()  {
       super.resetCounts();
@@ -291,7 +291,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.alter.AbstractValueAlterer super}.{@link com.github.xbn.analyze.alter.AbstractValueAlterer#resetForDeletion() resetForDeletion}()</code></li>
          <li>For every element: {@link com.github.xbn.analyze.alter.Alterer#resetForDeletion() resetForDeletion}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public void resetForDeletion()  {
       super.resetForDeletion();
@@ -304,7 +304,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
 
       <p>This calls<ol>
          <li>{@link com.github.xbn.io.SimpleDebuggable#setDebug(Appendable, boolean) setDebug}{@code (destination, is_on)}</li>
-      </ol></p>
+      </ol>
     */
    public void setDebug(Appendable destination, boolean is_on)  {
       super.setDebug(destination, is_on);
@@ -315,7 +315,7 @@ public class ExpirableAlterList<V,A> extends AbstractValueAlterer<V,A>  {
       <p>This calls<ol>
          <li>{@link com.github.xbn.analyze.alter.AbstractValueAlterer#setExtraErrInfo(Object) setExtraErrInfo}{@code (info)}</li>
          <li>For every element: {@link com.github.xbn.lang.ExtraErrInfoable#setExtraErrInfo(Object) setExtraErrInfo}{@code (info)}</li>
-      </ol></p>
+      </ol>
     */
    public void setExtraErrInfo(Object info)  {
       super.setExtraErrInfo(info);

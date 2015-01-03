@@ -42,7 +42,7 @@ public class ListifyEArrayComposer<E> extends ListifyComposer<E>  {//implements 
       <p>This calls<ol>
          <li>{@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(com.github.xbn.experimental.listify.ListifyComposer) super}{@code (to_copy)}</li>
          <li>{@code (to_copy.getRawObject())}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     */
@@ -55,7 +55,7 @@ public class ListifyEArrayComposer<E> extends ListifyComposer<E>  {//implements 
       <p>This calls<ol>
          <li>{@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(com.github.xbn.experimental.listify.Listify) super}{@code (to_copy)}</li>
          <li>{@code (to_copy.getRawObject())}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     */

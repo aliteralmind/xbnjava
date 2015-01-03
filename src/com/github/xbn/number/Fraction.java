@@ -66,7 +66,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
       <p>Create a Fraction where the denominator is 1.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code this(whole_number, 1)}</p>
+      <br> &nbsp; &nbsp; {@code this(whole_number, 1)}</p>
     */
    public Fraction(long whole_number) {
       this(whole_number, 1);
@@ -169,7 +169,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
       <p>Get the whole-number from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 1}.</p>
 
     * @return  If {@link #getNumerator() getNumerator}{@code ()} is greater-than-or-equal-to {@link #getDenominator() getDenominator}{@code ()}:  {@code <b>(getNumerator() / getDenominator())</b>}
-      <br/>Otherwise: <b>{@code 0}</b>
+      <br>Otherwise: <b>{@code 0}</b>
     * @see  #getMixedNumerator()
     * @see  #getMixedDenominator()
     */
@@ -182,7 +182,7 @@ public class Fraction implements Cloneable, Comparable<Fraction>, Serializable {
       <p>Get the numerator from the mixed-number fraction. If this fraction were {@code 5/3}, that equals the mixed-number {@code 1 2/3}. This function would return  the {@code 2}.</p>
 
     * @return  If {@code getMixedWhole()} is greater than zero:   <code><b>(getNumerator() - ({@link #getMixedWhole() getMixedWhole}() * getDenominator()))</b></code>
-      <br/>Otherwise: <b>{@code getNumerator()}</b>
+      <br>Otherwise: <b>{@code getNumerator()}</b>
     * @see  #getMixedDenominator()
     */
    public final long getMixedNumerator() {

@@ -33,7 +33,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code 0}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#UP UP}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@code null}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #DOWN
     * @see  #LEFT
@@ -53,7 +53,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code 0}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@code null}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isDown()
@@ -68,7 +68,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code -1}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@code null}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isLeft()
@@ -83,7 +83,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code 1}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@code null}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isRight()
@@ -98,7 +98,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code -1}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#UP UP}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isUpLeft()
@@ -113,7 +113,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code 1}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#UP UP}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isUpRight()
@@ -128,7 +128,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code -1}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#LEFT LEFT}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isDownLeft()
@@ -143,7 +143,7 @@ public enum MatrixDirection  {
     *    <li>{@link #getHorizIncrement() getHorizIncrement}{@code ()} to {@code 1}</li>
     *    <li>{@link #getVertPortion() getVertPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#DOWN DOWN}</li>
     *    <li>{@link #getHorizPortion() getHorizPortion}{@code ()} to {@link VertHorizDirection}.{@link VertHorizDirection#RIGHT RIGHT}</li>
-    * </ul></p>
+    * </ul>
     *
     * @see  #UP
     * @see  #isDownRight()
@@ -404,7 +404,7 @@ public enum MatrixDirection  {
     * <p>If an <code>MatrixDirection</code> is not a required value, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfNotRequiredValue(Enum, Enum, String, Object) crashIfNotRequiredValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
     * @see  #crashIfForbiddenValue(MatrixDirection, String, Object) crashIfForbiddenValue(ert,s,o)
     */
    public void crashIfNotRequiredValue(MatrixDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {
@@ -414,7 +414,7 @@ public enum MatrixDirection  {
     * <p>If an <code>MatrixDirection</code> is a forbidden value, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link com.github.xbn.util.EnumUtil EnumUtil}.{@link com.github.xbn.util.EnumUtil#crashIfForbiddenValue(Enum, Enum, String, Object) crashIfForbiddenValue}(this, e_rqd, s_thisEnumsVarNm, o_xtraInfo)</code></p>
     * @see  #crashIfNotRequiredValue(MatrixDirection, String, Object) crashIfNotRequiredValue(ert,s,o)
     */
    public void crashIfForbiddenValue(MatrixDirection e_rqd, String s_thisEnumsVarNm, Object o_xtraInfo)  {

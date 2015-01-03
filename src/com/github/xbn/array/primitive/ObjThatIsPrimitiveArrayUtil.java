@@ -70,11 +70,11 @@ public class ObjThatIsPrimitiveArrayUtil  {
       <p>Is a class-type a primitive array?</p>
 
       <p>Idea from (viewed 12/5/2013)
-      <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/">http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/</a></code></p>
+      <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/">http://stackoverflow.com/questions/5606338/cast-primitive-type-array-into-object-array-in-java/</a></code></p>
 
     * @return  {@code true}  If
-      <br/> &nbsp; &nbsp; {@code objThatMayBe_primArray.getClass().isAssignableFrom(clsPType)}
-      <br/>is {@code true}, where {@code clsPType} is equal to one of the following:<ul>
+      <br> &nbsp; &nbsp; {@code objThatMayBe_primArray.getClass().isAssignableFrom(clsPType)}
+      <br>is {@code true}, where {@code clsPType} is equal to one of the following:<ul>
          <li>{@code boolean[].class}, {@code char[].class}</li>
          <li>{@code byte[].class}, {@code short[].class}, {@code int[].class}, {@code long[].class}</li>
          <li>{@code float[].class}, {@code double[].class}</li>

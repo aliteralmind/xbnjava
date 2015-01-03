@@ -24,7 +24,7 @@ public class OneWayLockableComposer extends LockableComposer  {
       <p>Calls<ol>
          <li>{@link com.github.xbn.util.lock.LockableComposer#LockableComposer(boolean) super}{@code (false)}</li>
          <li> <code><i>[{@link com.github.xbn.util.lock.LockableComposer super}]</i>.{@link com.github.xbn.util.lock.LockableComposer#forceUnlock() forceUnlock}()</code></li>
-      </ol></p>
+      </ol>
 
     * @see  #OneWayLockableComposer(boolean, OneWayLockableComposer) this(b,owlc)
     * @see  #OneWayLockableComposer(OneWayLockable) this(owl)
@@ -54,7 +54,7 @@ public class OneWayLockableComposer extends LockableComposer  {
       <p>Lock--this returns <b>{@code null}</b> (must return &quot;{@code this}&quot; in sub-classes).</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.util.lock.LockableComposer super}]</i>.{@link com.github.xbn.util.lock.LockableComposer#lock(boolean) lock}(true)</code></p>
+      <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.util.lock.LockableComposer super}]</i>.{@link com.github.xbn.util.lock.LockableComposer#lock(boolean) lock}(true)</code></p>
     */
    public void lock()  {
       lock(true);

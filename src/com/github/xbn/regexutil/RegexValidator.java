@@ -30,7 +30,7 @@ package  com.github.xbn.regexutil;
       <li><b>Matcher uses:</b> <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useFind() useFind}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useLookingAt() useLookingAt}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#useMatches() useMatches}()</code></li>
       <li><b>Basics:</b> <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#unfiltered() unfiltered}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#filter(ValidResultFilter) filter}(vrf)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#invert(boolean) invert}(b)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#nullOk(boolean) nullOk}(b)</code></li>
       <li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#reset() reset}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</code>, <code>{@link com.github.xbn.regexutil.z.RegexValidator_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code></li>
-   </ul></p>
+   </ul>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
@@ -45,7 +45,7 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
       <p>Create a new instance from a fieldable.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RegexValidator(RuleType, RegexValidator_Fieldable) this}({@link com.github.xbn.lang.RuleType RuleType}.{@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}, fieldable)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RegexValidator(RuleType, RegexValidator_Fieldable) this}({@link com.github.xbn.lang.RuleType RuleType}.{@link com.github.xbn.lang.RuleType#RESTRICTED RESTRICTED}, fieldable)</code></p>
     */
    public RegexValidator(RegexValidator_Fieldable fieldable)  {
       this(RuleType.RESTRICTED, fieldable);
@@ -57,7 +57,7 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
          <li>Calls {@link com.github.xbn.analyze.validate.NullnessValidator#NullnessValidator(RuleType, ValueValidator_Fieldable) super}{@code (rule_type, fieldable)}</li>
          <li>Sets all internal fields from {@code fieldable}.</li>
          <li>Calls {@link #resetStateRV() resetStateRV}{@code ()}.</li>
-      </ol></p>
+      </ol>
 
     * @param  fieldable  May not be {@code null}, and its fields must conform to all restrictions as documented in the <a href="#cfg">builder's setter functions</a>.
     * @see  #RegexValidator(RegexValidator_Fieldable) this(rv_f)
@@ -79,7 +79,7 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
 
       <p>This<ol>
          <li>Calls {@link com.github.xbn.analyze.validate.NullnessValidator#NullnessValidator(ValueValidator) super}{@code (to_copy)}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #RegexValidator(RuleType, RegexValidator_Fieldable) this(rti,rv_f)
@@ -99,7 +99,7 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.validate.NullnessValidator NullnessValidator}.{@link com.github.xbn.analyze.validate.NullnessValidator#resetState() resetState}()</code></li>
          <li>{@link #resetStateRV() resetStateRV}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public void resetState()  {
       super.resetState();
@@ -111,7 +111,7 @@ public class RegexValidator extends NullnessValidator<String> implements Pattern
       <p>This sets<ol>
          <li>{@link #getValidString() getValidString}{@code ()} to {@code null}</li>
          <li>{@link #wasJustMatched() wasJustMatched}{@code ()} to {@code false}.</li>
-      </ol></p>
+      </ol>
 
     * @see  #resetState()
     */

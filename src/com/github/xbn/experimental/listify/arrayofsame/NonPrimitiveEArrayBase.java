@@ -40,7 +40,7 @@ public class NonPrimitiveEArrayBase<E> implements ListifyNonPrimitiveEArray<E>  
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/ListifyComposer.html#ListifyComposer(E[], ValueCopier)">super</a>(objects, array_helper, get_valCopy)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/experimental/listify/ListifyComposer.html#ListifyComposer(E[], ValueCopier)">super</a>(objects, array_helper, get_valCopy)</code></p>
     */
    public NonPrimitiveEArrayBase(E[] objects, ArrayHelper<E> array_helper, ValueCopier<E> get_valCopy)  {
       leac = new ListifyEArrayComposer<E>(objects, array_helper, get_valCopy);
@@ -49,7 +49,7 @@ public class NonPrimitiveEArrayBase<E> implements ListifyNonPrimitiveEArray<E>  
       <p>Create a new {@code NonPrimitiveEArrayBase} from a {@code ListifyNonPrimitiveEArray}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

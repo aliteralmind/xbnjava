@@ -14,7 +14,7 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
       <p>This calls<ol>
          <li>{@link com.github.xbn.experimental.xcontext.XCObject#XCObject(String) super}{@code (cntr_name)}</li>
          <li>{@link #setIndex(int) setIndex(index)}</li>
-      </ol></p>
+      </ol>
 
     * @see  #XCElement(ExceptionContextElement) this(xce)
     */
@@ -28,7 +28,7 @@ public class XCElement extends XCObject implements ExceptionContextElement  {
       <p>This<ol>
          <li>Calls {@link com.github.xbn.experimental.xcontext.XCObject#XCObject(ExceptionContextObject) super}{@code (to_copy)}</li>
          <li><code>{@link #setIndex(int) setIndex}(to_copy.{@link #getIndex() getIndex}())</code></li>
-      </ol></p>
+      </ol>
     * @see  #getObjectCopy()
     * @see  #XCElement(ExceptionContext, String, int) XCElement(xc,s,i)
     */

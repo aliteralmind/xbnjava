@@ -38,7 +38,7 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
       <p>This calls<ol>
          <li>{@link com.github.xbn.neederneedable.ChainableComposer#ChainableComposer() super}{@code ()}</li>
          <li>{@link #declareNeededReset_4prot() declareNeededReset_4prot}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @param  is_avaliableToNeeders  Get with {@link #isAvailableToNeeder() isAvailableToNeeder}{@code ()}.
     * @param  is_neededUseableAtInit  If {@code true}, the needed object is useable immediately after a configuration is started. Get with {@link #isNeededUseableAtStart() isNeededUseableAtStart}{@code ()}.
@@ -59,7 +59,7 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
          <li>Sets {@code getActiveNeeder()} to {@code null}</li>
          <li>Sets {@link #isNeededUsable() isNeededUsable}{@code ()} to {@code false}</li>
          <li>Calls  <code><i>[{@link com.github.xbn.neederneedable.SimpleChainable super}]</i>.{@link com.github.xbn.neederneedable.SimpleChainable#unsetChainID(boolean) unsetChainID}(false)</code></li>
-      </ol></p>
+      </ol>
 
       <h3><i>Does this interact acceptably with directly-used {@code Needables}?</i></h3>
     */
@@ -76,7 +76,7 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
          <li>Calls <code>{@link #ciActive_4prot() ciActive_4prot}()</code></li>
          <li>Calls <code>needer.{@link com.github.xbn.neederneedable.Needer#startConfig(Class) startConfig}(expected_type)</code></li>
          <li>Sets {@link #getActiveNeeder() getActiveNeeder}{@code ()} to {@code needer}</li>
-      </ol></p>
+      </ol>
 
     * @param  needer  May not be equal to <i>{@code this}</i> (for situations where classes implement both {@code Needable} and {@code Needer}. See {@link com.github.xbn.neederneedable.NeedableWithSubsComposer NeedableWithSubsComposer}).
 
@@ -101,10 +101,10 @@ public class NeedableComposer<O,R extends Needer> extends ChainableComposer  {//
 
       <p>This<ol>
          <li>Calls
-         <br/> &nbsp; &nbsp; {@link #getActiveNeeder() getActiveNeeder}{@code ().}{@link com.github.xbn.neederneedable.Needer#neeadableSetsNeeded(Object) neeadableSetsNeeded}{@code ()}</li>
+         <br> &nbsp; &nbsp; {@link #getActiveNeeder() getActiveNeeder}{@code ().}{@link com.github.xbn.neederneedable.Needer#neeadableSetsNeeded(Object) neeadableSetsNeeded}{@code ()}</li>
          <li>Calls {@link #declareNeededReset_4prot() declareNeededReset_4prot}{@code ()} (which sets {@code getActiveNeeder()} to {@code null}).</li>
          <li>Returns the (now inactive) {@code Needer}.</li>
-      </ol></p>
+      </ol>
     * @see <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NeedableComposer.html#startConfig_4prot(R, java.lang.Class)">startConfig_4prot</a>(R,cls)</code>
     */
    @CompositionFunction

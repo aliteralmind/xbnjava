@@ -27,7 +27,7 @@ public class ExpirableRawLineAlterList<L> extends ExpirableAlterList<L,L>  {
       <p>Create a new instance in which expirable elements are optional, and {@code null} elements are forbidden.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.analyze.alter.ExpirableAlterList#ExpirableAlterList(MultiAlterType, MultiAlterType) this}(line_alterers, multi_alterType)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.analyze.alter.ExpirableAlterList#ExpirableAlterList(MultiAlterType, MultiAlterType) this}(line_alterers, multi_alterType)</code></p>
    public ExpirableRawLineAlterList(ValueAlterer<L,L>[] line_alterers, MultiAlterType multi_alterType)  {
       super(line_alterers, multi_alterType);
    }
@@ -36,7 +36,7 @@ public class ExpirableRawLineAlterList<L> extends ExpirableAlterList<L,L>  {
       <p>Create a new instance.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.analyze.alter.ExpirableAlterList#ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable) super}(line_alterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.analyze.alter.ExpirableAlterList#ExpirableAlterList(ValueAlterer[], ExpirableElements, MultiAlterType, Appendable) super}(line_alterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull)</code></p>
     */
    public ExpirableRawLineAlterList(ValueAlterer<L,L>[] line_alterers, ExpirableElements xprbl_lmntsAre, MultiAlterType multi_alterType, Appendable debug_ifNonNull)  {
       super(line_alterers, xprbl_lmntsAre, multi_alterType, debug_ifNonNull);

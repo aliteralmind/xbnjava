@@ -29,7 +29,7 @@ public class VzblPadChop_Cfg extends VzblPadChop_CfgForNeeder<VzblPadChop,DummyF
       <p>Create a new {@code zVzblPadChop_Cfg} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#VzblPadChop_CfgForNeeder(R)">this</a>(null)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#VzblPadChop_CfgForNeeder(R)">this</a>(null)</code></p>
     * @see  #VzblPadChop_Cfg(int) this(i)
     */
    public VzblPadChop_Cfg()  {
@@ -39,7 +39,7 @@ public class VzblPadChop_Cfg extends VzblPadChop_CfgForNeeder<VzblPadChop,DummyF
       <p>Create a new {@code zVzblPadChop_Cfg} with defaults, but a specific goal length.</p>
 
          <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="VzblPadChop_CfgForNeeder.html#VzblPadChop_CfgForNeeder(R, int)">super</a>(goal_len, null)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="VzblPadChop_CfgForNeeder.html#VzblPadChop_CfgForNeeder(R, int)">super</a>(goal_len, null)</code></p>
 
     * @see  #VzblPadChop_Cfg() this()
     */

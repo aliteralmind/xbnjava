@@ -20,7 +20,7 @@ package  com.github.xbn.examples.regexutil.non_xbn;
    import  java.util.regex.Pattern;
 /**
    <p>Function that returns the first vowel found in a string, via a reusable (pattern and) matcher. Used as an answer for this question on {@code stackoverflow}:
-   <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/22765326/regular-expression-for-obtaining-a-vowel-occurrence-in-java">http://stackoverflow.com/questions/22765326/regular-expression-for-obtaining-a-vowel-occurrence-in-java</a></code></p>
+   <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/22765326/regular-expression-for-obtaining-a-vowel-occurrence-in-java">http://stackoverflow.com/questions/22765326/regular-expression-for-obtaining-a-vowel-occurrence-in-java</a></code></p>
 
    <p>{@code java com.github.xbn.examples.regexutil.non_xbn.GetFirstVowelCharInString}</p>
 

@@ -45,7 +45,7 @@ public class ChainableComposer  {//implements Chainable  {
       <p>Create a new instance as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #setChainID_4prot(boolean, Object) setChainID_4prot}{@code (false, to_copy.getChainID())}</p>
+      <br> &nbsp; &nbsp; {@link #setChainID_4prot(boolean, Object) setChainID_4prot}{@code (false, to_copy.getChainID())}</p>
 
       <p>This does nothing with the <a href="#getStaticChainID()">static id</a>, because &quot;duplicating&quot; it would just overwrite the existing value.</p>
 
@@ -68,7 +68,7 @@ public class ChainableComposer  {//implements Chainable  {
 
       <p>This calls<ol>
          <li>{@link #unsetChainID(boolean) unsetChainID}{@code (false)}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #ChainableComposer() this()
@@ -83,7 +83,7 @@ public class ChainableComposer  {//implements Chainable  {
       <p>Set the chain-id to {@code null}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #setChainID_4prot(boolean, Object) setChainID_4prot(do_unsetStatic, null)}</p>
+      <br> &nbsp; &nbsp; {@link #setChainID_4prot(boolean, Object) setChainID_4prot(do_unsetStatic, null)}</p>
     */
    @CompositionFunction
    public void unsetChainID(boolean do_unsetStatic)  {
@@ -135,13 +135,13 @@ public class ChainableComposer  {//implements Chainable  {
 //static...START
    /**
       <p>Get a simple object containing the chain-id, for the purpose of appending it to error messages, as the {@code xtra_errInfo} parameter. For example:
-      <br/> &nbsp; &nbsp; <code>throw  new RuntimeException({@link com.github.xbn.lang.CrashIfBase CrashIfBase.}{@link com.github.xbn.lang.CrashIfBase#getXMsg(String, Object) getXMsg}(&quot;Don't do that please&quot;, ChainableComposer.getChainIDForXMsgCINull(<i>[a-Chainable]</i>), null, rtxCause));</code>
-      <br/>The returned object's {@code toString()} prints
-      <br/> &nbsp; &nbsp; {@code &quot;getChainID()=[" + <i>[the-chain-id]</i> + "]&quot;}
-      <br/>When used in a {@code catch} block, the {@code toString()} will not execute unless an exception is caught.</p>
+      <br> &nbsp; &nbsp; <code>throw  new RuntimeException({@link com.github.xbn.lang.CrashIfBase CrashIfBase.}{@link com.github.xbn.lang.CrashIfBase#getXMsg(String, Object) getXMsg}(&quot;Don't do that please&quot;, ChainableComposer.getChainIDForXMsgCINull(<i>[a-Chainable]</i>), null, rtxCause));</code>
+      <br>The returned object's {@code toString()} prints
+      <br> &nbsp; &nbsp; {@code &quot;getChainID()=[" + <i>[the-chain-id]</i> + "]&quot;}
+      <br>When used in a {@code catch} block, the {@code toString()} will not execute unless an exception is caught.</p>
 
       <p><i><b>See:</b></i><ul>
-      </ul></p>
+      </ul>
 
     * @return  The same object is returned for each call. Its internal chain-id is updated.
     */

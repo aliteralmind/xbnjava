@@ -30,7 +30,7 @@ public class JavaUtil  {
       <p>The default value for a boolean is {@code false}.</p>
 
       <p>Viewed 1/21/2014
-      <br/><code><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</a></code>:</p>
+      <br><code><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</a></code>:</p>
 
       <p><b>Default Values:</b> </p>
 
@@ -164,7 +164,7 @@ boolean                    false}</pre>
       <p>Get an object containing an initialized value for the type whose name is in a string.</p>
 
       <p>Idea from (viewed 1/2/2014)
-      <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/2892067/2736496">http://stackoverflow.com/a/2892067/2736496</a></code></p>
+      <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/2892067/2736496">http://stackoverflow.com/a/2892067/2736496</a></code></p>
 
     * @param  type_name  May not be {@code null}.
     * @return  If {@code type_name} is equal to<ul>

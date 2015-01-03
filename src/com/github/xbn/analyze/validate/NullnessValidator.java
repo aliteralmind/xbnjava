@@ -39,7 +39,7 @@ package  com.github.xbn.analyze.validate;
       <li><b>Basic:</b> <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#invert(boolean) invert}(b)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#nullOk(boolean) nullOk}(b)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#reset() reset}()</code></li>
       <li><b>Filter:</b> <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#unfiltered() unfiltered}()</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#filter(ValidResultFilter) filter}(vrf)</code></li>
       <li><b>Other:</b> <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.analyze.validate.z.ValueValidator_CfgForNeeder#extraErrInfo(Object) extraErrInfo}(o)</code></li>
-   </ul></p>
+   </ul>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
@@ -50,7 +50,7 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
       <p>Create a new instance from its fieldable.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>this(NullnessValidator.{@link #getRuleTypeFromFieldsVVN(ValueValidator_Fieldable) getRuleTypeFromFieldsVVN}(fieldable), fieldable)</code></p>
+      <br> &nbsp; &nbsp; <code>this(NullnessValidator.{@link #getRuleTypeFromFieldsVVN(ValueValidator_Fieldable) getRuleTypeFromFieldsVVN}(fieldable), fieldable)</code></p>
     */
    public NullnessValidator(ValueValidator_Fieldable fieldable)  {
       this(NullnessValidator.getRuleTypeFromFieldsVVN(fieldable), fieldable);
@@ -84,7 +84,7 @@ public class NullnessValidator<O> extends AbstractValidator implements ValueVali
          <li>Otherwise, {@code to_validate} is <!-- GENERIC PARAMETERS FAIL IN @link --><a href="#doesFollowRulesPreInvert(O)">validated</a> against the <i>un-inverted</i> rules, and that result is inverted if necessary.</li>
          <li>If the {@link com.github.xbn.analyze.validate.ValidResultFilter#getAfterValueFromInvertedRules(boolean) post-filter} leaves that value alone (because it is either {@link com.github.xbn.analyze.validate.FilterAfterValue#UNCHANGED UNCHANGED}, or equal to the follows-the-rules finding), this <i><b>returns</b></i> it.</li>
          <li>Otherwise this {@link #adjustForPostFilterReturnValue(boolean) makes adjustments}, and then <i><b>returns</b></i> it (un-inverted).</li>
-      </ol></p>
+      </ol>
 
     * @see  com.github.xbn.analyze.Analyzer#getAnalyzedCount() Analyzer#getAnalyzedCount()
     * @see  com.github.xbn.analyze.validate.Validator#getValidCount() Validator#getValidCount()

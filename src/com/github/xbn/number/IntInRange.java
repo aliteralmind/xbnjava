@@ -30,14 +30,14 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>An {@code LengthInRange} with no bounds.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>new {@link #IntInRange() IntInRange}()</code></p>
+    * <br> &nbsp; &nbsp; <code>new {@link #IntInRange() IntInRange}()</code></p>
     */
    public static final IntInRange UNRESTRICTED = new IntInRange();
    /**
     * <p>An {@code LengthInRange} with no members.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>new {@link #IntInRange(Invert, IntBound, IntBound) IntInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, null, null</code></p>
+    * <br> &nbsp; &nbsp; <code>new {@link #IntInRange(Invert, IntBound, IntBound) IntInRange}({@link com.github.xbn.lang.Invert}.{@link com.github.xbn.lang.Invert#YES YES}, null, null</code></p>
     */
    public static final IntInRange IMPOSSIBLE = new IntInRange(Invert.YES, null, null);
 //constructors...START
@@ -45,7 +45,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>Create a new unrestricted instance.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; {@link NumberInRange#NumberInRange super}{@code ()}</p>
+    * <br> &nbsp; &nbsp; {@link NumberInRange#NumberInRange super}{@code ()}</p>
     * @see  #IntInRange(IntBound, IntBound) IntInRange(nb,nb)
     */
    public IntInRange()  {
@@ -55,7 +55,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>Create a new instance with bounds.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #IntInRange(int, int, String, String) this}(min, max, null, null)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #IntInRange(int, int, String, String) this}(min, max, null, null)</code></p>
     */
    public IntInRange(int min, int max)  {
       this(min, max, null, null);
@@ -64,7 +64,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>Create a new instance with bounds.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #IntInRange(IntBound, IntBound) this}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name), new IntBoundInclusive(max, max_name))</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #IntInRange(IntBound, IntBound) this}(new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name), new IntBoundInclusive(max, max_name))</code></p>
     */
    public IntInRange(int min, int max, String min_name, String max_name)  {
       this(new IntBoundInclusive(min, min_name), new IntBoundInclusive(max, max_name));
@@ -73,7 +73,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>Create a new instance with bounds.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; {@link NumberInRange#NumberInRange(NumberBound, NumberBound) super}{@code (min, max)}</p>
+    * <br> &nbsp; &nbsp; {@link NumberInRange#NumberInRange(NumberBound, NumberBound) super}{@code (min, max)}</p>
     */
    public IntInRange(IntBound min, IntBound max)  {
       super(min, max);
@@ -82,7 +82,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>Create a new instance with bounds and invert setting.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #IntInRange(Invert, int, int, String, String) this}(invert, min, max, null, null)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #IntInRange(Invert, int, int, String, String) this}(invert, min, max, null, null)</code></p>
     */
    public IntInRange(Invert invert, int min, int max)  {
       this(invert, min, max, null, null);
@@ -91,7 +91,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>Create a new instance with bounds and invert setting.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #IntInRange(Invert, IntBound, IntBound) this}(invert, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name), new IntBoundInclusive(max, max_name))</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #IntInRange(Invert, IntBound, IntBound) this}(invert, new {@link IntBoundInclusive#IntBoundInclusive(Integer, String) IntBoundInclusive}(min, min_name), new IntBoundInclusive(max, max_name))</code></p>
     */
    public IntInRange(Invert invert, int min, int max, String min_name, String max_name)  {
       this(invert, new IntBoundInclusive(min, min_name), new IntBoundInclusive(max, max_name));
@@ -100,7 +100,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>Create a new instance with bounds and invert setting.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; {@link NumberInRange#NumberInRange(Invert, NumberBound, NumberBound) super}{@code (invert, min, max)}</p>
+    * <br> &nbsp; &nbsp; {@link NumberInRange#NumberInRange(Invert, NumberBound, NumberBound) super}{@code (invert, min, max)}</p>
     * @see  #IntInRange()
     * @see  #IntInRange(int, int) IntInRange(i,i)
     * @see  #IntInRange(Invert, int, int) IntInRange(inv,i,i)
@@ -123,8 +123,8 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>If the bounds of this {@code IntInRange} are invalid, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadBounds(IntBound, IntBound, String, String, Object) crashIfBadBounds}({@link com.github.xbn.number.NumberInRange#getMinBound() getMinBound}(), {@link com.github.xbn.number.NumberInRange#getMaxBound() getMaxBound}, &quot;getMinBound()&quot;, &quot;getMaxBound()&quot;,
-    * <br/> &nbsp; &nbsp; {@link com.github.xbn.lang.ExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}())</code></p>
+    * <br> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadBounds(IntBound, IntBound, String, String, Object) crashIfBadBounds}({@link com.github.xbn.number.NumberInRange#getMinBound() getMinBound}(), {@link com.github.xbn.number.NumberInRange#getMaxBound() getMaxBound}, &quot;getMinBound()&quot;, &quot;getMaxBound()&quot;,
+    * <br> &nbsp; &nbsp; {@link com.github.xbn.lang.ExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}())</code></p>
     */
    public void crashIfBadBoundsForCnstr()  {
       IntInRange.crashIfBadBounds(getMinBound(), getMaxBound(),
@@ -316,7 +316,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * bounds <i>as configured in this class</i>, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #crashIfBadRange(int, int, String, String) crashIfBadRange}(min, max, &quot;min&quot;, &quot;max&quot;)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #crashIfBadRange(int, int, String, String) crashIfBadRange}(min, max, &quot;min&quot;, &quot;max&quot;)</code></p>
     */
    public void crashIfBadRange(int min, int max)  {
       crashIfBadRange(min, max, "min", "max");
@@ -326,8 +326,8 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * bounds <i>as configured in this class</i>, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadRange(IntInRange, int, int, String, String, Object) crashIfBadRange}(this, min, max, min_name, max_name,
-    * <br/> &nbsp; &nbsp; &nbsp; &nbsp; {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</code></p>
+    * <br> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadRange(IntInRange, int, int, String, String, Object) crashIfBadRange}(this, min, max, min_name, max_name,
+    * <br> &nbsp; &nbsp; &nbsp; &nbsp; {@link com.github.xbn.lang.AbstractExtraErrInfoable#getExtraErrInfo() getExtraErrInfo}()*)</code></p>
     */
    public void crashIfBadRange(int min, int max, String min_name, String max_name)  {
       IntInRange.crashIfBadRange(this, min, max, min_name, max_name,
@@ -340,7 +340,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * <p>If a standalone-int is invalid, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadIntObject(IntInRange, Integer, String) crashIfBadIntObject}(this, num, int_objName)</code></p>
+    * <br> &nbsp; &nbsp; <code>IntInRange.{@link #crashIfBadIntObject(IntInRange, Integer, String) crashIfBadIntObject}(this, num, int_objName)</code></p>
     */
    public void crashIfBadIntObject(Integer num, String int_objName)  {
       IntInRange.crashIfBadIntObject(this, num, int_objName);
@@ -350,7 +350,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * larger object</i> is invalid, crash.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; <code>{@link #crashIfBadIntElement(IntInRange, Integer, String, int) crashIfBadIntElement}(this, num, cntr_name, idx_inCntr)</code></p>
+    * <br> &nbsp; &nbsp; <code>{@link #crashIfBadIntElement(IntInRange, Integer, String, int) crashIfBadIntElement}(this, num, cntr_name, idx_inCntr)</code></p>
     */
    public void crashIfBadIntElement(Integer num, String cntr_name, int idx_inCntr)  {
       IntInRange.crashIfBadIntElement(this, num, cntr_name, idx_inCntr);
@@ -393,7 +393,7 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     *    <li>either (or both) {@code min} or {@code max} are {@code null},
     *    then (when non-{@code null}) there are no restrictions on
     *    {@code min.getInt()} (or {@code max.getInt()}).</li>
-    * </ul></p>
+    * </ul>
     * @exception  IllegalArgumentStateException  If both bounds are non-{@code null}, and violated the above rules are violated.
     * @see  #crashIfBadBoundsForLength(IntBoundInclusive, IntBound, String, String, Object) crashIfBadBoundsForLength(ibi,nb,s,s,o)
     * @see  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberInRange.html#isIn(N)">isIn</a>(N)*</code>
@@ -447,8 +447,8 @@ public class IntInRange extends NumberInRange<Integer> implements IntRange  {
     * is the format of the potential error message.</p>
     * @param  int_objName  For example, &quot;{@code aString.length}&quot; or &quot;{@code coll.size()}&quot;. <i>Should</i> not be {@code null} or empty.
     * @exception  IllegalArgumentException  If
-    * <br/> &nbsp; &nbsp; <code>range.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberInRange.html#isIn(N)">isIn</a>(num)*</code>
-    * <br/>is {@code false}.
+    * <br> &nbsp; &nbsp; <code>range.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberInRange.html#isIn(N)">isIn</a>(num)*</code>
+    * <br>is {@code false}.
     * @see  #crashIfBadIntObject(Integer, String) crashIfBadIntObject(I,s)
     */
    public static final void crashIfBadIntObject(IntInRange range, Integer num, String int_objName)  {

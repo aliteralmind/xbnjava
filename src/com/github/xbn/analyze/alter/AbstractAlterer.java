@@ -26,7 +26,7 @@ public abstract class AbstractAlterer implements Alterer  {
       <p>Create a new instance with defaults.</p>
 
       <p>Sets the internal composer to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer() AltererComposer}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer() AltererComposer}{@code ()}</p>
 
     * @see  #AbstractAlterer(AlterationRequired)
     */
@@ -37,7 +37,7 @@ public abstract class AbstractAlterer implements Alterer  {
       <p>Create a new {@code AbstractAlterer} with the required setting.</p>
 
       <p>Sets the internal composer to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(AlterationRequired) AltererComposer}{@code (required)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(AlterationRequired) AltererComposer}{@code (required)}</p>
 
     * @see  #AbstractAlterer()
     * @see  #AbstractAlterer(com.github.xbn.analyze.alter.Alterer)
@@ -49,7 +49,7 @@ public abstract class AbstractAlterer implements Alterer  {
       <p>Create a new {@code AbstractAlterer}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer#AltererComposer(Alterer) super}{@code (to_copy)}</p>
 
     * @see  #AbstractAlterer(com.github.xbn.analyze.alter.AlterationRequired)
     */

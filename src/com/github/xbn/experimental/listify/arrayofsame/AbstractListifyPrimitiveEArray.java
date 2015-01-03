@@ -43,7 +43,7 @@ public abstract class AbstractListifyPrimitiveEArray<E> implements ListifyPrimit
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, ValueCopier) super}{@code (obj_thatIsPrimArr, get_valCopy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, ValueCopier) super}{@code (obj_thatIsPrimArr, get_valCopy)}</p>
     */
    public AbstractListifyPrimitiveEArray(Object obj_thatIsPrimArr, PrimitiveArrayHelper<E> pa_helper, ValueCopier<E> get_valCopy)  {
       leac = new ListifyEArrayComposer<E>(obj_thatIsPrimArr, pa_helper, get_valCopy);
@@ -62,7 +62,7 @@ public abstract class AbstractListifyPrimitiveEArray<E> implements ListifyPrimit
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; ...........</p>
+      <br> &nbsp; &nbsp; ...........</p>
 
     * @param  to_copy  May not be {@code null}.
     */

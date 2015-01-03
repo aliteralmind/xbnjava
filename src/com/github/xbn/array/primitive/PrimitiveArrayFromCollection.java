@@ -40,7 +40,7 @@ public class PrimitiveArrayFromCollection  {
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forBoolean(Collection, NullHandler, NullContainer, String) forBoolean}(coll, (new ResettableNullHandler&lt;Boolean&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forBoolean(Collection, NullHandler, NullContainer, String) forBoolean}(coll, (new ResettableNullHandler&lt;Boolean&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final boolean[] forBoolean(Collection<Boolean> coll, boolean for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
@@ -139,7 +139,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forCharacter(Collection, NullHandler, NullContainer, String) forCharacter}(coll, (new ResettableNullHandler&lt;Character&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forCharacter(Collection, NullHandler, NullContainer, String) forCharacter}(coll, (new ResettableNullHandler&lt;Character&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final char[] forCharacter(Collection<Character> coll, char for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
@@ -194,7 +194,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forByte(Collection, NullHandler, NullContainer, String) forByte}(coll, (new ResettableNullHandler&lt;Byte&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forByte(Collection, NullHandler, NullContainer, String) forByte}(coll, (new ResettableNullHandler&lt;Byte&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final byte[] forByte(Collection<Byte> coll, byte for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
@@ -249,7 +249,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forShort(Collection, NullHandler, NullContainer, String) forShort}(coll, (new ResettableNullHandler&lt;Short&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forShort(Collection, NullHandler, NullContainer, String) forShort}(coll, (new ResettableNullHandler&lt;Short&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final short[] forShort(Collection<Short> coll, short for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
@@ -304,7 +304,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forInteger(Collection, NullHandler, NullContainer, String) forInteger}(coll, (new ResettableNullHandler&lt;Integer&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forInteger(Collection, NullHandler, NullContainer, String) forInteger}(coll, (new ResettableNullHandler&lt;Integer&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final int[] forInteger(Collection<Integer> coll, int for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
@@ -359,7 +359,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forLong(Collection, NullHandler, NullContainer, String) forLong}(coll, (new ResettableNullHandler&lt;Long&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forLong(Collection, NullHandler, NullContainer, String) forLong}(coll, (new ResettableNullHandler&lt;Long&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final long[] forLong(Collection<Long> coll, long for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
@@ -414,7 +414,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forFloat(Collection, NullHandler, NullContainer, String) forFloat}(coll, (new ResettableNullHandler&lt;Float&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forFloat(Collection, NullHandler, NullContainer, String) forFloat}(coll, (new ResettableNullHandler&lt;Float&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final float[] forFloat(Collection<Float> coll, float for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {
@@ -469,7 +469,7 @@ Use this see link, and change Booxl to Bool when done. (NOT IN THIS HTML COMMENT
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #forDouble(Collection, NullHandler, NullContainer, String) forDouble}(coll, (new ResettableNullHandler&lt;Double&gt;(for_whenNull)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #forDouble(Collection, NullHandler, NullContainer, String) forDouble}(coll, (new ResettableNullHandler&lt;Double&gt;(for_whenNull)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final double[] forDouble(Collection<Double> coll, double for_whenNull, NullContainer nnull, String cntrName_forNullBad)  {

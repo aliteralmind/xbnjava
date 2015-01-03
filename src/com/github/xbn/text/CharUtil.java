@@ -95,7 +95,7 @@ public class CharUtil  {
     * @param  to_search  The array which {@code to_find} should be in. May not be null, and, if {@code do_orderAsc} is true, <i>should</i> be non-empty, unique, and sorted ascending. If not, this function will not work properly.
     * @param  do_orderAsc  If true, then <code>{@link java.util.Arrays}.{@link java.util.Arrays#binarySearch(char[], char) binarySearch}(c[],c)</code> is used to search the array. If false, a for loop is used.
     * @return  The first index in {@code to_search} at which {@code to_find} exists.
-      <br/>{@code <b>-1</b>} If it doesn't.
+      <br>{@code <b>-1</b>} If it doesn't.
     */
    public static final int getFoundIdx(char to_find, char[] to_search, boolean do_orderAsc)  {
       if(to_search == null)  {

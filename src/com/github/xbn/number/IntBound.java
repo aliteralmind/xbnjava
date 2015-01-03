@@ -31,7 +31,7 @@ public class IntBound extends NumberBound<Integer>  {
     * <p>Create a new {@code IntBound}.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberBound.html#NumberBound(N, boolean, String)">super</a>(num, is_inclusive, name)</code></p>
+    * <br> &nbsp; &nbsp;  <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="NumberBound.html#NumberBound(N, boolean, String)">super</a>(num, is_inclusive, name)</code></p>
     * @since  0.1.5
     */
    public IntBound(Integer num, Inclusive incl, String name)  {
@@ -41,7 +41,7 @@ public class IntBound extends NumberBound<Integer>  {
     * <p>Create a new {@code IntBound} as a duplicate of another.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; {@link NumberBound.html#NumberBound(NumberBound) super}{@code (to_copy)}</p>
+    * <br> &nbsp; &nbsp; {@link NumberBound.html#NumberBound(NumberBound) super}{@code (to_copy)}</p>
     * @param  to_copy  May not be {@code null}.
     */
    public IntBound(IntBound to_copy)  {

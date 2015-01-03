@@ -22,7 +22,7 @@ package  com.github.xbn.array;
    <p>POSTS TO ANSWER WITH THIS CLASS:<ul>
       <li>{@code <a href="http://www.codeguru.com/forum/showthread.php?t=349438">http://www.codeguru.com/forum/showthread.php?t=349438</a>}</li>
       <li>{@code <a href="http://www.velocityreviews.com/forums/t147493-java-5-0-enum-why-not-valueof-int-ordinal.html">http://www.velocityreviews.com/forums/t147493-java-5-0-enum-why-not-valueof-int-ordinal.html</a>}</li>
-   </ul></p>
+   </ul>
 
  * @see  com.github.xbn.array.primitive.PrimitiveArrayFromObjThatIs
  * @since  0.1.0
@@ -101,7 +101,7 @@ public class GetArrayFromObjectThatIs  {
 
 
     * @return  When the {@code array_object} {@link #GetArrayFromObjectThatIs(Object, boolean) constructor} parameter was both non-null and an array: <b>{@code array_object}</b>, exactly as provided.
-      <br/>When either null or not an array: {@code <b>null</b>}
+      <br>When either null or not an array: {@code <b>null</b>}
     * @see  #isArray()
     * @see  #getELType()
     * @see  #isEmpty()
@@ -132,7 +132,7 @@ public class GetArrayFromObjectThatIs  {
       <p>Get the type of array.</p>
 
     * @return  When the {@code array_object} {@link #GetArrayFromObjectThatIs(Object, boolean) constructor} parameter was both non-null and an array: One of the values of {@code LMNT_TYPE_IS}.
-      <br/>When either null or not an array: {@code <b>null</b>}
+      <br>When either null or not an array: {@code <b>null</b>}
     * @see  #getObject()
     */
    public final LMNT_TYPE_IS getELType()  {
@@ -322,10 +322,10 @@ public class GetArrayFromObjectThatIs  {
       <p>Note that this {@code getAO} function is unique, as it is the only one which that can be called for multiple types. Specifically, when {@link #getELType() getELType}{@code ()} is <i>either</i> <code>{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS LMNT_TYPE_IS.}{@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#OBJECT}} or {@link GetArrayFromObjectThatIs.LMNT_TYPE_IS#ARRAY}</code></p>
 
       <p>Note also, that while
-      <br/> &nbsp; &nbsp; {@code (new Object[] {"Hello", null, (new int[] {1, 2, 3})})}
-      <br/>has an element type of {@code LMNT_TYPE_IS.ARRAY}
-      <br/> &nbsp; &nbsp; {@code (new Object[][] {(new String[]{"Hello"}), null, (new int[] {1, 2, 3})})}
-      <br/>has an element type of {@code LMNT_TYPE_IS.OBJECT}</p>
+      <br> &nbsp; &nbsp; {@code (new Object[] {"Hello", null, (new int[] {1, 2, 3})})}
+      <br>has an element type of {@code LMNT_TYPE_IS.ARRAY}
+      <br> &nbsp; &nbsp; {@code (new Object[][] {(new String[]{"Hello"}), null, (new int[] {1, 2, 3})})}
+      <br>has an element type of {@code LMNT_TYPE_IS.OBJECT}</p>
 
     * @return   <code>(Object[]){@link #getObject() getObject}()</code>
     * @exception  NullPointerException  If {@link #isArray() isArray}{@code ()} is false.
@@ -374,7 +374,7 @@ public class GetArrayFromObjectThatIs  {
     * @param  expectedType_nullIfNotArray  If null, then {@code array_object} is either null or not an array. Otherwise, this is its element-type.
     * @param  xpctd_len  The expected length of the array, if it is one.
     * @return  <b>{@code null}</b> When actual values are as expected.
-      <br/>A descriptive string when actual is unexpected.
+      <br>A descriptive string when actual is unexpected.
     */
    public static final String getMsgIfUnexpected(String test_name, Object array_object, boolean do_crashIfObjNNullAndNotArray, boolean iselfCmprcxXpctdInCnstr, LMNT_TYPE_IS expectedType_nullIfNotArray, int xpctd_len)  {
       String s = "";

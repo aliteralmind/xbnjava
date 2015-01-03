@@ -33,7 +33,7 @@ public class ValueCopierComposer<O> {
 
       <p>This<ol>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     */

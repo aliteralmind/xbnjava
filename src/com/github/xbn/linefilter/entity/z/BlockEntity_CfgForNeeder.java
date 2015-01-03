@@ -33,7 +33,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       <p>Create a new instance.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/linefilter/entity/raw/z/RawBlockEntity_CfgForNeeder.html#RawBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(needer, name)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/linefilter/entity/raw/z/RawBlockEntity_CfgForNeeder.html#RawBlockEntity_CfgForNeeder(R, java.lang.String)">super</a>(needer, name)</code></p>
     */
    public BlockEntity_CfgForNeeder(R needer, String name)  {
       super(needer, name);
@@ -42,7 +42,7 @@ public abstract class BlockEntity_CfgForNeeder<M extends BlockEntity,R extends N
       <p>Reverts configuration so a line never matches.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder super}.{@link com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#reset() reset}()</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder super}.{@link com.github.xbn.linefilter.entity.raw.z.RawBlockEntity_CfgForNeeder#reset() reset}()</code></p>
 
     * @return  <i>{@code this}</i>
     */

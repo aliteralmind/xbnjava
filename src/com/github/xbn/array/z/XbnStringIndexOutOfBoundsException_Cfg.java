@@ -27,7 +27,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Create a new instance.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link XbnIbxBase_Cfg#XbnIbxBase_Cfg() super}()</code></p>
+      <br> &nbsp; &nbsp; <code>{@link XbnIbxBase_Cfg#XbnIbxBase_Cfg() super}()</code></p>
     */
    public XbnStringIndexOutOfBoundsException_Cfg()  {
       super();
@@ -61,7 +61,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Set the absolute bounds from the length of a string.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code>{@link XbnStringIndexOutOfBoundsException_Cfg#setAbsMinAndStringLength(int, Object, String, String) setAbsMinAndStringLength}(min_inclusive, str_toPad, min_name, array_name)*</code></p>
+      <br> &nbsp; &nbsp;  <code>{@link XbnStringIndexOutOfBoundsException_Cfg#setAbsMinAndStringLength(int, Object, String, String) setAbsMinAndStringLength}(min_inclusive, str_toPad, min_name, array_name)*</code></p>
 
     * @return  <i>{@code this}</i>
     * @see  #absStringLength(Object) absStringLength(O)
@@ -77,7 +77,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Set the absolute bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int) setAbsoluteBounds}(min_inclusive, max_exclusive)*</code></p>
+      <br> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int) setAbsoluteBounds}(min_inclusive, max_exclusive)*</code></p>
 
     * @return  <i>{@code this}</i>
     */
@@ -89,7 +89,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Set the absolute bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive, max_exclusive, min_name, max_name)*</code></p>
+      <br> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setAbsoluteBounds(int, int, String, String) setAbsoluteBounds}(min_inclusive, max_exclusive, min_name, max_name)*</code></p>
 
     * @return  <i>{@code this}</i>
     */
@@ -117,7 +117,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Set the index that violates the absolute bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadIndex(int) setBadIndex}(index)*</code></p>
+      <br> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadIndex(int) setBadIndex}(index)*</code></p>
 
     * @return  <i>{@code this}</i>
     */
@@ -129,7 +129,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Set the index that violates the absolute bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadIndex(int, String) setBadIndex}(index, idx_name)*</code></p>
+      <br> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadIndex(int, String) setBadIndex}(index, idx_name)*</code></p>
 
     * @return  <i>{@code this}</i>
     */
@@ -141,7 +141,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Set the index-range that violates the absolute bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadRange(int, int) setBadRange}(min_inclusive, max_exclusive)*</code></p>
+      <br> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadRange(int, int) setBadRange}(min_inclusive, max_exclusive)*</code></p>
 
     * @return  <i>{@code this}</i>
     */
@@ -153,7 +153,7 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>Set the index-range that violates the absolute bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadRange(int, int, String, String) setBadRange}(min_inclusive, max_exclusive, min_name, max_name)*</code></p>
+      <br> &nbsp; &nbsp;  <code>{@link com.github.xbn.array.z.XbnStringIndexOutOfBoundsException_Cfg#setBadRange(int, int, String, String) setBadRange}(min_inclusive, max_exclusive, min_name, max_name)*</code></p>
 
     * @return  <i>{@code this}</i>
     */
@@ -191,8 +191,8 @@ public class XbnStringIndexOutOfBoundsException_Cfg extends XbnIbxBase_Cfg  {
       <p>This<ol>
          <li>Calls  <code><!-- FAILS AS A @link --><a href="../XbnIbxBase.html#setExtraErrInfoCause(java.lang.Object, java.lang.Throwable)">setExtraErrInfoCause</a>(xtra_errInfo, cause)*</code></li>
          <li><b><i>returns</i></b> a
-         <br/> &nbsp; &nbsp; <code>(new {@link com.github.xbn.array.XbnStringIndexOutOfBoundsException#XbnStringIndexOutOfBoundsException(XIbxData) XbnStringIndexOutOfBoundsException}({@link XbnIbxBase_Cfg#xdata xdata}*))</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code>(new {@link com.github.xbn.array.XbnStringIndexOutOfBoundsException#XbnStringIndexOutOfBoundsException(XIbxData) XbnStringIndexOutOfBoundsException}({@link XbnIbxBase_Cfg#xdata xdata}*))</code></li>
+      </ol>
 
     * @see  #build()
     * @see  #buildWithInfo(Object) buildWithInfo(o)

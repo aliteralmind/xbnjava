@@ -142,7 +142,7 @@ abstract class ListifyEListRoot<E> extends AbstractListify<E>  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, boolean, ArrayHelper, ValueCopier) super}{@code (raw_obj, add_rmvbl, ah_root, get_valCopy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, boolean, ArrayHelper, ValueCopier) super}{@code (raw_obj, add_rmvbl, ah_root, get_valCopy)}</p>
     */
    public ListifyEListRoot(List<E> list, AddRemovable add_rmvbl, ArrayHelperBase<E> ah_root, ValueCopier<E> get_valCopy)  {
       super(list, add_rmvbl, ah_root, get_valCopy);

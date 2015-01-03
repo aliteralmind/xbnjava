@@ -42,7 +42,7 @@ public class GetFromCommandLineAtIndex  {
       <p>Get a line-iterator to a specific file, from a path provided on the command-line, at a specific index.</p>
 
     * @return  <code>{@link com.github.xbn.io.PlainTextFileUtil PlainTextFileUtil}.{@link com.github.xbn.io.PlainTextFileUtil#getLineIterator(String, String) getLineIterator}(
-         <br/> &nbsp; &nbsp; text(cmd_lineParams, index, &quot;path&quot;), ...)</code>
+         <br> &nbsp; &nbsp; text(cmd_lineParams, index, &quot;path&quot;), ...)</code>
     * @see  #fileTextAppended(StringBuilder, String[], int, Appendable)
     */
    public static final Iterator<String> fileLineIterator(String[] cmd_lineParams, int index, Appendable debugPath_ifNonNull)  {
@@ -64,7 +64,7 @@ public class GetFromCommandLineAtIndex  {
       <p>This<ol>
          <li>Calls {@link #fileLineIterator(String[], int, Appendable) fileLineIterator}{@code (cmd_lineParams, index, debugPath_ifNonNull)}</li>
          <li>Appends each line, plus a {@linkplain com.github.xbn.lang.XbnConstants#LINE_SEP line-separator} onto {@code to_appendTo}.</li>
-      </ol></p>
+      </ol>
 
     * @return  {@code to_appendTo}, with all lines from the file appended to it.
     * @see  #fileText(String[], int, Appendable)

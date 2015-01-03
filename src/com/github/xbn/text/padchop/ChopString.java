@@ -41,7 +41,7 @@ package  com.github.xbn.text.padchop;
          <li><b>Location (chars before):</b> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#charsBefore(int) charsBefore}{@code (i)}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#inMiddle() inMiddle}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#atEnd() atEnd}{@code ()}</li>
          <li><b>Overhang:</b> {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#overhang(int) overhang}{@code (i)}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#noOverhang() noOverhang}{@code ()}, {@link com.github.xbn.text.padchop.z.ChopString_CfgForNeeder#maxOverhang() maxOverhang}{@code ()}</li>
       </ul></li>
-   </ul></p>
+   </ul>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
@@ -61,7 +61,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
       <p>A good test string.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; &quot;{@code ---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z}&quot;</p>
+      <br> &nbsp; &nbsp; &quot;{@code ---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z}&quot;</p>
     */
    public static final String sGOOD_TEST_STRING = "---------A---------B---------C---------D---------E---------F---------G---------H---------I---------J---------K---------L---------M---------N---------O---------P---------Q---------R---------S---------T---------U---------V---------W---------X---------Y---------Z";
 //constructors...START
@@ -101,7 +101,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
       <p>Create a new {@code ChopString} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, -2)}</p>
+      <br> &nbsp; &nbsp; {@link PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, -2)}</p>
     */
    public ChopString(ChopString to_copy)  {
       this(to_copy, -2);
@@ -116,7 +116,7 @@ public class ChopString extends PadChopBase implements Debuggable, ToStringAppen
             <li>{@link #getCharsBeforeDDD() getCharsBeforeDDD}{@code ()} to <code>to_copy.{@link #getCharsBeforeDDD() getCharsBeforeDDD}()</code> &nbsp; &nbsp; <i>(This is the value returned when it is between zero and <code><i>[{@link PadChopBase super}]</i>.{@link PadChopBase#getGoalLen() getGoalLen}()</code>, inclusive)</i></li>
             <li>{@link #getOverhangCount() getOverhangCount}{@code ()} to <code>to_copy.{@link #getOverhangCount() getOverhangCount}()</code> &nbsp; &nbsp; <i>(This is the value returned when it is between zero and {@code <i>[super]</i>.getGoalLen()}, inclusive)</i></li>
          </ol></li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

@@ -32,7 +32,7 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object) super}{@code (raw_obj)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object) super}{@code (raw_obj)}</p>
     */
    public AbstractListifyBooleanValidity(Object raw_obj, ValueValidator<R> raw_elementVldtr)  {
       super(raw_obj);
@@ -44,7 +44,7 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object, NullHandlerForPrimitives) super}{@code (raw_obj, null_handler)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(Object, NullHandlerForPrimitives) super}{@code (raw_obj, null_handler)}</p>
     */
    public AbstractListifyBooleanValidity(Object raw_obj, ValueValidator<R> raw_elementVldtr, NullHandlerForPrimitives<Boolean> null_handler)  {
       super(raw_obj, null_handler);
@@ -62,7 +62,7 @@ public abstract class AbstractListifyBooleanValidity<R> extends AbstractListifyB
       <p>This<ol>
          <li>Calls {@link com.github.xbn.experimental.listify.primitiveable.AbstractListifyBoolable#AbstractListifyBoolable(AbstractListifyBoolable) super}{@code (to_copy)}</li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

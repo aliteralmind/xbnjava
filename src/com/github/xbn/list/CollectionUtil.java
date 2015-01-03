@@ -135,7 +135,7 @@ public class CollectionUtil  {
       <p>YYY</p>
 
       <p>From (viewed 2/4/2014):
-      <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/10120408/2736496">http://stackoverflow.com/a/10120408/2736496</a></code></p>
+      <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/a/10120408/2736496">http://stackoverflow.com/a/10120408/2736496</a></code></p>
     */
    public static final <K,V> StringBuilder appendToString(StringBuilder to_appendTo, Map<K,V> map, String between)  {
       Iterator<Map.Entry<K, V>> iter = null;

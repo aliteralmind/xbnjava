@@ -22,7 +22,7 @@ package  com.github.xbn.examples.io.non_xbn;
    import  org.apache.commons.io.FileUtils;
 /**
    <p>Demonstration of listing all files in a directory, in size order, using a {@link java.util.Map} in which each item is a list of values (multiple values per key). This is an answer to (viewed 1/2/2014)
-   <br/> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size">http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size</a>}</p>
+   <br> &nbsp; &nbsp; {@code <a href="http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size">http://stackoverflow.com/questions/20889571/java-list-of-subdirectories-and-files-within-a-path-size</a>}</p>
 
    <p>java com.github.xbn.examples.io.SizeOrderAllFilesInDirXmpl</p>
 

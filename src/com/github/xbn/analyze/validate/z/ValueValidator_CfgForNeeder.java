@@ -33,7 +33,7 @@ public class ValueValidator_CfgForNeeder<O,V extends ValueValidator<O>,R extends
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/analyze/validate/z/Validator_CfgForNeederBase.html#Validator_CfgForNeederBase(boolean, boolean, R)">super</a>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</code></li>
          <li>{@link #nullOk(boolean) nullOk}{@code (true)}</li>
-      </ol></p>
+      </ol>
     */
    public ValueValidator_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
       super(is_avaliableToNeeders, is_neededUseableAtInit, needer);
@@ -45,7 +45,7 @@ public class ValueValidator_CfgForNeeder<O,V extends ValueValidator<O>,R extends
       <p>This calls<ol>
          <li><code>{@link com.github.xbn.analyze.validate.z.Validator_CfgForNeederBase}.{@link com.github.xbn.analyze.validate.z.Validator_CfgForNeederBase#reset() reset}()</code></li>
          <li>{@link #resetVVN() resetVVN}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     */
@@ -58,7 +58,7 @@ public class ValueValidator_CfgForNeeder<O,V extends ValueValidator<O>,R extends
       <p>Reset configuration specific to this {@code ValueValidator_CfgForNeeder}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #nullOk(boolean)}{@code (true)}</p>
+      <br> &nbsp; &nbsp; {@link #nullOk(boolean)}{@code (true)}</p>
     */
    protected final void resetVVN()  {
       nullOk(true);

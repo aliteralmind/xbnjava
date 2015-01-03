@@ -34,7 +34,7 @@ public class ValidResultFilterUtil  {
       <p>This calls<ol>
          <li><code>filter.{@link ValidResultFilter#getAfterValueFromInvertedRules(boolean) getAfterValueFromInvertedRules}(are_postInvertRulesFollowed)</code></li>
          <li><code>getPostReturnValueFromInvertedRules(<i>[return-value-from-step-1]</i>, are_postInvertRulesFollowed)</code></li>
-      </ol></p>
+      </ol>
 
     * @param  filter  May not be {@code null}.
     * @param  are_postInvertRulesFollowed  Does the <i>something</i> follow the rules (post-{@link com.github.xbn.analyze.validate.Validator#doInvertRules() inversion})?

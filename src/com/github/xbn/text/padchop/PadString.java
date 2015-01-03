@@ -47,7 +47,7 @@ public class PadString extends PadChopBase  {
       <p>Create a new {@code PadString} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.text.padchop.PadString#PadString(PadString, int) super}{@code (to_copy, -2)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.text.padchop.PadString#PadString(PadString, int) super}{@code (to_copy, -2)}</p>
     */
    public PadString(PadString to_copy)  {
       this(to_copy, -2);
@@ -58,7 +58,7 @@ public class PadString extends PadChopBase  {
       <p>This<ol>
          <li>Calls {@link com.github.xbn.text.padchop.PadChopBase#PadChopBase(PadChopBase, int) super}{@code (to_copy, new_goalLen)}</li>
          <li>Sets {@link #getPadChar() getPadChar}{@code ()} to <code>to_copy.{@link #getPadChar() getPadChar}()</code></li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

@@ -24,10 +24,10 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
 
       <p>This<ol>
          <li>Creates an internal
-         <br/> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeedableComposer#NeedableComposer(boolean, boolean) NeedableComposer}{@code (is_avaliableToNeeders, is_neededUseableAtInit)}</li>
+         <br> &nbsp; &nbsp; {@code new }{@link com.github.xbn.neederneedable.NeedableComposer#NeedableComposer(boolean, boolean) NeedableComposer}{@code (is_avaliableToNeeders, is_neededUseableAtInit)}</li>
          <li>If {@code needer} is non-{@code null}, this calls
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.Needable Needable}]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(needer)</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.Needable Needable}]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="#startConfigReturnNeedable(R)">startConfigReturnNeedable</a>(needer)</code></li>
+      </ol>
     */
    public AbstractNeedable(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
       nblc = new NeedableComposer<O,R>(is_avaliableToNeeders, is_neededUseableAtInit);
@@ -41,7 +41,7 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
          <p>Declare that the needed object was reset to its default value. It may or may not be {@link #isNeededUseableAtStart() usable}.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#declareNeededReset_4prot() declareNeededReset_4prot}()</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#declareNeededReset_4prot() declareNeededReset_4prot}()</code></p>
        */
       protected void declareNeededReset()  {
          nblc.declareNeededReset_4prot();
@@ -50,7 +50,7 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
          <p>Start a new configuration for the provided {@code Needer}, for an object of a specific type.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp;<code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="NeedableComposer.html#startConfig_4prot(R, java.lang.Class)">startConfig_4prot</a>(needer, expected_type)</code></p>
+         <br> &nbsp; &nbsp;<code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.<!-- GENERIC PARAMETERS FAIL IN @link --><a href="NeedableComposer.html#startConfig_4prot(R, java.lang.Class)">startConfig_4prot</a>(needer, expected_type)</code></p>
        */
       protected void startConfig(R needer, Class<O> expected_type)  {
          nblc.startConfig_4prot(needer, expected_type);
@@ -65,7 +65,7 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
          <p>Declare that {@code endCfg()} may be safely called.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp;<i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#declareNeededUseable_4prot(boolean) declareNeededUseable_4prot}(is_usable)</p>
+         <br> &nbsp; &nbsp;<i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#declareNeededUseable_4prot(boolean) declareNeededUseable_4prot}(is_usable)</p>
        */
       protected void declareNeededUseable(boolean is_usable)  {
          nblc.declareNeededUseable_4prot(is_usable);
@@ -110,7 +110,7 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
          <p>If a configuration is active, crash.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#ciActive_4prot() ciActive_4prot}()</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#ciActive_4prot() ciActive_4prot}()</code></p>
        */
       protected void ciActive()  {
          nblc.ciActive_4prot();
@@ -119,7 +119,7 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
          <p>If no configuration is active, crash.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#ciInactive_4prot() ciInactive_4prot}()</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.NeedableComposer NeedableComposer}]</i>.{@link com.github.xbn.neederneedable.NeedableComposer#ciInactive_4prot() ciInactive_4prot}()</code></p>
        */
       protected void ciInactive()  {
          nblc.ciInactive_4prot();
@@ -130,7 +130,7 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
          <p>Set the chain-id to {@code null}.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#unsetChainID(boolean) unsetChainID}(unset_static)</code></p>
+         <br> &nbsp; &nbsp; <code><i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#unsetChainID(boolean) unsetChainID}(unset_static)</code></p>
        */
       public void unsetChainID(boolean unset_static)  {
          nblc.unsetChainID(unset_static);
@@ -139,7 +139,7 @@ public abstract class AbstractNeedable<O,R extends Needer> implements Needable<O
          <p>Set the chain-id.</p>
 
          <p>Equal to
-         <br/> &nbsp; &nbsp;<i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#setChainID_4prot(boolean, Object) setChainID_4prot}(do_setStatic, id)</p>
+         <br> &nbsp; &nbsp;<i>[{@link com.github.xbn.neederneedable.ChainableComposer ChainableComposer}]</i>.{@link com.github.xbn.neederneedable.ChainableComposer#setChainID_4prot(boolean, Object) setChainID_4prot}(do_setStatic, id)</p>
        */
       protected void setChainID(boolean do_setStatic, Object id)  {
          nblc.setChainID_4prot(do_setStatic, id);

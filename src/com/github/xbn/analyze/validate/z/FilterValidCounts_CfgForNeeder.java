@@ -44,7 +44,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="{@docRoot}/com/github/xbn/neederneedable/AbstractNeedable.html#AbstractNeedable(boolean, boolean, R)">super</a>(is_avaliableToNeeders, is_neededUseableAtInit, needer)</code></li>
          <li>{@link #resetVVN() resetVVN}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public FilterValidCounts_CfgForNeeder(boolean is_avaliableToNeeders, boolean is_neededUseableAtInit, R needer)  {
       super(is_avaliableToNeeders, is_neededUseableAtInit, needer);
@@ -54,7 +54,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       <p>Reset all configuration so the filter does nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #resetVVN() resetVVN}{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link #resetVVN() resetVVN}{@code ()}</p>
 
     * @return  <i>{@code this}</i>
     */
@@ -68,7 +68,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       <p>This<ol>
          <li>{@link #unfiltered() unfiltered}{@code ()}</li>
          <li>{@link #debugTo(Appendable) debugTo}{@code (null)}</li>
-      </ol></p>
+      </ol>
     */
    protected final void resetVVN()  {
       unfiltered();
@@ -104,7 +104,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
          <li>{@link #postValueAlwaysUnchanged() postValueAlwaysUnchanged}{@code ()}</li>
          <li><code>{@link #preActionBelowInAfter(FilterPreAction, FilterPreAction, FilterPreAction)}({@link com.github.xbn.analyze.validate.FilterPreAction FilterPreAction}.{@link com.github.xbn.analyze.validate.FilterPreAction#PROCEED PROCEED}, FilterPreAction.PROCEED, FilterPreAction.PROCEED)</code></li>
          <li>{@link #countValid() countValid}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     */
@@ -120,7 +120,7 @@ public class FilterValidCounts_CfgForNeeder<F extends FilterValidCounts,R extend
       <p>This calls<ol>
          <li>{@link #preActionProceed_afterFalse() preActionProceed_afterFalse}{@code ()}</li>
          <li>{@link #postValue_inUnchanged_outFalse() postValue_inUnchanged_outFalse}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     * @see  com.github.xbn.analyze.validate.Validator#doInvertRules()

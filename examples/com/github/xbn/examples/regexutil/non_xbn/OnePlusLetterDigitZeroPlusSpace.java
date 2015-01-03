@@ -17,7 +17,7 @@ package  com.github.xbn.examples.regexutil.non_xbn;
    import  java.util.regex.Pattern;
 /**
    <p>Uses two regular expressions to confirm a string has one-or-more characters <i>and</i> zero-or-more spaces. This is an answer to
-   <br/> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string">http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string</a></code></p>
+   <br> &nbsp; &nbsp; <code><a href="http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string">http://stackoverflow.com/questions/23091427/java-regex-allow-white-spaces-in-the-string</a></code></p>
 
    <p>{@code java com.github.xbn.examples.regexutil.non_xbn.OnePlusLetterDigitZeroPlusSpace}</p>
 

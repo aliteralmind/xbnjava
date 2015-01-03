@@ -34,14 +34,14 @@ public class NewIndexInRangeFor  {
       <p>An {@code IndexInRange} with no bounds.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link IndexInRange}.{@link IndexInRange#UNRESTRICTED UNRESTRICTED}</code></p>
+      <br> &nbsp; &nbsp; <code>{@link IndexInRange}.{@link IndexInRange#UNRESTRICTED UNRESTRICTED}</code></p>
     */
    public static final IndexInRange UNRESTRICTED = IndexInRange.UNRESTRICTED;
    /**
       <p>An {@code IndexInRange} with no members.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link IndexInRange}.{@link IndexInRange#IMPOSSIBLE IMPOSSIBLE}</code></p>
+      <br> &nbsp; &nbsp; <code>{@link IndexInRange}.{@link IndexInRange#IMPOSSIBLE IMPOSSIBLE}</code></p>
     */
    public static final IndexInRange IMPOSSIBLE = IndexInRange.IMPOSSIBLE;
    /**
@@ -138,8 +138,8 @@ public class NewIndexInRangeFor  {
 
     * @param  primitiveArray_forLen  May not be {@code null}, and must be a primitive array.
     * @return  <code>{@link #length(Invert, int, String) length}(
-         <br/> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen, array_name, null),
-         <br/> &nbsp; &nbsp; array_name)))</code>
+         <br> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen, array_name, null),
+         <br> &nbsp; &nbsp; array_name)))</code>
     */
    public static final IndexInRange primitiveArrayLength(Invert invert_dontIfNull, Object primitiveArray_forLen, String array_name)  {
       return  length(getInvNoIfNull(invert_dontIfNull),
@@ -151,8 +151,8 @@ public class NewIndexInRangeFor  {
 
     * @param  primitiveArray_forLen  May not be {@code null}, and must be a primitive array.
     * @return  <code>{@link #minAndLength(Invert, int, int, String, String) minAndLength}(min,
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
-      <br/> &nbsp; &nbsp; min_name, array_name)</code>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.array.primitive.ObjThatIsPrimitiveArrayUtil}.{@link ObjThatIsPrimitiveArrayUtil#getLengthFromUnknownAsObject(Object) getLengthFromUnknownAsObject}(primitiveArray_forLen),
+      <br> &nbsp; &nbsp; min_name, array_name)</code>
     */
    public static final IndexInRange minAndPArrayLength(Invert invert_dontIfNull, int min, Object primitiveArray_forLen, String min_name, String array_name)  {
       return  minAndLength(getInvNoIfNull(invert_dontIfNull), min,

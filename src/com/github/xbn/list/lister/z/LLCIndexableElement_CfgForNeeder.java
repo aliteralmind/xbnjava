@@ -34,7 +34,7 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 
          <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLCfgElement_CfgForNeeder.html#LLCfgElement_CfgForNeeder(R)">super</a>(needer)</code></li>
-      </ol></p>
+      </ol>
     */
    public LLCIndexableElement_CfgForNeeder(R needer)  {
       super(needer);
@@ -110,7 +110,7 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
 
          <p><i><b>See:</b></i><ul>
          <li><i>{@link #endCfg() endCfg}{@code ()}</i></li>
-         </ul></p>
+         </ul>
 
     * @return  <code>(new {@link com.github.xbn.list.lister.LLCIndexableElement#LLCIndexableElement(LLCIndexableElement_Fieldable) LLCIndexableElement}&lt;E&gt;(this, false))</code>
     */
@@ -123,7 +123,7 @@ public class LLCIndexableElement_CfgForNeeder<E,C extends LLCIndexableElement<E>
       <p>YYY</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="../LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</a>(needer, (Class&lt;LLCIndexableElement&lt;E&gt;&gt;)((Class)LLCIndexableElement.class))</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="../LLConfigBase.html#startConfigReturnNeedable(R, java.lang.Class)">startConfigReturnNeedable</a>(needer, (Class&lt;LLCIndexableElement&lt;E&gt;&gt;)((Class)LLCIndexableElement.class))</code></p>
 
     * @return  <i>{@code this}</i>
     * @see  com.github.xbn.neederneedable.Needer#startConfig(Class) Needer#startConfig(cls)

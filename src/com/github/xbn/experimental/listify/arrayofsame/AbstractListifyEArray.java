@@ -38,7 +38,7 @@ public abstract class AbstractListifyEArray<E> implements ListifyEArray<E>  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(Object, ArrayHelperBase, ValueCopier) super}{@code (obj_thatIsArray, array_helper, get_valCopy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(Object, ArrayHelperBase, ValueCopier) super}{@code (obj_thatIsArray, array_helper, get_valCopy)}</p>
     */
    public AbstractListifyEArray(Object obj_thatIsArray, ArrayHelperBase<E> array_helper, ValueCopier<E> get_valCopy)  {
       leac = new ListifyEArrayComposer<E>(obj_thatIsArray, array_helper, get_valCopy);
@@ -49,7 +49,7 @@ public abstract class AbstractListifyEArray<E> implements ListifyEArray<E>  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(com.github.xbn.list.listify.arrayofsame.ListifyEArrayBase) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.arrayofsame.ListifyEArrayComposer#ListifyEArrayComposer(com.github.xbn.list.listify.arrayofsame.ListifyEArrayBase) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     */

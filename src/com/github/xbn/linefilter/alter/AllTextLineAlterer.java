@@ -62,7 +62,7 @@ public class AllTextLineAlterer extends AbstractAlterer  {
       <p>This<ol>
          <li>Calls {@link com.github.xbn.analyze.validate. AbstractAlterer#AbstractAlterer(AbstractAlterer) super}{@code (to_copy)}/li>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be <code>null</code>.
     * @see  #getObjectCopy()

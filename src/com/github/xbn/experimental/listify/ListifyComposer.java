@@ -50,7 +50,7 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
 
       <p>This<ol>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     */
@@ -74,7 +74,7 @@ public class ListifyComposer<E>  {//implements Listify<E>  {
 
       <p>This<ol>
          <li>YYY</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     */

@@ -35,7 +35,7 @@ public abstract class AbstractElementTSLengthIterator<R> extends AbstractIndexab
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.util.itr.AbstractIndexableIterator#AbstractIndexableIterator(Object, int, int) super}{@code (indexable_cntrOfR, idx_start, idx_endX)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.util.itr.AbstractIndexableIterator#AbstractIndexableIterator(Object, int, int) super}{@code (indexable_cntrOfR, idx_start, idx_endX)}</p>
     */
    public AbstractElementTSLengthIterator(Object indexable_cntrOfR, int idx_start, int idx_endX)  {
       super(indexable_cntrOfR, idx_start, idx_endX, IteratorDirection.LOW_TO_HIGH);

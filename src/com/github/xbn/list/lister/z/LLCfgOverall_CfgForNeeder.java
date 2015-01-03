@@ -35,7 +35,7 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
 
          <p>This<ol>
          <li>Calls <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="LLConfigBase_CfgForNeeder.html#LLConfigBase_CfgForNeeder(R)">super</a>(needer)</code></li>
-      </ol></p>
+      </ol>
     */
    public LLCfgOverall_CfgForNeeder(R needer)  {
       super(needer);
@@ -119,7 +119,7 @@ public class LLCfgOverall_CfgForNeeder<E,C extends LLCfgOverall<E>,R extends Nee
       <p>YYY</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code startConfigReturnNeedable(needer, (Class&lt;LLCfgOverall&lt;E&gt;&gt;)((Class)LLCfgOverall.class))}</p>
+      <br> &nbsp; &nbsp; {@code startConfigReturnNeedable(needer, (Class&lt;LLCfgOverall&lt;E&gt;&gt;)((Class)LLCfgOverall.class))}</p>
 
     * @return  <i>{@code this}</i>
     * @see  com.github.xbn.neederneedable.Needer#startConfig(Class) Needer#startConfig(cls)

@@ -52,7 +52,7 @@ public abstract class AbstractListifyPWrapperEArray<E> extends AbstractListifyEA
 
       <p>This<ol>
          <li>Calls {@link com.github.xbn.experimental.listify.arrayofsame.AbstractListifyEArray#AbstractListifyEArray(ListifyEArray) super}{@code (to_copy)}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see   <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#AbstractListifyPWrapperEArray(E[], xbn.array.PrimitiveArrayHelper, java.lang.Class)">this</a>(E[],pah,cls,copyval)</code>

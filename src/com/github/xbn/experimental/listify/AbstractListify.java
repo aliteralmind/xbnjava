@@ -36,7 +36,7 @@ public abstract class AbstractListify<E> implements Listify<E>  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) super}{@code (raw_obj, add_rmvbl, array_helper, get_valCopy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Object, AddRemovable, ArrayHelperBase, ValueCopier) super}{@code (raw_obj, add_rmvbl, array_helper, get_valCopy)}</p>
     */
    public AbstractListify(Object raw_obj, AddRemovable add_rmvbl, ArrayHelperBase<E> array_helper, ValueCopier<E> get_valCopy)  {
       lc = new ListifyComposer<E>(raw_obj, add_rmvbl, array_helper, get_valCopy);
@@ -45,7 +45,7 @@ public abstract class AbstractListify<E> implements Listify<E>  {
       <p>Create a new {@code AbstractListify} as a duplicate of another.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.experimental.listify.ListifyComposer#ListifyComposer(Listify) super}{@code (to_copy)}</p>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

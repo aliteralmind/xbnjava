@@ -38,7 +38,7 @@ package  com.github.xbn.linefilter.entity.raw;
       <li>{@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#alterer(ValueAlterer) alterer}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#keepMatchedLines(boolean) keepMatchedLines}(b)</li>
       <li>{@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter} </li>
       <li><b>Other:</b> {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#reset() reset}{@code ()}, {@link com.github.xbn.linefilter.entity.raw.z.RawSingleLineEntity_CfgForNeeder#chainID(boolean, Object) chainID}</li>
-   </ul></p>
+   </ul>
 
 <!--
    Originates in

@@ -34,8 +34,8 @@ package  com.github.xbn.linefilter.entity;
   -->
 
    <p>The start and end lines in a block must exist on separate lines. {@code com.github.xbn.linefilter.*} does not understand blocks that exist entirely on one line, such as
-   <br/> &nbsp; &nbsp; <code>/<!--->* A valid Java comment *<!--->/</code>
-   <br/>nor does it distinguish between text that may exist before the start or end line's unique marker:</p>
+   <br> &nbsp; &nbsp; <code>/<!--->* A valid Java comment *<!--->/</code>
+   <br>nor does it distinguish between text that may exist before the start or end line's unique marker:</p>
 
 <blockquote><pre>This is part of the block /<!--->* As is this
 and this
@@ -50,7 +50,7 @@ and this
       <li>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(RawChildEntity[]) children}{@code (rce[])}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#children(TextChildEntity...) children}{@code (tce...)}</li>
       <li>{@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#filter(RawOnOffEntityFilter) filter}</li>
       <li><b>Other:</b> {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#chainID(boolean, Object) chainID}, {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#reset() reset}{@code ()}</li>
-   </ul></p>
+   </ul>
 
 <!--
    Originates in

@@ -32,7 +32,7 @@ public class SimpleDebuggable implements Debuggable  {
       <p>This calls<ol>
          <li>Sets {@link #getDebugAptr() getDebugAptr}{@code ()} to {@code null}.</li>
          <li>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code false}.</li>
-      </ol></p>
+      </ol>
 
     * @see  #SimpleDebuggable(GetDebugApbl_Fieldable) this(gda_f)
     */
@@ -55,7 +55,7 @@ public class SimpleDebuggable implements Debuggable  {
       <p>This calls<ol>
          <li>Sets {@link #getDebugAptr() getDebugAptr}{@code ()} to {@code to_copy.getDebugAptr()}.</li>
          <li>Sets {@link #isDebugOn() isDebugOn}{@code ()} to {@code to_copy.isDebugOn()}.</li>
-      </ol></p>
+      </ol>
     * @see  #SimpleDebuggable() this()
     */
    public SimpleDebuggable(Debuggable to_copy)  {

@@ -32,7 +32,7 @@ public interface Analyzer extends Copyable, Debuggable, ExtraErrInfoable, Expira
 
       <p>This<ol>
          <li>Sets {@link #wasAnalyzed() wasAnalyzed}{@code ()} to {@code false}.</li>
-      </ol></p>
+      </ol>
 
       <p>Resets all internal state except counts. This does not change any user-configuration.</p>
 

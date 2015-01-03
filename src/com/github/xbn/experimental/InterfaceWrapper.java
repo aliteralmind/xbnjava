@@ -21,7 +21,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       <p>This calls<ol>
          <li>{@link #setXContext(ExceptionContext) setXContext}{@code (x_c)}</li>
          <li>{@link #setGetIInstance(Object, String) setGetIInstance}{@code (o_iinstance, null)}</li>
-      </ol></p>
+      </ol>
     */
    public InterfaceWrapper(Object o_iinstance, ExceptionContext x_c)  {
       setXContext(x_c);
@@ -33,7 +33,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       <p>This calls<ol>
          <li><code>{@link #setGetIInstance(Object, String) setGetIInstance}(to_copy.{@link #getIInstance() getIInstance}(), null)</code></li>
          <li><code>{@link #setXContext(ExceptionContext) setXContext}((ExceptionContext)to_copy.{@link #getXContext() getXContext}().{@link com.github.xbn.experimental.xcontext.ExceptionContext#getObjectCopy() getObjectCopy}())</code></li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()
@@ -51,8 +51,8 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
 
     * @param  o_iinstance  Get with {@link #getIInstance() getIInstance}{@code ()}. At initialization of this {@code InterfaceWrapper}, this may be {@code null} (before any functions are called against it). Otherwise, it should never be {@code null}.
     * @return  {@code o_iinstance} <i>This makes it easier to maintain a redundant reference to the object, via
-      <br/> &nbsp; &nbsp; {@code o = iw.setGetIInstance(...);}
-      <br/>This extra reference minimizes the need for calling this function, when the instance simply needs to be passed or tested for {@code null}.</i>
+      <br> &nbsp; &nbsp; {@code o = iw.setGetIInstance(...);}
+      <br>This extra reference minimizes the need for calling this function, when the instance simply needs to be passed or tested for {@code null}.</i>
 
     * @see  #setXContext(ExceptionContext) setXContext(xc)
     * @see  #setIInstanceSubIWs(Object, String, InterfaceWrapper...) setIInstanceSubIWs(s,o,iw...)
@@ -73,7 +73,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       <p>Set the interface-instance to {@code null}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #setGetIInstance(Object, String) setGetIInstance(null, null)}</p>
+      <br> &nbsp; &nbsp; {@link #setGetIInstance(Object, String) setGetIInstance(null, null)}</p>
     */
    public void removeIInstance()  {
       setGetIInstance(null, null);
@@ -82,7 +82,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       <p>Set the interface instance into multiple {@code InterfaceWrapper}-s. This is useful when an {@code InterfaceWrapper} has multiple sub-{@code InterfaceWrapper}-s.</p>
 
       <p>For each, this calls
-      <br/> &nbsp; &nbsp; {@link #setGetIInstance(Object, String) setGetIInstance(o_iinstance, nonNull_objName)}</p>
+      <br> &nbsp; &nbsp; {@link #setGetIInstance(Object, String) setGetIInstance(o_iinstance, nonNull_objName)}</p>
     */
    public void setIInstanceSubIWs(Object o_iinstance, String nonNull_objName, InterfaceWrapper... ddd_iw)  {
       if(ddd_iw.length == 0)  {
@@ -119,7 +119,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       <p>Reset the context's index to zero.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link #setIndex(int, EXContextable...) setIndex}{@code (0)}</p>
+      <br> &nbsp; &nbsp; {@link #setIndex(int, EXContextable...) setIndex}{@code (0)}</p>
     */
    public void setIndexTo0(EXContextable... ddd_xcblOthers)  {
       setIndex(0);
@@ -257,7 +257,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiNotify(Object, ExceptionContext) iiNotify}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
+      <br> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiNotify(Object, ExceptionContext) iiNotify}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
     */
    public final void iiNotify()  {
       InterfaceWrapper.iiNotify(getIInstance(), getXContext());
@@ -268,7 +268,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiNotifyAll(Object, ExceptionContext) iiNotifyAll}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
+      <br> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiNotifyAll(Object, ExceptionContext) iiNotifyAll}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
     */
    public final void iiNotifyAll()  {
       InterfaceWrapper.iiNotifyAll(getIInstance(), getXContext());
@@ -279,7 +279,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(long, Object, ExceptionContext) iiWait}(timeout_mills, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
+      <br> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(long, Object, ExceptionContext) iiWait}(timeout_mills, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
     */
    public final void iiWait(long timeout_mills)  throws InterruptedException  {
       InterfaceWrapper.iiWait(timeout_mills, getIInstance(), getXContext());
@@ -290,7 +290,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(long, int, Object, ExceptionContext) iiWait}(timeout_mills, nanos, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
+      <br> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(long, int, Object, ExceptionContext) iiWait}(timeout_mills, nanos, {@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
     */
    public final void iiWait(long timeout_mills, int nanos)  throws InterruptedException  {
       InterfaceWrapper.iiWait(timeout_mills, nanos, getIInstance(), getXContext());
@@ -301,7 +301,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(Object, ExceptionContext) iiWait}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
+      <br> &nbsp; &nbsp; {@code InterfaceWrapper.{@link #iiWait(Object, ExceptionContext) iiWait}({@link #getIInstance() getIInstance}(), <i>[{@link com.github.xbn.testdev.InterfaceWrapper super}]</i>.{@link com.github.xbn.testdev.InterfaceWrapper#getXContext() getXContext}())}</p>
     */
    public final void iiWait()  throws InterruptedException  {
       InterfaceWrapper.iiWait(getIInstance(), getXContext());
@@ -391,7 +391,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#notify() notify}()</code></p>
+      <br> &nbsp; &nbsp; <code>o_iinstance.{@link Object#notify() notify}()</code></p>
     * @param  o_iinstance  May not be {@code null}.
     * @param  x_c  May not be {@code null}.
     * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
@@ -411,7 +411,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#notifyAll() notifyAll}()</code></p>
+      <br> &nbsp; &nbsp; <code>o_iinstance.{@link Object#notifyAll() notifyAll}()</code></p>
     * @param  o_iinstance  May not be {@code null}.
     * @param  x_c  May not be {@code null}.
     * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
@@ -431,7 +431,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait(long) wait}(timeout_mills)</code></p>
+      <br> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait(long) wait}(timeout_mills)</code></p>
     * @param  o_iinstance  May not be {@code null}.
     * @param  x_c  May not be {@code null}.
     * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
@@ -451,7 +451,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait(long, int) wait}(timeout_mills, nanos)</code></p>
+      <br> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait(long, int) wait}(timeout_mills, nanos)</code></p>
     * @param  o_iinstance  May not be {@code null}.
     * @param  x_c  May not be {@code null}.
     * @exception  NullPointerException  When {@code o_iinstance} is {@code null}
@@ -471,7 +471,7 @@ public abstract class InterfaceWrapper implements XContextable, Copyable  {
       YYY
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait() wait}()</code></p>
+      <br> &nbsp; &nbsp; <code>o_iinstance.{@link Object#wait() wait}()</code></p>
     * @param  o_iinstance  May not be {@code null}.
     * @param  x_c  May not be {@code null}.
     * @exception  NullPointerException  When {@code o_iinstance} is {@code null}

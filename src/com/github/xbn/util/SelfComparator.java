@@ -42,7 +42,7 @@ public class SelfComparator<M extends Comparable<? super M>> implements Comparat
 
       <p>This<ol>
          <li>Sets {@link #isAscending() isAscending}{@code ()} to {@code to_copy.isAscending()}</li>
-      </ol></p>
+      </ol>
     * @see  #SelfComparator(boolean) this(b)
     */
    public SelfComparator(SelfComparator<M> to_copy)  {

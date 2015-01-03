@@ -26,7 +26,7 @@ public interface OneWayLockable extends Lockable  {
       <p>Shortcut for {@code lock(true)}</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>(OneWayLockable){@link com.github.xbn.util.lock.Lockable super}.{@link com.github.xbn.util.lock.Lockable#lock(boolean) lock}(true)</code></p>
+      <br> &nbsp; &nbsp; <code>(OneWayLockable){@link com.github.xbn.util.lock.Lockable super}.{@link com.github.xbn.util.lock.Lockable#lock(boolean) lock}(true)</code></p>
     */
    void lock();
 }

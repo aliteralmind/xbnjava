@@ -186,7 +186,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Character[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Character&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Character[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Character&gt;(if_null)))</code>
     */
    public static final char[] get(Character[] wrapper_array, char if_null, NullContainer nnull, String cntrName_forNullBad)  {
       @SuppressWarnings("unchecked")
@@ -197,7 +197,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Boolean[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Boolean&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Boolean[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Boolean&gt;(if_null)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final boolean[] get(Boolean[] wrapper_array, boolean if_null, NullContainer nnull, String cntrName_forNullBad)  {
@@ -207,7 +207,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Byte[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Byte&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Byte[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Byte&gt;(if_null)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final byte[] get(Byte[] wrapper_array, byte if_null, NullContainer nnull, String cntrName_forNullBad)  {
@@ -217,7 +217,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Short[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Short&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Short[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Short&gt;(if_null)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final short[] get(Short[] wrapper_array, short if_null, NullContainer nnull, String cntrName_forNullBad)  {
@@ -227,7 +227,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Integer[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Integer&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Integer[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Integer&gt;(if_null)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final int[] get(Integer[] wrapper_array, int if_null, NullContainer nnull, String cntrName_forNullBad)  {
@@ -237,7 +237,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Long[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Long&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Long[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Long&gt;(if_null)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final long[] get(Long[] wrapper_array, long if_null, NullContainer nnull, String cntrName_forNullBad)  {
@@ -247,7 +247,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Float[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Float&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Float[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Float&gt;(if_null)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final float[] get(Float[] wrapper_array, float if_null, NullContainer nnull, String cntrName_forNullBad)  {
@@ -257,7 +257,7 @@ forBoolean Boolean boolean
       <p>Get a primitive array from an non-primitive array of its wrapper-type.</p>
 
     * @return  The equivalent of
-      <br/> &nbsp; &nbsp; <code>{@link #get(Double[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Double&gt;(if_null)))</code>
+      <br> &nbsp; &nbsp; <code>{@link #get(Double[], NullHandler, NullContainer, String) get}(wrapper_array, (new ResettableNullHandler&lt;Double&gt;(if_null)))</code>
     */
    @SuppressWarnings("unchecked")
    public static final double[] get(Double[] wrapper_array, double if_null, NullContainer nnull, String cntrName_forNullBad)  {

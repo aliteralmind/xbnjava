@@ -43,7 +43,7 @@ public class CrashIfObject  {
       <p>If an object is {@code null}, crash. Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #nnull(Null, Object, String, Object) nnull}({@link Null}.{@link Null#BAD BAD}, obj_toTest, obj_name, xtra_errInfo)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #nnull(Null, Object, String, Object) nnull}({@link Null}.{@link Null#BAD BAD}, obj_toTest, obj_name, xtra_errInfo)</code></p>
     */
    public static final void nnull(Object obj_toTest, String obj_name, Object xtra_errInfo)  {
       nnull(Null.BAD, obj_toTest, obj_name, xtra_errInfo);

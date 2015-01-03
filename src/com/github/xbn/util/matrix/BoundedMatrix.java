@@ -35,7 +35,7 @@ public class BoundedMatrix  {
     * <p>Create a new square grid.</p>
     *
     * <p>Equal to
-    * <br/> &nbsp; &nbsp; {@link #BoundedMatrix(int, int) this}{@code (row_andColCount, row_andColCount)}</p>
+    * <br> &nbsp; &nbsp; {@link #BoundedMatrix(int, int) this}{@code (row_andColCount, row_andColCount)}</p>
     */
    public BoundedMatrix(int row_andColCount)  {
       this(row_andColCount, row_andColCount);
@@ -173,7 +173,7 @@ public class BoundedMatrix  {
     * edge?.</p>
     * @param   direction May not be <code>null</code>.
     * @return  <code>getVHNeighborCount(hvDirection)</code>
-    * <br/>Where <code>hvDirection</code> is equal to
+    * <br>Where <code>hvDirection</code> is equal to
     * <br> &nbsp; &nbsp; <code>{@link BoundedMatrix#getShortestVHForDiagonal(int, int, com.github.xbn.util.matrix.MatrixDirection)}(row_idx, col_idx, direction)</code>
     * @see #getNeighborCount(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection) getNeighborCount(gc,gd)
     * @see #isNeighborCountAtLeast(int, int, com.github.xbn.util.matrix.MatrixDirection, int) isNeighborCountAtLeast(i,i,gd,i)
@@ -226,10 +226,10 @@ public class BoundedMatrix  {
     * @param  end_horizIdx Horizontal index of the end element. Must
     * be valid given {@link #getElementsInRowCount() getElementsInRowCount}{@code ()}.
     * @return  <code>start.getDistance(end)</code>
-    * <br/>Where {@code start} is
-    * <br/> &nbsp; &nbsp; <code>{@link #get(int, int) get}(start_vertIdx, start_horizIdx)</code>
-    * <br/>and {@code end} is
-    * <br/> &nbsp; &nbsp; <code>get(end_vertIdx, end_horizIdx)</code>
+    * <br>Where {@code start} is
+    * <br> &nbsp; &nbsp; <code>{@link #get(int, int) get}(start_vertIdx, start_horizIdx)</code>
+    * <br>and {@code end} is
+    * <br> &nbsp; &nbsp; <code>get(end_vertIdx, end_horizIdx)</code>
     */
    public DistanceDirection getNeighborDistDir(int start_vertIdx, int start_horizIdx,
                                                int end_vertIdx,   int end_horizIdx)  {
@@ -444,7 +444,7 @@ public class BoundedMatrix  {
     * Get a directly-adjacent element.
     * @param  direction         May not be <code>null</code>.
     * @return <code>{@link #getNeighbor(int, int, com.github.xbn.util.matrix.MatrixDirection, int, com.github.xbn.util.matrix.EdgeExceeded) getNeighbor}(coord.{@link MatrixElement#getRowIndex() getRowIndex}{@code ()}, coord.{@link MatrixElement#getColumnIndex() getColumnIndex}{@code ()},
-    * <br/> &nbsp; &nbsp; {@link MatrixDirection}.{@link MatrixDirection#UP UP}, 1, crash_or_wrap)</code>
+    * <br> &nbsp; &nbsp; {@link MatrixDirection}.{@link MatrixDirection#UP UP}, 1, crash_or_wrap)</code>
     * @see #moveNextDoor(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.MatrixDirection, com.github.xbn.util.matrix.EdgeExceeded) moveNextDoor(me,md,ee)
     * @see #moveUp(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveUp(gc, ee)
     * @see #moveDown(com.github.xbn.util.matrix.MatrixElement, com.github.xbn.util.matrix.EdgeExceeded) moveDown(gc, ee)
@@ -717,8 +717,8 @@ public class BoundedMatrix  {
     * @param  col_count  May not be less than zero.
     * @param  row_count  May not be less than zero.
     * @return A
-    * <br/> &nbsp; &nbsp; <code>new MatrixElement[row_count][col_count]</code>
-    * <br/>Where each element is a <code>MatrixElement</code>, having
+    * <br> &nbsp; &nbsp; <code>new MatrixElement[row_count][col_count]</code>
+    * <br>Where each element is a <code>MatrixElement</code>, having
     * {@linkplain MatrixElement#getColumnIndex() horizontal} and
     * {@linkplain MatrixElement#getRowIndex() vertical} indexes
     * equivalent to its location in the array (vertical is the sub-array,

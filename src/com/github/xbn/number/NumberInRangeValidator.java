@@ -35,7 +35,7 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
       <p>Create a new and unrestricted instance.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #NumberInRangeValidator(RuleType, NumberInRangeValidator_Fieldable) this}(NumberInRangeValidator.getRuleTypeFromFieldsVNIR(filter), filter)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #NumberInRangeValidator(RuleType, NumberInRangeValidator_Fieldable) this}(NumberInRangeValidator.getRuleTypeFromFieldsVNIR(filter), filter)</code></p>
     */
    public NumberInRangeValidator(NumberInRangeValidator_Fieldable<N,? extends NumberInRange<N>> filter)  {
       this(NumberInRangeValidator.getRuleTypeFromFieldsVNIR(filter), filter);
@@ -54,7 +54,7 @@ public abstract class NumberInRangeValidator<N extends Number> extends NullnessV
       <p>This<ol>
          <li>Calls {@link NullnessValidator#NullnessValidator(ValueValidator) super}{@code (to_copy)}</li>
          <li>Sets {@link #getRange() getRange}{@code ()} to <code>to_copy.{@link #getRange() getRange}()</code></li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @see  #getObjectCopy()

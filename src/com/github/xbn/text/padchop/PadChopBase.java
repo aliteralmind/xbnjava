@@ -57,7 +57,7 @@ public abstract class PadChopBase implements Copyable  {
       <p>This<ol>
          <li>Sets {@link #getGoalLen() getGoalLen}{@code ()} as described below.</li>
          <li>Sets {@link #isSideRight() isSideRight}{@code ()} to {@code to_copy.isSideRight())}</li>
-      </ol></p>
+      </ol>
 
     * @param  to_copy  May not be {@code null}.
     * @param  new_goalLen  The new goal length. If {@code -2}, this is ignored, and {@code to_copy.getGoalLen()} is used in its place.

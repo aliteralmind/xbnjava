@@ -15,7 +15,7 @@ public class XContext implements ExceptionContext  {
       <p>Create a new {@code XContext}.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #XContext(Object) this}(null)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #XContext(Object) this}(null)</code></p>
     */
    public XContext()  {
       this(null);
@@ -25,7 +25,7 @@ public class XContext implements ExceptionContext  {
 
       <p>This sets<ol>
          <li>{@link #setExtraInfo(Object) setExtraInfo(o_xtraInfo)}</li>
-      </ol></p>
+      </ol>
 
     * @see  #XContext() this()
     * @see  #XContext(boolean, ExceptionContext) this(b,xc)
@@ -39,7 +39,7 @@ public class XContext implements ExceptionContext  {
 
       <p>This sets<ol>
          <li>{@link #getExtraInfo() getExtraInfo}{@code ()} to {@code to_copy.getExtraInfo()} &nbsp; &nbsp; <i>(See  <code><i>[{@link com.github.xbn.experimental.xcontext.ExceptionContext ExceptionContext}]</i>.{@link com.github.xbn.experimental.xcontext.ExceptionContext#setExtraInfo(Object) setExtraInfo}(o)</code>)</i></li>
-      </ol></p>
+      </ol>
 
     * @param  ignored  Used only distinguish this constructor signature from {@link #XContext(String) this(s)}, <i>which allows {@code null}</i>.
     * @param  to_copy  May not be {@code null}.

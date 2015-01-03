@@ -49,7 +49,7 @@ public abstract class RawBlockEntity_CfgForNeeder<L,M extends RawBlockEntity<L>,
       <p>This calls<ol>
          <li><code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="RawLineEntity_CfgForNeeder.html#RawLineEntity_CfgForNeeder(R, com.github.xbn.linefilter.entity.EntityType, java.lang.String)">super</a>(needer, {@link com.github.xbn.linefilter.entity.EntityType}.{@link com.github.xbn.linefilter.entity.EntityType#BLOCK BLOCK}, name)</code></li>
          <li>{@link #resetRBECFN() resetRBECFN}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public RawBlockEntity_CfgForNeeder(R needer, String name)  {
       super(needer, EntityType.BLOCK, name);
@@ -71,17 +71,17 @@ public abstract class RawBlockEntity_CfgForNeeder<L,M extends RawBlockEntity<L>,
 
       <p>This calls<ol>
          <li><code>{@link #startAlter(ValueAlterer) startAlter}(matchAnythingOnlyOnce)</code>
-         <br/>Where {@code matchAnythingOnlyOnce} is a
-         <br/> &nbsp; &nbsp; <code>new {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#ReturnValueUnchanged(SetWasAlteredToWhenInRange, LengthInRange) ReturnValueUnchanged}&lt;L,O&gt;(
+         <br>Where {@code matchAnythingOnlyOnce} is a
+         <br> &nbsp; &nbsp; <code>new {@link com.github.xbn.analyze.alter.ReturnValueUnchanged#ReturnValueUnchanged(SetWasAlteredToWhenInRange, LengthInRange) ReturnValueUnchanged}&lt;L,O&gt;(
          {@link com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange}.{@link com.github.xbn.analyze.alter.SetWasAlteredToWhenInRange#TRUE TRUE}, {@link com.github.xbn.number.NewLengthInRangeFor}.{@link com.github.xbn.number.NewLengthInRangeFor#exactly(Invert, int, String) exactly}(1, null))</code></li>
          <li><code>{@link #midAlter(ValueAlterer) midAlter}({@link com.github.xbn.analyze.alter.ReturnValueUnchanged}.
-         <br/> &nbsp; &nbsp; &lt;L,O&gt;{@link com.github.xbn.analyze.alter.ReturnValueUnchanged#newForOnEachCallSetWasAlteredTo(boolean) newForOnEachCallSetWasAlteredTo}(true))</code></li>
+         <br> &nbsp; &nbsp; &lt;L,O&gt;{@link com.github.xbn.analyze.alter.ReturnValueUnchanged#newForOnEachCallSetWasAlteredTo(boolean) newForOnEachCallSetWasAlteredTo}(true))</code></li>
          <li><code>{@link #endAlter(EndRequired, ValueAlterer) endAlter}({@link com.github.xbn.linefilter.entity.EndRequired}.{@link com.github.xbn.linefilter.entity.EndRequired#NO NO}, ReturnValueUnchanged.
-         <br/> &nbsp; &nbsp; &lt;L,O&gt;newForOnEachCallSetWasAlteredTo(false))</code></li>
+         <br> &nbsp; &nbsp; &lt;L,O&gt;newForOnEachCallSetWasAlteredTo(false))</code></li>
          <li><code>{@link #children(RawChildEntity[]) children}(new RawChildEntity[]{})</code></li>
          <li><code>{@link #keepStartMidEnd(boolean, boolean, boolean) keepStartMidEnd}(true, true, true)</code></li>
          <li>{@link #startEndLinesInclusive() startEndLinesInclusive}{@code ()}</li>
-      </ol></p>
+      </ol>
 
     * @see  #reset()
     */

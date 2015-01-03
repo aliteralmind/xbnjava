@@ -26,7 +26,7 @@ package  com.github.xbn.array;
       <li>The <b>{@link #getIndexLeft() minimum} and {@link #getIndexRightX() maximum} index bounds:</b> The element-range in which the desired element exists (or would exist given the current ordering). This range is progressively narrowed until the search is complete.</li>
       <li>The <b>{@link #getIndexMiddle() middle} index:</b> The next element index to be searched.</li>
       <li>The <b>{@link #isOrderAsc() sort-order} direction</b></li>
-   </ul></p>
+   </ul>
 
  * @since  0.1.0
  * @author  Copyright (C) 2014, Jeff Epstein ({@code aliteralmind __DASH__ github __AT__ yahoo __DOT__ com}), dual-licensed under the LGPL (version 3.0 or later) or the ASL (version 2.0). See source code for details. <a href="http://xbnjava.aliteralmind.com">{@code http://xbnjava.aliteralmind.com}</a>, <a href="https://github.com/aliteralmind/xbnjava">{@code https://github.com/aliteralmind/xbnjava}</a>
@@ -96,11 +96,11 @@ public class BinarySearcher implements Copyable, ToStringAppendable  {
       <p>This sets<ol>
          <li>{@link #getIndexLeft() getIndexLeft}{@code ()} to {@code 0}</li>
          <li>{@link #getIndexMiddle() getIndexMiddle}{@code ()} to
-         <br/> &nbsp; &nbsp;  <code>[{@link #getContainerLength() getContainerLength}() - 1]</code></li>
+         <br> &nbsp; &nbsp;  <code>[{@link #getContainerLength() getContainerLength}() - 1]</code></li>
          <li>{@link #getIndexMiddle() getIndexMiddle}{@code ()} to
-         <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.number.NumberUtil NumberUtil}.{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}(0, getIndexMiddle())</code></li>
+         <br> &nbsp; &nbsp; <code>{@link com.github.xbn.number.NumberUtil NumberUtil}.{@link com.github.xbn.number.NumberUtil#getMiddleInt(int, int) getMiddleInt}(0, getIndexMiddle())</code></li>
          <li>Both {@link #getIndexMiddlePrev() getIndexMiddlePrev}{@code ()} and {@link #getIndexInsertAt() getIndexInsertAt}{@code ()} to {@code -1}</li>
-      </ol></p>
+      </ol>
 
     * @return  <i>{@code this}</i>
     */

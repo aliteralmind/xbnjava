@@ -26,7 +26,7 @@ public class RegexGroupExtractor_Cfg extends RegexGroupExtractor_CfgForNeeder<Re
       <p>Create a new {@code zRegexValidator_Cfg} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#zRegexValidator_CfgForNeeder(R)">this</a>(null)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="#zRegexValidator_CfgForNeeder(R)">this</a>(null)</code></p>
     */
    public RegexGroupExtractor_Cfg()  {
       super(false, true, null);

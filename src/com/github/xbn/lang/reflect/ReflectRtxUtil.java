@@ -54,8 +54,8 @@ public class ReflectRtxUtil   {
       <p>If one class is not assignable from another, crash. Otherwise, do nothing.</p>
 
     * @exception  ClassCastException  If
-      <br/> &nbsp; &nbsp; <code>{@link #isClassAssignableFrom(Class, Class) isClassAssignableFrom}(class_forPreDot, class_forParam)</code>
-      <br/>is {@code false}
+      <br> &nbsp; &nbsp; <code>{@link #isClassAssignableFrom(Class, Class) isClassAssignableFrom}(class_forPreDot, class_forParam)</code>
+      <br>is {@code false}
     */
    public static final void crashIfNotAssignableFrom(Class<?> class_forPreDot, Class<?> class_forParam)  {
       if(!isClassAssignableFrom(class_forPreDot, class_forParam))  {
@@ -141,7 +141,7 @@ public class ReflectRtxUtil   {
       <p>Call a void function and get the exception thrown from it <i>which is wrapped in a {@code RuntimeException}</i>. If no exception is thrown, this returns {@code null}.</p>
 
       <p>This calls
-      <br/> &nbsp; &nbsp; <code>method.{@link java.lang.reflect.Method#invoke(Object, Object...) invoke}(obj_methodInvokedFrom, dddo_params)</code></p>
+      <br> &nbsp; &nbsp; <code>method.{@link java.lang.reflect.Method#invoke(Object, Object...) invoke}(obj_methodInvokedFrom, dddo_params)</code></p>
 
     * @param  obj_methodInvokedFrom  The object the underlying method is invoked from. If the method is {@code static}, set this to {@code null}.
     * @param  method  May not be {@code null}.
@@ -250,10 +250,10 @@ public class ReflectRtxUtil   {
 
       <p>This<ol>
          <li>Gets the object's <code>Class</code> with
-         <br/> &nbsp; &nbsp; <code>{@link #getClassForName(String, String) getClassForName}(fq_className, &quot;fq_className&quot;)</code></li>
+         <br> &nbsp; &nbsp; <code>{@link #getClassForName(String, String) getClassForName}(fq_className, &quot;fq_className&quot;)</code></li>
          <li><i><b>Returns</b></i>
-         <br/> &nbsp; &nbsp; <code>{@link #getMethod(Class, String, Declared, Object, Class...) getMethod}(<i>[that class]</i>, method_name, declared, xtra_errInfo, param_types)</code></li>
-      </ol></p>
+         <br> &nbsp; &nbsp; <code>{@link #getMethod(Class, String, Declared, Object, Class...) getMethod}(<i>[that class]</i>, method_name, declared, xtra_errInfo, param_types)</code></li>
+      </ol>
     */
    public static final Method getMethodForClassName(String fq_className, String method_name, Declared declared, Object xtra_errInfo, Class... param_types)  {
       Class <?> cls = getClassForName(fq_className, "fq_className");

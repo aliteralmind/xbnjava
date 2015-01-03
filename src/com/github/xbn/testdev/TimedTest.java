@@ -55,7 +55,7 @@ public class TimedTest  {
       <p>If getWriter() is {@code null} (which only occurs in the first {@code TimedTest} instance), this calls<ol>
          <li><code>TimedTest.{@link #setLocale(Locale) setLocale}({@link java.util.Locale Locale}.{@link java.util.Locale#US US})</code></li>
          <li><code>TimedTest.setWriter(new {@link java.io.PrintWriter#PrintWriter(OutputStream) PrintWriter}(System.out))</code></li>
-      </ol></p>
+      </ol>
 
     * @param  name  Descriptive name used in output. May not be {@code null} or empty. Get with {@link #getName() getName}{@code ()}.
     */
@@ -99,7 +99,7 @@ public class TimedTest  {
          <li>Calls {@link #declareEnd() declareEnd}{@code ()}</li>
          <li>Outputs a message ia {@link #getWriter() getWriter}{@code ()}, its contents beginning with {@link #getTestTookXNanosMsg() getTestTookXNanosMsg}{@code ()}.</li>
          <li>Calls <code>next_test.{@link #declareStart() declareStart}()</code></li>
-      </ol></p>
+      </ol>
 
       <p></p>
 
@@ -124,7 +124,7 @@ public class TimedTest  {
       <p>This<ol>
          <li>Calls {@link #declareEnd() declareEnd}{@code ()}</li>
          <li>Outputs {@link #getTestTookXNanosMsg() getTestTookXNanosMsg}{@code ()} with {@link #getWriter() getWriter}{@code ()}.</li>
-      </ol></p>
+      </ol>
 
     * @exception  RuntimeException  If attempting to write the message fails for any reason.
     */

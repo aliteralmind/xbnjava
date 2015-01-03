@@ -48,7 +48,7 @@ package  com.github.xbn.regexutil;
          <li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#all() all}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#first() first}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#lookingAt() lookingAt}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#matches() matches}()</code>, <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#replaceWhatNotMatchNums(ReplacedInEachInput) replaceWhatNotMatchNums}(rw)</code></li>
       </ul></li>
       <li><b>Other:</b> <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#chainID(boolean, Object) chainID}(b,o)</code>, <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#debugTo(Appendable) debugTo}(apbl)</code>, <code>{@link com.github.xbn.regexutil.z.RegexReplacer_CfgForNeeder#reset() reset}()</code></li>
-   </ul></p>
+   </ul>
 
    <h3>Example: Direct replacement: Regex</h3>
 
@@ -59,7 +59,7 @@ package  com.github.xbn.regexutil;
 {@.codelet.and.out com.github.xbn.examples.regexutil.RegexReplacerLiteralXmpl%eliminateCommentBlocksAndPackageDecl()}
 
 </li>
-   </ul></p>
+   </ul>
 
    <A NAME="indirect"></a><h4><code>[<a href="#skip-navbar_top">top                                                                                              </a>]</code> &nbsp; <u>RegexReplacer: Definition: Indirect</u></h4>
 
@@ -73,16 +73,16 @@ package  com.github.xbn.regexutil;
 
    <p>Internally, for each match, indirect replacements are done in two steps:<ol>
       <li>Everything up-to-but-not-including the next match is appended to the {@code StringBuffer}:
-      <br/> &nbsp; &nbsp; {@code <i>[Matcher]</i>.appendReplacement(to_appendTo, &quot;&quot;)}
-      <br/>The match is &quot;replaced&quot; with <i>nothing</i>--the empty-string.</li>
+      <br> &nbsp; &nbsp; {@code <i>[Matcher]</i>.appendReplacement(to_appendTo, &quot;&quot;)}
+      <br>The match is &quot;replaced&quot; with <i>nothing</i>--the empty-string.</li>
       <li>The indirect replacement is then appended to the {@code StringBuffer} with
-      <br/> &nbsp; &nbsp; {@code to_appendTo.append(getIndirectReplacement())}</li>
-   </ol></p>
+      <br> &nbsp; &nbsp; {@code to_appendTo.append(getIndirectReplacement())}</li>
+   </ol>
 
    <A NAME="direct"></a><h4><code>[<a href="#skip-navbar_top">top</a>]</code> &nbsp; <u>RegexReplacer: Definition: Direct</u></h4>
 
    <p>When capture groups do not need to be manipulated, the {@code Matcher} can make the replacement itself--&quot;directly&quot;. Internally, this is equivalent to the above step one, changed to
-   <br/> &nbsp; &nbsp; {@code <i>[Matcher]</i>.appendReplacement(to_appendTo, <i>[the-replacement-string]</i>)}.</p>
+   <br> &nbsp; &nbsp; {@code <i>[Matcher]</i>.appendReplacement(to_appendTo, <i>[the-replacement-string]</i>)}.</p>
 
 
    <A NAME="whichmatches"></a><h3><code>[<a href="#skip-navbar_top">top</a>]</code> &nbsp; Choosing which matches to replace</h3>
@@ -173,7 +173,7 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
       <p>Create a new instance as a duplicate of another, with new search terms, but the same direct-or-indirect-ness.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RegexReplacer(RegexReplacer, Pattern, String) this}(to_copy, {@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link com.github.xbn.regexutil.NewPatternFor#regex(String, String) regex}(findWhat_regex), new_directRplcWith)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RegexReplacer(RegexReplacer, Pattern, String) this}(to_copy, {@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link com.github.xbn.regexutil.NewPatternFor#regex(String, String) regex}(findWhat_regex), new_directRplcWith)</code></p>
 
     * @param  findWhat_regex  May not be <code>null</code>.
     */
@@ -184,7 +184,7 @@ public class RegexReplacer extends SimpleDebuggable implements Debuggable, Copya
       <p>Create a new instance as a duplicate of another, with new search terms, but the same direct-or-indirect-ness.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #RegexReplacer(RegexReplacer, Pattern, String) this}(to_copy, {@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link NewPatternFor#regex(String, int, String) regex}(findWhat_regex, bit_flags), new_directRplcWith)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #RegexReplacer(RegexReplacer, Pattern, String) this}(to_copy, {@link com.github.xbn.regexutil.NewPatternFor NewPatternFor}.{@link NewPatternFor#regex(String, int, String) regex}(findWhat_regex, bit_flags), new_directRplcWith)</code></p>
 
     * @param  findWhat_regex  May not be <code>null</code>.
     */

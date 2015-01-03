@@ -36,7 +36,7 @@ public class NewPrintWriterToFile  {
       <p>This calls<ol>
          <li>{@link #overwrite() overwrite}{@code ()}</li>
          <li>{@link #manualFlush() manualFlush}{@code ()}</li>
-      </ol></p>
+      </ol>
     */
    public NewPrintWriterToFile()  {
       overwrite();

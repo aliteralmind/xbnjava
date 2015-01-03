@@ -32,7 +32,7 @@ public class CrashIfString  {
       <p>If a string is {@code null} or has no characters, crash. Otherwise, do nothing.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code>{@link #empty(Null, Object, String, Object) empty}({@link com.github.xbn.lang.Null Null}.{@link com.github.xbn.lang.Null#BAD BAD}, string, str_name)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link #empty(Null, Object, String, Object) empty}({@link com.github.xbn.lang.Null Null}.{@link com.github.xbn.lang.Null#BAD BAD}, string, str_name)</code></p>
     */
    public static final void nullEmpty(Object string, String str_name, Object xtra_errInfo)  {
       empty(Null.BAD, string, str_name, xtra_errInfo);
@@ -53,7 +53,7 @@ public class CrashIfString  {
       <p>If a string-element has no characters, crash. Otherwise, do nothing.</p>
 
       <p>This first calls
-      <br/> &nbsp; &nbsp; <code>{@link com.github.xbn.array.CrashIfIndex}.{@link com.github.xbn.array.CrashIfIndex#edElementIsNull(Object, int, Null, String, String) edElementIsNull}(string, index, nnull, container_name, index_varName)</code></p>
+      <br> &nbsp; &nbsp; <code>{@link com.github.xbn.array.CrashIfIndex}.{@link com.github.xbn.array.CrashIfIndex#edElementIsNull(Object, int, Null, String, String) edElementIsNull}(string, index, nnull, container_name, index_varName)</code></p>
 
     * @exception  IllegalArgumentException  If the string element has no characters.
     * @see  <code><a href="{@docRoot}/com/github/xbn/array/CrashIfArray.html">CrashIfArray</a>.<a href="{@docRoot}/com/github/xbn/array/CrashIfArray.html#bad(E[], java.lang.String, com.github.xbn.array.NullContainer, int, java.lang.String, com.github.xbn.array.NullElement, com.github.xbn.array.Duplicates)">bad</a></code>

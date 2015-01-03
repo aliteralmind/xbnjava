@@ -30,7 +30,7 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       <p>Create a new instance with defaults.</p>
 
       <p>Sets the internal composer to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer() ValueAltererComposer}&lt;V,A&gt;{@code ()}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer() ValueAltererComposer}&lt;V,A&gt;{@code ()}</p>
 
     * @see  #AbstractValueAlterer(ValueAlterer)
     */
@@ -41,7 +41,7 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       <p>Create a new {@code AbstractAlterer} with the required setting.</p>
 
       <p>Sets the internal composer to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer(AlterationRequired) ValueAltererComposer}&lt;V,A&gt;{@code (required)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.ValueAltererComposer#ValueAltererComposer(AlterationRequired) ValueAltererComposer}&lt;V,A&gt;{@code (required)}</p>
 
     * @see  #AbstractValueAlterer()
     * @see  #AbstractValueAlterer(com.github.xbn.analyze.alter.Alterer) AbstractAlterer(a)
@@ -61,7 +61,7 @@ public abstract class AbstractValueAlterer<V,A> implements ValueAlterer<V,A>  {
       <p>If the {@code ValueAlterer} needs to have its state reset, crash. This is useful as the first line</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer}.{@link com.github.xbn.analyze.alter.AltererComposer#autoResetStateOrCINeedTo(com.github.xbn.analyze.Analyzer) autoResetStateOrCINeedTo}{@code (this)}</p>
+      <br> &nbsp; &nbsp; {@link com.github.xbn.analyze.alter.AltererComposer AltererComposer}.{@link com.github.xbn.analyze.alter.AltererComposer#autoResetStateOrCINeedTo(com.github.xbn.analyze.Analyzer) autoResetStateOrCINeedTo}{@code (this)}</p>
     */
    public void autoResetStateOrCINeedTo()  {
       AnalyzerComposer.autoResetStateOrCINeedTo(this);

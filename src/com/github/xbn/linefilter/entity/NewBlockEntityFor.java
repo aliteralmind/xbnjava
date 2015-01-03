@@ -64,7 +64,7 @@ public class NewBlockEntityFor  {
    startPattern, filter_ifNonNull, null, dbgStart_ifNonNull,
    endPattern, filter_ifNonNull, null, dbgEnd_ifNonNull,
    dbgLineNums_ifNonNull)</pre></blockquote>
-      <br/>Where {@code startPattern} and {@code endPattern} are the {@linkplain java.util.regex.Pattern#LITERAL literal} strings {@code "/"+"**"} and {@code "*"+"/"}.
+      <br>Where {@code startPattern} and {@code endPattern} are the {@linkplain java.util.regex.Pattern#LITERAL literal} strings {@code "/"+"**"} and {@code "*"+"/"}.
     */
    public static final BlockEntity_CfgForNeeder<?,?> javaDocComment_Cfg(String name_ifNonNull, EntityRequired required, Appendable dbgStart_ifNonNull, Appendable dbgEnd_ifNonNull, RawOnOffEntityFilter<String> filter_ifNonNull, Appendable dbgLineNums_ifNonNull)  {
       return  lineRange_Cfg(name_ifNonNull, required,
@@ -83,7 +83,7 @@ public class NewBlockEntityFor  {
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#endAlter(EndRequired, ValueAlterer) endAlter}(endRqd, {@link com.github.xbn.linefilter.alter.NewTextLineAltererFor}.{@link com.github.xbn.linefilter.alter.NewTextLineAltererFor#textValidateOnly(Pattern, ValidResultFilter, Appendable) textValidateOnly} textValidateOnly}(
       endPtrn_ifNonNull, null, dbgEnd_ifNonNull)).
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}(dbgLineNums_ifNonNull)</pre></blockquote>
-      <br/>Where {@code endRqd} is, if {@code endPtrn_ifNonNull} is<ul>
+      <br>Where {@code endRqd} is, if {@code endPtrn_ifNonNull} is<ul>
          <li>non-{@code null}: {@link com.github.xbn.linefilter.entity.EndRequired}.{@link com.github.xbn.linefilter.entity.EndRequired#YES YES}</li>
          <li>{@code null}: EndRequired.{@link com.github.xbn.linefilter.entity.EndRequired#NO NO}</li>
       </ul>
@@ -183,7 +183,7 @@ public class NewBlockEntityFor  {
       endPtrn_ifNonNull, end_rplcWith, endRplcWhat_notMatchNums,
       null, dbgEnd_ifNonNull)).
    {@link com.github.xbn.linefilter.entity.z.BlockEntity_CfgForNeeder#debugLineNumbers(Appendable) debugLineNumbers}(dbgLineNums_ifNonNull)</pre></blockquote>
-      <br/>Where {@code endRqd} is, if {@code endPtrn_ifNonNull} is<ul>
+      <br>Where {@code endRqd} is, if {@code endPtrn_ifNonNull} is<ul>
          <li>non-{@code null}: {@link com.github.xbn.linefilter.entity.EndRequired}.{@link com.github.xbn.linefilter.entity.EndRequired#YES YES}</li>
          <li>{@code null}: EndRequired.{@link com.github.xbn.linefilter.entity.EndRequired#NO NO}</li>
       </ul>and {@code endAlterRqd} is <code>{@link AlterationRequired}.{@link AlterationRequired#YES YES}</code> if {@code endRqd} is {@code YES}.

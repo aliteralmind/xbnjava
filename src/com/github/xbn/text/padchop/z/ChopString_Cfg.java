@@ -26,7 +26,7 @@ public class ChopString_Cfg extends ChopString_CfgForNeeder<ChopString,DummyForN
       <p>Create a new {@code zChopString_Cfg} with defaults.</p>
 
     * <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R)">super</a>(null)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R)">super</a>(null)</code></p>
     * @see  #ChopString_Cfg(int) this(i)
     */
    public ChopString_Cfg()  {
@@ -36,7 +36,7 @@ public class ChopString_Cfg extends ChopString_CfgForNeeder<ChopString,DummyForN
       <p>Create a new {@code zChopString_Cfg} with defaults, but a specific goal length.</p>
 
          <p>Equal to
-      <br/> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</a>(null, goal_len)</code></p>
+      <br> &nbsp; &nbsp; <code><!-- GENERIC PARAMETERS FAIL IN @link --><a href="ChopString_CfgForNeeder.html#ChopString_CfgForNeeder(R, int)">super</a>(null, goal_len)</code></p>
     * @see  #ChopString_Cfg() this()
     */
    public ChopString_Cfg(int goal_len)  {

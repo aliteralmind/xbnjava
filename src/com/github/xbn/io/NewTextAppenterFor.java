@@ -34,7 +34,7 @@ public class NewTextAppenterFor  {
       <p>Creates a new appenter with an appendable, or an unusable appenter if its {@code null}</p>
 
     * @return  <code>((toApndTo_ifNonNull == null) ? TextAppenter.{@link TextAppenter#UNUSABLE UNUSABLE}
-      <br/> &nbsp; &nbsp; : &nbsp;{@link #appendable(Appendable) appendable}(toApndTo_ifNonNull))</code>
+      <br> &nbsp; &nbsp; : &nbsp;{@link #appendable(Appendable) appendable}(toApndTo_ifNonNull))</code>
     */
    public static final TextAppenter appendableUnusableIfNull(Appendable toApndTo_ifNonNull)  {
       return  ((toApndTo_ifNonNull == null) ? TextAppenter.UNUSABLE

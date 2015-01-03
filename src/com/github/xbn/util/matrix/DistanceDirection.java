@@ -109,10 +109,10 @@ public class DistanceDirection extends AbstractElement  {
     * elements.
     * @param  horiz_dist  The difference between the start and end
     * elements' horizontal values. Specifically,
-    * <br/> &nbsp; &nbsp; <code><i>[end-coord]</i>.{@link MatrixElement#getColumnIndex() getColumnIndex}() - <i>[start-coord]</i>.getColumnIndex()</code>
+    * <br> &nbsp; &nbsp; <code><i>[end-coord]</i>.{@link MatrixElement#getColumnIndex() getColumnIndex}() - <i>[start-coord]</i>.getColumnIndex()</code>
     * @param  vert_dist  The difference between the start and end
     * elements' vertical values. Specifically,
-    * <br/> &nbsp; &nbsp; <code><i>[end-coord]</i>.{@link MatrixElement#getRowIndex() getRowIndex}() - <i>[start-coord]</i>.getRowIndex()</code>
+    * <br> &nbsp; &nbsp; <code><i>[end-coord]</i>.{@link MatrixElement#getRowIndex() getRowIndex}() - <i>[start-coord]</i>.getRowIndex()</code>
     * @return  If the distances are both zero, or the direction is not
     * directly horizontal, vertical, or forty-five degrees diagonal, this
     * returns {@code null}. Otherwise, this returns the direction between
